@@ -19,7 +19,7 @@ import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
 import { ChronicleSection } from "@/features/chronicle/ChronicleSection";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { NextMilestones } from "@/features/progress/NextMilestones";
-import { PixelArrowLeft, TabPanel } from "@/design-system";
+import { PixelArrowLeft, RpgSwords, TabPanel } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { useTitleStore } from "@/stores/useTitleStore";
 import { getTranslation } from "@/i18n";
@@ -62,13 +62,19 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 animate-fade-in">
-      <div>
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/"
           className="inline-flex items-center gap-1.5 font-sans font-semibold text-xs sm:text-sm text-slate-400 hover:text-amber-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold px-2 py-1 -ml-2 rounded"
         >
           <PixelArrowLeft className="w-4 h-4" />
           <span>{t.common.backToSearch}</span>
+        </Link>
+        <Link
+          href={`/duel?opponent=${encodeURIComponent(character.identity.username)}`}
+          className="inline-flex min-h-[40px] items-center gap-2 border border-rpg-crimson bg-red-950/40 px-3 py-2 text-xs font-bold uppercase tracking-wider text-red-200 transition-colors hover:bg-red-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson"
+        >
+          <RpgSwords className="h-4 w-4" /> {t.duel.challengeHero}
         </Link>
       </div>
 

@@ -7,14 +7,14 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     await expect(page.getByRole("heading", { level: 2, name: "Salão dos Heróis" })).toBeVisible();
     const hall = page.getByRole("region", { name: "Salão dos Heróis" });
-    await expect(hall.getByRole("link")).toHaveCount(5);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(5);
     await hall.getByRole("tab", { name: "Heróis do Brasil" }).focus();
     await page.keyboard.press("ArrowRight");
     await expect(hall.getByRole("tab", { name: "Forjadores da Web" })).toHaveAttribute("aria-selected", "true");
-    await expect(hall.getByRole("link")).toHaveCount(5);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(5);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
 
-    const heroLink = hall.getByRole("link").first();
+    const heroLink = hall.getByRole("link", { name: /Ver ficha/i }).first();
     const target = await heroLink.getAttribute("href");
     await heroLink.click();
     await page.waitForURL(`**${target}`);
@@ -53,14 +53,14 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     const hall = page.getByRole("region", { name: "Salão dos Heróis" });
     await expect(hall.getByText("Alguns heróis ainda estão chegando ao salão.")).toBeVisible();
-    await expect(hall.getByRole("link")).toHaveCount(0);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(0);
 
     await page.clock.runFor(6_000);
-    await expect(hall.getByRole("link")).toHaveCount(2);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(2);
     await expect(hall.getByText("Alguns heróis ainda estão chegando ao salão.")).toBeVisible();
 
     await page.clock.runFor(7_000);
-    await expect(hall.getByRole("link")).toHaveCount(5);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(5);
     await expect(hall.getByText(/ainda estão chegando/)).toHaveCount(0);
 
     await page.clock.runFor(60_000);
@@ -434,8 +434,8 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   // Flow 13: Features descartadas não aparecem
-  test("Flow 13: Dropped features (guild, dungeons, buffs, duel) are not visible", async ({ page }) => {
-    const dropped = /Guilda|Masmorra|Buffs?\b|Arena de Duelo|Duelo/i;
+  test("Flow 13: Dropped features (guild, dungeons, buffs) are not visible", async ({ page }) => {
+    const dropped = /Guilda|Masmorra|Buffs?\b/i;
 
     await page.goto("/");
     await expect(page.locator("body")).not.toContainText(dropped);
@@ -446,7 +446,7 @@ test.describe("GitHub RPG E2E Flows", () => {
       await page.getByRole("tab", { name: tab }).click();
       await expect(page.locator("body")).not.toContainText(dropped);
     }
-    await expect(page.getByRole("tab", { name: /Duelo|Masmorras|Guilda/i })).toHaveCount(0);
+    await expect(page.getByRole("tab", { name: /Masmorras|Guilda/i })).toHaveCount(0);
   });
 
   // Flow 14: Transparência
@@ -751,5 +751,64 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     await page.getByRole("button", { name: "Adicionar ao README" }).click();
     expect(await overflow()).toBeLessThanOrEqual(0);
+  });
+
+  test("Flow 20: Duel Builder accepts a GitHub URL and creates a direct, reloadable duel", async ({ page }) => {
+    await page.addInitScript(() => {
+      Object.defineProperty(navigator, "clipboard", {
+        configurable: true,
+        value: { writeText: (value: string) => { (window as unknown as { __duelLink?: string }).__duelLink = value; return Promise.resolve(); } },
+      });
+    });
+    await page.goto("/duel");
+    await expect(page.getByRole("heading", { name: "Duelo de Heróis" })).toBeVisible();
+    await page.getByLabel("Herói 1").fill("veteran-dev");
+    await page.getByLabel("Herói 2").fill("https://github.com/polyglot-dev");
+    await page.getByRole("button", { name: "Iniciar duelo" }).click();
+    await expect(page).toHaveURL(/\/duel\/veteran-dev\/vs\/polyglot-dev$/);
+    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+    await expect(page.getByText("Pietra Poliglota")).toBeVisible();
+    await page.getByRole("button", { name: "Pular animação" }).click();
+    await expect(page.getByRole("heading", { name: /venceu o duelo|Empate lendário/i })).toBeVisible();
+    await expect(page.getByText(/não uma avaliação da qualidade profissional/i)).toBeVisible();
+    const share = page.getByRole("button", { name: /Compartilhar duelo|Copiar link/i });
+    await share.click();
+    await expect(page.getByRole("status").filter({ hasText: "Link copiado!" })).toBeVisible();
+    await page.reload();
+    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+  });
+
+  test("Flow 20a: a direct duel keeps independent errors and retry", async ({ page }) => {
+    await page.goto("/duel/missing-dev/vs/veteran-dev");
+    await expect(page.getByText("O herói @missing-dev não foi encontrado.")).toBeVisible();
+    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Tentar novamente" })).toBeVisible();
+  });
+
+  test("Flow 20b: the character sheet challenge prefills one side and does not auto-start", async ({ page }) => {
+    await page.goto("/veteran-dev");
+    await page.getByRole("link", { name: "Desafiar este herói" }).click();
+    await expect(page).toHaveURL(/\/duel\?opponent=veteran-dev$/);
+    await expect(page.getByLabel("Herói 1")).toHaveValue("veteran-dev");
+    await expect(page.getByLabel("Herói 2")).toHaveValue("");
+    await expect(page.getByRole("heading", { name: /venceu o duelo|Empate lendário/i })).toHaveCount(0);
+  });
+
+  test("Flow 20c: the Hall challenge prefills its selected hero", async ({ page }) => {
+    await page.goto("/");
+    const challenge = page.getByRole("link", { name: /Desafiar/i }).first();
+    await expect(challenge).toBeVisible();
+    await challenge.click();
+    await expect(page).toHaveURL(/\/duel\?opponent=/);
+    await expect(page.getByLabel("Herói 1")).not.toHaveValue("");
+    await expect(page.getByLabel("Herói 2")).toHaveValue("");
+  });
+
+  test("Flow 20d: duel arena has no horizontal overflow on a phone", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/duel/rookie-dev/vs/popular-dev");
+    await expect(page.getByText("Arthur Aprendiz")).toBeVisible();
+    await expect(page.getByText("Estela Brilhante")).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
   });
 });

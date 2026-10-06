@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildLandingMetadata, buildProfileMetadata, buildRootMetadata } from "./seo";
+import { buildDuelMetadata, buildLandingMetadata, buildProfileMetadata, buildRootMetadata } from "./seo";
 
 const PRODUCTION = { NEXT_PUBLIC_SITE_URL: "https://githubrpg.vercel.app", NODE_ENV: "production" };
 
@@ -88,5 +88,21 @@ describe("profile metadata", () => {
       expect(invalidMeta.openGraph).toBeUndefined();
       expect(JSON.stringify(invalidMeta)).not.toContain("/api/card/");
     }
+  });
+});
+
+describe("duel metadata", () => {
+  it("describes both heroes and uses a normalized canonical URL", () => {
+    const meta = buildDuelMetadata("JonathanNwokolo", "AHEJLSBERG", PRODUCTION);
+    expect(meta.title).toBe("JonathanNwokolo vs AHEJLSBERG | GitHub RPG");
+    expect(meta.description).toContain("JonathanNwokolo e AHEJLSBERG");
+    expect(meta.alternates?.canonical).toBe("https://githubrpg.vercel.app/duel/jonathannwokolo/vs/ahejlsberg");
+    expect(meta.openGraph?.url).toBe(meta.alternates?.canonical);
+  });
+
+  it("does not index invalid duel paths", () => {
+    const meta = buildDuelMetadata("../admin", "valid-user", PRODUCTION);
+    expect(meta.robots).toMatchObject({ index: false, follow: false });
+    expect(meta.alternates).toBeUndefined();
   });
 });

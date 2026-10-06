@@ -60,12 +60,13 @@ function ClassMark({ hero }: { hero: HeroSummary }) {
 function FeaturedHero({ hero }: { hero: HeroSummary }) {
   const { language } = useUiStore();
   const t = getTranslation(language).heroesHall;
+  const duel = getTranslation(language).duel;
 
   return (
-    <Link
-      href={profileHref(hero.username)}
+    <div
       className="group relative flex min-h-[360px] flex-col justify-between overflow-hidden border-2 border-rpg-goldDark bg-gradient-to-br from-rpg-surfaceLight via-rpg-surface to-rpg-obsidian p-5 shadow-pixel transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 hover:border-rpg-gold hover:shadow-pixel-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void sm:p-7"
     >
+      <Link href={profileHref(hero.username)} aria-label={`${t.viewSheet}: ${hero.displayName}`} className="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"><span className="sr-only">{t.viewSheet}</span></Link>
       <div className="absolute -right-16 -top-16 h-48 w-48 rotate-45 border border-rpg-goldDark/30 bg-rpg-gold/5" aria-hidden="true" />
       <div className="relative flex items-center justify-between gap-3">
         <span className="font-pixel text-[10px] uppercase tracking-wider text-rpg-gold">{t.featured}</span>
@@ -101,17 +102,20 @@ function FeaturedHero({ hero }: { hero: HeroSummary }) {
           </span>
           <span>{t.viewSheet} &rarr;</span>
         </div>
+        <Link href={`/duel?opponent=${encodeURIComponent(hero.username)}`} className="relative z-20 col-span-2 inline-flex min-h-[40px] items-center justify-center border border-rpg-crimson bg-red-950/50 px-3 py-2 font-bold uppercase tracking-wider text-red-200 hover:bg-red-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson">
+          ⚔ {duel.challenge}
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 
 function SecondaryHero({ hero }: { hero: HeroSummary }) {
   const { language } = useUiStore();
   const t = getTranslation(language).heroesHall;
+  const duel = getTranslation(language).duel;
   return (
-    <Link
-      href={profileHref(hero.username)}
+    <div
       className="group flex min-w-0 flex-col border border-rpg-border bg-rpg-surface/80 p-4 shadow-pixel transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 hover:border-rpg-goldDark hover:bg-rpg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void"
     >
       <div className="flex min-w-0 items-start gap-3">
@@ -129,10 +133,11 @@ function SecondaryHero({ hero }: { hero: HeroSummary }) {
         <p className="truncate text-xs text-slate-400">{hero.dominantLanguage || "—"}</p>
         <p className="text-xs italic leading-relaxed text-slate-300">{t.flavors[hero.className]}</p>
       </div>
-      <span className="mt-auto pt-4 text-right text-xs font-bold uppercase tracking-wider text-rpg-gold opacity-80 group-hover:opacity-100">
-        {t.viewSheet} &rarr;
-      </span>
-    </Link>
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-4 text-xs font-bold uppercase tracking-wider">
+        <Link href={profileHref(hero.username)} className="text-rpg-gold hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">{t.viewSheet} &rarr;</Link>
+        <Link href={`/duel?opponent=${encodeURIComponent(hero.username)}`} className="border border-rpg-crimson px-2 py-1.5 text-red-200 hover:bg-red-950/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson">⚔ {duel.challenge}</Link>
+      </div>
+    </div>
   );
 }
 

@@ -43,7 +43,7 @@ describe("HeroesHall", () => {
 
     expect(mockedFetchHeroes).toHaveBeenCalledWith("legends", expect.any(AbortSignal));
     expect(screen.getByText("Herói em destaque")).toBeInTheDocument();
-    expect(screen.getAllByRole("link")).toHaveLength(5);
+    expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(5);
     expect(screen.getByRole("link", { name: /Hero alpha/ })).toHaveAttribute("href", "/alpha");
   });
 
@@ -76,7 +76,7 @@ describe("HeroesHall", () => {
     mockedFetchHeroes.mockResolvedValueOnce(response("legends", heroes.slice(0, 4), 1));
     const { unmount } = render(<HeroesHall />);
     expect(await screen.findByText("Alguns aventureiros estão em jornada e não puderam chegar ao salão.")).toBeInTheDocument();
-    expect(screen.getAllByRole("link")).toHaveLength(4);
+    expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(4);
     unmount();
 
     mockedFetchHeroes.mockResolvedValueOnce(response("legends", [], 5));
@@ -92,10 +92,10 @@ describe("HeroesHall", () => {
 
     expect(await screen.findByText(/Alguns heróis ainda estão chegando ao salão/)).toBeInTheDocument();
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
-    expect(screen.getAllByRole("link")).toHaveLength(3);
+    expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(3);
 
     fireEvent.click(screen.getByRole("button", { name: "Tentar novamente" }));
-    await waitFor(() => expect(screen.getAllByRole("link")).toHaveLength(5));
+    await waitFor(() => expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(5));
     expect(screen.queryByText(/ainda estão chegando/)).not.toBeInTheDocument();
     expect(mockedFetchHeroes).toHaveBeenCalledTimes(2);
   });
@@ -142,14 +142,14 @@ describe("HeroesHall", () => {
       await act(async () => {
         await vi.advanceTimersByTimeAsync(AUTO_RETRY_DELAYS_MS[0]);
       });
-      expect(screen.getAllByRole("link")).toHaveLength(2);
+      expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(2);
       expect(screen.getByText(/ainda estão chegando/)).toBeInTheDocument();
       expect(document.querySelector(".animate-pulse")).toBeNull();
 
       await act(async () => {
         await vi.advanceTimersByTimeAsync(AUTO_RETRY_DELAYS_MS[1]);
       });
-      expect(screen.getAllByRole("link")).toHaveLength(5);
+      expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(5);
       expect(screen.queryByText(/ainda estão chegando/)).not.toBeInTheDocument();
       expect(mockedFetchHeroes).toHaveBeenCalledTimes(3);
     } finally {

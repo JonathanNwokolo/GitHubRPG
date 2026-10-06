@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { parseGitHubUsername } from "@/data/github/username";
 import { InvalidUsernameError } from "@/data/github/errors";
 import { profileCardUrl, profileUrl } from "./profileUrl";
+import { duelPath, parseDuelUsername } from "@/features/duel/duelUrl";
 import { absoluteUrl, getMetadataBase, type SiteUrlEnv } from "./siteUrl";
 
 /**
@@ -107,5 +108,29 @@ export function buildProfileMetadata(rawUsername: string, env?: SiteUrlEnv): Met
       description,
       images: [cardUrl],
     },
+  };
+}
+
+export function buildDuelMetadata(rawHeroA: string, rawHeroB: string, env?: SiteUrlEnv): Metadata {
+  let heroA: string;
+  let heroB: string;
+  try {
+    heroA = parseDuelUsername(rawHeroA);
+    heroB = parseDuelUsername(rawHeroB);
+  } catch (error) {
+    if (error instanceof InvalidUsernameError) {
+      return { title: `Duelo não encontrado | ${SITE_NAME}`, robots: { index: false, follow: false } };
+    }
+    throw error;
+  }
+  const title = `${heroA} vs ${heroB} | ${SITE_NAME}`;
+  const description = `Veja o duelo RPG entre ${heroA} e ${heroB} baseado em suas jornadas públicas no GitHub.`;
+  const url = absoluteUrl(duelPath(heroA, heroB), env);
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { type: "website", siteName: SITE_NAME, locale: "pt_BR", url, title, description },
+    twitter: { card: "summary", title, description },
   };
 }
