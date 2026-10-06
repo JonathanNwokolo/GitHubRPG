@@ -20,7 +20,7 @@ RPGCharacter                src/game/types/index.ts
 Frontend (só apresenta)     src/app, src/features, src/components
 ```
 
-`src/data/loadCharacter.ts` encadeia as 5 etapas; é o único ponto que a UI chama. `createDataSource()` ([src/data/datasource/index.ts](src/data/datasource/index.ts)) é o **único** lugar que escolhe a fonte; hoje devolve `MockDataSource`.
+`src/data/loadCharacter.ts` encadeia as 5 etapas e roda **no servidor**, dentro da rota `GET /api/characters/[username]`; o navegador só chama essa rota (`src/data/api/fetchCharacter.ts`) e apresenta o `RPGCharacter`. `createDataSource()` ([src/data/datasource/index.ts](src/data/datasource/index.ts)) é o **único** lugar que escolhe a fonte (`GITHUB_DATA_SOURCE`: `mock` ou `github`, ver [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md)).
 
 ## Arquivos
 
@@ -92,10 +92,10 @@ Complexidade após a normalização: **O(linguagens + conquistas + títulos)**. 
 12. **HP/MP** sempre cheios.
 13. **Avatar procedural** saiu de `game/` para `features/character/avatar/` (é apresentação).
 
-## Como trocar para a API real
+## Como a API real foi ligada (feito)
 
-1. Criar `src/data/datasource/GitHubApiDataSource.ts` com `readonly kind = "github"` e `getProfile(username): Promise<RawGitHubData>`.
-2. Mapear REST/GraphQL para `RawGitHubData`: `createdAt`, `fetchedAt = new Date().toISOString()`, `isDemo: false`, contadores e `repositories.items` com `languages` em bytes. Para cada métrica, preencher `coverage` com honestidade (`full`, `partial` ou `unavailable`).
-3. Lançar `ProfileNotFoundError` no 404.
-4. Em `createDataSource()` trocar `new MockDataSource()` pela nova classe. **Mais nada muda**: a validação Zod, `normalizeDeveloperProfile`, o engine, os componentes e as regras de balanceamento ficam intactos; o selo "Dados de demonstração" some sozinho (`kind !== "mock"`).
-5. Colocar cache/rate-limit na camada da API (o engine é puro e barato).
+`GitHubApiDataSource` (`src/data/github/`) implementa o mesmo contrato do mock. A validação Zod, `normalizeDeveloperProfile`, o engine e as regras de balanceamento ficaram intactos (os snapshots de balanceamento são idênticos). A única mudança de contrato foi um campo **opcional**, `languagesCoverage`, que permite marcar linguagens como `partial` sem rebaixar stars/forks.
+
+- **Servidor apenas:** a rota `/api/characters/[username]` roda o pipeline; o navegador nunca vê token nem fala com o GitHub. `createDataSource()` e `src/data/github/` não podem ser importados por código de cliente (teste arquitetural).
+- **Cache, deduplicação, timeout, paginação, concorrência e rate limit** vivem na camada da fonte de dados, não no engine (que continua puro).
+- Detalhes, cobertura por métrica, custo de requisições e limitações: [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md).

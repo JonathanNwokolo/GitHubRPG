@@ -2,7 +2,6 @@
 
 import React from "react";
 import {
-  Card,
   Badge,
   PixelUsers,
   PixelShield,
@@ -41,11 +40,15 @@ const ICONS: Record<PersonaIcon, React.ReactNode> = {
 
 export const PersonaCard: React.FC<PersonaCardProps> = ({ persona, actionLabel, onSelect }) => {
   return (
-    <Card
-      variant="interactive"
+    <button
+      type="button"
       onClick={() => onSelect(persona.id)}
-      className="flex flex-col justify-between p-5 group hover:border-rpg-gold hover:shadow-pixel-gold transition-all text-left bg-rpg-surface/80 hover:bg-rpg-surface border-2 min-h-[220px]"
+      className="group relative flex min-h-[220px] w-full flex-col justify-between border-2 border-rpg-border bg-rpg-surface/80 p-5 text-left text-rpg-parchment shadow-pixel transition-all duration-200 hover:-translate-y-1 hover:border-rpg-gold hover:bg-rpg-surface hover:shadow-pixel-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void"
     >
+      <span className="absolute -top-[3px] -left-[3px] w-[5px] h-[5px] bg-rpg-borderLight pointer-events-none" aria-hidden="true" />
+      <span className="absolute -top-[3px] -right-[3px] w-[5px] h-[5px] bg-rpg-borderLight pointer-events-none" aria-hidden="true" />
+      <span className="absolute -bottom-[3px] -left-[3px] w-[5px] h-[5px] bg-rpg-borderLight pointer-events-none" aria-hidden="true" />
+      <span className="absolute -bottom-[3px] -right-[3px] w-[5px] h-[5px] bg-rpg-borderLight pointer-events-none" aria-hidden="true" />
       <div className="space-y-3">
         {/* Top Icon & Badge */}
         <div className="flex items-center justify-between gap-2">
@@ -78,8 +81,8 @@ export const PersonaCard: React.FC<PersonaCardProps> = ({ persona, actionLabel, 
       {/* Action Footer */}
       <div className="mt-4 pt-3 border-t border-rpg-border/60 flex items-center justify-between text-xs font-sans font-bold text-rpg-gold uppercase tracking-wider">
         <span>{actionLabel}</span>
-        <span className="group-hover:translate-x-1.5 transition-transform text-sm">&rarr;</span>
+        <span className="text-sm" aria-hidden="true">&rarr;</span>
       </div>
-    </Card>
+    </button>
   );
 };

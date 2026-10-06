@@ -4,16 +4,19 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PixelVolumeOn, PixelVolumeOff, PixelShield, PixelSparkles } from "@/design-system";
-import { createDataSource } from "@/data/datasource";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { Badge } from "@/design-system/components/Badge";
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  /** True when the server is configured with the mock data source. Decided on the server. */
+  isDemo: boolean;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
   const pathname = usePathname();
   const { language, audioEnabled, setLanguage, toggleAudio } = useUiStore();
   const t = getTranslation(language);
-  const isDemo = createDataSource().kind === "mock";
 
   const navLinks = [
     { href: "/settings", label: t.nav.settings },

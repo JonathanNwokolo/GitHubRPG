@@ -15,8 +15,7 @@ import {
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { PersonaCard, PersonaItem } from "./PersonaCard";
-import { createDataSource } from "@/data/datasource";
-import { loadCharacter } from "@/data/loadCharacter";
+import { fetchCharacter } from "@/data/api/fetchCharacter";
 
 /** What the landing needs to know about each persona once the engine has run. */
 interface PersonaSummary {
@@ -27,7 +26,12 @@ interface PersonaSummary {
 
 const PERSONA_IDS = ["rookie-dev", "veteran-dev", "polyglot-dev", "popular-dev", "empty-dev"] as const;
 
-export const LandingHero: React.FC = () => {
+interface LandingHeroProps {
+  /** Demo personas are mock profiles: shown only while the server runs the mock data source. */
+  showDemoPersonas: boolean;
+}
+
+export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) => {
   const router = useRouter();
   const { language } = useUiStore();
   const t = getTranslation(language);
@@ -39,10 +43,11 @@ export const LandingHero: React.FC = () => {
 
   // Persona badges come from the Game Engine, never from hard-coded numbers.
   useEffect(() => {
+    if (!showDemoPersonas) return;
     let cancelled = false;
     Promise.all(
       PERSONA_IDS.map(async (id) => {
-        const character = await loadCharacter(id);
+        const character = await fetchCharacter(id);
         const summary: PersonaSummary = {
           level: character.progression.level,
           className: character.archetype.className,
@@ -60,7 +65,7 @@ export const LandingHero: React.FC = () => {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [showDemoPersonas]);
 
   const personaBadge = (id: string): string => {
     const summary = summaries[id];
@@ -136,8 +141,8 @@ export const LandingHero: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Existence check only: the character page runs the full pipeline.
-      await createDataSource().getProfile(clean);
+      // Existence check only: the character page loads it again (the server caches the GitHub fetch).
+      await fetchCharacter(clean);
       router.push(`/${encodeURIComponent(clean)}`);
     } catch (err) {
       setIsLoading(false);
@@ -215,34 +220,36 @@ export const LandingHero: React.FC = () => {
       </div>
 
       {/* Personas Showcase */}
-      <div className="w-full space-y-6 pt-8 border-t border-rpg-border">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-left">
-          <div className="flex items-center gap-2">
-            <PixelShield className="w-5 h-5 text-amber-400" />
-            <h2 className="font-sans font-bold text-sm sm:text-base text-slate-200 uppercase tracking-wider">
-              {t.landing.personasTitle}
-            </h2>
+      {showDemoPersonas && (
+        <div className="w-full space-y-6 pt-8 border-t border-rpg-border">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-left">
+            <div className="flex items-center gap-2">
+              <PixelShield className="w-5 h-5 text-amber-400" />
+              <h2 className="font-sans font-bold text-sm sm:text-base text-slate-200 uppercase tracking-wider">
+                {t.landing.personasTitle}
+              </h2>
+            </div>
+            <Badge variant="common" size="sm">
+              {t.common.demoDataDisclaimer}
+            </Badge>
           </div>
-          <Badge variant="common" size="sm">
-            {t.common.demoDataDisclaimer}
-          </Badge>
-        </div>
 
-        {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop (6 personas = 2 tidy rows) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {personas.map((persona) => (
-            <PersonaCard
-              key={persona.id}
-              persona={persona}
-              actionLabel={t.landing.summonPersona}
-              onSelect={(user) => {
-                setUsername(user);
-                handleSummon(user);
-              }}
-            />
-          ))}
+          {/* Responsive Grid: 1 col on mobile, 2 on tablet, 3 on desktop (6 personas = 2 tidy rows) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {personas.map((persona) => (
+              <PersonaCard
+                key={persona.id}
+                persona={persona}
+                actionLabel={t.landing.summonPersona}
+                onSelect={(user) => {
+                  setUsername(user);
+                  handleSummon(user);
+                }}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

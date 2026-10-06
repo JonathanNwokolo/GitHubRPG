@@ -191,3 +191,16 @@ O engine V0 (XP linear, janela de 12 meses, masmorras, missões, buffs, duelo) f
 - Guilda, Masmorras, Buffs e Duelo saem da V1 (ADR 008 estendido).
 - `fetchDeveloperProfile`/`searchProfiles` e `NormalizedDeveloperProfile` deixam de existir; ver ENGINE_ARCHITECTURE.md e GAME_BALANCE.md.
 - ADRs 001–003 continuam válidos no princípio; os nomes de tipos/métodos citados neles são os do V0.
+
+---
+
+## ADR 011: GitHubApiDataSource real, apenas no servidor
+
+### Decisão
+A fonte real fica em `src/data/github/` e roda **somente no servidor**. O navegador chama `GET /api/characters/[username]` (Route Handler), que executa `loadCharacter` e devolve o `RPGCharacter` ou um erro tipado com HTTP apropriado (400/404/429/502/503/504/500). `createDataSource()` escolhe a fonte por `GITHUB_DATA_SOURCE=mock|github` (padrão `mock` em desenvolvimento; **obrigatório em produção**). O token vem de `GITHUB_TOKEN`, lido em um único arquivo, sem `NEXT_PUBLIC_`. REST para perfil/repositórios/linguagens, GraphQL (exige token) para contribuições por ano. Cache em memória (15 min), deduplicação de requisições simultâneas, timeout de 10 s, concorrência limitada e erros tipados (`GitHubRateLimitError`, `GitHubTimeoutError`, `GitHubUnavailableError`, `GitHubDataValidationError`).
+
+### Consequências
+- Sem fallback silencioso para mock: com `github` ativo, falhas viram erro real.
+- Sem token, as métricas de contribuição ficam `unavailable` (nada é inventado).
+- Escala limitada pelo custo de `/languages` por repositório e por um cache por instância; próximos passos (linguagens via GraphQL, cache compartilhado, GitHub App) em GITHUB_API_INTEGRATION.md.
+- O Game Engine V1.1 e o balanceamento não mudaram.

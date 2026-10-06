@@ -1,15 +1,15 @@
 # Documentação de Mocks (MOCKS.md)
 
-Tudo que o app mostra hoje vem de dados **simulados e determinísticos**. A UI exibe "Dados de demonstração" enquanto `createDataSource().kind === "mock"`.
+O `MockDataSource` continua existindo **apenas para demonstração e testes**: é a fonte padrão em desenvolvimento (`GITHUB_DATA_SOURCE` ausente ou `mock`) e a usada pelos testes unitários e e2e. Com `GITHUB_DATA_SOURCE=github` ele **não** é usado e **nunca** é um fallback: se o GitHub falhar, o erro real é exibido. A UI exibe "Dados de demonstração" somente enquanto a fonte configurada no servidor é `mock` (a API real está descrita em [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md)).
 
 ## Inventário
 
 | O quê | Onde | Substituído por |
 |---|---|---|
-| `MockDataSource` | `src/data/datasource/MockDataSource.ts` | `GitHubApiDataSource` (uma troca em `createDataSource()`) |
+| `MockDataSource` | `src/data/datasource/MockDataSource.ts` | `GitHubApiDataSource` (`src/data/github/`), escolhido por `GITHUB_DATA_SOURCE=github`; o mock segue disponível para demo/teste |
 | Personas fixas | `src/data/personas/index.ts` | fixtures de teste (continuam existindo) |
 | Gerador por hash do username | `src/data/seed/deterministicGenerator.ts` | descartado (ou fallback offline) |
-| Data de referência fixa `2026-10-01` | `MOCK_REFERENCE_DATE` | `fetchedAt` = momento real da consulta |
+| Data de referência fixa `2026-10-01` | `MOCK_REFERENCE_DATE` | na API real, `fetchedAt` = momento real da consulta |
 
 ## Determinismo
 
@@ -28,8 +28,8 @@ Sem `Math.random()` nem relógio. `username → FNV-1a → seed → Mulberry32`.
 
 Repositórios das personas incluem **forks com números altos** de propósito: eles não podem contar.
 
-## O que o mock fabrica (e a API real terá de fornecer)
+## O que o mock fabrica (e como a API real trata cada item)
 
-Série mensal de contribuições, dias ativos, maior sequência, sequência atual, dias ativos recentes, reviews, bytes por linguagem por repositório. Na API real, qualquer um desses que não puder ser obtido por completo deve ser marcado com `coverage: "partial"` ou `"unavailable"`, e a UI nunca afirma o que falta.
+Série mensal de contribuições, dias ativos, maior sequência, sequência atual, dias ativos recentes, reviews, bytes por linguagem por repositório. A API real (`GitHubApiDataSource`) marca como `partial` ou `unavailable` o que não consegue obter por completo, e a UI nunca afirma o que falta. Tabela de cobertura por métrica em [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md).
 
 Removido do escopo V1 (e dos mocks): guildas, ranking, masmorras, buffs, duelos.

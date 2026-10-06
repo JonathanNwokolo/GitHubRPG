@@ -43,6 +43,12 @@ export interface RawGitHubData {
 
   /** ALL public repositories (forks included, flagged). */
   repositories: { items: RawRepository[]; coverage: DataCoverage };
+  /**
+   * Coverage of `RawRepository.languages` alone. Optional: when absent it equals
+   * `repositories.coverage`. A real source sets it when it could list every repository
+   * (stars and forks are exact) but not fetch the languages of all of them.
+   */
+  languagesCoverage?: DataCoverage;
 
   activity: {
     /** Days with at least one contribution, whole history. */

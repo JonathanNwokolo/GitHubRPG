@@ -14,7 +14,9 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "balance:review": "vite-node --config vitest.config.ts scripts/generateBalanceReview.ts",
-    "balance:compare": "vite-node --config vitest.config.ts scripts/compareBalance.ts"
+    "balance:compare": "vite-node --config vitest.config.ts scripts/compareBalance.ts",
+    "github:smoke": "vite-node --config vitest.config.ts scripts/githubSmoke.ts",
+    "github:reviews": "vite-node --config vitest.config.ts scripts/githubReviews.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

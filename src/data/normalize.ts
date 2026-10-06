@@ -13,6 +13,12 @@ function derived(value: number, coverage: DataCoverage): Metric {
   return coverage === "unavailable" ? { value: 0, coverage } : { value, coverage };
 }
 
+/** The weakest of two coverages: unavailable < partial < full. */
+function weakest(a: DataCoverage, b: DataCoverage): DataCoverage {
+  if (a === "unavailable" || b === "unavailable") return "unavailable";
+  return a === "partial" || b === "partial" ? "partial" : "full";
+}
+
 function optionalText(value: string | null | undefined): string | undefined {
   const trimmed = value?.trim();
   return trimmed ? trimmed : undefined;
@@ -43,8 +49,11 @@ export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile 
     }
   }
 
+  // Languages can never be more complete than the repository list they come from.
+  const languagesCoverage = weakest(repoCoverage, raw.languagesCoverage ?? repoCoverage);
+
   const languages: LanguageUsage[] =
-    repoCoverage === "unavailable"
+    languagesCoverage === "unavailable"
       ? []
       : [...bytesByLanguage.entries()].map(([name, bytes]) => ({
           name,
@@ -75,7 +84,7 @@ export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile 
     forksReceived: derived(forks, repoCoverage),
     starredRepositories: derived(starred, repoCoverage),
     languages,
-    languagesCoverage: repoCoverage,
+    languagesCoverage,
 
     activity: {
       activeDays: toMetric(raw.activity.activeDays),

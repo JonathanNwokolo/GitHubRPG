@@ -36,6 +36,7 @@ export const RawGitHubDataSchema = z
     reviews: rawMetric,
     issues: rawMetric,
     repositories: z.object({ items: z.array(rawRepository), coverage }),
+    languagesCoverage: coverage.optional(),
     activity: z.object({
       activeDays: rawMetric,
       longestStreakDays: rawMetric,

@@ -7,7 +7,7 @@ Transforma a jornada **pública** de uma pessoa no GitHub em uma ficha de person
 ## Estado do projeto
 
 - **Frontend e Game Engine V1.1 prontos**, com testes unitários e e2e.
-- **Ainda não usa a API real do GitHub.** Hoje tudo vem de dados simulados e determinísticos (`MockDataSource`), e a interface avisa "Dados de demonstração". A integração (`GitHubApiDataSource`) é o próximo passo, e o desenho da camada de dados já foi pensado para que seja uma troca em um único lugar. Veja [ENGINE_ARCHITECTURE.md](ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
+- **Duas fontes de dados**, escolhidas no servidor por `GITHUB_DATA_SOURCE`: `mock` (padrão em desenvolvimento; perfis de demonstração determinísticos, a interface avisa "Dados de demonstração") e `github` (`GitHubApiDataSource`: perfis **públicos** reais via REST + GraphQL, com cache, timeout e tratamento de rate limit). Em produção a escolha é obrigatória. Veja [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md), [ENGINE_ARCHITECTURE.md](ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
 - Projeto **open source** sob licença MIT. Contribuições e ideias são bem-vindas (veja abaixo).
 
 ## Como rodar
@@ -19,7 +19,7 @@ npm install
 npm run dev        # http://localhost:3000
 ```
 
-Sem login e sem chave de API: digite um usuário na página inicial. Os perfis de demonstração fixos são `rookie-dev`, `veteran-dev`, `polyglot-dev`, `popular-dev` e `empty-dev`; `missing-dev` simula um perfil inexistente (404). Qualquer outro nome gera um personagem determinístico a partir do próprio nome.
+Sem login e sem chave de API (fonte `mock`): digite um usuário na página inicial. Os perfis de demonstração fixos são `rookie-dev`, `veteran-dev`, `polyglot-dev`, `popular-dev` e `empty-dev`; `missing-dev` simula um perfil inexistente (404). Qualquer outro nome gera um personagem determinístico a partir do próprio nome.
 
 ## Scripts
 
@@ -32,9 +32,40 @@ Sem login e sem chave de API: digite um usuário na página inicial. Os perfis d
 | `npm test` | Testes unitários e de integração (Vitest) |
 | `npm run test:e2e` | Testes e2e (Playwright). Rode `npm run build` antes: eles sobem o app com `next start` |
 | `npm run balance:review` | Regera [BALANCE_REVIEW.md](BALANCE_REVIEW.md) e `balance-snapshot.json` a partir do engine real |
+| `npm run github:smoke -- <usuario>` | Consulta a API real do GitHub e imprime um resumo seguro (opcional, fora da suíte de testes e do CI) |
 | `npm run balance:compare` | Compara `balance-snapshot-v1.json` com o snapshot atual em [BALANCE_V1_VS_V1_1.md](BALANCE_V1_VS_V1_1.md) |
 
 Na primeira vez que rodar os e2e, instale o navegador: `npx playwright install chromium`.
+
+### Usando perfis reais do GitHub
+
+```bash
+cp .env.example .env.local   # depois edite:
+# GITHUB_DATA_SOURCE=github
+# GITHUB_TOKEN=<fine-grained PAT, somente repositórios públicos, sem permissões extras>
+npm run dev
+```
+
+O token é opcional (sem ele só o REST anônimo funciona, 60 req/h, e as métricas de contribuição ficam indisponíveis) e **nunca** chega ao navegador: só o servidor fala com o GitHub. Verificação manual contra a API real: `npm run github:smoke -- torvalds`. Detalhes, limites e cobertura por métrica em [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md).
+
+## Deployment
+
+Plataforma recomendada: Vercel, com framework detectado como Next.js. O build de produção usa:
+
+```bash
+npm run build
+```
+
+Variáveis de produção:
+
+```bash
+GITHUB_DATA_SOURCE=github
+GITHUB_TOKEN=<fine-grained PAT server-only>
+```
+
+`GITHUB_TOKEN` não deve usar prefixo `NEXT_PUBLIC_`. Sem `GITHUB_DATA_SOURCE`, produção falha explicitamente; com `GITHUB_DATA_SOURCE=github` e sem token, o app usa REST anônimo, mantém o básico funcional e deixa métricas de contribuição indisponíveis, com risco maior de rate limit.
+
+Em serverless, o cache atual é em memória por instância: cold starts e múltiplas instâncias podem reduzir a taxa de cache hit. Para tráfego maior, considerar futuramente GitHub App e cache compartilhado; não há Redis, banco ou analytics nesta versão.
 
 ## Como funciona
 

@@ -2,14 +2,17 @@
 
 import React from "react";
 import Link from "next/link";
-import { createDataSource } from "@/data/datasource";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  /** True when the server is configured with the mock data source. Decided on the server. */
+  isDemo: boolean;
+}
+
+export const Footer: React.FC<FooterProps> = ({ isDemo }) => {
   const { language } = useUiStore();
   const t = getTranslation(language);
-  const isDemo = createDataSource().kind === "mock";
 
   return (
     <footer className="w-full bg-rpg-obsidian border-t-2 border-rpg-border mt-auto py-8">

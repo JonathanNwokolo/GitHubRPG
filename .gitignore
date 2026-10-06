@@ -36,6 +36,8 @@ next-env.d.ts
 /PLAN.md
 /FINAL_REPORT.md
 /GAME_ENGINE_REPORT.md
+/GITHUB_API_REPORT.md
+/PRODUCTION_READINESS.md
 
 # editor / assistant local state
 .claude/

@@ -1,0 +1,80 @@
+// @vitest-environment node
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { join, resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+
+/**
+ * Secrets never reach the browser. These checks make the boundary mechanical:
+ * the GitHub token is read in one server-only file, and nothing a browser bundle contains can import it.
+ */
+const ROOT = resolve(__dirname, "..", "..");
+const SRC = resolve(ROOT, "src");
+
+function files(dir: string, pattern = /\.(ts|tsx)$/): string[] {
+  return readdirSync(dir).flatMap((entry) => {
+    const full = join(dir, entry);
+    if (statSync(full).isDirectory()) return files(full, pattern);
+    return pattern.test(entry) && !/\.test\.tsx?$/.test(entry) ? [full] : [];
+  });
+}
+
+const source = files(SRC);
+const rel = (file: string) => file.replace(ROOT, "").replace(/\\/g, "/").replace(/^\//, "");
+const read = (file: string) => readFileSync(file, "utf8");
+const CONFIG = resolve(SRC, "data", "datasource", "config.ts");
+
+/** Client code = files with a "use client" directive, plus every UI folder (they are bundled for the browser). */
+const isClientFile = (file: string) =>
+  /^\s*(\/\*[\s\S]*?\*\/\s*)?["']use client["']/.test(read(file)) ||
+  ["features", "components", "design-system", "stores", "i18n"].some((dir) => file.startsWith(resolve(SRC, dir)));
+
+describe("GitHub token stays on the server", () => {
+  it("never uses a NEXT_PUBLIC_ variable for GitHub credentials (src, scripts, env example, next config)", () => {
+    const candidates = [...source, ...files(resolve(ROOT, "scripts")), resolve(ROOT, "next.config.mjs")];
+    const example = resolve(ROOT, ".env.example");
+    if (existsSync(example)) candidates.push(example);
+    const offenders = candidates.filter((file) => /NEXT_PUBLIC_[A-Z_]*GITHUB/i.test(read(file))).map(rel);
+    expect(offenders).toEqual([]);
+  });
+
+  it("GITHUB_TOKEN is mentioned only in the config module", () => {
+    const offenders = source.filter((file) => file !== CONFIG && /GITHUB_TOKEN/.test(read(file))).map(rel);
+    expect(offenders).toEqual([]);
+  });
+
+  it("process.env is read only in the config module", () => {
+    const offenders = source.filter((file) => file !== CONFIG && /process\.env/.test(read(file))).map(rel);
+    expect(offenders).toEqual([]);
+  });
+
+  it("the token is never logged or serialised into a response", () => {
+    const offenders = source.filter((file) => /(console\.\w+|JSON\.stringify|NextResponse\.json)\([^)]*[tT]oken/.test(read(file))).map(rel);
+    // httpClient legitimately stringifies the GraphQL body, which contains no token.
+    expect(offenders.filter((file) => !file.endsWith("httpClient.ts"))).toEqual([]);
+  });
+
+  const SERVER_ONLY_IMPORT =
+    /from\s+["'](@\/data\/(datasource|github|loadCharacter|api\/errorResponse)|\.\.?\/[^"']*\b(datasource|github)\b[^"']*)["']/;
+
+  it("no client code imports the server-side data layer", () => {
+    const offenders = source.filter(isClientFile).filter((file) => SERVER_ONLY_IMPORT.test(read(file))).map(rel);
+    expect(offenders).toEqual([]);
+  });
+
+  it("the character page and landing reach data only through the API client", () => {
+    const page = read(resolve(SRC, "app", "[username]", "CharacterPageClient.tsx"));
+    const landing = read(resolve(SRC, "features", "landing", "LandingHero.tsx"));
+    for (const code of [page, landing]) {
+      expect(code).toMatch(/@\/data\/api\/fetchCharacter/);
+      expect(code).not.toMatch(/@\/data\/(datasource|loadCharacter|github)/);
+    }
+  });
+
+  it("the API route is the only app code that builds the data source", () => {
+    const users = source
+      .filter((file) => /createDataSource\s*\(/.test(read(file)))
+      .map(rel)
+      .filter((file) => !file.startsWith("src/data/"));
+    expect(users).toEqual(["src/app/api/characters/[username]/route.ts"]);
+  });
+});

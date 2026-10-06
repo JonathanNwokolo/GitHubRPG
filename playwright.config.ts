@@ -21,6 +21,8 @@ export default defineConfig({
     command: "npx next start -p 3005",
     url: "http://localhost:3005",
     reuseExistingServer: false,
+    // Production builds require an explicit data source; e2e always runs on the mock.
+    env: { GITHUB_DATA_SOURCE: "mock" },
     timeout: 60000,
   },
 });

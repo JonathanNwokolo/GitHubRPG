@@ -50,10 +50,24 @@ describe("Game Engine purity", () => {
   });
 });
 
+const NONDETERMINISM = /Math\.random\s*\(|Date\.now\s*\(|new Date\s*\(\s*\)/;
+
 describe("Mocks stay deterministic", () => {
-  it("no data-layer file uses Math.random or the wall clock", () => {
+  it("no mock/seed/normalization file uses Math.random or the wall clock", () => {
+    const github = resolve(SRC, "data", "github");
     const offenders = sourceFiles(resolve(SRC, "data"))
-      .filter((file) => /Math\.random\s*\(|Date\.now\s*\(|new Date\s*\(\s*\)/.test(readFileSync(file, "utf8")))
+      .filter((file) => !file.startsWith(github))
+      .filter((file) => NONDETERMINISM.test(readFileSync(file, "utf8")))
+      .map(rel);
+    expect(offenders).toEqual([]);
+  });
+});
+
+describe("The GitHub data source is testable", () => {
+  it("never uses Math.random and reads the wall clock only in github/clock.ts (everything else gets `now` injected)", () => {
+    const offenders = sourceFiles(resolve(SRC, "data", "github"))
+      .filter((file) => !file.endsWith("clock.ts"))
+      .filter((file) => NONDETERMINISM.test(readFileSync(file, "utf8")))
       .map(rel);
     expect(offenders).toEqual([]);
   });
