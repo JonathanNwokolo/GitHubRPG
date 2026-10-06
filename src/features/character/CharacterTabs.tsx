@@ -9,11 +9,12 @@ import {
   RpgSparkles,
   RpgCrown,
   RpgTrophy,
+  RpgTome,
 } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
-export type CharacterActiveTab = "overview" | "skills" | "achievements" | "titles";
+export type CharacterActiveTab = "overview" | "skills" | "achievements" | "titles" | "chronicle";
 
 interface CharacterTabsProps {
   activeTab: CharacterActiveTab;
@@ -73,6 +74,15 @@ export const CharacterTabs: React.FC<CharacterTabsProps> = ({
         </RpgIconFrame>
       ),
       badge: `${unlockedTitlesCount}/${totalTitlesCount}`,
+    },
+    {
+      id: "chronicle",
+      label: t.nav.chronicle,
+      icon: (
+        <RpgIconFrame size="xs" shape="slate" rarity="azure">
+          <RpgTome className="w-3.5 h-3.5" />
+        </RpgIconFrame>
+      ),
     },
   ];
 

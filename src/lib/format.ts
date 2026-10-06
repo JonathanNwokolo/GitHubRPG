@@ -31,3 +31,26 @@ export function formatCoveredValue(value: number, coverage: DataCoverage, langua
   const text = formatNumber(value, language);
   return coverage === "partial" ? `≥ ${text}` : text;
 }
+
+export interface PluralForms {
+  one: string;
+  other: string;
+}
+
+/**
+ * "1 contribuição" / "2 contribuições" / "0 contribuições". Exactly 1 is singular in both languages
+ * (Intl's pt-BR rule would also make 0 singular, which reads wrong in a counter).
+ */
+export function pluralize(count: number, forms: PluralForms): string {
+  return count === 1 ? forms.one : forms.other;
+}
+
+/** "1.204 contribuições", or "≥ 1.204 contribuições" when the figure is a lower bound. */
+export function formatCount(
+  count: number,
+  forms: PluralForms,
+  language: SupportedLanguage,
+  coverage: "full" | "partial" = "full"
+): string {
+  return `${formatCoveredValue(count, coverage, language)} ${pluralize(count, forms)}`;
+}

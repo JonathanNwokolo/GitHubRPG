@@ -103,3 +103,59 @@ export function summarizeActivity(
     monthlyContributions: monthly,
   };
 }
+
+/** "YYYY-MM-DD" of a day number (inverse of toDayNumber). */
+function fromDayNumber(day: number): string {
+  return new Date(day * DAY_MS).toISOString().slice(0, 10);
+}
+
+export interface StreakPeriod {
+  /** "YYYY-MM-DD", inclusive. */
+  start: string;
+  end: string;
+  length: number;
+}
+
+/**
+ * Where the longest run of consecutive active days happened. Same run `computeLongestStreak` measures:
+ * on a tie the EARLIEST run wins. Days after `referenceDate` are ignored. null when there is no active day.
+ */
+export function findLongestStreakPeriod(days: readonly ContributionDay[], referenceDate: string): StreakPeriod | null {
+  const referenceDay = toDayNumber(referenceDate);
+  const active = activeDayNumbers(days.filter((day) => toDayNumber(day.date) <= referenceDay));
+
+  let best: { startDay: number; endDay: number; length: number } | null = null;
+  let runStart = 0;
+  let run = 0;
+  let previous: number | null = null;
+  for (const day of active) {
+    if (previous !== null && day === previous + 1) {
+      run++;
+    } else {
+      run = 1;
+      runStart = day;
+    }
+    if (best === null || run > best.length) best = { startDay: runStart, endDay: day, length: run };
+    previous = day;
+  }
+  return best && { start: fromDayNumber(best.startDay), end: fromDayNumber(best.endDay), length: best.length };
+}
+
+export interface YearSummary {
+  contributions: number;
+  activeDays: number;
+}
+
+/** Totals of ONE year's calendar. Days after `referenceDate` (the padded current week) are ignored. */
+export function summarizeYearDays(days: readonly ContributionDay[], referenceDate: string): YearSummary {
+  const referenceDay = toDayNumber(referenceDate);
+  let contributions = 0;
+  const active = new Set<number>();
+  for (const day of days) {
+    const dayNumber = toDayNumber(day.date);
+    if (dayNumber > referenceDay) continue;
+    contributions += day.count;
+    if (day.count > 0) active.add(dayNumber);
+  }
+  return { contributions, activeDays: active.size };
+}

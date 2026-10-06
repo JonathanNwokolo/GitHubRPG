@@ -5,7 +5,9 @@ import { RECENT_WINDOW_DAYS } from "./limits";
 import {
   computeCurrentStreak,
   computeLongestStreak,
+  findLongestStreakPeriod,
   summarizeActivity,
+  summarizeYearDays,
   toDayNumber,
   type ContributionDay,
 } from "./contributionStats";
@@ -115,5 +117,65 @@ describe("summarizeActivity", () => {
 
   it("rejects malformed dates instead of guessing", () => {
     expect(() => summarizeActivity([day("20240101")], options)).toThrow();
+  });
+});
+
+describe("findLongestStreakPeriod", () => {
+  const REF = "2026-10-05T00:00:00Z";
+
+  it("is null with no active day", () => {
+    expect(findLongestStreakPeriod([], REF)).toBeNull();
+    expect(findLongestStreakPeriod([day("2024-05-01", 0)], REF)).toBeNull();
+  });
+
+  it("returns where the longest run started and ended", () => {
+    const days = ["2024-01-01", "2024-01-02", "2024-02-10", "2024-02-11", "2024-02-12", "2024-03-01"].map((d) => day(d));
+    expect(findLongestStreakPeriod(days, REF)).toEqual({ start: "2024-02-10", end: "2024-02-12", length: 3 });
+  });
+
+  it("crosses the new year and leap days", () => {
+    const days = ["2023-12-30", "2023-12-31", "2024-01-01"].map((d) => day(d));
+    expect(findLongestStreakPeriod(days, REF)).toEqual({ start: "2023-12-30", end: "2024-01-01", length: 3 });
+    const leap = ["2024-02-28", "2024-02-29", "2024-03-01"].map((d) => day(d));
+    expect(findLongestStreakPeriod(leap, REF)?.length).toBe(3);
+  });
+
+  it("on a tie keeps the EARLIEST run, like computeLongestStreak measures", () => {
+    const days = ["2025-09-01", "2025-09-02", "2026-10-04", "2026-10-05"].map((d) => day(d));
+    expect(findLongestStreakPeriod(days, REF)).toEqual({ start: "2025-09-01", end: "2025-09-02", length: 2 });
+  });
+
+  it("ignores days after the reference date and duplicated dates", () => {
+    const days = [day("2026-10-05"), day("2026-10-05", 4), day("2026-10-06"), day("2026-10-07")];
+    expect(findLongestStreakPeriod(days, REF)).toEqual({ start: "2026-10-05", end: "2026-10-05", length: 1 });
+  });
+
+  it("always agrees with computeLongestStreak on the length", () => {
+    const dates = ["2024-01-01", "2024-01-02", "2024-02-10", "2024-02-11", "2024-02-12", "2024-02-14", "2024-02-15"];
+    const days = dates.map((d) => day(d));
+    expect(findLongestStreakPeriod(days, REF)?.length).toBe(computeLongestStreak(nums(...dates)));
+  });
+});
+
+describe("summarizeYearDays", () => {
+  it("sums one year's calendar and counts its active days", () => {
+    expect(summarizeYearDays([day("2024-01-01", 3), day("2024-01-02", 0), day("2024-05-05", 2)], "2024-12-31T00:00:00Z")).toEqual({
+      contributions: 5,
+      activeDays: 2,
+    });
+  });
+
+  it("ignores the padded days after the reference date (current year)", () => {
+    expect(summarizeYearDays([day("2026-10-04", 5), day("2026-10-05", 1), day("2026-10-06", 9)], "2026-10-05T12:00:00Z")).toEqual({
+      contributions: 6,
+      activeDays: 2,
+    });
+  });
+
+  it("counts a duplicated date once as an active day but sums its contributions", () => {
+    expect(summarizeYearDays([day("2024-05-05", 2), day("2024-05-05", 3)], "2024-12-31T00:00:00Z")).toEqual({
+      contributions: 5,
+      activeDays: 1,
+    });
   });
 });

@@ -12,6 +12,18 @@ const rawMetric = z
     message: "value is required unless coverage is 'unavailable'",
   });
 
+const calendarDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
+
+const rawYearActivity = z.object({
+  year: z.number().int().min(2000).max(2100),
+  contributions: count,
+  commits: count,
+  pullRequests: count,
+  reviews: count,
+  issues: count,
+  activeDays: count,
+});
+
 const rawRepository = z.object({
   name: z.string().min(1),
   isFork: z.boolean(),
@@ -44,6 +56,8 @@ export const RawGitHubDataSchema = z
       currentStreakDays: rawMetric,
       recentActiveDays: rawMetric,
       monthlyContributions: z.object({ months: z.array(count), coverage }),
+      yearly: z.object({ years: z.array(rawYearActivity), coverage }).optional(),
+      longestStreakPeriod: z.object({ start: calendarDate, end: calendarDate }).nullish(),
     }),
   })
   .refine((d) => Date.parse(d.createdAt) <= Date.parse(d.fetchedAt), {

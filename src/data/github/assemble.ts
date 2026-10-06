@@ -1,7 +1,7 @@
-import type { RawGitHubData, RawMetric } from "../contracts";
+import type { RawGitHubData, RawMetric, RawYearActivity } from "../contracts";
 import type { RestUser } from "./apiSchemas";
 import type { ContributionHistory } from "./contributions";
-import { summarizeActivity, type ContributionDay } from "./contributionStats";
+import { findLongestStreakPeriod, summarizeActivity, summarizeYearDays, type ContributionDay } from "./contributionStats";
 import { RECENT_WINDOW_DAYS } from "./limits";
 import { assessReviews } from "./reviewCoverage";
 import type { RepositoryData } from "./restFetchers";
@@ -62,6 +62,8 @@ export function assembleRawProfile(input: {
         currentStreakDays: UNAVAILABLE,
         recentActiveDays: UNAVAILABLE,
         monthlyContributions: { months: [], coverage: "unavailable" },
+        yearly: { years: [], coverage: "unavailable" },
+        longestStreakPeriod: null,
       },
     };
   }
@@ -72,6 +74,17 @@ export function assembleRawProfile(input: {
   const days: ContributionDay[] = history.years.flatMap((year) => year.days);
   const summary = summarizeActivity(days, { createdAt, referenceDate: fetchedAt, recentWindowDays: RECENT_WINDOW_DAYS });
   const complete = history.complete;
+
+  // The same per-year numbers the lifetime totals are summed from, kept instead of thrown away (no extra request).
+  const yearly: RawYearActivity[] = history.years.map((year) => ({
+    year: year.year,
+    ...summarizeYearDays(year.days, fetchedAt),
+    commits: year.commits,
+    pullRequests: year.pullRequests,
+    reviews: year.reviews,
+    issues: year.issues,
+  }));
+  const streak = findLongestStreakPeriod(days, fetchedAt);
 
   return {
     ...base,
@@ -85,6 +98,8 @@ export function assembleRawProfile(input: {
       currentStreakDays: metric(summary.currentStreakDays, complete),
       recentActiveDays: metric(summary.recentActiveDays, true),
       monthlyContributions: { months: summary.monthlyContributions, coverage: complete ? "full" : "partial" },
+      yearly: { years: yearly, coverage: complete ? "full" : "partial" },
+      longestStreakPeriod: streak && { start: streak.start, end: streak.end },
     },
   };
 }

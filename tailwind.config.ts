@@ -61,10 +61,15 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
         },
+        "fade-rise": {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         glow: "glow 2.5s ease-in-out infinite",
         float: "float 3s ease-in-out infinite",
+        "fade-rise": "fade-rise 0.5s ease-out both",
       },
     },
   },

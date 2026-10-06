@@ -159,7 +159,17 @@ test.describe("GitHub RPG E2E Flows", () => {
     const dialog = page.getByRole("dialog");
     await expect(dialog).toBeVisible();
     await expect(dialog.locator("canvas")).toBeVisible();
+    await expect(page.getByText(/1200 x 630/i)).toBeVisible();
     await expect(page.getByRole("button", { name: /Baixar como PNG/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Copiar Link/i })).toBeVisible();
+  });
+
+  test("Flow 10b: Card image API endpoint returns 200 with PNG image", async ({ request }) => {
+    const response = await request.get("/api/card/veteran-dev");
+    expect(response.status()).toBe(200);
+    expect(response.headers()["content-type"]).toBe("image/png");
+    const body = await response.body();
+    expect(body.byteLength).toBeGreaterThan(1000);
   });
 
   // Flow 11: Progressão visível — tenho / meta / falta
@@ -198,7 +208,7 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     await page.goto("/veteran-dev");
     await expect(page.locator("h1")).toBeVisible();
-    for (const tab of [/Ficha/i, /Habilidades/i, /Conquistas/i, /Títulos/i]) {
+    for (const tab of [/Ficha/i, /Habilidades/i, /Conquistas/i, /Títulos/i, /Crônica/i]) {
       await page.getByRole("tab", { name: tab }).click();
       await expect(page.locator("body")).not.toContainText(dropped);
     }
@@ -211,5 +221,43 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(
       page.getByText(/gamificação da atividade pública disponível e não uma avaliação de habilidade profissional/i).first()
     ).toBeVisible();
+  });
+
+  // Flow 15: Crônica — a jornada contada só com dados reais
+  test("Flow 15: Chronicle tab tells the journey from the creation date to the current chapter, in both languages", async ({ page }) => {
+    await page.goto("/veteran-dev");
+    await page.getByRole("tab", { name: /Crônica/i }).click();
+
+    await expect(page.getByRole("heading", { level: 2, name: "Crônica do Desenvolvedor" })).toBeVisible();
+    const chapters = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
+    await expect(chapters.first()).toHaveText("O Início da Jornada");
+    await expect(chapters.last()).toHaveText("Capítulo Atual");
+    await expect(page.getByText("Tempo de jornada")).toBeVisible();
+    await expect(page.locator("body")).not.toContainText(/Missão|Missões|Masmorra|Duelo|Ranking|undefined/i);
+
+    await page.getByRole("button", { name: /Switch to English/i }).click();
+    await expect(page.getByRole("heading", { level: 2, name: "Developer Chronicle" })).toBeVisible();
+    const englishChapters = page.getByRole("list", { name: "Journey timeline" }).getByRole("heading", { level: 3 });
+    await expect(englishChapters.first()).toHaveText("The Journey Begins");
+    await expect(englishChapters.last()).toHaveText("Current Chapter");
+  });
+
+  test("Flow 15b: Chronicle of a brand-new profile is a single honest chapter", async ({ page }) => {
+    await page.goto("/empty-dev");
+    await page.getByRole("tab", { name: /Crônica/i }).click();
+
+    const chapters = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
+    await expect(chapters.first()).toHaveText("O Início da Jornada");
+    await expect(page.getByText("Ano mais ativo")).toHaveCount(0);
+  });
+
+  test("Flow 15c: Chronicle fits a phone screen without horizontal scroll", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/veteran-dev");
+    await page.getByRole("tab", { name: /Crônica/i }).click();
+    await expect(page.getByRole("heading", { level: 2, name: "Crônica do Desenvolvedor" })).toBeVisible();
+
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(overflow).toBeLessThanOrEqual(0);
   });
 });

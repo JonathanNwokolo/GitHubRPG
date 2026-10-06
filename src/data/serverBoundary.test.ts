@@ -74,6 +74,10 @@ describe("GitHub token stays on the server", () => {
       .filter((file) => /createDataSource\s*\(/.test(read(file)))
       .map(rel)
       .filter((file) => !file.startsWith("src/data/"));
-    expect(users.sort()).toEqual(["src/app/[username]/page.tsx", "src/app/api/characters/[username]/route.ts"].sort());
+    expect(users.sort()).toEqual([
+      "src/app/[username]/page.tsx",
+      "src/app/api/card/[username]/route.tsx",
+      "src/app/api/characters/[username]/route.ts",
+    ].sort());
   });
 });

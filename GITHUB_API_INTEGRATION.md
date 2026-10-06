@@ -329,6 +329,10 @@ O caminho REST antigo pulava `/languages` para repositórios com `size == 0`, su
 - Datas do calendário são tratadas como dias UTC; pode haver ±1 dia na borda por fuso. Contribuições anteriores ao mês de criação da conta são ignoradas na série mensal.
 - A conta consultada com o token da mesma pessoa pode incluir contribuições privadas nos totais; use token somente-público.
 
+## Histórico anual (Crônica do Desenvolvedor)
+
+As requests de contribuições já retornam, por ano civil, commits, PRs, reviews, issues e o calendário diário. Antes só os totais eram guardados; agora `assembleRawProfile` também mantém `activity.yearly` (por ano: contribuições, commits, PRs, reviews, issues, dias ativos) e `activity.longestStreakPeriod` (início/fim da maior sequência). **Nenhuma request adicional** (testado: mesmas contagens). Sem token: `yearly = { years: [], coverage: "unavailable" }`. Consumido apenas pela Crônica; ver `CHRONICLE.md`.
+
 ## Próximos passos (para produção pública)
 
 1. ~~Linguagens via GraphQL~~ **feito** (veja "Language collection optimization").

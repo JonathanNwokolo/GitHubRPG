@@ -19,6 +19,22 @@ export interface RawRepository {
 }
 
 /**
+ * One calendar year of the contribution history, as GitHub reports it (read from the same
+ * `contributionsCollection` requests that already feed the lifetime totals: no extra request).
+ */
+export interface RawYearActivity {
+  year: number;
+  /** Every contribution in that year's calendar (up to the fetch date for the current year). */
+  contributions: number;
+  commits: number;
+  pullRequests: number;
+  reviews: number;
+  issues: number;
+  /** Days of that year with at least one contribution. */
+  activeDays: number;
+}
+
+/**
  * What a GitHubDataSource returns. Deliberately close to what the real GitHub
  * REST/GraphQL APIs can provide, so GitHubApiDataSource is a mapping exercise only.
  */
@@ -61,6 +77,13 @@ export interface RawGitHubData {
     recentActiveDays: RawMetric;
     /** Contributions per month, chronological, creation month .. fetchedAt month (inclusive). */
     monthlyContributions: { months: number[]; coverage: DataCoverage };
+    /**
+     * Per-year breakdown, ascending. Optional: mock sources have only the monthly series.
+     * `partial` = some calendar year of the account could not be read (those years are absent, never zero).
+     */
+    yearly?: { years: RawYearActivity[]; coverage: DataCoverage };
+    /** First-found longest run of active days ("YYYY-MM-DD", inclusive). null/absent when unknown or none. */
+    longestStreakPeriod?: { start: string; end: string } | null;
   };
 }
 

@@ -73,6 +73,7 @@ export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile 
         }));
 
   const monthly = raw.activity.monthlyContributions;
+  const yearly = raw.activity.yearly;
 
   return {
     username: raw.username.trim(),
@@ -105,6 +106,15 @@ export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile 
       recentActiveDays: toMetric(raw.activity.recentActiveDays),
       monthlyContributions: monthly.coverage === "unavailable" ? [] : [...monthly.months],
       monthlyCoverage: monthly.coverage,
+      ...(yearly && {
+        yearly: {
+          years: yearly.coverage === "unavailable" ? [] : yearly.years.map((year) => ({ ...year })),
+          coverage: yearly.coverage,
+        },
+      }),
+      ...(raw.activity.longestStreakPeriod !== undefined && {
+        longestStreakPeriod: raw.activity.longestStreakPeriod && { ...raw.activity.longestStreakPeriod },
+      }),
     },
   };
 }

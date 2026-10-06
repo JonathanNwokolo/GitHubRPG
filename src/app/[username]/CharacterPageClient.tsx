@@ -9,6 +9,8 @@ import { SkillsTree } from "@/features/skills/SkillsTree";
 import { AchievementsGrid } from "@/features/achievements/AchievementsGrid";
 import { TitlesPanel } from "@/features/titles/TitlesPanel";
 import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
+import { ChroniclePanel } from "@/features/chronicle/ChroniclePanel";
+import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { NextMilestones } from "@/features/progress/NextMilestones";
 import { ShareCardModal } from "@/features/share/ShareCardModal";
 import { PixelArrowLeft } from "@/design-system";
@@ -18,10 +20,11 @@ import { getTranslation } from "@/i18n";
 
 interface CharacterPageProps {
   character: RPGCharacter;
+  chronicle: DeveloperChronicle;
   username: string;
 }
 
-export default function CharacterPage({ character, username }: CharacterPageProps) {
+export default function CharacterPage({ character, chronicle, username }: CharacterPageProps) {
   const { language } = useUiStore();
   const t = getTranslation(language);
 
@@ -94,6 +97,12 @@ export default function CharacterPage({ character, username }: CharacterPageProp
               onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
               onUseDefault={() => clearEquippedTitle(character.identity.username)}
             />
+          </div>
+        )}
+
+        {activeTab === "chronicle" && (
+          <div className="animate-fade-in">
+            <ChroniclePanel chronicle={chronicle} />
           </div>
         )}
       </div>

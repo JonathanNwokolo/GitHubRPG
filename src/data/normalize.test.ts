@@ -128,6 +128,55 @@ describe("normalizeDeveloperProfile", () => {
   });
 });
 
+describe("yearly history", () => {
+  const year = { year: 2025, contributions: 9, commits: 5, pullRequests: 1, reviews: 2, issues: 1, activeDays: 4 };
+
+  it("is copied into the profile without sharing state, with the streak period", () => {
+    const raw = makeRawData({
+      activity: {
+        ...makeRawData().activity,
+        yearly: { years: [year], coverage: "full" },
+        longestStreakPeriod: { start: "2025-03-01", end: "2025-03-09" },
+      },
+    });
+    const profile = normalizeDeveloperProfile(raw);
+    expect(profile.activity.yearly).toEqual({ years: [year], coverage: "full" });
+    expect(profile.activity.longestStreakPeriod).toEqual({ start: "2025-03-01", end: "2025-03-09" });
+    expect(profile.activity.yearly?.years[0]).not.toBe(raw.activity.yearly?.years[0]);
+  });
+
+  it("stays absent for sources that only have the monthly series", () => {
+    const profile = normalizeDeveloperProfile(makeRawData());
+    expect(profile.activity.yearly).toBeUndefined();
+    expect(profile.activity.longestStreakPeriod).toBeUndefined();
+  });
+
+  it("is empty when unavailable, whatever the raw years say", () => {
+    const profile = normalizeDeveloperProfile(
+      makeRawData({ activity: { ...makeRawData().activity, yearly: { years: [year], coverage: "unavailable" } } })
+    );
+    expect(profile.activity.yearly).toEqual({ years: [], coverage: "unavailable" });
+  });
+
+  it("passes validation without being stripped, and rejects malformed values", () => {
+    const raw = makeRawData({
+      activity: {
+        ...makeRawData().activity,
+        yearly: { years: [year], coverage: "partial" },
+        longestStreakPeriod: { start: "2025-03-01", end: "2025-03-09" },
+      },
+    });
+    const valid = validateRawGitHubData(raw);
+    expect(valid.activity.yearly).toEqual({ years: [year], coverage: "partial" });
+    expect(valid.activity.longestStreakPeriod).toEqual({ start: "2025-03-01", end: "2025-03-09" });
+
+    const bad = (patch: object) => makeRawData({ activity: { ...makeRawData().activity, ...patch } });
+    expect(() => validateRawGitHubData(bad({ yearly: { years: [{ ...year, commits: -1 }], coverage: "full" } }))).toThrow();
+    expect(() => validateRawGitHubData(bad({ yearly: { years: [{ ...year, year: 1850 }], coverage: "full" } }))).toThrow();
+    expect(() => validateRawGitHubData(bad({ longestStreakPeriod: { start: "yesterday", end: "2025-03-09" } }))).toThrow();
+  });
+});
+
 describe("raw data validation", () => {
   it("accepts well-formed data, including unavailable metrics with null", () => {
     expect(() => validateRawGitHubData(makeRawData({ reviews: rawMetric(null, "unavailable") }))).not.toThrow();

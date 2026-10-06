@@ -401,3 +401,79 @@ describe("cache and deduplication", () => {
     expect(onReport.mock.calls[0][0]).toMatchObject({ username: "octo-dev", cache: "miss", ok: true });
   });
 });
+
+describe("yearly history (kept from the requests that already feed the totals)", () => {
+  it("keeps commits, PRs, reviews, issues, contributions and active days per calendar year", async () => {
+    const { source } = setup(SMALL);
+    const raw = await source.getProfile("octo-dev");
+
+    expect(raw.activity.yearly).toEqual({
+      coverage: "full",
+      years: [
+        { year: 2025, contributions: 6, commits: 4, pullRequests: 1, reviews: 3, issues: 2, activeDays: 3 },
+        { year: 2026, contributions: 6, commits: 5, pullRequests: 1, reviews: 0, issues: 0, activeDays: 2 },
+      ],
+    });
+  });
+
+  it("adds no request: the same calls as before feed the totals and the yearly breakdown", async () => {
+    const { source, github } = setup(SMALL);
+    await source.getProfile("octo-dev");
+    expect(github.count("rest")).toBe(1 + 1 + 3);
+    expect(github.count("graphql")).toBe(1);
+  });
+
+  it("agrees exactly with the lifetime totals and the monthly series", async () => {
+    const { source } = setup(SMALL);
+    const raw = await source.getProfile("octo-dev");
+    const years = raw.activity.yearly?.years ?? [];
+
+    expect(years.reduce((sum, y) => sum + y.commits, 0)).toBe(raw.commits.value);
+    expect(years.reduce((sum, y) => sum + y.pullRequests, 0)).toBe(raw.pullRequests.value);
+    expect(years.reduce((sum, y) => sum + y.reviews, 0)).toBe(raw.reviews.value);
+    expect(years.reduce((sum, y) => sum + y.issues, 0)).toBe(raw.issues.value);
+    expect(years.reduce((sum, y) => sum + y.activeDays, 0)).toBe(raw.activity.activeDays.value);
+    expect(years.reduce((sum, y) => sum + y.contributions, 0)).toBe(
+      raw.activity.monthlyContributions.months.reduce((sum, n) => sum + n, 0)
+    );
+  });
+
+  it("records an empty year as a real zero, never as a gap", async () => {
+    const { source } = setup({
+      createdAt: "2023-01-01T00:00:00Z",
+      years: { 2023: { commits: 5 }, 2026: { commits: 8 } },
+      days: { "2023-02-01": 5, "2026-03-01": 8 },
+    });
+    const raw = await source.getProfile("octo-dev");
+    expect(raw.activity.yearly?.years.map((y) => [y.year, y.contributions, y.commits])).toEqual([
+      [2023, 5, 5],
+      [2024, 0, 0],
+      [2025, 0, 0],
+      [2026, 8, 8],
+    ]);
+  });
+
+  it("keeps where the longest streak happened (earliest run on a tie), consistent with its length", async () => {
+    const { source } = setup(SMALL);
+    const raw = await source.getProfile("octo-dev");
+    expect(raw.activity.longestStreakPeriod).toEqual({ start: "2025-09-01", end: "2025-09-02" });
+    expect(raw.activity.longestStreakDays.value).toBe(2);
+  });
+
+  it("survives validation and normalization into the profile", async () => {
+    const { source } = setup(SMALL);
+    const profile = normalizeDeveloperProfile(validateRawGitHubData(await source.getProfile("octo-dev")));
+    expect(profile.activity.yearly?.coverage).toBe("full");
+    expect(profile.activity.yearly?.years).toHaveLength(2);
+    expect(profile.activity.longestStreakPeriod).toEqual({ start: "2025-09-01", end: "2025-09-02" });
+  });
+
+  it("without a token the yearly history is unavailable (no years, no period), never zeros", async () => {
+    const { source } = setup(SMALL, { token: undefined });
+    const raw = await source.getProfile("octo-dev");
+    expect(raw.activity.yearly).toEqual({ years: [], coverage: "unavailable" });
+    expect(raw.activity.longestStreakPeriod).toBeNull();
+    const profile = normalizeDeveloperProfile(validateRawGitHubData(raw));
+    expect(profile.activity.yearly).toEqual({ years: [], coverage: "unavailable" });
+  });
+});

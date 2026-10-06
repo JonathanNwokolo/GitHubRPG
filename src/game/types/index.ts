@@ -29,6 +29,21 @@ export interface LanguageUsage {
   repoCount: number;
 }
 
+/**
+ * One calendar year of the contribution history. Presentation only: never read by the engine rules.
+ * Counters are exact for the year they describe; a year that could not be read is simply absent.
+ */
+export interface YearActivity {
+  year: number;
+  /** Every contribution in the year's calendar (up to the reference date for the current year). */
+  contributions: number;
+  commits: number;
+  pullRequests: number;
+  reviews: number;
+  issues: number;
+  activeDays: number;
+}
+
 export interface DeveloperProfile {
   username: string;
   displayName?: string;
@@ -69,6 +84,10 @@ export interface DeveloperProfile {
     /** Contributions per month, chronological, from the creation month to the reference month. */
     monthlyContributions: number[];
     monthlyCoverage: DataCoverage;
+    /** Per-year breakdown, ascending. Absent when the source only has the monthly series. Presentation only. */
+    yearly?: { years: YearActivity[]; coverage: DataCoverage };
+    /** Where the longest streak happened ("YYYY-MM-DD", inclusive). Presentation only. */
+    longestStreakPeriod?: { start: string; end: string } | null;
   };
 }
 

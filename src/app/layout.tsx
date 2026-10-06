@@ -22,6 +22,7 @@ const sansFont = Inter({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://githubrpg.com"),
   title: "GitHub RPG - Ficha Épica de Desenvolvedor",
   description: "Transforme dados públicos de atividade do GitHub em uma ficha de personagem de fantasia sombria.",
   icons: {
