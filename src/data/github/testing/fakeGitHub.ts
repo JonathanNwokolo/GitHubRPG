@@ -70,7 +70,7 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
   const calls: FakeCall[] = [];
   const state = { inFlight: 0, maxInFlight: 0 };
   /** Optional per-request hook: return a Response to override the answer. */
-  const overrides: Array<(call: FakeCall) => Response | Promise<Response> | undefined> = [];
+  const overrides: Array<(call: FakeCall) => Response | Promise<Response | undefined> | undefined> = [];
 
   const login = options.login ?? "octo-dev";
   const repos = options.repos ?? [];

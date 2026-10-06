@@ -6,11 +6,16 @@ import { getTranslation } from "@/i18n";
 import { describeYear } from "./chronicleText";
 import { CHAPTER_ICON, FRAME_RARITY } from "./chronicleIcons";
 import { selectPreviewYears } from "./chroniclePreview";
+import { ShareChapterButton, type ChapterShareRequest } from "./ShareChapterButton";
+import { isShareableChapter } from "./shareableChapters";
 import { staggerStyle, TimelineRail } from "./TimelineRail";
 import type { DeveloperChronicle } from "./types";
 
 /** The start, at most one relevant chapter in between, and the current chapter: year, title and sentence only. */
-export const ChronicleTimelinePreview: React.FC<{ chronicle: DeveloperChronicle }> = ({ chronicle }) => {
+export const ChronicleTimelinePreview: React.FC<{
+  chronicle: DeveloperChronicle;
+  onShareChapter?: (chapter: ChapterShareRequest) => void;
+}> = ({ chronicle, onShareChapter }) => {
   const { language } = useUiStore();
   const t = getTranslation(language).chronicle;
 
@@ -52,6 +57,13 @@ export const ChronicleTimelinePreview: React.FC<{ chronicle: DeveloperChronicle 
               </div>
               {view.description && (
                 <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed">{view.description}</p>
+              )}
+              {onShareChapter && isShareableChapter(entry) && (
+                <ShareChapterButton
+                  year={view.year}
+                  title={view.title}
+                  onShare={() => onShareChapter({ year: view.year, title: view.title })}
+                />
               )}
             </div>
           </li>

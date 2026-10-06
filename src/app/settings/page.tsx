@@ -52,7 +52,7 @@ export default function SettingsPage() {
         <div className="flex items-center gap-2 mb-2">
           <Badge variant="gold">
             <PixelSettings className="w-3.5 h-3.5 mr-1" />
-            Preferências do Sistema
+            {t.settings.badge}
           </Badge>
         </div>
         <h1 className="font-pixel text-xl sm:text-2xl text-rpg-gold tracking-wide">
@@ -73,7 +73,7 @@ export default function SettingsPage() {
                 {t.settings.language}
               </h2>
               <p className="font-sans text-sm text-slate-300 leading-relaxed">
-                Selecione o idioma de exibição para todas as legendas, conquistas e atributos.
+                {t.settings.languageHint}
               </p>
             </div>
           </div>
@@ -142,10 +142,16 @@ export default function SettingsPage() {
                 {t.settings.motionReduction}
               </h2>
               <p className="font-sans text-sm text-slate-300 leading-relaxed">
-                Ajuste a intensidade das transições e animações de acordo com sua sensibilidade visual.
+                {t.settings.motionHint}
               </p>
             </div>
-            <Badge variant="neutral">{reducedMotion}</Badge>
+            <Badge variant="neutral">
+              {reducedMotion === "system"
+                ? t.settings.motionSystem
+                : reducedMotion === "reduced"
+                  ? t.settings.motionOn
+                  : t.settings.motionOff}
+            </Badge>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">

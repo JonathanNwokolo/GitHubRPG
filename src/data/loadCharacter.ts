@@ -1,6 +1,8 @@
+import { buildClassExplanation, type ClassExplanation } from "@/features/character/classExplanation";
 import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChronicle";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { createRPGCharacter } from "@/game/engine";
+import { analyzeLanguages } from "@/game/languages";
 import type { DeveloperProfile, RPGCharacter } from "@/game/types";
 import type { GitHubDataSource } from "./contracts";
 import { createDataSource } from "./datasource";
@@ -26,14 +28,25 @@ export async function loadCharacter(
 }
 
 /**
- * The character plus its Chronicle, from ONE profile fetch (the source's cache and the request count are
- * the same as for `loadCharacter`). The Chronicle is derived from the same DeveloperProfile and never feeds
- * back into the engine.
+ * The character plus the data derived from it for the sheet and the share cards, from ONE profile fetch
+ * (the source's cache and the request count are the same as for `loadCharacter`):
+ * - the Chronicle, from the same DeveloperProfile;
+ * - the "Why this class?" explanation, from the engine's own archetype and language analysis.
+ * Both are read-only views: they never feed back into the engine.
  */
 export async function loadCharacterWithChronicle(
   username: string,
   source: GitHubDataSource = createDataSource()
-): Promise<{ character: RPGCharacter; chronicle: DeveloperChronicle }> {
+): Promise<{ character: RPGCharacter; chronicle: DeveloperChronicle; classExplanation: ClassExplanation }> {
   const profile = await loadProfile(username, source);
-  return { character: createRPGCharacter(profile), chronicle: buildDeveloperChronicle(profile) };
+  const character = createRPGCharacter(profile);
+  return {
+    character,
+    chronicle: buildDeveloperChronicle(profile),
+    classExplanation: buildClassExplanation(
+      character.archetype,
+      analyzeLanguages(profile.languages),
+      profile.languagesCoverage
+    ),
+  };
 }

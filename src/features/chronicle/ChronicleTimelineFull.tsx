@@ -10,6 +10,8 @@ import {
   type YearView,
 } from "./chronicleText";
 import { CARD_BORDER, CHAPTER_ICON, FRAME_RARITY, HIGHLIGHT_ICON, HIGHLIGHT_TEXT } from "./chronicleIcons";
+import { ShareChapterButton, type ChapterShareRequest } from "./ShareChapterButton";
+import { isShareableChapter } from "./shareableChapters";
 import { staggerStyle, TimelineRail } from "./TimelineRail";
 import type { ChronicleInterlude, ChronicleYear, DeveloperChronicle } from "./types";
 
@@ -24,7 +26,8 @@ const YearEntry: React.FC<{
   isFirst: boolean;
   isLast: boolean;
   currentTag: string;
-}> = ({ entry, view, index, isFirst, isLast, currentTag }) => {
+  onShare?: () => void;
+}> = ({ entry, view, index, isFirst, isLast, currentTag, onShare }) => {
   const Icon = CHAPTER_ICON[entry.chapter];
   const exceptional = entry.rarity === "exceptional";
 
@@ -76,6 +79,8 @@ const YearEntry: React.FC<{
           </ul>
         )}
 
+        {onShare && isShareableChapter(entry) && <ShareChapterButton year={view.year} title={view.title} onShare={onShare} />}
+
         {view.highlights.length > 0 && (
           <ul className="space-y-2.5 border-t border-rpg-border/60 pt-3">
             {view.highlights.map((highlight) => {
@@ -120,7 +125,10 @@ const InterludeEntry: React.FC<{
 );
 
 /** Every chapter and interlude of the journey, chronologically. */
-export const ChronicleTimelineFull: React.FC<{ chronicle: DeveloperChronicle }> = ({ chronicle }) => {
+export const ChronicleTimelineFull: React.FC<{
+  chronicle: DeveloperChronicle;
+  onShareChapter?: (chapter: ChapterShareRequest) => void;
+}> = ({ chronicle, onShareChapter }) => {
   const { language } = useUiStore();
   const t = getTranslation(language).chronicle;
 
@@ -148,6 +156,7 @@ export const ChronicleTimelineFull: React.FC<{ chronicle: DeveloperChronicle }> 
             isFirst={isFirst}
             isLast={isLast}
             currentTag={t.currentTag}
+            onShare={onShareChapter && (() => onShareChapter({ year: item.view.year, title: item.view.title }))}
           />
         ) : (
           <InterludeEntry

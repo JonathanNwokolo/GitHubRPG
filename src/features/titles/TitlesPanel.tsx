@@ -197,9 +197,9 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                         }`}
                       >
                         {req.met ? (
-                          <RpgCheck className="w-3.5 h-3.5 text-emerald-400" aria-label="ok" />
+                          <RpgCheck className="w-3.5 h-3.5 text-emerald-400" aria-label={t.titles.requirementMet} />
                         ) : (
-                          <RpgClose className="w-3.5 h-3.5 text-slate-500" aria-label="pendente" />
+                          <RpgClose className="w-3.5 h-3.5 text-slate-500" aria-label={t.titles.requirementPending} />
                         )}
                         {fill(req.kind === "class" ? t.titles.classReq : t.titles.subclassReq, {
                           value: req.value,

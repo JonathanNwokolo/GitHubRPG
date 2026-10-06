@@ -15,6 +15,9 @@ import { getTranslation } from "@/i18n";
 
 export type CharacterActiveTab = "overview" | "skills" | "achievements" | "titles";
 
+/** DOM id prefix shared by the tab list and its panel (see `TabPanel`). */
+export const CHARACTER_TABS_ID_PREFIX = "character";
+
 interface CharacterTabsProps {
   activeTab: CharacterActiveTab;
   onTabChange: (tab: CharacterActiveTab) => void;
@@ -82,6 +85,8 @@ export const CharacterTabs: React.FC<CharacterTabsProps> = ({
       activeTab={activeTab}
       onTabChange={(id) => onTabChange(id as CharacterActiveTab)}
       className="w-full justify-start overflow-x-auto"
+      idPrefix={CHARACTER_TABS_ID_PREFIX}
+      aria-label={t.character.sections}
     />
   );
 };

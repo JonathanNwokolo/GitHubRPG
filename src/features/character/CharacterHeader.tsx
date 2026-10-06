@@ -10,6 +10,8 @@ import {
   Tooltip,
   RpgShare,
   RpgSparkles,
+  RpgTome,
+  RpgCode,
   RpgMapPin,
   RpgBuilding,
   RpgHeart,
@@ -28,6 +30,10 @@ interface CharacterHeaderProps {
   /** Title chosen for display (user pick or engine default). */
   equippedTitle: TitleProgress | null;
   onOpenShareModal?: () => void;
+  /** Opens "Why this class?". The trigger only exists when the host wires it. */
+  onOpenClassExplanation?: () => void;
+  /** Opens "Add to README". */
+  onOpenReadmeModal?: () => void;
 }
 
 /** Frame style per level tier (purely cosmetic, the tier itself comes from the engine). */
@@ -46,6 +52,8 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   character,
   equippedTitle,
   onOpenShareModal,
+  onOpenClassExplanation,
+  onOpenReadmeModal,
 }) => {
   const { language } = useUiStore();
   const t = getTranslation(language);
@@ -80,7 +88,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
         <div className="flex-1 space-y-3">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
             <Badge variant="gold" size="md">
-              NÍVEL {progression.level}
+              {t.character.level.toUpperCase()} {progression.level}
             </Badge>
 
             <Badge variant="azure" size="md">
@@ -110,6 +118,15 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
               </Badge>
             )}
           </div>
+
+          {onOpenClassExplanation && (
+            <div className="flex justify-center md:justify-start">
+              <Button variant="ghost" size="sm" onClick={onOpenClassExplanation} className="gap-1.5 -ml-1 text-slate-300">
+                <RpgTome className="w-3.5 h-3.5 text-amber-400" />
+                <span>{t.classExplanation.trigger}</span>
+              </Button>
+            </div>
+          )}
 
           <div>
             <h1 className="font-pixel text-xl sm:text-2xl text-rpg-gold tracking-wide">{displayName}</h1>
@@ -147,17 +164,20 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
         </div>
 
         {/* Action button */}
-        {onOpenShareModal && (
-          <div className="md:self-start">
-            <Button
-              variant="secondary"
-              size="sm"
-              onClick={onOpenShareModal}
-              className="gap-2 whitespace-nowrap"
-            >
-              <RpgShare className="w-4 h-4 text-amber-400" />
-              <span>{t.share.generateCard}</span>
-            </Button>
+        {(onOpenShareModal || onOpenReadmeModal) && (
+          <div className="flex flex-col gap-2 md:self-start">
+            {onOpenShareModal && (
+              <Button variant="secondary" size="sm" onClick={onOpenShareModal} className="gap-2 whitespace-nowrap">
+                <RpgShare className="w-4 h-4 text-amber-400" />
+                <span>{t.share.generateCard}</span>
+              </Button>
+            )}
+            {onOpenReadmeModal && (
+              <Button variant="secondary" size="sm" onClick={onOpenReadmeModal} className="gap-2 whitespace-nowrap">
+                <RpgCode className="w-4 h-4 text-amber-400" />
+                <span>{t.readme.trigger}</span>
+              </Button>
+            )}
           </div>
         )}
       </div>

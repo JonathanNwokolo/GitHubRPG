@@ -1,4 +1,4 @@
-import { fill, formatNumber } from "@/lib/format";
+import { fill, formatNumber, pluralize } from "@/lib/format";
 import type { SupportedLanguage, TranslationDictionary } from "@/i18n";
 import type { ThresholdProgress } from "@/game/types";
 
@@ -36,7 +36,9 @@ export function describeProgress(
   t: TranslationDictionary,
   language: SupportedLanguage
 ): ProgressView {
-  const unit = t.units[progress.unit];
+  // "1 estrela" / "2 estrelas": the unit agrees with the number it follows.
+  const forms = t.units[progress.unit];
+  const targetUnit = pluralize(progress.target, forms);
   const target = formatNumber(progress.target, language);
 
   if (progress.coverage === "unavailable" || progress.current === null) {
@@ -44,14 +46,18 @@ export function describeProgress(
   }
 
   const current = formatNumber(progress.current, language);
+  const currentUnit = pluralize(progress.current, forms);
+  // "encontrado(s)" / "encontrada(s)": the participle agrees with the unit's gender and with the number (pt-BR).
+  const foundForms = t.progress.feminineUnits.includes(progress.unit) ? t.progress.found.feminine : t.progress.found.masculine;
+  const atLeast = fill(t.progress.atLeast, { found: pluralize(progress.current, foundForms) });
 
   if (progress.unlocked) {
     return {
       state: "unlocked",
       headline:
         progress.coverage === "partial"
-          ? fill(t.progress.atLeast, { n: current, unit })
-          : fill(t.progress.reached, { target, unit }),
+          ? fill(atLeast, { n: current, unit: currentUnit })
+          : fill(t.progress.reached, { target, unit: targetUnit }),
       note: progress.coverage === "partial" ? t.progress.partialUnlockedNote : undefined,
       barPercent: 100,
     };
@@ -61,8 +67,8 @@ export function describeProgress(
     // We only know a lower bound: say what was found, never what is missing.
     return {
       state: "partial",
-      headline: fill(t.progress.atLeast, { n: current, unit }),
-      detail: fill(t.progress.goal, { target, unit }),
+      headline: fill(atLeast, { n: current, unit: currentUnit }),
+      detail: fill(t.progress.goal, { target, unit: targetUnit }),
       note: t.progress.partialNote,
       barPercent: null,
     };
@@ -74,11 +80,14 @@ export function describeProgress(
       ? undefined
       : progress.unit === "years"
         ? fill(t.progress.remainingYears, { n: describeYears(remaining, t.progress) })
-        : fill(t.progress.remaining, { n: formatNumber(remaining, language), unit });
+        : fill(remaining === 1 ? t.progress.remainingOne : t.progress.remaining, {
+            n: formatNumber(remaining, language),
+            unit: pluralize(remaining, forms),
+          });
 
   return {
     state: "exact",
-    headline: fill(t.progress.current, { current, target, unit }),
+    headline: fill(t.progress.current, { current, target, unit: targetUnit }),
     detail,
     barPercent: progress.progressPercent,
   };

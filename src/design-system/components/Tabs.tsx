@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useId, useRef } from "react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { playClickSound } from "@/lib/audio/soundEffects";
@@ -17,15 +17,65 @@ export interface TabsProps {
   activeTab: string;
   onTabChange: (id: string) => void;
   className?: string;
+  /**
+   * Prefix of the DOM ids (`{prefix}-tab-{id}` / `{prefix}-panel-{id}`). Pass the same value to
+   * `TabPanel` so tab and panel reference each other. Defaults to a unique id per instance.
+   */
+  idPrefix?: string;
+  /** Accessible name of the tab list. */
+  "aria-label"?: string;
 }
+
+/** DOM id of a tab button. */
+export function tabDomId(prefix: string, id: string): string {
+  return `${prefix}-tab-${id}`;
+}
+
+/** DOM id of a tab's panel. */
+export function tabPanelDomId(prefix: string, id: string): string {
+  return `${prefix}-panel-${id}`;
+}
+
+export interface TabPanelProps {
+  idPrefix: string;
+  /** The id of the tab this panel belongs to (same as `TabItem.id`). */
+  tabId: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+/**
+ * The panel of the active tab. Only the active panel is mounted, so `Tabs` points `aria-controls`
+ * at it only while it is the active one (an inactive tab never references a missing element).
+ */
+export const TabPanel: React.FC<TabPanelProps> = ({ idPrefix, tabId, children, className }) => (
+  <div
+    role="tabpanel"
+    id={tabPanelDomId(idPrefix, tabId)}
+    aria-labelledby={tabDomId(idPrefix, tabId)}
+    tabIndex={0}
+    className={twMerge(
+      clsx(
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void",
+        className
+      )
+    )}
+  >
+    {children}
+  </div>
+);
 
 export const Tabs: React.FC<TabsProps> = ({
   items,
   activeTab,
   onTabChange,
   className,
+  idPrefix,
+  "aria-label": ariaLabel,
 }) => {
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
+  const generatedPrefix = useId();
+  const prefix = idPrefix ?? generatedPrefix;
 
   const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
     let nextIndex = index;
@@ -51,6 +101,7 @@ export const Tabs: React.FC<TabsProps> = ({
     <div
       role="tablist"
       aria-orientation="horizontal"
+      aria-label={ariaLabel}
       className={twMerge(
         clsx(
           "flex flex-wrap items-center gap-1.5 p-1 bg-rpg-void border-2 border-rpg-border",
@@ -68,8 +119,8 @@ export const Tabs: React.FC<TabsProps> = ({
             }}
             role="tab"
             aria-selected={isActive}
-            aria-controls={`panel-${tab.id}`}
-            id={`tab-${tab.id}`}
+            aria-controls={isActive ? tabPanelDomId(prefix, tab.id) : undefined}
+            id={tabDomId(prefix, tab.id)}
             tabIndex={isActive ? 0 : -1}
             onClick={() => {
               playClickSound();

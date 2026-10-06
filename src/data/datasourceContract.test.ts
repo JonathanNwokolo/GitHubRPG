@@ -54,6 +54,12 @@ describe.each(SOURCES)("%s honours the RawGitHubData contract", (_name, make, us
     expect(character.achievements.length).toBeGreaterThan(0);
   });
 
+  it("ensureProfileExists agrees with getProfile for an existing profile", async () => {
+    const source = make();
+    await expect(source.ensureProfileExists?.(username) ?? Promise.resolve()).resolves.toBeUndefined();
+    await expect(source.getProfile(username)).resolves.toBeTruthy();
+  });
+
   it("is a plain value: validate + normalize + engine are pure functions of it", async () => {
     const raw = validateRawGitHubData(await make().getProfile(username));
     expect(createRPGCharacter(normalizeDeveloperProfile(raw))).toEqual(createRPGCharacter(normalizeDeveloperProfile(raw)));

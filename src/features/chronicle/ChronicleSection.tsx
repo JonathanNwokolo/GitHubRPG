@@ -9,17 +9,20 @@ import { describePresent, describeSummary } from "./chronicleText";
 import { ChronicleSummary } from "./ChronicleSummary";
 import { ChronicleTimelineFull } from "./ChronicleTimelineFull";
 import { ChronicleTimelinePreview } from "./ChronicleTimelinePreview";
+import type { ChapterShareRequest } from "./ShareChapterButton";
 import type { DeveloperChronicle } from "./types";
 
 interface ChronicleSectionProps {
   chronicle: DeveloperChronicle;
+  /** Opens the share card of a chapter. Without it, no chapter offers a share action. */
+  onShareChapter?: (chapter: ChapterShareRequest) => void;
 }
 
 /**
  * The Chronicle as a section of the character sheet: summary strip, a three-chapter preview and an inline
  * expansion to the whole timeline. Everything it shows comes from the DeveloperChronicle (nothing is recomputed here).
  */
-export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle }) => {
+export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, onShareChapter }) => {
   const { language } = useUiStore();
   const t = getTranslation(language).chronicle;
   const regionId = useId();
@@ -65,7 +68,11 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle })
       <ChronicleSummary items={summary} label={t.summaryTitle} />
 
       <div id={regionId} className="pt-1">
-        {expanded ? <ChronicleTimelineFull chronicle={chronicle} /> : <ChronicleTimelinePreview chronicle={chronicle} />}
+        {expanded ? (
+          <ChronicleTimelineFull chronicle={chronicle} onShareChapter={onShareChapter} />
+        ) : (
+          <ChronicleTimelinePreview chronicle={chronicle} onShareChapter={onShareChapter} />
+        )}
       </div>
 
       {expanded && present.length > 0 && (

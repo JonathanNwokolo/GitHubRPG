@@ -37,6 +37,22 @@ export interface GitHubApiDataSourceOptions {
 
 const MAX_REPORTS_KEPT = 50;
 
+interface Deferred {
+  promise: Promise<void>;
+  resolve: () => void;
+  reject: (reason: unknown) => void;
+}
+
+function deferred(): Deferred {
+  let resolve!: () => void;
+  let reject!: (reason: unknown) => void;
+  const promise = new Promise<void>((res, rej) => {
+    resolve = res;
+    reject = rej;
+  });
+  return { promise, resolve, reject };
+}
+
 /**
  * Real, public GitHub data. Server-side only (it holds the token).
  *
@@ -57,6 +73,8 @@ export class GitHubApiDataSource implements GitHubDataSource {
   private readonly cache: TtlCache<RawGitHubData>;
   private readonly notFound: TtlCache<true>;
   private readonly inflight = new Map<string, Promise<RawGitHubData>>();
+  /** Per running fetch: settles when the user lookup (its first request) has answered. See ensureProfileExists. */
+  private readonly lookups = new Map<string, Promise<void>>();
   private readonly reports: ProfileFetchReport[] = [];
 
   constructor(options: GitHubApiDataSourceOptions = {}) {
@@ -131,8 +149,11 @@ export class GitHubApiDataSource implements GitHubDataSource {
       }
     }
 
-    const promise = this.load(login, stats);
+    const lookup = deferred();
+    lookup.promise.catch(() => {}); // most callers never wait for it: a failure must not look unhandled
+    const promise = this.load(login, stats, lookup);
     this.inflight.set(key, promise);
+    this.lookups.set(key, lookup.promise);
     try {
       const raw = await promise;
       this.cache.set(key, raw);
@@ -144,7 +165,27 @@ export class GitHubApiDataSource implements GitHubDataSource {
       throw error;
     } finally {
       this.inflight.delete(key);
+      this.lookups.delete(key);
     }
+  }
+
+  /**
+   * Resolves as soon as GET /users/{login} has confirmed the profile exists. The rest of the fetch keeps
+   * running and is shared with a later `getProfile` (same in-flight entry and cache), so this adds no request.
+   * Throws exactly what `getProfile` would for an unknown/invalid user, or when the lookup itself fails.
+   */
+  async ensureProfileExists(username: string): Promise<void> {
+    const login = parseGitHubUsername(username);
+    const key = usernameKey(login);
+
+    if (this.cache.get(key)) return;
+    if (this.notFound.get(key)) throw new ProfileNotFoundError(login);
+
+    if (!this.lookups.has(key)) {
+      // Start the full fetch exactly as getProfile does; only its first step is awaited here.
+      this.getProfile(login).catch(() => {});
+    }
+    await this.lookups.get(key);
   }
 
   private report(report: ProfileFetchReport): void {
@@ -153,11 +194,12 @@ export class GitHubApiDataSource implements GitHubDataSource {
     this.onReport?.(report);
   }
 
-  private async load(login: string, stats: RequestStats): Promise<RawGitHubData> {
+  private async load(login: string, stats: RequestStats, lookup: Deferred): Promise<RawGitHubData> {
     const controller = new AbortController();
     const ctx: RequestContext = { stats, signal: controller.signal };
     try {
       const user = await fetchUser(this.client, login, ctx);
+      lookup.resolve();
       const fetchedAt = this.now();
 
       // Repositories (+ languages) and contributions are independent: run them side by side.
@@ -172,8 +214,9 @@ export class GitHubApiDataSource implements GitHubDataSource {
       return assembleRawProfile({ user, repositories, history, fetchedAt });
     } catch (error) {
       controller.abort(); // stop sibling requests that are still queued or in flight
-      if (error instanceof GitHubNotFoundError) throw new ProfileNotFoundError(login);
-      throw error;
+      const failure = error instanceof GitHubNotFoundError ? new ProfileNotFoundError(login) : error;
+      lookup.reject(failure); // no-op when the user lookup had already succeeded
+      throw failure;
     }
   }
 }

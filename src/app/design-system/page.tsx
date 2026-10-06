@@ -9,6 +9,7 @@ import {
   ProgressBar,
   Dialog,
   Tabs,
+  TabPanel,
   Tooltip,
   LoadingState,
   ErrorState,
@@ -67,7 +68,9 @@ export default function DesignSystemPage() {
       </div>
 
       {/* Tabs Navigation */}
-      <Tabs items={tabItems} activeTab={activeTab} onTabChange={setActiveTab} />
+      <Tabs items={tabItems} activeTab={activeTab} onTabChange={setActiveTab} idPrefix="ds" aria-label="Design System" />
+
+      <TabPanel idPrefix="ds" tabId={activeTab} className="space-y-12">
 
       {/* Panel: RPG Icon System */}
       {activeTab === "tab-icons" && (
@@ -567,6 +570,7 @@ export default function DesignSystemPage() {
           </Dialog>
         </div>
       )}
+      </TabPanel>
     </div>
   );
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ProfileNotFoundError, createDataSource } from "@/data/datasource";
 import { InvalidUsernameError } from "@/data/github/errors";
-import { loadCharacterWithChronicle } from "@/data/loadCharacter";
-import CharacterPageClient from "./CharacterPageClient";
+import { buildProfileMetadata } from "@/lib/seo";
+import { CharacterLoading } from "./CharacterLoading";
+import CharacterSheet from "./CharacterSheet";
 
 interface CharacterPageProps {
   params: Promise<{ username: string }>;
@@ -22,49 +23,30 @@ function usernameFromParam(username: string): string {
 
 export async function generateMetadata({ params }: CharacterPageProps): Promise<Metadata> {
   const { username } = await params;
-  const decodedUsername = usernameFromParam(username);
-  const safeUsername = decodedUsername.trim() || "perfil";
-  const title = `@${safeUsername} | GitHub RPG`;
-  const description = `Ficha RPG de @${safeUsername} gerada a partir de dados publicos do GitHub.`;
-
-  const cardImageUrl = `/api/card/${encodeURIComponent(safeUsername)}`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: "profile",
-      images: [
-        {
-          url: cardImageUrl,
-          width: 1200,
-          height: 630,
-          alt: `Cartão de Herói de @${safeUsername} - GitHub RPG`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [cardImageUrl],
-    },
-  };
+  return buildProfileMetadata(usernameFromParam(username));
 }
 
 export default async function CharacterPage({ params }: CharacterPageProps) {
   const { username } = await params;
   const decodedUsername = usernameFromParam(username);
+  const source = createDataSource();
 
+  // 1. Existence, BEFORE anything is streamed: an unknown user must be a real HTTP 404, and a status code cannot
+  //    change once the first byte is sent. (This is why the route has no loading.tsx: its boundary would make
+  //    Next stream first and answer 200.) The source starts the full fetch during this step and shares it below.
   try {
-    const { character, chronicle } = await loadCharacterWithChronicle(decodedUsername, createDataSource());
-    return <CharacterPageClient character={character} chronicle={chronicle} username={decodedUsername} />;
+    await source.ensureProfileExists?.(decodedUsername);
   } catch (error) {
     if (error instanceof ProfileNotFoundError || error instanceof InvalidUsernameError) {
       notFound();
     }
     throw error;
   }
+
+  // 2. The slow part streams behind the themed skeleton. Failures here reach error.tsx.
+  return (
+    <Suspense fallback={<CharacterLoading />}>
+      <CharacterSheet username={decodedUsername} source={source} />
+    </Suspense>
+  );
 }

@@ -22,6 +22,8 @@ const source = files(SRC);
 const rel = (file: string) => file.replace(ROOT, "").replace(/\\/g, "/").replace(/^\//, "");
 const read = (file: string) => readFileSync(file, "utf8");
 const CONFIG = resolve(SRC, "data", "datasource", "config.ts");
+/** The public site URL module: the only other file allowed to read process.env, and only public variables. */
+const SITE_URL_MODULE = resolve(SRC, "lib", "siteUrl.ts");
 
 /** Client code = files with a "use client" directive, plus every UI folder (they are bundled for the browser). */
 const isClientFile = (file: string) =>
@@ -42,9 +44,24 @@ describe("GitHub token stays on the server", () => {
     expect(offenders).toEqual([]);
   });
 
-  it("process.env is read only in the config module", () => {
-    const offenders = source.filter((file) => file !== CONFIG && /process\.env/.test(read(file))).map(rel);
+  it("process.env is read only in the config module (and the public site URL module)", () => {
+    const offenders = source
+      .filter((file) => file !== CONFIG && file !== SITE_URL_MODULE && /process\.env/.test(read(file)))
+      .map(rel);
     expect(offenders).toEqual([]);
+  });
+
+  it("the site URL module reads only public, non-secret variables", () => {
+    const variables = [...read(SITE_URL_MODULE).matchAll(/process\.env\.(\w+)/g)].map((match) => match[1]);
+    expect([...new Set(variables)].sort()).toEqual(["NEXT_PUBLIC_SITE_URL", "NODE_ENV"]);
+  });
+
+  it("NEXT_PUBLIC_SITE_URL is the only NEXT_PUBLIC_ variable in the project", () => {
+    const candidates = [...source, ...files(resolve(ROOT, "scripts")), resolve(ROOT, "next.config.mjs")];
+    const example = resolve(ROOT, ".env.example");
+    if (existsSync(example)) candidates.push(example);
+    const used = new Set(candidates.flatMap((file) => read(file).match(/NEXT_PUBLIC_[A-Z0-9_]+/g) ?? []));
+    expect([...used]).toEqual(["NEXT_PUBLIC_SITE_URL"]);
   });
 
   it("the token is never logged or serialised into a response", () => {
@@ -76,6 +93,9 @@ describe("GitHub token stays on the server", () => {
       .filter((file) => !file.startsWith("src/data/"));
     expect(users.sort()).toEqual([
       "src/app/[username]/page.tsx",
+      "src/app/api/badge/[username]/route.ts",
+      "src/app/api/card/[username]/achievement/[achievementId]/route.tsx",
+      "src/app/api/card/[username]/chronicle/[eventId]/route.tsx",
       "src/app/api/card/[username]/route.tsx",
       "src/app/api/characters/[username]/route.ts",
     ].sort());

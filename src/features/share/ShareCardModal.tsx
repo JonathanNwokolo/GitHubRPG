@@ -2,12 +2,16 @@
 
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import type { ClassName, RPGCharacter } from "@/game/types";
-import { Dialog, Button, RpgDownload, RpgSparkles } from "@/design-system";
+import { Dialog, Button, RpgDownload, RpgShare, RpgSparkles } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { fnv1a } from "@/data/seed/hashAndPrng";
 import { renderProceduralAvatarSvg } from "@/features/character/avatar/proceduralAvatar";
+import { fill, pluralize } from "@/lib/format";
+import { profileUrl } from "@/lib/profileUrl";
+import { getSiteHost } from "@/lib/siteUrl";
 import { generateHeroSummary } from "./heroSummary";
+import { shareProfile } from "./shareProfile";
 
 interface ShareCardModalProps {
   isOpen: boolean;
@@ -187,7 +191,9 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [dataUrl, setDataUrl] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState(false);
-  const [copiedLink, setCopiedLink] = useState(false);
+  const [isSharing, setIsSharing] = useState(false);
+  const [shareStatus, setShareStatus] = useState<"idle" | "copied" | "failed">("idle");
+  const statusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [avatarImg, setAvatarImg] = useState<HTMLImageElement | null>(null);
 
   const { identity, progression, archetype, stats, skills, achievements } = character;
@@ -564,7 +570,11 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
 
       ctx.fillStyle = "#ffffff";
       ctx.font = "bold 15px 'Inter', sans-serif";
-      ctx.fillText(`${unlockedCount} Conquistas Desbloqueadas`, col3X + 56, achY + 30);
+      ctx.fillText(
+        `${unlockedCount} ${pluralize(unlockedCount, { one: "Conquista Desbloqueada", other: "Conquistas Desbloqueadas" })}`,
+        col3X + 56,
+        achY + 30
+      );
 
       // 7. Footer Bar: Social CTA & Branding
       ctx.strokeStyle = "#202c44";
@@ -581,7 +591,7 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
       ctx.fillStyle = "#f59e0b";
       ctx.font = "bold 15px monospace";
       ctx.textAlign = "right";
-      ctx.fillText("githubrpg.com", w - 46, h - 25);
+      ctx.fillText(getSiteHost(), w - 46, h - 25);
       ctx.textAlign = "left";
 
       try {
@@ -656,14 +666,39 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
     }
   };
 
-  const handleCopyLink = async () => {
-    const cardUrl = `${window.location.origin}/api/card/${encodeURIComponent(character.identity.username)}`;
+  // Never leave a pending "Link copied!" timer behind when the modal closes.
+  useEffect(
+    () => () => {
+      if (statusTimerRef.current) clearTimeout(statusTimerRef.current);
+    },
+    []
+  );
+
+  // The shared link is the character sheet, not the card image: whoever opens it lands on the sheet.
+  const sharedProfileUrl = profileUrl(identity.username);
+
+  const handleShareProfile = async () => {
+    if (isSharing) return;
+    setIsSharing(true);
+    if (statusTimerRef.current) clearTimeout(statusTimerRef.current);
+    setShareStatus("idle");
+
     try {
-      await navigator.clipboard.writeText(cardUrl);
-      setCopiedLink(true);
-      setTimeout(() => setCopiedLink(false), 2500);
-    } catch {
-      // Fallback
+      const result = await shareProfile({
+        title: fill(t.share.shareTitle, { username: identity.username }),
+        text: fill(t.share.shareText, { username: identity.username }),
+        url: sharedProfileUrl,
+      });
+
+      if (result === "copied") {
+        setShareStatus("copied");
+        statusTimerRef.current = setTimeout(() => setShareStatus("idle"), 2500);
+      } else if (result === "failed") {
+        setShareStatus("failed");
+      }
+      // "shared" needs no message (the system sheet already confirmed it); "cancelled" is not an error.
+    } finally {
+      setIsSharing(false);
     }
   };
 
@@ -673,6 +708,7 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
       onClose={onClose}
       title={t.share.titleCard}
       description={t.share.cardSubtitle}
+      closeLabel={t.common.closeDialog}
       className="max-w-4xl"
     >
       <div className="space-y-4 py-2">
@@ -680,6 +716,8 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
         <div className="w-full overflow-hidden border-2 border-rpg-border rounded-md flex justify-center bg-black/80 p-2 sm:p-3">
           <canvas
             ref={canvasRef}
+            role="img"
+            aria-label={t.share.previewLabel}
             className="w-full h-auto max-w-[840px] aspect-[1200/630] shadow-pixel rounded"
           />
         </div>
@@ -690,20 +728,30 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
             <span className="font-mono text-xs text-slate-400 font-medium">
               {t.share.resolution}
             </span>
-            {copiedLink && (
-              <span className="text-xs text-amber-400 font-mono font-semibold flex items-center gap-1 animate-fade-in">
-                <RpgSparkles className="w-3.5 h-3.5" />
-                {t.share.copiedLink}
-              </span>
-            )}
+            {/* Polite live region: announces "Link copied!" to screen readers too. */}
+            <span role="status" aria-live="polite" className="text-xs text-amber-400 font-mono font-semibold">
+              {shareStatus === "copied" && (
+                <span className="flex items-center gap-1 animate-fade-in">
+                  <RpgSparkles className="w-3.5 h-3.5" />
+                  {t.share.copiedLink}
+                </span>
+              )}
+            </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Button size="sm" variant="ghost" onClick={handleCopyLink} title="Copiar URL da imagem">
-              {t.share.copyLink}
-            </Button>
             <Button size="sm" variant="secondary" onClick={onClose}>
               {t.share.close}
+            </Button>
+            <Button
+              size="sm"
+              variant="secondary"
+              onClick={handleShareProfile}
+              disabled={isSharing}
+              className="gap-2"
+            >
+              <RpgShare className="w-4 h-4 text-amber-400" />
+              <span>{t.share.shareProfile}</span>
             </Button>
             <Button
               size="sm"
@@ -713,10 +761,23 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
               className="gap-2"
             >
               <RpgDownload className="w-4 h-4" />
-              <span>{isDownloading ? t.share.downloading : t.share.downloadImage}</span>
+              <span>{isDownloading ? t.share.downloading : t.share.downloadCard}</span>
             </Button>
           </div>
         </div>
+
+        {shareStatus === "failed" && (
+          <div role="alert" className="space-y-2 text-xs text-slate-300 font-sans">
+            <p>{t.share.shareFailed}</p>
+            <input
+              readOnly
+              value={sharedProfileUrl}
+              aria-label={t.share.shareProfile}
+              onFocus={(event) => event.currentTarget.select()}
+              className="w-full bg-rpg-void border border-rpg-border px-3 py-2 font-mono text-xs text-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"
+            />
+          </div>
+        )}
       </div>
     </Dialog>
   );

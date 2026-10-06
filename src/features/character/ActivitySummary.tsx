@@ -12,7 +12,7 @@ import {
   RpgCalendar,
   type IconRarity,
 } from "@/design-system";
-import { formatMetric, localeOf } from "@/lib/format";
+import { formatMetric, localeOf, pluralize } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
@@ -62,7 +62,10 @@ export const ActivitySummary: React.FC<ActivitySummaryProps> = ({ summary }) => 
     },
     {
       label: t.character.streakDays,
-      value: summary.currentStreakDays.coverage === "unavailable" ? streak : `${streak} ${t.character.days}`,
+      value:
+        summary.currentStreakDays.coverage === "unavailable"
+          ? streak
+          : `${streak} ${pluralize(summary.currentStreakDays.value, t.character.days)}`,
       partial: summary.currentStreakDays.coverage === "partial",
       rarity: "crimson",
       icon: <RpgMana className="w-4 h-4 text-red-400" />,

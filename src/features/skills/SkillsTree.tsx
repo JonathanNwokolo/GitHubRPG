@@ -13,7 +13,7 @@ import {
   LanguageIcon,
   IconRarity,
 } from "@/design-system";
-import { fill, formatNumber } from "@/lib/format";
+import { fill, formatNumber, pluralize } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
@@ -121,6 +121,7 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
         onClose={() => setSelected(null)}
         title={selected?.name}
         description={selected ? `${t.skills.level} ${selected.level} • ${selected.tier}` : undefined}
+        closeLabel={t.common.closeDialog}
       >
         {selected && (
           <Card className="space-y-3">
@@ -149,7 +150,7 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
             />
             <ul className="font-sans text-sm text-slate-200 space-y-1 list-disc list-inside">
               <li>{fill(t.skills.detailShare, { n: formatNumber(selected.sharePercent, language) })}</li>
-              <li>{fill(t.skills.detailRepos, { n: selected.repoCount })}</li>
+              <li>{fill(pluralize(selected.repoCount, t.skills.detailRepos), { n: selected.repoCount })}</li>
             </ul>
             <p className="font-sans text-xs text-slate-400">{t.skills.affinityNote}</p>
           </Card>

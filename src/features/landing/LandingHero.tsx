@@ -69,7 +69,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
 
   const personaBadge = (id: string): string => {
     const summary = summaries[id];
-    return summary ? `Nv. ${summary.level} • ${summary.className}` : t.common.demoDataDisclaimer;
+    return summary ? `${t.character.levelShort} ${summary.level} • ${summary.className}` : t.common.demoDataDisclaimer;
   };
   const personaRole = (id: string): string => summaries[id]?.tier ?? t.landing.personaRoleDefault;
 

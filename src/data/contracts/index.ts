@@ -92,6 +92,14 @@ export interface GitHubDataSource {
   readonly kind: "mock" | "github";
   /** @throws ProfileNotFoundError when the user does not exist. */
   getProfile(username: string): Promise<RawGitHubData>;
+  /**
+   * Optional fast check for callers that need to know whether the profile exists BEFORE they start
+   * streaming a response (an unknown user must be a real HTTP 404, and a status cannot change once the
+   * first byte is sent). It resolves as soon as existence is confirmed, while the full fetch keeps running
+   * and is shared with a later `getProfile` (no request is made twice).
+   * @throws ProfileNotFoundError / InvalidUsernameError, or the lookup's own failure (rate limit, outage...).
+   */
+  ensureProfileExists?(username: string): Promise<void>;
 }
 
 export class ProfileNotFoundError extends Error {

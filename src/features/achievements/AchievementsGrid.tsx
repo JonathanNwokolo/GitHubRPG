@@ -10,13 +10,17 @@ import {
   RpgIconFrame,
   RpgUnlock,
   RpgLock,
+  RpgShare,
 } from "@/design-system";
+import { fill } from "@/lib/format";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
 interface AchievementsGridProps {
   achievements: AchievementProgress[];
+  /** Opens the share card of an UNLOCKED achievement. Without it, no share action is offered. */
+  onShareAchievement?: (achievement: AchievementProgress) => void;
 }
 
 const RARITY_BORDER: Record<Rarity, string> = {
@@ -26,7 +30,7 @@ const RARITY_BORDER: Record<Rarity, string> = {
   legendary: "border-amber-400 shadow-pixel-gold",
 };
 
-export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements }) => {
+export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements, onShareAchievement }) => {
   const { language } = useUiStore();
   const t = getTranslation(language);
 
@@ -75,11 +79,11 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map((achievement) => (
+          <div key={achievement.id} className="relative group">
           <button
-            key={achievement.id}
             type="button"
             onClick={() => setSelected(achievement)}
-            className={`w-full text-left p-4 border-2 transition-all flex flex-col justify-between gap-3 group relative overflow-hidden ${
+            className={`w-full h-full text-left p-4 border-2 transition-all flex flex-col justify-between gap-3 relative overflow-hidden ${
               achievement.unlocked
                 ? `bg-rpg-surface hover:-translate-y-1 hover:shadow-lg ${RARITY_BORDER[achievement.rarity]}`
                 : "bg-rpg-void border-rpg-border/40 hover:opacity-90"
@@ -115,6 +119,19 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
               <ProgressDetail progress={achievement} compact />
             </div>
           </button>
+          {/* A sibling of the card button (a button cannot hold a button): visible on hover/focus, always on touch. */}
+          {achievement.unlocked && onShareAchievement && (
+            <button
+              type="button"
+              onClick={() => onShareAchievement(achievement)}
+              aria-label={fill(t.shareCard.achievementAction, { name: achievement.name })}
+              className="absolute bottom-2 right-2 inline-flex items-center gap-1 px-2 min-h-[36px] min-w-[36px] justify-center bg-rpg-obsidian border border-rpg-border text-xs font-sans font-bold text-amber-300 hover:border-rpg-gold opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"
+            >
+              <RpgShare className="w-3.5 h-3.5" />
+              <span>{t.shareCard.shareAction}</span>
+            </button>
+          )}
+          </div>
         ))}
       </div>
 
@@ -123,6 +140,7 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
         onClose={() => setSelected(null)}
         title={selected?.name}
         description={selected ? `${t.achievements.rarityLabel}: ${t.rarity[selected.rarity]}` : undefined}
+        closeLabel={t.common.closeDialog}
       >
         {selected && (
           <div className="space-y-4 py-2">
@@ -155,7 +173,23 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
               )}
             </Card>
 
-            <div className="flex justify-end">
+            <div className="flex flex-wrap justify-end gap-2">
+              {selected.unlocked && onShareAchievement && (
+                <Button
+                  size="sm"
+                  variant="primary"
+                  className="gap-2"
+                  onClick={() => {
+                    // One dialog at a time: the detail closes (returning focus to its card) and the share card opens.
+                    const achievement = selected;
+                    setSelected(null);
+                    onShareAchievement(achievement);
+                  }}
+                >
+                  <RpgShare className="w-4 h-4" />
+                  <span>{t.shareCard.achievementTitle}</span>
+                </Button>
+              )}
               <Button size="sm" variant="secondary" onClick={() => setSelected(null)}>
                 {t.common.close}
               </Button>

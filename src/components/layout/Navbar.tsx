@@ -23,10 +23,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
   const { language, audioEnabled, setLanguage, toggleAudio } = useUiStore();
   const t = getTranslation(language);
 
-  const navLinks = [
-    { href: "/settings", label: t.nav.settings },
-    { href: "/design-system", label: t.nav.designSystem },
-  ];
+  // /design-system is a development page: reachable by URL, deliberately not linked here.
+  const navLinks = [{ href: "/settings", label: t.nav.settings }];
 
   return (
     <header className="sticky top-0 z-40 w-full bg-rpg-obsidian/95 border-b-2 border-rpg-border backdrop-blur-md">
@@ -50,14 +48,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
               GitHub RPG
             </span>
             <span className="font-sans text-[10px] text-rpg-parchmentMuted hidden sm:inline">
-              Ficha Rúnica de Herói
+              {t.nav.tagline}
             </span>
           </div>
         </Link>
 
         {/* Navigation & Controls */}
         <div className="flex items-center gap-2 sm:gap-4">
-          <nav className="hidden md:flex items-center gap-1" aria-label="Navegação Principal">
+          <nav className="hidden md:flex items-center gap-1" aria-label={t.nav.mainNavigation}>
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -89,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
           {/* Audio toggle */}
           <button
             onClick={toggleAudio}
-            aria-label={audioEnabled ? "Desativar efeitos sonoros" : "Ativar efeitos sonoros"}
+            aria-label={audioEnabled ? t.nav.audioOff : t.nav.audioOn}
             title={audioEnabled ? t.settings.soundOn : t.settings.soundOff}
             className="p-2 border border-rpg-border bg-rpg-surface hover:border-rpg-gold text-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"
           >

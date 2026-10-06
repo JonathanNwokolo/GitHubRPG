@@ -4,19 +4,14 @@ import { describeError } from "@/data/api/errorResponse";
 import { createDataSource, ProfileNotFoundError } from "@/data/datasource";
 import { InvalidUsernameError } from "@/data/github/errors";
 import { loadCharacter } from "@/data/loadCharacter";
-import { fnv1a } from "@/data/seed/hashAndPrng";
-import { renderProceduralAvatarSvg } from "@/features/character/avatar/proceduralAvatar";
 import { generateHeroSummary } from "@/features/share/heroSummary";
+import { CARD_SIZE } from "@/features/share/cardKit";
 import { HeroCardLayout } from "@/features/share/HeroCardLayout";
 import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
+import { resolveAvatarSrc } from "../cardResponse";
 
 export const dynamic = "force-dynamic";
 
-/** 1200 x 630 dimensions standard for social cards */
-const CARD_SIZE = {
-  width: 1200,
-  height: 630,
-};
 
 const SUCCESS_CACHE_CONTROL = "public, s-maxage=900, stale-while-revalidate=300";
 
@@ -56,28 +51,7 @@ export async function GET(
       equippedTitleName = defaultTitle?.name ?? null;
     }
 
-    // Resolve avatar: fetch GitHub avatar as base64 data URI, fallback to procedural avatar
-    const seed = fnv1a(character.identity.username.toLowerCase());
-    const fallbackSvg = renderProceduralAvatarSvg(seed, 128);
-    const fallbackDataUri =
-      "data:image/svg+xml;base64," + Buffer.from(fallbackSvg).toString("base64");
-    let avatarSrc = fallbackDataUri;
-
-    if (character.identity.avatarUrl) {
-      try {
-        const avatarRes = await fetch(character.identity.avatarUrl, {
-          signal: AbortSignal.timeout(3500),
-          headers: { "User-Agent": "GitHubRPG-CardGenerator" },
-        });
-        if (avatarRes.ok) {
-          const arrayBuffer = await avatarRes.arrayBuffer();
-          const mime = avatarRes.headers.get("content-type") || "image/png";
-          avatarSrc = `data:${mime};base64,${Buffer.from(arrayBuffer).toString("base64")}`;
-        }
-      } catch {
-        // Fallback procedural avatar is already set
-      }
-    }
+    const avatarSrc = await resolveAvatarSrc(character);
 
     const summaryText = generateHeroSummary(character);
 

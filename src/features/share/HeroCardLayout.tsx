@@ -1,5 +1,8 @@
 import React from "react";
 import type { RPGCharacter } from "@/game/types";
+import { pluralize } from "@/lib/format";
+import { getSiteHost } from "@/lib/siteUrl";
+import { CardFooterBar, CardFrame, CardHeaderBar } from "./cardKit";
 
 export interface HeroCardLayoutProps {
   character: RPGCharacter;
@@ -8,14 +11,6 @@ export interface HeroCardLayoutProps {
   avatarSrc: string;
   shareUrl?: string;
   socialCta?: string;
-}
-
-function StarIcon({ size = 16, color = "#f59e0b" }: { size?: number; color?: string }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
-      <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
-    </svg>
-  );
 }
 
 function SwordIcon({ size = 18, color = "#fbbf24" }: { size?: number; color?: string }) {
@@ -73,7 +68,7 @@ export const HeroCardLayout: React.FC<HeroCardLayoutProps> = ({
   summaryText,
   avatarSrc,
   socialCta = "Transforme seu GitHub em um personagem RPG.",
-  shareUrl = "githubrpg.com",
+  shareUrl = getSiteHost(),
 }) => {
   const { identity, progression, archetype, stats, skills, achievements } = character;
   const displayName = identity.displayName || identity.username || "Aventureiro";
@@ -81,8 +76,6 @@ export const HeroCardLayout: React.FC<HeroCardLayoutProps> = ({
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
 
   const gold = "#f59e0b";
-  const borderGold = "#d97706";
-  const cardBg = "#0b101c";
   const innerBg = "#060912";
   const borderColor = "#202c44";
 
@@ -94,59 +87,10 @@ export const HeroCardLayout: React.FC<HeroCardLayoutProps> = ({
   ];
 
   return (
-    <div
-      style={{
-        width: "1200px",
-        height: "630px",
-        display: "flex",
-        flexDirection: "column",
-        background: "#05070d",
-        padding: "18px",
-        fontFamily: "sans-serif",
-        color: "#ffffff",
-      }}
-    >
-      {/* Outer Card Frame */}
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          border: `2px solid ${borderGold}`,
-          background: cardBg,
-          padding: "24px 30px",
-          position: "relative",
-        }}
-      >
-        {/* Decorative corner runes */}
-        <div style={{ position: "absolute", top: 5, left: 5, width: 9, height: 9, background: gold }} />
-        <div style={{ position: "absolute", top: 5, right: 5, width: 9, height: 9, background: gold }} />
-        <div style={{ position: "absolute", bottom: 5, left: 5, width: 9, height: 9, background: gold }} />
-        <div style={{ position: "absolute", bottom: 5, right: 5, width: 9, height: 9, background: gold }} />
-
-        {/* Header Bar */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-            borderBottom: `1px solid ${borderColor}`,
-            paddingBottom: "14px",
-            marginBottom: "16px",
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <StarIcon size={18} color={gold} />
-            <span style={{ fontSize: "18px", fontWeight: "bold", color: gold, letterSpacing: "2px" }}>
-              GITHUB RPG
-            </span>
-            <span style={{ fontSize: "14px", color: "#94a3b8", letterSpacing: "1px", marginLeft: "6px" }}>
-              | CARTÃO DE HERÓI OFICIAL
-            </span>
-          </div>
-
+    <CardFrame>
+      <CardHeaderBar
+        label="CARTÃO DE HERÓI OFICIAL"
+        right={
           <div
             style={{
               display: "flex",
@@ -161,7 +105,8 @@ export const HeroCardLayout: React.FC<HeroCardLayoutProps> = ({
               TIER: {progression.tier.toUpperCase()}
             </span>
           </div>
-        </div>
+        }
+      />
 
         {/* 3-Column Body */}
         <div
@@ -434,34 +379,13 @@ export const HeroCardLayout: React.FC<HeroCardLayoutProps> = ({
             >
               <TrophyIcon size={20} color={gold} />
               <span style={{ fontSize: "15px", fontWeight: "bold", color: "#ffffff" }}>
-                {unlockedCount} Conquistas Desbloqueadas
+                {`${unlockedCount} ${pluralize(unlockedCount, { one: "Conquista Desbloqueada", other: "Conquistas Desbloqueadas" })}`}
               </span>
             </div>
           </div>
         </div>
 
-        {/* Footer Bar: Social CTA & Branding */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            width: "100%",
-            borderTop: `1px solid ${borderColor}`,
-            paddingTop: "14px",
-            marginTop: "16px",
-          }}
-        >
-          <span style={{ fontSize: "15px", fontWeight: "600", color: "#f1f5f9" }}>
-            &ldquo;{socialCta}&rdquo;
-          </span>
-          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-            <span style={{ fontSize: "15px", fontWeight: "bold", color: gold, letterSpacing: "1px" }}>
-              {shareUrl}
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+        <CardFooterBar cta={socialCta} host={shareUrl} />
+    </CardFrame>
   );
 };

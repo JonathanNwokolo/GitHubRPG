@@ -402,6 +402,92 @@ describe("cache and deduplication", () => {
   });
 });
 
+describe("ensureProfileExists (fast existence check shared with the full fetch)", () => {
+  it("adds no request: the full fetch it starts is the one getProfile then joins", async () => {
+    const reference = setup(SMALL);
+    await reference.source.getProfile("octo-dev");
+
+    const { source, github } = setup(SMALL);
+    await source.ensureProfileExists("octo-dev");
+    const raw = await source.getProfile("octo-dev");
+
+    expect(raw.username).toBe("Octo-Dev");
+    expect(github.calls).toHaveLength(reference.github.calls.length);
+    expect(github.count("rest")).toBe(reference.github.count("rest"));
+    expect(github.count("graphql")).toBe(reference.github.count("graphql"));
+    expect(source.getReports().map((r) => r.cache)).toEqual(["miss", "coalesced"]);
+  });
+
+  it("resolves as soon as the user lookup answers, before the rest of the fetch is done", async () => {
+    const { source, github } = setup(SMALL);
+    let release: () => void = () => {};
+    const gate = new Promise<void>((resolve) => (release = resolve));
+    // Hold every request after the user lookup.
+    github.overrides.push((): undefined | Promise<undefined> => (github.calls.length > 1 ? gate.then(() => undefined) : undefined));
+
+    await expect(source.ensureProfileExists("octo-dev")).resolves.toBeUndefined();
+    expect(github.calls[0].path).toBe("/users/octo-dev");
+
+    release();
+    await expect(source.getProfile("octo-dev")).resolves.toBeTruthy();
+  });
+
+  it("an unknown user is a ProfileNotFoundError, remembered by the negative cache", async () => {
+    const { source, github } = setup({ missingUser: true });
+
+    await expect(source.ensureProfileExists("ghost")).rejects.toBeInstanceOf(ProfileNotFoundError);
+    await expect(source.getProfile("Ghost")).rejects.toBeInstanceOf(ProfileNotFoundError);
+    await expect(source.ensureProfileExists("GHOST")).rejects.toBeInstanceOf(ProfileNotFoundError);
+    expect(github.calls).toHaveLength(1);
+  });
+
+  it("organizations are not adventurers here either", async () => {
+    const { source } = setup({ type: "Organization" });
+    await expect(source.ensureProfileExists("octo-dev")).rejects.toBeInstanceOf(ProfileNotFoundError);
+  });
+
+  it("rejects invalid usernames before any request", async () => {
+    const { source, github } = setup(SMALL);
+    await expect(source.ensureProfileExists("../etc/passwd")).rejects.toBeInstanceOf(InvalidUsernameError);
+    expect(github.calls).toHaveLength(0);
+  });
+
+  it("is free once the profile is cached", async () => {
+    const { source, github } = setup(SMALL);
+    await source.getProfile("octo-dev");
+    const calls = github.calls.length;
+
+    await source.ensureProfileExists("OCTO-DEV");
+    expect(github.calls).toHaveLength(calls);
+  });
+
+  it("a failing user lookup (GitHub down) rejects with the real error, not a 404", async () => {
+    const { source, github } = setup(SMALL);
+    github.overrides.push(() => new Response("{}", { status: 500 }));
+
+    await expect(source.ensureProfileExists("octo-dev")).rejects.toBeInstanceOf(GitHubUnavailableError);
+  });
+
+  it("a failure AFTER the lookup does not fail the check: the full fetch reports it to getProfile", async () => {
+    const { source, github } = setup(SMALL);
+    github.overrides.push((call) => (call.path === "/graphql" ? new Response("{}", { status: 500 }) : undefined));
+
+    await expect(source.ensureProfileExists("octo-dev")).resolves.toBeUndefined();
+    await expect(source.getProfile("octo-dev")).rejects.toBeInstanceOf(GitHubUnavailableError);
+  });
+
+  it("concurrent checks and loads share one fetch", async () => {
+    const { source, github } = setup(SMALL);
+    await Promise.all([
+      source.ensureProfileExists("octo-dev"),
+      source.ensureProfileExists("Octo-Dev"),
+      source.getProfile("octo-dev"),
+    ]);
+    expect(github.count("rest")).toBe(5);
+    expect(github.count("graphql")).toBe(1);
+  });
+});
+
 describe("yearly history (kept from the requests that already feed the totals)", () => {
   it("keeps commits, PRs, reviews, issues, contributions and active days per calendar year", async () => {
     const { source } = setup(SMALL);

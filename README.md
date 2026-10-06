@@ -61,11 +61,36 @@ Variáveis de produção:
 ```bash
 GITHUB_DATA_SOURCE=github
 GITHUB_TOKEN=<fine-grained PAT server-only>
+NEXT_PUBLIC_SITE_URL=https://githubrpg.vercel.app
 ```
+
+`NEXT_PUBLIC_SITE_URL` é a URL pública do **site** (não é segredo). Ela alimenta `metadataBase`, os canonicals, as imagens Open Graph/Twitter e o link do botão "Compartilhar perfil". Sem ela, builds de produção usam `https://githubrpg.vercel.app` e desenvolvimento/testes usam `http://localhost:3000`; defina-a em outro domínio ou em um domínio próprio. Nunca coloque o token (nem qualquer segredo) em variável `NEXT_PUBLIC_*`.
 
 `GITHUB_TOKEN` não deve usar prefixo `NEXT_PUBLIC_`. Sem `GITHUB_DATA_SOURCE`, produção falha explicitamente; com `GITHUB_DATA_SOURCE=github` e sem token, o app usa REST anônimo, mantém o básico funcional e deixa métricas de contribuição indisponíveis, com risco maior de rate limit.
 
 Em serverless, o cache atual é em memória por instância: cold starts e múltiplas instâncias podem reduzir a taxa de cache hit. Para tráfego maior, considerar futuramente GitHub App e cache compartilhado; não há Redis, banco ou analytics nesta versão.
+
+## Compartilhamento e SEO
+
+- **Compartilhar perfil** (no modal do Cartão de Herói) compartilha o link da ficha, `{site}/{usuario}`, e não a URL da imagem. Usa a Web Share API quando o navegador a tem; senão copia o link ("Link copiado!") e, se nem a área de transferência estiver disponível, mostra o link para copiar à mão. Fechar a folha nativa não é erro.
+- **Baixar Cartão de Herói** continua baixando o PNG 1200x630 (`/api/card/{usuario}`).
+- Cada ficha tem `canonical` em `/{usuario-em-minusculas}` e Open Graph/Twitter (`summary_large_image`) apontando para `/api/card/{usuario}`. A landing tem seu próprio canonical e metadados.
+- Um usuário inexistente continua sendo um **HTTP 404 real** (com `noindex`). Por isso `/[username]` não tem `loading.tsx`: ele faria o Next transmitir a resposta antes da página rodar e o 404 viraria 200. O esqueleto de carregamento é o `fallback` de um `<Suspense>` dentro da página, depois de uma checagem barata de existência.
+- Falhas ao buscar o perfil caem em `error.tsx` (mensagem amigável, "Tentar novamente", volta à landing; sem stack, JSON ou token).
+
+### Identidade e distribuição
+
+- **Por que esta classe?** (botão ao lado da classe): explica a classe e a subclasse com os bytes reais de linguagem. É só leitura: usa o arquétipo que o engine já decidiu, `classForLanguage` e `LANGUAGE_RULES` (nada é copiado) e não faz nenhuma requisição nova ao GitHub (`src/features/character/classExplanation.ts`).
+- **Badge para README** (`/api/badge/{usuario}`, SVG de ~0,9 kB, sem script, com todo texto escapado). O botão **Adicionar ao README** mostra o Markdown pronto:
+
+  ```md
+  [![GitHub RPG](https://githubrpg.vercel.app/api/badge/USUARIO)](https://githubrpg.vercel.app/USUARIO)
+  ```
+
+  Cache: `public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400`. Usuário inexistente é 404 (sem badge falso).
+- **Compartilhar conquista / capítulo da Crônica**: `/api/card/{usuario}/achievement/{id}` e `/api/card/{usuario}/chronicle/{ano}` (PNG 1200x630, `?lang=en` opcional). O id só *seleciona*: a rota carrega o personagem real e responde 404 se a conquista não estiver desbloqueada (ou o capítulo não existir/não for compartilhável), 400 se o id for malformado. Os três cards (Herói, Conquista, Crônica) usam as mesmas primitivas de `src/features/share/cardKit.tsx`.
+- O compartilhamento (Web Share → área de transferência → link para copiar à mão) envia o **link do perfil**: a ficha ainda não tem URL própria por conquista ou capítulo, e um link mais profundo só abriria a página genérica. A imagem (baixar) é o conteúdo específico.
+- Limitação conhecida: o cache de dados do GitHub é por instância do servidor (em memória). Um badge muito acessado depende do CDN (`s-maxage`) para não gerar um fetch por instância fria. Se isso não bastar em escala real, o próximo passo é infraestrutura de cache compartilhado (fora deste ciclo).
 
 ## Como funciona
 
