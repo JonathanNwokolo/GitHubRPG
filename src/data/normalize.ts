@@ -24,6 +24,17 @@ function optionalText(value: string | null | undefined): string | undefined {
   return trimmed ? trimmed : undefined;
 }
 
+/** Only absolute https URLs are kept; anything else makes the UI use its fallback avatar. */
+function optionalHttpsUrl(value: string | null | undefined): string | undefined {
+  const trimmed = value?.trim();
+  if (!trimmed) return undefined;
+  try {
+    return new URL(trimmed).protocol === "https:" ? trimmed : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 /**
  * RawGitHubData (already validated) -> DeveloperProfile, the only shape the engine reads.
  * Pure: no dates, no randomness. Forks are excluded from every repository-derived number.
@@ -66,6 +77,7 @@ export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile 
   return {
     username: raw.username.trim(),
     displayName: optionalText(raw.displayName),
+    avatarUrl: optionalHttpsUrl(raw.avatarUrl),
     bio: optionalText(raw.bio),
     location: optionalText(raw.location),
     company: optionalText(raw.company),

@@ -25,6 +25,8 @@ export interface RawRepository {
 export interface RawGitHubData {
   username: string;
   displayName?: string | null;
+  /** Profile photo URL (GitHub `avatar_url`). Optional: mock sources have none. */
+  avatarUrl?: string | null;
   bio?: string | null;
   location?: string | null;
   company?: string | null;

@@ -3,12 +3,14 @@
 import React from "react";
 import {
   Badge,
-  PixelUsers,
-  PixelShield,
-  PixelStar,
-  PixelLayers,
-  PixelGhost,
-  PixelAlert,
+  RpgIconFrame,
+  RpgUsers,
+  RpgShield,
+  RpgStar,
+  RpgLayers,
+  RpgGhost,
+  RpgAlert,
+  type IconRarity,
 } from "@/design-system";
 
 export type PersonaIcon = "rookie" | "veteran" | "polyglot" | "popular" | "empty" | "missing";
@@ -29,13 +31,13 @@ interface PersonaCardProps {
   onSelect: (username: string) => void;
 }
 
-const ICONS: Record<PersonaIcon, React.ReactNode> = {
-  rookie: <PixelUsers className="w-5 h-5 text-sky-400" />,
-  veteran: <PixelShield className="w-5 h-5 text-amber-400" />,
-  polyglot: <PixelLayers className="w-5 h-5 text-cyan-400" />,
-  popular: <PixelStar className="w-5 h-5 text-yellow-300" />,
-  empty: <PixelGhost className="w-5 h-5 text-slate-400" />,
-  missing: <PixelAlert className="w-5 h-5 text-red-400" />,
+const ICONS: Record<PersonaIcon, { icon: React.ReactNode; rarity: IconRarity }> = {
+  rookie: { icon: <RpgUsers className="w-5 h-5 text-sky-400" />, rarity: "rare" },
+  veteran: { icon: <RpgShield className="w-5 h-5 text-amber-400" />, rarity: "legendary" },
+  polyglot: { icon: <RpgLayers className="w-5 h-5 text-cyan-400" />, rarity: "azure" },
+  popular: { icon: <RpgStar className="w-5 h-5 text-yellow-300" />, rarity: "gold" },
+  empty: { icon: <RpgGhost className="w-5 h-5 text-purple-300" />, rarity: "common" },
+  missing: { icon: <RpgAlert className="w-5 h-5 text-red-400" />, rarity: "crimson" },
 };
 
 export const PersonaCard: React.FC<PersonaCardProps> = ({ persona, actionLabel, onSelect }) => {
@@ -52,9 +54,15 @@ export const PersonaCard: React.FC<PersonaCardProps> = ({ persona, actionLabel, 
       <div className="space-y-3">
         {/* Top Icon & Badge */}
         <div className="flex items-center justify-between gap-2">
-          <div className="p-2.5 bg-rpg-obsidian border border-rpg-border flex items-center justify-center group-hover:scale-110 transition-transform">
-            {ICONS[persona.icon]}
-          </div>
+          <RpgIconFrame
+            size="lg"
+            shape="slate"
+            rarity={ICONS[persona.icon].rarity}
+            interactive
+            glow
+          >
+            {ICONS[persona.icon].icon}
+          </RpgIconFrame>
           <Badge variant={persona.badgeVariant} size="sm">
             {persona.badge}
           </Badge>

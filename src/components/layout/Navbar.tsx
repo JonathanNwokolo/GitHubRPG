@@ -1,9 +1,14 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { PixelVolumeOn, PixelVolumeOff, PixelShield, PixelSparkles } from "@/design-system";
+import {
+  RpgVolumeOn,
+  RpgVolumeOff,
+  RpgSparkles,
+} from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { Badge } from "@/design-system/components/Badge";
@@ -25,15 +30,21 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-rpg-obsidian/95 border-b-2 border-rpg-border backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 sm:h-24 flex items-center justify-between">
         {/* Logo / Brand */}
         <Link
           href="/"
           className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold p-1"
         >
-          <div className="w-8 h-8 bg-rpg-surface border border-rpg-goldDark flex items-center justify-center text-rpg-gold group-hover:scale-105 transition-transform shadow-pixel">
-            <PixelShield className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
-          </div>
+          <Image
+            src="/logo-personagem.png"
+            alt=""
+            aria-hidden
+            width={80}
+            height={80}
+            priority
+            className="w-14 h-14 sm:w-20 sm:h-20 object-contain pixelated group-hover:scale-110 transition-transform"
+          />
           <div className="flex flex-col">
             <span className="font-pixel text-xs sm:text-sm text-rpg-gold tracking-wider group-hover:text-rpg-goldLight transition-colors">
               GitHub RPG
@@ -70,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
           {/* Demo Data indicator */}
           {isDemo && (
             <Badge variant="common" size="sm" className="hidden sm:inline-flex gap-1.5" title={t.common.demoDataTooltip}>
-              <PixelSparkles className="w-3.5 h-3.5 text-amber-400" />
+              <RpgSparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>{t.common.demoDataDisclaimer}</span>
             </Badge>
           )}
@@ -83,9 +94,9 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
             className="p-2 border border-rpg-border bg-rpg-surface hover:border-rpg-gold text-slate-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"
           >
             {audioEnabled ? (
-              <PixelVolumeOn className="w-4 h-4 text-amber-400" />
+              <RpgVolumeOn className="w-4 h-4 text-amber-400" />
             ) : (
-              <PixelVolumeOff className="w-4 h-4 text-slate-400" />
+              <RpgVolumeOff className="w-4 h-4 text-slate-400" />
             )}
           </button>
 

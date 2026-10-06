@@ -4,10 +4,11 @@ import React from "react";
 import {
   Tabs,
   TabItem,
-  PixelShield,
-  PixelSparkles,
-  PixelCrown,
-  PixelTrophy,
+  RpgIconFrame,
+  RpgShield,
+  RpgSparkles,
+  RpgCrown,
+  RpgTrophy,
 } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -38,23 +39,39 @@ export const CharacterTabs: React.FC<CharacterTabsProps> = ({
     {
       id: "overview",
       label: t.nav.character,
-      icon: <PixelShield className="w-4 h-4 text-amber-400" />,
+      icon: (
+        <RpgIconFrame size="xs" shape="slate" rarity="gold">
+          <RpgShield className="w-3.5 h-3.5" />
+        </RpgIconFrame>
+      ),
     },
     {
       id: "skills",
       label: t.nav.skills,
-      icon: <PixelSparkles className="w-4 h-4 text-purple-400" />,
+      icon: (
+        <RpgIconFrame size="xs" shape="slate" rarity="arcane">
+          <RpgSparkles className="w-3.5 h-3.5" />
+        </RpgIconFrame>
+      ),
     },
     {
       id: "achievements",
       label: t.nav.achievements,
-      icon: <PixelCrown className="w-4 h-4 text-yellow-400" />,
+      icon: (
+        <RpgIconFrame size="xs" shape="slate" rarity="legendary">
+          <RpgCrown className="w-3.5 h-3.5" />
+        </RpgIconFrame>
+      ),
       badge: `${unlockedAchievementsCount}/${totalAchievementsCount}`,
     },
     {
       id: "titles",
       label: t.nav.titles,
-      icon: <PixelTrophy className="w-4 h-4 text-sky-400" />,
+      icon: (
+        <RpgIconFrame size="xs" shape="slate" rarity="rare">
+          <RpgTrophy className="w-3.5 h-3.5" />
+        </RpgIconFrame>
+      ),
       badge: `${unlockedTitlesCount}/${totalTitlesCount}`,
     },
   ];

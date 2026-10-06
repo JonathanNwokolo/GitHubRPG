@@ -4,11 +4,13 @@ import React from "react";
 import type { RPGSummary } from "@/game/types";
 import {
   Card,
-  PixelGitCommit,
-  PixelCastle,
-  PixelStar,
-  PixelFlame,
-  PixelCalendar,
+  RpgIconFrame,
+  RpgGitCommit,
+  RpgCastle,
+  RpgStar,
+  RpgMana,
+  RpgCalendar,
+  type IconRarity,
 } from "@/design-system";
 import { formatMetric, localeOf } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
@@ -30,36 +32,47 @@ export const ActivitySummary: React.FC<ActivitySummaryProps> = ({ summary }) => 
 
   const streak = formatMetric(summary.currentStreakDays, language);
 
-  const stats = [
+  const stats: Array<{
+    label: string;
+    value: string;
+    partial: boolean;
+    rarity: IconRarity;
+    icon: React.ReactNode;
+  }> = [
     {
       label: t.character.totalCommits,
       value: formatMetric(summary.commits, language),
       partial: summary.commits.coverage === "partial",
-      icon: <PixelGitCommit className="w-4 h-4 text-amber-400" />,
+      rarity: "gold",
+      icon: <RpgGitCommit className="w-4 h-4 text-amber-400" />,
     },
     {
       label: t.character.publicRepos,
       value: formatMetric(summary.ownRepositories, language),
       partial: summary.ownRepositories.coverage === "partial",
-      icon: <PixelCastle className="w-4 h-4 text-purple-400" />,
+      rarity: "arcane",
+      icon: <RpgCastle className="w-4 h-4 text-purple-400" />,
     },
     {
       label: t.character.starsEarned,
       value: formatMetric(summary.starsReceived, language),
       partial: summary.starsReceived.coverage === "partial",
-      icon: <PixelStar className="w-4 h-4 text-yellow-300" />,
+      rarity: "legendary",
+      icon: <RpgStar className="w-4 h-4 text-yellow-300" />,
     },
     {
       label: t.character.streakDays,
       value: summary.currentStreakDays.coverage === "unavailable" ? streak : `${streak} ${t.character.days}`,
       partial: summary.currentStreakDays.coverage === "partial",
-      icon: <PixelFlame className="w-4 h-4 text-red-400" />,
+      rarity: "crimson",
+      icon: <RpgMana className="w-4 h-4 text-red-400" />,
     },
     {
       label: t.character.joinedDate,
       value: formattedDate,
       partial: false,
-      icon: <PixelCalendar className="w-4 h-4 text-emerald-400" />,
+      rarity: "emerald",
+      icon: <RpgCalendar className="w-4 h-4 text-emerald-400" />,
     },
   ];
 
@@ -78,7 +91,9 @@ export const ActivitySummary: React.FC<ActivitySummaryProps> = ({ summary }) => 
             title={item.partial ? t.progress.partialNote : undefined}
             className="p-3.5 bg-rpg-surface border border-rpg-border flex flex-col items-center justify-center text-center space-y-1.5 shadow-sm hover:border-rpg-borderLight transition-colors"
           >
-            <div className="p-2 bg-rpg-obsidian border border-rpg-border/60">{item.icon}</div>
+            <RpgIconFrame size="md" shape="slate" rarity={item.rarity} glow>
+              {item.icon}
+            </RpgIconFrame>
             <p className="font-mono text-base sm:text-lg text-amber-400 font-bold truncate max-w-full">
               {item.value}
             </p>

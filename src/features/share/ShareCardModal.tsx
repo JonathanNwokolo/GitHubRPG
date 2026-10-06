@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import type { ClassName, RPGCharacter } from "@/game/types";
-import { Dialog, Button, PixelDownload } from "@/design-system";
+import { Dialog, Button, RpgDownload } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
@@ -222,7 +222,7 @@ export const ShareCardModal: React.FC<ShareCardModalProps> = ({
               {t.share.close}
             </Button>
             <Button size="sm" variant="primary" onClick={handleDownload} className="gap-2">
-              <PixelDownload className="w-4 h-4" />
+              <RpgDownload className="w-4 h-4" />
               <span>{t.share.downloadImage}</span>
             </Button>
           </div>

@@ -62,6 +62,7 @@ export const en: TranslationDictionary = {
     subclass: "Subclass",
     title: "Main Title",
     noTitle: "No title equipped",
+    avatarAlt: "GitHub profile photo of {name}",
     attributesTitle: "Technical Attributes",
     scale: "Scale 0 – 100",
     activitySummaryTitle: "Journey Summary",

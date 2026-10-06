@@ -10,4 +10,7 @@ export * from "./components/Tooltip";
 export * from "./components/LoadingState";
 export * from "./components/ErrorState";
 export * from "./components/EmptyState";
-export * from "./icons/PixelIcons";
+export * from "./icons/RpgIconFrame";
+export * from "./icons/RpgClassIcons";
+export * from "./icons/LanguageIcons";
+export * from "./icons/RpgIcons";

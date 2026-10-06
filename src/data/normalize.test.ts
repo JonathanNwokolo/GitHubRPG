@@ -94,6 +94,17 @@ describe("normalizeDeveloperProfile", () => {
     expect(profile.displayName).toBe("Ada");
   });
 
+  it("keeps only absolute https avatar URLs", () => {
+    const avatar = (avatarUrl: string | null | undefined) => normalizeDeveloperProfile(makeRawData({ avatarUrl })).avatarUrl;
+    expect(avatar(" https://avatars.githubusercontent.com/u/1?v=4 ")).toBe("https://avatars.githubusercontent.com/u/1?v=4");
+    expect(avatar("http://example.com/a.png")).toBeUndefined();
+    expect(avatar("javascript:alert(1)")).toBeUndefined();
+    expect(avatar("not a url")).toBeUndefined();
+    expect(avatar("  ")).toBeUndefined();
+    expect(avatar(null)).toBeUndefined();
+    expect(avatar(undefined)).toBeUndefined();
+  });
+
   it("does not share mutable state with the raw data", () => {
     const raw = makeRawData({
       activity: {

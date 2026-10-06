@@ -87,6 +87,7 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
         login,
         type: options.type ?? "User",
         name: options.name === undefined ? "Octo Dev" : options.name,
+        avatar_url: `https://avatars.githubusercontent.com/u/1?v=4`,
         bio: null,
         location: null,
         company: null,

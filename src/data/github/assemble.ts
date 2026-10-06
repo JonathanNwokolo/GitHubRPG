@@ -37,6 +37,7 @@ export function assembleRawProfile(input: {
   const base = {
     username: user.login,
     displayName: user.name ?? null,
+    avatarUrl: user.avatar_url ?? null,
     bio: user.bio ?? null,
     location: user.location ?? null,
     company: user.company ?? null,

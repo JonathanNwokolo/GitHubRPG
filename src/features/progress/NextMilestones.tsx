@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Badge, Card, PixelCompass } from "@/design-system";
+import { Badge, Card, RpgCompass, RpgIconFrame } from "@/design-system";
 import type { AchievementProgress } from "@/game/types";
 import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
@@ -19,8 +19,10 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
     <Card className="space-y-4 p-5 sm:p-6">
       <div className="border-b border-rpg-border pb-3">
         <h2 className="font-pixel text-xs sm:text-sm text-rpg-gold uppercase tracking-wider flex items-center gap-2">
-          <PixelCompass className="w-4 h-4 text-amber-400" />
-          {t.milestones.title}
+          <RpgIconFrame size="xs" shape="slate" rarity="gold" glow>
+            <RpgCompass className="w-3.5 h-3.5" />
+          </RpgIconFrame>
+          <span>{t.milestones.title}</span>
         </h2>
         <p className="font-sans text-xs text-slate-400 mt-1">{t.milestones.subtitle}</p>
       </div>

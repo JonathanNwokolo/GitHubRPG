@@ -7,7 +7,16 @@ import type {
   TitleCategory,
   TitleProgress,
 } from "@/game/types";
-import { Badge, Button, Card, PixelCheck, PixelLock, PixelTrophy, PixelX } from "@/design-system";
+import {
+  Badge,
+  Button,
+  Card,
+  RpgIconFrame,
+  RpgCheck,
+  RpgLock,
+  RpgTrophy,
+  RpgClose,
+} from "@/design-system";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
 import { fill } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
@@ -91,9 +100,11 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                     }`}
                   >
                     <div className="space-y-1">
-                      <p className="font-sans font-bold text-sm text-slate-100 flex items-center gap-1.5">
-                        <PixelCheck className="w-4 h-4 text-emerald-400" />
-                        {title.name}
+                      <p className="font-sans font-bold text-sm text-slate-100 flex items-center gap-2">
+                        <RpgIconFrame size="xs" shape="circle" rarity="emerald" glow>
+                          <RpgCheck className="w-3.5 h-3.5" />
+                        </RpgIconFrame>
+                        <span>{title.name}</span>
                       </p>
                       <p className="font-sans text-xs text-slate-300">{title.description}</p>
                       <div className="flex items-center gap-1.5 pt-1">
@@ -109,7 +120,7 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                     </div>
                     {isEquipped ? (
                       <Badge variant="gold" size="md" className="gap-1 flex-shrink-0">
-                        <PixelTrophy className="w-3.5 h-3.5" />
+                        <RpgTrophy className="w-3.5 h-3.5" />
                         {t.titles.equipped}
                       </Badge>
                     ) : (
@@ -142,9 +153,11 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
               <li key={title.id}>
                 <Card className="space-y-2 opacity-95">
                   <div className="flex items-center justify-between gap-2">
-                    <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-1.5">
-                      <PixelLock className="w-4 h-4 text-slate-500" />
-                      {title.name}
+                    <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2">
+                      <RpgIconFrame size="xs" shape="circle" rarity="common">
+                        <RpgLock className="w-3.5 h-3.5 text-slate-400" />
+                      </RpgIconFrame>
+                      <span>{title.name}</span>
                     </p>
                     <Badge variant="neutral" size="sm">
                       {categoryLabel(title.category, t)}
@@ -168,9 +181,11 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
             {lockedCombinations.map((title) => (
               <li key={title.id}>
                 <Card className="space-y-2 opacity-90">
-                  <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-1.5">
-                    <PixelLock className="w-4 h-4 text-slate-500" />
-                    {title.name}
+                  <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2">
+                    <RpgIconFrame size="xs" shape="circle" rarity="common">
+                      <RpgLock className="w-3.5 h-3.5 text-slate-400" />
+                    </RpgIconFrame>
+                    <span>{title.name}</span>
                   </p>
                   <p className="font-sans text-xs text-slate-400">{t.titles.requirements}:</p>
                   <ul className="space-y-1">
@@ -182,9 +197,9 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                         }`}
                       >
                         {req.met ? (
-                          <PixelCheck className="w-3.5 h-3.5" aria-label="ok" />
+                          <RpgCheck className="w-3.5 h-3.5 text-emerald-400" aria-label="ok" />
                         ) : (
-                          <PixelX className="w-3.5 h-3.5" aria-label="pendente" />
+                          <RpgClose className="w-3.5 h-3.5 text-slate-500" aria-label="pendente" />
                         )}
                         {fill(req.kind === "class" ? t.titles.classReq : t.titles.subclassReq, {
                           value: req.value,

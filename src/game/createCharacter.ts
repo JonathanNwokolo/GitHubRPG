@@ -33,6 +33,7 @@ export function createRPGCharacter(profile: DeveloperProfile): RPGCharacter {
     identity: {
       username: profile.username,
       displayName: profile.displayName,
+      avatarUrl: profile.avatarUrl,
       bio: profile.bio,
       location: profile.location,
       company: profile.company,

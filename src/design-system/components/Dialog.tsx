@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { PixelX } from "../icons/PixelIcons";
+import { RpgClose } from "../icons/RpgIcons";
 
 export interface DialogProps {
   isOpen: boolean;
@@ -92,9 +92,9 @@ export const Dialog: React.FC<DialogProps> = ({
           <button
             onClick={onClose}
             aria-label="Fechar janela"
-            className="text-slate-400 hover:text-white p-1.5 hover:bg-rpg-surface border border-transparent hover:border-rpg-border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold min-w-[36px] min-h-[36px] flex items-center justify-center flex-shrink-0"
+            className="text-slate-400 hover:text-amber-400 p-1.5 bg-rpg-surface hover:bg-rpg-surfaceLight border border-rpg-border hover:border-rpg-gold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold min-w-[36px] min-h-[36px] flex items-center justify-center flex-shrink-0"
           >
-            <PixelX className="w-4 h-4" />
+            <RpgClose className="w-4 h-4" />
           </button>
         </div>
 

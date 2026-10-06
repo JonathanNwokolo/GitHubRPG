@@ -8,7 +8,7 @@ export interface ProgressBarProps extends React.HTMLAttributes<HTMLDivElement> {
   value: number; // Current value
   max?: number; // Max value (default 100)
   variant?: ProgressBarVariant;
-  label?: string;
+  label?: React.ReactNode;
   showValueText?: boolean;
   valueFormatter?: (value: number, max: number) => string;
   size?: "sm" | "md" | "lg";
@@ -62,7 +62,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-valuenow={Math.round(value)}
         aria-valuemin={0}
         aria-valuemax={max}
-        aria-label={label || "Barra de progresso"}
+        aria-label={typeof label === "string" ? label : (props["aria-label"] || "Barra de progresso")}
         className={twMerge(
           clsx(
             "w-full bg-rpg-void border-2 border-rpg-border relative overflow-hidden shadow-inner p-0.5",

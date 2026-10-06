@@ -32,6 +32,8 @@ export interface LanguageUsage {
 export interface DeveloperProfile {
   username: string;
   displayName?: string;
+  /** Presentation only: never read by the engine rules. */
+  avatarUrl?: string;
   bio?: string;
   location?: string;
   company?: string;
@@ -245,6 +247,7 @@ export interface RPGCharacter {
   identity: {
     username: string;
     displayName?: string;
+    avatarUrl?: string;
     bio?: string;
     location?: string;
     company?: string;

@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { PixelSparkles } from "../icons/PixelIcons";
+import { RpgGhost } from "../icons/RpgIcons";
+import { RpgIconFrame } from "../icons/RpgIconFrame";
 
 export interface EmptyStateProps {
   title?: string;
@@ -26,8 +27,12 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
         )
       )}
     >
-      <div className="w-12 h-12 flex items-center justify-center bg-rpg-surface border border-rpg-border text-rpg-parchmentMuted mb-3">
-        {icon || <PixelSparkles className="w-6 h-6 text-amber-400" />}
+      <div className="mb-3">
+        {icon || (
+          <RpgIconFrame size="lg" shape="circle" rarity="arcane" glow>
+            <RpgGhost className="w-7 h-7 text-purple-300 animate-pulse" />
+          </RpgIconFrame>
+        )}
       </div>
       <h3 className="font-sans font-bold text-base text-slate-200 uppercase tracking-wide mb-2">
         {title}

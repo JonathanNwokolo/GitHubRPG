@@ -60,6 +60,7 @@ export const ptBR = {
     subclass: "Subclasse",
     title: "Título Principal",
     noTitle: "Sem título equipado",
+    avatarAlt: "Foto de perfil do GitHub de {name}",
     attributesTitle: "Atributos Técnicos",
     scale: "Escala 0 – 100",
     activitySummaryTitle: "Resumo da Jornada",

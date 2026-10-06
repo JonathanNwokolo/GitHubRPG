@@ -1,6 +1,7 @@
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { PixelAlert } from "../icons/PixelIcons";
+import { RpgAlert } from "../icons/RpgIcons";
+import { RpgIconFrame } from "../icons/RpgIconFrame";
 import { Button } from "./Button";
 
 export interface ErrorStateProps {
@@ -28,8 +29,10 @@ export const ErrorState: React.FC<ErrorStateProps> = ({
         )
       )}
     >
-      <div className="w-12 h-12 flex items-center justify-center bg-red-950/60 border border-red-500 text-rpg-crimson mb-3">
-        <PixelAlert className="w-6 h-6" />
+      <div className="mb-3">
+        <RpgIconFrame size="lg" shape="shield" rarity="crimson" glow>
+          <RpgAlert className="w-7 h-7 text-red-400" />
+        </RpgIconFrame>
       </div>
       <h3 className="font-sans font-bold text-base sm:text-lg text-red-400 tracking-wide mb-2">
         {title}

@@ -8,10 +8,14 @@ import {
   Button,
   Card,
   Tooltip,
-  PixelShare,
-  PixelSparkles,
-  PixelMapPin,
-  PixelBuilding,
+  RpgShare,
+  RpgSparkles,
+  RpgMapPin,
+  RpgBuilding,
+  RpgHeart,
+  RpgMana,
+  RpgStar,
+  RpgClassIcon,
 } from "@/design-system";
 import { fnv1a } from "@/data/seed/hashAndPrng";
 import { fill, formatNumber } from "@/lib/format";
@@ -61,11 +65,13 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
     <Card variant="rune" className="p-6 md:p-8 space-y-6">
       {/* Top Banner: Identity & Core Details */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-        {/* Procedural Avatar */}
+        {/* GitHub photo inside the RPG frame (procedural avatar as fallback) */}
         <div className="flex-shrink-0">
           <CharacterAvatar
             seed={fnv1a(identity.username.toLowerCase())}
-            size={120}
+            photoUrl={identity.avatarUrl}
+            photoAlt={fill(t.character.avatarAlt, { name: displayName })}
+            size={100}
             rarity={TIER_FRAME[progression.tier] ?? "common"}
           />
         </div>
@@ -82,22 +88,24 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             </Badge>
 
             <Tooltip content={archetype.classDescription}>
-              <Badge variant="arcane" size="md">
-                {archetype.className}
+              <Badge variant="arcane" size="md" className="gap-1.5">
+                <RpgClassIcon classNameType={archetype.className} className="w-4 h-4 text-purple-300" />
+                <span>{archetype.className}</span>
               </Badge>
             </Tooltip>
 
             {archetype.subclassName && (
               <Tooltip content={archetype.subclassDescription ?? archetype.subclassName}>
-                <Badge variant="neutral" size="md">
-                  {archetype.subclassName}
+                <Badge variant="neutral" size="md" className="gap-1.5">
+                  <RpgClassIcon classNameType={archetype.subclassName} className="w-4 h-4 text-slate-300" />
+                  <span>{archetype.subclassName}</span>
                 </Badge>
               </Tooltip>
             )}
 
             {meta.isDemo && (
               <Badge variant="common" size="sm" className="ml-auto hidden sm:inline-flex gap-1" title={t.common.demoDataTooltip}>
-                <PixelSparkles className="w-3.5 h-3.5 text-amber-400" />
+                <RpgSparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span>{t.common.demoDataDisclaimer}</span>
               </Badge>
             )}
@@ -125,13 +133,13 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs sm:text-sm text-slate-300 pt-1">
             {identity.location && (
               <span className="flex items-center gap-1.5">
-                <PixelMapPin className="w-3.5 h-3.5 text-amber-400" />
+                <RpgMapPin className="w-3.5 h-3.5 text-amber-400" />
                 <span>{identity.location}</span>
               </span>
             )}
             {identity.company && (
               <span className="flex items-center gap-1.5">
-                <PixelBuilding className="w-3.5 h-3.5 text-purple-400" />
+                <RpgBuilding className="w-3.5 h-3.5 text-purple-400" />
                 <span>{identity.company}</span>
               </span>
             )}
@@ -147,7 +155,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
               onClick={onOpenShareModal}
               className="gap-2 whitespace-nowrap"
             >
-              <PixelShare className="w-4 h-4 text-amber-400" />
+              <RpgShare className="w-4 h-4 text-amber-400" />
               <span>{t.share.generateCard}</span>
             </Button>
           </div>
@@ -162,7 +170,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             variant="xp"
             value={progression.progressPercent}
             max={100}
-            label={t.character.xp}
+            label={
+              <span className="inline-flex items-center gap-1.5">
+                <RpgStar className="w-3.5 h-3.5 text-amber-400" />
+                <span>{t.character.xp}</span>
+              </span>
+            }
             valueFormatter={() => fill(t.character.xpTotal, { n: formatNumber(progression.totalXp, language) })}
           />
           <p className="font-sans text-xs text-slate-300">{xpHint}</p>
@@ -174,7 +187,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             variant="hp"
             value={resources.hp}
             max={resources.maxHp}
-            label={t.character.hp}
+            label={
+              <span className="inline-flex items-center gap-1.5">
+                <RpgHeart className="w-3.5 h-3.5 text-red-400" />
+                <span>{t.character.hp}</span>
+              </span>
+            }
             valueFormatter={(val, max) => `${val} / ${max} HP`}
           />
         </div>
@@ -185,7 +203,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             variant="mp"
             value={resources.mp}
             max={resources.maxMp}
-            label={t.character.mp}
+            label={
+              <span className="inline-flex items-center gap-1.5">
+                <RpgMana className="w-3.5 h-3.5 text-cyan-400" />
+                <span>{t.character.mp}</span>
+              </span>
+            }
             valueFormatter={(val, max) => `${val} / ${max} MP`}
           />
         </div>

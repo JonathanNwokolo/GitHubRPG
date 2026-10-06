@@ -24,6 +24,7 @@ export const RawGitHubDataSchema = z
   .object({
     username: z.string().min(1).max(39),
     displayName: z.string().nullish(),
+    avatarUrl: z.string().nullish(),
     bio: z.string().nullish(),
     location: z.string().nullish(),
     company: z.string().nullish(),

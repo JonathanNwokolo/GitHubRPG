@@ -6,12 +6,14 @@ import {
   Card,
   ProgressBar,
   Tooltip,
-  PixelZap,
-  PixelTome,
-  PixelStar,
-  PixelLayers,
-  PixelCalendar,
+  RpgIconFrame,
+  RpgZap,
+  RpgTome,
+  RpgStar,
+  RpgLayers,
+  RpgCalendar,
   type ProgressBarVariant,
+  type IconRarity,
 } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -29,41 +31,47 @@ export const AttributesPanel: React.FC<AttributesPanelProps> = ({ stats }) => {
     label: string;
     desc: string;
     icon: React.ReactNode;
+    rarity: IconRarity;
     variant: ProgressBarVariant;
   }> = [
     {
       key: "activity",
       label: t.attributes.activity,
       desc: t.attributes.activityDesc,
-      icon: <PixelZap className="w-4 h-4 text-amber-400" />,
+      icon: <RpgZap className="w-3.5 h-3.5" />,
+      rarity: "gold",
       variant: "stat",
     },
     {
       key: "experience",
       label: t.attributes.experience,
       desc: t.attributes.experienceDesc,
-      icon: <PixelTome className="w-4 h-4 text-purple-400" />,
+      icon: <RpgTome className="w-3.5 h-3.5" />,
+      rarity: "arcane",
       variant: "arcane",
     },
     {
       key: "reputation",
       label: t.attributes.reputation,
       desc: t.attributes.reputationDesc,
-      icon: <PixelStar className="w-4 h-4 text-yellow-300" />,
+      icon: <RpgStar className="w-3.5 h-3.5" />,
+      rarity: "legendary",
       variant: "xp",
     },
     {
       key: "versatility",
       label: t.attributes.versatility,
       desc: t.attributes.versatilityDesc,
-      icon: <PixelLayers className="w-4 h-4 text-cyan-400" />,
+      icon: <RpgLayers className="w-3.5 h-3.5" />,
+      rarity: "azure",
       variant: "mp",
     },
     {
       key: "consistency",
       label: t.attributes.consistency,
       desc: t.attributes.consistencyDesc,
-      icon: <PixelCalendar className="w-4 h-4 text-emerald-400" />,
+      icon: <RpgCalendar className="w-3.5 h-3.5" />,
+      rarity: "emerald",
       variant: "hp",
     },
   ];
@@ -82,8 +90,10 @@ export const AttributesPanel: React.FC<AttributesPanelProps> = ({ stats }) => {
           <div key={stat.key} className="space-y-1.5">
             <div className="flex items-center justify-between">
               <Tooltip content={stat.desc} side="top">
-                <span className="flex items-center gap-2 font-sans font-bold text-sm text-slate-200 hover:text-amber-400 transition-colors cursor-help">
-                  {stat.icon}
+                <span className="flex items-center gap-2.5 font-sans font-bold text-sm text-slate-200 hover:text-amber-400 transition-colors cursor-help">
+                  <RpgIconFrame size="sm" shape="hex" rarity={stat.rarity} glow>
+                    {stat.icon}
+                  </RpgIconFrame>
                   <span>{stat.label}</span>
                 </span>
               </Tooltip>

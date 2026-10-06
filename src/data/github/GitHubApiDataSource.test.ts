@@ -61,6 +61,7 @@ describe("a typical profile", () => {
     expect(raw).toMatchObject({
       username: "Octo-Dev",
       displayName: "Octo Dev",
+      avatarUrl: "https://avatars.githubusercontent.com/u/1?v=4",
       isDemo: false,
       createdAt: "2025-08-20T10:00:00.000Z",
       fetchedAt: NOW.toISOString(),

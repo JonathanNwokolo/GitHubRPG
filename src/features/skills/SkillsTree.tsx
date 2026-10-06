@@ -9,7 +9,9 @@ import {
   Dialog,
   EmptyState,
   ProgressBar,
-  PixelCode,
+  RpgIconFrame,
+  LanguageIcon,
+  IconRarity,
 } from "@/design-system";
 import { fill, formatNumber } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
@@ -20,6 +22,15 @@ interface SkillsTreeProps {
 }
 
 const TIER_BADGE: Record<SkillTier, BadgeVariant> = {
+  Aprendiz: "common",
+  Adepto: "azure",
+  Especialista: "rare",
+  Mestre: "epic",
+  Arquimestre: "arcane",
+  Lendário: "legendary",
+};
+
+const TIER_RARITY: Record<SkillTier, IconRarity> = {
   Aprendiz: "common",
   Adepto: "azure",
   Especialista: "rare",
@@ -62,9 +73,14 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 border bg-rpg-obsidian border-rpg-goldDark flex-shrink-0">
-                    <PixelCode className="w-5 h-5 text-amber-400" />
-                  </div>
+                  <RpgIconFrame
+                    size="sm"
+                    shape="slate"
+                    rarity={TIER_RARITY[skill.tier] ?? "common"}
+                    glow
+                  >
+                    <LanguageIcon language={skill.name} />
+                  </RpgIconFrame>
                   <span className="font-sans font-bold text-sm text-slate-100">{skill.name}</span>
                 </div>
                 <Badge variant={TIER_BADGE[skill.tier]} size="sm">
@@ -109,7 +125,17 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
         {selected && (
           <Card className="space-y-3">
             <div className="flex items-center justify-between">
-              <Badge variant={TIER_BADGE[selected.tier]}>{selected.tier}</Badge>
+              <div className="flex items-center gap-2">
+                <RpgIconFrame
+                  size="sm"
+                  shape="slate"
+                  rarity={TIER_RARITY[selected.tier] ?? "common"}
+                  glow
+                >
+                  <LanguageIcon language={selected.name} />
+                </RpgIconFrame>
+                <Badge variant={TIER_BADGE[selected.tier]}>{selected.tier}</Badge>
+              </div>
               <span className="font-mono text-sm font-bold text-amber-400">
                 {selected.level} / {SKILL_MAX_LEVEL}
               </span>

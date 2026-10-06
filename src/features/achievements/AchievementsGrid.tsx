@@ -2,7 +2,15 @@
 
 import React, { useState } from "react";
 import type { AchievementProgress, Rarity } from "@/game/types";
-import { Card, Badge, Dialog, Button, PixelSparkles, PixelLock } from "@/design-system";
+import {
+  Card,
+  Badge,
+  Dialog,
+  Button,
+  RpgIconFrame,
+  RpgUnlock,
+  RpgLock,
+} from "@/design-system";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -83,9 +91,13 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
                   {t.rarity[achievement.rarity]}
                 </Badge>
                 {achievement.unlocked ? (
-                  <PixelSparkles className="w-4 h-4 text-amber-400" />
+                  <RpgIconFrame size="xs" shape="circle" rarity={achievement.rarity} glow>
+                    <RpgUnlock className="w-3.5 h-3.5" />
+                  </RpgIconFrame>
                 ) : (
-                  <PixelLock className="w-3.5 h-3.5 text-slate-500" />
+                  <RpgIconFrame size="xs" shape="circle" rarity="common">
+                    <RpgLock className="w-3.5 h-3.5 text-slate-500" />
+                  </RpgIconFrame>
                 )}
               </div>
 
@@ -118,7 +130,18 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
               className={`space-y-3 ${selected.unlocked ? "border-rpg-goldDark shadow-pixel-gold" : "opacity-90"}`}
             >
               <div className="flex items-center justify-between">
-                <Badge variant={selected.rarity}>{t.rarity[selected.rarity]}</Badge>
+                <div className="flex items-center gap-2">
+                  {selected.unlocked ? (
+                    <RpgIconFrame size="sm" shape="circle" rarity={selected.rarity} glow>
+                      <RpgUnlock className="w-4 h-4" />
+                    </RpgIconFrame>
+                  ) : (
+                    <RpgIconFrame size="sm" shape="circle" rarity="common">
+                      <RpgLock className="w-4 h-4 text-slate-500" />
+                    </RpgIconFrame>
+                  )}
+                  <Badge variant={selected.rarity}>{t.rarity[selected.rarity]}</Badge>
+                </div>
                 <span className="font-sans text-xs font-bold text-amber-400">
                   {selected.unlocked ? t.progress.unlocked : t.progress.locked}
                 </span>

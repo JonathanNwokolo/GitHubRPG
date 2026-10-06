@@ -6,11 +6,11 @@ import {
   Input,
   Button,
   Badge,
-  PixelSearch,
-  PixelSparkles,
-  PixelSword,
-  PixelShield,
-  PixelAlert,
+  RpgSearch,
+  RpgSparkles,
+  RpgSword,
+  RpgShield,
+  RpgAlert,
 } from "@/design-system";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -163,7 +163,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
     <div className="w-full flex flex-col items-center text-center space-y-12 py-12 md:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
       {/* Hero Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-rpg-surface border border-rpg-goldDark text-amber-300 font-sans font-bold text-xs uppercase tracking-widest shadow-pixel">
-        <PixelSparkles className="w-4 h-4 text-amber-400" />
+        <RpgSparkles className="w-4 h-4 text-amber-400" />
         <span>{t.landing.badge}</span>
       </div>
 
@@ -189,7 +189,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
                   if (errorMessage) setErrorMessage(null);
                 }}
                 placeholder={t.landing.searchPlaceholder}
-                leftIcon={<PixelSearch className="w-4 h-4 text-amber-400" />}
+                leftIcon={<RpgSearch className="w-4 h-4 text-amber-400" />}
                 disabled={isLoading}
                 autoComplete="off"
                 spellCheck="false"
@@ -202,7 +202,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
               isLoading={isLoading}
               className="sm:w-auto w-full whitespace-nowrap min-w-[170px]"
             >
-              <PixelSword className="w-4 h-4 mr-2 inline" />
+              <RpgSword className="w-4 h-4 mr-2 inline" />
               {t.landing.searchButton}
             </Button>
           </div>
@@ -212,7 +212,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
               role="alert"
               className="p-3.5 bg-red-950/90 border border-rpg-crimson text-slate-100 flex items-center gap-2.5 text-left text-xs sm:text-sm animate-fade-in font-sans"
             >
-              <PixelAlert className="w-4 h-4 text-red-400 flex-shrink-0" />
+              <RpgAlert className="w-4 h-4 text-red-400 flex-shrink-0" />
               <span>{errorMessage}</span>
             </div>
           )}
@@ -224,7 +224,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
         <div className="w-full space-y-6 pt-8 border-t border-rpg-border">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-left">
             <div className="flex items-center gap-2">
-              <PixelShield className="w-5 h-5 text-amber-400" />
+              <RpgShield className="w-5 h-5 text-amber-400" />
               <h2 className="font-sans font-bold text-sm sm:text-base text-slate-200 uppercase tracking-wider">
                 {t.landing.personasTitle}
               </h2>

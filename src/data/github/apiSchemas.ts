@@ -9,6 +9,7 @@ export const restUserSchema = z.object({
   login: z.string().min(1),
   type: z.string(),
   name: z.string().nullish(),
+  avatar_url: z.string().nullish(),
   bio: z.string().nullish(),
   location: z.string().nullish(),
   company: z.string().nullish(),
