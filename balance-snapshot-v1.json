@@ -1,0 +1,563 @@
+{
+  "engine": "v1",
+  "referenceDate": "2026-10-01T00:00:00Z",
+  "profiles": {
+    "rookie-dev": {
+      "level": 12,
+      "xp": 3968,
+      "tier": "Aventureiro",
+      "stats": {
+        "activity": 26,
+        "experience": 9,
+        "reputation": 12,
+        "versatility": 28,
+        "consistency": 39
+      },
+      "class": "Mago",
+      "subclass": "Bardo",
+      "achievementCount": 4,
+      "achievementsByRarity": {
+        "common": 4,
+        "rare": 0,
+        "epic": 0,
+        "legendary": 0
+      },
+      "titleCount": 1,
+      "defaultTitle": "Tecelão de Interfaces",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": 6
+        },
+        {
+          "name": "HTML",
+          "level": 6
+        }
+      ],
+      "hp": 244,
+      "mp": 194
+    },
+    "veteran-dev": {
+      "level": 84,
+      "xp": 76488,
+      "tier": "Elite",
+      "stats": {
+        "activity": 93,
+        "experience": 81,
+        "reputation": 89,
+        "versatility": 40,
+        "consistency": 92
+      },
+      "class": "Guerreiro",
+      "subclass": "Mago",
+      "achievementCount": 25,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 7,
+        "epic": 7,
+        "legendary": 2
+      },
+      "titleCount": 15,
+      "defaultTitle": "Lenda Celestial",
+      "skills": [
+        {
+          "name": "Rust",
+          "level": 16
+        },
+        {
+          "name": "TypeScript",
+          "level": 10
+        },
+        {
+          "name": "Python",
+          "level": 8
+        },
+        {
+          "name": "Shell",
+          "level": 5
+        }
+      ],
+      "hp": 782,
+      "mp": 568
+    },
+    "polyglot-dev": {
+      "level": 62,
+      "xp": 48183,
+      "tier": "Mestre",
+      "stats": {
+        "activity": 78,
+        "experience": 58,
+        "reputation": 54,
+        "versatility": 66,
+        "consistency": 88
+      },
+      "class": "Mago",
+      "subclass": "Alquimista",
+      "achievementCount": 19,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 8,
+        "epic": 2,
+        "legendary": 0
+      },
+      "titleCount": 12,
+      "defaultTitle": "Arcanista do Código",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "level": 9
+        },
+        {
+          "name": "Python",
+          "level": 9
+        },
+        {
+          "name": "Go",
+          "level": 7
+        },
+        {
+          "name": "Rust",
+          "level": 5
+        },
+        {
+          "name": "CSS",
+          "level": 3
+        },
+        {
+          "name": "Java",
+          "level": 3
+        }
+      ],
+      "hp": 640,
+      "mp": 524
+    },
+    "popular-dev": {
+      "level": 53,
+      "xp": 38349,
+      "tier": "Mestre",
+      "stats": {
+        "activity": 71,
+        "experience": 48,
+        "reputation": 74,
+        "versatility": 37,
+        "consistency": 87
+      },
+      "class": "Patrulheiro",
+      "subclass": "Alquimista",
+      "achievementCount": 14,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 4,
+        "epic": 1,
+        "legendary": 0
+      },
+      "titleCount": 10,
+      "defaultTitle": "Explorador de Sistemas",
+      "skills": [
+        {
+          "name": "Go",
+          "level": 15
+        },
+        {
+          "name": "Python",
+          "level": 6
+        },
+        {
+          "name": "Shell",
+          "level": 4
+        }
+      ],
+      "hp": 582,
+      "mp": 425
+    },
+    "empty-dev": {
+      "level": 1,
+      "xp": 0,
+      "tier": "Iniciante",
+      "stats": {
+        "activity": 0,
+        "experience": 0,
+        "reputation": 0,
+        "versatility": 0,
+        "consistency": 0
+      },
+      "class": "Aventureiro",
+      "subclass": null,
+      "achievementCount": 0,
+      "achievementsByRarity": {
+        "common": 0,
+        "rare": 0,
+        "epic": 0,
+        "legendary": 0
+      },
+      "titleCount": 0,
+      "defaultTitle": null,
+      "skills": [],
+      "hp": 104,
+      "mp": 53
+    },
+    "commit-heavy-dev": {
+      "level": 46,
+      "xp": 30416,
+      "tier": "Veterano",
+      "stats": {
+        "activity": 72,
+        "experience": 32,
+        "reputation": 24,
+        "versatility": 8,
+        "consistency": 97
+      },
+      "class": "Mago",
+      "subclass": null,
+      "achievementCount": 10,
+      "achievementsByRarity": {
+        "common": 5,
+        "rare": 2,
+        "epic": 2,
+        "legendary": 1
+      },
+      "titleCount": 7,
+      "defaultTitle": "Forjador Eterno",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "level": 12
+        }
+      ],
+      "hp": 542,
+      "mp": 348
+    },
+    "star-heavy-dev": {
+      "level": 50,
+      "xp": 34440,
+      "tier": "Veterano",
+      "stats": {
+        "activity": 68,
+        "experience": 39,
+        "reputation": 95,
+        "versatility": 26,
+        "consistency": 86
+      },
+      "class": "Patrulheiro",
+      "subclass": "Alquimista",
+      "achievementCount": 15,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 4,
+        "epic": 1,
+        "legendary": 1
+      },
+      "titleCount": 10,
+      "defaultTitle": "Lenda Celestial",
+      "skills": [
+        {
+          "name": "Go",
+          "level": 9
+        },
+        {
+          "name": "Python",
+          "level": 5
+        }
+      ],
+      "hp": 550,
+      "mp": 388
+    },
+    "old-inactive-dev": {
+      "level": 35,
+      "xp": 19878,
+      "tier": "Veterano",
+      "stats": {
+        "activity": 52,
+        "experience": 51,
+        "reputation": 42,
+        "versatility": 26,
+        "consistency": 55
+      },
+      "class": "Escriba",
+      "subclass": "Mago",
+      "achievementCount": 11,
+      "achievementsByRarity": {
+        "common": 7,
+        "rare": 2,
+        "epic": 1,
+        "legendary": 1
+      },
+      "titleCount": 6,
+      "defaultTitle": "Lenda dos Repositórios",
+      "skills": [
+        {
+          "name": "PHP",
+          "level": 11
+        },
+        {
+          "name": "JavaScript",
+          "level": 5
+        }
+      ],
+      "hp": 452,
+      "mp": 311
+    },
+    "new-very-active-dev": {
+      "level": 68,
+      "xp": 55398,
+      "tier": "Mestre",
+      "stats": {
+        "activity": 83,
+        "experience": 49,
+        "reputation": 55,
+        "versatility": 39,
+        "consistency": 82
+      },
+      "class": "Mago",
+      "subclass": "Alquimista",
+      "achievementCount": 15,
+      "achievementsByRarity": {
+        "common": 8,
+        "rare": 5,
+        "epic": 2,
+        "legendary": 0
+      },
+      "titleCount": 10,
+      "defaultTitle": "Arcanista do Código",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "level": 12
+        },
+        {
+          "name": "Python",
+          "level": 6
+        },
+        {
+          "name": "Go",
+          "level": 4
+        }
+      ],
+      "hp": 634,
+      "mp": 498
+    },
+    "single-language-dev": {
+      "level": 65,
+      "xp": 52048,
+      "tier": "Mestre",
+      "stats": {
+        "activity": 83,
+        "experience": 56,
+        "reputation": 58,
+        "versatility": 8,
+        "consistency": 96
+      },
+      "class": "Mago",
+      "subclass": null,
+      "achievementCount": 16,
+      "achievementsByRarity": {
+        "common": 8,
+        "rare": 4,
+        "epic": 4,
+        "legendary": 0
+      },
+      "titleCount": 11,
+      "defaultTitle": "Mestre da Forja",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "level": 17
+        }
+      ],
+      "hp": 664,
+      "mp": 427
+    },
+    "balanced-polyglot-dev": {
+      "level": 65,
+      "xp": 52048,
+      "tier": "Mestre",
+      "stats": {
+        "activity": 83,
+        "experience": 56,
+        "reputation": 58,
+        "versatility": 55,
+        "consistency": 96
+      },
+      "class": "Mago",
+      "subclass": "Alquimista",
+      "achievementCount": 17,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 4,
+        "epic": 4,
+        "legendary": 0
+      },
+      "titleCount": 13,
+      "defaultTitle": "Arcanista do Código",
+      "skills": [
+        {
+          "name": "TypeScript",
+          "level": 9
+        },
+        {
+          "name": "Python",
+          "level": 8
+        },
+        {
+          "name": "Go",
+          "level": 6
+        },
+        {
+          "name": "CSS",
+          "level": 4
+        }
+      ],
+      "hp": 664,
+      "mp": 521
+    },
+    "collaboration-heavy-dev": {
+      "level": 79,
+      "xp": 69596,
+      "tier": "Elite",
+      "stats": {
+        "activity": 92,
+        "experience": 70,
+        "reputation": 66,
+        "versatility": 26,
+        "consistency": 95
+      },
+      "class": "Paladino",
+      "subclass": "Sentinela",
+      "achievementCount": 21,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 6,
+        "epic": 5,
+        "legendary": 1
+      },
+      "titleCount": 11,
+      "defaultTitle": "Campeão dos Reinos Abertos",
+      "skills": [
+        {
+          "name": "Java",
+          "level": 12
+        },
+        {
+          "name": "Kotlin",
+          "level": 6
+        },
+        {
+          "name": "Shell",
+          "level": 3
+        }
+      ],
+      "hp": 746,
+      "mp": 523
+    },
+    "repo-heavy-dev": {
+      "level": 36,
+      "xp": 21193,
+      "tier": "Veterano",
+      "stats": {
+        "activity": 51,
+        "experience": 45,
+        "reputation": 31,
+        "versatility": 55,
+        "consistency": 78
+      },
+      "class": "Mago",
+      "subclass": "Alquimista",
+      "achievementCount": 12,
+      "achievementsByRarity": {
+        "common": 7,
+        "rare": 2,
+        "epic": 2,
+        "legendary": 1
+      },
+      "titleCount": 6,
+      "defaultTitle": "Arcanista do Código",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "level": 12
+        },
+        {
+          "name": "Python",
+          "level": 11
+        },
+        {
+          "name": "HTML",
+          "level": 10
+        },
+        {
+          "name": "Shell",
+          "level": 9
+        }
+      ],
+      "hp": 490,
+      "mp": 370
+    },
+    "extreme-dev": {
+      "level": 99,
+      "xp": 97015,
+      "tier": "Ascendente",
+      "stats": {
+        "activity": 100,
+        "experience": 100,
+        "reputation": 100,
+        "versatility": 100,
+        "consistency": 100
+      },
+      "class": "Guerreiro",
+      "subclass": null,
+      "achievementCount": 31,
+      "achievementsByRarity": {
+        "common": 9,
+        "rare": 8,
+        "epic": 8,
+        "legendary": 6
+      },
+      "titleCount": 20,
+      "defaultTitle": "Lenda Celestial",
+      "skills": [
+        {
+          "name": "C++",
+          "level": 12
+        },
+        {
+          "name": "CSS",
+          "level": 12
+        },
+        {
+          "name": "Go",
+          "level": 12
+        },
+        {
+          "name": "Java",
+          "level": 12
+        },
+        {
+          "name": "Kotlin",
+          "level": 12
+        },
+        {
+          "name": "Python",
+          "level": 12
+        },
+        {
+          "name": "Ruby",
+          "level": 12
+        },
+        {
+          "name": "Rust",
+          "level": 12
+        },
+        {
+          "name": "Shell",
+          "level": 12
+        },
+        {
+          "name": "TypeScript",
+          "level": 12
+        }
+      ],
+      "hp": 896,
+      "mp": 747
+    }
+  }
+}

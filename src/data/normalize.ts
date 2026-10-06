@@ -1,0 +1,89 @@
+import type { DataCoverage, DeveloperProfile, LanguageUsage, Metric } from "@/game/types";
+import type { RawGitHubData, RawMetric } from "./contracts";
+
+function toMetric(raw: RawMetric): Metric {
+  if (raw.coverage === "unavailable" || raw.value === null) {
+    return { value: 0, coverage: "unavailable" };
+  }
+  return { value: Math.max(0, Math.floor(raw.value)), coverage: raw.coverage };
+}
+
+/** A figure derived from the repository list is only as complete as that list. */
+function derived(value: number, coverage: DataCoverage): Metric {
+  return coverage === "unavailable" ? { value: 0, coverage } : { value, coverage };
+}
+
+function optionalText(value: string | null | undefined): string | undefined {
+  const trimmed = value?.trim();
+  return trimmed ? trimmed : undefined;
+}
+
+/**
+ * RawGitHubData (already validated) -> DeveloperProfile, the only shape the engine reads.
+ * Pure: no dates, no randomness. Forks are excluded from every repository-derived number.
+ */
+export function normalizeDeveloperProfile(raw: RawGitHubData): DeveloperProfile {
+  const repoCoverage = raw.repositories.coverage;
+  const ownRepos = raw.repositories.items.filter((r) => !r.isFork);
+
+  let stars = 0;
+  let forks = 0;
+  let starred = 0;
+  const bytesByLanguage = new Map<string, number>();
+  const reposByLanguage = new Map<string, number>();
+
+  for (const repo of ownRepos) {
+    stars += repo.stars;
+    forks += repo.forks;
+    if (repo.stars > 0) starred++;
+    for (const [language, bytes] of Object.entries(repo.languages)) {
+      if (bytes <= 0) continue;
+      bytesByLanguage.set(language, (bytesByLanguage.get(language) ?? 0) + bytes);
+      reposByLanguage.set(language, (reposByLanguage.get(language) ?? 0) + 1);
+    }
+  }
+
+  const languages: LanguageUsage[] =
+    repoCoverage === "unavailable"
+      ? []
+      : [...bytesByLanguage.entries()].map(([name, bytes]) => ({
+          name,
+          bytes,
+          repoCount: reposByLanguage.get(name) ?? 0,
+        }));
+
+  const monthly = raw.activity.monthlyContributions;
+
+  return {
+    username: raw.username.trim(),
+    displayName: optionalText(raw.displayName),
+    bio: optionalText(raw.bio),
+    location: optionalText(raw.location),
+    company: optionalText(raw.company),
+    accountCreatedAt: raw.createdAt,
+    referenceDate: raw.fetchedAt,
+    isDemo: raw.isDemo,
+
+    commits: toMetric(raw.commits),
+    pullRequests: toMetric(raw.pullRequests),
+    reviews: toMetric(raw.reviews),
+    issues: toMetric(raw.issues),
+    followers: toMetric(raw.followers),
+
+    ownRepositories: derived(ownRepos.length, repoCoverage),
+    starsReceived: derived(stars, repoCoverage),
+    forksReceived: derived(forks, repoCoverage),
+    starredRepositories: derived(starred, repoCoverage),
+    languages,
+    languagesCoverage: repoCoverage,
+
+    activity: {
+      activeDays: toMetric(raw.activity.activeDays),
+      longestStreakDays: toMetric(raw.activity.longestStreakDays),
+      currentStreakDays: toMetric(raw.activity.currentStreakDays),
+      recentActiveDays: toMetric(raw.activity.recentActiveDays),
+      monthlyContributions: monthly.coverage === "unavailable" ? [] : [...monthly.months],
+      monthlyCoverage: monthly.coverage,
+    },
+  };
+}
