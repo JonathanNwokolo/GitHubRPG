@@ -208,7 +208,7 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     await page.goto("/veteran-dev");
     await expect(page.locator("h1")).toBeVisible();
-    for (const tab of [/Ficha/i, /Habilidades/i, /Conquistas/i, /Títulos/i, /Crônica/i]) {
+    for (const tab of [/Ficha/i, /Habilidades/i, /Conquistas/i, /Títulos/i]) {
       await page.getByRole("tab", { name: tab }).click();
       await expect(page.locator("body")).not.toContainText(dropped);
     }
@@ -223,41 +223,84 @@ test.describe("GitHub RPG E2E Flows", () => {
     ).toBeVisible();
   });
 
-  // Flow 15: Crônica — a jornada contada só com dados reais
-  test("Flow 15: Chronicle tab tells the journey from the creation date to the current chapter, in both languages", async ({ page }) => {
+  // Flow 15: Crônica da Jornada — seção da Ficha, só com dados reais
+  test("Flow 15: the Chronicle is a section of the Ficha (no tab of its own), in both languages", async ({ page }) => {
     await page.goto("/veteran-dev");
-    await page.getByRole("tab", { name: /Crônica/i }).click();
 
-    await expect(page.getByRole("heading", { level: 2, name: "Crônica do Desenvolvedor" })).toBeVisible();
-    const chapters = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
-    await expect(chapters.first()).toHaveText("O Início da Jornada");
-    await expect(chapters.last()).toHaveText("Capítulo Atual");
+    await expect(page.getByRole("tab", { name: /Crônica/i })).toHaveCount(0);
+    await expect(page.getByRole("tab")).toHaveCount(4);
+    await expect(page.getByRole("heading", { level: 2, name: "Crônica da Jornada" })).toBeVisible();
     await expect(page.getByText("Tempo de jornada")).toBeVisible();
+
+    // Narrative order of the Ficha: next milestones, the Chronicle, then the technical attributes.
+    const headings = await page.getByRole("heading", { level: 2 }).allTextContents();
+    const order = [/Próximos Marcos/i, /Crônica da Jornada/i, /Atributos T.cnicos/i].map((name) =>
+      headings.findIndex((heading) => name.test(heading))
+    );
+    expect(order.every((index) => index >= 0)).toBe(true);
+    expect(order).toEqual([...order].sort((a, b) => a - b));
+
+    const preview = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
+    expect(await preview.count()).toBeLessThanOrEqual(3);
+    await expect(preview.first()).toHaveText("O Início da Jornada");
+    await expect(preview.last()).toHaveText("Capítulo Atual");
     await expect(page.locator("body")).not.toContainText(/Missão|Missões|Masmorra|Duelo|Ranking|undefined/i);
 
     await page.getByRole("button", { name: /Switch to English/i }).click();
-    await expect(page.getByRole("heading", { level: 2, name: "Developer Chronicle" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Journey Chronicle" })).toBeVisible();
     const englishChapters = page.getByRole("list", { name: "Journey timeline" }).getByRole("heading", { level: 3 });
     await expect(englishChapters.first()).toHaveText("The Journey Begins");
     await expect(englishChapters.last()).toHaveText("Current Chapter");
+    await expect(page.getByRole("button", { name: "View full chronicle" })).toBeVisible();
+  });
+
+  test("Flow 15a: 'Ver toda a Crônica' expands the timeline inline by keyboard and collapses it back", async ({ page }) => {
+    const apiCalls: string[] = [];
+    page.on("request", (request) => {
+      if (/\/api\/|api\.github\.com/.test(request.url())) apiCalls.push(request.url());
+    });
+    await page.goto("/veteran-dev");
+    const url = page.url();
+
+    const chapters = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
+    const collapsedCount = await chapters.count();
+    const button = page.getByRole("button", { name: /Ver toda a Crônica/i });
+    await expect(button).toHaveAttribute("aria-expanded", "false");
+
+    await button.focus();
+    await page.keyboard.press("Enter");
+    const collapse = page.getByRole("button", { name: /Recolher Crônica/i });
+    await expect(collapse).toHaveAttribute("aria-expanded", "true");
+    await expect(collapse).toBeFocused();
+    expect(await chapters.count()).toBeGreaterThan(collapsedCount);
+
+    await page.keyboard.press("Space");
+    await expect(page.getByRole("button", { name: /Ver toda a Crônica/i })).toHaveAttribute("aria-expanded", "false");
+    expect(await chapters.count()).toBe(collapsedCount);
+
+    // Inline: same page, and expanding fetched nothing.
+    expect(page.url()).toBe(url);
+    expect(apiCalls).toEqual([]);
   });
 
   test("Flow 15b: Chronicle of a brand-new profile is a single honest chapter", async ({ page }) => {
     await page.goto("/empty-dev");
-    await page.getByRole("tab", { name: /Crônica/i }).click();
 
     const chapters = page.getByRole("list", { name: "Linha do tempo da jornada" }).getByRole("heading", { level: 3 });
     await expect(chapters.first()).toHaveText("O Início da Jornada");
     await expect(page.getByText("Ano mais ativo")).toHaveCount(0);
   });
 
-  test("Flow 15c: Chronicle fits a phone screen without horizontal scroll", async ({ page }) => {
+  test("Flow 15c: Chronicle fits a phone screen without horizontal scroll, collapsed and expanded", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto("/veteran-dev");
-    await page.getByRole("tab", { name: /Crônica/i }).click();
-    await expect(page.getByRole("heading", { level: 2, name: "Crônica do Desenvolvedor" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Crônica da Jornada" })).toBeVisible();
 
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
-    expect(overflow).toBeLessThanOrEqual(0);
+    const overflow = () => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+    expect(await overflow()).toBeLessThanOrEqual(0);
+
+    await page.getByRole("button", { name: /Ver toda a Crônica/i }).click();
+    await expect(page.getByRole("button", { name: /Recolher Crônica/i })).toBeVisible();
+    expect(await overflow()).toBeLessThanOrEqual(0);
   });
 });

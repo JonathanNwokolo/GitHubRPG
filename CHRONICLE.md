@@ -1,6 +1,6 @@
-# Crônica do Desenvolvedor
+# Crônica da Jornada
 
-Aba **CRÔNICA**: o histórico público do GitHub contado como timeline. Não é missão, masmorra, quest, PvP nem ranking, e **não toca no Game Engine** (XP, nível, classe, skills, conquistas, títulos e balanceamento não leem nada daqui; `balance-snapshot*.json` permanecem idênticos).
+Seção **CRÔNICA DA JORNADA** da aba FICHA (entre "Próximos Marcos" e "Atributos Técnicos"): o histórico público do GitHub contado como timeline, com resumo compacto, 3 capítulos de prévia e expansão inline ("Ver toda a Crônica"). Não é missão, masmorra, quest, PvP nem ranking, e **não toca no Game Engine** (XP, nível, classe, skills, conquistas, títulos e balanceamento não leem nada daqui; `balance-snapshot*.json` permanecem idênticos).
 
 > Princípio: toda frase é derivável de um campo real. É melhor mostrar menos eventos verdadeiros do que muitos plausíveis.
 
@@ -14,7 +14,10 @@ src/features/chronicle/
   highlights.ts               um detector por tipo de fato
   buildDeveloperChronicle.ts  buildDeveloperChronicle(profile) -> DeveloperChronicle  (pura)
   chronicleText.ts            frases PT/EN a partir do modelo (pura)
-  ChroniclePanel.tsx          UI da aba
+  chroniclePreview.ts         escolhe (sem calcular) os capítulos da prévia: início, 1 intermediário relevante, atual
+  ChronicleSection.tsx        seção da Ficha: resumo + prévia + botão de expandir (aria-expanded)
+  ChronicleSummary.tsx / ChronicleStat.tsx   faixa compacta de 4 números
+  ChronicleTimelinePreview.tsx / ChronicleTimelineFull.tsx / TimelineRail.tsx   timeline resumida e completa
   chronicleIcons.tsx          ícones RPG do projeto + estilo por importância
   testing/fixtures.ts         builders de teste (não são personas)
 ```

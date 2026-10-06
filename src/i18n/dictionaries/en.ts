@@ -24,7 +24,6 @@ export const en: TranslationDictionary = {
     skills: "Skills",
     achievements: "Achievements",
     titles: "Titles",
-    chronicle: "Chronicle",
     settings: "Settings",
     designSystem: "Design System",
   },
@@ -193,8 +192,10 @@ export const en: TranslationDictionary = {
     copiedLink: "Link copied!",
   },
   chronicle: {
-    title: "Developer Chronicle",
-    subtitle: "Your public GitHub journey, told year by year. Every line comes from real data: whatever cannot be proven is left out.",
+    title: "Journey Chronicle",
+    subtitle: "Your GitHub story, built only from real public data.",
+    viewFull: "View full chronicle",
+    collapse: "Collapse chronicle",
     summaryTitle: "Journey summary",
     timelineLabel: "Journey timeline",
     summary: {

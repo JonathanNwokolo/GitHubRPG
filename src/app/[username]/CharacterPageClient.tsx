@@ -9,7 +9,7 @@ import { SkillsTree } from "@/features/skills/SkillsTree";
 import { AchievementsGrid } from "@/features/achievements/AchievementsGrid";
 import { TitlesPanel } from "@/features/titles/TitlesPanel";
 import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
-import { ChroniclePanel } from "@/features/chronicle/ChroniclePanel";
+import { ChronicleSection } from "@/features/chronicle/ChronicleSection";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { NextMilestones } from "@/features/progress/NextMilestones";
 import { ShareCardModal } from "@/features/share/ShareCardModal";
@@ -70,6 +70,7 @@ export default function CharacterPage({ character, chronicle, username }: Charac
         {activeTab === "overview" && (
           <div className="space-y-8 animate-fade-in">
             <NextMilestones milestones={character.nextMilestones} />
+            <ChronicleSection chronicle={chronicle} />
             <AttributesPanel stats={character.stats} />
             <ActivitySummary summary={character.summary} />
           </div>
@@ -97,12 +98,6 @@ export default function CharacterPage({ character, chronicle, username }: Charac
               onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
               onUseDefault={() => clearEquippedTitle(character.identity.username)}
             />
-          </div>
-        )}
-
-        {activeTab === "chronicle" && (
-          <div className="animate-fade-in">
-            <ChroniclePanel chronicle={chronicle} />
           </div>
         )}
       </div>

@@ -22,7 +22,6 @@ export const ptBR = {
     skills: "Habilidades",
     achievements: "Conquistas",
     titles: "Títulos",
-    chronicle: "Crônica",
     settings: "Configurações",
     designSystem: "Design System",
   },
@@ -191,8 +190,10 @@ export const ptBR = {
     copiedLink: "Link copiado!",
   },
   chronicle: {
-    title: "Crônica do Desenvolvedor",
-    subtitle: "Sua jornada pública no GitHub, contada ano a ano. Cada linha vem de dados reais: o que não dá para provar fica de fora.",
+    title: "Crônica da Jornada",
+    subtitle: "Sua história no GitHub, construída apenas com dados públicos reais.",
+    viewFull: "Ver toda a Crônica",
+    collapse: "Recolher Crônica",
     summaryTitle: "Resumo da jornada",
     timelineLabel: "Linha do tempo da jornada",
     summary: {
