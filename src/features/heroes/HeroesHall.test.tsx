@@ -2,6 +2,7 @@ import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { fetchHeroes } from "@/data/api/fetchHeroes";
+import { getAvatarFrameForUsername } from "@/features/avatar";
 import { useUiStore } from "@/stores/useUiStore";
 import type { HeroSummary, HeroesResponse } from "./heroSummary";
 import { HeroesHall } from "./HeroesHall";
@@ -45,6 +46,15 @@ describe("HeroesHall", () => {
     expect(screen.getByText("Herói em destaque")).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: /Ver ficha/i })).toHaveLength(5);
     expect(screen.getByRole("link", { name: /Hero alpha/ })).toHaveAttribute("href", "/alpha");
+  });
+
+  it("frames every hero with the frame their username always gets", async () => {
+    const { container } = render(<HeroesHall />);
+    await screen.findByRole("heading", { name: "Hero alpha" });
+
+    const frames = [...container.querySelectorAll("[data-avatar-frame]")].map((el) => el.getAttribute("data-avatar-frame"));
+    expect(frames).toEqual(heroes.map((hero) => getAvatarFrameForUsername(hero.username).id));
+    expect(screen.getByAltText("Retrato de Hero alpha no GitHub")).toBeInTheDocument();
   });
 
   it("switches categories by click and keyboard, then reuses the session cache", async () => {

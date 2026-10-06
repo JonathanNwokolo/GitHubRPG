@@ -1,144 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button, RpgClassIcon, RpgSparkles, RpgStar, TabPanel, Tabs } from "@/design-system";
+import { Button, RpgSparkles, TabPanel, Tabs } from "@/design-system";
 import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
+import { FeaturedHeroCard } from "./FeaturedHeroCard";
 import { HERO_CATEGORY_IDS, type HeroCategoryId } from "./featuredHeroes";
-import type { HeroSummary } from "./heroSummary";
+import { HeroMiniCard } from "./HeroMiniCard";
 import { useHeroCategory } from "./useHeroCategory";
 
 const PANEL_ID = "heroes-hall";
 
 function profileHref(username: string): string {
   return `/${encodeURIComponent(username)}`;
-}
-
-function HeroPortrait({ hero, large = false }: { hero: HeroSummary; large?: boolean }) {
-  const { language } = useUiStore();
-  const t = getTranslation(language).heroesHall;
-  const initials = hero.displayName.slice(0, 2).toUpperCase();
-
-  return (
-    <div
-      className={`relative shrink-0 overflow-hidden border-2 border-rpg-goldDark bg-rpg-void shadow-pixel ${
-        large ? "h-28 w-28 sm:h-36 sm:w-36" : "h-16 w-16"
-      }`}
-    >
-      {hero.avatarUrl ? (
-        // GitHub avatars are dynamic external URLs; the server already validated this field.
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={hero.avatarUrl}
-          alt={t.avatarAlt.replace("{name}", hero.displayName)}
-          className="h-full w-full object-cover"
-        />
-      ) : (
-        <span className="flex h-full w-full items-center justify-center font-pixel text-lg text-rpg-gold" aria-hidden="true">
-          {initials}
-        </span>
-      )}
-      <span className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-rpg-void to-transparent" aria-hidden="true" />
-    </div>
-  );
-}
-
-function ClassMark({ hero }: { hero: HeroSummary }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300">
-      <span className="h-4 w-4" aria-hidden="true">
-        <RpgClassIcon classNameType={hero.className} />
-      </span>
-      {hero.className}
-      {hero.subclassName ? ` / ${hero.subclassName}` : ""}
-    </span>
-  );
-}
-
-function FeaturedHero({ hero }: { hero: HeroSummary }) {
-  const { language } = useUiStore();
-  const t = getTranslation(language).heroesHall;
-  const duel = getTranslation(language).duel;
-
-  return (
-    <div
-      className="group relative flex min-h-[360px] flex-col justify-between overflow-hidden border-2 border-rpg-goldDark bg-gradient-to-br from-rpg-surfaceLight via-rpg-surface to-rpg-obsidian p-5 shadow-pixel transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 hover:border-rpg-gold hover:shadow-pixel-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void sm:p-7"
-    >
-      <Link href={profileHref(hero.username)} aria-label={`${t.viewSheet}: ${hero.displayName}`} className="absolute inset-0 z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"><span className="sr-only">{t.viewSheet}</span></Link>
-      <div className="absolute -right-16 -top-16 h-48 w-48 rotate-45 border border-rpg-goldDark/30 bg-rpg-gold/5" aria-hidden="true" />
-      <div className="relative flex items-center justify-between gap-3">
-        <span className="font-pixel text-[10px] uppercase tracking-wider text-rpg-gold">{t.featured}</span>
-        <span className="border border-rpg-goldDark bg-rpg-void/80 px-2.5 py-1 font-mono text-xs font-bold text-amber-300">
-          {t.level} {hero.level}
-        </span>
-      </div>
-
-      <div className="relative my-7 flex flex-col items-center gap-5 text-center sm:flex-row sm:text-left">
-        <HeroPortrait hero={hero} large />
-        <div className="min-w-0 space-y-2">
-          <h3 className="break-words font-pixel text-lg leading-relaxed text-slate-50 group-hover:text-rpg-gold sm:text-xl">
-            {hero.displayName}
-          </h3>
-          <p className="font-mono text-sm text-slate-400">@{hero.username}</p>
-          <ClassMark hero={hero} />
-          <p className="max-w-sm text-sm italic leading-relaxed text-slate-300">{t.flavors[hero.className]}</p>
-        </div>
-      </div>
-
-      <div className="relative grid grid-cols-2 gap-3 border-t border-rpg-border pt-4 text-left text-xs">
-        <div>
-          <span className="block uppercase tracking-wider text-slate-500">{t.language}</span>
-          <strong className="mt-1 block text-slate-100">{hero.dominantLanguage || "—"}</strong>
-        </div>
-        <div>
-          <span className="block uppercase tracking-wider text-slate-500">{t.titleLabel}</span>
-          <strong className="mt-1 block text-slate-100">{hero.title || "—"}</strong>
-        </div>
-        <div className="col-span-2 flex items-center justify-between border-t border-rpg-border/70 pt-3 font-bold uppercase tracking-wider text-rpg-gold">
-          <span className="inline-flex items-center gap-1.5 normal-case text-slate-300">
-            <RpgStar className="h-4 w-4 text-amber-400" /> {hero.starsReceived} {t.stars}
-          </span>
-          <span>{t.viewSheet} &rarr;</span>
-        </div>
-        <Link href={`/duel?opponent=${encodeURIComponent(hero.username)}`} className="relative z-20 col-span-2 inline-flex min-h-[40px] items-center justify-center border border-rpg-crimson bg-red-950/50 px-3 py-2 font-bold uppercase tracking-wider text-red-200 hover:bg-red-900/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson">
-          ⚔ {duel.challenge}
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-function SecondaryHero({ hero }: { hero: HeroSummary }) {
-  const { language } = useUiStore();
-  const t = getTranslation(language).heroesHall;
-  const duel = getTranslation(language).duel;
-  return (
-    <div
-      className="group flex min-w-0 flex-col border border-rpg-border bg-rpg-surface/80 p-4 shadow-pixel transition motion-safe:duration-200 motion-safe:hover:-translate-y-1 hover:border-rpg-goldDark hover:bg-rpg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-2 focus-visible:ring-offset-rpg-void"
-    >
-      <div className="flex min-w-0 items-start gap-3">
-        <HeroPortrait hero={hero} />
-        <div className="min-w-0 flex-1">
-          <h3 className="truncate font-bold text-slate-100 group-hover:text-rpg-gold">{hero.displayName}</h3>
-          <p className="truncate font-mono text-xs text-slate-400">@{hero.username}</p>
-          <span className="mt-2 inline-block border border-rpg-borderLight bg-rpg-void px-2 py-1 font-mono text-[10px] font-bold text-amber-300">
-            {t.level} {hero.level}
-          </span>
-        </div>
-      </div>
-      <div className="mt-4 min-w-0 space-y-2 border-t border-rpg-border/70 pt-3">
-        <ClassMark hero={hero} />
-        <p className="truncate text-xs text-slate-400">{hero.dominantLanguage || "—"}</p>
-        <p className="text-xs italic leading-relaxed text-slate-300">{t.flavors[hero.className]}</p>
-      </div>
-      <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-4 text-xs font-bold uppercase tracking-wider">
-        <Link href={profileHref(hero.username)} className="text-rpg-gold hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">{t.viewSheet} &rarr;</Link>
-        <Link href={`/duel?opponent=${encodeURIComponent(hero.username)}`} className="border border-rpg-crimson px-2 py-1.5 text-red-200 hover:bg-red-950/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson">⚔ {duel.challenge}</Link>
-      </div>
-    </div>
-  );
 }
 
 function HallSkeleton({ label }: { label: string }) {
@@ -172,6 +47,7 @@ export function HeroesHall() {
   const heroes = data?.heroes ?? [];
   const retryLabel = getTranslation(language).common.retry;
   const stillArriving = (data?.pending ?? 0) > 0;
+
   const discoverHero = () => {
     if (heroes.length === 0) return;
     const categoryOffset = HERO_CATEGORY_IDS.indexOf(activeCategory);
@@ -235,9 +111,9 @@ export function HeroesHall() {
                 </p>
               ) : null}
               <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <FeaturedHero hero={heroes[0]} />
+                <FeaturedHeroCard hero={heroes[0]} />
                 <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2">
-                  {heroes.slice(1, 5).map((hero) => <SecondaryHero key={hero.username} hero={hero} />)}
+                  {heroes.slice(1, 5).map((hero) => <HeroMiniCard key={hero.username} hero={hero} />)}
                 </div>
               </div>
               <div className="mt-8 text-center">

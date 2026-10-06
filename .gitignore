@@ -44,3 +44,6 @@ next-env.d.ts
 .vscode/
 .idea/
 *.log
+
+# local source backups for production avatar frames
+/design-assets/avatar-frames-source/

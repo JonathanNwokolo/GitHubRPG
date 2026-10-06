@@ -78,6 +78,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
           <CharacterAvatar
             seed={fnv1a(identity.username.toLowerCase())}
             photoUrl={identity.avatarUrl}
+            username={identity.username}
             photoAlt={fill(t.character.avatarAlt, { name: displayName })}
             size={100}
             rarity={TIER_FRAME[progression.tier] ?? "common"}

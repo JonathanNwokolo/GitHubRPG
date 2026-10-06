@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
+import { AVATAR_SLOT_RATIO, FramedAvatar } from "@/features/avatar";
 import { renderProceduralAvatarSvg } from "./avatar/proceduralAvatar";
-
-/** The transparent window of /molduradourada.png is ~56% of the image width; the photo is slightly larger so it tucks under the frame edge. */
-const FRAME_WINDOW_RATIO = 0.6;
 
 interface CharacterAvatarProps {
   seed: number;
@@ -11,76 +8,43 @@ interface CharacterAvatarProps {
   photoUrl?: string;
   /** Accessible description of the photo. */
   photoAlt?: string;
+  /** Username that picks the frame; the same hero gets the same frame everywhere. */
+  username?: string;
+  /** Size of the avatar itself; the frame around it is larger. */
   size?: number;
   className?: string;
   rarity?: "common" | "rare" | "epic" | "legendary";
 }
 
+const rarityBorders: Record<string, string> = {
+  common: "border-slate-500 shadow-pixel",
+  rare: "border-sky-400 shadow-pixel-azure",
+  epic: "border-purple-400 shadow-pixel-arcane",
+  legendary: "border-amber-400 shadow-pixel-gold",
+};
+
 export const CharacterAvatar: React.FC<CharacterAvatarProps> = ({
   seed,
   photoUrl,
   photoAlt = "",
+  username,
   size = 112,
   className = "",
   rarity = "common",
-}) => {
-  // Remember which URL failed so a new photoUrl is tried again without an effect.
-  const [failedUrl, setFailedUrl] = useState<string | null>(null);
-  const showPhoto = Boolean(photoUrl) && photoUrl !== failedUrl;
-  const svgMarkup = showPhoto ? "" : renderProceduralAvatarSvg(seed, size);
-
-  const rarityBorders: Record<string, string> = {
-    common: "border-slate-500 shadow-pixel",
-    rare: "border-sky-400 shadow-pixel-azure",
-    epic: "border-purple-400 shadow-pixel-arcane",
-    legendary: "border-amber-400 shadow-pixel-gold",
-  };
-
-  const frameSize = Math.round(size / FRAME_WINDOW_RATIO);
-
-  return (
-    <div
-      className={`relative inline-flex items-center justify-center flex-shrink-0 ${className}`}
-      style={{ width: frameSize, height: frameSize }}
-    >
-      {/* Photo/avatar sits under the frame; the frame's gems overlap its edges */}
-      {showPhoto && photoUrl ? (
-        <div
-          className={`flex items-center justify-center overflow-hidden bg-rpg-void border-2 ${rarityBorders[rarity]}`}
-          style={{ width: size, height: size }}
-        >
-          {/* External GitHub avatar: served as-is (no optimizer, no remote domain config). */}
-          <Image
-            src={photoUrl}
-            alt={photoAlt}
-            width={size}
-            height={size}
-            unoptimized
-            referrerPolicy="no-referrer"
-            // A load can fail before React hydrates, in which case onError never fires.
-            ref={(img) => {
-              if (img?.complete && img.naturalWidth === 0) setFailedUrl(photoUrl);
-            }}
-            onError={() => setFailedUrl(photoUrl)}
-            className="h-full w-full object-cover"
-          />
-        </div>
-      ) : (
-        <div
-          className={`flex items-center justify-center overflow-hidden bg-rpg-void border-2 pixelated ${rarityBorders[rarity]}`}
-          style={{ width: size, height: size }}
-          dangerouslySetInnerHTML={{ __html: svgMarkup }}
-        />
-      )}
-      <Image
-        src="/molduradourada.png"
-        alt=""
-        aria-hidden
-        width={frameSize}
-        height={frameSize}
-        sizes={`${frameSize}px`}
-        className="pointer-events-none absolute inset-0 w-full h-full pixelated"
+}) => (
+  <FramedAvatar
+    username={username}
+    avatarUrl={photoUrl}
+    alt={photoAlt}
+    size={Math.round(size / AVATAR_SLOT_RATIO)}
+    className={className}
+    contentClassName={`border-2 ${rarityBorders[rarity]}`}
+    priority
+    fallback={
+      <div
+        className="pixelated h-full w-full [&>svg]:h-full [&>svg]:w-full"
+        dangerouslySetInnerHTML={{ __html: renderProceduralAvatarSvg(seed, size) }}
       />
-    </div>
-  );
-};
+    }
+  />
+);

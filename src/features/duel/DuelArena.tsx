@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { Button, ProgressBar, RpgClassIcon, RpgShare, RpgSwords } from "@/design-system";
 import { CharacterApiError, fetchCharacter } from "@/data/api/fetchCharacter";
+import { FramedAvatar } from "@/features/avatar";
 import type { RPGCharacter } from "@/game/types";
 import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
@@ -33,13 +34,15 @@ function HeroCard({ character, hp }: { character: RPGCharacter; hp: number }) {
   const name = character.identity.displayName || character.identity.username;
   return (
     <article className="min-w-0 border-2 border-rpg-border bg-rpg-surface p-4 text-center shadow-pixel sm:p-5">
-      {character.identity.avatarUrl ? (
-        // The URL already came from the validated server-side profile payload.
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={character.identity.avatarUrl} alt="" className="mx-auto h-20 w-20 border-2 border-rpg-goldDark object-cover shadow-pixel sm:h-28 sm:w-28" />
-      ) : (
-        <div className="mx-auto flex h-20 w-20 items-center justify-center border-2 border-rpg-goldDark bg-rpg-void font-pixel text-rpg-gold sm:h-28 sm:w-28">{name.slice(0, 2).toUpperCase()}</div>
-      )}
+      {/* The name is right below, so the photo itself stays decorative (alt=""), as before. */}
+      <FramedAvatar
+        username={character.identity.username}
+        avatarUrl={character.identity.avatarUrl}
+        alt=""
+        className="mx-auto h-32 w-32 sm:h-40 sm:w-40"
+        priority
+        fallback={<span className="font-pixel text-rpg-gold" aria-hidden="true">{name.slice(0, 2).toUpperCase()}</span>}
+      />
       <h2 className="mt-3 break-words font-pixel text-sm leading-relaxed text-slate-50 sm:text-lg">{name}</h2>
       <p className="font-mono text-xs text-slate-400">@{character.identity.username}</p>
       <p className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-amber-300">
