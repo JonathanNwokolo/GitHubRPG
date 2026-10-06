@@ -61,20 +61,19 @@ describe("GitHub token stays on the server", () => {
     expect(offenders).toEqual([]);
   });
 
-  it("the character page and landing reach data only through the API client", () => {
+  it("client code reaches character data only through the API client or server-provided props", () => {
     const page = read(resolve(SRC, "app", "[username]", "CharacterPageClient.tsx"));
     const landing = read(resolve(SRC, "features", "landing", "LandingHero.tsx"));
-    for (const code of [page, landing]) {
-      expect(code).toMatch(/@\/data\/api\/fetchCharacter/);
-      expect(code).not.toMatch(/@\/data\/(datasource|loadCharacter|github)/);
-    }
+    expect(page).not.toMatch(/@\/data\/(api\/fetchCharacter|datasource|loadCharacter|github)/);
+    expect(landing).toMatch(/@\/data\/api\/fetchCharacter/);
+    expect(landing).not.toMatch(/@\/data\/(datasource|loadCharacter|github)/);
   });
 
-  it("the API route is the only app code that builds the data source", () => {
+  it("only server routes/pages build the data source", () => {
     const users = source
       .filter((file) => /createDataSource\s*\(/.test(read(file)))
       .map(rel)
       .filter((file) => !file.startsWith("src/data/"));
-    expect(users).toEqual(["src/app/api/characters/[username]/route.ts"]);
+    expect(users.sort()).toEqual(["src/app/[username]/page.tsx", "src/app/api/characters/[username]/route.ts"].sort());
   });
 });

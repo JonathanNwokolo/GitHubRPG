@@ -63,13 +63,27 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   // Flow 5: Perfil inexistente (missing-dev)
-  test("Flow 5: Missing profile renders controlled 404 error and back link", async ({ page }) => {
-    await page.goto("/");
-    const missingCard = page.getByRole("heading", { name: /Perfil Inexistente/i });
-    await missingCard.click();
+  test("Flow 5: Missing profile returns a real 404 page without a character sheet", async ({ page }) => {
+    const response = await page.goto("/missing-dev");
+    expect(response?.status()).toBe(404);
+    await expect(page.locator("h2")).toContainText("404");
+    await expect(page.locator("body")).not.toContainText(/VEL \d+/i);
+    await expect(page.locator("body")).not.toContainText(/Faltam .* XP|XP para|XP total/i);
+    await expect(page.locator("body")).not.toContainText(/Habilidades|Conquistas|T.tulos/i);
+  });
 
-    const alert = page.locator('[role="alert"]').filter({ hasText: /404/ });
-    await expect(alert).toContainText("não foi encontrado nos reinos do código (404)");
+  test("Flow 5b: Valid profile followed by missing profile does not keep the previous character", async ({ page, request }) => {
+    const apiResponse = await request.get("/api/characters/missing-dev");
+    expect(apiResponse.status()).toBe(404);
+
+    await page.goto("/veteran-dev");
+    await expect(page.locator("h1")).toContainText("Forja Sagrada");
+
+    const response = await page.goto("/missing-dev");
+    expect(response?.status()).toBe(404);
+    await expect(page.locator("h2")).toContainText("404");
+    await expect(page.locator("body")).not.toContainText("Forja Sagrada");
+    await expect(page.locator("body")).not.toContainText(/VEL \d+/i);
   });
 
   // Flow 6: Alteração de idioma
