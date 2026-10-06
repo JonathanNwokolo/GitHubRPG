@@ -8,7 +8,7 @@ Transforma a jornada **pública** de uma pessoa no GitHub em uma ficha de person
 
 - **Frontend e Game Engine V1.1 prontos**, com testes unitários e e2e.
 - **Ainda não usa a API real do GitHub.** Hoje tudo vem de dados simulados e determinísticos (`MockDataSource`), e a interface avisa "Dados de demonstração". A integração (`GitHubApiDataSource`) é o próximo passo, e o desenho da camada de dados já foi pensado para que seja uma troca em um único lugar. Veja [ENGINE_ARCHITECTURE.md](ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
-- O projeto pretende virar **open source**. Contribuições e ideias são bem-vindas (veja abaixo). A licença ainda será definida.
+- Projeto **open source** sob licença MIT. Contribuições e ideias são bem-vindas (veja abaixo).
 
 ## Como rodar
 
@@ -78,4 +78,4 @@ Boas primeiras contribuições: o `GitHubApiDataSource`, novas linguagens/classe
 
 ## Licença
 
-A definir.
+[MIT](LICENSE).
