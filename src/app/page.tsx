@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LandingHero } from "@/features/landing/LandingHero";
+import { HeroesHall } from "@/features/heroes/HeroesHall";
 import { resolveDataSourceKind } from "@/data/datasource";
 import { buildLandingMetadata } from "@/lib/seo";
 
@@ -12,8 +13,9 @@ export default function HomePage() {
   const showDemoPersonas = resolveDataSourceKind() === "mock";
 
   return (
-    <div className="flex-1 flex flex-col justify-center items-center w-full">
+    <div className="flex-1 flex flex-col items-center w-full">
       <LandingHero showDemoPersonas={showDemoPersonas} />
+      <HeroesHall />
     </div>
   );
 }

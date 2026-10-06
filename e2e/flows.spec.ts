@@ -1,6 +1,73 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("GitHub RPG E2E Flows", () => {
+  test("Flow 0: Hall of Heroes is navigable and fits a 375px viewport", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/");
+
+    await expect(page.getByRole("heading", { level: 2, name: "Salão dos Heróis" })).toBeVisible();
+    const hall = page.getByRole("region", { name: "Salão dos Heróis" });
+    await expect(hall.getByRole("link")).toHaveCount(5);
+    await hall.getByRole("tab", { name: "Heróis do Brasil" }).focus();
+    await page.keyboard.press("ArrowRight");
+    await expect(hall.getByRole("tab", { name: "Forjadores da Web" })).toHaveAttribute("aria-selected", "true");
+    await expect(hall.getByRole("link")).toHaveCount(5);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+
+    const heroLink = hall.getByRole("link").first();
+    const target = await heroLink.getAttribute("href");
+    await heroLink.click();
+    await page.waitForURL(`**${target}`);
+  });
+
+  test("Flow 0b: the Hall fills itself while slow heroes arrive, without reloading the page", async ({ page }) => {
+    const usernames = ["torvalds", "gvanrossum", "matz", "antirez", "dhh"];
+    const stages = [0, 2, 5];
+    let requests = 0;
+    await page.route("**/api/heroes?category=legends", async (route) => {
+      const count = stages[Math.min(requests++, stages.length - 1)];
+      await route.fulfill({
+        contentType: "application/json",
+        headers: { "Cache-Control": "no-store" },
+        body: JSON.stringify({
+          category: "legends",
+          heroes: usernames.slice(0, count).map((username, index) => ({
+            username,
+            displayName: `Hero ${username}`,
+            level: 40 + index,
+            className: "Mago",
+            starsReceived: 10,
+          })),
+          requested: 5,
+          failed: 0,
+          pending: 5 - count,
+          partial: count < 5,
+        }),
+      });
+    });
+    await page.clock.install();
+    await page.goto("/");
+    await page.evaluate(() => {
+      (window as unknown as { __hallMarker: string }).__hallMarker = "same-document";
+    });
+
+    const hall = page.getByRole("region", { name: "Salão dos Heróis" });
+    await expect(hall.getByText("Alguns heróis ainda estão chegando ao salão.")).toBeVisible();
+    await expect(hall.getByRole("link")).toHaveCount(0);
+
+    await page.clock.runFor(6_000);
+    await expect(hall.getByRole("link")).toHaveCount(2);
+    await expect(hall.getByText("Alguns heróis ainda estão chegando ao salão.")).toBeVisible();
+
+    await page.clock.runFor(7_000);
+    await expect(hall.getByRole("link")).toHaveCount(5);
+    await expect(hall.getByText(/ainda estão chegando/)).toHaveCount(0);
+
+    await page.clock.runFor(60_000);
+    expect(requests).toBe(3);
+    expect(await page.evaluate(() => (window as unknown as { __hallMarker?: string }).__hallMarker)).toBe("same-document");
+  });
+
   // Flow 1: Landing -> username -> personagem
   test("Flow 1: Landing page summons character on username search", async ({ page }) => {
     await page.goto("/");
