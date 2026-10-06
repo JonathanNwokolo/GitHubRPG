@@ -17,6 +17,7 @@ export const dynamic = "force-dynamic";
  * may be served for a day while it revalidates in the background.
  */
 const SUCCESS_CACHE_CONTROL = "public, max-age=1800, s-maxage=3600, stale-while-revalidate=86400";
+const SUCCESS_CDN_CACHE_CONTROL = "public, max-age=3600, stale-while-revalidate=86400";
 /** A missing profile is cached briefly so scans of unknown names do not each cost a GitHub lookup. */
 const NOT_FOUND_CACHE_CONTROL = "public, max-age=60, s-maxage=300";
 
@@ -59,6 +60,8 @@ export async function GET(_request: Request, context: { params: Promise<{ userna
       headers: {
         "Content-Type": "image/svg+xml; charset=utf-8",
         "Cache-Control": SUCCESS_CACHE_CONTROL,
+        // A targeted header prevents Vercel from consuming the shared-cache directives in Cache-Control.
+        "CDN-Cache-Control": SUCCESS_CDN_CACHE_CONTROL,
         ...SECURITY_HEADERS,
       },
     });

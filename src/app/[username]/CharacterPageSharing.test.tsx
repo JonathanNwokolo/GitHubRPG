@@ -57,7 +57,12 @@ function stubCardFetch() {
   return fetchMock;
 }
 
+function badgeResponse(): Response {
+  return new Response("<svg></svg>", { status: 200, headers: { "Content-Type": "image/svg+xml" } });
+}
+
 beforeEach(() => {
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(badgeResponse()));
   // The Hero Card modal draws on a canvas, which jsdom does not implement.
   HTMLCanvasElement.prototype.getContext = vi.fn().mockReturnValue(
     new Proxy({}, { get: () => vi.fn().mockReturnValue({ addColorStop: vi.fn(), width: 100 }) })
@@ -66,6 +71,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  vi.useRealTimers();
   cleanup();
   setBrowserApis({});
   act(() => useUiStore.setState({ language: "pt-BR" }));
@@ -118,12 +124,17 @@ describe("Why this class?", () => {
 });
 
 describe("Add to README", () => {
-  it("shows the badge and the ready-made Markdown", () => {
+  it("prewarms the correct badge URL, then shows the badge and the ready-made Markdown", async () => {
+    const fetchMock = vi.mocked(fetch);
     renderPage();
 
     fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
 
     const dialog = screen.getByRole("dialog", { name: "Adicionar ao README" });
+    expect(within(dialog).getByText("Preparando seu badge…")).toBeInTheDocument();
+    expect(within(dialog).getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+    await within(dialog).findByText("Badge pronto para o README.");
+    expect(fetchMock).toHaveBeenCalledWith("/api/badge/artorias", expect.objectContaining({ credentials: "omit" }));
     expect(within(dialog).getByRole("img", { name: "Pré-visualização do badge" })).toHaveAttribute("src", "/api/badge/artorias");
     const markdown = within(dialog).getByRole("textbox", { name: "Markdown do badge" });
     expect(markdown).toHaveValue(readmeBadgeMarkdown("artorias"));
@@ -137,11 +148,12 @@ describe("Add to README", () => {
     renderPage();
     fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
 
+    await waitFor(() => expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Copiar Markdown" }));
 
     await waitFor(() => expect(writeText).toHaveBeenCalledWith(readmeBadgeMarkdown("artorias")));
     expect(await screen.findByText("Markdown copiado!")).toBeInTheDocument();
-    expect(screen.getByRole("status")).toHaveTextContent("Markdown copiado!");
+    expect(screen.getAllByRole("status").some((region) => region.textContent?.includes("Markdown copiado!"))).toBe(true);
   });
 
   it("says so, and keeps the text selectable, when copying is not possible", async () => {
@@ -151,6 +163,7 @@ describe("Add to README", () => {
     renderPage();
     fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
 
+    await waitFor(() => expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeEnabled());
     fireEvent.click(screen.getByRole("button", { name: "Copiar Markdown" }));
 
     expect(await screen.findByRole("alert")).toHaveTextContent("Não foi possível copiar");
@@ -165,6 +178,7 @@ describe("Add to README", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Add to README" }));
     expect(screen.getByRole("dialog", { name: "Add to README" })).toBeInTheDocument();
+    expect(await screen.findByText("Badge ready for your README.")).toBeInTheDocument();
     expect(screen.getByRole("textbox", { name: "Badge Markdown" })).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Copy Markdown" }));
 
@@ -181,6 +195,96 @@ describe("Add to README", () => {
 
     await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
     expect(trigger).toHaveFocus();
+  });
+
+  it("shows a friendly prewarm error and succeeds when the user retries", async () => {
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(new Response("unavailable", { status: 503 }))
+      .mockResolvedValueOnce(badgeResponse());
+    vi.stubGlobal("fetch", fetchMock);
+    renderPage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
+
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("Não foi possível preparar o badge agora");
+    expect(alert).not.toHaveTextContent(/503|unavailable/i);
+    expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+
+    fireEvent.click(screen.getByRole("button", { name: "Tentar novamente" }));
+
+    expect(await screen.findByText("Badge pronto para o README.")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeEnabled();
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("keeps a slow prewarm responsive and does not claim readiness before the response completes", async () => {
+    let resolveFetch!: (response: Response) => void;
+    const fetchMock = vi.fn().mockReturnValue(
+      new Promise<Response>((resolve) => {
+        resolveFetch = resolve;
+      })
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    renderPage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
+
+    expect(screen.getByText("Preparando seu badge…")).toBeInTheDocument();
+    expect(screen.getByText("Estamos preparando o badge com seus dados públicos do GitHub.")).toBeInTheDocument();
+    expect(screen.queryByRole("textbox", { name: "Markdown do badge" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+
+    resolveFetch(badgeResponse());
+
+    expect(await screen.findByText("Badge pronto para o README.")).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "Markdown do badge" })).toBeInTheDocument();
+  });
+
+  it("times out after 45 seconds and offers retry instead of spinning forever", async () => {
+    vi.useFakeTimers();
+    const fetchMock = vi.fn().mockImplementation((_url: string, init?: RequestInit) =>
+      new Promise<Response>((_resolve, reject) => {
+        init?.signal?.addEventListener("abort", () => reject(new DOMException("Aborted", "AbortError")));
+      })
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    renderPage();
+
+    fireEvent.click(screen.getByRole("button", { name: "Adicionar ao README" }));
+    expect(screen.getByText("Preparando seu badge…")).toBeInTheDocument();
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(45_000);
+    });
+
+    expect(screen.getByRole("alert")).toHaveTextContent("Não foi possível preparar o badge agora");
+    expect(screen.getByRole("button", { name: "Tentar novamente" })).toBeEnabled();
+    expect(screen.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+  });
+
+  it("reuses one in-flight prewarm when the modal is closed and opened again", async () => {
+    let resolveFetch!: (response: Response) => void;
+    const fetchMock = vi.fn().mockReturnValue(
+      new Promise<Response>((resolve) => {
+        resolveFetch = resolve;
+      })
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    renderPage();
+    const trigger = screen.getByRole("button", { name: "Adicionar ao README" });
+
+    fireEvent.click(trigger);
+    fireEvent.keyDown(document, { key: "Escape" });
+    await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+    fireEvent.click(trigger);
+
+    expect(screen.getByText("Preparando seu badge…")).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    resolveFetch(badgeResponse());
+    expect(await screen.findByText("Badge pronto para o README.")).toBeInTheDocument();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 });
 

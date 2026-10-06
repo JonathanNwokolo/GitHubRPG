@@ -39,12 +39,16 @@ describe("GET /api/badge/[username]", () => {
   it("is cacheable by browsers, proxies and the CDN, with stale-while-revalidate", async () => {
     mockedLoadCharacter.mockResolvedValueOnce(createRPGCharacter(makeAverageProfile({ username: "artorias" })));
 
-    const cacheControl = (await get("artorias")).headers.get("cache-control") ?? "";
+    const response = await get("artorias");
+    const cacheControl = response.headers.get("cache-control") ?? "";
 
     expect(cacheControl).toContain("public");
     expect(cacheControl).toMatch(/max-age=\d+/);
     expect(cacheControl).toMatch(/s-maxage=3600/);
     expect(cacheControl).toMatch(/stale-while-revalidate=\d+/);
+    expect(response.headers.get("cdn-cache-control")).toBe(
+      "public, max-age=3600, stale-while-revalidate=86400"
+    );
   });
 
   it("locks the SVG down even if someone opens it directly: nosniff and a no-script CSP, no cookies", async () => {

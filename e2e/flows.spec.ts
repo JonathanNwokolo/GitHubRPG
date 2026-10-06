@@ -502,6 +502,14 @@ test.describe("GitHub RPG E2E Flows", () => {
 
   // Flow 17: badge para README
   test("Flow 17: 'Add to README' shows the badge and copies the Markdown", async ({ page }) => {
+    let releasePrewarm!: () => void;
+    const prewarmGate = new Promise<void>((resolve) => {
+      releasePrewarm = resolve;
+    });
+    await page.route("**/api/badge/veteran-dev", async (route) => {
+      await prewarmGate;
+      await route.continue();
+    });
     await page.addInitScript(() => {
       const w = window as unknown as { __copied: string[] };
       w.__copied = [];
@@ -519,6 +527,10 @@ test.describe("GitHub RPG E2E Flows", () => {
     await page.getByRole("button", { name: "Adicionar ao README" }).click();
 
     const dialog = page.getByRole("dialog", { name: "Adicionar ao README" });
+    await expect(dialog.getByText("Preparando seu badge…")).toBeVisible();
+    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+    releasePrewarm();
+    await expect(dialog.getByText("Badge pronto para o README.")).toBeVisible();
     const badge = dialog.getByRole("img", { name: "Pré-visualização do badge" });
     await expect(badge).toBeVisible();
     await expect.poll(() => badge.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
@@ -528,6 +540,33 @@ test.describe("GitHub RPG E2E Flows", () => {
     const copied = await page.evaluate(() => (window as unknown as { __copied: string[] }).__copied);
     expect(copied).toHaveLength(1);
     expect(copied[0]).toMatch(/^\[!\[GitHub RPG\]\(https?:\/\/[^)]+\/api\/badge\/veteran-dev\)\]\(https?:\/\/[^)]+\/veteran-dev\)$/);
+    expect(copied[0].replace(/^.*\]\(/, "")).not.toContain("/api/");
+  });
+
+  test("Flow 17a: a failed prewarm stays safe and retry reaches the ready state", async ({ page }) => {
+    let attempts = 0;
+    await page.route("**/api/badge/veteran-dev", async (route) => {
+      attempts += 1;
+      if (attempts === 1) {
+        await route.fulfill({ status: 503, contentType: "text/plain", body: "internal detail" });
+        return;
+      }
+      await route.continue();
+    });
+    await page.goto("/veteran-dev");
+    await page.getByRole("button", { name: "Adicionar ao README" }).click();
+
+    const dialog = page.getByRole("dialog", { name: "Adicionar ao README" });
+    const alert = dialog.getByRole("alert");
+    await expect(alert).toContainText("Não foi possível preparar o badge agora");
+    await expect(alert).not.toContainText(/503|internal detail/i);
+    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
+
+    await dialog.getByRole("button", { name: "Tentar novamente" }).click();
+
+    await expect(dialog.getByText("Badge pronto para o README.")).toBeVisible();
+    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeEnabled();
+    expect(attempts).toBeGreaterThanOrEqual(2);
   });
 
   test("Flow 17b: the badge endpoint is a small, cacheable, script-free SVG; unknown users are a 404", async ({ request }) => {
@@ -536,6 +575,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     expect(response.headers()["content-type"]).toContain("image/svg+xml");
     expect(response.headers()["cache-control"]).toMatch(/s-maxage=\d+/);
     expect(response.headers()["cache-control"]).toMatch(/stale-while-revalidate=\d+/);
+    expect(response.headers()["cdn-cache-control"]).toBe("public, max-age=3600, stale-while-revalidate=86400");
     expect(response.headers()["set-cookie"]).toBeUndefined();
     const svg = await response.text();
     expect(svg.length).toBeLessThan(2_000);
