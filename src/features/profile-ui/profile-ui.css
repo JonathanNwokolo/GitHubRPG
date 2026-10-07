@@ -1,0 +1,790 @@
+/*
+ * Profile UI Kit V1 (public/profile-ui). Everything is namespaced `pf-*` so nothing leaks into other screens.
+ * The kit images give material and ornament; this file only does layout, states and responsiveness.
+ * The text on top of every plate is real HTML (translatable, selectable, readable by screen readers).
+ */
+
+.pf-stage {
+  --pf-ink: #ece3cf;
+  --pf-muted: #a99f8c;
+  --pf-gold: #f7e0aa;
+  --pf-amber: #f0a43a;
+  background:
+    radial-gradient(ellipse 60% 28% at 50% 0%, rgba(240, 164, 58, 0.1), transparent 70%),
+    radial-gradient(ellipse at 50% 120%, rgba(0, 0, 0, 0.85), transparent 60%),
+    linear-gradient(#0d0b0d, #120f11 45%, #0a0809);
+  border-block: 1px solid rgba(180, 83, 9, 0.35);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Hero frame: four corners + crest cropped from ONE image, at a fixed scale ---------- */
+/*
+ * The hero art is 1600x700 and its ornaments must never be squashed, so it is not stretched as a background.
+ * Instead each ornament is a sprite cropped from the same file at the same scale (`--s`), and the plate and its
+ * rim are plain CSS. The content (real HTML) sits above and keeps its own padding.
+ */
+.pf-hero {
+  --s: 0.24;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  padding: 44px 18px 30px;
+}
+
+@media (min-width: 640px) {
+  .pf-hero {
+    --s: 0.32;
+    padding: 56px 36px 36px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pf-hero {
+    --s: 0.4;
+    padding: 56px 56px 44px;
+  }
+}
+
+.pf-hero__edge {
+  position: absolute;
+  inset: calc(var(--s) * 16px) calc(var(--s) * 14px);
+  z-index: -1;
+  border: 2px solid #70502a;
+  background:
+    radial-gradient(ellipse 65% 60% at 50% 38%, #211a1b, transparent 100%),
+    #110d0f;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 4px rgba(217, 164, 65, 0.07),
+    0 22px 44px rgba(0, 0, 0, 0.65),
+    0 0 36px rgba(240, 164, 58, 0.05);
+}
+
+.pf-hero__sprite {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/profile-ui/hero/profile-hero-frame.webp");
+  background-repeat: no-repeat;
+  background-size: calc(var(--s) * 1600px) calc(var(--s) * 700px);
+}
+
+/* The crop is a box; fading its far corner keeps only the ornament and hides the box edge. */
+.pf-hero__corner {
+  --pf-fade: radial-gradient(circle calc(var(--s) * 280px) at var(--pf-ox) var(--pf-oy), #000 62%, transparent 100%);
+  -webkit-mask-image: var(--pf-fade);
+  mask-image: var(--pf-fade);
+}
+
+.pf-hero__corner {
+  width: calc(var(--s) * 240px);
+  height: calc(var(--s) * 240px);
+}
+
+.pf-hero__corner--tl {
+  top: 0;
+  left: 0;
+  --pf-ox: 0%;
+  --pf-oy: 0%;
+  background-position: 0 0;
+}
+
+.pf-hero__corner--tr {
+  top: 0;
+  right: 0;
+  --pf-ox: 100%;
+  --pf-oy: 0%;
+  background-position: 100% 0;
+}
+
+.pf-hero__corner--bl {
+  bottom: 0;
+  left: 0;
+  --pf-ox: 0%;
+  --pf-oy: 100%;
+  background-position: 0 100%;
+}
+
+.pf-hero__corner--br {
+  right: 0;
+  bottom: 0;
+  --pf-ox: 100%;
+  --pf-oy: 100%;
+  background-position: 100% 100%;
+}
+
+.pf-hero__crest {
+  top: 0;
+  left: 50%;
+  width: calc(var(--s) * 400px);
+  height: calc(var(--s) * 112px);
+  margin-left: calc(var(--s) * -200px);
+  background-position: calc(var(--s) * -600px) 0;
+}
+
+.pf-hero__tip {
+  bottom: 0;
+  left: 50%;
+  width: calc(var(--s) * 640px);
+  height: calc(var(--s) * 42px);
+  margin-left: calc(var(--s) * -320px);
+  background-position: calc(var(--s) * -480px) calc(var(--s) * -658px);
+}
+
+.pf-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+/*
+ * Hero composition. Phone: one centered column. Tablet/desktop: portrait on the left, the rest stacked.
+ * Wide desktop: identity and status become two areas side by side.
+ */
+.pf-hero__grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "portrait"
+    "identity"
+    "status"
+    "actions";
+}
+
+@media (min-width: 768px) {
+  .pf-hero__grid {
+    column-gap: 36px;
+    row-gap: 20px;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "portrait identity"
+      "portrait status"
+      "portrait actions";
+    align-items: start;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pf-hero__grid {
+    grid-template-columns: auto minmax(0, 1fr) minmax(300px, 380px);
+    column-gap: 44px;
+    grid-template-areas:
+      "portrait identity status"
+      "portrait actions actions";
+  }
+}
+
+.pf-hero__portrait {
+  grid-area: portrait;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pf-hero__identity {
+  grid-area: identity;
+  min-width: 0;
+}
+
+.pf-hero__status {
+  grid-area: status;
+  min-width: 0;
+}
+
+.pf-hero__actions {
+  grid-area: actions;
+}
+
+@media (min-width: 1280px) {
+  .pf-hero__status {
+    padding-left: 40px;
+    background: linear-gradient(180deg, transparent, rgba(217, 164, 65, 0.3) 18%, rgba(217, 164, 65, 0.3) 82%, transparent) left
+      center / 1px 100% no-repeat;
+  }
+}
+
+/* Soft aura behind the framed avatar. */
+.pf-avatar-aura {
+  position: relative;
+  filter: drop-shadow(0 0 14px rgba(240, 164, 58, 0.16));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-avatar-aura {
+    transition: filter 260ms ease;
+  }
+
+  .pf-hero:hover .pf-avatar-aura {
+    filter: drop-shadow(0 0 18px rgba(240, 164, 58, 0.26));
+  }
+}
+
+/* ---------- Stat plate (level) ---------- */
+.pf-plate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 124px;
+  aspect-ratio: 340 / 220;
+  padding-top: 18px;
+  text-align: center;
+  background: url("/profile-ui/stats/profile-stat-plate.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
+}
+
+.pf-plate__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b9a77e;
+  line-height: 1;
+}
+
+.pf-plate__value {
+  margin-top: 4px;
+  font-size: 22px;
+  line-height: 1;
+  color: #fae4b5;
+  text-shadow:
+    0 2px 3px #000,
+    0 0 14px rgba(240, 164, 58, 0.4);
+}
+
+/* ---------- Buttons (3-slice: only the middle stretches) ---------- */
+.pf-btn {
+  --h: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  height: var(--h);
+  padding: 0 10px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: none;
+  border-style: solid;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.pf-btn--primary {
+  color: #ffe8b5;
+  text-shadow: 0 1px 2px #000;
+  border-width: 0 calc(var(--h) * 0.5);
+  border-image: url("/profile-ui/buttons/profile-button-primary.webp") 0 180 fill / 0 calc(var(--h) * 0.5) stretch;
+}
+
+.pf-btn--secondary {
+  --h: 44px;
+  color: #e0d8cc;
+  text-shadow: 0 1px 2px #000;
+  border-width: 0 calc(var(--h) * 0.5);
+  border-image: url("/profile-ui/buttons/profile-button-secondary.webp") 0 180 fill / 0 calc(var(--h) * 0.5) stretch;
+}
+
+.pf-btn--duel {
+  color: #ffd9d9;
+  text-shadow: 0 1px 2px #000;
+  border-width: 0 calc(var(--h) * 0.6);
+  border-image: url("/profile-ui/buttons/profile-button-duel.webp") 0 150 fill / 0 calc(var(--h) * 0.6) stretch;
+}
+
+.pf-btn--small {
+  --h: 38px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  color: #ecdab3;
+  text-shadow: 0 1px 2px #000;
+  border-width: 0 calc(var(--h) * 0.45);
+  border-image: url("/profile-ui/buttons/profile-button-small.webp") 0 140 fill / 0 calc(var(--h) * 0.45) stretch;
+}
+
+.pf-btn:hover {
+  filter: brightness(1.14) saturate(1.08);
+}
+
+.pf-btn--duel:hover {
+  filter: brightness(1.14) saturate(1.1) drop-shadow(0 2px 8px rgba(190, 30, 45, 0.35));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.pf-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+.pf-btn:focus-visible,
+.pf-tab:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+/* ---------- Tabs ---------- */
+.pf-tab {
+  --h: 38px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: var(--h);
+  padding: 0 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #cdbf9f;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: none;
+  border-style: solid;
+  border-width: 0 calc(var(--h) * 0.42);
+  border-image: url("/profile-ui/tabs/profile-tab-plate.webp") 0 130 fill / 0 calc(var(--h) * 0.42) stretch;
+  filter: brightness(0.82) saturate(0.8);
+  transition: filter 180ms ease, color 180ms ease;
+}
+
+@media (min-width: 640px) {
+  .pf-tab {
+    --h: 46px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.pf-tab:hover {
+  filter: brightness(1.02) saturate(0.95);
+  color: #f0e2bd;
+}
+
+.pf-tab--active,
+.pf-tab--active:hover {
+  color: #ffe6a6;
+  text-shadow: 0 0 10px rgba(240, 164, 58, 0.45);
+  filter: none;
+}
+
+/* Not only color: the selected tab also carries a small lit bar under it. */
+.pf-tab--active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 38%;
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.6);
+}
+
+.pf-tab__badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 1px 5px;
+  color: #d9c08a;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(217, 164, 65, 0.35);
+}
+
+.pf-tab--active .pf-tab__badge {
+  color: #ffe6a6;
+  border-color: rgba(251, 191, 36, 0.6);
+}
+
+/* ---------- Section header ---------- */
+.pf-section-title {
+  font-family: var(--font-pixel), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pf-gold, #f7e0aa);
+  text-shadow:
+    0 2px 3px #000,
+    0 0 18px rgba(240, 164, 58, 0.25);
+}
+
+.pf-rule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(217, 164, 65, 0.55), rgba(217, 164, 65, 0.12) 60%, transparent);
+}
+
+/* ---------- Framed surfaces: the frame image is the border, the content keeps its own padding ---------- */
+.pf-milestone {
+  position: relative;
+  min-width: 0;
+  padding: 24px 24px 22px;
+  border: 14px solid transparent;
+  border-image: url("/profile-ui/milestones/profile-milestone-card-frame.webp") 100 fill / 36px stretch;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.55));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-milestone {
+    transition: transform 200ms ease, filter 200ms ease;
+  }
+
+  .pf-milestone:hover {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.6)) brightness(1.06);
+  }
+}
+
+.pf-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  aspect-ratio: 320 / 220;
+  padding: 26px 22px 20px;
+  text-align: center;
+  background: url("/profile-ui/summary/profile-summary-tile-frame.webp") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.55));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-tile {
+    transition: filter 200ms ease;
+  }
+
+  .pf-tile:hover {
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.55)) brightness(1.1);
+  }
+}
+
+/* ---------- Attribute rail ---------- */
+.pf-rail {
+  --h: 78px;
+  position: relative;
+  display: grid;
+  min-width: 0;
+  height: var(--h);
+  align-items: center;
+  align-content: center;
+  column-gap: 12px;
+  row-gap: 2px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "label value"
+    "meter meter";
+  padding: 0 4px;
+  border-style: solid;
+  border-width: 0 calc(var(--h) * 0.91) 0 calc(var(--h) * 1.09);
+  border-image: url("/profile-ui/attributes/profile-attribute-rail.webp") 0 100 0 120 fill / 0 calc(var(--h) * 0.91) 0
+    calc(var(--h) * 1.09) stretch;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+}
+
+.pf-rail .pf-meter {
+  height: 10px;
+}
+
+/* Wide enough: label, meter and value share one line. */
+@media (min-width: 640px) {
+  .pf-rail {
+    --h: 64px;
+    grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) auto;
+    grid-template-areas: "label meter value";
+    column-gap: 16px;
+  }
+
+  .pf-rail .pf-meter {
+    height: 15px;
+  }
+}
+
+.pf-rail__label {
+  grid-area: label;
+  min-width: 0;
+}
+
+.pf-rail__meter {
+  grid-area: meter;
+}
+
+.pf-rail__value {
+  grid-area: value;
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  .pf-rail__value {
+    min-width: 5.25rem;
+  }
+}
+
+/* ---------- Meter (the real bar, drawn in CSS) ---------- */
+.pf-meter {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(180deg, #060405, #0f0b0d);
+  border: 1px solid #4d3a1f;
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.85),
+    0 1px 0 rgba(255, 214, 140, 0.06);
+}
+
+.pf-meter--sm {
+  height: 9px;
+}
+
+.pf-meter--md {
+  height: 13px;
+}
+
+.pf-meter--lg {
+  height: 17px;
+}
+
+.pf-meter__fill {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(90deg, var(--pf-from), var(--pf-to));
+  box-shadow: 0 0 9px var(--pf-glow);
+}
+
+/* A thin highlight along the top of the fill reads as polished metal, not as a flat web bar. */
+.pf-meter__fill::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 55% 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-meter__fill {
+    transition: width 400ms ease-out;
+  }
+}
+
+.pf-meter--gold {
+  --pf-from: #996417;
+  --pf-to: #f0a43a;
+  --pf-glow: rgba(240, 164, 58, 0.4);
+}
+
+.pf-meter--bright {
+  --pf-from: #b87b1c;
+  --pf-to: #f7ba43;
+  --pf-glow: rgba(247, 186, 67, 0.5);
+}
+
+.pf-meter--hp {
+  --pf-from: #821818;
+  --pf-to: #d93838;
+  --pf-glow: rgba(217, 56, 56, 0.4);
+}
+
+.pf-meter--mp {
+  --pf-from: #1c548a;
+  --pf-to: #459be6;
+  --pf-glow: rgba(69, 155, 230, 0.4);
+}
+
+.pf-meter--emerald {
+  --pf-from: #0c6a4b;
+  --pf-to: #34c58d;
+  --pf-glow: rgba(52, 197, 141, 0.32);
+}
+
+.pf-meter--arcane {
+  --pf-from: #5b2a9a;
+  --pf-to: #b27ae6;
+  --pf-glow: rgba(178, 122, 230, 0.32);
+}
+
+.pf-meter--azure {
+  --pf-from: #0e6b82;
+  --pf-to: #3cc4dd;
+  --pf-glow: rgba(60, 196, 221, 0.32);
+}
+
+/* ---------- Timeline ---------- */
+.pf-tl {
+  --pf-marker: 26px;
+  position: relative;
+  display: grid;
+  min-width: 0;
+  column-gap: 8px;
+  grid-template-columns: 40px minmax(0, 1fr);
+  grid-template-areas:
+    "rail year"
+    "rail body";
+}
+
+@media (min-width: 640px) {
+  .pf-tl {
+    column-gap: 10px;
+    grid-template-columns: 76px 48px minmax(0, 1fr);
+    grid-template-areas: "year rail body";
+  }
+}
+
+.pf-tl__year {
+  grid-area: year;
+  padding-top: 8px;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .pf-tl__year {
+    text-align: right;
+    padding-top: 10px;
+  }
+}
+
+.pf-tl__body {
+  grid-area: body;
+  min-width: 0;
+  padding-bottom: 22px;
+}
+
+.pf-tl--last .pf-tl__body {
+  padding-bottom: 0;
+}
+
+.pf-tl__rail {
+  grid-area: rail;
+  position: relative;
+}
+
+/* The spine runs between the medallions only: it starts at the first and ends at the last. */
+.pf-tl__line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  margin-left: -7px;
+  pointer-events: none;
+  background: url("/profile-ui/timeline/timeline-connector.webp") center top / 14px auto repeat-y;
+}
+
+.pf-tl--first .pf-tl__line {
+  top: 18px;
+}
+
+.pf-tl--last .pf-tl__line {
+  bottom: auto;
+  height: 18px;
+}
+
+.pf-tl--first.pf-tl--last .pf-tl__line {
+  display: none;
+}
+
+.pf-tl__marker {
+  position: absolute;
+  top: calc(18px - var(--pf-marker) / 2);
+  left: 50%;
+  z-index: 1;
+  width: var(--pf-marker);
+  height: var(--pf-marker);
+  margin-left: calc(var(--pf-marker) / -2);
+  pointer-events: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.pf-tl--common .pf-tl__marker {
+  --pf-marker: 24px;
+  background-image: url("/profile-ui/timeline/timeline-marker-common.webp");
+}
+
+.pf-tl--important .pf-tl__marker {
+  --pf-marker: 30px;
+  background-image: url("/profile-ui/timeline/timeline-marker-important.webp");
+}
+
+.pf-tl--current .pf-tl__marker {
+  --pf-marker: 38px;
+  background-image: url("/profile-ui/timeline/timeline-marker-current.webp");
+  filter: drop-shadow(0 0 8px rgba(240, 164, 58, 0.5));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pf-tl--current .pf-tl__marker {
+    animation: pf-marker-glow 3.2s ease-in-out infinite;
+  }
+}
+
+@keyframes pf-marker-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 6px rgba(240, 164, 58, 0.35));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 12px rgba(240, 164, 58, 0.65));
+  }
+}
+
+/* The chapter text sits on a faint plate; the important ones get a warmer rim. */
+.pf-tl__card {
+  min-width: 0;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, rgba(34, 26, 24, 0.75), rgba(20, 15, 17, 0.75));
+  border: 1px solid #3f2f18;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 640px) {
+  .pf-tl__card {
+    padding: 16px 20px;
+  }
+}
+
+.pf-tl--important .pf-tl__card {
+  border-color: #6b4f26;
+}
+
+.pf-tl--current .pf-tl__card {
+  border-color: #8a6a34;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.4),
+    0 0 22px rgba(240, 164, 58, 0.08);
+}
+
+.pf-muted {
+  color: var(--pf-muted, #a99f8c);
+}
+
+/* Small figure on a chapter card (metric, counter). */
+.pf-chip {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid #4a381e;
+}
+
+/* Phones: the tab label and its counter are enough; the small icon is dropped to save width. */
+@media (max-width: 639px) {
+  .pf-tab > .w-4 {
+    display: none;
+  }
+}
+
+/* Two columns on phones: the odd one out sits centered under the pairs instead of hanging on the left. */
+@media (max-width: 639px) {
+  .pf-tiles > .pf-tile:last-child:nth-child(odd) {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 6px);
+  }
+}

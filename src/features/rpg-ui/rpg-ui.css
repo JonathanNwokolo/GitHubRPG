@@ -1,0 +1,343 @@
+/*
+ * RPG UI Kit V1 (public/rpg-ui). Everything is namespaced `rpg-*` so nothing leaks into other screens.
+ * The kit images give material and ornament; this file only does layout, states and responsiveness.
+ */
+
+/* ---------- Panel surface (dark fantasy: graphite, inner rim, deep shadow) ---------- */
+.rpg-panel {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  border: 1px solid #4a3a24;
+  background:
+    linear-gradient(180deg, rgba(255, 214, 140, 0.05), transparent 30%),
+    radial-gradient(ellipse at 50% 0%, #241d1c, #151113 72%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(0, 0, 0, 0.65),
+    0 14px 30px rgba(0, 0, 0, 0.55);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* Gold hairline just inside the border. */
+.rpg-panel::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(217, 164, 65, 0.16);
+  pointer-events: none;
+}
+
+.rpg-panel--legendary {
+  border-color: #6b5226;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(240, 164, 58, 0.11), transparent 70%),
+    linear-gradient(180deg, rgba(255, 214, 140, 0.06), transparent 30%),
+    radial-gradient(ellipse at 50% 0%, #261e1b, #141012 74%);
+}
+
+.rpg-panel--interactive:hover,
+.rpg-panel--interactive:focus-within {
+  border-color: #8a6a34;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(0, 0, 0, 0.6),
+    0 18px 38px rgba(0, 0, 0, 0.65),
+    0 0 22px rgba(240, 164, 58, 0.07);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rpg-panel--interactive:hover,
+  .rpg-panel--interactive:focus-within {
+    transform: translateY(-3px);
+  }
+}
+
+/* Soft glow behind a framed avatar; lights up a little when its card is hovered. */
+.rpg-avatar-glow {
+  position: relative;
+  transition: filter 220ms ease;
+}
+
+.rpg-panel--interactive:hover .rpg-avatar-glow,
+.rpg-panel--interactive:focus-within .rpg-avatar-glow {
+  filter: drop-shadow(0 0 10px rgba(240, 164, 58, 0.22));
+}
+
+/* ---------- Corners: one image per variant, mirrored with CSS ---------- */
+.rpg-corners {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.rpg-corner {
+  position: absolute;
+  width: var(--rpg-corner-size);
+  background: var(--rpg-corner-img) 0 0 / 100% 100% no-repeat;
+  aspect-ratio: var(--rpg-corner-ratio);
+  transition: filter 220ms ease;
+}
+
+.rpg-corners--legendary {
+  --rpg-corner-img: url("/rpg-ui/corners/rpg-corner-legendary.webp");
+  --rpg-corner-ratio: 504 / 512;
+  --rpg-corner-size: 64px;
+  --rpg-corner-offset: -6px;
+}
+
+.rpg-corners--standard {
+  --rpg-corner-img: url("/rpg-ui/corners/rpg-corner-standard.webp");
+  --rpg-corner-ratio: 487 / 512;
+  --rpg-corner-size: 40px;
+  --rpg-corner-offset: -5px;
+}
+
+@media (min-width: 640px) {
+  .rpg-corners--legendary {
+    --rpg-corner-size: 88px;
+    --rpg-corner-offset: -8px;
+  }
+
+  .rpg-corners--standard {
+    --rpg-corner-size: 52px;
+    --rpg-corner-offset: -6px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .rpg-corners--legendary {
+    --rpg-corner-size: 96px;
+  }
+}
+
+.rpg-corner--tl {
+  top: var(--rpg-corner-offset);
+  left: var(--rpg-corner-offset);
+}
+
+.rpg-corner--tr {
+  top: var(--rpg-corner-offset);
+  right: var(--rpg-corner-offset);
+  transform: scaleX(-1);
+}
+
+.rpg-corner--bl {
+  bottom: var(--rpg-corner-offset);
+  left: var(--rpg-corner-offset);
+  transform: scaleY(-1);
+}
+
+.rpg-corner--br {
+  right: var(--rpg-corner-offset);
+  bottom: var(--rpg-corner-offset);
+  transform: scale(-1, -1);
+}
+
+.rpg-panel--interactive:hover .rpg-corner,
+.rpg-panel--interactive:focus-within .rpg-corner {
+  filter: brightness(1.18) saturate(1.1);
+}
+
+/* ---------- Tabs and buttons: 3-slice, only the middle stretches ---------- */
+.rpg-tab {
+  --h: 42px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--h);
+  padding: 0 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #cdbf9f;
+  background: none;
+  border-style: solid;
+  border-width: 0 calc(var(--h) * 0.42);
+  border-image: url("/rpg-ui/tabs/rpg-tab-plate.webp") 0 130 fill / 0 calc(var(--h) * 0.42) stretch;
+  filter: brightness(0.82) saturate(0.8);
+  transition: filter 180ms ease, color 180ms ease;
+}
+
+@media (min-width: 640px) {
+  .rpg-tab {
+    --h: 46px;
+  }
+}
+
+.rpg-tab:hover {
+  filter: brightness(1.02) saturate(0.95);
+  color: #f0e2bd;
+}
+
+.rpg-tab--active,
+.rpg-tab--active:hover {
+  color: #ffe3a0;
+  text-shadow: 0 0 10px rgba(240, 164, 58, 0.45);
+  filter: none;
+}
+
+/* Not only color: the selected tab also carries a small lit bar under it. */
+.rpg-tab--active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 38%;
+  height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.6);
+}
+
+.rpg-tab:focus-visible,
+.rpg-btn:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 3px;
+}
+
+.rpg-btn {
+  --h: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: var(--h);
+  padding: 0 4px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: none;
+  border-style: solid;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.rpg-btn--primary {
+  color: #ffe4a6;
+  text-shadow: 0 1px 0 #2a1708;
+  border-width: 0 calc(var(--h) * 0.5);
+  border-image: url("/rpg-ui/buttons/rpg-button-primary.webp") 0 180 fill / 0 calc(var(--h) * 0.5) stretch;
+}
+
+.rpg-btn--duel {
+  color: #ffd9d9;
+  text-shadow: 0 1px 0 #2a0508;
+  border-width: 0 calc(var(--h) * 0.6);
+  border-image: url("/rpg-ui/buttons/rpg-button-duel.webp") 0 150 fill / 0 calc(var(--h) * 0.6) stretch;
+}
+
+.rpg-btn--sm {
+  --h: 38px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+}
+
+.rpg-btn--md {
+  --h: 44px;
+  font-size: 0.75rem;
+}
+
+.rpg-btn--lg {
+  --h: 52px;
+  font-size: 0.8125rem;
+}
+
+.rpg-btn:hover {
+  filter: brightness(1.14) saturate(1.08);
+}
+
+.rpg-btn--duel:hover {
+  filter: brightness(1.14) saturate(1.1) drop-shadow(0 2px 8px rgba(190, 30, 45, 0.35));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rpg-btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.rpg-btn:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+.rpg-btn:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.6) brightness(0.7);
+  transform: none;
+}
+
+/* ---------- Hall atmosphere: warm vignette, amber haze, a few embers ---------- */
+.rpg-hall {
+  background:
+    radial-gradient(ellipse 55% 35% at 50% 0%, rgba(240, 164, 58, 0.11), transparent 70%),
+    radial-gradient(ellipse at 50% 120%, rgba(0, 0, 0, 0.9), transparent 60%),
+    linear-gradient(#0d0b0d, #120f11 45%, #0a0809);
+  border-block: 1px solid rgba(180, 83, 9, 0.35);
+  box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.55);
+}
+
+.rpg-embers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgba(251, 191, 36, 0.75) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(245, 158, 11, 0.6) 0 1px, transparent 2px),
+    radial-gradient(circle, rgba(251, 146, 60, 0.55) 0 1.5px, transparent 2.5px);
+  background-size: 240px 240px, 330px 330px, 410px 410px;
+  background-position: 30px 60px, 150px 200px, 260px 20px;
+  opacity: 0.35;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 25%, #000 60%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 25%, #000 60%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rpg-embers {
+    animation: rpg-embers 7s ease-in-out infinite;
+  }
+}
+
+@keyframes rpg-embers {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* ---------- Side ornaments (wide screens only) ---------- */
+.rpg-side {
+  display: none;
+  position: absolute;
+  top: 28px;
+  z-index: 0;
+  width: 56px;
+  aspect-ratio: 257 / 1024;
+  pointer-events: none;
+  background: url("/rpg-ui/ornaments/rpg-side-ornament.webp") center top / 100% 100% no-repeat;
+  opacity: 0.9;
+}
+
+.rpg-side--left {
+  left: 12px;
+}
+
+.rpg-side--right {
+  right: 12px;
+  transform: scaleX(-1);
+}
+
+@media (min-width: 1024px) {
+  .rpg-side {
+    display: block;
+  }
+}

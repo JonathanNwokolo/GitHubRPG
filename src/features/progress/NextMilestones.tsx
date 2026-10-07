@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Badge, Card, RpgCompass, RpgIconFrame } from "@/design-system";
+import { Badge } from "@/design-system";
 import type { AchievementProgress } from "@/game/types";
 import { getTranslation } from "@/i18n";
+import { ProfileMilestoneCard, ProfileSectionHeader } from "@/features/profile-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { ProgressDetail } from "./ProgressDetail";
 
@@ -16,38 +17,27 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
   const t = getTranslation(language);
 
   return (
-    <Card className="space-y-4 p-5 sm:p-6">
-      <div className="border-b border-rpg-border pb-3">
-        <h2 className="font-pixel text-xs sm:text-sm text-rpg-gold uppercase tracking-wider flex items-center gap-2">
-          <RpgIconFrame size="xs" shape="slate" rarity="gold" glow>
-            <RpgCompass className="w-3.5 h-3.5" />
-          </RpgIconFrame>
-          <span>{t.milestones.title}</span>
-        </h2>
-        <p className="font-sans text-xs text-slate-400 mt-1">{t.milestones.subtitle}</p>
-      </div>
+    <section aria-labelledby="milestones-title" className="space-y-7">
+      <ProfileSectionHeader id="milestones-title" title={t.milestones.title} subtitle={t.milestones.subtitle} />
 
       {milestones.length === 0 ? (
-        <p className="font-sans text-sm text-slate-300">{t.milestones.empty}</p>
+        <p className="pf-muted text-center font-sans text-sm">{t.milestones.empty}</p>
       ) : (
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <ul className="grid grid-cols-1 gap-x-6 gap-y-7 px-3.5 md:grid-cols-3">
           {milestones.map((milestone) => (
-            <li
-              key={milestone.id}
-              className="p-3.5 bg-rpg-surface border border-rpg-border space-y-2"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="font-sans font-bold text-sm text-slate-100">{milestone.name}</h3>
-                <Badge variant={milestone.rarity} size="sm">
+            <ProfileMilestoneCard key={milestone.id} className="flex flex-col gap-3">
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="min-w-0 font-sans text-base font-extrabold leading-snug text-amber-50">{milestone.name}</h3>
+                <Badge variant={milestone.rarity} size="sm" className="shrink-0">
                   {t.rarity[milestone.rarity]}
                 </Badge>
               </div>
-              <p className="font-sans text-xs text-slate-300 leading-relaxed">{milestone.description}</p>
-              <ProgressDetail progress={milestone} compact />
-            </li>
+              <p className="pf-muted font-sans text-sm leading-relaxed">{milestone.description}</p>
+              <ProgressDetail progress={milestone} compact tone="profile" className="mt-auto pt-1" />
+            </ProfileMilestoneCard>
           ))}
         </ul>
       )}
-    </Card>
+    </section>
   );
 };

@@ -24,6 +24,13 @@ export interface TabsProps {
   idPrefix?: string;
   /** Accessible name of the tab list. */
   "aria-label"?: string;
+  /** Replaces the default look (list and tab classes); behavior and ARIA stay the same. */
+  appearance?: {
+    list: string;
+    tab: (active: boolean) => string;
+    /** Classes of the counter badge; without it the default badge look is kept. */
+    badge?: (active: boolean) => string;
+  };
 }
 
 /** DOM id of a tab button. */
@@ -72,6 +79,7 @@ export const Tabs: React.FC<TabsProps> = ({
   className,
   idPrefix,
   "aria-label": ariaLabel,
+  appearance,
 }) => {
   const tabsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const generatedPrefix = useId();
@@ -104,7 +112,7 @@ export const Tabs: React.FC<TabsProps> = ({
       aria-label={ariaLabel}
       className={twMerge(
         clsx(
-          "flex flex-wrap items-center gap-1.5 p-1 bg-rpg-void border-2 border-rpg-border",
+          appearance?.list ?? "flex flex-wrap items-center gap-1.5 p-1 bg-rpg-void border-2 border-rpg-border",
           className
         )
       )}
@@ -127,26 +135,34 @@ export const Tabs: React.FC<TabsProps> = ({
               onTabChange(tab.id);
             }}
             onKeyDown={(e) => handleKeyDown(e, idx)}
-            className={twMerge(
-              clsx(
-                "flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-sans font-bold uppercase tracking-wider transition-all duration-150 border min-h-[44px]",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-1 focus-visible:ring-offset-rpg-void",
-                isActive
-                  ? "bg-rpg-surface text-rpg-gold border-rpg-goldDark shadow-pixel font-extrabold"
-                  : "bg-transparent text-slate-300 border-transparent hover:text-white hover:bg-rpg-surface/60"
-              )
-            )}
+            className={
+              appearance
+                ? appearance.tab(isActive)
+                : twMerge(
+                    clsx(
+                      "flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-sans font-bold uppercase tracking-wider transition-all duration-150 border min-h-[44px]",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold focus-visible:ring-offset-1 focus-visible:ring-offset-rpg-void",
+                      isActive
+                        ? "bg-rpg-surface text-rpg-gold border-rpg-goldDark shadow-pixel font-extrabold"
+                        : "bg-transparent text-slate-300 border-transparent hover:text-white hover:bg-rpg-surface/60"
+                    )
+                  )
+            }
           >
             {tab.icon && <span className="w-4 h-4">{tab.icon}</span>}
             <span>{tab.label}</span>
             {tab.badge !== undefined && (
               <span
-                className={clsx(
-                  "px-2 py-0.5 text-xs font-mono font-bold border",
-                  isActive
-                    ? "bg-rpg-goldDark text-slate-950 border-amber-300"
-                    : "bg-slate-800 text-slate-200 border-slate-700"
-                )}
+                className={
+                  appearance?.badge
+                    ? appearance.badge(isActive)
+                    : clsx(
+                        "px-2 py-0.5 text-xs font-mono font-bold border",
+                        isActive
+                          ? "bg-rpg-goldDark text-slate-950 border-amber-300"
+                          : "bg-slate-800 text-slate-200 border-slate-700"
+                      )
+                }
               >
                 {tab.badge}
               </span>

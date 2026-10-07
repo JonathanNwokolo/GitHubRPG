@@ -3,18 +3,14 @@
 import React from "react";
 import type { RPGStats } from "@/game/types";
 import {
-  Card,
-  ProgressBar,
   Tooltip,
-  RpgIconFrame,
   RpgZap,
   RpgTome,
   RpgStar,
   RpgLayers,
   RpgCalendar,
-  type ProgressBarVariant,
-  type IconRarity,
 } from "@/design-system";
+import { ProfileAttributeRail, ProfileSectionHeader, type ProfileMeterTone } from "@/features/profile-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
@@ -26,91 +22,74 @@ export const AttributesPanel: React.FC<AttributesPanelProps> = ({ stats }) => {
   const { language } = useUiStore();
   const t = getTranslation(language);
 
+  // Each attribute keeps its own hue (as before); the rail around it is always the same gold metal.
   const statItems: Array<{
     key: keyof RPGStats;
     label: string;
     desc: string;
     icon: React.ReactNode;
-    rarity: IconRarity;
-    variant: ProgressBarVariant;
+    tone: ProfileMeterTone;
   }> = [
     {
       key: "activity",
       label: t.attributes.activity,
       desc: t.attributes.activityDesc,
-      icon: <RpgZap className="w-3.5 h-3.5" />,
-      rarity: "gold",
-      variant: "stat",
+      icon: <RpgZap className="h-4 w-4 text-emerald-300" />,
+      tone: "emerald",
     },
     {
       key: "experience",
       label: t.attributes.experience,
       desc: t.attributes.experienceDesc,
-      icon: <RpgTome className="w-3.5 h-3.5" />,
-      rarity: "arcane",
-      variant: "arcane",
+      icon: <RpgTome className="h-4 w-4 text-purple-300" />,
+      tone: "arcane",
     },
     {
       key: "reputation",
       label: t.attributes.reputation,
       desc: t.attributes.reputationDesc,
-      icon: <RpgStar className="w-3.5 h-3.5" />,
-      rarity: "legendary",
-      variant: "xp",
+      icon: <RpgStar className="h-4 w-4 text-amber-300" />,
+      tone: "bright",
     },
     {
       key: "versatility",
       label: t.attributes.versatility,
       desc: t.attributes.versatilityDesc,
-      icon: <RpgLayers className="w-3.5 h-3.5" />,
-      rarity: "azure",
-      variant: "mp",
+      icon: <RpgLayers className="h-4 w-4 text-cyan-300" />,
+      tone: "azure",
     },
     {
       key: "consistency",
       label: t.attributes.consistency,
       desc: t.attributes.consistencyDesc,
-      icon: <RpgCalendar className="w-3.5 h-3.5" />,
-      rarity: "emerald",
-      variant: "hp",
+      icon: <RpgCalendar className="h-4 w-4 text-red-300" />,
+      tone: "hp",
     },
   ];
 
   return (
-    <Card className="space-y-4 p-5 sm:p-6">
-      <div className="flex items-center justify-between border-b border-rpg-border pb-3">
-        <h2 className="font-pixel text-xs sm:text-sm text-rpg-gold uppercase tracking-wider">
-          {t.character.attributesTitle}
-        </h2>
-        <span className="font-mono text-xs text-slate-400">{t.character.scale}</span>
-      </div>
+    <section aria-labelledby="attributes-title" className="space-y-6">
+      <ProfileSectionHeader id="attributes-title" title={t.character.attributesTitle} subtitle={t.character.scale} />
 
-      <div className="space-y-4 pt-1">
+      <div className="mx-auto max-w-4xl space-y-1 sm:space-y-3.5">
         {statItems.map((stat) => (
-          <div key={stat.key} className="space-y-1.5">
-            <div className="flex items-center justify-between">
+          <ProfileAttributeRail
+            key={stat.key}
+            name={stat.label}
+            value={stats[stat.key]}
+            valueSuffix="/ 100"
+            tone={stat.tone}
+            label={
               <Tooltip content={stat.desc} side="top">
-                <span className="flex items-center gap-2.5 font-sans font-bold text-sm text-slate-200 hover:text-amber-400 transition-colors cursor-help">
-                  <RpgIconFrame size="sm" shape="hex" rarity={stat.rarity} glow>
-                    {stat.icon}
-                  </RpgIconFrame>
+                <span className="flex cursor-help items-center gap-2 transition-colors hover:text-amber-300">
+                  {stat.icon}
                   <span>{stat.label}</span>
                 </span>
               </Tooltip>
-              <span className="font-mono text-sm font-bold text-amber-400">{stats[stat.key]} / 100</span>
-            </div>
-
-            <ProgressBar
-              value={stats[stat.key]}
-              max={100}
-              variant={stat.variant}
-              showValueText={false}
-              size="sm"
-              aria-label={stat.label}
-            />
-          </div>
+            }
+          />
         ))}
       </div>
-    </Card>
+    </section>
   );
 };

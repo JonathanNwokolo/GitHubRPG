@@ -18,6 +18,7 @@ import {
   RpgClose,
 } from "@/design-system";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
+import { ProfileSectionHeader } from "@/features/profile-ui";
 import { fill } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation, type TranslationDictionary } from "@/i18n";
@@ -67,19 +68,18 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-rpg-border pb-4">
-        <div>
-          <h2 className="font-pixel text-sm sm:text-base text-rpg-gold uppercase tracking-wider">
-            {t.titles.title}
-          </h2>
-          <p className="font-sans text-xs sm:text-sm text-slate-300 max-w-2xl">{t.titles.subtitle}</p>
-        </div>
-        {hasCustomPick && (
-          <Button size="sm" variant="ghost" onClick={onUseDefault}>
-            {t.titles.useDefault}
-          </Button>
-        )}
-      </div>
+      <ProfileSectionHeader
+        variant="quiet"
+        title={t.titles.title}
+        subtitle={t.titles.subtitle}
+        aside={
+          hasCustomPick ? (
+            <Button size="sm" variant="ghost" onClick={onUseDefault}>
+              {t.titles.useDefault}
+            </Button>
+          ) : undefined
+        }
+      />
 
       {/* Unlocked */}
       <section aria-labelledby="titles-unlocked" className="space-y-3">

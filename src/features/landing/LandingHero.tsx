@@ -1,21 +1,24 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Input,
-  Button,
   Badge,
   RpgSearch,
   RpgSparkles,
   RpgSword,
+  RpgSwords,
   RpgShield,
   RpgAlert,
 } from "@/design-system";
+import { RPGButton, RPGDivider, RPGSectionOrnament } from "@/features/rpg-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { PersonaCard, PersonaItem } from "./PersonaCard";
 import { fetchCharacter } from "@/data/api/fetchCharacter";
+import { parseGitHubProfileInput } from "@/lib/profileUrl";
 
 /** What the landing needs to know about each persona once the engine has run. */
 interface PersonaSummary {
@@ -131,9 +134,16 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
   ];
 
   const handleSummon = async (targetUsername: string) => {
-    const clean = targetUsername.trim().toLowerCase();
-    if (!clean) {
+    if (!targetUsername.trim()) {
       setErrorMessage(t.landing.emptyUsername);
+      return;
+    }
+
+    let clean: string;
+    try {
+      clean = parseGitHubProfileInput(targetUsername).toLowerCase();
+    } catch {
+      setErrorMessage(t.landing.invalidUsername);
       return;
     }
 
@@ -160,68 +170,86 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
   };
 
   return (
-    <div className="w-full flex flex-col items-center text-center space-y-12 py-12 md:py-20 px-4 sm:px-6 max-w-6xl mx-auto">
-      {/* Hero Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-rpg-surface border border-rpg-goldDark text-amber-300 font-sans font-bold text-xs uppercase tracking-widest shadow-pixel">
-        <RpgSparkles className="w-4 h-4 text-amber-400" />
-        <span>{t.landing.badge}</span>
-      </div>
+    <section id="home" aria-labelledby="landing-title" className="rpg-portal relative w-full overflow-hidden px-4 pb-10 pt-9 text-center sm:px-6 sm:pb-12 sm:pt-12 lg:pt-14">
+      <span aria-hidden="true" className="rpg-portal__glow" />
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
+        <div className="inline-flex min-h-8 items-center gap-2 border border-[#6b5226] bg-black/35 px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-amber-200 shadow-pixel sm:text-xs">
+          <RpgSparkles className="h-4 w-4 text-amber-400" />
+          <span>{t.landing.badge}</span>
+        </div>
 
-      {/* Main Title & Subtitle */}
-      <div className="space-y-4 max-w-3xl">
-        <h1 className="font-pixel text-3xl sm:text-5xl lg:text-6xl text-rpg-gold tracking-wider drop-shadow-md">
-          {t.landing.title}
-        </h1>
-        <p className="font-sans text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto font-normal">
-          {t.landing.subtitle}
-        </p>
-      </div>
+        <RPGSectionOrnament width={104} className="mt-3 opacity-75" />
 
-      {/* Search Input Box */}
-      <div className="w-full max-w-xl">
-        <form onSubmit={onSubmit} className="space-y-3">
-          <div className="flex flex-col sm:flex-row gap-2.5">
-            <div className="flex-1 text-left">
+        <div className="max-w-4xl">
+          <h1 id="landing-title" className="font-pixel text-3xl leading-tight tracking-wide text-rpg-gold [text-shadow:0_3px_0_#3a2410,0_0_28px_rgba(240,164,58,0.2)] sm:text-5xl lg:text-6xl">
+            {t.landing.title}
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-balance font-sans text-xl font-semibold leading-snug text-slate-100 sm:text-2xl lg:text-[1.75rem]">
+            {t.landing.headline}
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate-300 sm:text-base">
+            {t.landing.subtitle}
+          </p>
+        </div>
+
+        <form onSubmit={onSubmit} className="mt-7 w-full max-w-3xl" noValidate>
+          <label htmlFor="hero-profile-input" className="sr-only">{t.landing.searchLabel}</label>
+          <div className="rpg-summon-form flex flex-col gap-3 p-2.5 sm:flex-row sm:items-stretch">
+            <div className="min-w-0 flex-1 text-left">
               <Input
+                id="hero-profile-input"
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
                   if (errorMessage) setErrorMessage(null);
                 }}
                 placeholder={t.landing.searchPlaceholder}
-                leftIcon={<RpgSearch className="w-4 h-4 text-amber-400" />}
+                leftIcon={<RpgSearch className="h-5 w-5 text-amber-400" />}
                 disabled={isLoading}
-                autoComplete="off"
+                autoComplete="username"
+                autoCapitalize="none"
                 spellCheck="false"
+                aria-describedby="hero-profile-feedback"
+                aria-invalid={Boolean(errorMessage)}
+                className="min-h-14 border-[#5b4528] bg-[#090a0f]/95 pl-12 text-base shadow-[inset_0_2px_10px_rgba(0,0,0,0.75)] placeholder:text-slate-500 focus-visible:border-rpg-gold focus-visible:ring-rpg-gold"
               />
             </div>
-            <Button
+            <RPGButton
               type="submit"
-              variant="primary"
-              size="md"
-              isLoading={isLoading}
-              className="sm:w-auto w-full whitespace-nowrap min-w-[170px]"
+              size="lg"
+              disabled={isLoading}
+              aria-busy={isLoading}
+              className="w-full min-w-[210px] sm:w-auto"
             >
-              <RpgSword className="w-4 h-4 mr-2 inline" />
-              {t.landing.searchButton}
-            </Button>
+              {isLoading ? <span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" aria-hidden="true" /> : <RpgSword className="h-4 w-4" />}
+              <span>{isLoading ? t.landing.searchLoading : t.landing.searchButton}</span>
+            </RPGButton>
           </div>
-
-          {errorMessage && (
-            <div
-              role="alert"
-              className="p-3.5 bg-red-950/90 border border-rpg-crimson text-slate-100 flex items-center gap-2.5 text-left text-xs sm:text-sm animate-fade-in font-sans"
-            >
-              <RpgAlert className="w-4 h-4 text-red-400 flex-shrink-0" />
-              <span>{errorMessage}</span>
-            </div>
-          )}
+          <div id="hero-profile-feedback" className="min-h-7 pt-2" aria-live="polite">
+            {errorMessage ? (
+              <div role="alert" className="mx-auto flex max-w-2xl items-center justify-center gap-2 text-left text-xs text-red-300 sm:text-sm">
+                <RpgAlert className="h-4 w-4 flex-shrink-0" />
+                <span>{errorMessage}</span>
+              </div>
+            ) : null}
+          </div>
         </form>
-      </div>
 
-      {/* Personas Showcase */}
-      {showDemoPersonas && (
-        <div className="w-full space-y-6 pt-8 border-t border-rpg-border">
+        <nav aria-label={t.landing.secondaryActions} className="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+          <Link href="/duel" className="inline-flex min-h-11 items-center gap-2 px-2 text-slate-300 transition-colors hover:text-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">
+            <RpgSwords className="h-4 w-4 text-red-400" />
+            <span>{t.landing.duelAction}</span>
+          </Link>
+          <a href="#heroes-hall" className="inline-flex min-h-11 items-center gap-2 px-2 text-slate-300 transition-colors hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">
+            <span aria-hidden="true" className="text-amber-400">↓</span>
+            <span>{t.landing.hallAction}</span>
+          </a>
+        </nav>
+
+        <RPGDivider maxWidth={520} className="mt-5 opacity-70" />
+
+        {showDemoPersonas && (
+          <div className="mt-9 w-full space-y-6 border-t border-rpg-border/70 pt-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-left">
             <div className="flex items-center gap-2">
               <RpgShield className="w-5 h-5 text-amber-400" />
@@ -248,8 +276,9 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
               />
             ))}
           </div>
-        </div>
-      )}
-    </div>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };

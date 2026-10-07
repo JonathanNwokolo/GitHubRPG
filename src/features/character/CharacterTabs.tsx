@@ -1,15 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  Tabs,
-  TabItem,
-  RpgIconFrame,
-  RpgShield,
-  RpgSparkles,
-  RpgCrown,
-  RpgTrophy,
-} from "@/design-system";
+import { Tabs, TabItem, RpgShield, RpgSparkles, RpgCrown, RpgTrophy, type TabsProps } from "@/design-system";
+import "@/features/profile-ui/profile-ui.css";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 
@@ -27,6 +20,13 @@ interface CharacterTabsProps {
   totalTitlesCount: number;
 }
 
+/** Kit plates for the shared `Tabs` (keyboard handling, ARIA and sounds stay in `Tabs`). */
+const PROFILE_TAB_APPEARANCE: NonNullable<TabsProps["appearance"]> = {
+  list: "flex flex-wrap items-center justify-center gap-x-1 gap-y-3 sm:gap-x-2",
+  tab: (active) => (active ? "pf-tab pf-tab--active" : "pf-tab"),
+  badge: () => "pf-tab__badge",
+};
+
 export const CharacterTabs: React.FC<CharacterTabsProps> = ({
   activeTab,
   onTabChange,
@@ -42,39 +42,23 @@ export const CharacterTabs: React.FC<CharacterTabsProps> = ({
     {
       id: "overview",
       label: t.nav.character,
-      icon: (
-        <RpgIconFrame size="xs" shape="slate" rarity="gold">
-          <RpgShield className="w-3.5 h-3.5" />
-        </RpgIconFrame>
-      ),
+      icon: <RpgShield className="h-4 w-4" />,
     },
     {
       id: "skills",
       label: t.nav.skills,
-      icon: (
-        <RpgIconFrame size="xs" shape="slate" rarity="arcane">
-          <RpgSparkles className="w-3.5 h-3.5" />
-        </RpgIconFrame>
-      ),
+      icon: <RpgSparkles className="h-4 w-4" />,
     },
     {
       id: "achievements",
       label: t.nav.achievements,
-      icon: (
-        <RpgIconFrame size="xs" shape="slate" rarity="legendary">
-          <RpgCrown className="w-3.5 h-3.5" />
-        </RpgIconFrame>
-      ),
+      icon: <RpgCrown className="h-4 w-4" />,
       badge: `${unlockedAchievementsCount}/${totalAchievementsCount}`,
     },
     {
       id: "titles",
       label: t.nav.titles,
-      icon: (
-        <RpgIconFrame size="xs" shape="slate" rarity="rare">
-          <RpgTrophy className="w-3.5 h-3.5" />
-        </RpgIconFrame>
-      ),
+      icon: <RpgTrophy className="h-4 w-4" />,
       badge: `${unlockedTitlesCount}/${totalTitlesCount}`,
     },
   ];
@@ -84,7 +68,8 @@ export const CharacterTabs: React.FC<CharacterTabsProps> = ({
       items={tabItems}
       activeTab={activeTab}
       onTabChange={(id) => onTabChange(id as CharacterActiveTab)}
-      className="w-full justify-start overflow-x-auto"
+      className="w-full"
+      appearance={PROFILE_TAB_APPEARANCE}
       idPrefix={CHARACTER_TABS_ID_PREFIX}
       aria-label={t.character.sections}
     />

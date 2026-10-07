@@ -13,6 +13,7 @@ import {
   LanguageIcon,
   IconRarity,
 } from "@/design-system";
+import { ProfileSectionHeader } from "@/features/profile-ui";
 import { fill, formatNumber, pluralize } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -50,11 +51,8 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-2 border-b border-rpg-border pb-4">
-        <h2 className="font-pixel text-sm sm:text-base text-rpg-gold uppercase tracking-wider">
-          {t.skills.title}
-        </h2>
-        <p className="font-sans text-xs sm:text-sm text-slate-300 max-w-3xl">{t.skills.subtitle}</p>
+      <div className="space-y-2">
+        <ProfileSectionHeader variant="quiet" title={t.skills.title} subtitle={t.skills.subtitle} />
         {skills.length > 0 && (
           <p className="font-mono text-xs text-slate-400 max-w-md">{t.skills.keyboardHint}</p>
         )}

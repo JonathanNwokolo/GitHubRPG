@@ -12,6 +12,7 @@ import {
   RpgLock,
   RpgShare,
 } from "@/design-system";
+import { ProfileSectionHeader } from "@/features/profile-ui";
 import { fill } from "@/lib/format";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
 import { useUiStore } from "@/stores/useUiStore";
@@ -51,29 +52,27 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-rpg-border pb-4">
-        <div>
-          <h2 className="font-pixel text-sm sm:text-base text-rpg-gold uppercase tracking-wider">
-            {t.achievements.title}
-          </h2>
-          <p className="font-sans text-xs text-rpg-parchmentMuted">{t.achievements.subtitle}</p>
-          <p className="font-mono text-xs text-amber-400 mt-2">
+      <div className="space-y-4">
+        <ProfileSectionHeader variant="quiet" title={t.achievements.title} subtitle={t.achievements.subtitle} />
+
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <p className="font-mono text-xs text-amber-400">
             {t.achievements.unlocked}: {unlockedCount} / {achievements.length}
           </p>
-        </div>
 
-        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label={t.achievements.rarityLabel}>
-          {filters.map((f) => (
-            <Button
-              key={f.key}
-              size="sm"
-              variant={rarityFilter === f.key ? "primary" : "ghost"}
-              aria-pressed={rarityFilter === f.key}
-              onClick={() => setRarityFilter(f.key)}
-            >
-              {f.label}
-            </Button>
-          ))}
+          <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label={t.achievements.rarityLabel}>
+            {filters.map((f) => (
+              <Button
+                key={f.key}
+                size="sm"
+                variant={rarityFilter === f.key ? "primary" : "ghost"}
+                aria-pressed={rarityFilter === f.key}
+                onClick={() => setRarityFilter(f.key)}
+              >
+                {f.label}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
 

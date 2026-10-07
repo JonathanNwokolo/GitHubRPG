@@ -217,6 +217,7 @@ describe("ChronicleSection", () => {
   it("has no emoji: icons come from the RPG set", () => {
     const { container } = render(<ChronicleSection chronicle={FULL} />);
     expect(container.textContent).not.toMatch(/\p{Extended_Pictographic}/u);
-    expect(container.querySelectorAll("svg").length).toBeGreaterThan(5);
+    // The timeline markers are kit images now (CSS), so the SVGs left are the summary and action icons.
+    expect(container.querySelectorAll("svg").length).toBeGreaterThanOrEqual(4);
   });
 });

@@ -2,7 +2,8 @@
 
 import React, { useId, useMemo, useRef, useState } from "react";
 import { clsx } from "clsx";
-import { Button, Card, RpgCompass, RpgIconFrame, RpgTome } from "@/design-system";
+import { RpgCompass, RpgIconFrame } from "@/design-system";
+import { ProfileActionButton, ProfileDivider, ProfileSectionHeader } from "@/features/profile-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { describePresent, describeSummary } from "./chronicleText";
@@ -40,34 +41,29 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, o
   };
 
   return (
-    <Card id="chronicle" className="space-y-4 p-5 sm:p-6" aria-labelledby="chronicle-title" role="region">
-      <div className="border-b border-rpg-border pb-3">
-        <h2 id="chronicle-title" className="font-pixel text-xs sm:text-sm text-rpg-gold uppercase tracking-wider flex items-center gap-2">
-          <RpgIconFrame size="xs" shape="slate" rarity="azure" glow aria-hidden="true">
-            <RpgTome className="w-3.5 h-3.5" />
-          </RpgIconFrame>
-          <span>{t.title}</span>
-        </h2>
-        <p className="font-sans text-xs text-slate-400 mt-1">{t.subtitle}</p>
-      </div>
+    <section id="chronicle" aria-labelledby="chronicle-title" className="space-y-6">
+      <ProfileSectionHeader id="chronicle-title" title={t.title} subtitle={t.subtitle} />
 
       {chronicle.coverage !== "full" && (
         <p
           role="note"
           className={clsx(
-            "font-sans text-xs sm:text-sm leading-relaxed p-3 border",
+            "mx-auto max-w-3xl border p-3 font-sans text-xs leading-relaxed sm:text-sm",
             chronicle.coverage === "partial"
               ? "border-amber-700/60 bg-amber-950/30 text-amber-200"
-              : "border-rpg-border bg-rpg-surface text-slate-300"
+              : "border-amber-900/40 bg-black/30 text-slate-300"
           )}
         >
           {chronicle.coverage === "partial" ? t.coverage.partial : t.coverage.unavailable}
         </p>
       )}
 
-      <ChronicleSummary items={summary} label={t.summaryTitle} />
+      <div className="mx-auto max-w-4xl space-y-5">
+        <ChronicleSummary items={summary} label={t.summaryTitle} />
+        <ProfileDivider maxWidth={560} />
+      </div>
 
-      <div id={regionId} className="pt-1">
+      <div id={regionId} className="mx-auto max-w-4xl">
         {expanded ? (
           <ChronicleTimelineFull chronicle={chronicle} onShareChapter={onShareChapter} />
         ) : (
@@ -76,15 +72,15 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, o
       </div>
 
       {expanded && present.length > 0 && (
-        <div className="flex items-start gap-3 border-t border-rpg-border/70 pt-4">
+        <div className="mx-auto flex max-w-4xl items-start gap-3 border-t border-amber-900/40 pt-4">
           <RpgIconFrame size="sm" shape="circle" rarity="arcane" glow aria-hidden="true">
-            <RpgCompass className="w-4 h-4" />
+            <RpgCompass className="h-4 w-4" />
           </RpgIconFrame>
           <div className="min-w-0 space-y-1">
-            <h3 className="font-pixel text-xs text-rpg-gold uppercase tracking-wider">{t.present.title}</h3>
-            <p className="font-sans text-xs text-slate-400">{t.present.note}</p>
+            <h3 className="pf-section-title text-xs">{t.present.title}</h3>
+            <p className="pf-muted font-sans text-xs">{t.present.note}</p>
             {present.map((line) => (
-              <p key={line} className="font-sans text-sm text-slate-200 leading-relaxed">
+              <p key={line} className="font-sans text-sm leading-relaxed text-slate-200">
                 {line}
               </p>
             ))}
@@ -92,18 +88,17 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, o
         </div>
       )}
 
-      <Button
-        ref={toggleRef}
-        type="button"
-        variant="secondary"
-        size="sm"
-        className="w-full sm:w-auto"
-        aria-expanded={expanded}
-        aria-controls={regionId}
-        onClick={toggle}
-      >
-        {expanded ? t.collapse : t.viewFull}
-      </Button>
-    </Card>
+      <div className="flex justify-center">
+        <ProfileActionButton
+          ref={toggleRef}
+          variant="secondary"
+          aria-expanded={expanded}
+          aria-controls={regionId}
+          onClick={toggle}
+        >
+          {expanded ? t.collapse : t.viewFull}
+        </ProfileActionButton>
+      </div>
+    </section>
   );
 };

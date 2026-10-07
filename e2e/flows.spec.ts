@@ -20,6 +20,26 @@ test.describe("GitHub RPG E2E Flows", () => {
     await page.waitForURL(`**${target}`);
   });
 
+  test("Flow 0a: mobile header exposes the primary routes and reaches the Hall", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/");
+
+    const menuButton = page.getByRole("button", { name: "Abrir menu" });
+    await expect(menuButton).toBeVisible();
+    await menuButton.click();
+    await expect(page.getByRole("button", { name: "Fechar menu" })).toHaveAttribute("aria-expanded", "true");
+
+    const navigation = page.getByRole("navigation", { name: "Navegação principal" });
+    await expect(navigation.getByRole("link", { name: "Início" })).toBeVisible();
+    await expect(navigation.getByRole("link", { name: "Salão" })).toBeVisible();
+    await expect(navigation.getByRole("link", { name: "Duelo" })).toBeVisible();
+    await expect(navigation.getByRole("link", { name: "Configurações" })).toBeVisible();
+
+    await navigation.getByRole("link", { name: "Salão" }).click();
+    await expect(page).toHaveURL(/#heroes-hall$/);
+    await expect(page.getByRole("region", { name: "Salão dos Heróis" })).toBeInViewport();
+  });
+
   test("Flow 0b: the Hall fills itself while slow heroes arrive, without reloading the page", async ({ page }) => {
     const usernames = ["torvalds", "gvanrossum", "matz", "antirez", "dhh"];
     const stages = [0, 2, 5];
@@ -73,7 +93,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     await page.goto("/");
     await expect(page.locator("h1")).toContainText("GitHub RPG");
 
-    const input = page.locator('input[placeholder*="rookie-dev"]');
+    const input = page.getByLabel("Usuário ou URL do perfil no GitHub");
     await input.fill("mystic-sorcerer");
 
     const summonBtn = page.getByRole("button", { name: /Invocar Ficha/i });
@@ -478,7 +498,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     expect(await preview.count()).toBeLessThanOrEqual(3);
     await expect(preview.first()).toHaveText("O Início da Jornada");
     await expect(preview.last()).toHaveText("Capítulo Atual");
-    await expect(page.locator("body")).not.toContainText(/Missão|Missões|Masmorra|Duelo|Ranking|undefined/i);
+    await expect(page.locator("body")).not.toContainText(/Missão|Missões|Masmorra|Ranking|undefined/i);
 
     await page.getByRole("button", { name: /Switch to English/i }).click();
     await expect(page.getByRole("heading", { level: 2, name: "Journey Chronicle" })).toBeVisible();

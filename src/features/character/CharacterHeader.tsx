@@ -4,9 +4,6 @@ import React from "react";
 import type { RPGCharacter, TitleProgress } from "@/game/types";
 import {
   Badge,
-  ProgressBar,
-  Button,
-  Card,
   Tooltip,
   RpgShare,
   RpgSparkles,
@@ -17,10 +14,19 @@ import {
   RpgHeart,
   RpgMana,
   RpgStar,
+  RpgSwords,
   RpgClassIcon,
 } from "@/design-system";
 import { fnv1a } from "@/data/seed/hashAndPrng";
 import { fill, formatNumber } from "@/lib/format";
+import {
+  ProfileActionButton,
+  ProfileDivider,
+  ProfileHeroPanel,
+  ProfileMeter,
+  ProfileStatPlate,
+  type ProfileMeterTone,
+} from "@/features/profile-ui";
 import { CharacterAvatar } from "./CharacterAvatar";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
@@ -48,6 +54,29 @@ const TIER_FRAME: Record<string, "common" | "rare" | "epic" | "legendary"> = {
   Ascendente: "legendary",
 };
 
+interface ResourceRowProps {
+  tone: ProfileMeterTone;
+  label: React.ReactNode;
+  /** Plain-text name of the bar. */
+  name: string;
+  valueText: string;
+  value: number;
+  max: number;
+  hint?: string;
+}
+
+/** Label and value on one line, the metal meter under them. */
+const ResourceRow: React.FC<ResourceRowProps> = ({ tone, label, name, valueText, value, max, hint }) => (
+  <div className="space-y-1.5">
+    <div className="flex items-baseline justify-between gap-3">
+      <span className="font-sans text-xs font-bold uppercase tracking-wider text-amber-50">{label}</span>
+      <span className="font-mono text-xs font-medium text-amber-300">{valueText}</span>
+    </div>
+    <ProfileMeter value={value} max={max} tone={tone} size="md" aria-label={name} />
+    {hint && <p className="pf-muted font-sans text-xs">{hint}</p>}
+  </div>
+);
+
 export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   character,
   equippedTitle,
@@ -70,171 +99,170 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
         });
 
   return (
-    <Card variant="rune" className="p-6 md:p-8 space-y-6">
-      {/* Top Banner: Identity & Core Details */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6 text-center md:text-left">
-        {/* GitHub photo inside the RPG frame (procedural avatar as fallback) */}
-        <div className="flex-shrink-0">
-          <CharacterAvatar
-            seed={fnv1a(identity.username.toLowerCase())}
-            photoUrl={identity.avatarUrl}
-            username={identity.username}
-            photoAlt={fill(t.character.avatarAlt, { name: displayName })}
-            size={100}
-            rarity={TIER_FRAME[progression.tier] ?? "common"}
-          />
+    <ProfileHeroPanel aria-label={displayName}>
+      <div className="pf-hero__grid">
+        {/* Portrait: the deterministic frame stays the protagonist; the level plate hangs under it. */}
+        <div className="pf-hero__portrait">
+          <div className="pf-avatar-aura">
+            <CharacterAvatar
+              seed={fnv1a(identity.username.toLowerCase())}
+              photoUrl={identity.avatarUrl}
+              username={identity.username}
+              photoAlt={fill(t.character.avatarAlt, { name: displayName })}
+              size={112}
+              rarity={TIER_FRAME[progression.tier] ?? "common"}
+            />
+          </div>
+          <div className="-mt-3 flex flex-col items-center gap-1.5">
+            <ProfileStatPlate label={t.character.level} value={progression.level} />
+            <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">{progression.tier}</span>
+          </div>
         </div>
 
-        {/* Identity block */}
-        <div className="flex-1 space-y-3">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-            <Badge variant="gold" size="md">
-              {t.character.level.toUpperCase()} {progression.level}
-            </Badge>
+        {/* Identity */}
+        <div className="pf-hero__identity space-y-2.5 text-center md:text-left">
+          <div>
+            <h1 className="break-words font-pixel text-xl leading-snug text-amber-50 sm:text-2xl lg:text-3xl xl:text-2xl">{displayName}</h1>
+            <p className="mt-1 font-mono text-xs text-slate-400 sm:text-sm">@{identity.username}</p>
+          </div>
 
-            <Badge variant="azure" size="md">
-              {progression.tier}
-            </Badge>
-
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-start">
             <Tooltip content={archetype.classDescription}>
-              <Badge variant="arcane" size="md" className="gap-1.5">
-                <RpgClassIcon classNameType={archetype.className} className="w-4 h-4 text-purple-300" />
+              <span className="inline-flex items-center gap-1.5 font-sans text-sm font-extrabold uppercase tracking-wider text-amber-300">
+                <RpgClassIcon classNameType={archetype.className} className="h-4 w-4 text-amber-300" />
                 <span>{archetype.className}</span>
-              </Badge>
+              </span>
             </Tooltip>
-
             {archetype.subclassName && (
-              <Tooltip content={archetype.subclassDescription ?? archetype.subclassName}>
-                <Badge variant="neutral" size="md" className="gap-1.5">
-                  <RpgClassIcon classNameType={archetype.subclassName} className="w-4 h-4 text-slate-300" />
-                  <span>{archetype.subclassName}</span>
-                </Badge>
-              </Tooltip>
+              <>
+                <span aria-hidden="true" className="text-amber-700">
+                  &bull;
+                </span>
+                <Tooltip content={archetype.subclassDescription ?? archetype.subclassName}>
+                  <span className="inline-flex items-center gap-1.5 font-sans text-sm font-semibold text-slate-200">
+                    <RpgClassIcon classNameType={archetype.subclassName} className="h-4 w-4 text-slate-300" />
+                    <span>{archetype.subclassName}</span>
+                  </span>
+                </Tooltip>
+              </>
             )}
-
             {meta.isDemo && (
-              <Badge variant="common" size="sm" className="ml-auto hidden sm:inline-flex gap-1" title={t.common.demoDataTooltip}>
-                <RpgSparkles className="w-3.5 h-3.5 text-amber-400" />
+              <Badge variant="common" size="sm" className="gap-1" title={t.common.demoDataTooltip}>
+                <RpgSparkles className="h-3.5 w-3.5 text-amber-400" />
                 <span>{t.common.demoDataDisclaimer}</span>
               </Badge>
             )}
           </div>
 
-          {onOpenClassExplanation && (
-            <div className="flex justify-center md:justify-start">
-              <Button variant="ghost" size="sm" onClick={onOpenClassExplanation} className="gap-1.5 -ml-1 text-slate-300">
-                <RpgTome className="w-3.5 h-3.5 text-amber-400" />
-                <span>{t.classExplanation.trigger}</span>
-              </Button>
-            </div>
+          {equippedTitle ? (
+            <p
+              className="font-serif text-base font-semibold italic text-amber-300/95 sm:text-lg"
+              aria-label={`${t.character.title}: ${equippedTitle.name}`}
+            >
+              &laquo; {equippedTitle.name} &raquo;
+            </p>
+          ) : (
+            <p className="font-serif text-sm italic text-slate-400">{t.character.noTitle}</p>
           )}
-
-          <div>
-            <h1 className="font-pixel text-xl sm:text-2xl text-rpg-gold tracking-wide">{displayName}</h1>
-            {equippedTitle ? (
-              <p
-                className="font-serif italic font-semibold text-sm sm:text-base text-amber-300/95 mt-1"
-                aria-label={`${t.character.title}: ${equippedTitle.name}`}
-              >
-                &laquo; {equippedTitle.name} &raquo;
-              </p>
-            ) : (
-              <p className="font-serif italic text-sm text-slate-400 mt-1">{t.character.noTitle}</p>
-            )}
-            <p className="font-mono text-xs sm:text-sm text-slate-400 mt-0.5">@{identity.username}</p>
-          </div>
 
           {identity.bio && (
-            <p className="font-sans text-sm text-slate-300 leading-relaxed max-w-2xl">{identity.bio}</p>
+            <p className="max-w-2xl font-sans text-sm leading-relaxed text-slate-300 md:max-w-xl">{identity.bio}</p>
           )}
 
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs sm:text-sm text-slate-300 pt-1">
-            {identity.location && (
-              <span className="flex items-center gap-1.5">
-                <RpgMapPin className="w-3.5 h-3.5 text-amber-400" />
-                <span>{identity.location}</span>
-              </span>
-            )}
-            {identity.company && (
-              <span className="flex items-center gap-1.5">
-                <RpgBuilding className="w-3.5 h-3.5 text-purple-400" />
-                <span>{identity.company}</span>
-              </span>
-            )}
-          </div>
+          {(identity.location || identity.company) && (
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 pt-0.5 text-xs text-slate-300 sm:text-sm md:justify-start">
+              {identity.location && (
+                <span className="flex items-center gap-1.5">
+                  <RpgMapPin className="h-3.5 w-3.5 text-amber-400" />
+                  <span>{identity.location}</span>
+                </span>
+              )}
+              {identity.company && (
+                <span className="flex items-center gap-1.5">
+                  <RpgBuilding className="h-3.5 w-3.5 text-purple-400" />
+                  <span>{identity.company}</span>
+                </span>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* Action button */}
-        {(onOpenShareModal || onOpenReadmeModal) && (
-          <div className="flex flex-col gap-2 md:self-start">
-            {onOpenShareModal && (
-              <Button variant="secondary" size="sm" onClick={onOpenShareModal} className="gap-2 whitespace-nowrap">
-                <RpgShare className="w-4 h-4 text-amber-400" />
-                <span>{t.share.generateCard}</span>
-              </Button>
-            )}
-            {onOpenReadmeModal && (
-              <Button variant="secondary" size="sm" onClick={onOpenReadmeModal} className="gap-2 whitespace-nowrap">
-                <RpgCode className="w-4 h-4 text-amber-400" />
-                <span>{t.readme.trigger}</span>
-              </Button>
-            )}
+        {/* Status: XP, HP and MP (HP and MP are only a visual layer) */}
+        <div className="pf-hero__status space-y-3.5">
+          <div className="xl:hidden">
+            <ProfileDivider maxWidth={420} className="md:mx-0" />
           </div>
-        )}
-      </div>
-
-      {/* Resource & XP Bars */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-rpg-border/70">
-        {/* XP Bar */}
-        <div className="space-y-1">
-          <ProgressBar
-            variant="xp"
-            value={progression.progressPercent}
-            max={100}
+          <ResourceRow
+            tone="bright"
             label={
               <span className="inline-flex items-center gap-1.5">
-                <RpgStar className="w-3.5 h-3.5 text-amber-400" />
+                <RpgStar className="h-3.5 w-3.5 text-amber-400" />
                 <span>{t.character.xp}</span>
               </span>
             }
-            valueFormatter={() => fill(t.character.xpTotal, { n: formatNumber(progression.totalXp, language) })}
+            name={t.character.xp}
+            value={progression.progressPercent}
+            max={100}
+            valueText={fill(t.character.xpTotal, { n: formatNumber(progression.totalXp, language) })}
+            hint={xpHint}
           />
-          <p className="font-sans text-xs text-slate-300">{xpHint}</p>
-        </div>
-
-        {/* HP Bar */}
-        <div className="space-y-1">
-          <ProgressBar
-            variant="hp"
-            value={resources.hp}
-            max={resources.maxHp}
+          <ResourceRow
+            tone="hp"
             label={
               <span className="inline-flex items-center gap-1.5">
-                <RpgHeart className="w-3.5 h-3.5 text-red-400" />
+                <RpgHeart className="h-3.5 w-3.5 text-red-400" />
                 <span>{t.character.hp}</span>
               </span>
             }
-            valueFormatter={(val, max) => `${val} / ${max} HP`}
+            name={t.character.hp}
+            value={resources.hp}
+            max={resources.maxHp}
+            valueText={`${resources.hp} / ${resources.maxHp} HP`}
           />
-        </div>
-
-        {/* MP Bar */}
-        <div className="space-y-1">
-          <ProgressBar
-            variant="mp"
-            value={resources.mp}
-            max={resources.maxMp}
+          <ResourceRow
+            tone="mp"
             label={
               <span className="inline-flex items-center gap-1.5">
-                <RpgMana className="w-3.5 h-3.5 text-cyan-400" />
+                <RpgMana className="h-3.5 w-3.5 text-cyan-400" />
                 <span>{t.character.mp}</span>
               </span>
             }
-            valueFormatter={(val, max) => `${val} / ${max} MP`}
+            name={t.character.mp}
+            value={resources.mp}
+            max={resources.maxMp}
+            valueText={`${resources.mp} / ${resources.maxMp} MP`}
           />
+          <p className="pf-muted font-sans text-[11px] leading-snug">{t.character.resourcesNote}</p>
+        </div>
+
+        {/* Actions: the duel and the card first (what a visitor wants to do), the utilities after them */}
+        <div className="pf-hero__actions flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <ProfileActionButton href={`/duel?opponent=${encodeURIComponent(identity.username)}`} variant="duel">
+            <RpgSwords className="h-4 w-4" />
+            <span>{t.duel.challengeHero}</span>
+          </ProfileActionButton>
+          {onOpenShareModal && (
+            <ProfileActionButton variant="primary" onClick={onOpenShareModal}>
+              <RpgShare className="h-4 w-4" />
+              <span>{t.share.generateCard}</span>
+            </ProfileActionButton>
+          )}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+            {onOpenReadmeModal && (
+              <ProfileActionButton variant="secondary" onClick={onOpenReadmeModal}>
+                <RpgCode className="h-4 w-4" />
+                <span>{t.readme.trigger}</span>
+              </ProfileActionButton>
+            )}
+            {onOpenClassExplanation && (
+              <ProfileActionButton variant="small" onClick={onOpenClassExplanation}>
+                <RpgTome className="h-3.5 w-3.5" />
+                <span>{t.classExplanation.trigger}</span>
+              </ProfileActionButton>
+            )}
+          </div>
         </div>
       </div>
-      <p className="font-sans text-[11px] text-slate-500">{t.character.resourcesNote}</p>
-    </Card>
+    </ProfileHeroPanel>
   );
 };

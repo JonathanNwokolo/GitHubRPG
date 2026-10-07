@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button, RpgSparkles, TabPanel, Tabs } from "@/design-system";
+import { RpgSparkles, TabPanel } from "@/design-system";
 import { getTranslation } from "@/i18n";
+import { RPGButton, RPGDivider, RPGPanel, RPGSectionOrnament, RPGSideOrnaments, RPGTabs } from "@/features/rpg-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { FeaturedHeroCard } from "./FeaturedHeroCard";
 import { HERO_CATEGORY_IDS, type HeroCategoryId } from "./featuredHeroes";
@@ -11,6 +12,8 @@ import { HeroMiniCard } from "./HeroMiniCard";
 import { useHeroCategory } from "./useHeroCategory";
 
 const PANEL_ID = "heroes-hall";
+/** One column (a centered stage) up to wide desktops; the featured hero beside the four others from there. */
+const HALL_GRID = "mx-auto grid max-w-3xl grid-cols-1 gap-6 min-[1360px]:max-w-none min-[1360px]:grid-cols-2";
 
 function profileHref(username: string): string {
   return `/${encodeURIComponent(username)}`;
@@ -18,17 +21,18 @@ function profileHref(username: string): string {
 
 function HallSkeleton({ label }: { label: string }) {
   return (
-    <div role="status" className="grid min-h-[520px] grid-cols-1 gap-4 lg:grid-cols-2">
+    <div role="status" className={HALL_GRID}>
       <span className="sr-only">{label}</span>
-      <div className="animate-pulse border-2 border-rpg-border bg-rpg-surface/70 p-6">
-        <div className="h-full min-h-[360px] bg-rpg-surfaceLight/60" />
+      <div className="min-h-[520px] animate-pulse border border-[#4a3a24] bg-rpg-surface/50 p-6 sm:min-h-[600px]">
+        <div className="h-full min-h-[360px] bg-rpg-surfaceLight/40" />
       </div>
-      <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {Array.from({ length: 4 }, (_, index) => (
-          <div key={index} className="min-h-[240px] animate-pulse border border-rpg-border bg-rpg-surface/70 p-4">
-            <div className="h-16 w-16 bg-rpg-surfaceLight" />
-            <div className="mt-5 h-3 w-2/3 bg-rpg-surfaceLight" />
-            <div className="mt-3 h-3 w-1/2 bg-rpg-surfaceLight" />
+          <div key={index} className="flex min-h-[300px] animate-pulse flex-col items-center border border-[#4a3a24] bg-rpg-surface/50 p-4">
+            <div className="h-24 w-24 bg-rpg-surfaceLight/60 sm:h-28 sm:w-28" />
+            <div className="mt-5 h-3 w-2/3 bg-rpg-surfaceLight/60" />
+            <div className="mt-3 h-3 w-1/2 bg-rpg-surfaceLight/60" />
+            <div className="mt-auto h-9 w-3/4 bg-rpg-surfaceLight/60" />
           </div>
         ))}
       </div>
@@ -56,51 +60,53 @@ export function HeroesHall() {
   };
 
   return (
-    <section aria-labelledby="heroes-hall-title" className="w-full border-y-2 border-rpg-border bg-rpg-obsidian/70 px-4 py-14 sm:px-6 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-7 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 text-rpg-gold">
-            <RpgSparkles className="h-5 w-5" />
-            <span className="h-px w-8 bg-rpg-goldDark" aria-hidden="true" />
-            <RpgSparkles className="h-5 w-5" />
-          </div>
-          <h2 id="heroes-hall-title" className="font-pixel text-xl uppercase tracking-wider text-rpg-gold sm:text-3xl">
+    <section id="heroes-hall" aria-labelledby="heroes-hall-title" className="rpg-hall relative w-full scroll-mt-20 overflow-x-clip px-4 py-14 sm:px-6 sm:py-20 lg:px-20">
+      <span aria-hidden="true" className="rpg-embers" />
+      <RPGSideOrnaments />
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="mb-6 text-center">
+          <RPGSectionOrnament />
+          <h2
+            id="heroes-hall-title"
+            className="mt-1 font-pixel text-xl uppercase tracking-wider text-amber-200 [text-shadow:0_2px_0_#3a2410,0_0_24px_rgba(240,164,58,0.25)] sm:text-3xl"
+          >
             {t.title}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">{t.subtitle}</p>
+          <RPGDivider className="mt-4" maxWidth={440} />
         </div>
 
-        <Tabs
+        <RPGTabs
           items={items}
           activeTab={activeCategory}
           onTabChange={(id) => setActiveCategory(id as HeroCategoryId)}
           idPrefix={PANEL_ID}
           aria-label={t.categoriesLabel}
-          className="mb-5 justify-center"
+          className="mb-8"
         />
 
         <TabPanel idPrefix={PANEL_ID} tabId={activeCategory}>
           {status === "loading" ? (
             <HallSkeleton label={t.loading} />
           ) : status === "error" ? (
-            <div role="alert" className="border border-rpg-crimson bg-red-950/40 p-8 text-center text-slate-200">
+            <div role="alert" className="mx-auto max-w-3xl border border-rpg-crimson/70 bg-red-950/40 p-8 text-center text-slate-200">
               <p>{t.error}</p>
-              <Button className="mt-4" size="sm" onClick={retry}>{retryLabel}</Button>
+              <RPGButton className="mt-4" size="sm" onClick={retry}>{retryLabel}</RPGButton>
             </div>
           ) : heroes.length === 0 ? (
-            <div className="border border-rpg-border bg-rpg-surface p-8 text-center text-slate-300">
+            <RPGPanel className="mx-auto max-w-3xl p-8 text-center text-slate-300">
               <p role={stillArriving ? "status" : undefined}>{stillArriving ? t.arriving : t.empty}</p>
               {stillArriving ? (
                 <>
                   {updating ? <p className="mt-2 text-xs text-slate-400">{t.updating}</p> : null}
-                  <Button className="mt-4" size="sm" disabled={refreshing} onClick={retry}>{retryLabel}</Button>
+                  <RPGButton className="mt-4" size="sm" disabled={refreshing} onClick={retry}>{retryLabel}</RPGButton>
                 </>
               ) : null}
-            </div>
+            </RPGPanel>
           ) : (
             <>
               {data?.partial ? (
-                <p role="status" className="mb-4 text-center text-xs text-amber-300">
+                <p role="status" className="mx-auto mb-6 max-w-3xl text-center text-xs text-amber-300">
                   {stillArriving ? t.arriving : t.partial}
                   {stillArriving && updating ? <span className="ml-1 text-slate-400">{t.updating}</span> : null}
                   {stillArriving ? (
@@ -110,16 +116,16 @@ export function HeroesHall() {
                   ) : null}
                 </p>
               ) : null}
-              <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+              <div className={HALL_GRID}>
                 <FeaturedHeroCard hero={heroes[0]} />
-                <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   {heroes.slice(1, 5).map((hero) => <HeroMiniCard key={hero.username} hero={hero} />)}
                 </div>
               </div>
               <div className="mt-8 text-center">
-                <Button variant="primary" size="md" onClick={discoverHero}>
-                  <RpgSparkles className="mr-2 inline h-4 w-4" /> {t.discover}
-                </Button>
+                <RPGButton variant="primary" size="md" onClick={discoverHero}>
+                  <RpgSparkles className="h-4 w-4" /> {t.discover}
+                </RPGButton>
               </div>
             </>
           )}

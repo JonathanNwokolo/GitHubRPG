@@ -1,30 +1,19 @@
 import React from "react";
-import { RpgIconFrame, RpgCalendar, RpgGitCommit, RpgMana, RpgShield } from "@/design-system";
+import { RpgCalendar, RpgGitCommit, RpgMana, RpgShield } from "@/design-system";
 import type { SummaryItemView } from "./chronicleText";
 
 const SUMMARY_ICON: Record<SummaryItemView["id"], React.ReactNode> = {
-  journeyLength: <RpgCalendar className="w-3.5 h-3.5 text-emerald-400" />,
-  mostActiveYear: <RpgMana className="w-3.5 h-3.5 text-red-400" />,
-  longestStreak: <RpgShield className="w-3.5 h-3.5 text-cyan-400" />,
-  totalContributions: <RpgGitCommit className="w-3.5 h-3.5 text-amber-400" />,
+  journeyLength: <RpgCalendar className="h-4 w-4 text-emerald-400" />,
+  mostActiveYear: <RpgMana className="h-4 w-4 text-red-400" />,
+  longestStreak: <RpgShield className="h-4 w-4 text-cyan-400" />,
+  totalContributions: <RpgGitCommit className="h-4 w-4 text-amber-400" />,
 };
 
-const SUMMARY_RARITY = {
-  journeyLength: "emerald",
-  mostActiveYear: "crimson",
-  longestStreak: "azure",
-  totalContributions: "gold",
-} as const;
-
-/** One figure of the journey: icon, highlighted value, small label. Horizontal, so it stays short. */
+/** One figure of the journey: small icon, highlighted value, small label. Centered, so the strip reads as a row of medals. */
 export const ChronicleStat: React.FC<{ item: SummaryItemView }> = ({ item }) => (
-  <li className="flex items-center gap-3 min-w-0">
-    <RpgIconFrame size="sm" shape="slate" rarity={SUMMARY_RARITY[item.id]} glow className="shrink-0" aria-hidden="true">
-      {SUMMARY_ICON[item.id]}
-    </RpgIconFrame>
-    <div className="min-w-0">
-      <p className="font-pixel text-xs sm:text-sm text-amber-400 uppercase leading-snug break-words">{item.value}</p>
-      <p className="font-sans text-xs text-slate-300 leading-tight">{item.label}</p>
-    </div>
+  <li className="flex min-w-0 flex-col items-center gap-1 text-center lg:border-l lg:border-amber-900/40 lg:first:border-l-0">
+    <span aria-hidden="true">{SUMMARY_ICON[item.id]}</span>
+    <p className="break-words font-pixel text-xs uppercase leading-snug text-amber-300 sm:text-sm">{item.value}</p>
+    <p className="pf-muted font-sans text-xs leading-tight">{item.label}</p>
   </li>
 );

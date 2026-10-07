@@ -19,7 +19,8 @@ import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
 import { ChronicleSection } from "@/features/chronicle/ChronicleSection";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { NextMilestones } from "@/features/progress/NextMilestones";
-import { PixelArrowLeft, RpgSwords, TabPanel } from "@/design-system";
+import { PixelArrowLeft, TabPanel } from "@/design-system";
+import "@/features/profile-ui/profile-ui.css";
 import { useUiStore } from "@/stores/useUiStore";
 import { useTitleStore } from "@/stores/useTitleStore";
 import { getTranslation } from "@/i18n";
@@ -61,112 +62,108 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
   const unlockedTitles = character.titles.filter((title) => title.unlocked).length;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 animate-fade-in">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 font-sans font-semibold text-xs sm:text-sm text-slate-400 hover:text-amber-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold px-2 py-1 -ml-2 rounded"
-        >
-          <PixelArrowLeft className="w-4 h-4" />
-          <span>{t.common.backToSearch}</span>
-        </Link>
-        <Link
-          href={`/duel?opponent=${encodeURIComponent(character.identity.username)}`}
-          className="inline-flex min-h-[40px] items-center gap-2 border border-rpg-crimson bg-red-950/40 px-3 py-2 text-xs font-bold uppercase tracking-wider text-red-200 transition-colors hover:bg-red-900/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-crimson"
-        >
-          <RpgSwords className="h-4 w-4" /> {t.duel.challengeHero}
-        </Link>
-      </div>
+    <div className="pf-stage w-full flex-1">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 animate-fade-in">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 font-sans font-semibold text-xs sm:text-sm text-slate-400 hover:text-amber-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold px-2 py-1 -ml-2 rounded"
+          >
+            <PixelArrowLeft className="w-4 h-4" />
+            <span>{t.common.backToSearch}</span>
+          </Link>
+        </div>
 
-      <CharacterHeader
-        character={character}
-        equippedTitle={equippedTitle}
-        onOpenShareModal={() => setIsShareModalOpen(true)}
-        onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
-        onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
-      />
-
-      <CharacterTabs
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-        unlockedAchievementsCount={unlockedAchievements}
-        totalAchievementsCount={character.achievements.length}
-        unlockedTitlesCount={unlockedTitles}
-        totalTitlesCount={character.titles.length}
-      />
-
-      <TabPanel idPrefix={CHARACTER_TABS_ID_PREFIX} tabId={activeTab} className="min-h-[400px]">
-        {activeTab === "overview" && (
-          <div className="space-y-8 animate-fade-in">
-            {hasSparsePublicData(character) && (
-              <p
-                role="note"
-                className="font-sans text-sm text-slate-300 border-l-4 border-rpg-goldDark bg-rpg-surface px-4 py-3"
-              >
-                {t.character.sparseProfileNotice}
-              </p>
-            )}
-            <NextMilestones milestones={character.nextMilestones} />
-            <ChronicleSection
-              chronicle={chronicle}
-              onShareChapter={({ year, title }) => setShareTarget({ kind: "chronicle", year, title })}
-            />
-            <AttributesPanel stats={character.stats} />
-            <ActivitySummary summary={character.summary} />
-          </div>
-        )}
-
-        {activeTab === "skills" && (
-          <div className="animate-fade-in">
-            <SkillsTree skills={character.skills} />
-          </div>
-        )}
-
-        {activeTab === "achievements" && (
-          <div className="animate-fade-in">
-            <AchievementsGrid
-              achievements={character.achievements}
-              onShareAchievement={({ id, name }) => setShareTarget({ kind: "achievement", id, name })}
-            />
-          </div>
-        )}
-
-        {activeTab === "titles" && (
-          <div className="animate-fade-in">
-            <TitlesPanel
-              titles={character.titles}
-              equippedTitleId={equippedTitle?.id ?? null}
-              defaultTitleId={character.defaultTitleId}
-              hasCustomPick={savedTitleId !== undefined && savedTitleId === equippedTitle?.id}
-              onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
-              onUseDefault={() => clearEquippedTitle(character.identity.username)}
-            />
-          </div>
-        )}
-      </TabPanel>
-
-      <p className="font-sans text-xs text-slate-500 text-center max-w-3xl mx-auto">{t.disclaimer}</p>
-
-      <ClassExplanationDialog
-        isOpen={isClassExplanationOpen}
-        onClose={() => setIsClassExplanationOpen(false)}
-        explanation={classExplanation}
-      />
-
-      <ReadmeBadgeModal isOpen={isReadmeModalOpen} onClose={() => setIsReadmeModalOpen(false)} username={username} />
-
-      {shareTarget && (
-        <ShareImageModal isOpen onClose={() => setShareTarget(null)} username={username} target={shareTarget} />
-      )}
-
-      {isShareModalOpen && (
-        <ShareCardModal
-          isOpen
-          onClose={() => setIsShareModalOpen(false)}
+        <CharacterHeader
           character={character}
-          equippedTitleName={equippedTitle?.name ?? null}
+          equippedTitle={equippedTitle}
+          onOpenShareModal={() => setIsShareModalOpen(true)}
+          onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
+          onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
         />
-      )}
+
+        <CharacterTabs
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+          unlockedAchievementsCount={unlockedAchievements}
+          totalAchievementsCount={character.achievements.length}
+          unlockedTitlesCount={unlockedTitles}
+          totalTitlesCount={character.titles.length}
+        />
+
+        <TabPanel idPrefix={CHARACTER_TABS_ID_PREFIX} tabId={activeTab} className="min-h-[400px] pt-2">
+          {activeTab === "overview" && (
+            <div className="space-y-14 animate-fade-in sm:space-y-16">
+              {hasSparsePublicData(character) && (
+                <p
+                  role="note"
+                  className="font-sans text-sm text-slate-300 border-l-4 border-rpg-goldDark bg-black/30 px-4 py-3"
+                >
+                  {t.character.sparseProfileNotice}
+                </p>
+              )}
+              <NextMilestones milestones={character.nextMilestones} />
+              <ChronicleSection
+                chronicle={chronicle}
+                onShareChapter={({ year, title }) => setShareTarget({ kind: "chronicle", year, title })}
+              />
+              <AttributesPanel stats={character.stats} />
+              <ActivitySummary summary={character.summary} />
+            </div>
+          )}
+
+          {activeTab === "skills" && (
+            <div className="animate-fade-in">
+              <SkillsTree skills={character.skills} />
+            </div>
+          )}
+
+          {activeTab === "achievements" && (
+            <div className="animate-fade-in">
+              <AchievementsGrid
+                achievements={character.achievements}
+                onShareAchievement={({ id, name }) => setShareTarget({ kind: "achievement", id, name })}
+              />
+            </div>
+          )}
+
+          {activeTab === "titles" && (
+            <div className="animate-fade-in">
+              <TitlesPanel
+                titles={character.titles}
+                equippedTitleId={equippedTitle?.id ?? null}
+                defaultTitleId={character.defaultTitleId}
+                hasCustomPick={savedTitleId !== undefined && savedTitleId === equippedTitle?.id}
+                onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
+                onUseDefault={() => clearEquippedTitle(character.identity.username)}
+              />
+            </div>
+          )}
+        </TabPanel>
+
+        <p className="font-sans text-xs text-slate-500 text-center max-w-3xl mx-auto">{t.disclaimer}</p>
+
+        <ClassExplanationDialog
+          isOpen={isClassExplanationOpen}
+          onClose={() => setIsClassExplanationOpen(false)}
+          explanation={classExplanation}
+        />
+
+        <ReadmeBadgeModal isOpen={isReadmeModalOpen} onClose={() => setIsReadmeModalOpen(false)} username={username} />
+
+        {shareTarget && (
+          <ShareImageModal isOpen onClose={() => setShareTarget(null)} username={username} target={shareTarget} />
+        )}
+
+        {isShareModalOpen && (
+          <ShareCardModal
+            isOpen
+            onClose={() => setIsShareModalOpen(false)}
+            character={character}
+            equippedTitleName={equippedTitle?.name ?? null}
+          />
+        )}
+      </div>
     </div>
   );
 }

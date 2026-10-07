@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   achievementCardPath,
   chronicleCardPath,
+  parseGitHubProfileInput,
   profileBadgePath,
   profileBadgeUrl,
   profileCardPath,
@@ -11,6 +12,14 @@ import { readmeBadgeMarkdown } from "@/features/badge/readmeMarkdown";
 const ENV = { NEXT_PUBLIC_SITE_URL: "https://githubrpg.vercel.app", NODE_ENV: "production" };
 
 describe("badge and card URLs", () => {
+  it("accepts a username or canonical GitHub profile URL as profile input", () => {
+    expect(parseGitHubProfileInput("JonathanNwokolo")).toBe("JonathanNwokolo");
+    expect(parseGitHubProfileInput("https://github.com/JonathanNwokolo")).toBe("JonathanNwokolo");
+    expect(parseGitHubProfileInput("https://www.github.com/JonathanNwokolo/")).toBe("JonathanNwokolo");
+    expect(() => parseGitHubProfileInput("https://github.com/org/repo")).toThrow();
+    expect(() => parseGitHubProfileInput("https://example.com/JonathanNwokolo")).toThrow();
+  });
+
   it("badge: normalised username, absolute from the one configured origin", () => {
     expect(profileBadgePath("  JonathanNwokolo ")).toBe("/api/badge/jonathannwokolo");
     expect(profileBadgeUrl("JonathanNwokolo", ENV)).toBe("https://githubrpg.vercel.app/api/badge/jonathannwokolo");

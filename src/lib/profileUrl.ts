@@ -1,4 +1,24 @@
 import { absoluteUrl, type SiteUrlEnv } from "./siteUrl";
+import { parseGitHubUsername } from "@/data/github/username";
+
+/** Accepts either a GitHub username or the canonical public profile URL. */
+export function parseGitHubProfileInput(input: unknown): string {
+  if (typeof input !== "string") return parseGitHubUsername("");
+  const trimmed = input.trim();
+  let candidate = trimmed;
+
+  try {
+    const url = new URL(trimmed);
+    const hostname = url.hostname.toLowerCase();
+    if (hostname !== "github.com" && hostname !== "www.github.com") return parseGitHubUsername("");
+    const parts = url.pathname.split("/").filter(Boolean);
+    candidate = parts.length === 1 ? parts[0] : "";
+  } catch {
+    // A plain username is the primary input form.
+  }
+
+  return parseGitHubUsername(candidate);
+}
 
 /**
  * One normalization for every public URL of a profile (canonical, og:url, shared link, card image):
