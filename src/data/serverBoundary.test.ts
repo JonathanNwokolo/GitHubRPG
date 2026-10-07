@@ -98,6 +98,7 @@ describe("GitHub token stays on the server", () => {
       "src/app/api/card/[username]/chronicle/[eventId]/route.tsx",
       "src/app/api/card/[username]/route.tsx",
       "src/app/api/characters/[username]/route.ts",
+      "src/app/api/experimental/v2/characters/[username]/route.ts",
       "src/app/api/heroes/route.ts",
     ].sort());
   });

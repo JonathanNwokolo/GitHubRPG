@@ -1,0 +1,300 @@
+{
+  "generatedAt": "2026-10-07T22:19:07.183Z",
+  "stage": "3H-P1",
+  "optimization": "versioned L1 result/evidence cache plus profile-level single-flight",
+  "profiles": [
+    {
+      "username": "JonathanNwokolo",
+      "coldNetworkMs": 6510,
+      "coldLocalDeliveryMs": 6.07,
+      "cachedMs": {
+        "mean": 0.03,
+        "p50": 0.03,
+        "p75": 0.05,
+        "p90": 0.05,
+        "p95": 0.05,
+        "max": 0.05470000000013897
+      },
+      "serializationMs": 0.47,
+      "semanticMatch": true
+    },
+    {
+      "username": "torvalds",
+      "coldNetworkMs": 5804,
+      "coldLocalDeliveryMs": 7.44,
+      "cachedMs": {
+        "mean": 0.02,
+        "p50": 0.02,
+        "p75": 0.03,
+        "p90": 0.04,
+        "p95": 0.04,
+        "max": 0.03899999999975989
+      },
+      "serializationMs": 0.36,
+      "semanticMatch": true
+    },
+    {
+      "username": "ahejlsberg",
+      "coldNetworkMs": 3948,
+      "coldLocalDeliveryMs": 4.68,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.01,
+        "p95": 0.04,
+        "max": 0.035799999999653664
+      },
+      "serializationMs": 0.47,
+      "semanticMatch": true
+    },
+    {
+      "username": "yyx990803",
+      "coldNetworkMs": 17633,
+      "coldLocalDeliveryMs": 4.7,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.03,
+        "max": 0.03350000000000364
+      },
+      "serializationMs": 0.84,
+      "semanticMatch": true
+    },
+    {
+      "username": "sindresorhus",
+      "coldNetworkMs": 52658,
+      "coldLocalDeliveryMs": 5.37,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.04,
+        "max": 0.039099999999962165
+      },
+      "serializationMs": 0.48,
+      "semanticMatch": true
+    },
+    {
+      "username": "kentcdodds",
+      "coldNetworkMs": 47421,
+      "coldLocalDeliveryMs": 4.89,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.01,
+        "p95": 0.04,
+        "max": 0.037699999999858846
+      },
+      "serializationMs": 4.86,
+      "semanticMatch": true
+    },
+    {
+      "username": "dhh",
+      "coldNetworkMs": 4100,
+      "coldLocalDeliveryMs": 2.55,
+      "cachedMs": {
+        "mean": 0.63,
+        "p50": 0.01,
+        "p75": 0.06,
+        "p90": 0.4,
+        "p95": 5.73,
+        "max": 5.73070000000007
+      },
+      "serializationMs": 0.34,
+      "semanticMatch": true
+    },
+    {
+      "username": "gvanrossum",
+      "coldNetworkMs": 5176,
+      "coldLocalDeliveryMs": 5.5,
+      "cachedMs": {
+        "mean": 0.02,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.07,
+        "max": 0.06980000000021391
+      },
+      "serializationMs": 0.51,
+      "semanticMatch": true
+    },
+    {
+      "username": "antirez",
+      "coldNetworkMs": 10930,
+      "coldLocalDeliveryMs": 16.59,
+      "cachedMs": {
+        "mean": 0.02,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.04,
+        "max": 0.04070000000001528
+      },
+      "serializationMs": 0.67,
+      "semanticMatch": true
+    },
+    {
+      "username": "addyosmani",
+      "coldNetworkMs": 25546,
+      "coldLocalDeliveryMs": 5.12,
+      "cachedMs": {
+        "mean": 0.02,
+        "p50": 0.02,
+        "p75": 0.02,
+        "p90": 0.04,
+        "p95": 0.08,
+        "max": 0.08080000000018117
+      },
+      "serializationMs": 0.58,
+      "semanticMatch": true
+    },
+    {
+      "username": "tiangolo",
+      "coldNetworkMs": 12822,
+      "coldLocalDeliveryMs": 4.85,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.01,
+        "p95": 0.03,
+        "max": 0.033800000000155705
+      },
+      "serializationMs": 0.81,
+      "semanticMatch": true
+    },
+    {
+      "username": "mitchellh",
+      "coldNetworkMs": 13222,
+      "coldLocalDeliveryMs": 4.08,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.01,
+        "p95": 0.04,
+        "max": 0.037299999999959255
+      },
+      "serializationMs": 0.51,
+      "semanticMatch": true
+    },
+    {
+      "username": "EvanBacon",
+      "coldNetworkMs": 29086,
+      "coldLocalDeliveryMs": 3.31,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.04,
+        "max": 0.040600000000267755
+      },
+      "serializationMs": 0.89,
+      "semanticMatch": true
+    },
+    {
+      "username": "Rich-Harris",
+      "coldNetworkMs": 33146,
+      "coldLocalDeliveryMs": 4.11,
+      "cachedMs": {
+        "mean": 0.02,
+        "p50": 0.01,
+        "p75": 0.02,
+        "p90": 0.02,
+        "p95": 0.05,
+        "max": 0.04719999999997526
+      },
+      "serializationMs": 1.04,
+      "semanticMatch": true
+    },
+    {
+      "username": "samuelcolvin",
+      "coldNetworkMs": 30245,
+      "coldLocalDeliveryMs": 6.01,
+      "cachedMs": {
+        "mean": 0.01,
+        "p50": 0.01,
+        "p75": 0.01,
+        "p90": 0.02,
+        "p95": 0.05,
+        "max": 0.05140000000028522
+      },
+      "serializationMs": 0.56,
+      "semanticMatch": true
+    }
+  ],
+  "cold": {
+    "mean": 19883.13,
+    "p50": 13222,
+    "p75": 30245,
+    "p90": 47421,
+    "p95": 52658,
+    "max": 52658
+  },
+  "cached": {
+    "mean": 0.01,
+    "p50": 0.01,
+    "p75": 0.01,
+    "p90": 0.02,
+    "p95": 0.03,
+    "max": 0.03
+  },
+  "localDeliveryCold": {
+    "mean": 5.68,
+    "p50": 4.89,
+    "p75": 6.01,
+    "p90": 7.44,
+    "p95": 16.59,
+    "max": 16.59
+  },
+  "serialization": {
+    "mean": 0.89,
+    "p50": 0.56,
+    "p75": 0.84,
+    "p90": 1.04,
+    "p95": 4.86,
+    "max": 4.86
+  },
+  "semanticEquivalence": "15/15",
+  "requests": {
+    "rest": {
+      "mean": 23.93,
+      "p50": 31,
+      "p75": 31,
+      "p90": 31,
+      "p95": 31,
+      "max": 31
+    },
+    "graphql": {
+      "mean": 2.4,
+      "p50": 2,
+      "p75": 3,
+      "p90": 5,
+      "p95": 5,
+      "max": 5
+    },
+    "trees": {
+      "mean": 22.93,
+      "p50": 30,
+      "p75": 30,
+      "p90": 30,
+      "p95": 30,
+      "max": 30
+    },
+    "manifestBatches": {
+      "mean": 2.4,
+      "p50": 2,
+      "p75": 3,
+      "p90": 5,
+      "p95": 5,
+      "max": 5
+    }
+  },
+  "note": "P1 does not change cold GitHub work; it removes repeat collection after a versioned result hit. Cold network values therefore remain the preserved P0 measurements."
+}

@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-10-07T22:19:07.183Z",
+  "modes": [
+    {
+      "mode": "A synchronous",
+      "firstLoad": "slow cold",
+      "repeatLoad": "fast only on same warm instance",
+      "complexity": "low",
+      "correctness": "full",
+      "cost": "high",
+      "recommended": false
+    },
+    {
+      "mode": "B cache-first",
+      "firstLoad": "slow on miss",
+      "repeatLoad": "sub-second",
+      "complexity": "medium",
+      "correctness": "full/stale labeled",
+      "cost": "medium",
+      "recommended": false
+    },
+    {
+      "mode": "C V1-first async V2",
+      "firstLoad": "V1 unaffected",
+      "repeatLoad": "V2 when ready",
+      "complexity": "medium-high",
+      "correctness": "full",
+      "cost": "medium",
+      "recommended": false
+    },
+    {
+      "mode": "D hybrid",
+      "firstLoad": "V1 first on unknown cold",
+      "repeatLoad": "cached V2",
+      "complexity": "medium-high",
+      "correctness": "full/stale labeled",
+      "cost": "controlled",
+      "recommended": true
+    }
+  ],
+  "recommendation": "HYBRID: cached/known profiles serve V2; unknown cold profiles keep V1 available and enrich V2 separately; Hall is cache-first/prewarmed with bounded global concurrency.",
+  "futureContract": {
+    "states": [
+      "ready",
+      "stale",
+      "enriching",
+      "partial",
+      "unavailable"
+    ],
+    "publicEndpointCreated": false
+  },
+  "timeBudget": {
+    "synchronousLookupMs": 500,
+    "coldEnrichmentMs": 20000,
+    "onBudgetExceeded": "return V1 or stale V2 and retry enrichment separately"
+  },
+  "hall": "Never fan out five cold collectors without a global limiter. Prewarm the editorial set and serve partial completion without blocking V1.",
+  "profile": "Try versioned cache first; cold miss starts enrichment while V1 remains the response path.",
+  "badgeShare": "Use V1 or cached V2 only; never put a cold V2 enrichment on image/badge generation.",
+  "futureVps": "Keep EvidenceCacheAdapter; replace L1 with a PostgreSQL-backed/shared adapter and a durable job runner without changing engine semantics."
+}

@@ -1,0 +1,5452 @@
+{
+  "generatedAt": "2026-10-07T23:06:29.156Z",
+  "stage": "3G-E1-LOCKED-HOLDOUT",
+  "tuningAfterReplayAllowed": false,
+  "profiles": [
+    {
+      "dataset": "holdout",
+      "username": "antfu",
+      "class": "Mago",
+      "subclass": null,
+      "subclassScore": 91.39,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 43.69,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 95,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 5138,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 19,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 5,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 6,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 10,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 54,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 11.605036952086504,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 12,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 10,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 21,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "21/1",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "12/0",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 12,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 95,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "beatrizmilz",
+      "class": "Bardo",
+      "subclass": null,
+      "subclassScore": 36.82,
+      "confidence": "medium",
+      "coverage": "full",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 98.1,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 79,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 137,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 2,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 0,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 8,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 8.16917220880898,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 9,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 3,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 10,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "10/0",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "0/0",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 0,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 79,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "diego3g",
+      "class": "Mago",
+      "subclass": null,
+      "subclassScore": 76.02,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 71.67,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 78,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 218,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 8,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 83,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 7,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 21,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 26,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 14.101510946949517,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 15,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 14,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 5,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 5,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "5/5",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 83,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "21/4",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 24,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 78,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "filipedeschamps",
+      "class": "Bardo",
+      "subclass": null,
+      "subclassScore": 53.39,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 74.65,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 76,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 92,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 3,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 2,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 7,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 25,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 13.454225042808218,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 14,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 6,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "2/1",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "6/5",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 9,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 76,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "loiane",
+      "class": "Mago",
+      "subclass": null,
+      "subclassScore": 67.12,
+      "confidence": "medium",
+      "coverage": "full",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 89.31,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 73,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 5,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 6,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 89,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 2,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 87,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 11,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 20,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 17.598713139142568,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 18,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 7,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 9,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 6,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "9/6",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 89,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "partial/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "11/10",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 15,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": false,
+              "observed": 73,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "maykbrito",
+      "class": "Mago",
+      "subclass": null,
+      "subclassScore": 73.44,
+      "confidence": "high",
+      "coverage": "full",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 52.59,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 67,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 17,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 1,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 6,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 11,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 52,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 12.653982707889396,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 13,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 10,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 7,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 6,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "6/0",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 95,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "14/0",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 14,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": false,
+              "observed": 67,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "omariosouto",
+      "class": "Mago",
+      "subclass": null,
+      "subclassScore": 72.26,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 49.74,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 82,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 53,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 9,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 4,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 5,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 14,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 63,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 11.149036956208777,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 12,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 11,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Mago",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 8,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 3,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "8/3",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Mago",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "13/4",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 15,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 82,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "samuelcolvin",
+      "class": "Alquimista",
+      "subclass": null,
+      "subclassScore": 73.48,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Alquimista",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 36.52,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 97,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Alquimista",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 1416,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 2,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 94,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Alquimista",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 6,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 25,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Alquimista",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 2,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 63,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Alquimista",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 13.514572283168443,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 14,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 11,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Alquimista",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 7,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 2,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "7/2",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 94,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Alquimista",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "2/2",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 3,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 97,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "swyxio",
+      "class": "Bardo",
+      "subclass": null,
+      "subclassScore": 72.16,
+      "confidence": "high",
+      "coverage": "full",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 55.39,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 1,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 97,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 3,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 927,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 3,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 6,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 5,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 3,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 8,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 28,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 12.618418289225012,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 12,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 10,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 7,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Bardo",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 5,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "5/0",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Bardo",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "high",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full/full",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": true,
+              "observed": true,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "9/0",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 9,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 97,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 6,
+          "total": 10
+        }
+      }
+    },
+    {
+      "dataset": "holdout",
+      "username": "ThePrimeagen",
+      "class": "Aventureiro",
+      "subclass": null,
+      "subclassScore": 62.98,
+      "confidence": "medium",
+      "coverage": "partial",
+      "evolution": null,
+      "evolutionReasonCode": "EVOLUTION_SUBCLASS_REQUIRED",
+      "mature": true,
+      "deterministic": true,
+      "diagnostics": {
+        "evo-archmage": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Aventureiro",
+              "required": "Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect|illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "base-affinity",
+              "category": "SKILL",
+              "passed": false,
+              "observed": 61.84,
+              "required": ">=70%",
+              "essential": true
+            },
+            {
+              "id": "strong-schools",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": 0,
+              "required": ">=2 schools score>=60",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 89,
+              "required": ">=65",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 1,
+          "total": 8
+        },
+        "evo-celestial-guardian": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Aventureiro",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "guardian",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "reviews-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "reviews",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 112,
+              "required": ">=200",
+              "essential": true
+            },
+            {
+              "id": "testing-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 5,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 4,
+          "total": 9
+        },
+        "evo-rune-master": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Aventureiro",
+              "required": "Guerreiro|Paladino",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "build-artifacts",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 4,
+              "required": ">=3 build/toolchain/desktop artifacts",
+              "essential": true
+            },
+            {
+              "id": "systems-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 36,
+              "required": ">=2 repositories",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 7
+        },
+        "evo-arcane-weaver": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Aventureiro",
+              "required": "Bardo|Tecelão|Mago",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "illusionist",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=75",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ui-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 1,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "strong-ui-school",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "school score>=60",
+              "essential": true
+            },
+            {
+              "id": "versatility",
+              "category": "ATTRIBUTE",
+              "passed": false,
+              "observed": 26,
+              "required": ">=60",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 0,
+          "total": 8
+        },
+        "evo-ancestral-forger": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Aventureiro",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "artificer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=72",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "account-age",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 13.391549529616945,
+              "required": ">=8 years",
+              "essential": true
+            },
+            {
+              "id": "yearly-full",
+              "category": "COVERAGE",
+              "passed": true,
+              "observed": "full",
+              "required": "full",
+              "essential": true
+            },
+            {
+              "id": "active-years",
+              "category": "JOURNEY",
+              "passed": true,
+              "observed": 14,
+              "required": ">=5",
+              "essential": true
+            },
+            {
+              "id": "artifact-diversity",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": 9,
+              "required": ">=4 artifacts",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-high-chronomancer": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": false,
+              "observed": "Aventureiro",
+              "required": "Ladino|Patrulheiro",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "chronomancer",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=78",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": true,
+              "observed": "medium",
+              "required": "medium",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "ci-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 9,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "container-infra-repos",
+              "category": "SKILL",
+              "passed": true,
+              "observed": 3,
+              "required": ">=2",
+              "essential": true
+            },
+            {
+              "id": "pipeline-infra-composite",
+              "category": "COMPOSITE_GATE",
+              "passed": true,
+              "observed": "9/3",
+              "required": ">=2 CI and >=2 container/infra",
+              "essential": true
+            },
+            {
+              "id": "consistency",
+              "category": "ATTRIBUTE",
+              "passed": true,
+              "observed": 92,
+              "required": ">=70",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 5,
+          "total": 9
+        },
+        "evo-celestial-architect": {
+          "gates": [
+            {
+              "id": "class",
+              "category": "CLASS",
+              "passed": true,
+              "observed": "Aventureiro",
+              "required": "any",
+              "essential": true
+            },
+            {
+              "id": "subclass",
+              "category": "SUBCLASS",
+              "passed": false,
+              "observed": null,
+              "required": "architect",
+              "essential": true
+            },
+            {
+              "id": "score",
+              "category": "SCORE",
+              "passed": false,
+              "observed": null,
+              "required": ">=80",
+              "essential": true
+            },
+            {
+              "id": "confidence",
+              "category": "CONFIDENCE",
+              "passed": false,
+              "observed": "medium",
+              "required": "high",
+              "essential": true
+            },
+            {
+              "id": "coverage",
+              "category": "COVERAGE",
+              "passed": false,
+              "observed": "full/partial",
+              "required": "full/full",
+              "essential": true
+            },
+            {
+              "id": "frontend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "frontend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "backend-strong",
+              "category": "SKILL",
+              "passed": false,
+              "observed": false,
+              "required": "backend school score>=60",
+              "essential": true
+            },
+            {
+              "id": "frontend-backend",
+              "category": "COMPOSITE_GATE",
+              "passed": false,
+              "observed": "1/2",
+              "required": "both strong and >=2 repos each",
+              "essential": true
+            },
+            {
+              "id": "structural-repos",
+              "category": "JOURNEY",
+              "passed": false,
+              "observed": 3,
+              "required": ">=6",
+              "essential": true
+            },
+            {
+              "id": "experience",
+              "category": "MATURITY",
+              "passed": true,
+              "observed": 89,
+              "required": ">=75",
+              "essential": true
+            }
+          ],
+          "unlock": false,
+          "passed": 2,
+          "total": 10
+        }
+      }
+    }
+  ],
+  "summary": {
+    "profiles": 10,
+    "evolutions": 0,
+    "deterministic": 10
+  }
+}

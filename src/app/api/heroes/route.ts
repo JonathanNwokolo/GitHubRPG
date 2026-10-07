@@ -1,6 +1,6 @@
 import { after, NextResponse } from "next/server";
 import { createDataSource } from "@/data/datasource";
-import { loadCharacter } from "@/data/loadCharacter";
+import { loadCharacterProduct } from "@/data/loadCharacter";
 import { collectWithinBudget } from "@/features/heroes/collectWithinBudget";
 import {
   getHeroCategory,
@@ -28,7 +28,7 @@ export async function GET(request: Request) {
   const usernames = getHeroCategory(categoryId).usernames.slice(0, HEROES_PER_CATEGORY);
   const source = createDataSource();
   const { slots, settled, pending } = await collectWithinBudget(
-    usernames.map((username) => loadCharacter(username, source)),
+    usernames.map((username) => loadCharacterProduct(username, source)),
     HEROES_RESPONSE_BUDGET_MS
   );
 
@@ -36,7 +36,9 @@ export async function GET(request: Request) {
   // so they finish and fill this instance's cache. Other instances do not share it.
   if (pending > 0) after(settled);
 
-  const heroes = slots.flatMap<HeroSummary>((slot) => (slot.status === "fulfilled" ? [toHeroSummary(slot.value)] : []));
+  const heroes = slots.flatMap<HeroSummary>((slot) => (
+    slot.status === "fulfilled" ? [toHeroSummary(slot.value.character, slot.value.presentation)] : []
+  ));
   const failed = slots.filter((slot) => slot.status === "rejected").length;
   const response: HeroesResponse = {
     category: categoryId,

@@ -1,0 +1,18 @@
+{
+  "engineVersion": "2.0-experimental-v22",
+  "schemaVersion": "game-engine-v2-schema-2",
+  "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+  "catalogVersion": "game-engine-v2-catalog-1",
+  "balanceVersion": "game-engine-v2-balance-stage3-r3",
+  "status": "STAGE 3C DETERMINISTIC EVIDENCE BOUNDS",
+  "subclassStrong": 55,
+  "subclassPossible": 42,
+  "subclassMargin": 5,
+  "toolingArchetypeCap": 40,
+  "invariants": 37,
+  "schools": 22,
+  "artifacts": 22,
+  "achievements": 54,
+  "titles": 40,
+  "evolutions": 7
+}

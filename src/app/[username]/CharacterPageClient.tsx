@@ -24,6 +24,10 @@ import "@/features/profile-ui/profile-ui.css";
 import { useUiStore } from "@/stores/useUiStore";
 import { useTitleStore } from "@/stores/useTitleStore";
 import { getTranslation } from "@/i18n";
+import { resolvePublicEquippedTitle, type CharacterPresentationModel, type PublicAchievementV2Localized } from "@/game-v2/publicProjection";
+import { GrimoireSection } from "@/features/character/GrimoireSection";
+import { AchievementsGridV2 } from "@/features/achievements/AchievementsGridV2";
+import { TitlesPanelV2 } from "@/features/titles/TitlesPanelV2";
 
 // The share modal (canvas drawing code) is only needed once someone opens it: keep it out of the initial bundle.
 const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").then((mod) => mod.ShareCardModal), {
@@ -36,9 +40,16 @@ interface CharacterPageProps {
   chronicle: DeveloperChronicle;
   classExplanation: ClassExplanation;
   username: string;
+  presentation?: CharacterPresentationModel;
 }
 
-export default function CharacterPage({ character, chronicle, classExplanation, username }: CharacterPageProps) {
+export default function CharacterPage({
+  character,
+  chronicle,
+  classExplanation,
+  username,
+  presentation = { v2Enabled: false, delivery: "unavailable", v2: null },
+}: CharacterPageProps) {
   const { language } = useUiStore();
   const t = getTranslation(language);
 
@@ -57,9 +68,18 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
     () => resolveEquippedTitle(character.titles, savedTitleId, character.defaultTitleId),
     [character, savedTitleId]
   );
+  const localizedKey = language === "pt-BR" ? "pt" : "en";
+  const equippedV2Title = useMemo(() => {
+    if (!presentation.v2) return null;
+    const title = resolvePublicEquippedTitle(presentation.v2.titles, savedTitleId, presentation.v2.defaultTitleId);
+    return title ? { id: title.id, name: title.name[localizedKey] } : null;
+  }, [localizedKey, presentation.v2, savedTitleId]);
+  const displayedTitle = equippedV2Title ?? equippedTitle;
 
-  const unlockedAchievements = character.achievements.filter((a) => a.unlocked).length;
-  const unlockedTitles = character.titles.filter((title) => title.unlocked).length;
+  const achievements = presentation.v2?.achievements;
+  const titles = presentation.v2?.titles;
+  const unlockedAchievements = (achievements ?? character.achievements).filter((a) => a.unlocked).length;
+  const unlockedTitles = (titles ?? character.titles).filter((title) => title.unlocked).length;
 
   return (
     <div className="pf-stage w-full flex-1">
@@ -76,7 +96,8 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
 
         <CharacterHeader
           character={character}
-          equippedTitle={equippedTitle}
+          equippedTitle={displayedTitle}
+          v2={presentation.v2}
           onOpenShareModal={() => setIsShareModalOpen(true)}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
           onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
@@ -86,12 +107,16 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
           activeTab={activeTab}
           onTabChange={setActiveTab}
           unlockedAchievementsCount={unlockedAchievements}
-          totalAchievementsCount={character.achievements.length}
+          totalAchievementsCount={achievements?.length ?? character.achievements.length}
           unlockedTitlesCount={unlockedTitles}
-          totalTitlesCount={character.titles.length}
+          totalTitlesCount={titles?.length ?? character.titles.length}
         />
 
-        <TabPanel idPrefix={CHARACTER_TABS_ID_PREFIX} tabId={activeTab} className="min-h-[400px] pt-2">
+        {presentation.v2Enabled && presentation.delivery === "enriching" && (
+          <p role="status" className="text-center font-sans text-xs text-slate-400">{t.gameV2.enriching}</p>
+        )}
+
+        <TabPanel idPrefix={CHARACTER_TABS_ID_PREFIX} tabId={activeTab} className="min-h-[400px] pt-4">
           {activeTab === "overview" && (
             <div className="space-y-14 animate-fade-in sm:space-y-16">
               {hasSparsePublicData(character) && (
@@ -108,6 +133,12 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
                 onShareChapter={({ year, title }) => setShareTarget({ kind: "chronicle", year, title })}
               />
               <AttributesPanel stats={character.stats} />
+              {presentation.v2 && (
+                <GrimoireSection
+                  v2={presentation.v2}
+                  partial={presentation.delivery === "partial" || presentation.v2.coverage.schools === "partial" || presentation.v2.coverage.artifacts === "partial"}
+                />
+              )}
               <ActivitySummary summary={character.summary} />
             </div>
           )}
@@ -120,23 +151,37 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
 
           {activeTab === "achievements" && (
             <div className="animate-fade-in">
-              <AchievementsGrid
+              {achievements ? <AchievementsGridV2
+                achievements={achievements}
+                legacyAchievements={character.achievements}
+                onShareAchievement={(achievement: PublicAchievementV2Localized) => {
+                  const v1 = character.achievements.find((candidate) => candidate.id === achievement.id && candidate.unlocked);
+                  if (v1) setShareTarget({ kind: "achievement", id: v1.id, name: v1.name });
+                }}
+              /> : <AchievementsGrid
                 achievements={character.achievements}
                 onShareAchievement={({ id, name }) => setShareTarget({ kind: "achievement", id, name })}
-              />
+              />}
             </div>
           )}
 
           {activeTab === "titles" && (
             <div className="animate-fade-in">
-              <TitlesPanel
+              {titles ? <TitlesPanelV2
+                titles={titles}
+                equippedTitleId={equippedV2Title?.id ?? null}
+                defaultTitleId={presentation.v2?.defaultTitleId ?? null}
+                hasCustomPick={savedTitleId !== undefined && savedTitleId === equippedV2Title?.id}
+                onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
+                onUseDefault={() => clearEquippedTitle(character.identity.username)}
+              /> : <TitlesPanel
                 titles={character.titles}
                 equippedTitleId={equippedTitle?.id ?? null}
                 defaultTitleId={character.defaultTitleId}
                 hasCustomPick={savedTitleId !== undefined && savedTitleId === equippedTitle?.id}
                 onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
                 onUseDefault={() => clearEquippedTitle(character.identity.username)}
-              />
+              />}
             </div>
           )}
         </TabPanel>
@@ -147,6 +192,7 @@ export default function CharacterPage({ character, chronicle, classExplanation, 
           isOpen={isClassExplanationOpen}
           onClose={() => setIsClassExplanationOpen(false)}
           explanation={classExplanation}
+          v2Explanation={presentation.v2?.explanation}
         />
 
         <ReadmeBadgeModal isOpen={isReadmeModalOpen} onClose={() => setIsReadmeModalOpen(false)} username={username} />

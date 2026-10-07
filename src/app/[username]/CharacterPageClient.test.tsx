@@ -8,6 +8,9 @@ import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChro
 import { makeAverageProfile, makeProfile } from "@/test/builders";
 import { useUiStore } from "@/stores/useUiStore";
 import CharacterPageClient from "./CharacterPageClient";
+import { createRPGCharacterV2 } from "@/game-v2/engine";
+import { GOLDEN_FIXTURES } from "@/game-v2/fixtures";
+import { createCharacterPresentationModel } from "@/game-v2/publicProjection";
 
 beforeEach(() => {
   // The share modal draws on a canvas, which jsdom does not implement.
@@ -33,6 +36,22 @@ function renderPage(profile = makeAverageProfile({ username: "artorias" })) {
         profile.languagesCoverage
       )}
       username={profile.username}
+    />
+  );
+}
+
+function renderV2Page() {
+  const fixture = GOLDEN_FIXTURES.architecturalSystem();
+  const profile = fixture.profile;
+  const character = createRPGCharacter(profile);
+  const v2 = createRPGCharacterV2(fixture);
+  return render(
+    <CharacterPageClient
+      character={character}
+      chronicle={buildDeveloperChronicle(profile)}
+      classExplanation={buildClassExplanation(character.archetype, analyzeLanguages(profile.languages), profile.languagesCoverage)}
+      username={profile.username}
+      presentation={createCharacterPresentationModel(true, { state: "ready", character: v2 })}
     />
   );
 }
@@ -111,5 +130,36 @@ describe("CharacterPageClient: share modal", () => {
 
     await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
     expect(document.activeElement).toBe(opener);
+  });
+});
+
+describe("CharacterPageClient: V2 product presentation", () => {
+  it("shows the specialization and Grimoire while preserving the four-tab structure", () => {
+    renderV2Page();
+    expect(screen.getAllByRole("tab")).toHaveLength(4);
+    expect(screen.getByText("Arquiteto", { exact: true })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Grimório do Herói" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Afinidades" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Escolas" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Artefatos" })).toBeInTheDocument();
+  });
+
+  it("uses 54 achievements, 40 titles and keeps locked secrets redacted", () => {
+    renderV2Page();
+    fireEvent.click(screen.getByRole("tab", { name: /Conquistas/i }));
+    expect(screen.getByText(/\/ 54/)).toBeInTheDocument();
+    expect(screen.getAllByText("???").length).toBeGreaterThan(0);
+
+    fireEvent.click(screen.getByRole("tab", { name: /Títulos/i }));
+    expect(screen.getByRole("tab", { name: /Títulos.*40/i })).toBeInTheDocument();
+  });
+
+  it("switches the new product copy to English", () => {
+    useUiStore.setState({ language: "en" });
+    renderV2Page();
+    expect(screen.getByRole("heading", { name: "Hero's Grimoire" })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Why this class?" }));
+    expect(screen.getByRole("heading", { name: /Specialization/ })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Evolution/ })).toBeInTheDocument();
   });
 });

@@ -1,0 +1,19 @@
+{
+  "engineVersion": "2.0-experimental-v23",
+  "schemaVersion": "game-engine-v2-schema-2",
+  "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+  "catalogVersion": "game-engine-v2-catalog-1",
+  "balanceVersion": "game-engine-v2-balance-v23-r1-signals",
+  "status": "STAGE 3D ARCHETYPE SIGNAL CALIBRATION",
+  "subclassStrong": 55,
+  "subclassPossible": 42,
+  "subclassMargin": 5,
+  "toolingArchetypeCap": 40,
+  "genericSignalCap": 42,
+  "invariants": 41,
+  "schools": 22,
+  "artifacts": 22,
+  "achievements": 54,
+  "titles": 40,
+  "evolutions": 7
+}

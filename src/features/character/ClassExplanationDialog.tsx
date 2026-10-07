@@ -6,11 +6,14 @@ import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
 import type { ClassExplanation } from "./classExplanation";
 import { describeClassExplanation, type ClassMappingView } from "./classExplanationText";
+import type { RPGCharacterV2Public } from "@/game-v2/publicProjection";
+import { fill } from "@/lib/format";
 
 interface ClassExplanationDialogProps {
   isOpen: boolean;
   onClose: () => void;
   explanation: ClassExplanation;
+  v2Explanation?: RPGCharacterV2Public["explanation"] | null;
 }
 
 const Mapping: React.FC<{ mapping: ClassMappingView }> = ({ mapping }) => (
@@ -50,10 +53,30 @@ const Section: React.FC<{
  * "Why this class?": the language evidence behind the class and subclass the engine assigned.
  * Everything shown comes from the ClassExplanation computed on the server; nothing is re-derived here.
  */
-export const ClassExplanationDialog: React.FC<ClassExplanationDialogProps> = ({ isOpen, onClose, explanation }) => {
+export const ClassExplanationDialog: React.FC<ClassExplanationDialogProps> = ({ isOpen, onClose, explanation, v2Explanation }) => {
   const { language } = useUiStore();
   const t = getTranslation(language);
   const view = useMemo(() => describeClassExplanation(explanation, language), [explanation, language]);
+  const localized = language === "pt-BR" ? "pt" : "en";
+
+  if (v2Explanation) {
+    return (
+      <Dialog
+        isOpen={isOpen}
+        onClose={onClose}
+        title={fill(t.classExplanation.title, { class: v2Explanation.class.name })}
+        description={t.classExplanation.subtitle}
+        closeLabel={t.common.closeDialog}
+      >
+        <div className="space-y-5 py-1">
+          <Section heading={t.classExplanation.classHeading} className={v2Explanation.class.name} lines={[v2Explanation.class.reason[localized]]} mapping={null} />
+          <Section heading={t.classExplanation.specializationHeading} className={v2Explanation.subclass.name?.[localized]} lines={[v2Explanation.subclass.reason[localized]]} mapping={null} />
+          <Section heading={t.classExplanation.evolutionHeading} className={v2Explanation.evolution.name?.[localized]} lines={[v2Explanation.evolution.reason[localized]]} mapping={null} />
+          <p className="border-t border-rpg-border/60 pt-3 font-sans text-xs italic text-slate-400">{view.disclaimer}</p>
+        </div>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog

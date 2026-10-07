@@ -1,0 +1,488 @@
+{
+  "generatedAt": "2026-10-07T22:19:06.678Z",
+  "stage": "3H-P0",
+  "sourceGeneratedAt": "2026-10-07T13:07:37.946Z",
+  "sourceArtifact": "artifacts/game-v2-benchmark/benchmark-v21-collector.json",
+  "methodology": "Fixed 15-profile representative subset of the preserved Collector V2.1 live benchmark. Engine-only evolution changes after this source add zero requests and do not alter collector orchestration.",
+  "profiles": [
+    {
+      "username": "JonathanNwokolo",
+      "categories": [
+        "frontend-ui",
+        "small"
+      ],
+      "coverage": "full",
+      "coldMs": 6510,
+      "warmMs": 335.81,
+      "breakdownMs": {
+        "profileAndV1Data": 2903,
+        "repositories": 386,
+        "trees": 1564,
+        "manifests": 1646,
+        "parsing": 0,
+        "scoring": 10.72
+      },
+      "requests": {
+        "rest": 28,
+        "graphql": 1,
+        "trees": 27,
+        "manifestBatches": 1,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "torvalds",
+      "categories": [
+        "low-level",
+        "long-lived",
+        "huge"
+      ],
+      "coverage": "partial",
+      "coldMs": 5804,
+      "warmMs": 395.18,
+      "breakdownMs": {
+        "profileAndV1Data": 2050,
+        "repositories": 325,
+        "trees": 3023,
+        "manifests": 398,
+        "parsing": 0,
+        "scoring": 8.36
+      },
+      "requests": {
+        "rest": 9,
+        "graphql": 1,
+        "trees": 8,
+        "manifestBatches": 1,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "ahejlsberg",
+      "categories": [
+        "tooling",
+        "long-lived"
+      ],
+      "coverage": "full",
+      "coldMs": 3948,
+      "warmMs": 283.23,
+      "breakdownMs": {
+        "profileAndV1Data": 2260,
+        "repositories": 420,
+        "trees": 803,
+        "manifests": 463,
+        "parsing": 0,
+        "scoring": 2.1
+      },
+      "requests": {
+        "rest": 5,
+        "graphql": 1,
+        "trees": 4,
+        "manifestBatches": 1,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "yyx990803",
+      "categories": [
+        "frontend-ui",
+        "tooling"
+      ],
+      "coverage": "full",
+      "coldMs": 17633,
+      "warmMs": 805.31,
+      "breakdownMs": {
+        "profileAndV1Data": 12127,
+        "repositories": 1043,
+        "trees": 1815,
+        "manifests": 2645,
+        "parsing": 0,
+        "scoring": 3.39
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "trees": 30,
+        "manifestBatches": 3,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "sindresorhus",
+      "categories": [
+        "tooling",
+        "huge",
+        "polyglot"
+      ],
+      "coverage": "full",
+      "coldMs": 52658,
+      "warmMs": 1024.34,
+      "breakdownMs": {
+        "profileAndV1Data": 46771,
+        "repositories": 798,
+        "trees": 1885,
+        "manifests": 3201,
+        "parsing": 0,
+        "scoring": 3.47
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "trees": 30,
+        "manifestBatches": 3,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "kentcdodds",
+      "categories": [
+        "frontend-ui",
+        "testing-review"
+      ],
+      "coverage": "partial",
+      "coldMs": 47421,
+      "warmMs": 1087.78,
+      "breakdownMs": {
+        "profileAndV1Data": 40868,
+        "repositories": 893,
+        "trees": 1823,
+        "manifests": 3834,
+        "parsing": 0,
+        "scoring": 2.54
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 5,
+        "trees": 30,
+        "manifestBatches": 5,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "dhh",
+      "categories": [
+        "backend",
+        "long-lived"
+      ],
+      "coverage": "full",
+      "coldMs": 4100,
+      "warmMs": 332.19,
+      "breakdownMs": {
+        "profileAndV1Data": 3224,
+        "repositories": 362,
+        "trees": 512,
+        "manifests": 0,
+        "parsing": 0,
+        "scoring": 1.95
+      },
+      "requests": {
+        "rest": 5,
+        "graphql": 0,
+        "trees": 4,
+        "manifestBatches": 0,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "gvanrossum",
+      "categories": [
+        "backend",
+        "long-lived"
+      ],
+      "coverage": "full",
+      "coldMs": 5176,
+      "warmMs": 585.21,
+      "breakdownMs": {
+        "profileAndV1Data": 3506,
+        "repositories": 499,
+        "trees": 629,
+        "manifests": 539,
+        "parsing": 0,
+        "scoring": 3.07
+      },
+      "requests": {
+        "rest": 10,
+        "graphql": 1,
+        "trees": 9,
+        "manifestBatches": 1,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "antirez",
+      "categories": [
+        "low-level",
+        "backend"
+      ],
+      "coverage": "partial",
+      "coldMs": 10930,
+      "warmMs": 679.31,
+      "breakdownMs": {
+        "profileAndV1Data": 6288,
+        "repositories": 819,
+        "trees": 2546,
+        "manifests": 1274,
+        "parsing": 0,
+        "scoring": 3.39
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "trees": 30,
+        "manifestBatches": 1,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "addyosmani",
+      "categories": [
+        "frontend-ui",
+        "tooling",
+        "huge"
+      ],
+      "coverage": "full",
+      "coldMs": 25546,
+      "warmMs": 985.37,
+      "breakdownMs": {
+        "profileAndV1Data": 19389,
+        "repositories": 1088,
+        "trees": 1526,
+        "manifests": 3541,
+        "parsing": 0,
+        "scoring": 2.45
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "trees": 30,
+        "manifestBatches": 3,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "tiangolo",
+      "categories": [
+        "backend",
+        "python"
+      ],
+      "coverage": "partial",
+      "coldMs": 12822,
+      "warmMs": 555.69,
+      "breakdownMs": {
+        "profileAndV1Data": 6243,
+        "repositories": 711,
+        "trees": 1326,
+        "manifests": 4539,
+        "parsing": 1,
+        "scoring": 2.22
+      },
+      "requests": {
+        "rest": 23,
+        "graphql": 5,
+        "trees": 22,
+        "manifestBatches": 5,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "mitchellh",
+      "categories": [
+        "devops-automation",
+        "tooling"
+      ],
+      "coverage": "full",
+      "coldMs": 13222,
+      "warmMs": 889.7,
+      "breakdownMs": {
+        "profileAndV1Data": 7347,
+        "repositories": 896,
+        "trees": 1786,
+        "manifests": 3187,
+        "parsing": 0,
+        "scoring": 5.63
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "trees": 30,
+        "manifestBatches": 2,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "EvanBacon",
+      "categories": [
+        "mobile",
+        "expo"
+      ],
+      "coverage": "partial",
+      "coldMs": 29086,
+      "warmMs": 1034.42,
+      "breakdownMs": {
+        "profileAndV1Data": 21365,
+        "repositories": 1511,
+        "trees": 3141,
+        "manifests": 3065,
+        "parsing": 0,
+        "scoring": 3.97
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "trees": 30,
+        "manifestBatches": 3,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "Rich-Harris",
+      "categories": [
+        "frontend-ui",
+        "tooling"
+      ],
+      "coverage": "partial",
+      "coldMs": 33146,
+      "warmMs": 850.85,
+      "breakdownMs": {
+        "profileAndV1Data": 24351,
+        "repositories": 1759,
+        "trees": 2123,
+        "manifests": 4910,
+        "parsing": 0,
+        "scoring": 2.96
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 5,
+        "trees": 30,
+        "manifestBatches": 5,
+        "fallback": 0
+      }
+    },
+    {
+      "username": "samuelcolvin",
+      "categories": [
+        "tooling",
+        "python",
+        "backend"
+      ],
+      "coverage": "partial",
+      "coldMs": 30245,
+      "warmMs": 1165.52,
+      "breakdownMs": {
+        "profileAndV1Data": 24709,
+        "repositories": 1060,
+        "trees": 1878,
+        "manifests": 2593,
+        "parsing": 0,
+        "scoring": 4.68
+      },
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "trees": 30,
+        "manifestBatches": 2,
+        "fallback": 0
+      }
+    }
+  ],
+  "cold": {
+    "mean": 19883.13,
+    "p50": 13222,
+    "p75": 30245,
+    "p90": 47421,
+    "p95": 52658,
+    "max": 52658
+  },
+  "warm": {
+    "mean": 733.99,
+    "p50": 805.31,
+    "p75": 1024.34,
+    "p90": 1087.78,
+    "p95": 1165.52,
+    "max": 1165.52
+  },
+  "breakdown": {
+    "profileAndV1Data": {
+      "mean": 14893.4,
+      "p50": 7347,
+      "p75": 24351,
+      "p90": 40868,
+      "p95": 46771,
+      "max": 46771
+    },
+    "repositories": {
+      "mean": 838,
+      "p50": 819,
+      "p75": 1060,
+      "p90": 1511,
+      "p95": 1759,
+      "max": 1759
+    },
+    "trees": {
+      "mean": 1758.67,
+      "p50": 1815,
+      "p75": 2123,
+      "p90": 3023,
+      "p95": 3141,
+      "max": 3141
+    },
+    "manifests": {
+      "mean": 2389,
+      "p50": 2645,
+      "p75": 3541,
+      "p90": 4539,
+      "p95": 4910,
+      "max": 4910
+    },
+    "parsing": {
+      "mean": 0.07,
+      "p50": 0,
+      "p75": 0,
+      "p90": 0,
+      "p95": 1,
+      "max": 1
+    },
+    "scoring": {
+      "mean": 4.06,
+      "p50": 3.39,
+      "p75": 4.68,
+      "p90": 8.36,
+      "p95": 10.72,
+      "max": 10.72
+    }
+  },
+  "requests": {
+    "rest": {
+      "mean": 23.93,
+      "p50": 31,
+      "p75": 31,
+      "p90": 31,
+      "p95": 31,
+      "max": 31
+    },
+    "graphql": {
+      "mean": 2.4,
+      "p50": 2,
+      "p75": 3,
+      "p90": 5,
+      "p95": 5,
+      "max": 5
+    },
+    "trees": {
+      "mean": 22.93,
+      "p50": 30,
+      "p75": 30,
+      "p90": 30,
+      "p95": 30,
+      "max": 30
+    },
+    "manifestBatches": {
+      "mean": 2.4,
+      "p50": 2,
+      "p75": 3,
+      "p90": 5,
+      "p95": 5,
+      "max": 5
+    }
+  }
+}

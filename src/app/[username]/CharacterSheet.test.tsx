@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
 import { GitHubRateLimitError, GitHubUnavailableError, InvalidUsernameError } from "@/data/github/errors";
-import { loadCharacterWithChronicle } from "@/data/loadCharacter";
+import { loadCharacterProduct } from "@/data/loadCharacter";
 import type { ClassExplanation } from "@/features/character/classExplanation";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import type { RPGCharacter } from "@/game/types";
@@ -15,14 +15,14 @@ vi.mock("next/navigation", () => ({
 }));
 
 vi.mock("@/data/loadCharacter", () => ({
-  loadCharacterWithChronicle: vi.fn(),
+  loadCharacterProduct: vi.fn(),
 }));
 
 vi.mock("./CharacterPageClient", () => ({
   default: (props: unknown) => ({ type: "CharacterPageClient", props }),
 }));
 
-const mockedLoadCharacter = vi.mocked(loadCharacterWithChronicle);
+const mockedLoadCharacter = vi.mocked(loadCharacterProduct);
 const source = { kind: "mock" as const, getProfile: vi.fn() };
 
 describe("CharacterSheet (the slow, streamed part of the route)", () => {
@@ -38,12 +38,13 @@ describe("CharacterSheet (the slow, streamed part of the route)", () => {
       character: character as unknown as RPGCharacter,
       chronicle: chronicle as unknown as DeveloperChronicle,
       classExplanation: classExplanation as unknown as ClassExplanation,
+      presentation: { v2Enabled: false, delivery: "unavailable", v2: null },
     });
 
     await expect(CharacterSheet({ username: "torvalds", source })).resolves.toMatchObject({
-      props: { character, chronicle, classExplanation, username: "torvalds" },
+      props: { character, chronicle, classExplanation, presentation: { v2Enabled: false, delivery: "unavailable", v2: null }, username: "torvalds" },
     });
-    expect(mockedLoadCharacter).toHaveBeenCalledWith("torvalds", source);
+    expect(mockedLoadCharacter).toHaveBeenCalledWith("torvalds", source, expect.objectContaining({ scheduleBackground: expect.any(Function) }));
   });
 
   it("an unknown profile is still a 404, not a generic error", async () => {

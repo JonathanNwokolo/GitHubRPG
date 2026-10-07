@@ -18,6 +18,7 @@ import {
   RpgClassIcon,
 } from "@/design-system";
 import { fnv1a } from "@/data/seed/hashAndPrng";
+import { AVATAR_SLOT_RATIO, getAvatarFrameBottomOverflow } from "@/features/avatar";
 import { fill, formatNumber } from "@/lib/format";
 import {
   ProfileActionButton,
@@ -30,11 +31,13 @@ import {
 import { CharacterAvatar } from "./CharacterAvatar";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
+import type { RPGCharacterV2Public } from "@/game-v2/publicProjection";
 
 interface CharacterHeaderProps {
   character: RPGCharacter;
   /** Title chosen for display (user pick or engine default). */
-  equippedTitle: TitleProgress | null;
+  equippedTitle: Pick<TitleProgress, "name"> | null;
+  v2?: RPGCharacterV2Public | null;
   onOpenShareModal?: () => void;
   /** Opens "Why this class?". The trigger only exists when the host wires it. */
   onOpenClassExplanation?: () => void;
@@ -53,6 +56,9 @@ const TIER_FRAME: Record<string, "common" | "rare" | "epic" | "legendary"> = {
   Lendário: "legendary",
   Ascendente: "legendary",
 };
+
+/** Size of the avatar window; the framed slot around it is larger. */
+const AVATAR_SIZE = 112;
 
 interface ResourceRowProps {
   tone: ProfileMeterTone;
@@ -80,6 +86,7 @@ const ResourceRow: React.FC<ResourceRowProps> = ({ tone, label, name, valueText,
 export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   character,
   equippedTitle,
+  v2,
   onOpenShareModal,
   onOpenClassExplanation,
   onOpenReadmeModal,
@@ -89,6 +96,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
 
   const { identity, progression, archetype, resources, meta } = character;
   const displayName = identity.displayName ?? identity.username;
+  const className = v2?.identity.className ?? archetype.className;
+  const subclassName = v2?.identity.subclass?.name[language === "pt-BR" ? "pt" : "en"] ?? archetype.subclassName;
+  const evolutionName = v2?.identity.evolution?.name[language === "pt-BR" ? "pt" : "en"];
+
+  // The level plate hangs a constant 10px under the frame's visible edge, whichever frame this hero has.
+  const plateOffset = Math.round(getAvatarFrameBottomOverflow(identity.username) * (AVATAR_SIZE / AVATAR_SLOT_RATIO)) + 10;
 
   const xpHint =
     progression.nextLevel === null
@@ -109,11 +122,11 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
               photoUrl={identity.avatarUrl}
               username={identity.username}
               photoAlt={fill(t.character.avatarAlt, { name: displayName })}
-              size={112}
+              size={AVATAR_SIZE}
               rarity={TIER_FRAME[progression.tier] ?? "common"}
             />
           </div>
-          <div className="-mt-3 flex flex-col items-center gap-1.5">
+          <div className="flex flex-col items-center gap-1.5" style={{ marginTop: plateOffset }}>
             <ProfileStatPlate label={t.character.level} value={progression.level} />
             <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">{progression.tier}</span>
           </div>
@@ -130,21 +143,27 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             <Tooltip content={archetype.classDescription}>
               <span className="inline-flex items-center gap-1.5 font-sans text-sm font-extrabold uppercase tracking-wider text-amber-300">
                 <RpgClassIcon classNameType={archetype.className} className="h-4 w-4 text-amber-300" />
-                <span>{archetype.className}</span>
+                <span>{className}</span>
               </span>
             </Tooltip>
-            {archetype.subclassName && (
+            {subclassName && (
               <>
                 <span aria-hidden="true" className="text-amber-700">
                   &bull;
                 </span>
-                <Tooltip content={archetype.subclassDescription ?? archetype.subclassName}>
+                <Tooltip content={v2 ? t.gameV2.subclass : archetype.subclassDescription ?? subclassName}>
                   <span className="inline-flex items-center gap-1.5 font-sans text-sm font-semibold text-slate-200">
-                    <RpgClassIcon classNameType={archetype.subclassName} className="h-4 w-4 text-slate-300" />
-                    <span>{archetype.subclassName}</span>
+                    {!v2 && <RpgClassIcon classNameType={archetype.subclassName ?? archetype.className} className="h-4 w-4 text-slate-300" />}
+                    <span>{subclassName}</span>
                   </span>
                 </Tooltip>
               </>
+            )}
+            {evolutionName && (
+              <Badge variant="arcane" size="sm" className="gap-1" title={t.gameV2.evolution}>
+                <RpgSparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>{t.gameV2.evolution}: {evolutionName}</span>
+              </Badge>
             )}
             {meta.isDemo && (
               <Badge variant="common" size="sm" className="gap-1" title={t.common.demoDataTooltip}>

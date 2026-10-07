@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-07T23:06:30.519Z",
+  "cohort": 70,
+  "platformItemLimitBytes": 2097152,
+  "objects": {
+    "evidence": {
+      "min": 1770,
+      "median": 420649,
+      "p90": 2158478,
+      "max": 3715281
+    },
+    "character": {
+      "min": 56695,
+      "median": 100686,
+      "p90": 160682,
+      "max": 183412
+    },
+    "metadata": {
+      "min": 294,
+      "median": 294,
+      "p90": 294,
+      "max": 294
+    },
+    "totalPerProfile": {
+      "min": 58465,
+      "median": 510180,
+      "p90": 2297282,
+      "max": 3866511
+    }
+  },
+  "overLimit": {
+    "evidence": 8,
+    "character": 0
+  },
+  "costModel": {
+    "itemsPerProfile": 1,
+    "writesPerEnrichment": 1,
+    "readsPerRepeatRequest": 1,
+    "treesManifestsAndEvidenceInL2": false,
+    "strategy": "final-character-only"
+  }
+}

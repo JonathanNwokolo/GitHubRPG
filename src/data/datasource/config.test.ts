@@ -1,7 +1,12 @@
 // @vitest-environment node
 import { describe, expect, it } from "vitest";
 import { MockDataSource } from "./MockDataSource";
-import { DataSourceConfigError, readDataSourceConfig } from "./config";
+import {
+  DataSourceConfigError,
+  isGameEngineV2UiEnabled,
+  readDataSourceConfig,
+  readGameEngineV2UiConfig,
+} from "./config";
 import { createDataSource, resolveDataSourceKind } from "./index";
 import { GitHubApiDataSource } from "../github/GitHubApiDataSource";
 
@@ -39,6 +44,21 @@ describe("readDataSourceConfig", () => {
   it("logs fetch reports in development only", () => {
     expect(readDataSourceConfig({ NODE_ENV: "development" }).logFetchReports).toBe(true);
     expect(readDataSourceConfig({ NODE_ENV: "production", GITHUB_DATA_SOURCE: "github" }).logFetchReports).toBe(false);
+  });
+});
+
+describe("Game Engine V2 product flag", () => {
+  it("is off by default and fails closed for unknown values", () => {
+    expect(readGameEngineV2UiConfig({}).enabled).toBe(false);
+    expect(readGameEngineV2UiConfig({ GAME_ENGINE_V2_UI_ENABLED: "maybe" }).enabled).toBe(false);
+  });
+
+  it("supports one server-side flag plus an optional normalized allowlist", () => {
+    const env = { GAME_ENGINE_V2_UI_ENABLED: "true", GAME_ENGINE_V2_UI_ALLOWLIST: " Torvalds, JonathanNwokolo " };
+    expect(isGameEngineV2UiEnabled("torvalds", env)).toBe(true);
+    expect(isGameEngineV2UiEnabled("JONATHANNWOKOLO", env)).toBe(true);
+    expect(isGameEngineV2UiEnabled("ahejlsberg", env)).toBe(false);
+    expect(isGameEngineV2UiEnabled("anyone", { GAME_ENGINE_V2_UI_ENABLED: "1" })).toBe(true);
   });
 });
 

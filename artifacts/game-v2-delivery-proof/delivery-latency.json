@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-07T23:06:30.519Z",
+  "localMicrobenchmark": {
+    "l1HitMs": {
+      "min": 0.01,
+      "median": 0.01,
+      "p90": 0.01,
+      "max": 0.04
+    },
+    "l2AdapterHitMs": {
+      "min": 0.01,
+      "median": 0.01,
+      "p90": 0.01,
+      "max": 0.02
+    },
+    "coldInitialResponseMs": {
+      "min": 0.02,
+      "median": 0.03,
+      "p90": 0.05,
+      "max": 0.13
+    },
+    "backgroundLocalReplayMs": {
+      "min": 0.67,
+      "median": 1.15,
+      "p90": 1.44,
+      "max": 3.66
+    }
+  },
+  "preservedLiveColdEnrichmentMs": {
+    "min": 3948,
+    "median": 17344,
+    "p90": 37153,
+    "max": 67092
+  },
+  "caveat": "L2 and cold-initial figures are local adapter measurements, not Vercel network latency. Preserved live cold values measure full synchronous collection from the frozen input runs.",
+  "proposedSlaMs": {
+    "l1P90": 10,
+    "l2P90": 250,
+    "coldInitialResponseP90ExcludingV1ProfileLoad": 500,
+    "backgroundEnrichmentP90": 55000
+  }
+}

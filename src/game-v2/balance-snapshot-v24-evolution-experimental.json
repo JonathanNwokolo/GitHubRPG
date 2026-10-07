@@ -1,0 +1,19 @@
+{
+  "engineVersion": "2.0-experimental-v24-evo",
+  "schemaVersion": "game-engine-v2-schema-2",
+  "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+  "catalogVersion": "game-engine-v2-catalog-1",
+  "balanceVersion": "game-engine-v2-balance-v24-evolution-confidence",
+  "status": "STAGE 3G EVOLUTION VALIDATION",
+  "subclassStrong": 55,
+  "subclassPossible": 42,
+  "subclassMargin": 5,
+  "toolingArchetypeCap": 40,
+  "genericSignalCap": 42,
+  "invariants": 46,
+  "schools": 22,
+  "artifacts": 22,
+  "achievements": 54,
+  "titles": 40,
+  "evolutions": 7
+}

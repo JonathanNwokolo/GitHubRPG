@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-10-07T23:06:30.519Z",
+  "simulatedOnly": true,
+  "instanceA": {
+    "l1": "isolated",
+    "collectorRequests": 1,
+    "wroteSharedL2": true
+  },
+  "instanceB": {
+    "l1": "empty",
+    "collectorRequests": 0,
+    "resultSource": "l2",
+    "state": "ready"
+  },
+  "sharedL2": true,
+  "result": "PASS",
+  "crossInstanceDedupe": "not provided; simultaneous misses may produce two enrichments"
+}

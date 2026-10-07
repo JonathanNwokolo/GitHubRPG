@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-10-07T23:08:00.000Z",
+  "engineVersion": "2.0-experimental-v24-evo",
+  "method": "controlled local smoke; live GitHub collection for named public profiles plus deterministic cached fixtures and frozen snapshot replay",
+  "live": [
+    {
+      "username": "JonathanNwokolo",
+      "v1": "Mago / Bardo",
+      "v2State": "ready",
+      "coverage": "partial",
+      "class": "Mago",
+      "subclass": null,
+      "evolution": null,
+      "latencyMs": 19608,
+      "requests": 39,
+      "result": "PASS"
+    },
+    {
+      "username": "torvalds",
+      "v1": "Guerreiro",
+      "v2State": "ready",
+      "coverage": "full",
+      "class": "Guerreiro",
+      "subclass": null,
+      "evolution": null,
+      "latencyMs": 7728,
+      "requests": 11,
+      "result": "PASS"
+    },
+    {
+      "username": "ahejlsberg",
+      "v1": "Mago",
+      "v2State": "ready",
+      "coverage": "partial",
+      "class": "Mago",
+      "subclass": null,
+      "evolution": null,
+      "latencyMs": 4964,
+      "requests": 7,
+      "result": "PASS"
+    }
+  ],
+  "cachedFixtures": [
+    {
+      "username": "veteran-dev",
+      "state": "ready",
+      "subclass": "Artífice",
+      "evolution": "Mestre das Runas",
+      "proof": "Playwright V2 ready and responsive flows",
+      "result": "PASS"
+    }
+  ],
+  "frozenSnapshot": {
+    "username": "developit",
+    "evolution": "Forjador Ancestral",
+    "proof": "70-profile final replay",
+    "result": "PASS"
+  },
+  "notes": [
+    "The live command completes collection synchronously for smoke diagnostics only; the product path remains cache-first and does not await cold V2 enrichment.",
+    "Smoke results were not used to recalibrate balance."
+  ]
+}

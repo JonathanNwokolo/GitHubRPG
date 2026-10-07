@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-10-07T21:55:16.438Z",
+  "stage": "3G-E0",
+  "funnels": [
+    {
+      "evolution": "evo-archmage",
+      "steps": {
+        "total": 70,
+        "classEligible": 33,
+        "subclassEligible": 4,
+        "maturityEligible": 3,
+        "evidenceEligible": 1,
+        "confidenceEligible": 1,
+        "coverageEligible": 1,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 33,
+        "subclassEligible": 6,
+        "maturityEligible": 66,
+        "evidenceEligible": 4,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 0
+      },
+      "blockerCounts": {
+        "CLASS": 37,
+        "SUBCLASS": 64,
+        "SCORE": 70,
+        "MATURITY": 4,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 0,
+        "SKILL": 42,
+        "JOURNEY": 0,
+        "COMPOSITE_GATE": 59,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-celestial-guardian",
+      "steps": {
+        "total": 70,
+        "classEligible": 70,
+        "subclassEligible": 1,
+        "maturityEligible": 1,
+        "evidenceEligible": 0,
+        "confidenceEligible": 0,
+        "coverageEligible": 0,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 70,
+        "subclassEligible": 1,
+        "maturityEligible": 70,
+        "evidenceEligible": 10,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 0
+      },
+      "blockerCounts": {
+        "CLASS": 0,
+        "SUBCLASS": 69,
+        "SCORE": 70,
+        "MATURITY": 0,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 1,
+        "SKILL": 54,
+        "JOURNEY": 21,
+        "COMPOSITE_GATE": 0,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-rune-master",
+      "steps": {
+        "total": 70,
+        "classEligible": 11,
+        "subclassEligible": 1,
+        "maturityEligible": 1,
+        "evidenceEligible": 1,
+        "confidenceEligible": 0,
+        "coverageEligible": 0,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 11,
+        "subclassEligible": 4,
+        "maturityEligible": 70,
+        "evidenceEligible": 19,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 1
+      },
+      "blockerCounts": {
+        "CLASS": 59,
+        "SUBCLASS": 66,
+        "SCORE": 69,
+        "MATURITY": 0,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 0,
+        "SKILL": 27,
+        "JOURNEY": 0,
+        "COMPOSITE_GATE": 34,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-arcane-weaver",
+      "steps": {
+        "total": 70,
+        "classEligible": 42,
+        "subclassEligible": 5,
+        "maturityEligible": 5,
+        "evidenceEligible": 0,
+        "confidenceEligible": 0,
+        "coverageEligible": 0,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 42,
+        "subclassEligible": 5,
+        "maturityEligible": 70,
+        "evidenceEligible": 2,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 0
+      },
+      "blockerCounts": {
+        "CLASS": 28,
+        "SUBCLASS": 65,
+        "SCORE": 70,
+        "MATURITY": 0,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 58,
+        "SKILL": 47,
+        "JOURNEY": 45,
+        "COMPOSITE_GATE": 0,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-ancestral-forger",
+      "steps": {
+        "total": 70,
+        "classEligible": 70,
+        "subclassEligible": 4,
+        "maturityEligible": 4,
+        "evidenceEligible": 4,
+        "confidenceEligible": 3,
+        "coverageEligible": 2,
+        "scoreEligible": 1,
+        "unlocked": 1
+      },
+      "rawGatePassCounts": {
+        "classEligible": 70,
+        "subclassEligible": 4,
+        "maturityEligible": 69,
+        "evidenceEligible": 43,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 2
+      },
+      "blockerCounts": {
+        "CLASS": 0,
+        "SUBCLASS": 66,
+        "SCORE": 68,
+        "MATURITY": 1,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 0,
+        "SKILL": 0,
+        "JOURNEY": 1,
+        "COMPOSITE_GATE": 26,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-high-chronomancer",
+      "steps": {
+        "total": 70,
+        "classEligible": 4,
+        "subclassEligible": 3,
+        "maturityEligible": 3,
+        "evidenceEligible": 2,
+        "confidenceEligible": 0,
+        "coverageEligible": 0,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 4,
+        "subclassEligible": 10,
+        "maturityEligible": 70,
+        "evidenceEligible": 19,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 3
+      },
+      "blockerCounts": {
+        "CLASS": 66,
+        "SUBCLASS": 60,
+        "SCORE": 67,
+        "MATURITY": 0,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 1,
+        "SKILL": 68,
+        "JOURNEY": 0,
+        "COMPOSITE_GATE": 51,
+        "OTHER": 0
+      }
+    },
+    {
+      "evolution": "evo-celestial-architect",
+      "steps": {
+        "total": 70,
+        "classEligible": 70,
+        "subclassEligible": 1,
+        "maturityEligible": 1,
+        "evidenceEligible": 0,
+        "confidenceEligible": 0,
+        "coverageEligible": 0,
+        "scoreEligible": 0,
+        "unlocked": 0
+      },
+      "rawGatePassCounts": {
+        "classEligible": 70,
+        "subclassEligible": 1,
+        "maturityEligible": 57,
+        "evidenceEligible": 2,
+        "confidenceEligible": 10,
+        "coverageEligible": 31,
+        "scoreEligible": 0
+      },
+      "blockerCounts": {
+        "CLASS": 0,
+        "SUBCLASS": 69,
+        "SCORE": 70,
+        "MATURITY": 13,
+        "CONFIDENCE": 60,
+        "COVERAGE": 39,
+        "ATTRIBUTE": 0,
+        "SKILL": 114,
+        "JOURNEY": 45,
+        "COMPOSITE_GATE": 68,
+        "OTHER": 0
+      }
+    }
+  ]
+}

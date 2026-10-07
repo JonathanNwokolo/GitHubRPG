@@ -2,11 +2,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createRPGCharacter } from "@/game/engine";
 import { makeAverageProfile } from "@/test/builders";
-import { loadCharacter } from "@/data/loadCharacter";
+import { loadCharacterProduct } from "@/data/loadCharacter";
 import { HEROES_RESPONSE_BUDGET_MS } from "@/features/heroes/featuredHeroes";
 import { GET } from "./route";
 
-vi.mock("@/data/loadCharacter", () => ({ loadCharacter: vi.fn() }));
+vi.mock("@/data/loadCharacter", () => ({ loadCharacterProduct: vi.fn() }));
 
 const afterTasks: Promise<unknown>[] = [];
 vi.mock("next/server", async (importOriginal) => ({
@@ -17,14 +17,20 @@ vi.mock("next/server", async (importOriginal) => ({
   },
 }));
 
-const mockedLoadCharacter = vi.mocked(loadCharacter);
+const mockedLoadCharacter = vi.mocked(loadCharacterProduct);
 const LEGENDS = ["torvalds", "gvanrossum", "matz", "antirez", "dhh"];
 const COMPLETE_CACHE = "public, s-maxage=900, stale-while-revalidate=300";
 
 function character(username: string) {
-  return createRPGCharacter(
+  const value = createRPGCharacter(
     makeAverageProfile({ username, displayName: `Hero ${username}`, avatarUrl: `https://avatars.example/${username}` })
   );
+  return {
+    character: value,
+    chronicle: {} as never,
+    classExplanation: {} as never,
+    presentation: { v2Enabled: false, delivery: "unavailable" as const, v2: null },
+  };
 }
 
 function request(category = "legends") {
@@ -66,6 +72,7 @@ describe("GET /api/heroes", () => {
     expect(response.status).toBe(200);
     expect(response.headers.get("cache-control")).toBe(COMPLETE_CACHE);
     expect(mockedLoadCharacter).toHaveBeenCalledTimes(5);
+    expect(mockedLoadCharacter.mock.calls.every((call) => call.length === 2)).toBe(true);
     expect(body).toMatchObject({ category: "legends", requested: 5, failed: 0, pending: 0, partial: false });
     expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(LEGENDS);
     expect(body.heroes[0]).toMatchObject({ displayName: "Hero torvalds", level: expect.any(Number), className: expect.any(String) });

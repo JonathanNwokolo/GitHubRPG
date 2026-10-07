@@ -1,4 +1,6 @@
 import type { ClassName, RPGCharacter } from "@/game/types";
+import type { CharacterPresentationModel } from "@/game-v2/publicProjection";
+import type { LocalizedText } from "@/game-v2/types";
 import type { HeroCategoryId } from "./featuredHeroes";
 
 export interface HeroSummary {
@@ -8,6 +10,8 @@ export interface HeroSummary {
   level: number;
   className: ClassName;
   subclassName?: ClassName;
+  subclassV2?: LocalizedText;
+  evolutionV2?: LocalizedText;
   dominantLanguage?: string;
   title?: string;
   starsReceived: number;
@@ -26,7 +30,7 @@ export interface HeroesResponse {
 }
 
 /** Project only what the landing renders; engine output remains the sole source of RPG facts. */
-export function toHeroSummary(character: RPGCharacter): HeroSummary {
+export function toHeroSummary(character: RPGCharacter, presentation?: CharacterPresentationModel): HeroSummary {
   const title = character.defaultTitleId
     ? character.titles.find((candidate) => candidate.id === character.defaultTitleId && candidate.unlocked)
     : undefined;
@@ -38,6 +42,8 @@ export function toHeroSummary(character: RPGCharacter): HeroSummary {
     level: character.progression.level,
     className: character.archetype.className,
     ...(character.archetype.subclassName ? { subclassName: character.archetype.subclassName } : {}),
+    ...(presentation?.v2?.identity.subclass ? { subclassV2: presentation.v2.identity.subclass.name } : {}),
+    ...(presentation?.v2?.identity.evolution ? { evolutionV2: presentation.v2.identity.evolution.name } : {}),
     ...(character.archetype.dominantLanguage ? { dominantLanguage: character.archetype.dominantLanguage } : {}),
     ...(title ? { title: title.name } : {}),
     starsReceived: character.summary.starsReceived.value,

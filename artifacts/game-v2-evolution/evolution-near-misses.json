@@ -1,0 +1,701 @@
+{
+  "generatedAt": "2026-10-07T21:55:16.438Z",
+  "stage": "3G-E0",
+  "candidates": {
+    "evo-archmage": [
+      {
+        "username": "joshwcomeau",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 71.62,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "base-affinity",
+          "strong-schools",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 71.62,
+            "required": ">=75"
+          }
+        ],
+        "conceptualDistance": 1
+      },
+      {
+        "username": "mhevery",
+        "dataset": "calibration",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 73.81,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "base-affinity",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 73.81,
+            "required": ">=75"
+          },
+          {
+            "id": "strong-schools",
+            "category": "COMPOSITE_GATE",
+            "observed": 0,
+            "required": ">=2 schools score>=60"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "addyosmani",
+        "dataset": "calibration",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 65.59,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 65.59,
+            "required": ">=75"
+          },
+          {
+            "id": "base-affinity",
+            "category": "SKILL",
+            "observed": 61.91,
+            "required": ">=70%"
+          },
+          {
+            "id": "strong-schools",
+            "category": "COMPOSITE_GATE",
+            "observed": 1,
+            "required": ">=2 schools score>=60"
+          }
+        ],
+        "conceptualDistance": 3
+      }
+    ],
+    "evo-celestial-guardian": [
+      {
+        "username": "paulirish",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "guardian",
+        "leadingCompatibleScore": 65.19,
+        "passedGates": [
+          "class",
+          "subclass",
+          "reviews-full",
+          "reviews",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 65.19,
+            "required": ">=78"
+          },
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          },
+          {
+            "id": "coverage",
+            "category": "COVERAGE",
+            "observed": "partial/full",
+            "required": "full/full"
+          },
+          {
+            "id": "testing-repos",
+            "category": "SKILL",
+            "observed": 2,
+            "required": ">=5"
+          }
+        ],
+        "conceptualDistance": 4
+      },
+      {
+        "username": "developit",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 64.27,
+        "passedGates": [
+          "class",
+          "confidence",
+          "coverage",
+          "reviews-full",
+          "reviews",
+          "testing-repos",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "subclass",
+            "category": "SUBCLASS",
+            "observed": "artificer",
+            "required": "guardian"
+          },
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": null,
+            "required": ">=78"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "swyxio",
+        "dataset": "holdout",
+        "class": "Bardo",
+        "subclass": null,
+        "leadingCompatibleScore": 67.36,
+        "passedGates": [
+          "class",
+          "confidence",
+          "coverage",
+          "reviews-full",
+          "reviews",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "subclass",
+            "category": "SUBCLASS",
+            "observed": null,
+            "required": "guardian"
+          },
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": null,
+            "required": ">=78"
+          },
+          {
+            "id": "testing-repos",
+            "category": "SKILL",
+            "observed": 3,
+            "required": ">=5"
+          }
+        ],
+        "conceptualDistance": 3
+      }
+    ],
+    "evo-rune-master": [
+      {
+        "username": "cassidoo",
+        "dataset": "independent",
+        "class": "Paladino",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 68.21,
+        "passedGates": [
+          "class",
+          "subclass",
+          "coverage",
+          "build-artifacts",
+          "systems-repos"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 68.21,
+            "required": ">=75"
+          },
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "developit",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 91.91,
+        "passedGates": [
+          "subclass",
+          "score",
+          "confidence",
+          "coverage",
+          "build-artifacts"
+        ],
+        "failedGates": [
+          {
+            "id": "class",
+            "category": "CLASS",
+            "observed": "Mago",
+            "required": "Guerreiro|Paladino"
+          },
+          {
+            "id": "systems-repos",
+            "category": "SKILL",
+            "observed": 0,
+            "required": ">=2 repositories"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "isaacs",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 74.33,
+        "passedGates": [
+          "subclass",
+          "confidence",
+          "build-artifacts",
+          "systems-repos"
+        ],
+        "failedGates": [
+          {
+            "id": "class",
+            "category": "CLASS",
+            "observed": "Mago",
+            "required": "Guerreiro|Paladino"
+          },
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 74.33,
+            "required": ">=75"
+          },
+          {
+            "id": "coverage",
+            "category": "COVERAGE",
+            "observed": "partial/full",
+            "required": "full/full"
+          }
+        ],
+        "conceptualDistance": 3
+      }
+    ],
+    "evo-arcane-weaver": [
+      {
+        "username": "adamwathan",
+        "dataset": "independent",
+        "class": "Bardo",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 74.07,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "ui-repos",
+          "strong-ui-school"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 74.07,
+            "required": ">=75"
+          },
+          {
+            "id": "versatility",
+            "category": "ATTRIBUTE",
+            "observed": 36,
+            "required": ">=60"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "joshwcomeau",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 71.62,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "ui-repos",
+          "strong-ui-school"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 71.62,
+            "required": ">=75"
+          },
+          {
+            "id": "versatility",
+            "category": "ATTRIBUTE",
+            "observed": 20,
+            "required": ">=60"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "addyosmani",
+        "dataset": "calibration",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 65.59,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "ui-repos",
+          "strong-ui-school"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 65.59,
+            "required": ">=75"
+          },
+          {
+            "id": "versatility",
+            "category": "ATTRIBUTE",
+            "observed": 49,
+            "required": ">=60"
+          }
+        ],
+        "conceptualDistance": 2
+      }
+    ],
+    "evo-ancestral-forger": [
+      {
+        "username": "developit",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 91.91,
+        "passedGates": [
+          "class",
+          "subclass",
+          "score",
+          "confidence",
+          "coverage",
+          "account-age",
+          "yearly-full",
+          "active-years",
+          "artifact-diversity"
+        ],
+        "failedGates": [],
+        "conceptualDistance": 0
+      },
+      {
+        "username": "isaacs",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 74.33,
+        "passedGates": [
+          "class",
+          "subclass",
+          "score",
+          "confidence",
+          "account-age",
+          "yearly-full",
+          "active-years",
+          "artifact-diversity"
+        ],
+        "failedGates": [
+          {
+            "id": "coverage",
+            "category": "COVERAGE",
+            "observed": "partial/full",
+            "required": "full/full"
+          }
+        ],
+        "conceptualDistance": 1
+      },
+      {
+        "username": "yyx990803",
+        "dataset": "calibration",
+        "class": "Mago",
+        "subclass": "artificer",
+        "leadingCompatibleScore": 67.78,
+        "passedGates": [
+          "class",
+          "subclass",
+          "confidence",
+          "coverage",
+          "account-age",
+          "yearly-full",
+          "active-years",
+          "artifact-diversity"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 67.78,
+            "required": ">=72"
+          }
+        ],
+        "conceptualDistance": 1
+      }
+    ],
+    "evo-high-chronomancer": [
+      {
+        "username": "lizrice",
+        "dataset": "independent",
+        "class": "Patrulheiro",
+        "subclass": "chronomancer",
+        "leadingCompatibleScore": 63.46,
+        "passedGates": [
+          "class",
+          "subclass",
+          "coverage",
+          "ci-repos",
+          "container-infra-repos",
+          "pipeline-infra-composite",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 63.46,
+            "required": ">=78"
+          },
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "jesseduffield",
+        "dataset": "calibration",
+        "class": "Patrulheiro",
+        "subclass": "chronomancer",
+        "leadingCompatibleScore": 59.8,
+        "passedGates": [
+          "class",
+          "subclass",
+          "coverage",
+          "ci-repos",
+          "container-infra-repos",
+          "pipeline-infra-composite",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 59.8,
+            "required": ">=78"
+          },
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          }
+        ],
+        "conceptualDistance": 2
+      },
+      {
+        "username": "kelseyhightower",
+        "dataset": "calibration",
+        "class": "Patrulheiro",
+        "subclass": "chronomancer",
+        "leadingCompatibleScore": 80.48,
+        "passedGates": [
+          "class",
+          "subclass",
+          "score",
+          "coverage",
+          "container-infra-repos",
+          "consistency"
+        ],
+        "failedGates": [
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          },
+          {
+            "id": "ci-repos",
+            "category": "SKILL",
+            "observed": 1,
+            "required": ">=2"
+          },
+          {
+            "id": "pipeline-infra-composite",
+            "category": "COMPOSITE_GATE",
+            "observed": "1/10",
+            "required": ">=2 CI and >=2 container/infra"
+          }
+        ],
+        "conceptualDistance": 3
+      }
+    ],
+    "evo-celestial-architect": [
+      {
+        "username": "adamchainz",
+        "dataset": "independent",
+        "class": "Guerreiro",
+        "subclass": "architect",
+        "leadingCompatibleScore": 61.87,
+        "passedGates": [
+          "class",
+          "subclass",
+          "backend-strong",
+          "structural-repos",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": 61.87,
+            "required": ">=80"
+          },
+          {
+            "id": "confidence",
+            "category": "CONFIDENCE",
+            "observed": "medium",
+            "required": "high"
+          },
+          {
+            "id": "coverage",
+            "category": "COVERAGE",
+            "observed": "partial/full",
+            "required": "full/full"
+          },
+          {
+            "id": "frontend-strong",
+            "category": "SKILL",
+            "observed": false,
+            "required": "frontend school score>=60"
+          },
+          {
+            "id": "frontend-backend",
+            "category": "COMPOSITE_GATE",
+            "observed": "0/9",
+            "required": "both strong and >=2 repos each"
+          }
+        ],
+        "conceptualDistance": 5
+      },
+      {
+        "username": "adamwathan",
+        "dataset": "independent",
+        "class": "Bardo",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 66.58,
+        "passedGates": [
+          "class",
+          "confidence",
+          "coverage",
+          "frontend-strong",
+          "structural-repos",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "subclass",
+            "category": "SUBCLASS",
+            "observed": "illusionist",
+            "required": "architect"
+          },
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": null,
+            "required": ">=80"
+          },
+          {
+            "id": "backend-strong",
+            "category": "SKILL",
+            "observed": false,
+            "required": "backend school score>=60"
+          },
+          {
+            "id": "frontend-backend",
+            "category": "COMPOSITE_GATE",
+            "observed": "21/1",
+            "required": "both strong and >=2 repos each"
+          }
+        ],
+        "conceptualDistance": 4
+      },
+      {
+        "username": "joshwcomeau",
+        "dataset": "independent",
+        "class": "Mago",
+        "subclass": "illusionist",
+        "leadingCompatibleScore": 61.01,
+        "passedGates": [
+          "class",
+          "confidence",
+          "coverage",
+          "frontend-strong",
+          "structural-repos",
+          "experience"
+        ],
+        "failedGates": [
+          {
+            "id": "subclass",
+            "category": "SUBCLASS",
+            "observed": "illusionist",
+            "required": "architect"
+          },
+          {
+            "id": "score",
+            "category": "SCORE",
+            "observed": null,
+            "required": ">=80"
+          },
+          {
+            "id": "backend-strong",
+            "category": "SKILL",
+            "observed": false,
+            "required": "backend school score>=60"
+          },
+          {
+            "id": "frontend-backend",
+            "category": "COMPOSITE_GATE",
+            "observed": "26/2",
+            "required": "both strong and >=2 repos each"
+          }
+        ],
+        "conceptualDistance": 4
+      }
+    ]
+  }
+}

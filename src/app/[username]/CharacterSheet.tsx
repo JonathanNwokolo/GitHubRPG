@@ -1,8 +1,9 @@
 import React from "react";
+import { after } from "next/server";
 import { notFound } from "next/navigation";
 import { ProfileNotFoundError, type GitHubDataSource } from "@/data/datasource";
 import { InvalidUsernameError } from "@/data/github/errors";
-import { loadCharacterWithChronicle } from "@/data/loadCharacter";
+import { loadCharacterProduct } from "@/data/loadCharacter";
 import CharacterPageClient from "./CharacterPageClient";
 
 interface CharacterSheetProps {
@@ -19,12 +20,15 @@ interface CharacterSheetProps {
  */
 export default async function CharacterSheet({ username, source }: CharacterSheetProps) {
   try {
-    const { character, chronicle, classExplanation } = await loadCharacterWithChronicle(username, source);
+    const { character, chronicle, classExplanation, presentation } = await loadCharacterProduct(username, source, {
+      scheduleBackground: (task) => after(task),
+    });
     return (
       <CharacterPageClient
         character={character}
         chronicle={chronicle}
         classExplanation={classExplanation}
+        presentation={presentation}
         username={username}
       />
     );

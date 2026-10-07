@@ -19,6 +19,12 @@ export interface DataSourceConfig {
   logFetchReports: boolean;
 }
 
+export interface GameEngineV2UiConfig {
+  enabled: boolean;
+  /** Empty means every valid profile is eligible once the main flag is enabled. */
+  allowlist: ReadonlySet<string>;
+}
+
 export class DataSourceConfigError extends Error {
   constructor(message: string) {
     super(message);
@@ -50,4 +56,21 @@ export function readDataSourceConfig(env: Env = process.env): DataSourceConfig {
     githubToken: kind === "github" && token ? token : undefined,
     logFetchReports: env.NODE_ENV === "development",
   };
+}
+
+/** Server-only, fail-closed product rollout switch. */
+export function readGameEngineV2UiConfig(env: Env = process.env): GameEngineV2UiConfig {
+  const enabled = ["1", "true", "yes", "on"].includes(env.GAME_ENGINE_V2_UI_ENABLED?.trim().toLowerCase() ?? "");
+  const allowlist = new Set(
+    (env.GAME_ENGINE_V2_UI_ALLOWLIST ?? "")
+      .split(",")
+      .map((username) => username.trim().toLowerCase())
+      .filter(Boolean)
+  );
+  return { enabled, allowlist };
+}
+
+export function isGameEngineV2UiEnabled(username: string, env: Env = process.env): boolean {
+  const config = readGameEngineV2UiConfig(env);
+  return config.enabled && (config.allowlist.size === 0 || config.allowlist.has(username.trim().toLowerCase()));
 }

@@ -1,6 +1,67 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("GitHub RPG E2E Flows", () => {
+  test("V2 A/I: allowlist rollback keeps a profile on the complete V1 experience", async ({ page }) => {
+    await page.goto("/rookie-dev");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toHaveCount(0);
+    await page.getByRole("tab", { name: /Conquistas/i }).click();
+    await expect(page.getByText(/\/ 31/)).toBeVisible();
+  });
+
+  test("V2 B/C/E/F: ready profile shows specialization, evolution and Grimoire", async ({ page }) => {
+    await page.goto("/veteran-dev");
+    await expect(page.getByText("Artífice", { exact: true })).toBeVisible();
+    await expect(page.getByText("Evolução: Mestre das Runas", { exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Afinidades" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Escolas" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Artefatos" })).toBeVisible();
+  });
+
+  test("V2 D: null specialization stays absent and is explained without a placeholder", async ({ page }) => {
+    await page.goto("/empty-dev");
+    await expect(page.getByText(/Subclasse: nenhuma|Specialization: none/i)).toHaveCount(0);
+    await page.getByRole("button", { name: "Por que esta classe?" }).click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog.getByRole("heading", { name: "Especialização" })).toBeVisible();
+    await expect(dialog.getByText(/ainda não apresenta evidência suficiente/i)).toBeVisible();
+  });
+
+  test("V2 G: catalog has 54 achievements and locked secrets reveal no requirement", async ({ page }) => {
+    await page.goto("/veteran-dev");
+    await page.getByRole("tab", { name: /Conquistas/i }).click();
+    await expect(page.getByText(/\/ 54/)).toBeVisible();
+    const unknown = page.getByRole("button", { name: /\?\?\?/ }).first();
+    await unknown.click();
+    const dialog = page.getByRole("dialog", { name: "???" });
+    await expect(dialog.getByText("Conquista desconhecida")).toBeVisible();
+    await expect(dialog).not.toContainText(/85%|repositórios|escolas|equilíbrio/i);
+  });
+
+  test("V2 H: an equipped V2 title persists across reloads", async ({ page }) => {
+    await page.goto("/polyglot-dev");
+    await page.getByRole("tab", { name: /Títulos/i }).click();
+    const equip = page.getByRole("button", { name: /^Equipar:/ }).first();
+    const label = await equip.getAttribute("aria-label");
+    const title = label?.replace(/^Equipar:\s*/, "") ?? "";
+    await equip.click();
+    await page.reload();
+    await expect(page.getByText(`« ${title} »`)).toBeVisible();
+  });
+
+  test("V2 responsive: Hero, Grimoire, catalogs and explanation do not overflow", async ({ page }) => {
+    for (const width of [1440, 1366, 1024, 768, 390, 375]) {
+      await page.setViewportSize({ width, height: width <= 390 ? 812 : 900 });
+      await page.goto("/veteran-dev");
+      await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toBeVisible();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `${width}px`).toBeLessThanOrEqual(0);
+      await page.getByRole("button", { name: "Por que esta classe?" }).click();
+      await expect(page.getByRole("dialog")).toBeVisible();
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `dialog ${width}px`).toBeLessThanOrEqual(0);
+      await page.keyboard.press("Escape");
+    }
+  });
   test("Flow 0: Hall of Heroes is navigable and fits a 375px viewport", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto("/");
@@ -183,7 +244,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(page.getByRole("button", { name: /Summon Sheet/i })).toBeVisible();
     await expect(page.getByText(/Transform your profile into legend/i)).toBeVisible();
 
-    const ptButton = page.getByRole("button", { name: /Mudar para Português/i });
+    const ptButton = page.getByRole("button", { name: /Mudar para Português|Switch to Portuguese/i });
     await ptButton.click();
     await expect(page.getByRole("button", { name: /Invocar Ficha/i })).toBeVisible();
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
@@ -568,8 +629,10 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     const dialog = page.getByRole("dialog", { name: "Por que Guerreiro?" });
     await expect(dialog).toBeVisible();
-    await expect(dialog.getByText("No GitHub RPG: Rust → Guerreiro")).toBeVisible();
-    await expect(dialog.getByText("No GitHub RPG: TypeScript → Mago")).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Classe Guerreiro/i })).toBeVisible();
+    await expect(dialog.getByText(/Rust representa 58\.7% dos bytes observados/i)).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Especialização Artífice/i })).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Evolução Mestre das Runas/i })).toBeVisible();
     await expect(dialog.getByText(/Não mede habilidade profissional/)).toBeVisible();
 
     await page.keyboard.press("Escape");
@@ -583,7 +646,10 @@ test.describe("GitHub RPG E2E Flows", () => {
     await page.getByRole("button", { name: "Why this class?" }).click();
 
     const dialog = page.getByRole("dialog", { name: "Why Guerreiro?" });
-    await expect(dialog.getByText("In GitHub RPG: Rust → Guerreiro")).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Class Guerreiro/i })).toBeVisible();
+    await expect(dialog.getByText(/Rust accounts for 58\.7% of observed bytes/i)).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Specialization Artificer/i })).toBeVisible();
+    await expect(dialog.getByRole("heading", { name: /Evolution Rune Master/i })).toBeVisible();
     await expect(dialog.getByText(/does not measure professional skill/)).toBeVisible();
   });
 

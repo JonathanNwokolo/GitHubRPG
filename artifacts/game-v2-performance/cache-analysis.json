@@ -1,0 +1,55 @@
+{
+  "generatedAt": "2026-10-07T22:19:07.183Z",
+  "currentL1": {
+    "scope": "one Node.js process / one warm Vercel instance",
+    "bounded": true,
+    "maxEntriesDefault": 250,
+    "eviction": "LRU by access",
+    "persistent": false
+  },
+  "keys": {
+    "evidence": "namespace + engine/schema/detector/catalog/balance + username + source fingerprint + referenceDate",
+    "tree": "detector + repo id + tree SHA",
+    "manifest": "detector + repo id + path + blob SHA",
+    "character": "character + evidence identity"
+  },
+  "ttlRecommendation": {
+    "profile": "15m (existing V1)",
+    "repositoryMetadata": "15m-1h",
+    "tree": "6h fresh + 18h stale",
+    "manifest": "24h or SHA invalidation",
+    "normalizedEvidence": "6h fresh + 18h stale",
+    "finalCharacter": "1h fresh + 23h stale",
+    "notFound": "60s (existing V1)"
+  },
+  "simulations": {
+    "repeatedProfile": {
+      "requests": 3,
+      "enrichments": 1,
+      "cacheHits": 2
+    },
+    "differentProfiles": {
+      "profiles": 5,
+      "enrichments": 5
+    },
+    "hall": {
+      "profiles": 5,
+      "enrichments": 5,
+      "globalConcurrencyNeededInRuntime": true
+    },
+    "profileAfterHall": {
+      "enrichments": 0,
+      "cache": "hit"
+    },
+    "twoInstances": {
+      "enrichments": 1,
+      "limitation": "L1 is process-local and is not shared between instances"
+    },
+    "staleWhileRevalidate": {
+      "lookupState": "stale",
+      "policy": "serve stale only when the caller schedules revalidation with platform-supported background work"
+    }
+  },
+  "persistenceRequiredBeforeIntegration": "OPTIONAL",
+  "caveat": "Without shared L2, hit ratio depends on instance affinity and warm lifetime; L1 cannot satisfy a multi-instance SLA by itself."
+}

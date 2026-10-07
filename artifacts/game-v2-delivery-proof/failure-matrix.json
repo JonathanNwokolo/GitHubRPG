@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-10-07T23:06:30.519Z",
+  "cases": [
+    {
+      "failure": "GitHub REST/GraphQL 502",
+      "userEffect": "experimental state remains enriching/unavailable; public V1 route unchanged",
+      "cacheEffect": "no successful character write"
+    },
+    {
+      "failure": "tree/manifest timeout",
+      "userEffect": "background task remains isolated",
+      "cacheEffect": "valid partial may be cached; globally aborted work is discarded"
+    },
+    {
+      "failure": "hard budget",
+      "userEffect": "initial response already returned",
+      "cacheEffect": "no write"
+    },
+    {
+      "failure": "L2 read",
+      "userEffect": "L1 or enrichment fallback",
+      "cacheEffect": "safe miss"
+    },
+    {
+      "failure": "L2 write",
+      "userEffect": "response unaffected",
+      "cacheEffect": "L1 may remain; future instance can miss"
+    },
+    {
+      "failure": "serialization/payload too large",
+      "userEffect": "response unaffected",
+      "cacheEffect": "L2 write rejected, never truncated"
+    },
+    {
+      "failure": "corrupted L2",
+      "userEffect": "safe miss",
+      "cacheEffect": "entry deleted"
+    }
+  ]
+}

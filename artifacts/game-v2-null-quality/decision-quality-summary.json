@@ -1,0 +1,265 @@
+{
+  "generatedAt": "2026-10-07T21:43:50.645Z",
+  "stage": "3F-NULL-QUALITY-FINAL",
+  "engineVersion": "2.0-experimental-v23",
+  "runtimeChanged": false,
+  "tuningApplied": false,
+  "profiles": 70,
+  "subclasses": 21,
+  "nulls": 49,
+  "subclassQuality": {
+    "ACCEPTABLE": 7,
+    "GOOD": 13,
+    "QUESTIONABLE": 1,
+    "correct": 20,
+    "precisionPercent": 95.2,
+    "incorrectSubclass": 0,
+    "falsePositiveRatePercent": 0
+  },
+  "nullQuality": {
+    "total": 49,
+    "JUSTIFIED_NULL": 19,
+    "AMBIGUOUS_NULL": 20,
+    "CONSERVATIVE_NULL": 10,
+    "INCORRECT_NULL": 0,
+    "nullQualityPercent": 79.6,
+    "conservativeNullRatePercent": 20.4,
+    "incorrectNullRatePercent": 0
+  },
+  "decisionQuality": {
+    "successful": 59,
+    "review": 11,
+    "failures": 0,
+    "percent": 84.3
+  },
+  "datasets": {
+    "calibration": {
+      "profiles": 30,
+      "subclasses": 9,
+      "nulls": 21,
+      "subclassPrecisionPercent": 100,
+      "total": 21,
+      "JUSTIFIED_NULL": 11,
+      "AMBIGUOUS_NULL": 6,
+      "CONSERVATIVE_NULL": 4,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 81,
+      "conservativeNullRatePercent": 19,
+      "incorrectNullRatePercent": 0,
+      "decisionQualityPercent": 86.7
+    },
+    "holdout": {
+      "profiles": 10,
+      "subclasses": 0,
+      "nulls": 10,
+      "subclassPrecisionPercent": null,
+      "total": 10,
+      "JUSTIFIED_NULL": 1,
+      "AMBIGUOUS_NULL": 7,
+      "CONSERVATIVE_NULL": 2,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 80,
+      "conservativeNullRatePercent": 20,
+      "incorrectNullRatePercent": 0,
+      "decisionQualityPercent": 80
+    },
+    "independent": {
+      "profiles": 30,
+      "subclasses": 12,
+      "nulls": 18,
+      "subclassPrecisionPercent": 91.7,
+      "total": 18,
+      "JUSTIFIED_NULL": 7,
+      "AMBIGUOUS_NULL": 7,
+      "CONSERVATIVE_NULL": 4,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 77.8,
+      "conservativeNullRatePercent": 22.2,
+      "incorrectNullRatePercent": 0,
+      "decisionQualityPercent": 83.3
+    }
+  },
+  "nullsByArchetype": {
+    "architect": {
+      "total": 7,
+      "JUSTIFIED_NULL": 2,
+      "AMBIGUOUS_NULL": 5,
+      "CONSERVATIVE_NULL": 0,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 100,
+      "conservativeNullRatePercent": 0,
+      "incorrectNullRatePercent": 0
+    },
+    "artificer": {
+      "total": 9,
+      "JUSTIFIED_NULL": 4,
+      "AMBIGUOUS_NULL": 3,
+      "CONSERVATIVE_NULL": 2,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 77.8,
+      "conservativeNullRatePercent": 22.2,
+      "incorrectNullRatePercent": 0
+    },
+    "illusionist": {
+      "total": 14,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 8,
+      "CONSERVATIVE_NULL": 3,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 78.6,
+      "conservativeNullRatePercent": 21.4,
+      "incorrectNullRatePercent": 0
+    },
+    "guardian": {
+      "total": 6,
+      "JUSTIFIED_NULL": 2,
+      "AMBIGUOUS_NULL": 3,
+      "CONSERVATIVE_NULL": 1,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 83.3,
+      "conservativeNullRatePercent": 16.7,
+      "incorrectNullRatePercent": 0
+    },
+    "chronomancer": {
+      "total": 13,
+      "JUSTIFIED_NULL": 8,
+      "AMBIGUOUS_NULL": 1,
+      "CONSERVATIVE_NULL": 4,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 69.2,
+      "conservativeNullRatePercent": 30.8,
+      "incorrectNullRatePercent": 0
+    }
+  },
+  "nullsByCoverage": {
+    "full": {
+      "total": 16,
+      "JUSTIFIED_NULL": 11,
+      "AMBIGUOUS_NULL": 4,
+      "CONSERVATIVE_NULL": 1,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 93.8,
+      "conservativeNullRatePercent": 6.3,
+      "incorrectNullRatePercent": 0
+    },
+    "partial-small": {
+      "total": 15,
+      "JUSTIFIED_NULL": 5,
+      "AMBIGUOUS_NULL": 5,
+      "CONSERVATIVE_NULL": 5,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 66.7,
+      "conservativeNullRatePercent": 33.3,
+      "incorrectNullRatePercent": 0
+    },
+    "partial-large": {
+      "total": 18,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 11,
+      "CONSERVATIVE_NULL": 4,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 77.8,
+      "conservativeNullRatePercent": 22.2,
+      "incorrectNullRatePercent": 0
+    }
+  },
+  "nullsByConfidence": {
+    "low": {
+      "total": 10,
+      "JUSTIFIED_NULL": 8,
+      "AMBIGUOUS_NULL": 1,
+      "CONSERVATIVE_NULL": 1,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 90,
+      "conservativeNullRatePercent": 10,
+      "incorrectNullRatePercent": 0
+    },
+    "medium": {
+      "total": 36,
+      "JUSTIFIED_NULL": 10,
+      "AMBIGUOUS_NULL": 17,
+      "CONSERVATIVE_NULL": 9,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 75,
+      "conservativeNullRatePercent": 25,
+      "incorrectNullRatePercent": 0
+    },
+    "high": {
+      "total": 3,
+      "JUSTIFIED_NULL": 1,
+      "AMBIGUOUS_NULL": 2,
+      "CONSERVATIVE_NULL": 0,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 100,
+      "conservativeNullRatePercent": 0,
+      "incorrectNullRatePercent": 0
+    }
+  },
+  "nullsByMargin": {
+    "0-2": {
+      "total": 8,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 5,
+      "CONSERVATIVE_NULL": 0,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 100,
+      "conservativeNullRatePercent": 0,
+      "incorrectNullRatePercent": 0
+    },
+    ">2-5": {
+      "total": 8,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 5,
+      "CONSERVATIVE_NULL": 0,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 100,
+      "conservativeNullRatePercent": 0,
+      "incorrectNullRatePercent": 0
+    },
+    ">5-8": {
+      "total": 6,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 3,
+      "CONSERVATIVE_NULL": 0,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 100,
+      "conservativeNullRatePercent": 0,
+      "incorrectNullRatePercent": 0
+    },
+    ">8-12": {
+      "total": 11,
+      "JUSTIFIED_NULL": 3,
+      "AMBIGUOUS_NULL": 5,
+      "CONSERVATIVE_NULL": 3,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 72.7,
+      "conservativeNullRatePercent": 27.3,
+      "incorrectNullRatePercent": 0
+    },
+    ">12": {
+      "total": 16,
+      "JUSTIFIED_NULL": 7,
+      "AMBIGUOUS_NULL": 2,
+      "CONSERVATIVE_NULL": 7,
+      "INCORRECT_NULL": 0,
+      "nullQualityPercent": 56.3,
+      "conservativeNullRatePercent": 43.8,
+      "incorrectNullRatePercent": 0
+    }
+  },
+  "conservativeGateDiagnostics": {
+    "BOUNDS": 9,
+    "CONFIDENCE": 1
+  },
+  "determinism": "70/70",
+  "semanticReplay": "70/70",
+  "requestsAdded": 0,
+  "performance": {
+    "engineP90Ms": 2.14,
+    "engineMaxMs": 9.57,
+    "optimized": false,
+    "runtimeCodeChanged": false
+  },
+  "decision": "SUBCLASS LOGIC ACCEPTABLE WITH CONSERVATIVE NULLS",
+  "calibrationCanClose": true
+}

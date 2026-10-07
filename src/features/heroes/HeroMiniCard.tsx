@@ -17,6 +17,8 @@ export function HeroMiniCard({ hero }: { hero: HeroSummary }) {
   const { language } = useUiStore();
   const t = getTranslation(language).heroesHall;
   const duel = getTranslation(language).duel;
+  const localized = language === "pt-BR" ? "pt" : "en";
+  const subclass = hero.subclassV2?.[localized] ?? hero.subclassName;
 
   return (
     <RPGPanel variant="standard" interactive className="flex flex-col items-center px-4 pb-5 pt-5 text-center">
@@ -37,9 +39,10 @@ export function HeroMiniCard({ hero }: { hero: HeroSummary }) {
         </span>
         <span className="truncate text-xs font-semibold text-amber-300/90">
           {hero.className}
-          {hero.subclassName ? ` / ${hero.subclassName}` : ""}
+          {subclass ? ` / ${subclass}` : ""}
         </span>
       </div>
+      {hero.evolutionV2 && <p className="mt-1 text-[10px] font-bold uppercase tracking-wide text-purple-200">{hero.evolutionV2[localized]}</p>}
 
       {hero.dominantLanguage ? (
         <div className="mt-1 flex max-w-full items-center justify-center gap-1.5 text-xs text-slate-400">

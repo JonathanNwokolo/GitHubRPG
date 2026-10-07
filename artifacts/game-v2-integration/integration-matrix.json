@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-10-07T23:08:00.000Z",
+  "engineVersion": "2.0-experimental-v24-evo",
+  "featureFlag": {
+    "name": "GAME_ENGINE_V2_UI_ENABLED",
+    "default": false,
+    "allowlist": "GAME_ENGINE_V2_UI_ALLOWLIST"
+  },
+  "states": [
+    {
+      "state": "v1-only",
+      "profileResponse": "V1",
+      "v2Visible": false,
+      "backgroundAction": "none",
+      "result": "PASS"
+    },
+    {
+      "state": "ready",
+      "profileResponse": "V1 base plus public V2 projection",
+      "v2Visible": true,
+      "backgroundAction": "none",
+      "result": "PASS"
+    },
+    {
+      "state": "stale",
+      "profileResponse": "V1 base plus stale public V2 projection",
+      "v2Visible": true,
+      "backgroundAction": "revalidate through after()",
+      "result": "PASS"
+    },
+    {
+      "state": "enriching",
+      "profileResponse": "V1",
+      "v2Visible": false,
+      "backgroundAction": "bounded enrichment through after()",
+      "result": "PASS"
+    },
+    {
+      "state": "partial",
+      "profileResponse": "V1 base plus granted V2 decisions only",
+      "v2Visible": true,
+      "backgroundAction": "none unless stale",
+      "result": "PASS"
+    },
+    {
+      "state": "unavailable",
+      "profileResponse": "V1",
+      "v2Visible": false,
+      "backgroundAction": "failure isolated",
+      "result": "PASS"
+    }
+  ],
+  "surfaces": {
+    "profile": "cache-first V2 enrichment",
+    "hall": "cache lookup only; no cold enrichment fan-out",
+    "duel": "V1 unchanged",
+    "chronicle": "V1 unchanged; no retroactive events",
+    "badge": "V1 unchanged; no cold V2",
+    "share": "V1 unchanged; no cold V2",
+    "metadata": "V1 unchanged; no cold V2"
+  },
+  "clientProjection": {
+    "rawEvidence": false,
+    "secretLockedRequirements": false,
+    "token": false,
+    "collectorInternals": false
+  },
+  "regression": {
+    "v1Balance": "12/12",
+    "v2Invariants": "46/46",
+    "semanticEquivalence": "70/70",
+    "determinism": "70/70"
+  }
+}

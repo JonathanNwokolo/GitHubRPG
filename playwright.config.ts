@@ -22,7 +22,11 @@ export default defineConfig({
     url: "http://localhost:3005",
     reuseExistingServer: false,
     // Production builds require an explicit data source; e2e always runs on the mock.
-    env: { GITHUB_DATA_SOURCE: "mock" },
+    env: {
+      GITHUB_DATA_SOURCE: "mock",
+      GAME_ENGINE_V2_UI_ENABLED: "true",
+      GAME_ENGINE_V2_UI_ALLOWLIST: "veteran-dev,polyglot-dev,popular-dev,empty-dev",
+    },
     timeout: 60000,
   },
 });

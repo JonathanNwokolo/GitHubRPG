@@ -11,6 +11,17 @@ import { getAvatarFrameForUsername } from "./avatarFrames";
 export const AVATAR_SLOT_RATIO = 0.6;
 const AVATAR_INSET_PERCENT = ((1 - AVATAR_SLOT_RATIO) / 2) * 100;
 
+/**
+ * How far the frame's artwork reaches below its slot, as a fraction of the slot (negative: it stops short).
+ * Frames are scaled to match the avatar window, so this differs per frame; layouts that hang something under
+ * the avatar use it to keep the same visible gap for every hero.
+ */
+export function getAvatarFrameBottomOverflow(username?: string | null): number {
+  const frame = getAvatarFrameForUsername(username);
+  const scale = AVATAR_SLOT_RATIO / frame.avatarRatio;
+  return (1 - scale) / 2 + scale * frame.visibleBottom - 1;
+}
+
 interface FramedAvatarProps {
   /** Picks the frame (deterministically). Without it the default frame is used. */
   username?: string;

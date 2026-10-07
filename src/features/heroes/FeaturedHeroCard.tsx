@@ -18,6 +18,8 @@ export function FeaturedHeroCard({ hero }: { hero: HeroSummary }) {
   const { language } = useUiStore();
   const t = getTranslation(language).heroesHall;
   const duel = getTranslation(language).duel;
+  const localized = language === "pt-BR" ? "pt" : "en";
+  const subclass = hero.subclassV2?.[localized] ?? hero.subclassName;
 
   return (
     <RPGPanel variant="legendary" interactive className="flex h-full flex-col px-6 pb-7 pt-8 sm:px-10 sm:pb-9 sm:pt-10">
@@ -50,12 +52,13 @@ export function FeaturedHeroCard({ hero }: { hero: HeroSummary }) {
             <RpgClassIcon classNameType={hero.className} />
           </span>
           <span className="font-bold uppercase tracking-wider text-amber-300">{hero.className}</span>
-          {hero.subclassName && (
+          {subclass && (
             <>
               <span className="text-slate-600" aria-hidden="true">&bull;</span>
-              <span className="font-medium text-slate-300">{hero.subclassName}</span>
+              <span className="font-medium text-slate-300">{subclass}</span>
             </>
           )}
+          {hero.evolutionV2 && <span className="font-semibold text-purple-200">{hero.evolutionV2[localized]}</span>}
         </div>
 
         <p className="mt-3 max-w-md text-xs italic leading-relaxed text-slate-300 sm:text-sm">
