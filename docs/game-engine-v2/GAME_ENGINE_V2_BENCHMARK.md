@@ -392,7 +392,7 @@ O holdout fechado foi repetido apenas depois dessa decisão: 0/10 subclasses, GO
 
 Determinismo da Etapa 3E: independent 30/30 e holdout 10/10. Request budget: REST P90 31, GraphQL P90 4, zero request de calibração. Uma evolução real (`evo-ancestral-forger`) apareceu somente como observação; nenhum gate de evolução, título ou conquista foi calibrado.
 
-Relatórios: `GAME_ENGINE_V2_GENERALIZATION_MATRIX_V24.md`, `GENERALIZATION_ANALYSIS_G0.md`, `GAME_ENGINE_V2_GENERALIZATION_V24.md`. Artefatos: `artifacts/game-v2-generalization/`.
+Relatórios: `GAME_ENGINE_V2_GENERALIZATION_MATRIX_V24.md`, `docs/research/GENERALIZATION_ANALYSIS_G0.md`, `GAME_ENGINE_V2_GENERALIZATION_V24.md`. Artefatos: `artifacts/game-v2-generalization/`.
 
 ---
 

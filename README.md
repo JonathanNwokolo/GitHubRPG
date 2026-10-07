@@ -7,7 +7,7 @@ Transforma a jornada **pública** de uma pessoa no GitHub em uma ficha de person
 ## Estado do projeto
 
 - **Frontend e Game Engine V1.1 prontos**, com testes unitários e e2e.
-- **Duas fontes de dados**, escolhidas no servidor por `GITHUB_DATA_SOURCE`: `mock` (padrão em desenvolvimento; perfis de demonstração determinísticos, a interface avisa "Dados de demonstração") e `github` (`GitHubApiDataSource`: perfis **públicos** reais via REST + GraphQL, com cache, timeout e tratamento de rate limit). Em produção a escolha é obrigatória. Veja [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md), [ENGINE_ARCHITECTURE.md](ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
+- **Duas fontes de dados**, escolhidas no servidor por `GITHUB_DATA_SOURCE`: `mock` (padrão em desenvolvimento; perfis de demonstração determinísticos, a interface avisa "Dados de demonstração") e `github` (`GitHubApiDataSource`: perfis **públicos** reais via REST + GraphQL, com cache, timeout e tratamento de rate limit). Em produção a escolha é obrigatória. Veja [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md), [ENGINE_ARCHITECTURE.md](docs/architecture/ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
 - Projeto **open source** sob licença MIT. Contribuições e ideias são bem-vindas (veja abaixo).
 
 ## Como rodar
@@ -31,9 +31,9 @@ Sem login e sem chave de API (fonte `mock`): digite um usuário na página inici
 | `npm run typecheck` | TypeScript sem emitir arquivos |
 | `npm test` | Testes unitários e de integração (Vitest) |
 | `npm run test:e2e` | Testes e2e (Playwright). Rode `npm run build` antes: eles sobem o app com `next start` |
-| `npm run balance:review` | Regera [BALANCE_REVIEW.md](BALANCE_REVIEW.md) e `balance-snapshot.json` a partir do engine real |
+| `npm run balance:review` | Regera [BALANCE_REVIEW.md](docs/game-engine-v1/BALANCE_REVIEW.md) e `balance-snapshot.json` a partir do engine real |
 | `npm run github:smoke -- <usuario>` | Consulta a API real do GitHub e imprime um resumo seguro (opcional, fora da suíte de testes e do CI) |
-| `npm run balance:compare` | Compara `balance-snapshot-v1.json` com o snapshot atual em [BALANCE_V1_VS_V1_1.md](BALANCE_V1_VS_V1_1.md) |
+| `npm run balance:compare` | Compara `balance-snapshot-v1.json` com o snapshot atual em [BALANCE_V1_VS_V1_1.md](docs/game-engine-v1/BALANCE_V1_VS_V1_1.md) |
 
 Na primeira vez que rodar os e2e, instale o navegador: `npx playwright install chromium`.
 
@@ -105,7 +105,7 @@ GitHubDataSource  →  validação (Zod)  →  normalização  →  Game Engine 
 - `src/features/`, `src/components/`, `src/design-system/`: interface (Next.js App Router, Tailwind, tema pixel art). Nenhuma fórmula de jogo fica na UI.
 - `src/i18n/`: textos da interface em pt-BR e en.
 
-As regras do jogo (XP, atributos, classes, skills, conquistas, títulos) estão descritas em [GAME_BALANCE.md](GAME_BALANCE.md). Em caso de divergência, o código vence.
+As regras do jogo (XP, atributos, classes, skills, conquistas, títulos) estão descritas em [GAME_BALANCE.md](docs/architecture/GAME_BALANCE.md). Em caso de divergência, o código vence.
 
 ## Balanceamento
 
@@ -128,7 +128,7 @@ Algumas regras do projeto:
 - **O engine é puro.** Nada em `src/game/` importa `react`, `next` ou depende do navegador (há um teste que garante isso).
 - **Sem fórmulas na UI.** A interface só mostra o que o engine devolve.
 - **Dados honestos.** Se um dado não puder ser obtido por completo, ele é marcado como parcial ou indisponível e a UI não afirma o que falta.
-- **Decisões de arquitetura** ficam registradas em [DECISIONS.md](DECISIONS.md).
+- **Decisões de arquitetura** ficam registradas em [DECISIONS.md](docs/architecture/DECISIONS.md).
 
 Boas primeiras contribuições: o `GitHubApiDataSource`, novas linguagens/classes, novos casos para as fixtures de balanceamento e traduções.
 

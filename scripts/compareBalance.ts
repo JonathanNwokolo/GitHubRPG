@@ -18,7 +18,7 @@ import { COMBINATION_TITLES } from "@/game/titles/titleList";
 const ROOT = resolve(__dirname, "..");
 const BASELINE = resolve(ROOT, "balance-snapshot-v1.json");
 const CURRENT = resolve(ROOT, "balance-snapshot.json");
-const OUTPUT = resolve(ROOT, "BALANCE_V1_VS_V1_1.md");
+const OUTPUT = resolve(ROOT, "docs", "game-engine-v1", "BALANCE_V1_VS_V1_1.md");
 
 /** Order of the review (the 14 profiles of V1). Anything else in the current snapshot is "new". */
 const PROFILE_ORDER = [

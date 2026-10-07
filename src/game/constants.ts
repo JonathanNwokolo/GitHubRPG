@@ -1,6 +1,6 @@
 /**
  * Every balancing number of the Game Engine lives here.
- * Documented in GAME_BALANCE.md. Reference values are balancing anchors,
+ * Documented in docs/architecture/GAME_BALANCE.md. Reference values are balancing anchors,
  * NOT real-world maximums.
  */
 

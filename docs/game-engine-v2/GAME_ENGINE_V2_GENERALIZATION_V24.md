@@ -82,7 +82,7 @@ Unsafe: 7
 Subclass: 0  
 Blocked by other gate after being safe: 0
 
-Coverage partial não bloqueou sozinha. Nos sete casos, o intervalo permitia matematicamente que outro arquétipo invertesse o vencedor; portanto o null preserva a regra definida. A tabela completa está em `GENERALIZATION_ANALYSIS_G0.md`.
+Coverage partial não bloqueou sozinha. Nos sete casos, o intervalo permitia matematicamente que outro arquétipo invertesse o vencedor; portanto o null preserva a regra definida. A tabela completa está em `docs/research/GENERALIZATION_ANALYSIS_G0.md`.
 
 ## Arquiteto Analysis
 
@@ -265,7 +265,7 @@ O locked holdout continua em 0/10 subclasses e 80% GOOD+ACCEPTABLE, abaixo da re
 ## Arquivos alterados
 
 - `GAME_ENGINE_V2_GENERALIZATION_MATRIX_V24.md`
-- `GENERALIZATION_ANALYSIS_G0.md`
+- `docs/research/GENERALIZATION_ANALYSIS_G0.md`
 - `GAME_ENGINE_V2_GENERALIZATION_V24.md`
 - `GAME_ENGINE_V2_BENCHMARK.md`
 - `scripts/gameV2Stage3E.ts`

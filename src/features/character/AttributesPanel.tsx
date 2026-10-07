@@ -68,10 +68,10 @@ export const AttributesPanel: React.FC<AttributesPanelProps> = ({ stats }) => {
   ];
 
   return (
-    <section aria-labelledby="attributes-title" className="space-y-6">
+    <section aria-labelledby="attributes-title" className="space-y-8">
       <ProfileSectionHeader id="attributes-title" title={t.character.attributesTitle} subtitle={t.character.scale} />
 
-      <div className="mx-auto max-w-4xl space-y-1 sm:space-y-3.5">
+      <div className="mx-auto max-w-4xl space-y-2 px-2 sm:space-y-3.5 sm:px-4">
         {statItems.map((stat) => (
           <ProfileAttributeRail
             key={stat.key}

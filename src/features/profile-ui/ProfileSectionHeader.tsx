@@ -52,13 +52,13 @@ export function ProfileSectionHeader({
         width={700}
         height={220}
         unoptimized
-        className="mx-auto -mb-2 block h-auto w-[132px] sm:w-[164px]"
+        className="mx-auto mb-2 block h-auto w-[132px] sm:mb-3 sm:w-[164px]"
       />
-      <h2 id={id} className="pf-section-title text-xs sm:text-base">
+      <h2 id={id} className="pf-section-title text-xs leading-snug sm:text-base">
         {title}
       </h2>
       {subtitle && (
-        <p className="mx-auto mt-2 max-w-xl font-sans text-xs pf-muted sm:text-sm">{subtitle}</p>
+        <p className="mx-auto mt-2.5 max-w-xl text-balance font-sans text-xs leading-relaxed pf-muted sm:text-sm">{subtitle}</p>
       )}
     </header>
   );

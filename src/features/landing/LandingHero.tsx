@@ -170,7 +170,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
   };
 
   return (
-    <section id="home" aria-labelledby="landing-title" className="rpg-portal relative w-full overflow-hidden px-4 pb-10 pt-9 text-center sm:px-6 sm:pb-12 sm:pt-12 lg:pt-14">
+    <section id="home" aria-labelledby="landing-title" className="rpg-portal relative w-full overflow-hidden px-4 pb-10 pt-8 text-center sm:px-6 sm:pb-12 sm:pt-11 lg:pt-12">
       <span aria-hidden="true" className="rpg-portal__glow" />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
         <div className="inline-flex min-h-8 items-center gap-2 border border-[#6b5226] bg-black/35 px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-amber-200 shadow-pixel sm:text-xs">
@@ -178,21 +178,21 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
           <span>{t.landing.badge}</span>
         </div>
 
-        <RPGSectionOrnament width={104} className="mt-3 opacity-75" />
+        <RPGSectionOrnament width={104} className="mt-4 opacity-75 sm:mt-5" />
 
-        <div className="max-w-4xl">
+        <div className="mt-3 max-w-4xl sm:mt-4">
           <h1 id="landing-title" className="font-pixel text-3xl leading-tight tracking-wide text-rpg-gold [text-shadow:0_3px_0_#3a2410,0_0_28px_rgba(240,164,58,0.2)] sm:text-5xl lg:text-6xl">
             {t.landing.title}
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-balance font-sans text-xl font-semibold leading-snug text-slate-100 sm:text-2xl lg:text-[1.75rem]">
+          <p className="mx-auto mt-4 max-w-3xl text-balance font-sans text-xl font-semibold leading-snug text-slate-100 sm:text-2xl lg:text-[1.75rem]">
             {t.landing.headline}
           </p>
-          <p className="mx-auto mt-3 max-w-2xl font-sans text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-balance font-sans text-sm leading-relaxed text-slate-300 sm:text-base">
             {t.landing.subtitle}
           </p>
         </div>
 
-        <form onSubmit={onSubmit} className="mt-7 w-full max-w-3xl" noValidate>
+        <form onSubmit={onSubmit} className="mt-8 w-full max-w-3xl" noValidate>
           <label htmlFor="hero-profile-input" className="sr-only">{t.landing.searchLabel}</label>
           <div className="rpg-summon-form flex flex-col gap-3 p-2.5 sm:flex-row sm:items-stretch">
             <div className="min-w-0 flex-1 text-left">
@@ -211,7 +211,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
                 spellCheck="false"
                 aria-describedby="hero-profile-feedback"
                 aria-invalid={Boolean(errorMessage)}
-                className="min-h-14 border-[#5b4528] bg-[#090a0f]/95 pl-12 text-base shadow-[inset_0_2px_10px_rgba(0,0,0,0.75)] placeholder:text-slate-500 focus-visible:border-rpg-gold focus-visible:ring-rpg-gold"
+                className="min-h-[52px] border-[#5b4528] bg-[#090a0f]/95 pl-12 text-base shadow-[inset_0_2px_10px_rgba(0,0,0,0.75)] placeholder:text-slate-500 focus-visible:border-rpg-gold focus-visible:ring-rpg-gold"
               />
             </div>
             <RPGButton
@@ -225,7 +225,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
               <span>{isLoading ? t.landing.searchLoading : t.landing.searchButton}</span>
             </RPGButton>
           </div>
-          <div id="hero-profile-feedback" className="min-h-7 pt-2" aria-live="polite">
+          <div id="hero-profile-feedback" className="min-h-6 pt-2" aria-live="polite">
             {errorMessage ? (
               <div role="alert" className="mx-auto flex max-w-2xl items-center justify-center gap-2 text-left text-xs text-red-300 sm:text-sm">
                 <RpgAlert className="h-4 w-4 flex-shrink-0" />
@@ -235,7 +235,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
           </div>
         </form>
 
-        <nav aria-label={t.landing.secondaryActions} className="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+        <nav aria-label={t.landing.secondaryActions} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
           <Link href="/duel" className="inline-flex min-h-11 items-center gap-2 px-2 text-slate-300 transition-colors hover:text-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">
             <RpgSwords className="h-4 w-4 text-red-400" />
             <span>{t.landing.duelAction}</span>
@@ -246,7 +246,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
           </a>
         </nav>
 
-        <RPGDivider maxWidth={520} className="mt-5 opacity-70" />
+        <RPGDivider maxWidth={520} className="mt-3 opacity-70" />
 
         {showDemoPersonas && (
           <div className="mt-9 w-full space-y-6 border-t border-rpg-border/70 pt-8">

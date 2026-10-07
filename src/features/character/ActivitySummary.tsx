@@ -59,7 +59,7 @@ export const ActivitySummary: React.FC<ActivitySummaryProps> = ({ summary }) => 
   ];
 
   return (
-    <section aria-labelledby="summary-title" className="space-y-6">
+    <section aria-labelledby="summary-title" className="space-y-8">
       <ProfileSectionHeader id="summary-title" title={t.character.activitySummaryTitle} />
 
       <ul className="pf-tiles mx-auto grid max-w-sm grid-cols-2 gap-3 sm:max-w-none sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">

@@ -20,7 +20,7 @@ RPGCharacter                src/game/types/index.ts
 Frontend (só apresenta)     src/app, src/features, src/components
 ```
 
-`src/data/loadCharacter.ts` encadeia as 5 etapas e roda **no servidor**, dentro da rota `GET /api/characters/[username]`; o navegador só chama essa rota (`src/data/api/fetchCharacter.ts`) e apresenta o `RPGCharacter`. `createDataSource()` ([src/data/datasource/index.ts](src/data/datasource/index.ts)) é o **único** lugar que escolhe a fonte (`GITHUB_DATA_SOURCE`: `mock` ou `github`, ver [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md)).
+`src/data/loadCharacter.ts` encadeia as 5 etapas e roda **no servidor**, dentro da rota `GET /api/characters/[username]`; o navegador só chama essa rota (`src/data/api/fetchCharacter.ts`) e apresenta o `RPGCharacter`. `createDataSource()` ([src/data/datasource/index.ts](src/data/datasource/index.ts)) é o **único** lugar que escolhe a fonte (`GITHUB_DATA_SOURCE`: `mock` ou `github`, ver [GITHUB_API_INTEGRATION.md](../../GITHUB_API_INTEGRATION.md)).
 
 ## Arquivos
 
@@ -98,4 +98,4 @@ Complexidade após a normalização: **O(linguagens + conquistas + títulos)**. 
 
 - **Servidor apenas:** a rota `/api/characters/[username]` roda o pipeline; o navegador nunca vê token nem fala com o GitHub. `createDataSource()` e `src/data/github/` não podem ser importados por código de cliente (teste arquitetural).
 - **Cache, deduplicação, timeout, paginação, concorrência e rate limit** vivem na camada da fonte de dados, não no engine (que continua puro).
-- Detalhes, cobertura por métrica, custo de requisições e limitações: [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md).
+- Detalhes, cobertura por métrica, custo de requisições e limitações: [GITHUB_API_INTEGRATION.md](../../GITHUB_API_INTEGRATION.md).

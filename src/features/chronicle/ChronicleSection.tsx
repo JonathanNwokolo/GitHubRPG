@@ -41,7 +41,7 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, o
   };
 
   return (
-    <section id="chronicle" aria-labelledby="chronicle-title" className="space-y-6">
+    <section id="chronicle" aria-labelledby="chronicle-title" className="space-y-8">
       <ProfileSectionHeader id="chronicle-title" title={t.title} subtitle={t.subtitle} />
 
       {chronicle.coverage !== "full" && (
@@ -63,7 +63,7 @@ export const ChronicleSection: React.FC<ChronicleSectionProps> = ({ chronicle, o
         <ProfileDivider maxWidth={560} />
       </div>
 
-      <div id={regionId} className="mx-auto max-w-4xl">
+      <div id={regionId} className={clsx("mx-auto", expanded ? "max-w-4xl" : "max-w-2xl")}>
         {expanded ? (
           <ChronicleTimelineFull chronicle={chronicle} onShareChapter={onShareChapter} />
         ) : (

@@ -38,7 +38,7 @@ import type { AchievementProgress, DeveloperProfile, Metric, MetricUnit, Rarity,
  * Everything after ANALYSIS_MARKER in the existing file is hand-written analysis and is preserved.
  */
 
-const OUTPUT = resolve(__dirname, "..", "BALANCE_REVIEW.md");
+const OUTPUT = resolve(__dirname, "..", "docs", "game-engine-v1", "BALANCE_REVIEW.md");
 const SNAPSHOT_OUTPUT = resolve(__dirname, "..", "balance-snapshot.json");
 const SNAPSHOT_ENGINE = "v1.1";
 const ANALYSIS_MARKER = "<!-- ANALYSIS: hand-written below, preserved by the generator -->";

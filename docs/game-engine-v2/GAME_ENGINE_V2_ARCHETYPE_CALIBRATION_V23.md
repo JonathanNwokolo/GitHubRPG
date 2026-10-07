@@ -12,7 +12,7 @@ Testar se os sinais dos cinco arquétipos distinguem práticas técnicas, sem au
 
 ## R0 — Archetype Signal Analysis
 
-O relatório completo está em `ARCHETYPE_SIGNAL_ANALYSIS_R0.md`; a matriz de 30 perfis, incluindo classe, coverage, confidence, maturity, schools, artifacts, scores, top1/top2, margem e decomposição, está em `artifacts/game-v2-benchmark/benchmark-v23-r0-analysis.json`.
+O relatório completo está em `docs/research/ARCHETYPE_SIGNAL_ANALYSIS_R0.md`; a matriz de 30 perfis, incluindo classe, coverage, confidence, maturity, schools, artifacts, scores, top1/top2, margem e decomposição, está em `artifacts/game-v2-benchmark/benchmark-v23-r0-analysis.json`.
 
 ### Score distribution
 

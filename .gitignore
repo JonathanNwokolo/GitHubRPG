@@ -35,7 +35,7 @@ next-env.d.ts
 # local-only notes and delivery reports (not part of the public repo)
 /PLAN.md
 /FINAL_REPORT.md
-/GAME_ENGINE_REPORT.md
+/docs/game-engine-v1/GAME_ENGINE_REPORT.md
 /GITHUB_API_REPORT.md
 /PRODUCTION_READINESS.md
 

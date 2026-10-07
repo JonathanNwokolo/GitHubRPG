@@ -17,7 +17,7 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
   const t = getTranslation(language);
 
   return (
-    <section aria-labelledby="milestones-title" className="space-y-7">
+    <section aria-labelledby="milestones-title" className="space-y-8">
       <ProfileSectionHeader id="milestones-title" title={t.milestones.title} subtitle={t.milestones.subtitle} />
 
       {milestones.length === 0 ? (
@@ -26,8 +26,8 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
         <ul className="grid grid-cols-1 gap-x-6 gap-y-7 px-3.5 md:grid-cols-3">
           {milestones.map((milestone) => (
             <ProfileMilestoneCard key={milestone.id} className="flex flex-col gap-3">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="min-w-0 font-sans text-base font-extrabold leading-snug text-amber-50">{milestone.name}</h3>
+              <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+                <h3 className="min-w-0 break-words font-sans text-base font-extrabold leading-snug text-amber-50">{milestone.name}</h3>
                 <Badge variant={milestone.rarity} size="sm" className="shrink-0">
                   {t.rarity[milestone.rarity]}
                 </Badge>
