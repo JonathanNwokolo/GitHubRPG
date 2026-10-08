@@ -455,6 +455,10 @@ export const ptBR = {
     noArtifacts: "Nenhum artefato recorrente foi identificado na parte analisada.",
     partial: "Algumas evidências desta jornada ainda podem estar incompletas.",
     enriching: "Analisando especializações…",
+    timedOut: "A análise demorou mais que o esperado. A ficha base continua disponível.",
+    rateLimited: "O GitHub pediu uma pausa temporária. A ficha base continua disponível.",
+    unavailable: "A especialização não está disponível agora. A ficha base continua disponível.",
+    retry: "Tentar novamente",
     secretHidden: "O requisito permanece oculto até esta conquista ser desbloqueada.",
     lockedTitles: "Títulos a descobrir",
     affinityLevels: {

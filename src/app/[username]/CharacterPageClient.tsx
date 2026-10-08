@@ -121,7 +121,16 @@ export default function CharacterPage({
         />
 
         {livePresentation.v2Enabled && livePresentation.delivery === "enriching" && (
-          <p role="status" className="text-center font-sans text-xs text-slate-400">{t.gameV2.enriching}</p>
+          <div className="text-center font-sans text-xs text-slate-400" role="status">
+            {livePresentation.pollStatus === "polling" ? t.gameV2.enriching : (
+              <>
+                <span>{livePresentation.pollStatus === "rate_limited" ? t.gameV2.rateLimited : livePresentation.pollStatus === "timed_out" ? t.gameV2.timedOut : t.gameV2.unavailable}</span>
+                {(livePresentation.pollStatus === "rate_limited" || livePresentation.pollStatus === "timed_out" || livePresentation.pollStatus === "failed") && (
+                  <button type="button" onClick={livePresentation.retry} className="ml-2 underline underline-offset-2 hover:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold rounded">{t.gameV2.retry}</button>
+                )}
+              </>
+            )}
+          </div>
         )}
 
         <TabPanel idPrefix={CHARACTER_TABS_ID_PREFIX} tabId={activeTab} className="min-h-[400px] pt-4">

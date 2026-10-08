@@ -37,6 +37,8 @@ export interface GitHubEvidenceCollectorV21Options {
   timeoutMs?: number;
   treeConcurrency?: number;
   signal?: AbortSignal;
+  /** Observation only: reporting must not change collector decisions or limits. */
+  onError?: (error: unknown, phase: "repositories" | "trees" | "manifests") => void;
 }
 
 const PRIMARY = /(^|\/)(package\.json|requirements[^/]*\.txt|pyproject\.toml|Gemfile|composer\.json|pom\.xml|build\.gradle(?:\.kts)?|[^/]+\.csproj|pubspec\.yaml)$/i;
@@ -161,7 +163,8 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
     accounting.rest++;
     const response = await requestJson(fetchImpl, `https://api.github.com/users/${encodeURIComponent(username)}/repos?type=owner&sort=pushed&direction=desc&per_page=100`, { headers: apiHeaders(options.token) }, timeoutMs, options.signal);
     listed = response.body; updateRateLimit(response.response, accounting);
-  } catch {
+  } catch (error) {
+    options.onError?.(error, "repositories");
     return normalizeRepositoryEvidence({ repositories: [], coverage: { coverage: "unavailable", eligible: 0, examined: 0, failed: 1, omittedByBudget: 0, reposCandidates: 0, gap: "large" }, requests: accounting });
   }
   if (!Array.isArray(listed)) throw new Error("github_v21_repository_list_invalid");
@@ -193,7 +196,8 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
       const candidates = discoverManifestCandidates(snapshot.items);
       const plan = selectManifestCandidates(candidates);
       return { repo, branch, snapshot, ...plan };
-    } catch {
+    } catch (error) {
+      options.onError?.(error, "trees");
       failed++;
       return { repo, branch, snapshot: null, selected: [] as ManifestCandidate[], skipped: [] as ManifestCandidate[], projects: [] as ProjectEvidence[] };
     }
@@ -222,14 +226,15 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
         const values = await fetchGraphqlBatch(fetchImpl, username, batch, options.token!, accounting, timeoutMs, options.signal);
         for (const [key, value] of values) { content.set(key, value); options.manifestCache?.set(key, value); }
         for (const target of batch) if (!values.has(createManifestCacheKey(target.repo.id, target.candidate.path, target.candidate.blobSha))) failed++;
-      } catch {
+      } catch (error) {
+        options.onError?.(error, "manifests");
         for (const target of batch) {
           if (accounting.rest >= V2_BALANCE.maxManifestRequests) { failed++; continue; }
           try {
             const value = await fetchManifestRest(fetchImpl, target.candidate, options.token, accounting, timeoutMs, options.signal);
             const key = createManifestCacheKey(target.repo.id, target.candidate.path, target.candidate.blobSha);
             content.set(key, value); options.manifestCache?.set(key, value);
-          } catch { failed++; }
+          } catch (error) { options.onError?.(error, "manifests"); failed++; }
         }
       }
     });
@@ -240,7 +245,7 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
         const value = await fetchManifestRest(fetchImpl, target.candidate, undefined, accounting, timeoutMs, options.signal);
         const key = createManifestCacheKey(target.repo.id, target.candidate.path, target.candidate.blobSha);
         content.set(key, value); options.manifestCache?.set(key, value);
-      } catch { failed++; }
+      } catch (error) { options.onError?.(error, "manifests"); failed++; }
     });
   }
   const manifestMs = performance.now() - manifestStarted;

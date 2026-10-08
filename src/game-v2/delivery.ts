@@ -15,6 +15,7 @@ import { collectGitHubEvidenceV21, type GitHubEvidenceCollectorV21Options, type 
 import { createRPGCharacterV2 } from "./engine";
 import type { DeveloperProfile } from "@/game/types";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "./types";
+import { classifyV2Error, emitV2Telemetry } from "./telemetry";
 
 export type V2DeliveryState = "ready" | "stale" | "enriching" | "partial" | "unavailable";
 export type V2DeliverySource = "l1" | "l2" | "fresh-enrichment" | "fallback";
@@ -62,7 +63,11 @@ export interface V2DeliveryServiceOptions {
   onMetric?: (name: MetricName, value: number) => void;
 }
 
-export interface V2EnrichmentInput { profile: DeveloperProfile; sourceFingerprint: string }
+export interface V2EnrichmentInput {
+  profile: DeveloperProfile;
+  sourceFingerprint: string;
+  telemetry?: { correlationId: string; subjectId: string; baseDurationMs?: number };
+}
 export type V2BackgroundScheduler = (task: Promise<void>) => void;
 
 const DEFAULT_POLICY: V2DeliveryCachePolicy = {
@@ -143,15 +148,21 @@ export class V2DeliveryService {
 
   async lookup(input: V2EnrichmentInput): Promise<V2DeliveryResult> {
     const started = performance.now();
+    this.emit(input, "v2_lookup_started");
     const hit = await this.safeGet(this.characterCache, createCharacterCacheKey(this.identity(input)));
     const elapsed = performance.now() - started;
     this.recordDuration(elapsed);
     if (!hit) {
       this.record("cacheMiss");
+      this.emit(input, "v2_cache_miss", { cache_source: "miss", duration_ms: Math.round(elapsed) });
       return { state: "enriching", character: null, cache: "miss", source: "fallback", durationMs: Math.round(elapsed) };
     }
     this.record(hit.source === "l2" ? "cacheL2Hit" : "cacheL1Hit");
     if (hit.state === "stale") this.record("staleServed");
+    this.emit(input, hit.state === "stale" ? "v2_stale_served" : "v2_cache_hit", {
+      cache_source: hit.state === "stale" ? "stale" : hit.source ?? "l1",
+      duration_ms: Math.round(elapsed),
+    });
     return {
       state: hit.state === "stale" ? "stale" : stateFor(hit.value),
       character: hit.value,
@@ -169,11 +180,22 @@ export class V2DeliveryService {
 
   private scheduleBackground(input: V2EnrichmentInput, schedule: V2BackgroundScheduler): boolean {
     const key = createCharacterCacheKey(this.identity(input));
-    if (this.background.has(key)) return false;
+    if (this.background.has(key)) {
+      this.emit(input, "v2_enrichment_reused", { cache_source: "miss" });
+      return false;
+    }
     this.record("enrichmentStarted");
+    this.emit(input, "v2_enrichment_started", { cache_source: "miss" });
     const task = this.enrich(input)
-      .then(() => { this.record("enrichmentCompleted"); })
-      .catch((error: unknown) => { this.record(error instanceof V2EnrichmentAbortedError ? "enrichmentAborted" : "enrichmentFailed"); })
+      .then((result) => {
+        this.record("enrichmentCompleted");
+        this.emit(input, "v2_enrichment_finished", { result: result.state, total_ms: result.durationMs });
+      })
+      .catch((error: unknown) => {
+        const errorKind = classifyV2Error(error);
+        this.record(error instanceof V2EnrichmentAbortedError ? "enrichmentAborted" : "enrichmentFailed");
+        this.emit(input, errorKind === "timeout" ? "v2_timeout" : errorKind === "github_rate_limit" ? "v2_rate_limited" : "v2_enrichment_failed", { error_kind: errorKind });
+      })
       .finally(() => { this.background.delete(key); });
     this.background.set(key, task);
     schedule(task);
@@ -222,6 +244,9 @@ export class V2DeliveryService {
   private async build(input: V2EnrichmentInput, identity: EvidenceCacheIdentity, characterKey: string, signal: AbortSignal): Promise<RPGCharacterV2> {
     const evidenceKey = createEvidenceCacheKey(identity);
     const evidenceHit = await this.safeGet(this.evidenceCache, evidenceKey);
+    const collectorStarted = performance.now();
+    if (evidenceHit?.state !== "fresh") this.emit(input, "v2_collector_started");
+    let collectorErrorReported = false;
     const evidence = evidenceHit?.state === "fresh" ? evidenceHit.value : await this.collector(input.profile.username, {
       ...this.collectorOptions,
       referenceDate: input.profile.referenceDate,
@@ -229,12 +254,42 @@ export class V2DeliveryService {
       treeCache: this.treeCache,
       manifestCache: this.manifestCache,
       signal,
+      onError: (error, phase) => {
+        if (collectorErrorReported) return;
+        collectorErrorReported = true;
+        const errorKind = classifyV2Error(error);
+        this.emit(input, errorKind === "github_rate_limit" ? "v2_rate_limited" : errorKind === "timeout" ? "v2_timeout" : "v2_collector_error", { error_kind: errorKind, phase });
+      },
+    });
+    if (evidenceHit?.state !== "fresh") this.emit(input, "v2_collector_finished", {
+      duration_ms: Math.round(performance.now() - collectorStarted),
+      repo_selection_ms: evidence.requests.timingsMs?.repositorySelection ?? null,
+      trees_ms: evidence.requests.timingsMs?.treeDiscovery ?? null,
+      manifests_ms: evidence.requests.timingsMs?.manifestFetch ?? null,
+      normalization_ms: evidence.requests.timingsMs?.parsing ?? null,
+      rest_requests: evidence.requests.rest,
+      graphql_requests: evidence.requests.graphql,
+      tree_requests: evidence.requests.treeRequests ?? 0,
+      manifest_requests: evidence.requests.manifestRequests ?? 0,
+      fallback_rest_requests: evidence.requests.fallbackRequests ?? 0,
     });
     if (signal.aborted) throw new V2EnrichmentAbortedError();
     if ((!evidenceHit || evidenceHit.state === "stale") && evidence.coverage.coverage !== "unavailable") {
       await this.safeSet(this.evidenceCache, evidenceKey, evidence, { ttlMs: this.policy.evidenceTtlMs, staleTtlMs: this.policy.evidenceStaleTtlMs });
     }
+    const scoringStarted = performance.now();
     const character = createRPGCharacterV2({ profile: input.profile, evidence });
+    this.emit(input, "v2_enrichment_summary", {
+      result: stateFor(character),
+      base_ms: input.telemetry?.baseDurationMs ?? null,
+      scoring_ms: Math.round(performance.now() - scoringStarted),
+      trees_ms: evidence.requests.timingsMs?.treeDiscovery ?? null,
+      manifests_ms: evidence.requests.timingsMs?.manifestFetch ?? null,
+      rest_requests: evidence.requests.rest,
+      graphql_requests: evidence.requests.graphql,
+      cache_source: evidenceHit?.state === "fresh" ? "l1" : "miss",
+      timed_out: false,
+    });
     if (signal.aborted) throw new V2EnrichmentAbortedError();
     if (evidence.coverage.coverage !== "unavailable") {
       await this.safeSet(this.characterCache, characterKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs });
@@ -254,4 +309,9 @@ export class V2DeliveryService {
   get backgroundCount(): number { return this.background.size; }
   get activeEnrichmentCount(): number { return this.activeEnrichments; }
   getMetrics(): V2DeliveryMetrics { return { ...this.metrics, durationMs: [...this.metrics.durationMs] }; }
+
+  private emit(input: V2EnrichmentInput, event: string, fields: Record<string, string | number | boolean | null> = {}): void {
+    if (!input.telemetry) return;
+    emitV2Telemetry({ event, correlation_id: input.telemetry.correlationId, subject_id: input.telemetry.subjectId, ...fields });
+  }
 }
