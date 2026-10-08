@@ -8,6 +8,7 @@ import { parseGitHubUsername } from "@/data/github/username";
 import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import { ENGINE_VERSION, SCHEMA_VERSION } from "@/game-v2/constants";
+import type { V2DeliveryResult, V2EnrichmentInput } from "@/game-v2/delivery";
 import { createProfileFingerprint, getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
 import { projectRPGCharacterV2Public } from "@/game-v2/publicProjection";
 import { V2_POLL_CONTRACT_VERSION } from "@/game-v2/pollContract";
@@ -20,6 +21,32 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
 interface RouteContext { params: Promise<{ username: string }> }
+
+function resultResponse(result: V2DeliveryResult) {
+  const status = result.state === "enriching" ? 202 : 200;
+  return NextResponse.json({
+    contractVersion: V2_POLL_CONTRACT_VERSION,
+    engineVersion: ENGINE_VERSION,
+    schemaVersion: SCHEMA_VERSION,
+    state: result.state,
+    terminal: result.state !== "enriching" && result.state !== "stale",
+    source: result.source,
+    ...(result.character ? {
+      character: projectRPGCharacterV2Public(result.character),
+      coverage: result.character.explanation.subclass.coverage,
+    } : {}),
+    stale: result.state === "stale",
+    enrichmentStarted: result.enrichmentStarted ?? false,
+    timings: { lookupMs: result.durationMs },
+  }, {
+    status,
+    headers: {
+      "Cache-Control": "no-store",
+      "X-GitHubRPG-V2-State": result.state,
+      "X-GitHubRPG-V2-Cache": result.source,
+    },
+  });
+}
 
 export async function GET(request: Request, context: RouteContext) {
   const requestStarted = performance.now();
@@ -40,18 +67,46 @@ export async function GET(request: Request, context: RouteContext) {
       emitV2Telemetry({ event: pollAttempt === 1 ? "v2_poll_started" : "v2_poll_attempt", correlation_id: correlationId, subject_id: subjectId, attempt: pollAttempt });
     }
 
-    // The normal V1 source remains authoritative for existence/profile data. V2 enrichment is separate.
-    const baseStarted = performance.now();
-    const source = createDataSource();
-    const raw = validateRawGitHubData(await source.getProfile(username, { protection }));
-    const profile = normalizeDeveloperProfile(raw);
-    const baseDurationMs = Math.round(performance.now() - baseStarted);
-    const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
-    emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0, ...summarizeGraphqlCost(baseReport) });
+    const service = getExperimentalV2DeliveryService();
+    const loadBase = async () => {
+      const baseStarted = performance.now();
+      const source = createDataSource();
+      const raw = validateRawGitHubData(await source.getProfile(username, { protection }));
+      const profile = normalizeDeveloperProfile(raw);
+      const baseDurationMs = Math.round(performance.now() - baseStarted);
+      const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
+      emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0, ...summarizeGraphqlCost(baseReport) });
+      const input: V2EnrichmentInput = { profile, sourceFingerprint: createProfileFingerprint(profile), repositoryDiscovery: createRepositoryDiscoverySnapshot(raw) ?? undefined, protection, telemetry: { correlationId, subjectId, baseDurationMs } };
+      return { source, profile, input, baseDurationMs };
+    };
+    const fastResult = await service.lookupByUsername(username);
+    if (fastResult) {
+      emitV2Telemetry({ event: "v2_poll_cache_fast_path_hit", correlation_id: correlationId, subject_id: subjectId, result: fastResult.state, cache_source: fastResult.state === "stale" ? "stale" : fastResult.source, lookup_ms: fastResult.durationMs });
+      if (fastResult.state === "stale") {
+        after(async () => {
+          try {
+            const { input } = await loadBase();
+            await service.enrich(input);
+          } catch (error) {
+            emitV2Telemetry({ event: "v2_stale_revalidation_failed", correlation_id: correlationId, subject_id: subjectId, error_kind: describeError(error, new Date()).body.error.code });
+          }
+        });
+      }
+      const totalDurationMs = Math.round(performance.now() - requestStarted);
+      emitV2Telemetry({ event: "v2_request_summary", correlation_id: correlationId, subject_id: subjectId, result: fastResult.state, total_ms: totalDurationMs, base_ms: 0, lookup_ms: fastResult.durationMs, cache_source: fastResult.state === "stale" ? "stale" : fastResult.source });
+      if (Number.isInteger(pollAttempt) && pollAttempt > 0 && fastResult.state !== "stale") {
+        emitV2Telemetry({ event: "v2_poll_terminal", correlation_id: correlationId, subject_id: subjectId, result: fastResult.state, attempts: pollAttempt, total_ms: totalDurationMs });
+      }
+      return resultResponse(fastResult);
+    }
+    emitV2Telemetry({ event: "v2_poll_cache_fast_path_miss", correlation_id: correlationId, subject_id: subjectId, cache_source: "miss" });
+
+    // On a fast-path miss, the normal V1 source remains authoritative for existence/profile data.
+    const { source, profile, input, baseDurationMs } = await loadBase();
     const result = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username)
       ? createMockV2Result(profile)
-      : await getExperimentalV2DeliveryService().deliver(
-          { profile, sourceFingerprint: createProfileFingerprint(profile), repositoryDiscovery: createRepositoryDiscoverySnapshot(raw) ?? undefined, protection, telemetry: { correlationId, subjectId, baseDurationMs } },
+      : await service.deliver(
+          input,
           (task) => after(task)
         );
     const totalDurationMs = Math.round(performance.now() - requestStarted);
@@ -59,29 +114,7 @@ export async function GET(request: Request, context: RouteContext) {
     if (Number.isInteger(pollAttempt) && pollAttempt > 0 && result.state !== "enriching" && result.state !== "stale") {
       emitV2Telemetry({ event: "v2_poll_terminal", correlation_id: correlationId, subject_id: subjectId, result: result.state, attempts: pollAttempt, total_ms: totalDurationMs });
     }
-    const status = result.state === "enriching" ? 202 : 200;
-    return NextResponse.json({
-      contractVersion: V2_POLL_CONTRACT_VERSION,
-      engineVersion: ENGINE_VERSION,
-      schemaVersion: SCHEMA_VERSION,
-      state: result.state,
-      terminal: result.state !== "enriching" && result.state !== "stale",
-      source: result.source,
-      ...(result.character ? {
-        character: projectRPGCharacterV2Public(result.character),
-        coverage: result.character.explanation.subclass.coverage,
-      } : {}),
-      stale: result.state === "stale",
-      enrichmentStarted: result.enrichmentStarted ?? false,
-      timings: { lookupMs: result.durationMs },
-    }, {
-      status,
-      headers: {
-        "Cache-Control": "no-store",
-        "X-GitHubRPG-V2-State": result.state,
-        "X-GitHubRPG-V2-Cache": result.source,
-      },
-    });
+    return resultResponse(result);
   } catch (error) {
     const described = describeError(error, new Date());
     const retryAfterSeconds = described.body.error.retryAfterSeconds;

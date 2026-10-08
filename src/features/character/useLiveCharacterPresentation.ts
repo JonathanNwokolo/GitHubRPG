@@ -57,6 +57,7 @@ export function useLiveCharacterPresentation(initial: CharacterPresentationModel
       if (flowController.signal.aborted || finished) return;
       finished = true;
       setStatus(next);
+      if (next === "timed_out") console.info(JSON.stringify({ event: "v2_poll_global_timeout", correlation_id: correlationId, attempts, elapsed_ms: Math.round(performance.now() - startedAt) }));
       console.info(JSON.stringify({ event: "v2_poll_summary", correlation_id: correlationId, result: next, attempts, elapsed_ms: Math.round(performance.now() - startedAt), hidden_pauses: hiddenPauses }));
     };
     const deadlineTimer = setTimeout(() => {
@@ -98,7 +99,11 @@ export function useLiveCharacterPresentation(initial: CharacterPresentationModel
           else finish("rate_limited");
           return;
         }
-        if (response.status === 504) { finish("timed_out"); return; }
+        if (response.status === 504) {
+          console.info(JSON.stringify({ event: "v2_poll_request_timeout", correlation_id: correlationId, attempt: attempts, transport: "http_504" }));
+          if (attempts >= V2_POLL_DELAYS_MS.length) finish("timed_out"); else schedule();
+          return;
+        }
         if (!response.ok && response.status !== 202) {
           if (attempts >= V2_POLL_DELAYS_MS.length) finish("failed"); else schedule();
           return;
@@ -113,8 +118,11 @@ export function useLiveCharacterPresentation(initial: CharacterPresentationModel
         }
         schedule(retryAfterMs(response, payload.retryAfterMs) ?? undefined);
       } catch (error) {
-        if (flowController.signal.aborted) return;
-        if (error instanceof DOMException && error.name === "AbortError") finish("timed_out");
+        if (flowController.signal.aborted || finished) return;
+        if (error instanceof DOMException && error.name === "AbortError") {
+          console.info(JSON.stringify({ event: "v2_poll_request_timeout", correlation_id: correlationId, attempt: attempts, transport: "client_abort" }));
+          if (attempts >= V2_POLL_DELAYS_MS.length) finish("timed_out"); else schedule();
+        }
         else if (attempts >= V2_POLL_DELAYS_MS.length) finish("failed");
         else schedule();
       } finally {

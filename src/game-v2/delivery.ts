@@ -3,8 +3,10 @@ import {
   createCharacterCacheKey,
   createCacheReferenceBucket,
   createEvidenceCacheKey,
+  createLatestCharacterCacheKey,
   InMemoryEvidenceCache,
   InMemoryTtlStore,
+  isCompatibleCachedCharacter,
   type EvidenceCacheAdapter,
   type EvidenceCacheIdentity,
   type SyncCacheStore,
@@ -170,12 +172,43 @@ export class V2DeliveryService {
       this.emit(input, "v2_cache_miss", { cache_source: "miss", duration_ms: Math.round(elapsed) });
       return { state: "enriching", character: null, cache: "miss", source: "fallback", durationMs: Math.round(elapsed) };
     }
+    if (hit.state === "fresh" && isCompatibleCachedCharacter(hit.value, input.profile.username)) {
+      const remainingTtlMs = hit.expiresAt - Date.now();
+      if (remainingTtlMs > 0) {
+        await this.safeSet(this.characterCache, createLatestCharacterCacheKey(input.profile.username), hit.value, {
+          ttlMs: remainingTtlMs,
+          staleTtlMs: Math.max(0, hit.staleUntil - hit.expiresAt),
+        });
+      }
+    }
     this.record(hit.source === "l2" ? "cacheL2Hit" : "cacheL1Hit");
     if (hit.state === "stale") this.record("staleServed");
     this.emit(input, hit.state === "stale" ? "v2_stale_served" : "v2_cache_hit", {
       cache_source: hit.state === "stale" ? "stale" : hit.source ?? "l1",
       duration_ms: Math.round(elapsed),
     });
+    return {
+      state: hit.state === "stale" ? "stale" : stateFor(hit.value),
+      character: hit.value,
+      cache: hit.state === "stale" ? "stale" : "hit",
+      source: hit.source ?? "l1",
+      durationMs: Math.round(elapsed),
+    };
+  }
+
+  async lookupByUsername(username: string): Promise<V2DeliveryResult | null> {
+    const started = performance.now();
+    const key = createLatestCharacterCacheKey(username);
+    const hit = await this.safeGet(this.characterCache, key);
+    const elapsed = performance.now() - started;
+    this.recordDuration(elapsed);
+    if (!hit || !isCompatibleCachedCharacter(hit.value, username) || stateFor(hit.value) === "unavailable") {
+      if (hit) await this.characterCache.delete(key).catch(() => undefined);
+      this.record("cacheMiss");
+      return null;
+    }
+    this.record(hit.source === "l2" ? "cacheL2Hit" : "cacheL1Hit");
+    if (hit.state === "stale") this.record("staleServed");
     return {
       state: hit.state === "stale" ? "stale" : stateFor(hit.value),
       character: hit.value,
@@ -348,7 +381,10 @@ export class V2DeliveryService {
     });
     if (signal.aborted) throw new V2EnrichmentAbortedError();
     if (evidence.coverage.coverage !== "unavailable") {
-      await this.safeSet(this.characterCache, characterKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs });
+      await Promise.all([
+        this.safeSet(this.characterCache, characterKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs }),
+        this.safeSet(this.characterCache, createLatestCharacterCacheKey(input.profile.username), character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs }),
+      ]);
     }
     return character;
   }
@@ -358,6 +394,7 @@ export class V2DeliveryService {
     await Promise.all([
       this.evidenceCache.delete(createEvidenceCacheKey(identity)).catch(() => undefined),
       this.characterCache.delete(createCharacterCacheKey(identity)).catch(() => undefined),
+      this.characterCache.delete(createLatestCharacterCacheKey(input.profile.username)).catch(() => undefined),
     ]);
   }
 

@@ -72,14 +72,42 @@ describe("useLiveCharacterPresentation", () => {
     expect(result.current.pollStatus).toBe("ready");
   });
 
-  it("terminates an individual request that exceeds its timeout", async () => {
+  it.each(["ready", "partial"] as const)("retries after one slow request and renders the cached %s V2 without showing V1", async (state) => {
+    vi.stubGlobal("fetch", vi.fn()
+      .mockImplementationOnce((_url, init?: RequestInit) => new Promise<Response>((_resolve, reject) => {
+        init?.signal?.addEventListener("abort", () => reject(new DOMException("aborted", "AbortError")), { once: true });
+      }))
+      .mockResolvedValueOnce(response(state)));
+    const { result } = renderHook(() => useLiveCharacterPresentation(enriching, "hero"));
+    await advance(4_000);
+    await advance(10_000);
+    expect(result.current).toMatchObject({ pollStatus: "polling", delivery: "enriching", v2: null });
+    await advance(4_000);
+    expect(fetch).toHaveBeenCalledTimes(2);
+    expect(result.current.pollStatus).toBe(state);
+    expect(result.current.v2).toBeTruthy();
+  });
+
+  it("uses V1 fallback only after the global polling ceiling when every request times out", async () => {
     vi.stubGlobal("fetch", vi.fn((_url, init?: RequestInit) => new Promise<Response>((_resolve, reject) => {
       init?.signal?.addEventListener("abort", () => reject(new DOMException("aborted", "AbortError")), { once: true });
     })));
     const { result } = renderHook(() => useLiveCharacterPresentation(enriching, "hero"));
+    await advance(64_999);
+    expect(result.current.pollStatus).toBe("polling");
+    await advance(1);
+    expect(result.current).toMatchObject({ pollStatus: "timed_out", v2: null });
+  });
+
+  it("treats an HTTP 504 as one retryable request timeout", async () => {
+    vi.stubGlobal("fetch", vi.fn()
+      .mockResolvedValueOnce(response("unavailable", 504))
+      .mockResolvedValueOnce(response("ready")));
+    const { result } = renderHook(() => useLiveCharacterPresentation(enriching, "hero"));
     await advance(4_000);
-    await advance(10_000);
-    expect(result.current.pollStatus).toBe("timed_out");
+    expect(result.current.pollStatus).toBe("polling");
+    await advance(4_000);
+    expect(result.current.pollStatus).toBe("ready");
   });
 
   it("never overlaps polling requests", async () => {

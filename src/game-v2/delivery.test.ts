@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { makeAverageProfile } from "@/test/builders";
-import { InMemoryEvidenceCache, MultiLayerEvidenceCache, createCacheReferenceBucket, createEvidenceCacheKey, createManifestCacheKey, V2DeliveryService, V2EnrichmentAbortedError, normalizeRepositoryEvidence } from ".";
+import { InMemoryEvidenceCache, MultiLayerEvidenceCache, createCacheReferenceBucket, createCharacterCacheKey, createEvidenceCacheKey, createLatestCharacterCacheKey, createManifestCacheKey, V2DeliveryService, V2EnrichmentAbortedError, normalizeRepositoryEvidence } from ".";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "./types";
 import { GitHubProjectProtection } from "@/data/github/protection";
 import { GitHubRateLimitError, ProjectBudgetDeniedError } from "@/data/github/errors";
@@ -95,9 +95,56 @@ describe("V2 delivery cache", () => {
     });
 
     await first.enrich(input);
+    await expect(second.lookupByUsername("CacheHero")).resolves.toMatchObject({ cache: "hit", source: "l2", state: "ready" });
     await expect(second.lookup(input)).resolves.toMatchObject({ cache: "hit", source: "l2", state: "ready" });
     expect(firstCollector).toHaveBeenCalledTimes(1);
     expect(secondCollector).not.toHaveBeenCalled();
+  });
+
+  it.each(["full", "partial"] as const)("serves a valid final %s character by username without collecting", async (coverage) => {
+    const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>();
+    const seedCollector = vi.fn(async () => evidence(coverage));
+    const seed = new V2DeliveryService({ characterCache, collector: seedCollector });
+    await seed.enrich(input);
+    const collector = vi.fn(async () => evidence());
+    const service = new V2DeliveryService({ characterCache, collector });
+
+    await expect(service.lookupByUsername("cachehero")).resolves.toMatchObject({ state: coverage === "partial" ? "partial" : "ready", cache: "hit", character: { identity: { username: "CacheHero" } } });
+    expect(seedCollector).toHaveBeenCalledTimes(1);
+    expect(collector).not.toHaveBeenCalled();
+  });
+
+  it("rejects incompatible or cross-user latest aliases", async () => {
+    const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>();
+    const valid = (await new V2DeliveryService({ collector: async () => evidence() }).enrich(input)).character!;
+    await characterCache.set(createLatestCharacterCacheKey("CacheHero"), { ...valid, schemaVersion: "wrong-schema" } as unknown as RPGCharacterV2, { ttlMs: 1_000 });
+    const service = new V2DeliveryService({ characterCache, collector: vi.fn(async () => evidence()) });
+    await expect(service.lookupByUsername("CacheHero")).resolves.toBeNull();
+
+    await characterCache.set(createLatestCharacterCacheKey("CacheHero"), { ...valid, identity: { ...valid.identity, username: "OtherHero" } }, { ttlMs: 1_000 });
+    await expect(service.lookupByUsername("CacheHero")).resolves.toBeNull();
+  });
+
+  it("backfills the fast alias from a fresh pre-migration exact cache entry without extending its TTL", async () => {
+    const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>();
+    const character = (await new V2DeliveryService({ collector: async () => evidence() }).enrich(input)).character!;
+    const exactKey = createCharacterCacheKey({ username: profile.username, sourceFingerprint: input.sourceFingerprint, referenceDate: createCacheReferenceBucket(profile.referenceDate) });
+    await characterCache.set(exactKey, character, { ttlMs: 30_000, staleTtlMs: 60_000 });
+    const service = new V2DeliveryService({ characterCache, collector: vi.fn(async () => evidence()) });
+
+    await expect(service.lookup(input)).resolves.toMatchObject({ cache: "hit", state: "ready" });
+    const alias = await characterCache.get(createLatestCharacterCacheKey(profile.username));
+    expect(alias).toMatchObject({ state: "fresh", value: { identity: { username: "CacheHero" } } });
+    expect((alias?.expiresAt ?? 0) - Date.now()).toBeLessThanOrEqual(30_000);
+  });
+
+  it("preserves the existing stale-while-revalidate state on username fast lookup", async () => {
+    let now = 0;
+    const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>(250, () => now);
+    const service = new V2DeliveryService({ characterCache, collector: async () => evidence(), policy: { characterTtlMs: 10, characterStaleTtlMs: 100 } });
+    await service.enrich(input);
+    now = 11;
+    await expect(service.lookupByUsername("CacheHero")).resolves.toMatchObject({ state: "stale", cache: "stale", character: expect.any(Object) });
   });
 
   it("documents that simultaneous misses on two instances can duplicate enrichment", async () => {
