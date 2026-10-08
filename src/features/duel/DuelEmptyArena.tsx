@@ -68,7 +68,7 @@ export function DuelEmptyArena({ onSummonClick }: DuelEmptyArenaProps) {
             variant="duel"
             size="lg"
             onClick={onSummonClick}
-            className="min-w-[240px] text-xs sm:text-sm tracking-wider shadow-[0_4px_20px_rgba(190,30,45,0.4)]"
+            className="min-w-[240px] text-xs sm:text-sm tracking-wider"
           >
             <RpgSwords className="h-4 w-4" />
             <span>{isPt ? "Convocar Heróis para a Arena" : "Summon Heroes to Arena"}</span>

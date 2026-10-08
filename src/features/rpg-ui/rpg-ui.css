@@ -228,6 +228,8 @@
   text-shadow: 0 1px 0 #2a0508;
   border-width: 0 calc(var(--h) * 0.6);
   border-image: url("/rpg-ui/buttons/rpg-button-duel.webp") 0 150 fill / 0 calc(var(--h) * 0.6) stretch;
+  /* drop-shadow follows the plate's alpha; box-shadow would draw a rectangle around the pointed ends. */
+  filter: drop-shadow(0 4px 10px rgba(190, 30, 45, 0.4));
 }
 
 .rpg-btn--sm {
