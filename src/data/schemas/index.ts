@@ -30,6 +30,15 @@ const rawRepository = z.object({
   stars: count,
   forks: count,
   languages: z.record(z.string().min(1), z.number().nonnegative()),
+  discovery: z.object({
+    id: z.string().min(1),
+    isArchived: z.boolean(),
+    isEmpty: z.boolean(),
+    pushedAt: isoDate,
+    defaultBranch: z.string().min(1),
+    size: count,
+    primaryLanguage: z.string().min(1).nullable(),
+  }).optional(),
 });
 
 export const RawGitHubDataSchema = z

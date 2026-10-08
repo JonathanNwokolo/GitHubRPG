@@ -22,8 +22,15 @@ export const REPOSITORIES_QUERY = `query ($login: String!, $first: Int!, $after:
     repositories(first: $first, after: $after, ownerAffiliations: OWNER, privacy: PUBLIC, orderBy: {field: PUSHED_AT, direction: DESC}) {
       pageInfo { hasNextPage endCursor }
       nodes {
+        databaseId
         name
         isFork
+        isArchived
+        isEmpty
+        pushedAt
+        defaultBranchRef { name }
+        diskUsage
+        primaryLanguage { name }
         stargazerCount
         forkCount
         languages(first: $langs, orderBy: {field: SIZE, direction: DESC}) { totalCount edges { size node { name } } }
@@ -114,6 +121,15 @@ export async function fetchRepositoryDataGraphQL(
     stars: node.stargazerCount,
     forks: node.forkCount,
     languages: languagesByRepo.get(node.name) ?? {},
+    ...(node.pushedAt ? { discovery: {
+      id: String(node.databaseId ?? node.name),
+      isArchived: node.isArchived ?? false,
+      isEmpty: node.isEmpty ?? false,
+      pushedAt: node.pushedAt,
+      defaultBranch: node.defaultBranchRef?.name ?? "HEAD",
+      size: node.diskUsage ?? 0,
+      primaryLanguage: node.primaryLanguage?.name ?? null,
+    } } : {}),
   }));
   return { items, coverage, languagesCoverage: languagesPartial ? "partial" : "full" };
 }

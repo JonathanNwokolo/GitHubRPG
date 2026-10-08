@@ -16,6 +16,27 @@ export interface RawRepository {
   forks: number;
   /** Language name -> bytes. */
   languages: Record<string, number>;
+  /** Server-only discovery metadata. Engines must not score these fields directly. */
+  discovery?: {
+    id: string;
+    isArchived: boolean;
+    isEmpty: boolean;
+    pushedAt: string;
+    defaultBranch: string;
+    size: number;
+    primaryLanguage: string | null;
+  };
+}
+
+export interface GitHubRequestProtectionContext {
+  clientKey: string | null;
+  surface: "profile_page" | "characters_api" | "experimental_v2_api";
+  correlationId: string;
+  subjectId: string;
+}
+
+export interface GitHubProfileRequestOptions {
+  protection?: GitHubRequestProtectionContext;
 }
 
 /**
@@ -91,7 +112,7 @@ export interface GitHubDataSource {
   /** "mock" keeps the "Dados de demonstração" notice visible in the UI. */
   readonly kind: "mock" | "github";
   /** @throws ProfileNotFoundError when the user does not exist. */
-  getProfile(username: string): Promise<RawGitHubData>;
+  getProfile(username: string, options?: GitHubProfileRequestOptions): Promise<RawGitHubData>;
   /**
    * Optional fast check for callers that need to know whether the profile exists BEFORE they start
    * streaming a response (an unknown user must be a real HTTP 404, and a status cannot change once the
@@ -99,7 +120,7 @@ export interface GitHubDataSource {
    * and is shared with a later `getProfile` (no request is made twice).
    * @throws ProfileNotFoundError / InvalidUsernameError, or the lookup's own failure (rate limit, outage...).
    */
-  ensureProfileExists?(username: string): Promise<void>;
+  ensureProfileExists?(username: string, options?: GitHubProfileRequestOptions): Promise<void>;
 }
 
 export class ProfileNotFoundError extends Error {

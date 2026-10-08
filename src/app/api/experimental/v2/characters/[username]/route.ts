@@ -12,6 +12,8 @@ import { createProfileFingerprint, getExperimentalV2DeliveryService } from "@/ga
 import { projectRPGCharacterV2Public } from "@/game-v2/publicProjection";
 import { V2_POLL_CONTRACT_VERSION } from "@/game-v2/pollContract";
 import { createV2CorrelationId, createV2SubjectId, emitV2Telemetry } from "@/game-v2/telemetry";
+import { createGitHubRequestProtectionContext } from "@/data/github/protection";
+import { createRepositoryDiscoverySnapshot } from "@/data/sharedDiscovery";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -32,6 +34,7 @@ export async function GET(request: Request, context: RouteContext) {
     const suppliedPollId = request.headers.get("X-GitHubRPG-Poll-Id");
     if (suppliedPollId && /^[a-zA-Z0-9-]{8,80}$/.test(suppliedPollId)) correlationId = suppliedPollId;
     const pollAttempt = Number(request.headers.get("X-GitHubRPG-Poll-Attempt"));
+    const protection = createGitHubRequestProtectionContext(request.headers, "experimental_v2_api", username, correlationId);
     if (Number.isInteger(pollAttempt) && pollAttempt > 0 && pollAttempt <= 20) {
       emitV2Telemetry({ event: pollAttempt === 1 ? "v2_poll_started" : "v2_poll_attempt", correlation_id: correlationId, subject_id: subjectId, attempt: pollAttempt });
     }
@@ -39,7 +42,7 @@ export async function GET(request: Request, context: RouteContext) {
     // The normal V1 source remains authoritative for existence/profile data. V2 enrichment is separate.
     const baseStarted = performance.now();
     const source = createDataSource();
-    const raw = validateRawGitHubData(await source.getProfile(username));
+    const raw = validateRawGitHubData(await source.getProfile(username, { protection }));
     const profile = normalizeDeveloperProfile(raw);
     const baseDurationMs = Math.round(performance.now() - baseStarted);
     const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
@@ -47,7 +50,7 @@ export async function GET(request: Request, context: RouteContext) {
     const result = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username)
       ? createMockV2Result(profile)
       : await getExperimentalV2DeliveryService().deliver(
-          { profile, sourceFingerprint: createProfileFingerprint(profile), telemetry: { correlationId, subjectId, baseDurationMs } },
+          { profile, sourceFingerprint: createProfileFingerprint(profile), repositoryDiscovery: createRepositoryDiscoverySnapshot(raw) ?? undefined, protection, telemetry: { correlationId, subjectId, baseDurationMs } },
           (task) => after(task)
         );
     const totalDurationMs = Math.round(performance.now() - requestStarted);

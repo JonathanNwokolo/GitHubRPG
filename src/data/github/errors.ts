@@ -32,6 +32,19 @@ export class GitHubRateLimitError extends Error {
   }
 }
 
+export type ProjectBudgetDenialReason = "client_rate" | "github_budget" | "github_rate_limit" | "enrichment_concurrency";
+
+/** Project-side protection. Safe to map to HTTP 429 without exposing upstream details. */
+export class ProjectBudgetDeniedError extends Error {
+  constructor(
+    public readonly reason: ProjectBudgetDenialReason,
+    public readonly retryAfterSeconds: number
+  ) {
+    super(`GitHub project budget temporarily unavailable (${reason}).`);
+    this.name = "ProjectBudgetDeniedError";
+  }
+}
+
 export type UnavailableReason = "upstream" | "network" | "auth" | "forbidden";
 
 export class GitHubUnavailableError extends Error {

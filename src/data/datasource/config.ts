@@ -79,3 +79,8 @@ export function isGameEngineV2UiEnabled(username: string, env: Env = process.env
 export function isGameEngineV2E2EColdProfile(username: string, env: Env = process.env): boolean {
   return env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === username.trim().toLowerCase();
 }
+
+/** Runtime/platform signal only; kept here so environment access stays at the server config boundary. */
+export function isVercelRuntime(env: Env = process.env): boolean {
+  return Boolean(env.VERCEL);
+}
