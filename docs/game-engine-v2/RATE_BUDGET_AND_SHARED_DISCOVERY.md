@@ -84,7 +84,7 @@ Official platform references:
 
 ## Shared discovery contract
 
-The base GitHub loader now preserves neutral discovery metadata alongside each raw repository: identity, fork/archive/empty state, stars, pushed time, default branch, size, primary language, and per-repository language bytes. `RepositoryDiscoverySnapshot` is produced server-side after validation and passed directly to the V2 delivery request.
+The base GitHub loader now preserves neutral discovery metadata alongside each raw repository: identity, fork/archive/empty state, stars, pushed time, a safe `HEAD` default-branch reference, size, primary language, and per-repository language bytes. GitHub's Trees endpoint resolves `HEAD` to the repository default branch; this avoids the expensive nested `defaultBranchRef` resolver on every GraphQL repository. `RepositoryDiscoverySnapshot` is produced server-side after validation and passed directly to the V2 delivery request.
 
 The V2 collector reuses at most the first 100 repositories in the same pushed order as its historical REST discovery request. This removes only:
 
