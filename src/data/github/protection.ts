@@ -10,6 +10,8 @@ export const CLIENT_RATE_WINDOW_MS = 60_000;
 export const CLIENT_RATE_MAX_UNIQUE_COLD_USERNAMES = 30;
 export const CLIENT_RATE_MAX_COLD_WORK = 120;
 export const PROJECT_RATE_RESERVE: Readonly<Record<RequestKind, number>> = { rest: 100, graphql: 100 };
+export const PROJECT_RATE_RESERVE_FRACTION = 0.2;
+const PROJECT_CIRCUIT_KEY = `github-api-v2:${process.env.VERCEL_ENV ?? "local"}`;
 
 interface SharedBudgetStore {
   get(key: string): Promise<unknown | null>;
@@ -135,7 +137,7 @@ export class GitHubProjectProtection {
     if (!this.halfOpenProbe) return;
     this.halfOpenProbe = false;
     this.localCircuit = null;
-    await this.store?.delete("github-api").catch(() => undefined);
+    await this.store?.delete(PROJECT_CIRCUIT_KEY).catch(() => undefined);
     emitV2Telemetry({ event: "circuit_recovered", ...telemetryContext(context) });
   }
 
@@ -148,19 +150,22 @@ export class GitHubProjectProtection {
 
   async observeSnapshot(kind: RequestKind, snapshot: RateLimitSnapshot, context?: GitHubRequestProtectionContext): Promise<void> {
     if (snapshot.remaining === null) return;
-    if (snapshot.remaining > this.reserve[kind]) {
+    const criticalReserve = snapshot.limit && snapshot.limit > 0
+      ? Math.max(1, Math.min(this.reserve[kind], Math.floor(snapshot.limit * PROJECT_RATE_RESERVE_FRACTION)))
+      : this.reserve[kind];
+    if (snapshot.remaining > criticalReserve) {
       if (this.localCircuit?.reason === "github_budget" && this.localCircuit.limitKind === kind && this.localCircuit.retryAt > this.now()) {
         this.localCircuit = null;
         this.halfOpenProbe = false;
-        await this.store?.delete("github-api").catch(() => undefined);
-        emitV2Telemetry({ event: "rate_limit_false_positive_suspected", ...telemetryContext(context), resource: kind, remaining: snapshot.remaining, critical_reserve: this.reserve[kind] });
+        await this.store?.delete(PROJECT_CIRCUIT_KEY).catch(() => undefined);
+        emitV2Telemetry({ event: "rate_limit_false_positive_suspected", ...telemetryContext(context), resource: kind, remaining: snapshot.remaining, critical_reserve: criticalReserve });
         emitV2Telemetry({ event: "circuit_recovered", ...telemetryContext(context), reason: "higher_authoritative_snapshot" });
       }
       return;
     }
     const retryAt = snapshot.resetAt?.getTime();
     if (!retryAt || retryAt <= this.now()) return;
-    emitV2Telemetry({ event: "github_primary_rate_limited", ...telemetryContext(context), resource: kind, remaining: snapshot.remaining, reset_at: snapshot.resetAt?.toISOString() ?? null, critical_reserve: this.reserve[kind] });
+    emitV2Telemetry({ event: "github_primary_rate_limited", ...telemetryContext(context), resource: kind, remaining: snapshot.remaining, reset_at: snapshot.resetAt?.toISOString() ?? null, critical_reserve: criticalReserve });
     await this.open("github_budget", kind, retryAt, snapshot.remaining, context);
   }
 
@@ -195,7 +200,7 @@ export class GitHubProjectProtection {
   private async readCircuit(): Promise<CircuitState | null> {
     const now = this.now();
     if (this.localCircuit && this.localCircuit.retryAt > now) return this.localCircuit;
-    const shared = await this.store?.get("github-api").catch(() => null);
+    const shared = await this.store?.get(PROJECT_CIRCUIT_KEY).catch(() => null);
     if (isCircuitState(shared)) {
       this.localCircuit = shared;
       return shared;
@@ -214,7 +219,7 @@ export class GitHubProjectProtection {
     const transition = !this.localCircuit || this.localCircuit.retryAt <= this.now();
     this.localCircuit = state;
     this.halfOpenProbe = false;
-    await this.store?.set("github-api", state, {
+    await this.store?.set(PROJECT_CIRCUIT_KEY, state, {
       ttl: secondsUntil(retryAt, this.now()),
       name: "github-rpg-project-budget",
       tags: ["github-rpg", "project-budget"],

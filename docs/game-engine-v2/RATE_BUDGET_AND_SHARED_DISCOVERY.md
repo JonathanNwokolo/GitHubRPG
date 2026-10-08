@@ -23,10 +23,10 @@ This is not a statistically stable traffic distribution. The limits below are pr
 - client window: 60 seconds;
 - 30 unique cold usernames per authenticated Vercel client address per window;
 - 120 cold work admissions per client per window;
-- project reserve: stop new cold work when a known REST or GraphQL remaining value is at or below 100 until its reset;
+- project reserve: stop new cold work when a known REST or GraphQL remaining value is at or below 100 until its reset; for a lower upstream quota, use 20% of that quota (capped at 100), so anonymous REST reserves 12 of 60 instead of failing immediately;
 - enrichment concurrency: 2 active plus at most 4 queued per process.
 
-The unique-username limit is six times the complete representative sample. The project reserve is more than three times the observed REST p90 and also leaves several observed large GraphQL base loads. GitHub GraphQL `remaining` is a point budget, not a request count, so this is an operational reserve rather than a conversion formula. Recalibrate only after a materially larger production window.
+The unique-username limit is six times the complete representative sample. For the normal authenticated quota, the project reserve is more than three times the observed REST p90 and also leaves several observed large GraphQL base loads. Scaling lower upstream quotas prevents the anonymous REST path (limit 60) from being classified as exhausted on its first successful response. GitHub GraphQL `remaining` is a point budget, not a request count, so this is an operational reserve rather than a conversion formula. Recalibrate only after a materially larger production window.
 
 ## Public workload map
 
@@ -48,7 +48,7 @@ The unique-username limit is six times the complete representative sample. The p
 2. Base L1, negative cache, in-flight dedupe, V2 L1/L2, and stale lookup run before a project denial.
 3. Client admission uses a SHA-256-derived key from `x-vercel-forwarded-for` only when `x-vercel-id` confirms the request passed through Vercel. Raw addresses are not stored or logged. Outside Vercel this layer fails open because there is no platform-authenticated address.
 4. V2 keeps two active enrichments and now bounds the queue at four. Excess cold work is denied for five seconds instead of extending Function duration indefinitely.
-5. Confirmed GitHub primary/secondary limits and known critical remaining values open a Runtime Cache circuit. The state is visible across instances. After the reset, one probe per process enters half-open; success recovers and failure reopens temporarily.
+5. Confirmed GitHub primary/secondary limits and known critical remaining values open a Runtime Cache circuit. The state is visible across instances and isolated by Vercel environment, so Preview cannot poison Production. After the reset, one probe per process enters half-open; success recovers and failure reopens temporarily.
 6. Project denials return HTTP 429 with a bounded integer `Retry-After`. Cached/stale V2 remains usable; product pages keep V1 when V2 cannot start.
 
 GitHub 403 handling remains signal-based: `remaining=0` means primary rate limit; `Retry-After`, HTTP 429, or the official secondary/abuse message means secondary rate limit; other 403 responses remain permission/forbidden failures and do not open the circuit.

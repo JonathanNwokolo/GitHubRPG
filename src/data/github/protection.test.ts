@@ -62,6 +62,12 @@ describe("GitHub project protection", () => {
     await expect(protection.beforeColdWork("cold-profile")).rejects.toMatchObject({ reason: "github_budget", retryAfterSeconds: 60 });
   });
 
+  it("scales the reserve below the anonymous REST quota instead of blocking normal tokenless traffic", async () => {
+    const protection = new GitHubProjectProtection({ store: null, reserve: { rest: 100, graphql: 100 }, now: () => Date.parse("2026-10-08T12:00:00.000Z") });
+    await protection.observeSnapshot("rest", { limit: 60, remaining: 52, resetAt: new Date("2026-10-08T13:00:00.000Z") });
+    await expect(protection.beforeColdWork("octocat")).resolves.toBeUndefined();
+  });
+
   it("recovers a provisional budget circuit when a higher authoritative snapshot arrives", async () => {
     const now = Date.parse("2026-10-08T12:00:00.000Z");
     const protection = new GitHubProjectProtection({ store: new MemoryStore(), now: () => now, reserve: { rest: 40, graphql: 10 } });
