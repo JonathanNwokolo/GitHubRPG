@@ -1,5 +1,7 @@
 # Game Engine V2 — Integração no Produto
 
+> **Historical integration record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Estado
 
 Integração local da Etapa 4. A V1.1 permanece como base e a V2 permanece `2.0-experimental-v24-evo`. Nenhum commit, push, preview ou deploy faz parte desta etapa.

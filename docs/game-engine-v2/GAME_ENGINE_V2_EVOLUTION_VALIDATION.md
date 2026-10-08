@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3G
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Status
 
 **EVOLUTION SYSTEM READY WITH CONSERVATIVE GATES**.

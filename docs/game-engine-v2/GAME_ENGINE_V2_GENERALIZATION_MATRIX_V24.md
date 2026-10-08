@@ -1,5 +1,7 @@
 # Game Engine V2 — Independent Generalization Matrix V24
 
+> **Historical research record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 Status: **FROZEN BEFORE G0**  
 Frozen on: 2026-10-07  
 Engine at freeze: `2.0-experimental-v23`

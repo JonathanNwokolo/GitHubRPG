@@ -1,5 +1,7 @@
 # Game Engine V2 — Evidence Collector V2.1
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 > Status: collector experimental validado na Etapa 3B. Não altera V1, frontend, Duel, Chronicle ou API pública. O balanceamento continua `game-engine-v2-balance-stage3-r3`.
 
 ## Decisão arquitetural
