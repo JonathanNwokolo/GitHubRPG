@@ -1,0 +1,53 @@
+{
+  "decision": "PREVIEW FAILED — DO NOT ROLLOUT",
+  "enginePromotion": false,
+  "productionActivationPerformed": false,
+  "passed": [
+    "Preview deployment",
+    "Feature flag ON with restricted allowlist",
+    "Outside-allowlist V1 fallback",
+    "Cold 202 fallback",
+    "after() completion",
+    "Runtime Cache write",
+    "L1 hit",
+    "Cross-deployment L2 hit",
+    "V2 partial profile",
+    "54 achievements",
+    "40 titles",
+    "Secret achievement redaction",
+    "Grimoire limits and partial copy",
+    "Null subclass presentation",
+    "Explainability public projection",
+    "Hall 5/5 without V2 cold fan-out",
+    "Duel V1 regression automation",
+    "Real HTTP 404",
+    "Flag OFF rollback",
+    "Allowlist removal rollback",
+    "Unit tests 1086/1086",
+    "E2E 54/54",
+    "V1 invariants 12/12",
+    "V2 invariants 46/46",
+    "Lint, typecheck and build"
+  ],
+  "notFullyProven": [
+    "Real Preview stale-while-revalidate window",
+    "Same-instance duplicate enrichment under real cold traffic",
+    "Subclass-present real profile",
+    "Evolution-present real profile",
+    "Chrome visual and accessibility pass",
+    "Real Preview screenshots at all requested widths",
+    "Preview-specific browser E2E against the protected deployment",
+    "Badge and Hero Card smoke without upstream rate limiting",
+    "P50 and P90 response-time distributions"
+  ],
+  "blockers": [
+    "Preview has no GITHUB_TOKEN and exhausted the anonymous GitHub primary rate limit.",
+    "Google Chrome was not available to the browser automation session, so required visual evidence could not be collected.",
+    "The required profile matrix could not be completed after the upstream rate limit."
+  ],
+  "requiredBeforeRerun": [
+    "Scope the existing server-only GITHUB_TOKEN to Preview in Vercel without exposing its value.",
+    "Connect Google Chrome to the Codex browser session or perform the visual checklist manually.",
+    "Redeploy Preview and rerun the blocked real-user, Badge, Card, stale and screenshot checks."
+  ]
+}

@@ -1,0 +1,1968 @@
+{
+  "profile": {
+    "username": "antirez",
+    "cohort": "calibration",
+    "categories": [
+      "low-level",
+      "backend"
+    ],
+    "mandatory": true
+  },
+  "rawProfile": {
+    "username": "antirez",
+    "displayName": "Salvatore Sanfilippo",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/65632?v=4",
+    "bio": "Computer programmer based in Sicily, Italy. I mostly write OSS software. Born 1977. Not a puritan.",
+    "location": "Catania, Sicily, Italy",
+    "company": "Redis Labs",
+    "createdAt": "2009-03-21T22:29:53.000Z",
+    "fetchedAt": "2026-10-07T04:50:24.547Z",
+    "isDemo": false,
+    "followers": {
+      "value": 32062,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "redis",
+          "isFork": true,
+          "stars": 154,
+          "forks": 13,
+          "languages": {}
+        },
+        {
+          "name": "qwen-asr",
+          "isFork": false,
+          "stars": 620,
+          "forks": 78,
+          "languages": {
+            "C": 298338,
+            "Python": 70818,
+            "C++": 28479,
+            "Cuda": 27422,
+            "HIP": 17269,
+            "Makefile": 9094,
+            "Shell": 2895
+          }
+        },
+        {
+          "name": "anotherworld-zx-spectrum-48k",
+          "isFork": false,
+          "stars": 26,
+          "forks": 0,
+          "languages": {
+            "C++": 634725,
+            "Assembly": 436706,
+            "C": 26827,
+            "Makefile": 12499
+          }
+        },
+        {
+          "name": "ds4",
+          "isFork": false,
+          "stars": 23626,
+          "forks": 2275,
+          "languages": {
+            "C": 8691470,
+            "Cuda": 4542328,
+            "Objective-C": 2340638,
+            "Metal": 1366668,
+            "Python": 887275,
+            "C++": 497488,
+            "Shell": 64294,
+            "Makefile": 53928
+          }
+        },
+        {
+          "name": "tgterm",
+          "isFork": false,
+          "stars": 224,
+          "forks": 17,
+          "languages": {
+            "C": 320103,
+            "Makefile": 763
+          }
+        },
+        {
+          "name": "h3.c",
+          "isFork": false,
+          "stars": 2830,
+          "forks": 220,
+          "languages": {
+            "C": 1102363,
+            "Objective-C": 258508,
+            "Metal": 205527,
+            "Makefile": 7659
+          }
+        },
+        {
+          "name": "gguf-tools",
+          "isFork": false,
+          "stars": 368,
+          "forks": 40,
+          "languages": {
+            "C": 137317,
+            "Makefile": 523
+          }
+        },
+        {
+          "name": "linenoise",
+          "isFork": false,
+          "stars": 4363,
+          "forks": 742,
+          "languages": {
+            "C": 143077,
+            "Makefile": 374
+          }
+        },
+        {
+          "name": "llama.cpp-deepseek-v4-flash",
+          "isFork": false,
+          "stars": 347,
+          "forks": 66,
+          "languages": {
+            "C++": 14869652,
+            "C": 3294116,
+            "Python": 2054593,
+            "Cuda": 1509522,
+            "HTML": 783023,
+            "TypeScript": 768634,
+            "Svelte": 584060,
+            "Metal": 459455,
+            "Jinja": 334901,
+            "GLSL": 300400,
+            "WGSL": 249785,
+            "Shell": 248612,
+            "CMake": 217659,
+            "Go Template": 99996,
+            "Objective-C": 91893,
+            "Dockerfile": 34965,
+            "Nix": 23751,
+            "JavaScript": 16109,
+            "PowerShell": 9324,
+            "CSS": 5408,
+            "MDX": 1646,
+            "Makefile": 1554,
+            "Batchfile": 802,
+            "SCSS": 478
+          }
+        },
+        {
+          "name": "bme680-pure-mp",
+          "isFork": false,
+          "stars": 21,
+          "forks": 1,
+          "languages": {
+            "Python": 14390
+          }
+        },
+        {
+          "name": "bplog",
+          "isFork": false,
+          "stars": 24,
+          "forks": 6,
+          "languages": {
+            "Kotlin": 26748,
+            "Python": 5399
+          }
+        },
+        {
+          "name": "ZOT",
+          "isFork": false,
+          "stars": 77,
+          "forks": 13,
+          "languages": {
+            "C": 522362,
+            "Shell": 7003,
+            "Makefile": 1196
+          }
+        },
+        {
+          "name": "PixelWall",
+          "isFork": true,
+          "stars": 7,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "picol",
+          "isFork": false,
+          "stars": 246,
+          "forks": 15,
+          "languages": {
+            "C": 37147,
+            "Tcl": 988,
+            "Makefile": 159
+          }
+        },
+        {
+          "name": "voxtral.c",
+          "isFork": false,
+          "stars": 1750,
+          "forks": 126,
+          "languages": {
+            "C": 243206,
+            "Objective-C": 184046,
+            "Metal": 44122,
+            "Python": 43061,
+            "Makefile": 5592,
+            "Shell": 3896
+          }
+        },
+        {
+          "name": "dump1090",
+          "isFork": false,
+          "stars": 2949,
+          "forks": 1447,
+          "languages": {
+            "C": 129915,
+            "HTML": 20172,
+            "Makefile": 314
+          }
+        },
+        {
+          "name": "iris.c",
+          "isFork": false,
+          "stars": 1994,
+          "forks": 152,
+          "languages": {
+            "C": 1004970,
+            "Objective-C": 295988,
+            "Metal": 73689,
+            "Python": 32583,
+            "Makefile": 8475,
+            "Shell": 6027
+          }
+        },
+        {
+          "name": "whisperbot",
+          "isFork": false,
+          "stars": 167,
+          "forks": 12,
+          "languages": {
+            "C": 211655,
+            "Makefile": 527,
+            "Shell": 223
+          }
+        },
+        {
+          "name": "botlib",
+          "isFork": false,
+          "stars": 839,
+          "forks": 87,
+          "languages": {
+            "C": 202723,
+            "Makefile": 492
+          }
+        },
+        {
+          "name": "microfont",
+          "isFork": false,
+          "stars": 74,
+          "forks": 8,
+          "languages": {
+            "Python": 32099
+          }
+        },
+        {
+          "name": "gte-pure-C",
+          "isFork": false,
+          "stars": 118,
+          "forks": 10,
+          "languages": {
+            "C": 36046,
+            "Python": 5072,
+            "Makefile": 909
+          }
+        },
+        {
+          "name": "zxfy",
+          "isFork": false,
+          "stars": 24,
+          "forks": 7,
+          "languages": {
+            "C": 15718,
+            "Makefile": 200
+          }
+        },
+        {
+          "name": "freakwan",
+          "isFork": false,
+          "stars": 502,
+          "forks": 29,
+          "languages": {
+            "Python": 210604,
+            "C++": 137596,
+            "C": 82464,
+            "Objective-C": 11038,
+            "Makefile": 522,
+            "Shell": 136
+          }
+        },
+        {
+          "name": "Telegram2txt",
+          "isFork": false,
+          "stars": 31,
+          "forks": 2,
+          "languages": {
+            "Python": 16994
+          }
+        },
+        {
+          "name": "toyforth",
+          "isFork": false,
+          "stars": 88,
+          "forks": 4,
+          "languages": {
+            "C": 13264,
+            "Makefile": 104
+          }
+        },
+        {
+          "name": "zx2040",
+          "isFork": false,
+          "stars": 183,
+          "forks": 19,
+          "languages": {
+            "C": 624773,
+            "CMake": 3990,
+            "Python": 1870,
+            "Makefile": 186
+          }
+        },
+        {
+          "name": "historical-redis-versions",
+          "isFork": false,
+          "stars": 162,
+          "forks": 5,
+          "languages": {
+            "C": 199994,
+            "Tcl": 12537,
+            "Makefile": 1627
+          }
+        },
+        {
+          "name": "c64-kitty",
+          "isFork": false,
+          "stars": 69,
+          "forks": 11,
+          "languages": {
+            "C": 534163,
+            "Makefile": 918
+          }
+        },
+        {
+          "name": "inverter",
+          "isFork": false,
+          "stars": 7,
+          "forks": 0,
+          "languages": {
+            "Python": 68982
+          }
+        },
+        {
+          "name": "protoview",
+          "isFork": false,
+          "stars": 597,
+          "forks": 24,
+          "languages": {
+            "C": 195569,
+            "Shell": 154
+          }
+        },
+        {
+          "name": "sds",
+          "isFork": false,
+          "stars": 5577,
+          "forks": 510,
+          "languages": {
+            "C": 55455,
+            "Makefile": 212
+          }
+        },
+        {
+          "name": "hnstyle",
+          "isFork": false,
+          "stars": 56,
+          "forks": 9,
+          "languages": {
+            "Python": 33411,
+            "C": 5415,
+            "Makefile": 86
+          }
+        },
+        {
+          "name": "ST77xx-pure-MP",
+          "isFork": false,
+          "stars": 55,
+          "forks": 6,
+          "languages": {
+            "Python": 22857,
+            "C": 5918,
+            "Makefile": 180
+          }
+        },
+        {
+          "name": "listpack",
+          "isFork": false,
+          "stars": 98,
+          "forks": 18,
+          "languages": {
+            "C": 40319,
+            "Makefile": 435
+          }
+        },
+        {
+          "name": "ttt-rl",
+          "isFork": false,
+          "stars": 589,
+          "forks": 58,
+          "languages": {
+            "C": 21273
+          }
+        },
+        {
+          "name": "kilo",
+          "isFork": false,
+          "stars": 9167,
+          "forks": 1004,
+          "languages": {
+            "C": 41602,
+            "Makefile": 91
+          }
+        },
+        {
+          "name": "micropython-telegram-bot",
+          "isFork": false,
+          "stars": 64,
+          "forks": 7,
+          "languages": {
+            "Python": 12987
+          }
+        },
+        {
+          "name": "hping",
+          "isFork": false,
+          "stars": 1721,
+          "forks": 367,
+          "languages": {
+            "C": 411259,
+            "Makefile": 337,
+            "Shell": 152
+          }
+        },
+        {
+          "name": "bma423-pure-mp",
+          "isFork": false,
+          "stars": 10,
+          "forks": 3,
+          "languages": {
+            "Python": 16692
+          }
+        },
+        {
+          "name": "uc8151_micropython",
+          "isFork": false,
+          "stars": 170,
+          "forks": 12,
+          "languages": {
+            "Python": 37659,
+            "C": 5824,
+            "Makefile": 174
+          }
+        },
+        {
+          "name": "smaz2",
+          "isFork": false,
+          "stars": 115,
+          "forks": 9,
+          "languages": {
+            "C": 12800,
+            "Python": 6057,
+            "Makefile": 220
+          }
+        },
+        {
+          "name": "vl53l0x-nb",
+          "isFork": false,
+          "stars": 10,
+          "forks": 2,
+          "languages": {
+            "Python": 22185
+          }
+        },
+        {
+          "name": "micropython-ft6x06",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "Python": 3411
+          }
+        },
+        {
+          "name": "64-thermometer",
+          "isFork": false,
+          "stars": 28,
+          "forks": 1,
+          "languages": {
+            "Python": 28317
+          }
+        },
+        {
+          "name": "t-watch-s3-micropython",
+          "isFork": false,
+          "stars": 23,
+          "forks": 5,
+          "languages": {
+            "Python": 58099
+          }
+        },
+        {
+          "name": "talk32",
+          "isFork": false,
+          "stars": 38,
+          "forks": 2,
+          "languages": {
+            "C": 24396,
+            "Makefile": 78
+          }
+        },
+        {
+          "name": "smallchat",
+          "isFork": false,
+          "stars": 7491,
+          "forks": 845,
+          "languages": {
+            "C": 26543,
+            "Makefile": 352
+          }
+        },
+        {
+          "name": "simple-language-model",
+          "isFork": false,
+          "stars": 73,
+          "forks": 2,
+          "languages": {
+            "Python": 13978
+          }
+        },
+        {
+          "name": "LLM-FTC-sampling",
+          "isFork": false,
+          "stars": 30,
+          "forks": 1,
+          "languages": {
+            "Python": 26546
+          }
+        },
+        {
+          "name": "rax",
+          "isFork": false,
+          "stars": 1270,
+          "forks": 176,
+          "languages": {
+            "C": 141184,
+            "Makefile": 517,
+            "C++": 145
+          }
+        },
+        {
+          "name": "failed-3d-prints-bot",
+          "isFork": false,
+          "stars": 25,
+          "forks": 1,
+          "languages": {
+            "C": 199989,
+            "Python": 7832,
+            "Makefile": 492,
+            "Shell": 97
+          }
+        },
+        {
+          "name": "stonky",
+          "isFork": false,
+          "stars": 272,
+          "forks": 23,
+          "languages": {
+            "C": 276239,
+            "Makefile": 432
+          }
+        },
+        {
+          "name": "redlock-rb",
+          "isFork": false,
+          "stars": 213,
+          "forks": 24,
+          "languages": {
+            "Ruby": 3678
+          }
+        },
+        {
+          "name": "flipper-asteroids",
+          "isFork": false,
+          "stars": 66,
+          "forks": 3,
+          "languages": {
+            "C": 24814,
+            "Shell": 154
+          }
+        },
+        {
+          "name": "aocla",
+          "isFork": false,
+          "stars": 383,
+          "forks": 17,
+          "languages": {
+            "C": 39976,
+            "Makefile": 162
+          }
+        },
+        {
+          "name": "rtl_433",
+          "isFork": true,
+          "stars": 7,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "crack-checksum",
+          "isFork": false,
+          "stars": 28,
+          "forks": 2,
+          "languages": {
+            "C": 3607,
+            "Makefile": 139
+          }
+        },
+        {
+          "name": "redis-sampler",
+          "isFork": false,
+          "stars": 266,
+          "forks": 66,
+          "languages": {
+            "Ruby": 8722
+          }
+        },
+        {
+          "name": "adventofcode2022",
+          "isFork": false,
+          "stars": 106,
+          "forks": 8,
+          "languages": {
+            "C": 118205,
+            "Makefile": 2164
+          }
+        },
+        {
+          "name": "RESP3",
+          "isFork": false,
+          "stars": 230,
+          "forks": 41,
+          "languages": {}
+        },
+        {
+          "name": "load81",
+          "isFork": false,
+          "stars": 740,
+          "forks": 65,
+          "languages": {
+            "C": 503581,
+            "HTML": 286180,
+            "C++": 14941,
+            "Lua": 11887,
+            "Makefile": 11608,
+            "Shell": 10801,
+            "Roff": 7236,
+            "JavaScript": 3185,
+            "CSS": 2809,
+            "Batchfile": 1070
+          }
+        },
+        {
+          "name": "lamernews",
+          "isFork": false,
+          "stars": 1355,
+          "forks": 198,
+          "languages": {
+            "Ruby": 101852,
+            "JavaScript": 8677,
+            "CSS": 6598
+          }
+        },
+        {
+          "name": "shapeme",
+          "isFork": false,
+          "stars": 400,
+          "forks": 18,
+          "languages": {
+            "C": 31312,
+            "Makefile": 218
+          }
+        },
+        {
+          "name": "lua-cmsgpack",
+          "isFork": false,
+          "stars": 383,
+          "forks": 123,
+          "languages": {
+            "C": 30832,
+            "Lua": 25220,
+            "Shell": 2671,
+            "CMake": 1378
+          }
+        },
+        {
+          "name": "try.redis",
+          "isFork": true,
+          "stars": 19,
+          "forks": 16,
+          "languages": {}
+        },
+        {
+          "name": "pngtostl",
+          "isFork": false,
+          "stars": 165,
+          "forks": 8,
+          "languages": {
+            "C": 9676,
+            "Makefile": 188
+          }
+        },
+        {
+          "name": "disque",
+          "isFork": false,
+          "stars": 8076,
+          "forks": 532,
+          "languages": {
+            "C": 1077440,
+            "Tcl": 110497,
+            "Makefile": 6613,
+            "Shell": 841
+          }
+        },
+        {
+          "name": "tclircd",
+          "isFork": false,
+          "stars": 41,
+          "forks": 2,
+          "languages": {
+            "Tcl": 14784
+          }
+        },
+        {
+          "name": "iconping",
+          "isFork": false,
+          "stars": 134,
+          "forks": 48,
+          "languages": {
+            "Objective-C": 13570,
+            "Rich Text Format": 436
+          }
+        },
+        {
+          "name": "disque-module",
+          "isFork": false,
+          "stars": 471,
+          "forks": 19,
+          "languages": {
+            "C": 448393,
+            "Tcl": 35932,
+            "Makefile": 816,
+            "Shell": 403
+          }
+        },
+        {
+          "name": "gopher2redis",
+          "isFork": false,
+          "stars": 94,
+          "forks": 7,
+          "languages": {
+            "Ruby": 8430
+          }
+        },
+        {
+          "name": "smaz",
+          "isFork": false,
+          "stars": 1222,
+          "forks": 133,
+          "languages": {
+            "C": 11425
+          }
+        },
+        {
+          "name": "hiredis",
+          "isFork": false,
+          "stars": 13,
+          "forks": 11,
+          "languages": {}
+        },
+        {
+          "name": "otree",
+          "isFork": false,
+          "stars": 282,
+          "forks": 53,
+          "languages": {
+            "C": 48245,
+            "Makefile": 188
+          }
+        },
+        {
+          "name": "neural-redis",
+          "isFork": false,
+          "stars": 2228,
+          "forks": 100,
+          "languages": {
+            "C": 113304,
+            "Makefile": 1537
+          }
+        },
+        {
+          "name": "redis-cp-rewrite-sim",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "C": 4153
+          }
+        },
+        {
+          "name": "dict-scan-fuzz-tester",
+          "isFork": false,
+          "stars": 10,
+          "forks": 0,
+          "languages": {
+            "C": 7422
+          }
+        },
+        {
+          "name": "retwis",
+          "isFork": false,
+          "stars": 370,
+          "forks": 135,
+          "languages": {
+            "PHP": 490329,
+            "CSS": 2346
+          }
+        },
+        {
+          "name": "redis-rb-cluster",
+          "isFork": false,
+          "stars": 251,
+          "forks": 102,
+          "languages": {
+            "Ruby": 19310
+          }
+        },
+        {
+          "name": "connect4-montecarlo",
+          "isFork": false,
+          "stars": 36,
+          "forks": 6,
+          "languages": {
+            "C": 8553,
+            "Makefile": 76
+          }
+        },
+        {
+          "name": "iqmeteo",
+          "isFork": false,
+          "stars": 21,
+          "forks": 3,
+          "languages": {
+            "Shell": 298
+          }
+        },
+        {
+          "name": "siphash",
+          "isFork": false,
+          "stars": 20,
+          "forks": 1,
+          "languages": {
+            "C": 12744,
+            "Makefile": 131
+          }
+        },
+        {
+          "name": "tinydnnc",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "nn-2003",
+          "isFork": false,
+          "stars": 19,
+          "forks": 2,
+          "languages": {
+            "C": 45176,
+            "Tcl": 8665,
+            "Makefile": 915
+          }
+        },
+        {
+          "name": "recidiv",
+          "isFork": false,
+          "stars": 42,
+          "forks": 3,
+          "languages": {
+            "Tcl": 11961
+          }
+        },
+        {
+          "name": "redimension",
+          "isFork": false,
+          "stars": 98,
+          "forks": 8,
+          "languages": {
+            "Ruby": 10067
+          }
+        },
+        {
+          "name": "redis-timeseries",
+          "isFork": false,
+          "stars": 194,
+          "forks": 32,
+          "languages": {
+            "Ruby": 5865
+          }
+        },
+        {
+          "name": "strabo",
+          "isFork": false,
+          "stars": 20,
+          "forks": 4,
+          "languages": {
+            "C": 50290,
+            "Shell": 100,
+            "Makefile": 96
+          }
+        },
+        {
+          "name": "jsrt",
+          "isFork": false,
+          "stars": 120,
+          "forks": 12,
+          "languages": {}
+        },
+        {
+          "name": "redis-rb",
+          "isFork": true,
+          "stars": 5,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "rascan",
+          "isFork": false,
+          "stars": 7,
+          "forks": 3,
+          "languages": {
+            "C": 43963
+          }
+        },
+        {
+          "name": "lloogg",
+          "isFork": false,
+          "stars": 211,
+          "forks": 35,
+          "languages": {
+            "PHP": 109306,
+            "JavaScript": 64913,
+            "CSS": 13693,
+            "Perl": 663
+          }
+        },
+        {
+          "name": "partitions",
+          "isFork": false,
+          "stars": 36,
+          "forks": 2,
+          "languages": {
+            "Tcl": 10554
+          }
+        },
+        {
+          "name": "cache-mem-tester",
+          "isFork": false,
+          "stars": 7,
+          "forks": 0,
+          "languages": {
+            "Ruby": 3814
+          }
+        },
+        {
+          "name": "redis-tools",
+          "isFork": false,
+          "stars": 210,
+          "forks": 31,
+          "languages": {
+            "C": 114199,
+            "Shell": 259
+          }
+        },
+        {
+          "name": "visitors",
+          "isFork": false,
+          "stars": 93,
+          "forks": 29,
+          "languages": {
+            "C": 205123,
+            "Perl": 3313,
+            "Shell": 366
+          }
+        },
+        {
+          "name": "codakido",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gif-pure-tcl",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "Tcl": 17593
+          }
+        },
+        {
+          "name": "aspark",
+          "isFork": false,
+          "stars": 51,
+          "forks": 5,
+          "languages": {
+            "C": 14691
+          }
+        },
+        {
+          "name": "sbignum",
+          "isFork": false,
+          "stars": 10,
+          "forks": 4,
+          "languages": {
+            "C": 79558,
+            "Tcl": 1472,
+            "Shell": 152
+          }
+        },
+        {
+          "name": "mc-benchmark",
+          "isFork": false,
+          "stars": 86,
+          "forks": 20,
+          "languages": {
+            "C": 152130
+          }
+        },
+        {
+          "name": "iPhoneTracker",
+          "isFork": true,
+          "stars": 6,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "book-examples",
+          "isFork": false,
+          "stars": 55,
+          "forks": 3,
+          "languages": {
+            "Ruby": 3946
+          }
+        },
+        {
+          "name": "nolate",
+          "isFork": false,
+          "stars": 40,
+          "forks": 5,
+          "languages": {
+            "Ruby": 5553
+          }
+        },
+        {
+          "name": "Gitan",
+          "isFork": false,
+          "stars": 46,
+          "forks": 6,
+          "languages": {
+            "Ruby": 2083,
+            "Shell": 168
+          }
+        },
+        {
+          "name": "yaku-ns",
+          "isFork": false,
+          "stars": 28,
+          "forks": 9,
+          "languages": {
+            "C": 195720
+          }
+        },
+        {
+          "name": "Bigdis",
+          "isFork": false,
+          "stars": 77,
+          "forks": 10,
+          "languages": {
+            "Tcl": 12022
+          }
+        },
+        {
+          "name": "redisdotphp",
+          "isFork": false,
+          "stars": 19,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "Jim",
+          "isFork": false,
+          "stars": 62,
+          "forks": 5,
+          "languages": {}
+        },
+        {
+          "name": "Siboom",
+          "isFork": false,
+          "stars": 11,
+          "forks": 2,
+          "languages": {
+            "Ruby": 7965
+          }
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 18472,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 29,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 11,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 246,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 2640,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 31,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 138,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          84,
+          98,
+          118,
+          61,
+          14,
+          2,
+          24,
+          116,
+          181,
+          134,
+          167,
+          40,
+          198,
+          130,
+          180,
+          68,
+          90,
+          93,
+          61,
+          50,
+          78,
+          150,
+          114,
+          53,
+          142,
+          180,
+          150,
+          98,
+          127,
+          6,
+          181,
+          303,
+          206,
+          125,
+          111,
+          168,
+          271,
+          250,
+          82,
+          33,
+          60,
+          46,
+          34,
+          70,
+          93,
+          49,
+          153,
+          274,
+          246,
+          75,
+          116,
+          67,
+          104,
+          104,
+          67,
+          111,
+          195,
+          162,
+          164,
+          248,
+          317,
+          215,
+          153,
+          184,
+          164,
+          34,
+          84,
+          122,
+          103,
+          218,
+          160,
+          215,
+          125,
+          87,
+          168,
+          108,
+          148,
+          42,
+          110,
+          107,
+          150,
+          125,
+          105,
+          48,
+          22,
+          97,
+          116,
+          152,
+          123,
+          32,
+          127,
+          109,
+          56,
+          83,
+          42,
+          54,
+          86,
+          138,
+          49,
+          47,
+          83,
+          13,
+          118,
+          11,
+          102,
+          55,
+          91,
+          87,
+          131,
+          43,
+          108,
+          258,
+          252,
+          74,
+          195,
+          176,
+          152,
+          138,
+          244,
+          196,
+          145,
+          38,
+          42,
+          10,
+          136,
+          16,
+          163,
+          198,
+          130,
+          130,
+          73,
+          194,
+          164,
+          250,
+          192,
+          67,
+          15,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          105,
+          20,
+          1,
+          0,
+          0,
+          11,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          96,
+          212,
+          227,
+          115,
+          6,
+          8,
+          0,
+          2,
+          1,
+          1,
+          12,
+          67,
+          37,
+          89,
+          118,
+          127,
+          36,
+          14,
+          5,
+          0,
+          0,
+          0,
+          12,
+          0,
+          0,
+          17,
+          56,
+          82,
+          27,
+          26,
+          16,
+          8,
+          2,
+          1,
+          2,
+          2,
+          6,
+          214,
+          149,
+          4,
+          12,
+          194,
+          48,
+          35,
+          204,
+          152,
+          0
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2009,
+            "contributions": 832,
+            "activeDays": 118,
+            "commits": 826,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 1305,
+            "activeDays": 186,
+            "commits": 1300,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2011,
+            "contributions": 1685,
+            "activeDays": 203,
+            "commits": 1623,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 49
+          },
+          {
+            "year": 2012,
+            "contributions": 1267,
+            "activeDays": 208,
+            "commits": 1226,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 33
+          },
+          {
+            "year": 2013,
+            "contributions": 1674,
+            "activeDays": 200,
+            "commits": 1626,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 44
+          },
+          {
+            "year": 2014,
+            "contributions": 2006,
+            "activeDays": 226,
+            "commits": 1969,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 30
+          },
+          {
+            "year": 2015,
+            "contributions": 1545,
+            "activeDays": 206,
+            "commits": 1521,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 21
+          },
+          {
+            "year": 2016,
+            "contributions": 1070,
+            "activeDays": 167,
+            "commits": 1060,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 5
+          },
+          {
+            "year": 2017,
+            "contributions": 798,
+            "activeDays": 155,
+            "commits": 784,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 9
+          },
+          {
+            "year": 2018,
+            "contributions": 1705,
+            "activeDays": 191,
+            "commits": 1687,
+            "pullRequests": 0,
+            "reviews": 3,
+            "issues": 11
+          },
+          {
+            "year": 2019,
+            "contributions": 1448,
+            "activeDays": 161,
+            "commits": 1434,
+            "pullRequests": 0,
+            "reviews": 6,
+            "issues": 7
+          },
+          {
+            "year": 2020,
+            "contributions": 955,
+            "activeDays": 117,
+            "commits": 944,
+            "pullRequests": 0,
+            "reviews": 1,
+            "issues": 8
+          },
+          {
+            "year": 2021,
+            "contributions": 139,
+            "activeDays": 28,
+            "commits": 136,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2022,
+            "contributions": 96,
+            "activeDays": 23,
+            "commits": 92,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2023,
+            "contributions": 688,
+            "activeDays": 129,
+            "commits": 669,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 9
+          },
+          {
+            "year": 2024,
+            "contributions": 401,
+            "activeDays": 87,
+            "commits": 377,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 11
+          },
+          {
+            "year": 2025,
+            "contributions": 245,
+            "activeDays": 104,
+            "commits": 212,
+            "pullRequests": 18,
+            "reviews": 1,
+            "issues": 4
+          },
+          {
+            "year": 2026,
+            "contributions": 1012,
+            "activeDays": 131,
+            "commits": 986,
+            "pullRequests": 8,
+            "reviews": 0,
+            "issues": 3
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2022-12-29",
+        "end": "2023-01-28"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "1156359631",
+        "name": "qwen-asr",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 620,
+        "pushedAt": "2026-10-01T05:09:39Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1392271539",
+        "name": "anotherworld-zx-spectrum-48k",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 26,
+        "pushedAt": "2026-09-28T09:02:01Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1231148626",
+        "name": "ds4",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 23626,
+        "pushedAt": "2026-09-20T07:51:19Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1148766359",
+        "name": "tgterm",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 224,
+        "pushedAt": "2026-09-07T09:10:16Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1328627783",
+        "name": "h3.c",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2830,
+        "pushedAt": "2026-08-11T13:53:32Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "735430113",
+        "name": "gguf-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 368,
+        "pushedAt": "2026-05-16T21:25:59Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "571929",
+        "name": "linenoise",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4363,
+        "pushedAt": "2026-05-02T10:41:43Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1221493924",
+        "name": "llama.cpp-deepseek-v4-flash",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 347,
+        "pushedAt": "2026-04-27T05:21:56Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "gguf-py/pyproject.toml",
+            "content": "[tool.poetry]\nname = \"gguf\"\nversion = \"0.18.0\"\ndescription = \"Read and write ML models in GGUF for GGML\"\nauthors = [\"GGML <ggml@ggml.ai>\"]\npackages = [\n    {include = \"gguf\"},\n    {include = \"gguf/py.typed\"},\n]\nreadme = \"README.md\"\nhomepage = \"https://ggml.ai\"\nrepository = \"https://github.com/ggml-org/llama.cpp\"\nkeywords = [\"ggml\", \"gguf\", \"llama.cpp\"]\nclassifiers = [\n    \"Programming Language :: Python :: 3\",\n    \"License :: OSI Approved :: MIT License\",\n    \"Operating System :: OS Independent\",\n]\n\n[tool.poetry.dependencies]\npython = \">=3.8\"\nnumpy = \">=1.17\"\ntqdm = \">=4.27\"\npyyaml = \">=5.1\"\nrequests = \">=2.25\"\nsentencepiece = { version = \">=0.1.98,<0.3.0\", optional = true }\nPySide6 = { version = \"^6.9\", python = \">=3.9,<3.14\", optional = true }\n\n[tool.poetry.dev-dependencies]\npytest = \"^5.2\"\n\n[tool.poetry.extras]\ngui = [\"PySide6\"]\n\n[build-system]\nrequires = [\"poetry-core>=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\"\n\n[tool.poetry.scripts]\ngguf-convert-endian = \"gguf.scripts.gguf_convert_endian:main\"\ngguf-dump = \"gguf.scripts.gguf_dump:main\"\ngguf-set-metadata = \"gguf.scripts.gguf_set_metadata:main\"\ngguf-new-metadata = \"gguf.scripts.gguf_new_metadata:main\"\ngguf-editor-gui = \"gguf.scripts.gguf_editor_gui:main\"\n"
+          },
+          {
+            "path": "pyproject.toml",
+            "content": "[tool.poetry]\nname = \"llama-cpp-scripts\"\nversion = \"0.0.0\"\ndescription = \"Scripts that ship with llama.cpp\"\nauthors = [\"GGML <ggml@ggml.ai>\"]\nreadme = \"README.md\"\nhomepage = \"https://ggml.ai\"\nrepository = \"https://github.com/ggml-org/llama.cpp\"\nkeywords = [\"ggml\", \"gguf\", \"llama.cpp\"]\npackages = [{ include = \"*.py\", from = \".\" }]\nclassifiers = [\n    \"Programming Language :: Python :: 3\",\n    \"License :: OSI Approved :: MIT License\",\n    \"Operating System :: OS Independent\",\n]\n\n[tool.poetry.dependencies]\npython = \">=3.9\"\nnumpy = \"^1.25.0\"\nsentencepiece = \">=0.1.98,<0.3.0\"\ntransformers = \"==5.5.1\"\nprotobuf = \">=4.21.0,<5.0.0\"\ngguf = { path = \"./gguf-py\" }\ntorch = { version = \"^2.2.0\", source = \"pytorch\" }\n\n[tool.poetry.dev-dependencies]\npytest = \"^5.2\"\n\n\n# Force wheel + cpu\n# For discussion and context see https://github.com/python-poetry/poetry#6409\n[[tool.poetry.source]]\nname = \"pytorch\"\nurl = \"https://download.pytorch.org/whl/cpu\"\npriority = \"explicit\"\n\n[build-system]\nrequires = [\"poetry-core>=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\"\n\n[tool.poetry.scripts]\nllama-convert-hf-to-gguf = \"convert_hf_to_gguf:main\"\nllama-convert-lora-to-gguf = \"convert_lora_to_gguf:main\"\nllama-convert-llama-ggml-to-gguf = \"convert_llama_ggml_to_gguf:main\"\nllama-ggml-vk-generate-shaders = \"ggml_vk_generate_shaders:main\"\n"
+          }
+        ]
+      },
+      {
+        "id": "764308601",
+        "name": "bme680-pure-mp",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 21,
+        "pushedAt": "2026-03-28T12:07:10Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"urls\": [\n  ],\n  \"deps\": [\n    [ \"github:antirez/bme680-pure-mp/azbme680.py\", \"main\" ]\n  ],\n  \"version\": \"0.1\"\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1188603199",
+        "name": "bplog",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 24,
+        "pushedAt": "2026-03-22T10:23:20Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "android/app/build.gradle.kts",
+            "content": "plugins {\n    id(\"com.android.application\")\n    id(\"org.jetbrains.kotlin.android\")\n    id(\"org.jetbrains.kotlin.kapt\")\n}\n\nandroid {\n    namespace = \"com.bplog.holter\"\n    compileSdk = 34\n\n    defaultConfig {\n        applicationId = \"com.bplog.holter\"\n        minSdk = 30\n        targetSdk = 34\n        versionCode = 1\n        versionName = \"1.0\"\n    }\n\n    buildFeatures {\n        compose = true\n    }\n\n    composeOptions {\n        kotlinCompilerExtensionVersion = \"1.5.10\"\n    }\n\n    compileOptions {\n        sourceCompatibility = JavaVersion.VERSION_17\n        targetCompatibility = JavaVersion.VERSION_17\n    }\n\n    kotlinOptions {\n        jvmTarget = \"17\"\n    }\n}\n\ndependencies {\n    // Compose\n    implementation(platform(\"androidx.compose:compose-bom:2024.02.00\"))\n    implementation(\"androidx.compose.material3:material3\")\n    implementation(\"androidx.compose.ui:ui\")\n    implementation(\"androidx.compose.ui:ui-tooling-preview\")\n    implementation(\"androidx.activity:activity-compose:1.8.2\")\n    implementation(\"androidx.lifecycle:lifecycle-runtime-compose:2.7.0\")\n    implementation(\"androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0\")\n\n    // Room\n    implementation(\"androidx.room:room-runtime:2.6.1\")\n    implementation(\"androidx.room:room-ktx:2.6.1\")\n    kapt(\"androidx.room:room-compiler:2.6.1\")\n\n    // Coroutines\n    implementation(\"org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3\")\n\n    // Core\n    implementation(\"androidx.core:core-ktx:1.12.0\")\n}\n"
+          },
+          {
+            "path": "android/build.gradle.kts",
+            "content": "plugins {\n    id(\"com.android.application\") version \"8.2.2\" apply false\n    id(\"org.jetbrains.kotlin.android\") version \"1.9.22\" apply false\n    id(\"org.jetbrains.kotlin.kapt\") version \"1.9.22\" apply false\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1164959171",
+        "name": "ZOT",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 77,
+        "pushedAt": "2026-02-28T16:11:22Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "939958411",
+        "name": "picol",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 246,
+        "pushedAt": "2026-02-18T11:18:03Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1150763716",
+        "name": "voxtral.c",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1750,
+        "pushedAt": "2026-02-15T18:58:52Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "7455329",
+        "name": "dump1090",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2949,
+        "pushedAt": "2026-02-15T14:55:05Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1136984342",
+        "name": "iris.c",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1994,
+        "pushedAt": "2026-02-13T15:22:48Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1143590265",
+        "name": "whisperbot",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 167,
+        "pushedAt": "2026-02-12T16:29:22Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "720816549",
+        "name": "botlib",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 839,
+        "pushedAt": "2026-02-02T18:22:44Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "776734214",
+        "name": "microfont",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 74,
+        "pushedAt": "2026-01-31T16:49:36Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1131880432",
+        "name": "gte-pure-C",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 118,
+        "pushedAt": "2026-01-21T12:38:34Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1131538899",
+        "name": "zxfy",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 24,
+        "pushedAt": "2026-01-10T07:53:58Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "598271949",
+        "name": "freakwan",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 502,
+        "pushedAt": "2026-01-09T08:16:19Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1126441055",
+        "name": "Telegram2txt",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 31,
+        "pushedAt": "2026-01-01T23:15:02Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "requirements.txt",
+            "content": "telethon>=1.36.0\n"
+          }
+        ]
+      },
+      {
+        "id": "1116264102",
+        "name": "toyforth",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 88,
+        "pushedAt": "2025-12-14T14:28:39Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "787893000",
+        "name": "zx2040",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 183,
+        "pushedAt": "2025-12-03T17:49:53Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1016659186",
+        "name": "historical-redis-versions",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 162,
+        "pushedAt": "2025-07-09T16:03:06Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "973734238",
+        "name": "c64-kitty",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 69,
+        "pushedAt": "2025-06-29T10:40:27Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "980153122",
+        "name": "inverter",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2025-05-08T16:48:23Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "583665827",
+        "name": "protoview",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 597,
+        "pushedAt": "2025-05-05T07:19:31Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "16582463",
+        "name": "sds",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5577,
+        "pushedAt": "2025-04-18T10:59:31Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "967465882",
+        "name": "hnstyle",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 56,
+        "pushedAt": "2025-04-16T13:52:09Z",
+        "languages": {},
+        "files": []
+      }
+    ],
+    "evidence": [],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 94,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 126
+    },
+    "requests": {
+      "rest": 37,
+      "graphql": 0,
+      "manifestFetches": 36,
+      "reposInspected": 30,
+      "cacheHits": 0
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T04:50:42.790Z",
+  "coldLatencyMs": 18468,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "antirez",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 7,
+    "totalRequests": 8,
+    "durationMs": 5610,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "antirez",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

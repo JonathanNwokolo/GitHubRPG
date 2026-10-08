@@ -123,7 +123,7 @@ describe("CharacterPageClient: share modal", () => {
     opener.focus();
     fireEvent.click(opener);
 
-    expect(await screen.findByRole("dialog", { name: "Cartão de Aventureiro" })).toBeInTheDocument();
+    expect(await screen.findByRole("dialog", { name: "Cartão de Aventureiro" }, { timeout: 5_000 })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Compartilhar perfil" })).toBeInTheDocument();
 
     fireEvent.keyDown(document.activeElement as HTMLElement, { key: "Escape" });

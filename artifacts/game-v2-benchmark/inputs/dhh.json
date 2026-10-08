@@ -1,0 +1,657 @@
+{
+  "profile": {
+    "username": "dhh",
+    "cohort": "calibration",
+    "categories": [
+      "backend",
+      "long-lived"
+    ],
+    "mandatory": true
+  },
+  "rawProfile": {
+    "username": "dhh",
+    "displayName": "David Heinemeier Hansson",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/2741?v=4",
+    "bio": null,
+    "location": null,
+    "company": "37signals",
+    "createdAt": "2008-03-10T17:53:51.000Z",
+    "fetchedAt": "2026-10-07T04:50:06.179Z",
+    "isDemo": false,
+    "followers": {
+      "value": 30174,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "hunk",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "herdr-1",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gliff",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "omarchy-giants-theme",
+          "isFork": false,
+          "stars": 115,
+          "forks": 17,
+          "languages": {}
+        },
+        {
+          "name": "omarchy-billboard-generator",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "omarchy-zonda-zoom-theme",
+          "isFork": false,
+          "stars": 37,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "omarchy-diablo-dreams-theme",
+          "isFork": false,
+          "stars": 31,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "impala",
+          "isFork": true,
+          "stars": 18,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mpv-racing-telemetry",
+          "isFork": true,
+          "stars": 5,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "hyprland-wiki",
+          "isFork": true,
+          "stars": 22,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "textmate-rails-bundle",
+          "isFork": false,
+          "stars": 52,
+          "forks": 9,
+          "languages": {}
+        },
+        {
+          "name": "conductor",
+          "isFork": false,
+          "stars": 73,
+          "forks": 18,
+          "languages": {
+            "Ruby": 3262
+          }
+        },
+        {
+          "name": "asset-hosting-with-minimum-ssl",
+          "isFork": false,
+          "stars": 87,
+          "forks": 13,
+          "languages": {
+            "Ruby": 2820
+          }
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 10253,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 905,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 244,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 297,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 2009,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 111,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 12,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 318,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          4,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          7,
+          4,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          3,
+          12,
+          1,
+          201,
+          51,
+          49,
+          52,
+          9,
+          1,
+          0,
+          8,
+          17,
+          18,
+          2,
+          13,
+          10,
+          3,
+          10,
+          13,
+          8,
+          9,
+          14,
+          24,
+          12,
+          17,
+          4,
+          5,
+          12,
+          2,
+          7,
+          29,
+          10,
+          14,
+          13,
+          12,
+          11,
+          6,
+          15,
+          8,
+          20,
+          7,
+          22,
+          21,
+          6,
+          6,
+          4,
+          2,
+          8,
+          11,
+          5,
+          3,
+          2,
+          4,
+          1,
+          11,
+          7,
+          5,
+          0,
+          8,
+          15,
+          14,
+          10,
+          18,
+          5,
+          15,
+          20,
+          15,
+          6,
+          10,
+          11,
+          15,
+          16,
+          31,
+          13,
+          55,
+          50,
+          33,
+          14,
+          1,
+          2,
+          6,
+          20,
+          17,
+          10,
+          17,
+          10,
+          1,
+          25,
+          27,
+          14,
+          26,
+          50,
+          57,
+          226,
+          159,
+          180,
+          178,
+          60,
+          118,
+          91,
+          102,
+          61,
+          61,
+          23,
+          5,
+          9,
+          75,
+          237,
+          798,
+          380,
+          120,
+          281,
+          96,
+          75,
+          179,
+          104,
+          32,
+          17,
+          188,
+          121,
+          29,
+          27,
+          41,
+          218,
+          286,
+          163,
+          207,
+          293,
+          130,
+          25,
+          61,
+          10,
+          40,
+          90,
+          156,
+          70,
+          803,
+          1277,
+          1841,
+          459,
+          487,
+          581,
+          146,
+          330,
+          1112,
+          514,
+          475,
+          1299,
+          268,
+          679,
+          1190,
+          2319,
+          159
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2008,
+            "contributions": 3,
+            "activeDays": 3,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2009,
+            "contributions": 0,
+            "activeDays": 0,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 0,
+            "activeDays": 0,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2011,
+            "contributions": 9,
+            "activeDays": 9,
+            "commits": 0,
+            "pullRequests": 3,
+            "reviews": 0,
+            "issues": 6
+          },
+          {
+            "year": 2012,
+            "contributions": 9,
+            "activeDays": 5,
+            "commits": 0,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 8
+          },
+          {
+            "year": 2013,
+            "contributions": 7,
+            "activeDays": 6,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 6
+          },
+          {
+            "year": 2014,
+            "contributions": 387,
+            "activeDays": 48,
+            "commits": 104,
+            "pullRequests": 3,
+            "reviews": 0,
+            "issues": 23
+          },
+          {
+            "year": 2015,
+            "contributions": 141,
+            "activeDays": 84,
+            "commits": 0,
+            "pullRequests": 6,
+            "reviews": 0,
+            "issues": 48
+          },
+          {
+            "year": 2016,
+            "contributions": 137,
+            "activeDays": 86,
+            "commits": 4,
+            "pullRequests": 15,
+            "reviews": 2,
+            "issues": 31
+          },
+          {
+            "year": 2017,
+            "contributions": 128,
+            "activeDays": 81,
+            "commits": 0,
+            "pullRequests": 22,
+            "reviews": 31,
+            "issues": 12
+          },
+          {
+            "year": 2018,
+            "contributions": 65,
+            "activeDays": 50,
+            "commits": 0,
+            "pullRequests": 5,
+            "reviews": 7,
+            "issues": 16
+          },
+          {
+            "year": 2019,
+            "contributions": 154,
+            "activeDays": 103,
+            "commits": 0,
+            "pullRequests": 10,
+            "reviews": 5,
+            "issues": 6
+          },
+          {
+            "year": 2020,
+            "contributions": 258,
+            "activeDays": 133,
+            "commits": 0,
+            "pullRequests": 23,
+            "reviews": 6,
+            "issues": 4
+          },
+          {
+            "year": 2021,
+            "contributions": 622,
+            "activeDays": 178,
+            "commits": 185,
+            "pullRequests": 68,
+            "reviews": 19,
+            "issues": 21
+          },
+          {
+            "year": 2022,
+            "contributions": 963,
+            "activeDays": 247,
+            "commits": 233,
+            "pullRequests": 15,
+            "reviews": 17,
+            "issues": 2
+          },
+          {
+            "year": 2023,
+            "contributions": 2507,
+            "activeDays": 297,
+            "commits": 609,
+            "pullRequests": 34,
+            "reviews": 25,
+            "issues": 33
+          },
+          {
+            "year": 2024,
+            "contributions": 1601,
+            "activeDays": 187,
+            "commits": 864,
+            "pullRequests": 82,
+            "reviews": 30,
+            "issues": 30
+          },
+          {
+            "year": 2025,
+            "contributions": 5960,
+            "activeDays": 242,
+            "commits": 3240,
+            "pullRequests": 113,
+            "reviews": 69,
+            "issues": 44
+          },
+          {
+            "year": 2026,
+            "contributions": 8345,
+            "activeDays": 250,
+            "commits": 5014,
+            "pullRequests": 505,
+            "reviews": 33,
+            "issues": 7
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2022-02-13",
+        "end": "2022-06-03"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "1332056763",
+        "name": "omarchy-giants-theme",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 115,
+        "pushedAt": "2026-09-13T13:45:27Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1336908809",
+        "name": "omarchy-zonda-zoom-theme",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 37,
+        "pushedAt": "2026-08-17T08:57:16Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1336167733",
+        "name": "omarchy-diablo-dreams-theme",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 31,
+        "pushedAt": "2026-08-17T07:38:45Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "147432708",
+        "name": "textmate-rails-bundle",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 52,
+        "pushedAt": "2022-06-18T10:14:16Z",
+        "languages": {},
+        "files": []
+      }
+    ],
+    "evidence": [],
+    "coverage": {
+      "coverage": "full",
+      "eligible": 4,
+      "examined": 4,
+      "failed": 0,
+      "omittedByBudget": 0
+    },
+    "requests": {
+      "rest": 5,
+      "graphql": 0,
+      "manifestFetches": 4,
+      "reposInspected": 4,
+      "cacheHits": 0
+    },
+    "warnings": []
+  },
+  "collectedAt": "2026-10-07T04:50:10.145Z",
+  "coldLatencyMs": 4183,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "dhh",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 5,
+    "totalRequests": 6,
+    "durationMs": 2547,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "dhh",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

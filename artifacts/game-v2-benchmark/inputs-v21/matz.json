@@ -1,0 +1,785 @@
+{
+  "profile": {
+    "username": "matz",
+    "cohort": "calibration",
+    "categories": [
+      "backend",
+      "low-level",
+      "long-lived"
+    ],
+    "mandatory": true
+  },
+  "rawProfile": {
+    "username": "matz",
+    "displayName": "Yukihiro \"Matz\" Matsumoto",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/30733?v=4",
+    "bio": null,
+    "location": "Matsue, Japan",
+    "company": "Ruby Association,NaCl",
+    "createdAt": "2008-10-23T23:14:57.000Z",
+    "fetchedAt": "2026-10-07T12:53:47.254Z",
+    "isDemo": false,
+    "followers": {
+      "value": 10750,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "spinel",
+          "isFork": false,
+          "stars": 2196,
+          "forks": 144,
+          "languages": {
+            "C": 16867688,
+            "Ruby": 8017110,
+            "C++": 346107,
+            "Makefile": 318555,
+            "Shell": 170293,
+            "Reason": 583,
+            "Dockerfile": 345
+          }
+        },
+        {
+          "name": "oss-fuzz",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prism",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "spin-index",
+          "isFork": false,
+          "stars": 5,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "streem",
+          "isFork": false,
+          "stars": 4597,
+          "forks": 235,
+          "languages": {
+            "C": 270526,
+            "Yacc": 20533,
+            "Lex": 3920,
+            "Makefile": 1181,
+            "Dockerfile": 546,
+            "Shell": 326
+          }
+        },
+        {
+          "name": "mruby-process",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mmruby",
+          "isFork": true,
+          "stars": 4,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mruby-onig-regexp",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qmk_firmware",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mail",
+          "isFork": true,
+          "stars": 20,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "csv_parser",
+          "isFork": true,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mruby-thread",
+          "isFork": true,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "lockfree-queue",
+          "isFork": true,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mruby",
+          "isFork": true,
+          "stars": 97,
+          "forks": 7,
+          "languages": {}
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 24270,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 78,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 85,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 63,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 4282,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 2106,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 2106,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 365,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          44,
+          66,
+          9,
+          7,
+          16,
+          1,
+          1,
+          15,
+          67,
+          58,
+          104,
+          67,
+          56,
+          24,
+          37,
+          59,
+          269,
+          915,
+          768,
+          498,
+          258,
+          207,
+          192,
+          195,
+          297,
+          342,
+          297,
+          657,
+          378,
+          216,
+          144,
+          306,
+          213,
+          63,
+          102,
+          216,
+          129,
+          192,
+          364,
+          736,
+          673,
+          522,
+          397,
+          183,
+          270,
+          138,
+          115,
+          114,
+          158,
+          122,
+          97,
+          68,
+          100,
+          149,
+          152,
+          135,
+          77,
+          153,
+          142,
+          148,
+          138,
+          173,
+          136,
+          92,
+          92,
+          103,
+          56,
+          50,
+          59,
+          57,
+          20,
+          328,
+          230,
+          180,
+          222,
+          248,
+          347,
+          164,
+          246,
+          200,
+          297,
+          78,
+          144,
+          158,
+          337,
+          62,
+          59,
+          66,
+          117,
+          50,
+          114,
+          50,
+          182,
+          195,
+          70,
+          153,
+          137,
+          129,
+          126,
+          119,
+          136,
+          196,
+          105,
+          158,
+          176,
+          195,
+          130,
+          80,
+          122,
+          79,
+          19,
+          28,
+          138,
+          126,
+          139,
+          64,
+          104,
+          65,
+          48,
+          141,
+          80,
+          142,
+          100,
+          111,
+          87,
+          77,
+          86,
+          102,
+          101,
+          81,
+          55,
+          44,
+          68,
+          62,
+          66,
+          91,
+          99,
+          57,
+          56,
+          104,
+          83,
+          51,
+          92,
+          63,
+          177,
+          78,
+          54,
+          91,
+          55,
+          71,
+          49,
+          41,
+          48,
+          57,
+          46,
+          42,
+          75,
+          87,
+          67,
+          79,
+          60,
+          53,
+          75,
+          63,
+          54,
+          55,
+          75,
+          64,
+          57,
+          63,
+          77,
+          77,
+          54,
+          102,
+          202,
+          214,
+          172,
+          138,
+          195,
+          70,
+          151,
+          142,
+          159,
+          423,
+          422,
+          1369,
+          1527,
+          1818,
+          1550,
+          2049,
+          1936
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2008,
+            "contributions": 1,
+            "activeDays": 1,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2009,
+            "contributions": 0,
+            "activeDays": 0,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 44,
+            "activeDays": 7,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2011,
+            "contributions": 467,
+            "activeDays": 97,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 3719,
+            "activeDays": 240,
+            "commits": 1199,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2013,
+            "contributions": 3063,
+            "activeDays": 248,
+            "commits": 1021,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2014,
+            "contributions": 3862,
+            "activeDays": 271,
+            "commits": 1329,
+            "pullRequests": 9,
+            "reviews": 0,
+            "issues": 5
+          },
+          {
+            "year": 2015,
+            "contributions": 1481,
+            "activeDays": 233,
+            "commits": 746,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2016,
+            "contributions": 1396,
+            "activeDays": 202,
+            "commits": 727,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 4
+          },
+          {
+            "year": 2017,
+            "contributions": 2621,
+            "activeDays": 223,
+            "commits": 905,
+            "pullRequests": 4,
+            "reviews": 4,
+            "issues": 2
+          },
+          {
+            "year": 2018,
+            "contributions": 1255,
+            "activeDays": 145,
+            "commits": 446,
+            "pullRequests": 3,
+            "reviews": 1,
+            "issues": 0
+          },
+          {
+            "year": 2019,
+            "contributions": 1672,
+            "activeDays": 296,
+            "commits": 821,
+            "pullRequests": 1,
+            "reviews": 11,
+            "issues": 2
+          },
+          {
+            "year": 2020,
+            "contributions": 1031,
+            "activeDays": 213,
+            "commits": 804,
+            "pullRequests": 4,
+            "reviews": 15,
+            "issues": 0
+          },
+          {
+            "year": 2021,
+            "contributions": 1054,
+            "activeDays": 365,
+            "commits": 1017,
+            "pullRequests": 2,
+            "reviews": 20,
+            "issues": 2
+          },
+          {
+            "year": 2022,
+            "contributions": 1001,
+            "activeDays": 365,
+            "commits": 990,
+            "pullRequests": 0,
+            "reviews": 7,
+            "issues": 3
+          },
+          {
+            "year": 2023,
+            "contributions": 707,
+            "activeDays": 365,
+            "commits": 698,
+            "pullRequests": 0,
+            "reviews": 7,
+            "issues": 1
+          },
+          {
+            "year": 2024,
+            "contributions": 789,
+            "activeDays": 366,
+            "commits": 773,
+            "pullRequests": 0,
+            "reviews": 9,
+            "issues": 3
+          },
+          {
+            "year": 2025,
+            "contributions": 1515,
+            "activeDays": 365,
+            "commits": 1485,
+            "pullRequests": 24,
+            "reviews": 1,
+            "issues": 1
+          },
+          {
+            "year": 2026,
+            "contributions": 11395,
+            "activeDays": 280,
+            "commits": 11309,
+            "pullRequests": 30,
+            "reviews": 10,
+            "issues": 39
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2021-01-01",
+        "end": "2026-10-07"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "1191383681",
+        "name": "spinel",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2196,
+        "pushedAt": "2026-10-07T12:49:09Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [master]\n  pull_request:\n    branches: [master]\n    # A PR that only touches docs or top-level markdown never affects the\n    # compiler, runtime, or tests; skip CI for it entirely.\n    paths-ignore:\n      - 'docs/**'\n      - '*.md'\n\n# One run per branch at a time: a push that supersedes a queued or running\n# run cancels it. Every run was 13 jobs against a small runner pool, and a\n# busy afternoon queued 22 master runs and several per PR branch, so a\n# result arrived hours late; only the newest commit of a branch matters.\n#\n# On master a running run is left to finish: the macOS lane runs there only\n# (see the posix matrix), and its queue is long, so cancelling on every push\n# left no master run with a finished macOS job (five pushes in a row on\n# 2026-09-30). A push that arrives meanwhile waits as the group's one\n# pending run, which a newer push replaces, so master still tests its\n# newest commit next.\nconcurrency:\n  group: ci-${{ github.event.pull_request.number || github.ref }}\n  cancel-in-progress: ${{ github.event_name == 'pull_request' }}\n\njobs:\n  # Every lane runs the whole corpus in one job. The Linux/gcc lane used to\n  # split it into two slices (make's TEST_SHARD=k/n), which shortened that\n  # lane's wall time; but with dozens of PRs open at once the runner pool,\n  # not a job's length, set the latency, and the extra job per run only\n  # lengthened the queue. TEST_SHARD stays in the make call (1/1 picks the\n  # whole corpus) so a lane can be split again by changing its nshards.\n  # Slice 1 of each lane carries the C-side test legs, the property gates,\n  # the benchmarks and optcarrot.\n  posix:\n    # The slice shows in the name only when the corpus is split.\n    name: ${{ matrix.os }} / ${{ matrix.cc }}${{ matrix.nshards > 1 && format(' ({0}/{1})', matrix.shard, matrix.nshards) || '' }}\n    runs-on: ${{ matrix.os }}\n    strategy:\n      fail-fast: false\n      # A pull request runs one job: the clang lane, the whole corpus at -O0.\n      # A PR is checked where the maintainer's own gate (gcc, with the\n      # property gates, benchmarks and optcarrot) is not, and every lane --\n      # gcc, clang, macOS, -m32 and wasm -- runs again on the merge commit,\n      # which is where the rest is caught and fixed. With a few dozen PRs\n      # open at once the runner pool, not a job's length, set the latency,\n      # and each PR held four jobs of it. The macOS runners are the fewest,\n      # so that lane stays on master pushes (its queue was 16 minutes at the\n      # median and over an hour at the tail when every PR ran it).\n      matrix:\n        include: ${{ fromJSON(github.event_name == 'push' && '[{\"os\":\"ubuntu-latest\",\"cc\":\"gcc\",\"shard\":1,\"nshards\":1},{\"os\":\"ubuntu-latest\",\"cc\":\"clang\",\"shard\":1,\"nshards\":1},{\"os\":\"macos-latest\",\"cc\":\"clang\",\"shard\":1,\"nshards\":1}]' || '[{\"os\":\"ubuntu-latest\",\"cc\":\"clang\",\"shard\":1,\"nshards\":1}]') }}\n    env:\n      # `sccache <cc>` wrapper. sccache forwards through to the\n      # underlying compiler when its cache misses, so this stays\n      # transparent. The test/bench rules use separate compile and\n      # link steps so the compile step is in sccache's cacheable\n      # pattern; the test compile also loads a precompiled\n      # spinel_rt.h (see PCH_ROOT in the Makefile), which cuts the\n      # compile even when sccache misses. sccache hashes the\n      # preprocessed source, so the gcc-implicit .gch never leaks\n      # into the cache key; for clang's -include-pch sccache\n      # declines to cache and forwards, which still gets the PCH\n      # speedup.\n      #\n      # The store is sccache's own on-disk cache, carried between\n      # runs as ONE actions/cache entry per lane and slice (the\n      # steps below), not the GitHub cache service as sccache's\n      # backend (SCCACHE_GHA_ENABLED). That backend makes a service\n      # round trip per compile, and with twelve jobs each running\n      # four compiles a second the service answered \"rate limit\n      # exceeded\" to about half of them (run 35706592343): reads\n      # that fail are misses, writes that fail never land, and the\n      # corpus slices settled at a 35-75% hit rate. A restored disk\n      # cache answers every lookup locally.\n      CC: sccache ${{ matrix.cc }}\n      SCCACHE_DIR: ${{ github.workspace }}/.sccache\n      SCCACHE_STARTUP_TIMEOUT: \"30\"\n      # Keep the server alive across steps. See the pre-start step below.\n      SCCACHE_IDLE_TIMEOUT: \"0\"\n    steps:\n      - uses: actions/checkout@v6\n\n      - name: Set up sccache\n        uses: mozilla-actions/sccache-action@v0.0.10\n\n      # The key never matches (it carries the run id), so the post step\n      # always saves this run's cache; the restore key picks up the newest\n      # earlier one for the same lane and slice, from this branch or from\n      # master. Old entries fall to the repository's cache eviction.\n      - name: Restore the sccache store\n        uses: actions/cache@v6\n        with:\n          path: .sccache\n          key: sccache-${{ matrix.os }}-${{ matrix.cc }}-${{ matrix.shard }}-${{ github.run_id }}\n          restore-keys: sccache-${{ matrix.os }}-${{ matrix.cc }}-${{ matrix.shard }}-\n\n      # Start the server once here so `make -j` clients don't race to start it.\n      - name: Pre-start sccache server\n        run: sccache --start-server\n\n      - name: Set up Ruby\n        uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: \"4.0\"\n\n      # coreutils is NOT preinstalled on the macOS runners, so `timeout` and\n      # `gtimeout` were both absent and the whole suite ran with no time limit:\n      # one hanging test held the job until GitHub's six-hour cap instead of\n      # failing in ten seconds. Installing it is what makes the per-test\n      # timeout real; the PATH line then gives the GNU names.\n      - name: Install GNU coreutils (macOS)\n        if: runner.os == 'macOS'\n        run: brew install coreutils\n      - name: Expose GNU coreutils on PATH (macOS)\n        if: runner.os == 'macOS'\n        run: echo \"/opt/homebrew/opt/coreutils/libexec/gnubin\" >> \"$GITHUB_PATH\"\n\n      - name: Fetch libprism sources\n        run: make deps\n\n      - name: Build (parse + regexp + spinelc)\n        run: make -j$(getconf _NPROCESSORS_ONLN) all\n\n      - name: Run tests\n        # Opt level is compiler-specific -- they behave oppositely on the\n        # spinel_rt.h-heavy per-test TUs (800+ static fns):\n        #   gcc:   -O1 prunes unreferenced statics + DCEs before the costly\n        #          codegen, so -O1 compiles faster than -O0 (0.54 vs 0.94 s a\n        #          file on 2026-10-05; the header was far smaller when this\n        #          was first measured at 2.7 vs 25 ms).\n        #   clang: -O1 still runs the full optimizer over every emitted inline\n        #          static, so -O1 is ~2.5x SLOWER than -O0 (213 vs 88ms/file).\n        # So gcc builds tests at -O1 and clang at -O0. Correctness is opt-level\n        # independent (tests diff output, not codegen), and the gcc -O1 leg still\n        # exercises the optimizing path; the clang leg's job is that clang accepts\n        # the emitted C and runs it, which -O0 covers.\n        # The `CC=gcc` / `CC=clang` here does NOT take sccache off the\n        # per-test compiles, although 970112c6 meant it to: common.mk\n        # re-wraps a command-line CC with `override CC := sccache $(CC)`\n        # whenever sccache is on PATH, and the stats step below shows the\n        # result (91% hits, 1479 of 1621 executed compiles, on run\n        # 35701579214's gcc slice 1). That is what makes a slice run in\n        # ~120 s: the same slice compiled cold costs ~370 s, which is what\n        # the -m32 lane paid until it got the same wrapper. The override\n        # is kept as the spelling of the opt level per compiler; NO_CCACHE=1\n        # would be the way to actually unwrap.\n        #\n        # The gcc lane runs one eighth of the corpus, a different eighth each\n        # run (the run number picks it), beside the C-side legs. The whole\n        # corpus under gcc is what `make gate` runs before every push to\n        # master, so the lane repeated it, and it had become the slowest job\n        # by far: 45 minutes of a 51-minute job on run 37272572814. Nearly\n        # every push touches lib/spinel_rt.h, which every test's C includes,\n        # so sccache missed on 96% of 6,366 compiles, and gcc takes about\n        # 0.5 s a file on this header where clang -O0 takes 0.08 s (1.4 s on\n        # the runner). The clang lanes and the -m32 lane still run every\n        # test; the eighth keeps a different gcc than the maintainer's own\n        # in the loop.\n        run: |\n          shard=\"${{ matrix.shard }}/${{ matrix.nshards }}\"\n          if [ \"${{ matrix.cc }}\" = gcc ]; then shard=\"$(( GITHUB_RUN_NUMBER % 8 + 1 ))/8\"; fi\n          # the Linux clang lane on a master push: a quarter, rotating. The maintainer's own\n          # pre-push lanes (clang, clang -m32, wasm32 on a separate machine) run the whole\n          # corpus before every push, so this lane was repeating them (2026-10-07); a pull\n          # request still runs all of it.\n          if [ \"${{ matrix.cc }}\" = clang ] && [ \"${{ matrix.os }}\" = ubuntu-latest ] && [ \"${{ github.event_name }}\" = push ]; then shard=\"$(( GITHUB_RUN_NUMBER % 4 + 1 ))/4\"; fi\n          # macOS on a master push: a rotating quarter plus every test whose answer depends on the\n          # operating system (tools/os_sensitive.re: time, files, processes, signals, sockets, threads,\n          # the GC, FFI) and the packages' tests, which is where its failures have been. It was the\n          # whole corpus, 20 of the run's 21 minutes. Add a pattern to the file when a test fails here\n          # alone and the pattern would have kept it in.\n          always=\"\"\n          if [ \"${{ matrix.os }}\" = macos-latest ] && [ \"${{ github.event_name }}\" = push ]; then\n            shard=\"$(( GITHUB_RUN_NUMBER % 4 + 1 ))/4\"\n            always=\"TEST_ALWAYS=tools/os_sensitive.re\"\n          fi\n          echo \"corpus slice: $shard $always\"\n          make -j$(getconf _NPROCESSORS_ONLN) ${{ matrix.shard == 1 && 'test' || 'test-corpus' }} TEST_SHARD=$shard $always ${{ matrix.cc == 'clang' && 'OPT=-O0 CC=clang' || 'OPT=-O1 CC=gcc' }}\n\n      # spin's end-to-end check: it builds real projects, which a clean\n      # checkout on another machine is worth seeing. Linux/gcc only.\n      #\n      # alloc-report-test, infer-test and scale-test ran here too. What they\n      # read is the generated C and a count of the front end's work, neither\n      # of which depends on the machine or the C compiler, and `make gate`\n      # runs all three before every push to master (gate-props), so the lane\n      # only repeated an answer already known: about 3.5 minutes a run. They\n      # were put here when the pre-push gate did not include them (an Int-\n      # keyed hash lost its typed variant for weeks with CI green); it has\n      # since.\n      - name: Run spin's end-to-end check\n        if: matrix.os == 'ubuntu-latest' && matrix.cc == 'gcc' && matrix.shard == 1\n        run: make spin-check\n\n      # Benchmark integration test. Compiles every benchmark/*.rb through\n      # the full pipeline (cc -Werror) and diffs the output against CRuby.\n      # The bench programs are larger and more realistic than the test/*.rb\n      # fixtures, so they exercise object-graph shapes (cons cells, tree\n      # nodes, linked structures) that `make test` misses -- a holder\n      # specialization regression once slipped past test + optcarrot\n      # precisely because bench wasn't gated. Linux/gcc only: the output\n      # is deterministic across compilers/OS, and the gcc job's test step\n      # runs well under the clang jobs' (sccache covers more of its\n      # compiles), so it carries both bench and optcarrot to keep the\n      # slowest job -- which sets the CI wall time -- the clang test run.\n      - name: Run benchmark integration test\n        if: matrix.os == 'ubuntu-latest' && matrix.cc == 'gcc' && matrix.shard == 1\n        run: make bench\n\n      # End-to-end optcarrot integration test.  Linux only -- no\n      # value in repeating it across compilers / on macOS, since\n      # the codegen output is the same and the runtime cost\n      # (~10s) is the same too.  Catches regressions in the\n      # `pack-for-spinel.rb` flow + Lan_Master.nes checksum 59662\n      # contract that the standalone `make test` doesn't cover.\n      - name: Run optcarrot integration test\n        if: matrix.os == 'ubuntu-latest' && matrix.cc == 'gcc' && matrix.shard == 1\n        run: make optcarrot\n\n      - name: sccache stats\n        if: always()\n        run: sccache --show-stats\n\n  # A 32-bit target. sp_int is the pointer width (lib/sp_types.h), so a\n  # -m32 build is the one place the runtime's and the emitters' word-size\n  # assumptions are exercised: a `1 << 40` that is UB there, a `%d` fed a\n  # long long, a 16GB slab reservation, a literal past the target's Integer.\n  # It is also the rehearsal for wasm32. The corpus only: the C-side legs\n  # (the CRuby extension test, the rbs tooling) have no 32-bit toolchain to\n  # build against, and a test that assumes a 64-bit Integer says\n  # `# spinel: int64` in its first line and is filtered out (Makefile,\n  # SPINEL_INT_BITS). Every generated program links -lcrypt, hence the\n  # i386 libcrypt; gcc-multilib brings the 32-bit libc and libgcc.\n  #\n  # sccache, exactly as the posix lanes have it. Without it this lane\n  # compiled every per-test TU cold and its corpus slice took 370 s where\n  # the gcc lane's took 120 s (run 35701579214 on #4797): the -m32 compile\n  # itself costs the same as the 64-bit one (measured locally, cold, both\n  # 148 s for the same slice), the whole difference was the cache. The\n  # -m32 flag is part of sccache's key, so this lane's entries never\n  # collide with the 64-bit gcc lane's.\n  #\n  # master pushes only, not pull requests. A commit that changes the runtime\n  # headers, or codegen every program goes through, misses sccache for the\n  # whole corpus, and the one-job lane then compiles all ~4500 programs on four\n  # vCPUs: 27 minutes, against 3 on a warm cache. Every PR waited on that. A\n  # word-size break a PR brings is found on its merge commit instead, and\n  # fixed there; splitting the lane into slices would halve it but take one\n  # more runner per run, which is what queues the pool when pushes cluster.\n  linux32:\n    name: ubuntu-latest / clang -m32\n    if: github.event_name == 'push'\n    runs-on: ubuntu-latest\n    # A hung apt-get in the toolchain step held this job for over four\n    # hours on 2026-10-01, and with it the master concurrency group: every\n    # later push waited as the group's pending run. The lane takes about\n    # 20 minutes.\n    timeout-minutes: 60\n    env:\n      CC: sccache clang -m32\n      SCCACHE_DIR: ${{ github.workspace }}/.sccache\n      SCCACHE_STARTUP_TIMEOUT: \"30\"\n      SCCACHE_IDLE_TIMEOUT: \"0\"\n    steps:\n      - uses: actions/checkout@v6\n\n      - name: Set up sccache\n        uses: mozilla-actions/sccache-action@v0.0.10\n\n      - name: Restore the sccache store\n        uses: actions/cache@v6\n        with:\n          path: .sccache\n          key: sccache-ubuntu-latest-clang-m32-${{ github.run_id }}\n          restore-keys: sccache-ubuntu-latest-clang-m32-\n\n      - name: Pre-start sccache server\n        run: sccache --start-server\n\n      - name: Set up Ruby\n        uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: \"4.0\"\n\n      - name: Install the 32-bit toolchain\n        timeout-minutes: 10\n        run: |\n          sudo dpkg --add-architecture i386\n          sudo apt-get update\n          sudo apt-get install -y gcc-multilib libc6-dev-i386 libcrypt-dev:i386\n\n      - name: Fetch libprism sources\n        run: make deps\n\n      - name: Build (parse + regexp + spinelc), 32-bit\n        run: make -j$(getconf _NPROCESSORS_ONLN) all\n\n      # clang -O0: the lane checks word-size assumptions, not what an\n      # optimizer makes of them, and the corpus is all compile time. Nearly\n      # every push misses sccache for the whole corpus (the runtime header\n      # changed), and on that header gcc -m32 -Og takes 0.34 s a file where\n      # clang -m32 -O0 with its precompiled header takes 0.10 s; an eighth\n      # of the corpus ran in 32 s against 14 s on 16 cores (2026-10-05).\n      # Under gcc the lane took 26 to 28 minutes of a run.\n      # A quarter of the corpus per push, rotating by run number: the maintainer's pre-push\n      # -m32 lane runs the whole corpus (2026-10-07), so this one repeated it in 9 minutes.\n      - name: Run the test corpus as 32-bit programs\n        run: |\n          shard=\"$(( GITHUB_RUN_NUMBER % 4 + 1 ))/4\"\n          echo \"corpus slice: $shard\"\n          make -j$(getconf _NPROCESSORS_ONLN) test-corpus OPT=-O0 TEST_SHARD=$shard\n\n      - name: sccache stats\n        if: always()\n        run: sccache --show-stats\n\n  # wasm32-wasi. Two commits in eight days left `--target=wasm32-wasi` unable\n  # to link any program (64cd200e's execv, 9d8f098f's getrlimit), and both\n  # were reported from outside the repo a day after the merge, because no lane\n  # builds for this target: linux32 is the word-size rehearsal, not the wasm\n  # one, and a wasm-only link error passes straight through it. The shape is\n  # always the same -- lib/wasi/*.h declares a POSIX function, sp_wasi.c never\n  # defines it, and nothing notices until something first calls it, which\n  # docs/wasm.md's own invariant forbids (\"never as a link error\"). The\n  # existing `make wasm-test` builds seven corpus programs for the target and\n  # diffs them against their expected output, which catches the whole class\n  # (#4807).\n  #\n  # The sdk is a 183 MB download, so it is cached by version; the engine is\n  # wasmtime, installed from its release tarball. WASM_ENGINE_REQUIRED makes a\n  # missing engine fail rather than skip, so this job cannot report success by\n  # doing nothing.\n  wasm:\n    name: wasm32-wasi\n    # master pushes only, as the -m32 and macOS lanes: a PR runs the clang\n    # lane alone (see the matrix above)\n    if: github.event_name == 'push'\n    runs-on: ubuntu-latest\n    env:\n      # docs/wasm.md asks for 34 or later (the exnref lowering)\n      WASI_SDK_VERSION: \"34\"\n      # docs/wasm.md: wasmtime 48 runs the modules as they are emitted\n      WASMTIME_VERSION: \"49.0.0\"\n      WASI_SDK_PATH: ${{ github.workspace }}/.wasi-sdk\n      CC: sccache cc\n      SCCACHE_DIR: ${{ github.workspace }}/.sccache\n      SCCACHE_STARTUP_TIMEOUT: \"30\"\n      SCCACHE_IDLE_TIMEOUT: \"0\"\n    steps:\n      - uses: actions/checkout@v6\n\n      - name: Set up sccache\n        uses: mozilla-actions/sccache-action@v0.0.10\n\n      - name: Restore the sccache store\n        uses: actions/cache@v6\n        with:\n          path: .sccache\n          key: sccache-wasm-${{ github.run_id }}\n          restore-keys: sccache-wasm-\n\n      - name: Pre-start sccache server\n        run: sccache --start-server\n\n      - name: Set up Ruby\n        uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: \"4.0\"\n\n      - name: Restore the wasi-sdk\n        id: wasi-sdk-cache\n        uses: actions/cache@v6\n        with:\n          path: .wasi-sdk\n          key: wasi-sdk-${{ env.WASI_SDK_VERSION }}-x86_64-linux\n\n      - name: Install the wasi-sdk\n        if: steps.wasi-sdk-cache.outputs.cache-hit != 'true'\n        run: |\n          v=${WASI_SDK_VERSION}\n          url=\"https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${v}/wasi-sdk-${v}.0-x86_64-linux.tar.gz\"\n          curl -fsSL \"$url\" -o /tmp/wasi-sdk.tar.gz\n          mkdir -p .wasi-sdk\n          tar -xzf /tmp/wasi-sdk.tar.gz -C .wasi-sdk --strip-components=1\n\n      - name: Install wasmtime\n        run: |\n          curl -fsSL https://github.com/bytecodealliance/wasmtime/releases/download/v${WASMTIME_VERSION}/wasmtime-v${WASMTIME_VERSION}-x86_64-linux.tar.xz -o /tmp/wasmtime.tar.xz\n          mkdir -p /tmp/wasmtime && tar -xJf /tmp/wasmtime.tar.xz -C /tmp/wasmtime --strip-components=1\n          echo \"/tmp/wasmtime\" >> \"$GITHUB_PATH\"\n\n      - name: Fetch libprism sources\n        run: make deps\n\n      - name: Build (parse + regexp + spinelc)\n        run: make -j$(getconf _NPROCESSORS_ONLN) all\n\n      - name: Build the wasm32-wasi runtime and run the wasm programs\n        run: make -j$(getconf _NPROCESSORS_ONLN) wasm-test WASM_ENGINE_REQUIRED=1\n\n      - name: sccache stats\n        if: always()\n        run: sccache --show-stats\n",
+            "blobSha": "14b9ceacf50ce113e65c057af60d009a40add74e",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/gate-trailer.yml",
+            "content": "name: Gate trailer\n\non:\n  pull_request_target:\n    types: [opened, synchronize, reopened]\n    branches: [master]\n\npermissions: {}\n\nconcurrency:\n  group: gate-trailer-${{ github.event.pull_request.number }}\n  cancel-in-progress: true\n\njobs:\n  verify:\n    runs-on: ubuntu-latest\n    timeout-minutes: 5\n    permissions:\n      contents: read\n      issues: write\n      pull-requests: write\n    steps:\n      - uses: actions/checkout@v7\n        with:\n          ref: ${{ github.event.pull_request.base.sha }}\n          fetch-depth: 0\n          persist-credentials: false\n\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: \"4.0\"\n\n      - name: Verify the head commit's Gate trailer\n        id: verify\n        env:\n          PR: ${{ github.event.pull_request.number }}\n          HEAD_SHA: ${{ github.event.pull_request.head.sha }}\n          HEAD_REPO: ${{ github.event.pull_request.head.repo.clone_url }}\n        run: |\n          # GitHub creates refs/pull/N/head shortly after the pull request opens, and\n          # this job can start before it exists. Retry it, then fetch the head commit\n          # from the pull request's own repository.\n          for wait in 0 5 10 20; do\n            sleep \"$wait\"\n            git fetch --no-tags --quiet origin \"refs/pull/$PR/head\" && break\n          done\n          if ! git cat-file -e \"$HEAD_SHA^{commit}\" 2>/dev/null; then\n            git fetch --no-tags --quiet \"$HEAD_REPO\" \"$HEAD_SHA\"\n          fi\n          set +e\n          out=$(ruby tools/gate.rb verify \"$HEAD_SHA\" 2>&1)\n          rc=$?\n          set -e\n          echo \"$out\"\n          printf '### Gate trailer\\n\\n~~~\\n%s\\n~~~\\n' \"$out\" >> \"$GITHUB_STEP_SUMMARY\"\n          case $rc in\n            0) label=\"gate: verified\" ;;\n            1) label=\"gate: mismatch\" ;;\n            2) label=\"gate: no trailer\" ;;\n            *) label=\"gate: unknown master\" ;;\n          esac\n          echo \"label=$label\" >> \"$GITHUB_OUTPUT\"\n\n      - name: Label the pull request\n        env:\n          GH_TOKEN: ${{ github.token }}\n          GH_REPO: ${{ github.repository }}\n          PR: ${{ github.event.pull_request.number }}\n          LABEL: ${{ steps.verify.outputs.label }}\n        run: |\n          present=$(gh api \"repos/$GH_REPO/issues/$PR/labels\" --jq '.[].name')\n          while IFS='|' read -r name color desc; do\n            gh label create \"$name\" --color \"$color\" --description \"$desc\" --force\n            if [ \"$name\" != \"$LABEL\" ] && grep -qxF \"$name\" <<<\"$present\"; then\n              gh api -X DELETE \"repos/$GH_REPO/issues/$PR/labels/$(jq -rn --arg l \"$name\" '$l|@uri')\" >/dev/null\n            fi\n          done <<'EOF'\n          gate: verified|0e8a16|The head commit's Gate trailer names the tree its merge with master gives\n          gate: mismatch|d73a4a|The head commit's Gate trailer names a tree its merge with master does not give\n          gate: no trailer|cfd3d7|The head commit carries no Gate trailer\n          gate: unknown master|fbca04|The Gate trailer names a master commit this repository does not have\n          EOF\n          gh api -X POST \"repos/$GH_REPO/issues/$PR/labels\" -f \"labels[]=$LABEL\" >/dev/null\n",
+            "blobSha": "d223fdf0c76ab6d2d01a3de618c816db20789a3f",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/release.yml",
+            "content": "name: Release\n\n# A pushed release tag (YYYY.MM.DD, or YYYY.MM.DD.N) gets its source archive\n# attached: the tree plus the vendored parsers `make deps` would fetch, so\n# the recipient builds with no network (#4447). `make dist` is the whole\n# recipe; this only runs it at the tag and uploads what it wrote. Re-runnable\n# by hand for a tag that was pushed before this workflow existed.\n\non:\n  push:\n    tags:\n      - \"[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]\"\n      - \"[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9].[0-9]*\"\n  workflow_dispatch:\n    inputs:\n      tag:\n        description: \"Release tag to build the archive for\"\n        required: true\n\npermissions:\n  contents: write\n\njobs:\n  dist:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v6\n        with:\n          ref: ${{ inputs.tag || github.ref_name }}\n          fetch-depth: 0   # git describe needs the tags\n\n      - name: Build the source archive\n        run: make dist\n\n      - name: Attach it to the release\n        env:\n          GH_TOKEN: ${{ github.token }}\n        run: |\n          tag=\"${{ inputs.tag || github.ref_name }}\"\n          gh release view \"$tag\" >/dev/null 2>&1 || gh release create \"$tag\" --title \"$tag\" --notes \"spinel $tag\"\n          gh release upload \"$tag\" build/dist/spinel-\"$tag\".tar.xz --clobber\n",
+            "blobSha": "9b5a4813d14dc03ba816186db8aec24a8072fb06",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": "tools/gate/Dockerfile",
+            "content": "FROM ruby:4.0\nRUN apt-get update && apt-get install -y --no-install-recommends \\\n      build-essential gcc clang make git pkg-config ca-certificates curl xz-utils \\\n      libssl-dev zlib1g-dev libffi-dev libyaml-dev coreutils procps time \\\n    && rm -rf /var/lib/apt/lists/*\nWORKDIR /src\nRUN useradd -m -s /bin/bash gate && chown gate:gate /src\n",
+            "blobSha": "525c6133f355df095b3e92c415d1342ecc40763b",
+            "projectId": "tools/gate",
+            "contextWeight": 1
+          }
+        ],
+        "size": 156317,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "1288049279",
+        "name": "spin-index",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5,
+        "pushedAt": "2026-07-09T14:33:54Z",
+        "languages": {},
+        "files": [],
+        "size": 6,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "27860738",
+        "name": "streem",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4597,
+        "pushedAt": "2022-01-03T10:45:02Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Dockerfile",
+            "content": "##################################\n#       Streem Dockerfile.       #\n# https://github.com/matz/streem #\n##################################\nFROM alpine\n\nCOPY . /usr/src/streem\n\nRUN \\\n    sed -i -e 's/^CDEFS.*/\\0 -DNO_QSORT_R/g' /usr/src/streem/src/Makefile && \\\n    apk update && \\\n    apk add \\\n      musl-dev gcc flex \\\n      bison gc-dev make \\\n    && \\\n    cd /usr/src/streem && \\\n    make && \\\n    apk del --purge \\\n        musl-dev gcc flex \\\n        bison gc-dev make \\\n    && \\\n    rm -rf /var/cache/apk/*\n\nCMD /usr/src/streem/bin/streem\n",
+            "blobSha": "45f52566c7d98a72513bae0f5923f455efdc12a2",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: ci\n'on':\n  - push\njobs:\n  test:\n    runs-on: ubuntu-20.04\n    strategy:\n      matrix:\n        compiler:\n          - gcc\n          - clang\n    steps:\n      - name: Install dependencies\n        run: 'sudo apt install -q ${{ matrix.compiler }} libgc-dev'\n      - name: Checkout\n        uses: actions/checkout@v1\n      - name: Build and test\n        run: 'make test CC=${{ matrix.compiler }}'\n",
+            "blobSha": "999899a0f57c5e2aa8c485693a7b37c9c06bb8f6",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/lint.yml",
+            "content": "name: ❄️ Lint\n\non: [pull_request]\n\njobs:\n  markdownlint:\n    name: 🍶 Markdown\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: 🚀 Use Node.js\n        uses: actions/setup-node@v2.1.4\n        with:\n          node-version: '12.x'\n      - run: npm install -g markdownlint-cli@0.25.0\n      - run: markdownlint '**/*.md' --ignore node_modules\n  shellcheck:\n    name: 🥂 Shell\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: 🧹 ShellCheck\n        uses: ludeeus/action-shellcheck@master\n  trailing-whitespace:\n    name: 🧋 Trailing whitespace\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: 🧹 Check for trailing whitespace\n        run: |\n          cd utils || exit\n          sh ./check-for-trailing-whitespace.sh || exit 1\n  yamllint:\n    name: 🍺 YAML\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - uses: actions/setup-python@v2\n        with:\n          python-version: '3.x'  # Version range or exact version of a Python version to use, using SemVer's version range syntax\n          architecture: 'x64'  # optional x64 or x86. Defaults to x64 if not specified\n      - name: Install dependencies\n        run: |\n          python -m pip install --upgrade pip\n          pip install yamllint\n      - name: 🧹 YAML Lint\n        run: |\n          # return non-zero exit code on warnings\n          yamllint --strict .\n",
+            "blobSha": "69963cc055d4a94f0a2b74dd06440bdde1f0f732",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 841,
+        "primaryLanguage": "C",
+        "projects": []
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "1191383681",
+        "repoName": "spinel",
+        "itemId": "docker",
+        "itemKind": "artifact",
+        "sourcePath": "tools/gate/Dockerfile",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-07T12:49:09Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "27860738",
+        "repoName": "streem",
+        "itemId": "docker",
+        "itemKind": "artifact",
+        "sourcePath": "Dockerfile",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2022-01-03T10:45:02Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "1191383681",
+        "repoName": "spinel",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-07T12:49:09Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "27860738",
+        "repoName": "streem",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2022-01-03T10:45:02Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "full",
+      "eligible": 3,
+      "examined": 3,
+      "failed": 0,
+      "omittedByBudget": 0,
+      "reposCandidates": 3,
+      "treesDiscovered": 3,
+      "treesTruncated": 0,
+      "manifestsDiscovered": 7,
+      "manifestsFetched": 7,
+      "manifestsSkippedByBudget": 0,
+      "gap": "none",
+      "domains": {
+        "language": "unavailable",
+        "school": "full",
+        "artifact": "full"
+      }
+    },
+    "requests": {
+      "rest": 4,
+      "graphql": 1,
+      "manifestFetches": 7,
+      "reposInspected": 3,
+      "cacheHits": 0,
+      "treeRequests": 3,
+      "manifestRequests": 1,
+      "fallbackRequests": 0,
+      "treeCacheHits": 0,
+      "manifestCacheHits": 0,
+      "manifestsDiscovered": 7,
+      "manifestsSkippedByBudget": 0,
+      "projectsDiscovered": 0,
+      "rateLimitRemaining": 4735,
+      "timingsMs": {
+        "repositorySelection": 337,
+        "treeDiscovery": 605,
+        "manifestFetch": 788,
+        "parsing": 0
+      }
+    },
+    "warnings": []
+  },
+  "collectedAt": "2026-10-07T12:53:51.781Z",
+  "coldLatencyMs": 4400,
+  "warmCollectorLatencyMs": 365.44,
+  "scoringLatencyMs": 2.51,
+  "v1Report": {
+    "username": "matz",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 5,
+    "totalRequests": 6,
+    "durationMs": 2669,
+    "authenticated": true,
+    "ok": true
+  }
+}

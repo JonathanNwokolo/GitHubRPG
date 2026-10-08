@@ -1,0 +1,2716 @@
+{
+  "profile": {
+    "username": "mhevery",
+    "cohort": "calibration",
+    "categories": [
+      "frontend-ui",
+      "tooling"
+    ],
+    "mandatory": true
+  },
+  "rawProfile": {
+    "username": "mhevery",
+    "displayName": "Miško Hevery",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/111951?v=4",
+    "bio": "CTO at @builderio, creator of @angularjs, @angular, co-creator of #karmajs\r\n",
+    "location": null,
+    "company": "Builder.io",
+    "createdAt": "2009-08-04T21:42:41.000Z",
+    "fetchedAt": "2026-10-07T04:52:51.529Z",
+    "isDemo": false,
+    "followers": {
+      "value": 6267,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "testability-mindset",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hive",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 92943
+          }
+        },
+        {
+          "name": "qwik-starter",
+          "isFork": false,
+          "stars": 6,
+          "forks": 7,
+          "languages": {}
+        },
+        {
+          "name": "testing-fundamentals",
+          "isFork": false,
+          "stars": 61,
+          "forks": 48,
+          "languages": {
+            "TypeScript": 71258,
+            "CSS": 12560,
+            "JavaScript": 1212,
+            "HTML": 45
+          }
+        },
+        {
+          "name": "qwik-demo",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 173324,
+            "CSS": 8738,
+            "JavaScript": 1496,
+            "MDX": 150
+          }
+        },
+        {
+          "name": "qwik",
+          "isFork": true,
+          "stars": 10,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "guide-to-testable-code",
+          "isFork": false,
+          "stars": 225,
+          "forks": 19,
+          "languages": {}
+        },
+        {
+          "name": "ng-sandbox",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qwik-server-component",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 29123,
+            "CSS": 10933,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "react-server-component",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 11360,
+            "CSS": 1427,
+            "JavaScript": 642
+          }
+        },
+        {
+          "name": "github-action-container-test",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qwik-i18n",
+          "isFork": false,
+          "stars": 63,
+          "forks": 14,
+          "languages": {
+            "TypeScript": 15516,
+            "CSS": 2760,
+            "JavaScript": 1144
+          }
+        },
+        {
+          "name": "rust-playground",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Rust": 1044
+          }
+        },
+        {
+          "name": "qwik-workshop",
+          "isFork": false,
+          "stars": 14,
+          "forks": 9,
+          "languages": {
+            "TypeScript": 17730,
+            "CSS": 1263,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "astro-qwik",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "JavaScriptVM_under_the_hood",
+          "isFork": false,
+          "stars": 64,
+          "forks": 30,
+          "languages": {
+            "TypeScript": 32853
+          }
+        },
+        {
+          "name": "builder",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qwik-symbol-tracker",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 48592,
+            "JavaScript": 4118,
+            "CSS": 756
+          }
+        },
+        {
+          "name": "workshop-future-frontend",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 420374,
+            "TypeScript": 21862,
+            "JavaScript": 1202,
+            "CSS": 918
+          }
+        },
+        {
+          "name": "workshop-adservio",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 18486,
+            "JavaScript": 1202,
+            "CSS": 1161
+          }
+        },
+        {
+          "name": "qwik-experts",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 19361,
+            "CSS": 1209,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "poland-meetup",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 21425,
+            "CSS": 12098,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "misko.dev",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 26883,
+            "CSS": 12098,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "qwik-twitter",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 37714,
+            "CSS": 10356,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "mitosis",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "qwik-conference",
+          "isFork": false,
+          "stars": 1,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 39043,
+            "CSS": 16893,
+            "JavaScript": 1213
+          }
+        },
+        {
+          "name": "qwik-workshop-checkout",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 29081,
+            "CSS": 6479,
+            "JavaScript": 1202
+          }
+        },
+        {
+          "name": "AngularConnect-2019",
+          "isFork": false,
+          "stars": 28,
+          "forks": 5,
+          "languages": {
+            "TypeScript": 8513,
+            "HTML": 1098
+          }
+        },
+        {
+          "name": "frontend-masters-contacts",
+          "isFork": false,
+          "stars": 11,
+          "forks": 9,
+          "languages": {
+            "TypeScript": 18735,
+            "CSS": 4743,
+            "JavaScript": 1144
+          }
+        },
+        {
+          "name": "perf-tests",
+          "isFork": false,
+          "stars": 5,
+          "forks": 2,
+          "languages": {
+            "HTML": 94543
+          }
+        },
+        {
+          "name": "partytown",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qwik-dream-demo",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qwik-js-poland-workshop",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 175948,
+            "CSS": 5091,
+            "JavaScript": 1144
+          }
+        },
+        {
+          "name": "jasmine-node",
+          "isFork": false,
+          "stars": 1509,
+          "forks": 286,
+          "languages": {
+            "JavaScript": 145077,
+            "Shell": 2751,
+            "CoffeeScript": 2198
+          }
+        },
+        {
+          "name": "partytown-playground",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 252227,
+            "HTML": 1020,
+            "CSS": 664
+          }
+        },
+        {
+          "name": "js-repaint-perfs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mobx-state-tree",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "repro-bazel-nested-project",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "Starlark": 2936,
+            "TypeScript": 52
+          }
+        },
+        {
+          "name": "nextjs-bki7h5",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2311,
+            "CSS": 2072
+          }
+        },
+        {
+          "name": "qwik-todo-demo",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 113697,
+            "TypeScript": 22969,
+            "CSS": 9081,
+            "HTML": 431
+          }
+        },
+        {
+          "name": "angular",
+          "isFork": true,
+          "stars": 12,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "sandbox",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "decorators",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "ivy-listen-in-run-outside-angular-do-not-work",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "rules_nodejs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "lazy-loading-services",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 11941,
+            "JavaScript": 1645,
+            "HTML": 307,
+            "CSS": 80
+          }
+        },
+        {
+          "name": "flex-layout",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tsickle",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "zone.js",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "rxjs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "TddCalculatorJava",
+          "isFork": false,
+          "stars": 10,
+          "forks": 5,
+          "languages": {
+            "Java": 4275
+          }
+        },
+        {
+          "name": "tslint",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ts-resolution-bug",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 83,
+            "TypeScript": 68
+          }
+        },
+        {
+          "name": "periscope",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "rollup",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecma262",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ng2-svg",
+          "isFork": false,
+          "stars": 8,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 1004295,
+            "TypeScript": 2916,
+            "HTML": 831
+          }
+        },
+        {
+          "name": "angular2-automation",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "Python": 5339,
+            "Shell": 285
+          }
+        },
+        {
+          "name": "github_issues",
+          "isFork": false,
+          "stars": 3,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 1174907,
+            "TypeScript": 17204,
+            "HTML": 5508
+          }
+        },
+        {
+          "name": "testability-explorer",
+          "isFork": false,
+          "stars": 14,
+          "forks": 11,
+          "languages": {
+            "Java": 959495,
+            "GAP": 122574,
+            "Python": 51136,
+            "HTML": 26024,
+            "JavaScript": 5986,
+            "CSS": 3517,
+            "FreeMarker": 2690,
+            "Shell": 1034,
+            "Batchfile": 59
+          }
+        },
+        {
+          "name": "angular-u-app",
+          "isFork": false,
+          "stars": 19,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 2310758,
+            "HTML": 1077,
+            "TypeScript": 780
+          }
+        },
+        {
+          "name": "angular.js",
+          "isFork": true,
+          "stars": 40,
+          "forks": 13,
+          "languages": {}
+        },
+        {
+          "name": "quickstart",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "angular2_calendar",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "youtube-app",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "submissions-2015",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Angular2.design",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "angular.dart",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "di.dart",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Largo-docs",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "angularFire",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "dart-node.js",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1420,
+            "Dart": 317
+          }
+        },
+        {
+          "name": "karma-traceur-test",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2097
+          }
+        },
+        {
+          "name": "ng-google-io",
+          "isFork": false,
+          "stars": 110,
+          "forks": 60,
+          "languages": {
+            "JavaScript": 238589,
+            "CSS": 3602,
+            "CoffeeScript": 38
+          }
+        },
+        {
+          "name": "dashboard.angularjs.org",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "dart-di",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "AngularJS-Animation-Article",
+          "isFork": true,
+          "stars": 28,
+          "forks": 8,
+          "languages": {}
+        },
+        {
+          "name": "ng-todo",
+          "isFork": true,
+          "stars": 8,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "foodme",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "angular-node-socketio",
+          "isFork": false,
+          "stars": 123,
+          "forks": 19,
+          "languages": {
+            "JavaScript": 1280
+          }
+        },
+        {
+          "name": "demo-directives",
+          "isFork": false,
+          "stars": 7,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1491846,
+            "Shell": 1550,
+            "Ruby": 503
+          }
+        },
+        {
+          "name": "angular-phonecat",
+          "isFork": true,
+          "stars": 20,
+          "forks": 5,
+          "languages": {}
+        },
+        {
+          "name": "testacular",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "angular-demo-slides",
+          "isFork": false,
+          "stars": 10,
+          "forks": 7,
+          "languages": {
+            "JavaScript": 1003676,
+            "Shell": 665,
+            "Ruby": 503
+          }
+        },
+        {
+          "name": "jasmine-jstd-adapter",
+          "isFork": true,
+          "stars": 39,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "ng-slides",
+          "isFork": true,
+          "stars": 8,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "TestabilityBank",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Java": 3584
+          }
+        },
+        {
+          "name": "mustache.js",
+          "isFork": true,
+          "stars": 9,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mustache",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sammy",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "xsschannel",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 64910
+          }
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 3575,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 1073,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 2485,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 712,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 2376,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 15,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 11,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          1,
+          17,
+          45,
+          21,
+          44,
+          69,
+          32,
+          0,
+          43,
+          29,
+          20,
+          67,
+          32,
+          21,
+          47,
+          51,
+          39,
+          26,
+          20,
+          36,
+          20,
+          28,
+          6,
+          23,
+          56,
+          9,
+          24,
+          38,
+          44,
+          59,
+          51,
+          25,
+          1,
+          1,
+          18,
+          5,
+          11,
+          6,
+          2,
+          0,
+          9,
+          40,
+          18,
+          28,
+          27,
+          60,
+          135,
+          57,
+          36,
+          14,
+          33,
+          64,
+          37,
+          52,
+          3,
+          6,
+          14,
+          16,
+          32,
+          10,
+          8,
+          20,
+          33,
+          56,
+          32,
+          30,
+          72,
+          85,
+          58,
+          81,
+          30,
+          37,
+          8,
+          8,
+          3,
+          19,
+          38,
+          25,
+          19,
+          29,
+          6,
+          68,
+          44,
+          6,
+          32,
+          40,
+          69,
+          87,
+          125,
+          67,
+          55,
+          34,
+          64,
+          95,
+          53,
+          15,
+          51,
+          94,
+          99,
+          91,
+          107,
+          72,
+          34,
+          86,
+          72,
+          77,
+          50,
+          88,
+          91,
+          73,
+          90,
+          71,
+          86,
+          43,
+          68,
+          22,
+          49,
+          50,
+          62,
+          112,
+          78,
+          31,
+          32,
+          84,
+          51,
+          19,
+          9,
+          13,
+          34,
+          23,
+          30,
+          32,
+          56,
+          31,
+          20,
+          27,
+          32,
+          34,
+          27,
+          59,
+          10,
+          24,
+          7,
+          7,
+          26,
+          25,
+          43,
+          36,
+          66,
+          20,
+          41,
+          47,
+          60,
+          116,
+          61,
+          32,
+          29,
+          60,
+          69,
+          26,
+          60,
+          60,
+          89,
+          107,
+          93,
+          190,
+          157,
+          150,
+          72,
+          124,
+          34,
+          32,
+          38,
+          20,
+          27,
+          19,
+          9,
+          1,
+          2,
+          7,
+          5,
+          2,
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          4,
+          3,
+          0,
+          0,
+          25,
+          0,
+          1,
+          2,
+          0
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2009,
+            "contributions": 31,
+            "activeDays": 15,
+            "commits": 28,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2010,
+            "contributions": 423,
+            "activeDays": 152,
+            "commits": 365,
+            "pullRequests": 13,
+            "reviews": 0,
+            "issues": 38
+          },
+          {
+            "year": 2011,
+            "contributions": 361,
+            "activeDays": 138,
+            "commits": 267,
+            "pullRequests": 39,
+            "reviews": 0,
+            "issues": 50
+          },
+          {
+            "year": 2012,
+            "contributions": 283,
+            "activeDays": 103,
+            "commits": 241,
+            "pullRequests": 30,
+            "reviews": 0,
+            "issues": 8
+          },
+          {
+            "year": 2013,
+            "contributions": 426,
+            "activeDays": 117,
+            "commits": 302,
+            "pullRequests": 18,
+            "reviews": 0,
+            "issues": 98
+          },
+          {
+            "year": 2014,
+            "contributions": 295,
+            "activeDays": 107,
+            "commits": 193,
+            "pullRequests": 24,
+            "reviews": 0,
+            "issues": 73
+          },
+          {
+            "year": 2015,
+            "contributions": 530,
+            "activeDays": 175,
+            "commits": 231,
+            "pullRequests": 62,
+            "reviews": 0,
+            "issues": 226
+          },
+          {
+            "year": 2016,
+            "contributions": 329,
+            "activeDays": 123,
+            "commits": 150,
+            "pullRequests": 87,
+            "reviews": 31,
+            "issues": 54
+          },
+          {
+            "year": 2017,
+            "contributions": 809,
+            "activeDays": 190,
+            "commits": 180,
+            "pullRequests": 81,
+            "reviews": 523,
+            "issues": 23
+          },
+          {
+            "year": 2018,
+            "contributions": 940,
+            "activeDays": 243,
+            "commits": 162,
+            "pullRequests": 101,
+            "reviews": 666,
+            "issues": 10
+          },
+          {
+            "year": 2019,
+            "contributions": 762,
+            "activeDays": 201,
+            "commits": 131,
+            "pullRequests": 91,
+            "reviews": 533,
+            "issues": 3
+          },
+          {
+            "year": 2020,
+            "contributions": 414,
+            "activeDays": 143,
+            "commits": 117,
+            "pullRequests": 69,
+            "reviews": 225,
+            "issues": 3
+          },
+          {
+            "year": 2021,
+            "contributions": 298,
+            "activeDays": 142,
+            "commits": 149,
+            "pullRequests": 48,
+            "reviews": 84,
+            "issues": 12
+          },
+          {
+            "year": 2022,
+            "contributions": 611,
+            "activeDays": 201,
+            "commits": 233,
+            "pullRequests": 151,
+            "reviews": 158,
+            "issues": 56
+          },
+          {
+            "year": 2023,
+            "contributions": 1197,
+            "activeDays": 211,
+            "commits": 729,
+            "pullRequests": 216,
+            "reviews": 173,
+            "issues": 57
+          },
+          {
+            "year": 2024,
+            "contributions": 196,
+            "activeDays": 99,
+            "commits": 61,
+            "pullRequests": 43,
+            "reviews": 89,
+            "issues": 0
+          },
+          {
+            "year": 2025,
+            "contributions": 6,
+            "activeDays": 5,
+            "commits": 3,
+            "pullRequests": 0,
+            "reviews": 3,
+            "issues": 0
+          },
+          {
+            "year": 2026,
+            "contributions": 35,
+            "activeDays": 11,
+            "commits": 33,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2023-07-09",
+        "end": "2023-07-23"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "1161314133",
+        "name": "testability-mindset",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6,
+        "pushedAt": "2026-09-11T19:43:58Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1263568470",
+        "name": "hive",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2026-06-13T03:55:40Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "537872987",
+        "name": "qwik-starter",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6,
+        "pushedAt": "2025-09-03T17:45:54Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "763667440",
+        "name": "testing-fundamentals",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 61,
+        "pushedAt": "2025-01-05T17:30:03Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"version\": \"0.0.1\",\n  \"description\": \"Demo App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"trustedDependencies\": [\n    \"sharp\"\n  ],\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build-storybook\": \"storybook build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"echo 'Run \\\"npm run qwik add\\\" to install a server adapter'\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"storybook\": \"storybook dev -p 6006\",\n    \"benchmark\": \"vitest --\",\n    \"test\": \"vitest\",\n    \"test.coverage\": \"vitest run --coverage\",\n    \"test.e2e\": \"playwright test\",\n    \"test.e2e.debug\": \"playwright test --ui --project=chromium\",\n    \"qwik\": \"qwik\",\n    \"chromatic\": \"npx chromatic --project-token=chpt_b8b698293e3af28\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.4.5\",\n    \"@builder.io/qwik-city\": \"^1.4.5\",\n    \"@octokit/openapi-types\": \"^20.0.0\",\n    \"@playwright/test\": \"^1.41.2\",\n    \"@storybook/addon-essentials\": \"^7.4.6\",\n    \"@storybook/addon-links\": \"^7.4.6\",\n    \"@storybook/blocks\": \"^7.4.6\",\n    \"@storybook/builder-vite\": \"^7.4.6\",\n    \"@storybook/html\": \"^7.4.6\",\n    \"@storybook/html-vite\": \"^7.4.6\",\n    \"@types/density-clustering\": \"^1.3.3\",\n    \"@types/eslint\": \"^8.56.2\",\n    \"@types/node\": \"^20.11.6\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.19.1\",\n    \"@typescript-eslint/parser\": \"^6.19.1\",\n    \"@vitest/coverage-v8\": \"^1.3.1\",\n    \"@vitest/ui\": \"^1.3.1\",\n    \"chromatic\": \"^11.0.0\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-plugin-qwik\": \"^1.4.5\",\n    \"prettier\": \"^3.2.4\",\n    \"storybook\": \"^7.4.6\",\n    \"storybook-framework-qwik\": \"^0.2.4\",\n    \"ts-node\": \"^10.9.2\",\n    \"typescript\": \"5.3.3\",\n    \"undici\": \"*\",\n    \"vite\": \"^5.0.12\",\n    \"vite-tsconfig-paths\": \"^4.2.1\",\n    \"vitest\": \"^1.3.1\"\n  },\n  \"dependencies\": {\n    \"@modular-forms/qwik\": \"^0.23.1\",\n    \"csv-reader\": \"^1.0.12\",\n    \"csv-writer\": \"^1.6.0\",\n    \"density-clustering\": \"^1.3.0\",\n    \"valibot\": \"^0.29.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".github/workflows/playwright.yml",
+            "content": "name: Playwright Tests\non:\n  push:\n    branches: [ main, master ]\n  pull_request:\n    branches: [ main, master ]\njobs:\n  test:\n    timeout-minutes: 60\n    runs-on: ubuntu-latest\n    steps:\n    - uses: actions/checkout@v3\n    - uses: actions/setup-node@v3\n      with:\n        node-version: 18\n    - name: Install dependencies\n      run: npm ci\n    - name: Install Playwright Browsers\n      run: npx playwright install --with-deps\n    - name: Run Playwright tests\n      run: npx playwright test\n    - uses: actions/upload-artifact@v3\n      if: always()\n      with:\n        name: playwright-report\n        path: playwright-report/\n        retention-days: 30\n"
+          }
+        ]
+      },
+      {
+        "id": "651484590",
+        "name": "qwik-demo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 9,
+        "pushedAt": "2024-06-20T02:26:26Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"prebuild.pandacss\": \"panda codegen --silent\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.2.6\",\n    \"@builder.io/qwik-city\": \"^1.2.6\",\n    \"@builder.io/qwik-react\": \"0.5.0\",\n    \"@builder.io/vite-plugin-macro\": \"~0.0.7\",\n    \"@emotion/react\": \"11.11.0\",\n    \"@emotion/styled\": \"11.11.0\",\n    \"@mui/material\": \"5.13.0\",\n    \"@mui/x-data-grid\": \"6.4.0\",\n    \"@octokit/openapi-types\": \"^17.2.0\",\n    \"@pandacss/dev\": \"^0.4.0\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.4\",\n    \"@types/react\": \"18.2.6\",\n    \"@types/react-dom\": \"18.2.4\",\n    \"@types/three\": \"^0.152.1\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.5\",\n    \"@typescript-eslint/parser\": \"5.59.5\",\n    \"autoprefixer\": \"^10.4.14\",\n    \"daisyui\": \"^3.9.4\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.4\",\n    \"postcss\": \"^8.4.23\",\n    \"prettier\": \"2.8.8\",\n    \"react\": \"18.2.0\",\n    \"react-dom\": \"18.2.0\",\n    \"tailwindcss\": \"^3.3.1\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.9\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^3.0.0\"\n  },\n  \"dependencies\": {\n    \"@builder.io/qwik-worker\": \"^0.0.1\",\n    \"gsap\": \"^3.12.1\",\n    \"simplex-noise\": \"^4.0.1\",\n    \"three\": \"^0.153.0\",\n    \"vite-plugin-inspect\": \"^0.7.28\",\n    \"vitest\": \"^1.6.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "746379379",
+        "name": "guide-to-testable-code",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 225,
+        "pushedAt": "2024-03-02T04:36:40Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "754310042",
+        "name": "ng-sandbox",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2024-02-07T23:57:30Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "634639172",
+        "name": "qwik-server-component",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2023-12-18T23:17:03Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=18.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist --branch preview\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.3.1\",\n    \"@builder.io/qwik-city\": \"^1.3.1\",\n    \"@builder.io/qwik-labs\": \"github:BuilderIo/qwik-labs-build#main\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^18.16.0\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.1\",\n    \"@typescript-eslint/parser\": \"5.59.1\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-plugin-qwik\": \"^1.3.1\",\n    \"i\": \"^0.3.7\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.0\",\n    \"vite\": \"4.3.2\",\n    \"vite-plugin-inspect\": \"^0.7.25\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"latest\"\n  },\n  \"dependencies\": {\n    \"convex\": \"^0.14.0\",\n    \"sharp\": \"^0.33.1\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "733239632",
+        "name": "react-server-component",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2023-12-18T22:05:57Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"next-server-component\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\"\n  },\n  \"dependencies\": {\n    \"@types/node\": \"20.1.4\",\n    \"@types/react\": \"18.2.6\",\n    \"@types/react-dom\": \"18.2.4\",\n    \"autoprefixer\": \"10.4.14\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-config-next\": \"13.4.2\",\n    \"next\": \"13.4.2\",\n    \"postcss\": \"8.4.23\",\n    \"react\": \"18.2.0\",\n    \"react-dom\": \"18.2.0\",\n    \"tailwindcss\": \"3.3.2\",\n    \"typescript\": \"5.0.4\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.json",
+            "content": "{\n  \"extends\": \"next/core-web-vitals\"\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "732795222",
+        "name": "github-action-container-test",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2023-12-17T21:53:34Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".devcontainer/Dockerfile",
+            "content": ""
+          },
+          {
+            "path": ".github/workflows/ci.yaml",
+            "content": "name: Github Action Container Test\nrun-name: ${{ github.actor }} pushed ${{ github.ref }}\n\non:\n  pull_request:\n  push:\n\njobs:\n  container-test:\n    name: Container Test\n    runs-on: ubuntu-latest\n    container:\n      image: \".devcontainer/Dockerfile\"\n    steps:\n      - name: Hello World\n        run: |\n          echo Hello World\n"
+          }
+        ]
+      },
+      {
+        "id": "543676856",
+        "name": "qwik-i18n",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 63,
+        "pushedAt": "2023-12-13T04:53:15Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"Recommended for your first Qwik app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"type\": \"module\",\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build && npm run i18n-translate\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build --ssr src/entry.express.tsx\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"i18n-extract\": \"node_modules/.bin/localize-extract -s \\\"dist/build/*.js\\\" -f json -o src/locale/message.en.json\",\n    \"i18n-translate\": \"node_modules/.bin/localize-translate -s \\\"*.js\\\" -t src/locale/message.*.json -o dist/build/{{LOCALE}} -r ./dist/build\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"node server/entry.express\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@angular/compiler\": \"^16.1.5\",\n    \"@angular/compiler-cli\": \"^16.1.5\",\n    \"@builder.io/qwik\": \"^1.2.6\",\n    \"@builder.io/qwik-city\": \"^1.2.6\",\n    \"@types/compression\": \"^1.7.2\",\n    \"@types/eslint\": \"^8.44.0\",\n    \"@types/express\": \"^4.17.17\",\n    \"@types/node\": \"latest\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.1.0\",\n    \"@typescript-eslint/parser\": \"^6.1.0\",\n    \"eslint\": \"^8.45.0\",\n    \"eslint-plugin-qwik\": \"^1.2.6\",\n    \"express\": \"^4.18.2\",\n    \"node-fetch\": \"^3.3.1\",\n    \"prettier\": \"^3.0.0\",\n    \"typescript\": \"^5.1.6\",\n    \"vite\": \"^4.4.4\",\n    \"vite-tsconfig-paths\": \"^4.2.0\"\n  },\n  \"dependencies\": {\n    \"@angular/localize\": \"^16.1.5\",\n    \"compression\": \"^1.7.4\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    \"eslint:recommended\",\n    \"plugin:@typescript-eslint/recommended\",\n    \"plugin:qwik/recommended\",\n  ],\n  parser: \"@typescript-eslint/parser\",\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: [\"./tsconfig.json\"],\n    ecmaVersion: 2021,\n    sourceType: \"module\",\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: [\"@typescript-eslint\"],\n  rules: {\n    \"@typescript-eslint/no-explicit-any\": \"off\",\n    \"@typescript-eslint/explicit-module-boundary-types\": \"off\",\n    \"@typescript-eslint/no-inferrable-types\": \"off\",\n    \"@typescript-eslint/no-non-null-assertion\": \"off\",\n    \"@typescript-eslint/no-empty-interface\": \"off\",\n    \"@typescript-eslint/no-namespace\": \"off\",\n    \"@typescript-eslint/no-empty-function\": \"off\",\n    \"@typescript-eslint/no-this-alias\": \"off\",\n    \"@typescript-eslint/ban-types\": \"off\",\n    \"@typescript-eslint/ban-ts-comment\": \"off\",\n    \"prefer-spread\": \"off\",\n    \"no-case-declarations\": \"off\",\n    \"no-console\": \"off\",\n    \"@typescript-eslint/no-unused-vars\": [\"error\"],\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "728479175",
+        "name": "rust-playground",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2023-12-07T04:19:39Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "642597991",
+        "name": "qwik-workshop",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 14,
+        "pushedAt": "2023-11-06T16:09:20Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@auth/core\": \"^0.7.1\",\n    \"@builder.io/qwik\": \"^1.1.4\",\n    \"@builder.io/qwik-auth\": \"~0.1.0\",\n    \"@builder.io/qwik-city\": \"^1.1.4\",\n    \"@builder.io/sdk-qwik\": \"^0.3.0\",\n    \"@octokit/openapi-types\": \"^17.2.0\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.5\",\n    \"@typescript-eslint/parser\": \"5.59.5\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.4\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.5\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^2.20.0\"\n  },\n  \"dependencies\": {\n    \"@supabase/supabase-js\": \"^2.22.0\",\n    \"supabase-auth-helpers-qwik\": \"^0.0.3\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "683770345",
+        "name": "JavaScriptVM_under_the_hood",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 64,
+        "pushedAt": "2023-10-11T16:21:34Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"JavaScriptVM_under_the_hood\",\n  \"version\": \"0.0.1\",\n  \"description\": \"JavaScript VM: Under the hood course\",\n  \"scripts\": {\n    \"start\": \"tsc --watch\",\n    \"build\": \"tsc\",\n    \"inline-cache\": \"pnpm build && pnpm dexnode --out ./profile/inline-cache.log --redirect-code-traces-to=./profile/inline-cache.ignore ./dist/inline-cache.js\",\n    \"deopt\": \"pnpm build && pnpm dexnode --out ./profile/deopt.log --redirect-code-traces-to=./profile/deopt.ignore ./dist/deopt.js\",\n    \"deopt-fix\": \"pnpm build && pnpm dexnode --out ./profile/deopt-fix.log --redirect-code-traces-to=./profile/deopt-fix.ignore ./dist/deopt-fix.js\",\n    \"holey-arrays\": \"pnpm build && pnpm dexnode --out ./profile/holey-arrays.log --redirect-code-traces-to=./profile/holey-arrays.ignore ./dist/holey-arrays.js\",\n    \"equality\": \"pnpm build && pnpm dexnode --out ./profile/equality.log --redirect-code-traces-to=./profile/equality.ignore ./dist/equality.js\",\n    \"keys\": \"pnpm build && pnpm dexnode --out ./profile/keys.log --redirect-code-traces-to=./profile/keys.ignore ./dist/keys.js\",\n    \"vm\": \"pnpm build && node ./dist/vm/CPU.js\"\n  },\n  \"author\": \"\",\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"@types/node\": \"^20.5.1\",\n    \"dexnode\": \"^1.2.1\",\n    \"typescript\": \"^5.1.6\"\n  }\n}\n"
+          },
+          {
+            "path": "pnpm-lock.yaml",
+            "content": "lockfileVersion: '6.0'\n\nsettings:\n  autoInstallPeers: true\n  excludeLinksFromLockfile: false\n\ndependencies:\n  '@types/node':\n    specifier: ^20.5.1\n    version: 20.5.1\n  dexnode:\n    specifier: ^1.2.1\n    version: 1.2.1\n  typescript:\n    specifier: ^5.1.6\n    version: 5.1.6\n\npackages:\n\n  /@types/node@20.5.1:\n    resolution: {integrity: sha512-4tT2UrL5LBqDwoed9wZ6N3umC4Yhz3W3FloMmiiG4JwmUJWpie0c7lcnUNd4gtMKuDEO4wRVS8B6Xa0uMRsMKg==}\n    dev: false\n\n  /dexnode@1.2.1:\n    resolution: {integrity: sha512-8VoKDr6qnPL9qu1fhJhJA+coQZ0F3eLtvPMJjCps1CQERrWI+/hKHAplASLI+TThsDrmQEqBUhlcUM63k2EpMw==}\n    hasBin: true\n    dependencies:\n      semver: 7.5.4\n      winreg: 1.2.4\n    dev: false\n\n  /lru-cache@6.0.0:\n    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}\n    engines: {node: '>=10'}\n    dependencies:\n      yallist: 4.0.0\n    dev: false\n\n  /semver@7.5.4:\n    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}\n    engines: {node: '>=10'}\n    hasBin: true\n    dependencies:\n      lru-cache: 6.0.0\n    dev: false\n\n  /typescript@5.1.6:\n    resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}\n    engines: {node: '>=14.17'}\n    hasBin: true\n    dev: false\n\n  /winreg@1.2.4:\n    resolution: {integrity: sha512-IHpzORub7kYlb8A43Iig3reOvlcBJGX9gZ0WycHhghHtA65X0LYnMRuJs+aH1abVnMJztQkvQNlltnbPi5aGIA==}\n    dev: false\n\n  /yallist@4.0.0:\n    resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}\n    dev: false\n"
+          }
+        ]
+      },
+      {
+        "id": "655378450",
+        "name": "qwik-symbol-tracker",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2023-06-19T14:39:49Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"node scripts/db.migrate.cjs && qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"db.local\": \".db/sqlite3 ./db/local.db\",\n    \"db.schema.generate\": \"./node_modules/.bin/drizzle-kit generate:sqlite --schema=./src/db/schema.ts\",\n    \"db.migrate\": \"node scripts/db.migrate.cjs\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"supabase.generate-types\": \"source .env.local && npx supabase gen types typescript --project-id $PUBLIC_SUPABASE_PROJECT_ID --schema public > src/types/supabase.d.ts\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.1.5\",\n    \"@builder.io/qwik-city\": \"^1.1.5\",\n    \"@builder.io/qwik-react\": \"0.5.0\",\n    \"@emotion/react\": \"11.11.0\",\n    \"@emotion/styled\": \"11.11.0\",\n    \"@mui/material\": \"5.13.0\",\n    \"@mui/x-data-grid\": \"6.4.0\",\n    \"@types/better-sqlite3\": \"^7.6.4\",\n    \"@types/eslint\": \"8.40.0\",\n    \"@types/node\": \"^20.2.5\",\n    \"@types/react\": \"18.2.6\",\n    \"@types/react-dom\": \"18.2.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.8\",\n    \"@typescript-eslint/parser\": \"5.59.8\",\n    \"drizzle-kit\": \"^0.18.1\",\n    \"eslint\": \"8.41.0\",\n    \"eslint-plugin-qwik\": \"^1.1.5\",\n    \"prettier\": \"2.8.8\",\n    \"react\": \"18.2.0\",\n    \"react-dom\": \"18.2.0\",\n    \"supabase\": \"^1.64.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.9\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^3.0.0\"\n  },\n  \"dependencies\": {\n    \"@libsql/client\": \"^0.2.1\",\n    \"@supabase/auth-ui-react\": \"^0.4.2\",\n    \"@supabase/auth-ui-shared\": \"^0.1.6\",\n    \"@supabase/supabase-js\": \"^2.24.0\",\n    \"better-sqlite3\": \"^8.4.0\",\n    \"dotenv\": \"^16.3.1\",\n    \"drizzle-orm\": \"^0.26.5\",\n    \"install\": \"^0.13.0\",\n    \"npm\": \"^9.7.1\",\n    \"supabase-auth-helpers-qwik\": \"^0.0.3\",\n    \"zod\": \"^3.21.4\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "650589023",
+        "name": "workshop-future-frontend",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2023-06-07T11:55:46Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"test.e2e\": \"playwright test\",\n    \"test.unit\": \"vitest components\",\n    \"test.unit.ui\": \"vitest --ui components\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@auth/core\": \"^0.7.1\",\n    \"@builder.io/qwik\": \"^1.1.5\",\n    \"@builder.io/qwik-auth\": \"~0.1.0\",\n    \"@builder.io/qwik-city\": \"^1.1.5\",\n    \"@builder.io/sdk-qwik\": \"^0.3.0\",\n    \"@octokit/openapi-types\": \"^17.2.0\",\n    \"@playwright/test\": \"^1.32.3\",\n    \"@types/eslint\": \"8.40.0\",\n    \"@types/node\": \"^20.2.5\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.8\",\n    \"@typescript-eslint/parser\": \"5.59.8\",\n    \"@vitest/ui\": \"^0.31.3\",\n    \"eslint\": \"8.41.0\",\n    \"eslint-plugin-qwik\": \"^1.1.5\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.9\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"vitest\": \"^0.31.3\",\n    \"wrangler\": \"^3.0.0\"\n  },\n  \"dependencies\": {\n    \"@supabase/supabase-js\": \"^2.24.0\",\n    \"supabase-auth-helpers-qwik\": \"^0.0.3\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "649734252",
+        "name": "workshop-adservio",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2023-06-05T14:18:43Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@auth/core\": \"^0.7.1\",\n    \"@builder.io/qwik\": \"^1.1.4\",\n    \"@builder.io/qwik-auth\": \"~0.1.0\",\n    \"@builder.io/qwik-city\": \"^1.1.4\",\n    \"@builder.io/sdk-qwik\": \"^0.3.0\",\n    \"@octokit/openapi-types\": \"^17.2.0\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.5\",\n    \"@typescript-eslint/parser\": \"5.59.5\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.4\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.5\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^2.20.0\"\n  },\n  \"dependencies\": {\n    \"@supabase/supabase-js\": \"^2.24.0\",\n    \"supabase-auth-helpers-qwik\": \"^0.0.3\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "647259379",
+        "name": "qwik-experts",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2023-05-30T12:19:26Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-empty-starter\",\n  \"description\": \"App with Routing built-in ready to create your app\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@auth/core\": \"^0.7.1\",\n    \"@builder.io/qwik\": \"^1.1.4\",\n    \"@builder.io/qwik-auth\": \"~0.1.0\",\n    \"@builder.io/qwik-city\": \"^1.1.4\",\n    \"@builder.io/sdk-qwik\": \"^0.3.0\",\n    \"@octokit/openapi-types\": \"^17.2.0\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.5\",\n    \"@typescript-eslint/parser\": \"5.59.5\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.4\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.5\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^2.20.0\"\n  },\n  \"dependencies\": {\n    \"@supabase/supabase-js\": \"^2.24.0\",\n    \"supabase-auth-helpers-qwik\": \"^0.0.3\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "646939485",
+        "name": "poland-meetup",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2023-05-29T17:37:27Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"Demo App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"serve\": \"wrangler pages dev ./dist\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.1.4\",\n    \"@builder.io/qwik-city\": \"^1.1.4\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.5\",\n    \"@typescript-eslint/parser\": \"5.59.5\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.4\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.1\",\n    \"vite\": \"4.3.5\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^2.20.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "639305945",
+        "name": "misko.dev",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2023-05-11T10:06:04Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"Demo App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist --branch preview\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.1.1\",\n    \"@builder.io/qwik-city\": \"^1.1.1\",\n    \"@builder.io/qwik-react\": \"0.5.0\",\n    \"@emotion/react\": \"11.11.0\",\n    \"@emotion/styled\": \"11.11.0\",\n    \"@mui/material\": \"5.12.3\",\n    \"@mui/x-data-grid\": \"6.3.1\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^20.1.0\",\n    \"@types/react\": \"18.2.5\",\n    \"@types/react-dom\": \"18.2.4\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.2\",\n    \"@typescript-eslint/parser\": \"5.59.2\",\n    \"eslint\": \"8.40.0\",\n    \"eslint-plugin-qwik\": \"^1.1.1\",\n    \"prettier\": \"2.8.8\",\n    \"react\": \"18.2.0\",\n    \"react-dom\": \"18.2.0\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.0\",\n    \"vite\": \"4.3.5\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"^2.19.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "582569425",
+        "name": "qwik-twitter",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10,
+        "pushedAt": "2023-05-05T15:33:50Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adapters/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages publish ./dist --branch preview\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^1.0.0\",\n    \"@builder.io/qwik-city\": \"^1.0.0\",\n    \"@types/eslint\": \"8.37.0\",\n    \"@types/node\": \"^18.16.1\",\n    \"@typescript-eslint/eslint-plugin\": \"5.59.1\",\n    \"@typescript-eslint/parser\": \"5.59.1\",\n    \"eslint\": \"8.39.0\",\n    \"eslint-plugin-qwik\": \"0.105.0\",\n    \"prettier\": \"2.8.8\",\n    \"typescript\": \"5.0.4\",\n    \"undici\": \"5.22.0\",\n    \"vite\": \"4.3.3\",\n    \"vite-tsconfig-paths\": \"4.2.0\",\n    \"wrangler\": \"latest\"\n  },\n  \"dependencies\": {\n    \"zod\": \"^3.21.4\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    \"eslint:recommended\",\n    \"plugin:@typescript-eslint/recommended\",\n    \"plugin:qwik/recommended\",\n  ],\n  parser: \"@typescript-eslint/parser\",\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: [\"./tsconfig.json\"],\n    ecmaVersion: 2021,\n    sourceType: \"module\",\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: [\"@typescript-eslint\"],\n  rules: {\n    \"@typescript-eslint/no-explicit-any\": \"off\",\n    \"@typescript-eslint/explicit-module-boundary-types\": \"off\",\n    \"@typescript-eslint/no-inferrable-types\": \"off\",\n    \"@typescript-eslint/no-non-null-assertion\": \"off\",\n    \"@typescript-eslint/no-empty-interface\": \"off\",\n    \"@typescript-eslint/no-namespace\": \"off\",\n    \"@typescript-eslint/no-empty-function\": \"off\",\n    \"@typescript-eslint/no-this-alias\": \"off\",\n    \"@typescript-eslint/ban-types\": \"off\",\n    \"@typescript-eslint/ban-ts-comment\": \"off\",\n    \"prefer-spread\": \"off\",\n    \"no-case-declarations\": \"off\",\n    \"no-console\": \"off\",\n    \"@typescript-eslint/no-unused-vars\": [\"error\"],\n    \"@typescript-eslint/consistent-type-imports\": \"warn\",\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "497107976",
+        "name": "qwik-conference",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2023-03-24T14:00:41Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"qwik-conference\",\n  \"description\": \"Blank Qwik starter app. Vite.js tooling. Express.js server. Eslint code linting. Prettier code formatter. Tailwind CSS framework.\",\n  \"scripts\": {\n    \"build\": \"npm run typecheck && npm run build.client && npm run build.ssr\",\n    \"build.client\": \"vite build\",\n    \"build.ssr\": \"vite build --ssr src/entry.express.tsx\",\n    \"dev\": \"vite\",\n    \"dev.debug\": \"node --inspect-brk node_modules/vite/bin/vite.js\",\n    \"dev.ssr\": \"node --inspect node_modules/vite/bin/vite.js --mode ssr\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"**/*.ts*\\\"\",\n    \"serve\": \"node --inspect server/entry.express.js\",\n    \"start\": \"npm run dev\",\n    \"typecheck\": \"tsc --noEmit\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"0.0.34\",\n    \"@types/eslint\": \"8.4.2\",\n    \"@types/express\": \"4.17.13\",\n    \"@types/node\": \"17.0.34\",\n    \"@typescript-eslint/eslint-plugin\": \"5.25.0\",\n    \"@typescript-eslint/parser\": \"5.25.0\",\n    \"autoprefixer\": \"10.4.7\",\n    \"eslint\": \"8.15.0\",\n    \"eslint-plugin-qwik\": \"latest\",\n    \"express\": \"4.17.3\",\n    \"node-fetch\": \"2.6.7\",\n    \"postcss\": \"8.4.13\",\n    \"prettier\": \"2.6.2\",\n    \"tailwindcss\": \"3.0.24\",\n    \"typescript\": \"4.6.4\",\n    \"vite\": \"2.9.9\"\n  },\n  \"engines\": {\n    \"node\": \">=14\"\n  },\n  \"homepage\": \"https://qwik.builder.io/\",\n  \"license\": \"\",\n  \"private\": true,\n  \"dependencies\": {\n    \"url-router\": \"^13.0.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.js",
+            "content": "module.exports = {\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    ecmaVersion: 12,\n    sourceType: 'module',\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "595304525",
+        "name": "qwik-workshop-checkout",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2023-02-28T10:24:41Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.server\": \"vite build -c adaptors/cloudflare-pages/vite.config.ts\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"wrangler pages dev ./dist\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"^0.19.2\",\n    \"@builder.io/qwik-city\": \"^0.4.0\",\n    \"@types/eslint\": \"8.21.1\",\n    \"@types/node\": \"^18.14.1\",\n    \"@types/node-fetch\": \"latest\",\n    \"@typescript-eslint/eslint-plugin\": \"5.53.0\",\n    \"@typescript-eslint/parser\": \"5.53.0\",\n    \"eslint\": \"8.35.0\",\n    \"eslint-plugin-qwik\": \"0.19.2\",\n    \"node-fetch\": \"3.3.0\",\n    \"prettier\": \"2.8.4\",\n    \"typescript\": \"4.9.5\",\n    \"undici\": \"5.20.0\",\n    \"vite\": \"4.1.4\",\n    \"vite-tsconfig-paths\": \"4.0.5\",\n    \"wrangler\": \"latest\"\n  },\n  \"dependencies\": {\n    \"@auth/core\": \"^0.5.0\",\n    \"@builder.io/qwik-auth\": \"^0.0.3\",\n    \"@builder.io/sdk-qwik\": \"^0.1.9\",\n    \"zod\": \"^3.20.6\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n    '@typescript-eslint/consistent-type-imports': 'warn',\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "207907442",
+        "name": "AngularConnect-2019",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 28,
+        "pushedAt": "2023-02-06T03:20:53Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"angularconnect-2019\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Angular Connect 2019\",\n  \"scripts\": {\n    \"watch\": \"tsc --watch\",\n    \"serve\": \"http-server\",\n    \"postinstall\": \"./node_modules/.bin/ivy-ngcc; npm run patch\",\n    \"install-v8-tools\": \"mkdir -p v8/tools; cd v8; git init; git remote add -f origin git@github.com:v8/v8.git; git config core.sparseCheckout true; echo \\\"tools\\\" >> .git/info/sparse-checkout; git pull --depth=1 origin master; cd ..\",\n    \"patch\": \"sed -i -e 's|\\\\}., global\\\\.ng\\\\.core..;$|}), global.ng.core, global.ng.core));|g' node_modules/@angular/common/bundles/common.umd.js\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/mhevery/AngularConnect-2019\"\n  },\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"@angular/common\": \"github:angular/common-builds#master\",\n    \"@angular/compiler\": \"github:angular/compiler-builds#master\",\n    \"@angular/compiler-cli\": \"github:angular/compiler-cli-builds#master\",\n    \"@angular/core\": \"github:angular/core-builds#master\",\n    \"@types/node\": \"^12.7.5\",\n    \"deoptigate\": \"^0.5.0\",\n    \"http-server\": \"^0.11.1\",\n    \"rxjs\": \"^6.5.3\",\n    \"typescript\": \"^3.6.3\"\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "572675138",
+        "name": "frontend-masters-contacts",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2023-02-01T22:02:54Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"App with Routing built-in (recommended)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"deploy\": \"echo 'Run \\\"npm run qwik add\\\" to install a server adaptor'\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/partytown\": \"^0.7.0\",\n    \"@builder.io/qwik\": \"0.14.1\",\n    \"@builder.io/qwik-city\": \"0.0.127\",\n    \"@types/eslint\": \"8.4.10\",\n    \"@types/node\": \"latest\",\n    \"@typescript-eslint/eslint-plugin\": \"5.43.0\",\n    \"@typescript-eslint/parser\": \"5.43.0\",\n    \"eslint\": \"8.28.0\",\n    \"eslint-plugin-qwik\": \"0.14.1\",\n    \"node-fetch\": \"3.3.0\",\n    \"prettier\": \"2.7.1\",\n    \"typescript\": \"4.9.3\",\n    \"vite\": \"3.2.4\",\n    \"vite-tsconfig-paths\": \"3.5.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "170252097",
+        "name": "perf-tests",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5,
+        "pushedAt": "2023-01-10T15:04:11Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "557179694",
+        "name": "qwik-js-poland-workshop",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2022-10-25T08:11:36Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"my-qwik-basic-starter\",\n  \"description\": \"Recommended for your first Qwik app (comes with Qwik City)\",\n  \"engines\": {\n    \"node\": \">=15.0.0\"\n  },\n  \"private\": true,\n  \"scripts\": {\n    \"build\": \"qwik build\",\n    \"build.client\": \"vite build\",\n    \"build.preview\": \"vite build --ssr src/entry.preview.tsx\",\n    \"build.types\": \"tsc --incremental --noEmit\",\n    \"dev\": \"vite --mode ssr\",\n    \"dev.debug\": \"node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force\",\n    \"fmt\": \"prettier --write .\",\n    \"fmt.check\": \"prettier --check .\",\n    \"lint\": \"eslint \\\"src/**/*.ts*\\\"\",\n    \"preview\": \"qwik build preview && vite preview --open\",\n    \"start\": \"vite --open --mode ssr\",\n    \"qwik\": \"qwik\"\n  },\n  \"devDependencies\": {\n    \"@builder.io/qwik\": \"0.11.1\",\n    \"@builder.io/qwik-city\": \"0.0.112\",\n    \"@builder.io/qwik-react\": \"0.0.102\",\n    \"@emotion/react\": \"11.9.3\",\n    \"@emotion/server\": \"11.4.0\",\n    \"@emotion/styled\": \"11.9.3\",\n    \"@mui/material\": \"5.8.6\",\n    \"@types/eslint\": \"8.4.6\",\n    \"@types/node\": \"latest\",\n    \"@types/react\": \"18.0.14\",\n    \"@types/react-dom\": \"18.0.5\",\n    \"@typescript-eslint/eslint-plugin\": \"5.40.0\",\n    \"@typescript-eslint/parser\": \"5.40.0\",\n    \"eslint\": \"8.25.0\",\n    \"eslint-plugin-qwik\": \"0.11.1\",\n    \"node-fetch\": \"3.2.10\",\n    \"prettier\": \"2.7.1\",\n    \"react\": \"18.2.0\",\n    \"react-dom\": \"18.2.0\",\n    \"typescript\": \"4.8.4\",\n    \"vite\": \"3.1.7\",\n    \"vite-tsconfig-paths\": \"3.5.0\"\n  },\n  \"dependencies\": {\n    \"tmdb-ts-api\": \"^0.1.1\"\n  }\n}\n"
+          },
+          {
+            "path": ".eslintrc.cjs",
+            "content": "module.exports = {\n  root: true,\n  env: {\n    browser: true,\n    es2021: true,\n    node: true,\n  },\n  extends: [\n    'eslint:recommended',\n    'plugin:@typescript-eslint/recommended',\n    'plugin:qwik/recommended',\n  ],\n  parser: '@typescript-eslint/parser',\n  parserOptions: {\n    tsconfigRootDir: __dirname,\n    project: ['./tsconfig.json'],\n    ecmaVersion: 2021,\n    sourceType: 'module',\n    ecmaFeatures: {\n      jsx: true,\n    },\n  },\n  plugins: ['@typescript-eslint'],\n  rules: {\n    '@typescript-eslint/no-explicit-any': 'off',\n    '@typescript-eslint/explicit-module-boundary-types': 'off',\n    '@typescript-eslint/no-inferrable-types': 'off',\n    '@typescript-eslint/no-non-null-assertion': 'off',\n    '@typescript-eslint/no-empty-interface': 'off',\n    '@typescript-eslint/no-namespace': 'off',\n    '@typescript-eslint/no-empty-function': 'off',\n    '@typescript-eslint/no-this-alias': 'off',\n    '@typescript-eslint/ban-types': 'off',\n    '@typescript-eslint/ban-ts-comment': 'off',\n    'prefer-spread': 'off',\n    'no-case-declarations': 'off',\n    'no-console': 'off',\n    '@typescript-eslint/no-unused-vars': ['error'],\n  },\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "552007",
+        "name": "jasmine-node",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1509,
+        "pushedAt": "2022-10-16T17:43:57Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"jasmine-node\",\n  \"version\": \"3.0.0\",\n  \"description\": \"DOM-less simple JavaScript BDD testing framework for Node\",\n  \"homepage\": \"https://github.com/mhevery/jasmine-node\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/mhevery/jasmine-node.git\"\n  },\n  \"keywords\": [\n    \"testing\",\n    \"bdd\"\n  ],\n  \"author\": \"Misko Hevery <misko@hevery.com>\",\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"coffeescript\": \"~1.12.7\",\n    \"gaze\": \"~1.1.2\",\n    \"jasmine-growl-reporter\": \"~2.0.0\",\n    \"jasmine-reporters\": \"~1.0.0\",\n    \"mkdirp\": \"~0.3.5\",\n    \"requirejs\": \"~2.3.6\",\n    \"underscore\": \"~1.9.1\",\n    \"walkdir\": \"~0.0.12\"\n  },\n  \"bin\": \"bin/jasmine-node\",\n  \"preferGlobal\": true,\n  \"main\": \"lib/jasmine-node\",\n  \"scripts\": {\n    \"test\": \"node lib/jasmine-node/cli.js spec\"\n  },\n  \"devDependencies\": {}\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "540597634",
+        "name": "partytown-playground",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2022-09-23T20:03:04Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"partytown-playground\",\n  \"version\": \"0.0.1\",\n  \"description\": \"Stackblitz - Partytown - Playground\",\n  \"main\": \"index.js\",\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"@builder.io/partytown\": \"^0.7.0\"\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "458398041",
+        "name": "repro-bazel-nested-project",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2022-02-13T17:00:33Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "child/package.json",
+            "content": "{\n  \"dependencies\": {\n    \"@bazel/typescript\": \"^5.1.0\",\n    \"typescript\": \"^4.5.5\"\n  }\n}\n"
+          },
+          {
+            "path": "child/packages/core/package.json",
+            "content": "{\n  \"dependencies\": {\n    \"@types/is-odd\": \"^3.0.1\",\n    \"is-odd\": \"^3.0.1\"\n  }\n}\n"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "732795222",
+        "repoName": "github-action-container-test",
+        "itemId": "docker",
+        "itemKind": "artifact",
+        "sourcePath": ".devcontainer/Dockerfile",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-12-17T21:53:34Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "497107976",
+        "repoName": "qwik-conference",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-03-24T14:00:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "543676856",
+        "repoName": "qwik-i18n",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-13T04:53:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "557179694",
+        "repoName": "qwik-js-poland-workshop",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2022-10-25T08:11:36Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "572675138",
+        "repoName": "frontend-masters-contacts",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-01T22:02:54Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "582569425",
+        "repoName": "qwik-twitter",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-05T15:33:50Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "595304525",
+        "repoName": "qwik-workshop-checkout",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-28T10:24:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "634639172",
+        "repoName": "qwik-server-component",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-18T23:17:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "639305945",
+        "repoName": "misko.dev",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-11T10:06:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "642597991",
+        "repoName": "qwik-workshop",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-11-06T16:09:20Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "646939485",
+        "repoName": "poland-meetup",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-29T17:37:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "647259379",
+        "repoName": "qwik-experts",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-30T12:19:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "649734252",
+        "repoName": "workshop-adservio",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-05T14:18:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "650589023",
+        "repoName": "workshop-future-frontend",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-07T11:55:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "655378450",
+        "repoName": "qwik-symbol-tracker",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-19T14:39:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "733239632",
+        "repoName": "react-server-component",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2023-12-18T22:05:57Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "732795222",
+        "repoName": "github-action-container-test",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-12-17T21:53:34Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/playwright.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "557179694",
+        "repoName": "qwik-js-poland-workshop",
+        "itemId": "material-ui",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2022-10-25T08:11:36Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "639305945",
+        "repoName": "misko.dev",
+        "itemId": "material-ui",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-11T10:06:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "material-ui",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "655378450",
+        "repoName": "qwik-symbol-tracker",
+        "itemId": "material-ui",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-19T14:39:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "650589023",
+        "repoName": "workshop-future-frontend",
+        "itemId": "playwright",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-07T11:55:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "playwright",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "683770345",
+        "repoName": "JavaScriptVM_under_the_hood",
+        "itemId": "pnpm",
+        "itemKind": "artifact",
+        "sourcePath": "pnpm-lock.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-10-11T16:21:34Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "497107976",
+        "repoName": "qwik-conference",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-03-24T14:00:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "543676856",
+        "repoName": "qwik-i18n",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-13T04:53:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "557179694",
+        "repoName": "qwik-js-poland-workshop",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2022-10-25T08:11:36Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "572675138",
+        "repoName": "frontend-masters-contacts",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-01T22:02:54Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "582569425",
+        "repoName": "qwik-twitter",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-05T15:33:50Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "595304525",
+        "repoName": "qwik-workshop-checkout",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-28T10:24:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "634639172",
+        "repoName": "qwik-server-component",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-18T23:17:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "639305945",
+        "repoName": "misko.dev",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-11T10:06:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "642597991",
+        "repoName": "qwik-workshop",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-11-06T16:09:20Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "646939485",
+        "repoName": "poland-meetup",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-29T17:37:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "647259379",
+        "repoName": "qwik-experts",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-30T12:19:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "649734252",
+        "repoName": "workshop-adservio",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-05T14:18:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "650589023",
+        "repoName": "workshop-future-frontend",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-07T11:55:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "655378450",
+        "repoName": "qwik-symbol-tracker",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-19T14:39:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "storybook",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "497107976",
+        "repoName": "qwik-conference",
+        "itemId": "tailwind",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-03-24T14:00:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "tailwind",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "733239632",
+        "repoName": "react-server-component",
+        "itemId": "tailwind",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2023-12-18T22:05:57Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "497107976",
+        "repoName": "qwik-conference",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-03-24T14:00:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "543676856",
+        "repoName": "qwik-i18n",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-13T04:53:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "557179694",
+        "repoName": "qwik-js-poland-workshop",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2022-10-25T08:11:36Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "572675138",
+        "repoName": "frontend-masters-contacts",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-01T22:02:54Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "582569425",
+        "repoName": "qwik-twitter",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-05T15:33:50Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "595304525",
+        "repoName": "qwik-workshop-checkout",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-02-28T10:24:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "634639172",
+        "repoName": "qwik-server-component",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-18T23:17:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "639305945",
+        "repoName": "misko.dev",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-11T10:06:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "642597991",
+        "repoName": "qwik-workshop",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-11-06T16:09:20Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "646939485",
+        "repoName": "poland-meetup",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-29T17:37:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "647259379",
+        "repoName": "qwik-experts",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-30T12:19:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "649734252",
+        "repoName": "workshop-adservio",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-05T14:18:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "650589023",
+        "repoName": "workshop-future-frontend",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-07T11:55:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "655378450",
+        "repoName": "qwik-symbol-tracker",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-19T14:39:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "650589023",
+        "repoName": "workshop-future-frontend",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-07T11:55:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "763667440",
+        "repoName": "testing-fundamentals",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-01-05T17:30:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "207907442",
+        "repoName": "AngularConnect-2019",
+        "itemId": "angular",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2023-02-06T03:20:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "497107976",
+        "repoName": "qwik-conference",
+        "itemId": "express",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-03-24T14:00:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "543676856",
+        "repoName": "qwik-i18n",
+        "itemId": "express",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-12-13T04:53:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "733239632",
+        "repoName": "react-server-component",
+        "itemId": "nextjs",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2023-12-18T22:05:57Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "557179694",
+        "repoName": "qwik-js-poland-workshop",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2022-10-25T08:11:36Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "639305945",
+        "repoName": "misko.dev",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-05-11T10:06:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "651484590",
+        "repoName": "qwik-demo",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-20T02:26:26Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "655378450",
+        "repoName": "qwik-symbol-tracker",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2023-06-19T14:39:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "733239632",
+        "repoName": "react-server-component",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2023-12-18T22:05:57Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 49,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 67
+    },
+    "requests": {
+      "rest": 74,
+      "graphql": 0,
+      "manifestFetches": 73,
+      "reposInspected": 30,
+      "cacheHits": 0
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T04:53:19.861Z",
+  "coldLatencyMs": 28556,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "mhevery",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 6,
+    "totalRequests": 7,
+    "durationMs": 4996,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "mhevery",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

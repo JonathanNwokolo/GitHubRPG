@@ -1,0 +1,79 @@
+{
+  "finalPreview": "https://githubrpg-nq4tvkffi-jonathans-projects-3d942e5c.vercel.app",
+  "checks": {
+    "allowlistedProfile": {
+      "username": "JonathanNwokolo",
+      "httpStatus": 200,
+      "achievementBadge": "5/54",
+      "titleBadge": "2/40",
+      "grimoire": true,
+      "delivery": "partial",
+      "subclass": null,
+      "evolution": null
+    },
+    "outsideAllowlist": [
+      {
+        "username": "torvalds",
+        "httpStatus": 200,
+        "achievementBadge": "11/31",
+        "titleBadge": "9/27",
+        "grimoire": false
+      },
+      {
+        "username": "ahejlsberg",
+        "httpStatus": 200,
+        "achievementTotal": 31,
+        "titleTotal": 27,
+        "grimoire": false
+      }
+    ],
+    "notFound": {
+      "username": "this-user-should-not-exist-92837465",
+      "httpStatus": 404
+    },
+    "secretAchievement": {
+      "redactedName": "???",
+      "redactedDescription": "Conquista desconhecida",
+      "requirementLeaked": false,
+      "progressLeaked": false
+    },
+    "clientPayload": {
+      "rawBounds": false,
+      "rawManifests": false,
+      "requestAccounting": false
+    },
+    "hall": {
+      "category": "web",
+      "httpStatus": 200,
+      "heroes": 5,
+      "requested": 5,
+      "failed": 0,
+      "pending": 0,
+      "partial": false,
+      "v2ColdFanout": false,
+      "basis": "The final allowlist contains only JonathanNwokolo; none of the Hall category usernames is eligible for V2."
+    },
+    "duel": {
+      "previewHttpStatus": 200,
+      "engine": "V1",
+      "automatedRegression": "PASS"
+    },
+    "badge": {
+      "httpStatus": 429,
+      "result": "BLOCKED_BY_ANONYMOUS_GITHUB_RATE_LIMIT"
+    },
+    "heroCard": {
+      "httpStatus": 429,
+      "result": "BLOCKED_BY_ANONYMOUS_GITHUB_RATE_LIMIT"
+    }
+  },
+  "runtimeErrors": [
+    "Initial deployment: missing GITHUB_DATA_SOURCE caused HTTP 500 and was corrected in Preview.",
+    "Anonymous GitHub primary limit reached while testing developit; Preview GITHUB_TOKEN remains unconfigured."
+  ],
+  "security": {
+    "tokenLeak": false,
+    "rawEvidenceLeak": false,
+    "secretAchievementRequirementLeak": false
+  }
+}

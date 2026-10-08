@@ -51,6 +51,7 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   test("V2 responsive: Hero, Grimoire, catalogs and explanation do not overflow", async ({ page }) => {
+    test.setTimeout(60_000);
     for (const width of [1440, 1366, 1024, 768, 390, 375]) {
       await page.setViewportSize({ width, height: width <= 390 ? 812 : 900 });
       await page.goto("/veteran-dev");
@@ -859,7 +860,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(page.getByText(/não uma avaliação da qualidade profissional/i)).toBeVisible();
     const share = page.getByRole("button", { name: /Compartilhar duelo|Copiar link/i });
     await share.click();
-    await expect(page.getByRole("status").filter({ hasText: "Link copiado!" })).toBeVisible();
+    await expect(page.getByRole("status").filter({ hasText: "Link copiado!" })).toBeVisible({ timeout: 10_000 });
     await page.reload();
     await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
   });

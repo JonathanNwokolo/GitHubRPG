@@ -1,0 +1,49 @@
+{
+  "profile": "JonathanNwokolo",
+  "cold": {
+    "observedAt": "2026-10-07T21:08:21-03:00",
+    "httpStatus": 202,
+    "state": "enriching",
+    "source": "fallback",
+    "enrichmentStarted": true,
+    "lookupMs": 14
+  },
+  "after": {
+    "result": "PASS",
+    "evidence": "A second request at 2026-10-07T21:08:35-03:00 returned the completed character without a foreground enrichment wait.",
+    "upperBoundObservedSeconds": 14
+  },
+  "l1": {
+    "result": "PASS",
+    "httpStatus": 200,
+    "state": "partial",
+    "source": "l1",
+    "lookupMs": 0,
+    "collectorRequestsExpected": 0
+  },
+  "l2": {
+    "result": "PASS",
+    "method": "fresh Preview deployment with empty process-local L1",
+    "fromDeployment": "dpl_J99kKsxEV16hCaELMZrWz4onSeDq",
+    "toDeployment": "dpl_95xr9qtAWJ1jAsna2VvnAKFhh4cT",
+    "httpStatus": 200,
+    "state": "partial",
+    "source": "l2",
+    "lookupMs": 16,
+    "collectorRequestsExpected": 0
+  },
+  "finalDeploymentL2": {
+    "deployment": "dpl_Hyhz8c9G7EnD9vqZCaE1eUEkB9LX",
+    "source": "l2",
+    "state": "partial",
+    "lookupMs": 18
+  },
+  "staleWhileRevalidate": {
+    "realPreviewResult": "NOT_FULLY_PROVEN",
+    "reason": "Character TTL is one hour and there is no existing Preview-only TTL override. Unit tests cover stale serving and single revalidation; the real window was not shortened."
+  },
+  "duplicateEnrichment": {
+    "realPreviewResult": "INCONCLUSIVE",
+    "reason": "The chosen anonymous GitHub path reached primary rate limit before the simultaneous cold requests could enter enrichment."
+  }
+}

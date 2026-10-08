@@ -302,11 +302,13 @@ describe("Share an achievement", () => {
 
     expect(unlocked.length).toBeGreaterThan(0);
     expect(locked.length).toBeGreaterThan(0);
-    for (const achievement of unlocked) {
-      expect(screen.getByRole("button", { name: `Compartilhar conquista: ${achievement.name}` })).toBeInTheDocument();
-    }
+    const shareLabels = screen
+      .getAllByRole("button", { name: /^Compartilhar conquista:/ })
+      .map((button) => button.getAttribute("aria-label"));
+
+    expect(shareLabels).toEqual(unlocked.map((achievement) => `Compartilhar conquista: ${achievement.name}`));
     for (const achievement of locked) {
-      expect(screen.queryByRole("button", { name: `Compartilhar conquista: ${achievement.name}` })).not.toBeInTheDocument();
+      expect(shareLabels).not.toContain(`Compartilhar conquista: ${achievement.name}`);
     }
   });
 

@@ -1,0 +1,41 @@
+{
+  "collector": "2.1",
+  "method": "Manual source-origin audit against the manifests and configs actually collected. External reputation was not used as ground truth.",
+  "sampleProfiles": [
+    "yyx990803",
+    "sindresorhus",
+    "kentcdodds",
+    "gvanrossum",
+    "addyosmani",
+    "mhevery",
+    "tiangolo",
+    "TaylorOtwell",
+    "EvanBacon",
+    "JakeWharton",
+    "loiane",
+    "antfu"
+  ],
+  "frameworks": {
+    "expectedFromObservedFiles": 36,
+    "detected": 36,
+    "confirmedFalsePositives": 0,
+    "confirmedFalseNegatives": 0,
+    "observedFilePrecision": 1,
+    "observedFileRecall": 1,
+    "caveat": "Five sampled profiles still have partial collection, so this does not claim recall for files omitted by budget."
+  },
+  "tooling": {
+    "expectedFromObservedFiles": 78,
+    "detected": 78,
+    "confirmedFalsePositives": 0,
+    "confirmedFalseNegatives": 0,
+    "observedFilePrecision": 1,
+    "observedFileRecall": 1,
+    "caveat": "Lockfiles were not accepted as primary evidence. packageManager declarations and unambiguous configs were accepted."
+  },
+  "contextualSources": {
+    "policy": "fixtures are excluded; docs, examples, demos, playgrounds and templates are weighted at 0.5 rather than counted as independent repositories",
+    "reviewedFindings": 5,
+    "confirmedFalsePositivesAfterFinalRules": 0
+  }
+}

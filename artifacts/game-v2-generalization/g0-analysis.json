@@ -1,0 +1,537 @@
+{
+  "generatedAt": "2026-10-07T21:29:33.772Z",
+  "stage": "3E-G0-ANALYSIS",
+  "matrixFreezeVerified": true,
+  "tunablesChangedBeforeG0": false,
+  "profiles": 30,
+  "subclassRate": 40,
+  "nullRate": 60,
+  "subclassDistribution": {
+    "architect": 1,
+    "artificer": 3,
+    "chronomancer": 5,
+    "guardian": 1,
+    "illusionist": 2,
+    "null": 18
+  },
+  "leaderDistribution": {
+    "architect": 3,
+    "artificer": 5,
+    "chronomancer": 10,
+    "guardian": 5,
+    "illusionist": 7
+  },
+  "coverage": {
+    "full": 16,
+    "partial-large": 7,
+    "partial-small": 7
+  },
+  "confidence": {
+    "high": 4,
+    "low": 4,
+    "medium": 22
+  },
+  "quality": {
+    "pending": false,
+    "summary": {
+      "ACCEPTABLE": 12,
+      "GOOD": 16,
+      "QUESTIONABLE": 2
+    }
+  },
+  "nullBlockers": {
+    "BOUNDS": 9,
+    "CONFIDENCE": 1,
+    "MARGIN": 1,
+    "SCORE": 7
+  },
+  "partialSmall": {
+    "total": 7,
+    "safe": 0,
+    "unsafe": 7,
+    "subclasses": 0,
+    "blockedByOtherGate": 0,
+    "profiles": [
+      {
+        "username": "bradtraversy",
+        "top1": "illusionist",
+        "top1Observed": 75.28,
+        "top1Lower": 73.4,
+        "top2": "architect",
+        "top2Upper": 83.3,
+        "guaranteedMargin": -23.12,
+        "confidence": "medium",
+        "subclass": null,
+        "reasonCode": "margin_insufficient"
+      },
+      {
+        "username": "wesbos",
+        "top1": "architect",
+        "top1Observed": 65.34,
+        "top1Lower": 58.12,
+        "top2": "illusionist",
+        "top2Upper": 91.01,
+        "guaranteedMargin": -38.64,
+        "confidence": "medium",
+        "subclass": null,
+        "reasonCode": "partial_can_change_winner"
+      },
+      {
+        "username": "julienschmidt",
+        "top1": "guardian",
+        "top1Observed": 18.54,
+        "top1Lower": 18.54,
+        "top2": "chronomancer",
+        "top2Upper": 95.75,
+        "guaranteedMargin": -77.21,
+        "confidence": "low",
+        "subclass": null,
+        "reasonCode": "score_below_threshold"
+      },
+      {
+        "username": "orta",
+        "top1": "illusionist",
+        "top1Observed": 69.01,
+        "top1Lower": 65.48,
+        "top2": "artificer",
+        "top2Upper": 93.95,
+        "guaranteedMargin": -32.15,
+        "confidence": "medium",
+        "subclass": null,
+        "reasonCode": "partial_can_change_winner"
+      },
+      {
+        "username": "bahmutov",
+        "top1": "guardian",
+        "top1Observed": 85.13,
+        "top1Lower": 84.31,
+        "top2": "chronomancer",
+        "top2Upper": 96.3,
+        "guaranteedMargin": -11.99,
+        "confidence": "medium",
+        "subclass": null,
+        "reasonCode": "partial_can_change_winner"
+      },
+      {
+        "username": "brendangregg",
+        "top1": "architect",
+        "top1Observed": 11.23,
+        "top1Lower": 11.23,
+        "top2": "artificer",
+        "top2Upper": 94.32,
+        "guaranteedMargin": -84.48,
+        "confidence": "low",
+        "subclass": null,
+        "reasonCode": "score_below_threshold"
+      },
+      {
+        "username": "BurntSushi",
+        "top1": "chronomancer",
+        "top1Observed": 39.63,
+        "top1Lower": 39.51,
+        "top2": "guardian",
+        "top2Upper": 83.57,
+        "guaranteedMargin": -54.92,
+        "confidence": "medium",
+        "subclass": null,
+        "reasonCode": "score_below_threshold"
+      }
+    ]
+  },
+  "reachability": {
+    "architect": {
+      "top1": 3,
+      "top2": 8,
+      "atLeast45": 9,
+      "atLeast55": 8,
+      "safeWinner": 1
+    },
+    "artificer": {
+      "top1": 5,
+      "top2": 6,
+      "atLeast45": 12,
+      "atLeast55": 11,
+      "safeWinner": 3
+    },
+    "illusionist": {
+      "top1": 7,
+      "top2": 4,
+      "atLeast45": 12,
+      "atLeast55": 9,
+      "safeWinner": 3
+    },
+    "guardian": {
+      "top1": 5,
+      "top2": 6,
+      "atLeast45": 9,
+      "atLeast55": 8,
+      "safeWinner": 1
+    },
+    "chronomancer": {
+      "top1": 10,
+      "top2": 6,
+      "atLeast45": 13,
+      "atLeast55": 10,
+      "safeWinner": 8
+    }
+  },
+  "competition": {
+    "architect": {
+      "artificer": 1,
+      "chronomancer": 1,
+      "illusionist": 1
+    },
+    "artificer": {
+      "chronomancer": 2,
+      "guardian": 1,
+      "illusionist": 2
+    },
+    "illusionist": {
+      "architect": 5,
+      "artificer": 1,
+      "chronomancer": 1
+    },
+    "guardian": {
+      "artificer": 2,
+      "chronomancer": 2,
+      "illusionist": 1
+    },
+    "chronomancer": {
+      "architect": 3,
+      "artificer": 2,
+      "guardian": 5
+    }
+  },
+  "correlations": {
+    "architect": {
+      "architect": 1,
+      "artificer": 0.257,
+      "illusionist": 0.739,
+      "guardian": 0.412,
+      "chronomancer": -0.03
+    },
+    "artificer": {
+      "architect": 0.257,
+      "artificer": 1,
+      "illusionist": 0.535,
+      "guardian": 0.651,
+      "chronomancer": 0.015
+    },
+    "illusionist": {
+      "architect": 0.739,
+      "artificer": 0.535,
+      "illusionist": 1,
+      "guardian": 0.537,
+      "chronomancer": -0.172
+    },
+    "guardian": {
+      "architect": 0.412,
+      "artificer": 0.651,
+      "illusionist": 0.537,
+      "guardian": 1,
+      "chronomancer": 0.205
+    },
+    "chronomancer": {
+      "architect": -0.03,
+      "artificer": 0.015,
+      "illusionist": -0.172,
+      "guardian": 0.205,
+      "chronomancer": 1
+    }
+  },
+  "excessiveCorrelations": [],
+  "composites": {
+    "activationsByArchetype": {
+      "architect": 8,
+      "artificer": 17,
+      "illusionist": 15,
+      "guardian": 10,
+      "chronomancer": 12
+    },
+    "totalActivations": 84
+  },
+  "evolutions": {
+    "unlocks": 1,
+    "tuningPerformed": false
+  },
+  "titles": {
+    "observed": {
+      "title-class-alquimista-guerreiro": 1,
+      "title-class-mago-bardo": 4,
+      "title-class-mago-guerreiro": 2,
+      "title-class-paladino-mago": 1,
+      "title-class-patrulheiro-alquimista": 1,
+      "title-commits-1000": 30,
+      "title-commits-10000": 14,
+      "title-commits-500": 30,
+      "title-commits-5000": 23,
+      "title-hybrid-pipeline-seer": 1,
+      "title-languages-3": 22,
+      "title-languages-5": 8,
+      "title-living-legend": 10,
+      "title-practice-architect": 1,
+      "title-practice-artificer": 3,
+      "title-practice-chronomancer": 5,
+      "title-practice-guardian": 1,
+      "title-practice-illusionist": 2,
+      "title-prs-10": 30,
+      "title-prs-100": 30,
+      "title-prs-50": 30,
+      "title-prs-500": 20,
+      "title-school-portals": 1,
+      "title-school-services": 2,
+      "title-school-ui": 7,
+      "title-stars-10": 30,
+      "title-stars-100": 30,
+      "title-stars-1000": 29,
+      "title-stars-50": 30,
+      "title-stars-500": 30,
+      "title-years-10": 30,
+      "title-years-15": 19,
+      "title-years-3": 30,
+      "title-years-5": 30
+    },
+    "tuningPerformed": false
+  },
+  "achievements": {
+    "observedUnlocked": {
+      "active-days-30": 30,
+      "active-days-365": 30,
+      "age-1": 30,
+      "age-10": 30,
+      "age-15": 19,
+      "age-3": 30,
+      "age-5": 30,
+      "artifacts-3": 17,
+      "automation-ci-3": 24,
+      "collaboration-triad-25": 27,
+      "commits-100": 30,
+      "commits-1000": 30,
+      "commits-10000": 14,
+      "commits-5000": 23,
+      "consistent-years-5": 30,
+      "containers-3": 3,
+      "five-paths": 2,
+      "forks-received-10": 30,
+      "issues-10": 29,
+      "issues-200": 24,
+      "issues-50": 28,
+      "issues-500": 17,
+      "language-specialist-70": 4,
+      "languages-2": 28,
+      "languages-5": 8,
+      "languages-balanced-3": 5,
+      "living-legend": 10,
+      "prs-1": 30,
+      "prs-100": 30,
+      "prs-25": 30,
+      "prs-500": 20,
+      "repos-1": 30,
+      "repos-100": 21,
+      "repos-25": 29,
+      "repos-5": 30,
+      "repos-50": 22,
+      "reviews-10": 29,
+      "reviews-200": 21,
+      "reviews-50": 24,
+      "reviews-500": 16,
+      "school-recurring-5": 9,
+      "schools-3": 3,
+      "schools-first": 15,
+      "starred-repos-5": 30,
+      "stars-1": 30,
+      "stars-100": 30,
+      "stars-1000": 29,
+      "stars-25": 30,
+      "streak-30": 25,
+      "testing-recurring-3": 8
+    },
+    "catalogOrGateChanges": 0
+  },
+  "genericCap": {
+    "cap": 42,
+    "profileTopScoreDeltas": [],
+    "meanAbsoluteDeltaAllArchetypes": 0.01
+  },
+  "specificity": {
+    "meanAbsoluteDeltaUniform": 10.55,
+    "dominantTechnologies": {
+      "astro": 1,
+      "cypress": 1,
+      "django": 1,
+      "docker": 1,
+      "esbuild": 1,
+      "eslint": 9,
+      "express": 1,
+      "github-actions": 19,
+      "jest": 2,
+      "nextjs": 3,
+      "playwright": 1,
+      "pnpm": 1,
+      "prettier": 7,
+      "react": 8,
+      "rollup": 2,
+      "tailwind": 3,
+      "vite": 3,
+      "vitest": 1,
+      "vue": 1,
+      "webpack": 2,
+      "yarn": 1
+    }
+  },
+  "scoreDistribution": {
+    "architect": {
+      "30-39": 3,
+      "40-44": 1,
+      "45-49": 1,
+      "55-59": 1,
+      "60-69": 6,
+      "70+": 1,
+      "<30": 17
+    },
+    "artificer": {
+      "30-39": 1,
+      "40-44": 4,
+      "45-49": 1,
+      "55-59": 4,
+      "60-69": 3,
+      "70+": 4,
+      "<30": 13
+    },
+    "illusionist": {
+      "30-39": 3,
+      "40-44": 2,
+      "45-49": 1,
+      "50-54": 2,
+      "55-59": 2,
+      "60-69": 4,
+      "70+": 3,
+      "<30": 13
+    },
+    "guardian": {
+      "30-39": 3,
+      "40-44": 1,
+      "50-54": 1,
+      "55-59": 1,
+      "60-69": 4,
+      "70+": 3,
+      "<30": 17
+    },
+    "chronomancer": {
+      "30-39": 9,
+      "40-44": 3,
+      "45-49": 1,
+      "50-54": 2,
+      "55-59": 4,
+      "60-69": 5,
+      "70+": 1,
+      "<30": 5
+    }
+  },
+  "topScoreDistribution": {
+    "30-39": 2,
+    "40-44": 1,
+    "50-54": 2,
+    "55-59": 3,
+    "60-69": 9,
+    "70+": 11,
+    "<30": 2
+  },
+  "marginDistribution": {
+    "0-2": 1,
+    ">12": 18,
+    ">2-4": 1,
+    ">5-8": 4,
+    ">8-12": 6
+  },
+  "guaranteedMarginDistribution": {
+    "<0": 14,
+    ">12": 11,
+    ">5-8": 1,
+    ">8-12": 4
+  },
+  "confidenceByWinner": {
+    "architect": {
+      "low": 1,
+      "medium": 2
+    },
+    "artificer": {
+      "high": 2,
+      "medium": 3
+    },
+    "illusionist": {
+      "high": 2,
+      "low": 2,
+      "medium": 3
+    },
+    "guardian": {
+      "low": 1,
+      "medium": 4
+    },
+    "chronomancer": {
+      "medium": 10
+    }
+  },
+  "comparison": {
+    "calibration": {
+      "profiles": 30,
+      "subclassRate": 30,
+      "nullRate": 70,
+      "GOOD": 6,
+      "ACCEPTABLE": 3,
+      "QUESTIONABLE": 0,
+      "BAD": 0,
+      "avgTopScore": 57.45,
+      "avgMargin": 16.58,
+      "avgGuaranteedMargin": -5.9,
+      "fullCoverage": 17,
+      "partialSmall": 5,
+      "partialLarge": 8,
+      "highConfidence": 4
+    },
+    "holdout": {
+      "profiles": 10,
+      "subclassRate": 0,
+      "nullRate": 100,
+      "GOOD": 0,
+      "ACCEPTABLE": 8,
+      "QUESTIONABLE": 2,
+      "BAD": 0,
+      "avgTopScore": 67.91,
+      "avgMargin": 3.62,
+      "avgGuaranteedMargin": -16.28,
+      "fullCoverage": 4,
+      "partialSmall": 3,
+      "partialLarge": 3,
+      "highConfidence": 2
+    },
+    "independent": {
+      "profiles": 30,
+      "subclassRate": 40,
+      "nullRate": 60,
+      "GOOD": 16,
+      "ACCEPTABLE": 12,
+      "QUESTIONABLE": 2,
+      "BAD": 0,
+      "avgTopScore": 62.17,
+      "avgMargin": 18.03,
+      "avgGuaranteedMargin": -7,
+      "fullCoverage": 16,
+      "partialSmall": 7,
+      "partialLarge": 7,
+      "highConfidence": 4
+    }
+  },
+  "determinism": "30/30",
+  "performance": {
+    "coldP90Ms": 46224,
+    "engineP90Ms": 3.52
+  },
+  "requestBudget": {
+    "restP90": 31,
+    "graphqlP90": 4,
+    "maxRest": 31,
+    "maxGraphql": 6,
+    "withinCollectorCaps": true
+  }
+}

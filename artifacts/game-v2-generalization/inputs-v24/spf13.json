@@ -1,0 +1,2154 @@
+{
+  "matrixProfile": {
+    "username": "spf13",
+    "category": "backend-architecture",
+    "publicReposAtFreeze": 122,
+    "reason": "Public Go application architecture and CLI repositories."
+  },
+  "rawProfile": {
+    "username": "spf13",
+    "displayName": "Steve Francia",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/173412?v=4",
+    "bio": "Always learning • Led @golang @Google,  MD @twosigma, VP @MongoDB & @Docker, @Drupal board • @gohugoio, Cobra & spf13-vim creator",
+    "location": "NYC",
+    "company": null,
+    "createdAt": "2009-12-29T03:37:15.000Z",
+    "fetchedAt": "2026-10-07T21:16:31.230Z",
+    "isDemo": false,
+    "followers": {
+      "value": 16652,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "afero",
+          "isFork": false,
+          "stars": 6710,
+          "forks": 588,
+          "languages": {
+            "Go": 353949,
+            "Nix": 161
+          }
+        },
+        {
+          "name": "roborev",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "kata",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "msgvault",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "kit",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "fsync",
+          "isFork": true,
+          "stars": 68,
+          "forks": 16,
+          "languages": {}
+        },
+        {
+          "name": "go",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pflag",
+          "isFork": true,
+          "stars": 2773,
+          "forks": 391,
+          "languages": {}
+        },
+        {
+          "name": "go-skills",
+          "isFork": false,
+          "stars": 664,
+          "forks": 37,
+          "languages": {}
+        },
+        {
+          "name": "cast",
+          "isFork": false,
+          "stars": 3982,
+          "forks": 339,
+          "languages": {
+            "Go": 92568,
+            "Just": 212,
+            "Nix": 169,
+            "Shell": 91
+          }
+        },
+        {
+          "name": "nemotron-bubble",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "go-fast-note-sync",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "cobra",
+          "isFork": false,
+          "stars": 44692,
+          "forks": 5148,
+          "languages": {
+            "Go": 468120,
+            "Makefile": 941
+          }
+        },
+        {
+          "name": "fileflow",
+          "isFork": false,
+          "stars": 87,
+          "forks": 2,
+          "languages": {
+            "Go": 62819
+          }
+        },
+        {
+          "name": "pathologize",
+          "isFork": false,
+          "stars": 78,
+          "forks": 3,
+          "languages": {
+            "Go": 33975
+          }
+        },
+        {
+          "name": "spf13-vim",
+          "isFork": false,
+          "stars": 15471,
+          "forks": 3526,
+          "languages": {
+            "Vim Script": 50461,
+            "Shell": 5416,
+            "Batchfile": 4100
+          }
+        },
+        {
+          "name": "gemini-image",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Go": 6875
+          }
+        },
+        {
+          "name": "viper",
+          "isFork": false,
+          "stars": 30483,
+          "forks": 2271,
+          "languages": {
+            "Go": 185292,
+            "Makefile": 2430,
+            "Nix": 1337,
+            "Shell": 231
+          }
+        },
+        {
+          "name": "go-epub",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hyde",
+          "isFork": false,
+          "stars": 630,
+          "forks": 590,
+          "languages": {
+            "CSS": 13975,
+            "HTML": 4966
+          }
+        },
+        {
+          "name": "hangmaan",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Go": 5482
+          }
+        },
+        {
+          "name": "hangman",
+          "isFork": false,
+          "stars": 10,
+          "forks": 0,
+          "languages": {
+            "Go": 5417
+          }
+        },
+        {
+          "name": "zap2itXMLTV",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "Go": 16481
+          }
+        },
+        {
+          "name": "unifi-ddns",
+          "isFork": true,
+          "stars": 4,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "cobra-cli",
+          "isFork": false,
+          "stars": 936,
+          "forks": 130,
+          "languages": {
+            "Go": 150758,
+            "Makefile": 1231
+          }
+        },
+        {
+          "name": "cobra.dev",
+          "isFork": false,
+          "stars": 11,
+          "forks": 31,
+          "languages": {
+            "HTML": 5828,
+            "CSS": 584
+          }
+        },
+        {
+          "name": "dotfiles",
+          "isFork": false,
+          "stars": 41,
+          "forks": 2,
+          "languages": {
+            "Shell": 4513,
+            "PowerShell": 458
+          }
+        },
+        {
+          "name": "jwalterweatherman",
+          "isFork": false,
+          "stars": 266,
+          "forks": 48,
+          "languages": {
+            "Go": 14231
+          }
+        },
+        {
+          "name": "memorials",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "font-install",
+          "isFork": true,
+          "stars": 7,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "photoprism",
+          "isFork": true,
+          "stars": 8,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "mgphoto",
+          "isFork": true,
+          "stars": 6,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "transcripts",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "home_assistant_blueprints",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "deploy-firebase",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "hugo-on-fire",
+          "isFork": true,
+          "stars": 3,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "gitportable-pacman",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "dotfiles-1",
+          "isFork": true,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "spf13",
+          "isFork": false,
+          "stars": 7,
+          "forks": 8,
+          "languages": {}
+        },
+        {
+          "name": "spf13.com",
+          "isFork": false,
+          "stars": 144,
+          "forks": 84,
+          "languages": {
+            "CSS": 40701,
+            "HTML": 19345,
+            "JavaScript": 1
+          }
+        },
+        {
+          "name": "herring-cove",
+          "isFork": false,
+          "stars": 44,
+          "forks": 37,
+          "languages": {
+            "CSS": 10289,
+            "HTML": 6261,
+            "JavaScript": 631
+          }
+        },
+        {
+          "name": "stevefrancia.com",
+          "isFork": false,
+          "stars": 6,
+          "forks": 3,
+          "languages": {
+            "HTML": 1652
+          }
+        },
+        {
+          "name": "dagobah",
+          "isFork": false,
+          "stars": 135,
+          "forks": 15,
+          "languages": {
+            "Go": 14958,
+            "HTML": 4615,
+            "CSS": 3300,
+            "JavaScript": 789
+          }
+        },
+        {
+          "name": "vim-colors",
+          "isFork": false,
+          "stars": 42,
+          "forks": 23,
+          "languages": {
+            "Vim Script": 46338
+          }
+        },
+        {
+          "name": "tri",
+          "isFork": false,
+          "stars": 38,
+          "forks": 12,
+          "languages": {
+            "Go": 13503
+          }
+        },
+        {
+          "name": "gopheracademy-web",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "PIV",
+          "isFork": false,
+          "stars": 250,
+          "forks": 36,
+          "languages": {
+            "Vim Script": 482683,
+            "PHP": 1459
+          }
+        },
+        {
+          "name": "SmartThingsPublic",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "device-type.myecobee",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "caddy",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "instant",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "HTML": 13423,
+            "CSS": 7021
+          }
+        },
+        {
+          "name": "vim-autoclose",
+          "isFork": true,
+          "stars": 20,
+          "forks": 10,
+          "languages": {}
+        },
+        {
+          "name": "opensource",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "docs-base",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "libcontainer",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "kaiju",
+          "isFork": false,
+          "stars": 114,
+          "forks": 8,
+          "languages": {
+            "JavaScript": 485564,
+            "Go": 16802,
+            "HTML": 2185,
+            "Makefile": 202
+          }
+        },
+        {
+          "name": "Google-Docs-Markdown",
+          "isFork": true,
+          "stars": 4,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "kitematic",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gh-patch-parser",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "docker",
+          "isFork": true,
+          "stars": 8,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "neovim",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "fsnotify.org",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "firstGoApp-Planet",
+          "isFork": false,
+          "stars": 20,
+          "forks": 3,
+          "languages": {
+            "Go": 972
+          }
+        },
+        {
+          "name": "local-minimum-web",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "relativeTime",
+          "isFork": false,
+          "stars": 7,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ubuntu-post-install",
+          "isFork": true,
+          "stars": 9,
+          "forks": 6,
+          "languages": {}
+        },
+        {
+          "name": "r4t",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "toml",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flag",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vimbrant",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "herring-cove-1",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-wordy",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hugostrap",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "discourse",
+          "isFork": true,
+          "stars": 2,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "spf13.github.com",
+          "isFork": false,
+          "stars": 5,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "One-More-For-The-Road",
+          "isFork": false,
+          "stars": 4,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 94790,
+            "CSS": 93140,
+            "Ruby": 5190
+          }
+        },
+        {
+          "name": "nitro",
+          "isFork": false,
+          "stars": 298,
+          "forks": 16,
+          "languages": {
+            "Go": 3992
+          }
+        },
+        {
+          "name": "StrangeLoop2013",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "YourFirstRubyMongoDBApp",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "Ruby": 7566,
+            "CSS": 1154,
+            "Perl": 1049,
+            "JavaScript": 308
+          }
+        },
+        {
+          "name": "Milieu",
+          "isFork": false,
+          "stars": 13,
+          "forks": 11,
+          "languages": {
+            "Ruby": 15746,
+            "CSS": 1154,
+            "Perl": 854,
+            "JavaScript": 308
+          }
+        },
+        {
+          "name": "docs",
+          "isFork": true,
+          "stars": 1,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "Textdown",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "vim-gocode",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Vim Script": 1842
+          }
+        },
+        {
+          "name": "snipmate-snippets",
+          "isFork": true,
+          "stars": 74,
+          "forks": 24,
+          "languages": {}
+        },
+        {
+          "name": "blog.zacharyvoase.com",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "game-off-2012",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-markdown",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "undotree",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nami2epub",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "Python": 7676
+          }
+        },
+        {
+          "name": "Vogon",
+          "isFork": false,
+          "stars": 16,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 3391830,
+            "PHP": 236784,
+            "ASP": 48011,
+            "Shell": 518
+          }
+        },
+        {
+          "name": "smeagol",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tpw",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "asciidoc-vim",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "wp_GitHub_Code_Viewer",
+          "isFork": false,
+          "stars": 5,
+          "forks": 3,
+          "languages": {
+            "PHP": 3115
+          }
+        },
+        {
+          "name": "stackboxcms",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "deck.js",
+          "isFork": true,
+          "stars": 5,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "recurly-js",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bootstrap",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-twig",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pyzoop",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mongo",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "VimDebugger",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-preview",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "snipmate.vim",
+          "isFork": true,
+          "stars": 5,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "profile",
+          "isFork": true,
+          "stars": 9,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "CodeBetter.Com-Fabric",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-unimpaired",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nerdtree",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-easytags",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "symfony",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-autocorrect",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "Autostamp",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Vim Script": 1204
+          }
+        },
+        {
+          "name": "mongoProducts",
+          "isFork": false,
+          "stars": 37,
+          "forks": 7,
+          "languages": {}
+        },
+        {
+          "name": "vim-surround",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "hipe-vhost",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "MicroKernelBundle",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mysql_s3_backup",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mongo-oplog-watcher",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "fuzzyfinder_textmate",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vhost-apache2",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vip",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "generate-vhosts",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 2916,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 382,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 7,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 77,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 1083,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 106,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 17,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 270,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          1,
+          0,
+          0,
+          55,
+          2,
+          2,
+          8,
+          25,
+          7,
+          40,
+          3,
+          5,
+          1,
+          16,
+          8,
+          8,
+          18,
+          12,
+          0,
+          7,
+          4,
+          14,
+          10,
+          5,
+          19,
+          16,
+          10,
+          21,
+          1,
+          0,
+          22,
+          14,
+          33,
+          14,
+          24,
+          7,
+          9,
+          8,
+          18,
+          10,
+          7,
+          17,
+          159,
+          196,
+          86,
+          144,
+          57,
+          57,
+          143,
+          84,
+          66,
+          129,
+          174,
+          65,
+          71,
+          152,
+          72,
+          50,
+          87,
+          30,
+          29,
+          31,
+          42,
+          1,
+          92,
+          21,
+          6,
+          10,
+          23,
+          15,
+          127,
+          61,
+          64,
+          2,
+          0,
+          2,
+          2,
+          25,
+          2,
+          0,
+          5,
+          15,
+          0,
+          1,
+          3,
+          2,
+          1,
+          0,
+          4,
+          1,
+          11,
+          5,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          3,
+          0,
+          4,
+          3,
+          0,
+          0,
+          39,
+          6,
+          2,
+          27,
+          0,
+          10,
+          0,
+          4,
+          10,
+          1,
+          0,
+          1,
+          4,
+          25,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          6,
+          3,
+          10,
+          3,
+          0,
+          0,
+          0,
+          2,
+          14,
+          0,
+          0,
+          1,
+          45,
+          21,
+          3,
+          27,
+          10,
+          8,
+          24,
+          0,
+          7,
+          2,
+          10,
+          5,
+          0,
+          1,
+          3,
+          0,
+          0,
+          0,
+          6,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          3,
+          17,
+          40,
+          5,
+          23,
+          18,
+          11,
+          18,
+          65,
+          5,
+          7,
+          5,
+          53,
+          88,
+          206,
+          96,
+          61,
+          220,
+          93,
+          32,
+          410,
+          676,
+          740,
+          272,
+          944,
+          546,
+          563,
+          136
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2009,
+            "contributions": 1,
+            "activeDays": 1,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 148,
+            "activeDays": 41,
+            "commits": 126,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 2
+          },
+          {
+            "year": 2011,
+            "contributions": 103,
+            "activeDays": 46,
+            "commits": 80,
+            "pullRequests": 7,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 181,
+            "activeDays": 84,
+            "commits": 172,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2013,
+            "contributions": 768,
+            "activeDays": 123,
+            "commits": 735,
+            "pullRequests": 3,
+            "reviews": 0,
+            "issues": 18
+          },
+          {
+            "year": 2014,
+            "contributions": 1123,
+            "activeDays": 154,
+            "commits": 1051,
+            "pullRequests": 3,
+            "reviews": 0,
+            "issues": 7
+          },
+          {
+            "year": 2015,
+            "contributions": 458,
+            "activeDays": 85,
+            "commits": 393,
+            "pullRequests": 11,
+            "reviews": 0,
+            "issues": 19
+          },
+          {
+            "year": 2016,
+            "contributions": 118,
+            "activeDays": 19,
+            "commits": 100,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 10
+          },
+          {
+            "year": 2017,
+            "contributions": 29,
+            "activeDays": 17,
+            "commits": 3,
+            "pullRequests": 0,
+            "reviews": 1,
+            "issues": 7
+          },
+          {
+            "year": 2018,
+            "contributions": 84,
+            "activeDays": 24,
+            "commits": 3,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2019,
+            "contributions": 56,
+            "activeDays": 16,
+            "commits": 29,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2020,
+            "contributions": 12,
+            "activeDays": 8,
+            "commits": 5,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 3
+          },
+          {
+            "year": 2021,
+            "contributions": 96,
+            "activeDays": 27,
+            "commits": 47,
+            "pullRequests": 1,
+            "reviews": 3,
+            "issues": 3
+          },
+          {
+            "year": 2022,
+            "contributions": 97,
+            "activeDays": 32,
+            "commits": 1,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 3
+          },
+          {
+            "year": 2023,
+            "contributions": 10,
+            "activeDays": 7,
+            "commits": 1,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2024,
+            "contributions": 108,
+            "activeDays": 42,
+            "commits": 32,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2025,
+            "contributions": 835,
+            "activeDays": 125,
+            "commits": 12,
+            "pullRequests": 1,
+            "reviews": 1,
+            "issues": 1
+          },
+          {
+            "year": 2026,
+            "contributions": 4412,
+            "activeDays": 232,
+            "commits": 126,
+            "pullRequests": 353,
+            "reviews": 2,
+            "issues": 2
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2026-03-10",
+        "end": "2026-06-23"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "25872841",
+        "name": "afero",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6710,
+        "pushedAt": "2026-10-06T20:08:46Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/analysis-scorecard.yaml",
+            "content": "name: OpenSSF Scorecard\n\non:\n  branch_protection_rule:\n  push:\n    branches: [master]\n  schedule:\n    - cron: \"30 0 * * 5\"\n\npermissions:\n  contents: read\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    permissions:\n      actions: read\n      contents: read\n      id-token: write\n      security-events: write\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n        with:\n          persist-credentials: false\n\n      - name: Run analysis\n        uses: ossf/scorecard-action@2d1146689b8cda280b9bc96326124645441f03bc # v2.4.4\n        with:\n          results_file: results.sarif\n          results_format: sarif\n          publish_results: true\n\n      - name: Upload results as artifact\n        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1\n        with:\n          name: OpenSSF Scorecard results\n          path: results.sarif\n          retention-days: 5\n\n      - name: Upload results to GitHub Security tab\n        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2\n        with:\n          sarif_file: results.sarif\n",
+            "blobSha": "9c868e502b34d8472b30cfe7757be3229b6df4ab",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/ci.yaml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [master]\n  pull_request:\n\njobs:\n  test:\n    name: Test\n    runs-on: ${{ matrix.os }}\n\n    strategy:\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, macos-latest, windows-latest]\n        go: [stable, oldstable, \"1.26\", \"1.27\"]\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Set up Go\n        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0\n        with:\n          go-version: ${{ matrix.go }}\n\n      - name: Test\n        run: go test -race -v ./...\n\n      - name: Test gcsfs\n        run: go test -race -v ./...\n        working-directory: ./gcsfs\n\n      - name: Test sftpfs\n        run: go test -race -v ./...\n        working-directory: ./sftpfs\n\n  build-wasip:\n    name: Build (wasip1/wasm)\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Set up Go\n        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0\n        with:\n          go-version: stable\n\n      - name: Build\n        run: go build ./...\n        env:\n          GOOS: wasip1\n          GOARCH: wasm\n\n  lint:\n    name: Lint\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Set up Go\n        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0\n        with:\n          go-version: \"1.26\"\n\n      - name: Lint\n        uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0\n        with:\n          version: v2.13.2\n\n  dependency-review:\n    name: Dependency review\n    runs-on: ubuntu-latest\n    if: github.event_name == 'pull_request'\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n\n      - name: Dependency Review\n        uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0\n",
+            "blobSha": "65da92269adf4c6d56803bb636c4cb7b0785ad7a",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 684,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "1189953139",
+        "name": "go-skills",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 664,
+        "pushedAt": "2026-09-18T00:37:05Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/validate.yml",
+            "content": "name: validate\n\non:\n  push:\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  manifests:\n    name: manifests\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-python@v5\n        with:\n          python-version: \"3.x\"\n      - name: Validate manifests against the published schemastore schemas\n        run: |\n          python3 -m pip install --quiet jsonschema\n          python3 .github/scripts/validate_manifests.py\n\n  invariants:\n    name: invariants\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - name: Check cross-file invariants\n        run: python3 .github/scripts/check_invariants.py\n\n  links:\n    name: links\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - name: Check links in README.md and CONTRIBUTING.md\n        uses: lycheeverse/lychee-action@v2\n        with:\n          args: --no-progress --accept \"200..=299\" README.md CONTRIBUTING.md\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n",
+            "blobSha": "16619c1f41c89d6ed9d81cf9ba7e33a9d7178d86",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 90,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "18413405",
+        "name": "cast",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3982,
+        "pushedAt": "2026-09-09T16:04:48Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/analysis-scorecard.yaml",
+            "content": "name: OpenSSF Scorecard\n\non:\n  branch_protection_rule:\n  push:\n    branches: [master]\n  schedule:\n    - cron: \"30 0 * * 5\"\n\npermissions:\n  contents: read\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    permissions:\n      actions: read\n      contents: read\n      id-token: write\n      security-events: write\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1\n        with:\n          persist-credentials: false\n\n      - name: Run analysis\n        uses: ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a # v2.4.3\n        with:\n          results_file: results.sarif\n          results_format: sarif\n          publish_results: true\n\n      - name: Upload results as artifact\n        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0\n        with:\n          name: OpenSSF Scorecard results\n          path: results.sarif\n          retention-days: 5\n\n      - name: Upload results to GitHub Security tab\n        uses: github/codeql-action/upload-sarif@5d4e8d1aca955e8d8589aabd499c5cae939e33c7 # v3.29.5\n        with:\n          sarif_file: results.sarif\n",
+            "blobSha": "e44638b3d5d9d612e1f1c02ce49aa64e6012bcc6",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/ci.yaml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [master]\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  test:\n    name: Test\n    runs-on: ubuntu-latest\n\n    strategy:\n      # Fail fast is disabled because there are Go version specific features and tests\n      # that should be able to fail independently.\n      fail-fast: false\n      matrix:\n        go: [\"1.21\", \"1.22\", \"1.23\", \"1.24\", \"1.25\", \"1.26\", \"1.27\"]\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1\n\n      - name: Set up Go\n        uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0\n        with:\n          go-version: ${{ matrix.go }}\n\n      - name: Test\n        run: go test -race -v ./...\n\n  lint:\n    name: Lint\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1\n\n      - name: Set up Go\n        uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0\n        with:\n          go-version: \"1.27\"\n\n      - name: Lint\n        uses: golangci/golangci-lint-action@ba0d7d2ec06a0ea1cb5fa41b2e4a3ab91d21278a # v9.3.0\n        with:\n          version: v2.13.1\n\n  dependency-review:\n    name: Dependency review\n    runs-on: ubuntu-latest\n    if: github.event_name == 'pull_request'\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1\n\n      - name: Dependency Review\n        uses: actions/dependency-review-action@3c4e3dcb1aa7874d2c16be7d79418e9b7efd6261 # v4.8.2\n",
+            "blobSha": "a3d0d944afa302932feb5b49f14332e19a6f688a",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 365,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "12574344",
+        "name": "cobra",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 44692,
+        "pushedAt": "2026-07-11T00:43:07Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/labeler.yml",
+            "content": "name: \"Pull Request Labeler\"\non:\n- pull_request_target\n\npermissions:\n  contents: read\n\njobs:\n  triage:\n    permissions:\n      contents: read  # for actions/labeler to determine modified files\n      pull-requests: write  # for actions/labeler to add labels to PRs\n    runs-on: ubuntu-latest\n    steps:\n    - uses: actions/labeler@v5\n      with:\n        repo-token: \"${{ github.token }}\"\n\n",
+            "blobSha": "cc5c5400f9a32e879fbb3a7b13244396bb38fca1",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/test.yml",
+            "content": "name: Test\n\non:\n  push:\n  pull_request:\n  workflow_dispatch:\n\nenv:\n  GO111MODULE: on\n\npermissions:\n  contents: read\n\njobs:\n\n\n  lic-headers:\n    runs-on: ubuntu-latest\n    steps:\n\n      - uses: actions/checkout@v4\n\n      - run: >-\n          docker run\n          -v $(pwd):/wrk -w /wrk\n          ghcr.io/google/addlicense\n          -c 'The Cobra Authors'\n          -y '2013-2023'\n          -l apache\n          -ignore '.github/**'\n          -check\n          .\n\n\n  golangci-lint:\n    permissions:\n      contents: read  # for actions/checkout to fetch code\n      pull-requests: read  # for golangci/golangci-lint-action to fetch pull requests\n    runs-on: ubuntu-latest\n    steps:\n\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-go@v6\n        with:\n          go-version: '^1.22'\n          check-latest: true\n          cache: true\n\n      - uses: golangci/golangci-lint-action@v8.0.0\n        with:\n          version: latest\n          args: --verbose\n\n\n  test-unix:\n    strategy:\n      fail-fast: false\n      matrix:\n        platform:\n        - ubuntu\n        - macOS\n        go:\n        - 17\n        - 18\n        - 19\n        - 20\n        - 21\n        - 22\n        - 23\n        - 24\n    name: '${{ matrix.platform }} | 1.${{ matrix.go }}.x'\n    runs-on: ${{ matrix.platform }}-latest\n    # macOS runner environments require compiled binaries to contain an LC_UUID load command.\n    # Go 1.24+ natively resolves this by writing LC_UUID in Go's internal linker.\n    # For Go < 1.24, we pass -ldflags=-linkmode=external on macOS to force external linking via the system linker.\n    env:\n      GO_TEST_FLAGS: ${{ matrix.platform == 'macOS' && matrix.go < 24 && '-ldflags=-linkmode=external' || '' }}\n    steps:\n\n    - uses: actions/checkout@v4\n\n    - uses: actions/setup-go@v6\n      with:\n        go-version: 1.${{ matrix.go }}.x\n        cache: true\n\n    - run: |\n        export GOBIN=$HOME/go/bin\n        go install github.com/kyoh86/richgo@latest\n        go install github.com/mitchellh/gox@latest\n\n    - run: RICHGO_FORCE_COLOR=1 PATH=$HOME/go/bin/:$PATH make richtest\n\n\n  test-win:\n    name: MINGW64\n    defaults:\n      run:\n        shell: msys2 {0}\n    runs-on: windows-latest\n    steps:\n\n    - shell: bash\n      run: git config --global core.autocrlf input\n\n    - uses: msys2/setup-msys2@v2\n      with:\n        msystem: MINGW64\n        update: true\n        install: >\n          git\n          make\n          unzip\n          mingw-w64-x86_64-go\n\n    - uses: actions/checkout@v4\n\n    - uses: actions/cache@v4\n      with:\n        path: ~/go/pkg/mod\n        key: ${{ runner.os }}-${{ matrix.go }}-${{ hashFiles('**/go.sum') }}\n        restore-keys: ${{ runner.os }}-${{ matrix.go }}-\n\n    - run: |\n        export GOBIN=$HOME/go/bin\n        go install github.com/kyoh86/richgo@latest\n        go install github.com/mitchellh/gox@latest\n\n    - run: RICHGO_FORCE_COLOR=1 PATH=$HOME/go/bin:$PATH make richtest\n",
+            "blobSha": "68b1ab0f4a63ff08128db31c8c49b2cda94fff41",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 2107,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "888123944",
+        "name": "fileflow",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 87,
+        "pushedAt": "2026-07-10T01:36:52Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/test.yml",
+            "content": "name: test\n\non:\n  push:\n    branches: [main]\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  test:\n    strategy:\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, macos-latest, windows-latest]\n        go: ['1.19', 'stable']\n    runs-on: ${{ matrix.os }}\n    steps:\n      - uses: actions/checkout@v4\n      - uses: actions/setup-go@v5\n        with:\n          go-version: ${{ matrix.go }}\n      - name: Vet\n        run: go vet ./...\n      - name: Test\n        run: go test -race -count=1 ./...\n",
+            "blobSha": "034bd407fd924cdc53957c359987e5bb75001ce1",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 186,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "895313473",
+        "name": "pathologize",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 78,
+        "pushedAt": "2026-07-09T19:47:52Z",
+        "languages": {},
+        "files": [],
+        "size": 114,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "619849",
+        "name": "spf13-vim",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 15471,
+        "pushedAt": "2026-06-12T05:24:58Z",
+        "languages": {},
+        "files": [],
+        "size": 3075,
+        "primaryLanguage": "Vim Script",
+        "projects": []
+      },
+      {
+        "id": "1200031782",
+        "name": "gemini-image",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2026-04-03T14:39:12Z",
+        "languages": {},
+        "files": [],
+        "size": 13,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "18369373",
+        "name": "viper",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 30483,
+        "pushedAt": "2026-01-12T21:42:47Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/checks.yaml",
+            "content": "name: PR Checks\n\non:\n  pull_request:\n    types: [opened, labeled, unlabeled, synchronize]\n\npermissions:\n  pull-requests: read\n\njobs:\n  release-label:\n    name: Release note label\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Check minimum labels\n        uses: mheap/github-action-required-labels@388fd6af37b34cdfe5a23b37060e763217e58b03 # v5.5\n        with:\n          mode: minimum\n          count: 1\n          labels: |\n            release-note/ignore\n            kind/feature\n            release-note/new-feature\n            kind/enhancement\n            release-note/enhancement\n            kind/bug\n            release-note/bug-fix\n            release-note/breaking-change\n            release-note/deprecation\n            area/dependencies\n            release-note/dependency-update\n            release-note/misc\n",
+            "blobSha": "dd5cae6b1c829a3f9962e9a260c45fc16cd323eb",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/ci.yaml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [master]\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  build:\n    name: Build\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        include:\n          - goos: js\n            goarch: wasm\n          - goos: aix\n            goarch: ppc64\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Set up Go\n        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0\n        with:\n          go-version: \"1.25\"\n\n      - name: Build\n        run: go build .\n        env:\n          GOOS: ${{ matrix.goos }}\n          GOARCH: ${{ matrix.goarch }}\n\n  test:\n    name: Test\n    runs-on: ${{ matrix.os }}\n\n    strategy:\n      # Fail fast is disabled because there are Go version specific features and tests\n      # that should be able to fail independently.\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, macos-latest, windows-latest]\n        go: [\"1.23\", \"1.24\", \"1.25\"]\n        tags: [\"\", \"viper_finder\", \"viper_bind_struct\"]\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Set up Go\n        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0\n        with:\n          go-version: ${{ matrix.go }}\n\n      - name: Test\n        run: go test -race -v -tags '${{ matrix.tags }}' -shuffle=on ./...\n        if: runner.os != 'Windows'\n\n      - name: Test (without race detector)\n        run: go test -v -tags '${{ matrix.tags }}' -shuffle=on ./...\n        if: runner.os == 'Windows'\n\n  lint:\n    name: Lint\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Set up Go\n        uses: actions/setup-go@3041bf56c941b39c61721a86cd11f3bb1338122a # v5.2.0\n        with:\n          go-version: \"1.25\"\n\n      - name: Lint\n        uses: golangci/golangci-lint-action@4afd733a84b1f43292c63897423277bb7f4313a9 # v8.0.0\n        with:\n          version: v2.4.0\n\n  dev:\n    name: Developer environment\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Set up Nix\n        uses: cachix/install-nix-action@3715ab1a11cac9e991980d7b4a28d80c7ebdd8f9 # v27\n        with:\n          extra_nix_config: |\n            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}\n\n      - name: Check\n        run: nix flake check --impure\n\n      - name: Dev shell\n        run: nix develop --impure\n\n  dependency-review:\n    name: Dependency review\n    runs-on: ubuntu-latest\n    if: github.event_name == 'pull_request'\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Dependency Review\n        uses: actions/dependency-review-action@3b139cfc5fae8b618d3eae3675e383bb1769c019 # v4.5.0\n",
+            "blobSha": "ca134e52c42b4ee88ee0dde61c5a801254dcaa5b",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/octoslash.yaml",
+            "content": "name: Octoslash\n\non: issue_comment\n\npermissions:\n  issues: write\n  pull-requests: write\n\njobs:\n  run:\n    name: Run\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      - name: Octoslash\n        uses: sagikazarmark/octoslash-action@v0\n",
+            "blobSha": "87c75f1bcd6a18debbd89977acf2cab6130554cf",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/stale.yaml",
+            "content": "name: \"Close stale issues\"\n\non:\n  schedule:\n    - cron: \"0 3 * * *\"\n\npermissions:\n  actions: write\n  issues: write\n  # contents: write # only for delete-branch option\n  # pull-requests: write\n\njobs:\n  stale:\n    name: Stale\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/stale@v9\n        with:\n          days-before-stale: 30\n          days-before-close: 5\n          days-before-pr-stale: -1 # Ignore all PRs\n          stale-issue-message: \"Issues with no activity for 30 days are marked stale and subject to being closed.\"\n          close-issue-message: \"This issue has been closed for inactivity. Please re-open if this was a mistake.\"\n          exempt-issue-labels: \"lifecycle/keep\"\n          stale-issue-label: \"lifecycle/stale\"\n          operations-per-run: 500 # Must respect GitHub API limits\n          debug-only: false # Set this to 'true' to disable stale issue management\n",
+            "blobSha": "fd61041de068d389021f610433b5167fc95ef463",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 1625,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "20112077",
+        "name": "hyde",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 630,
+        "pushedAt": "2025-08-27T05:59:58Z",
+        "languages": {},
+        "files": [],
+        "size": 832,
+        "primaryLanguage": "CSS",
+        "projects": []
+      },
+      {
+        "id": "953063611",
+        "name": "hangmaan",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2025-03-22T14:31:35Z",
+        "languages": {},
+        "files": [],
+        "size": 1,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "949248232",
+        "name": "hangman",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10,
+        "pushedAt": "2025-03-16T02:22:34Z",
+        "languages": {},
+        "files": [],
+        "size": 2,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "899196095",
+        "name": "zap2itXMLTV",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2024-12-05T21:39:43Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/main.yml",
+            "content": "name: goreleaser\n\non:\n  push:\n    tags:\n      - '*'\n\npermissions:\n  contents: write\n\njobs:\n  goreleaser:\n    runs-on: ubuntu-latest\n    steps:\n      -\n        name: Checkout\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      -\n        name: Set up Go\n        uses: actions/setup-go@v5\n      -\n        name: Run GoReleaser\n        uses: goreleaser/goreleaser-action@v6.1.0\n        with:\n          # either 'goreleaser' (default) or 'goreleaser-pro'\n          distribution: goreleaser\n          # 'latest', 'nightly', or a semver\n          version: '~> v2'\n          args: release --clean\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n",
+            "blobSha": "a4008a8649a3b41eb80461fc8e4fd2bed699e485",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/release.yml",
+            "content": "# .github/workflows/release.yaml\n\non:\n  release:\n    types: [created, edited]\n  workflow_dispatch:\n\npermissions:\n    contents: write\n    packages: write\n\njobs:\n  releases-matrix:\n    name: Release Go Binary\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        # build and publish in parallel: linux/386, linux/amd64, linux/arm64, windows/386, windows/amd64, darwin/amd64, darwin/arm64\n        goos: [linux, windows, darwin]\n        goarch: [\"386\", amd64, arm64]\n        exclude:\n          - goarch: \"386\"\n            goos: darwin\n    steps:\n    - uses: actions/checkout@v4\n    - uses: wangyoucao577/go-release-action@v1\n      with:\n        github_token: ${{ secrets.GITHUB_TOKEN }}\n        goos: ${{ matrix.goos }}\n        goarch: ${{ matrix.goarch }}\n",
+            "blobSha": "a81df6790dbd331e53b7f147ab8d87e9a0141a63",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 26,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "457604364",
+        "name": "cobra-cli",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 936,
+        "pushedAt": "2024-07-28T10:50:54Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/test.yml",
+            "content": "name: Test\n\non:\n  push:\n  pull_request:\n  workflow_dispatch:\n\nenv:\n  GO111MODULE: on\n\njobs:\n\n  golangci-lint:\n    runs-on: ubuntu-latest\n    steps:\n\n      - uses: actions/setup-go@v2\n        with:\n          go-version: '1.17'\n\n      - uses: actions/checkout@v3.1.0\n\n      - uses: golangci/golangci-lint-action@v2\n        with:\n          version: latest\n          args: --verbose\n\n  test-unix:\n    strategy:\n      fail-fast: false\n      matrix:\n        platform:\n        - ubuntu\n        - macOS\n        go:\n        - 14\n        - 15\n        - 16\n        - 17\n    name: '${{ matrix.platform }} | 1.${{ matrix.go }}.x'\n    runs-on: ${{ matrix.platform }}-latest\n    steps:\n\n    - uses: actions/setup-go@v2\n      with:\n        go-version: 1.${{ matrix.go }}.x\n\n    - uses: actions/checkout@v3.1.0\n\n    - uses: actions/cache@v2\n      with:\n        path: ~/go/pkg/mod\n        key: ${{ runner.os }}-1.${{ matrix.go }}.x-${{ hashFiles('**/go.sum') }}\n        restore-keys: ${{ runner.os }}-1.${{ matrix.go }}.x-\n\n    - run: |\n        export GOBIN=$HOME/go/bin\n        case \"${{ matrix.go }}\" in\n          16|17) _version='@latest';;\n          *) _version='';;\n        esac\n        go install github.com/kyoh86/richgo\"${_version}\"\n        go install github.com/mitchellh/gox\"${_version}\"\n\n    - run: PATH=$HOME/go/bin/:$PATH make test build\n\n  test-win:\n    name: MINGW64\n    defaults:\n      run:\n        shell: msys2 {0}\n    runs-on: windows-latest\n    steps:\n\n    - shell: bash\n      run: git config --global core.autocrlf input\n\n    - uses: msys2/setup-msys2@v2\n      with:\n        msystem: MINGW64\n        update: true\n        install: >\n          git\n          make\n          unzip\n          mingw-w64-x86_64-go\n\n    - uses: actions/checkout@v3.1.0\n\n    - uses: actions/cache@v2\n      with:\n        path: ~/go/pkg/mod\n        key: ${{ runner.os }}-${{ matrix.go }}-${{ hashFiles('**/go.sum') }}\n        restore-keys: ${{ runner.os }}-${{ matrix.go }}-\n\n    - run: |\n        export GOBIN=$HOME/go/bin\n        go install github.com/kyoh86/richgo@latest\n        go install github.com/mitchellh/gox@latest\n\n    - run: PATH=$HOME/go/bin:$PATH make test build\n",
+            "blobSha": "88211461c1df01d3d1ef332eca3d2cb4013ea56e",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 329,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "170244452",
+        "name": "cobra.dev",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2024-07-13T21:35:18Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/main.yml",
+            "content": "# This is a simple workflow to build a Hugo site and then deploy it on Firebase Hosting \n\nname: Hugo deploy to Firebase\n\n# Triggers when any commit is pushed on Master\non:\n  push:\n    branches: [ master ]\n\njobs:\n  build:\n    # The type of runner that the job will run on\n    runs-on: ubuntu-latest\n\n    # Steps represent a sequence of tasks that will be executed as part of the job\n    steps:\n    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it\n    - uses: actions/checkout@v2\n      with:\n        submodules: true\n        fetch-depth: 0\n        \n    - name: Setup Hugo\n      uses: peaceiris/actions-hugo@v2\n      with:\n        hugo-version: '0.89.0'\n        extended: true        \n        \n    - name: Setup Node\n      uses: actions/setup-node@v2\n      with:\n        node-version: '14'\n    \n    - run: npm install -g postcss postcss-cli autoprefixer\n        \n    - run: hugo\n    \n    - uses: spf13/deploy-firebase@v0.0.6\n      env:\n        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}\n        FIREBASE_PROJECT: \"spf13-project-hosting\"\n        FIREBASE_TARGET: \"cobra\"\n \n    # Fetch Hugo to Firebase docker image\n#    - uses: spf13/Hugo-On-Fire@master\n#      env:\n#        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}\n",
+            "blobSha": "cd019faf75c9d89367e248d1f5b00004170ee663",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 215,
+        "primaryLanguage": "HTML",
+        "projects": []
+      },
+      {
+        "id": "433294316",
+        "name": "dotfiles",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 41,
+        "pushedAt": "2024-02-02T00:07:04Z",
+        "languages": {},
+        "files": [],
+        "size": 14,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "18196422",
+        "name": "jwalterweatherman",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 266,
+        "pushedAt": "2023-05-30T12:21:04Z",
+        "languages": {},
+        "files": [],
+        "size": 392,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "426066139",
+        "name": "home_assistant_blueprints",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2021-11-09T02:54:20Z",
+        "languages": {},
+        "files": [],
+        "size": 6,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "309487874",
+        "name": "spf13",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2020-11-02T21:01:22Z",
+        "languages": {},
+        "files": [],
+        "size": 4,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "14539968",
+        "name": "spf13.com",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 144,
+        "pushedAt": "2020-10-01T04:01:08Z",
+        "languages": {},
+        "files": [],
+        "size": 17953,
+        "primaryLanguage": "CSS",
+        "projects": []
+      },
+      {
+        "id": "20112138",
+        "name": "herring-cove",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 44,
+        "pushedAt": "2019-08-20T17:39:41Z",
+        "languages": {},
+        "files": [],
+        "size": 6723,
+        "primaryLanguage": "CSS",
+        "projects": []
+      },
+      {
+        "id": "21017801",
+        "name": "dagobah",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 135,
+        "pushedAt": "2017-08-19T22:01:29Z",
+        "languages": {},
+        "files": [],
+        "size": 1311,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "623804",
+        "name": "vim-colors",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 42,
+        "pushedAt": "2017-01-03T21:04:50Z",
+        "languages": {},
+        "files": [],
+        "size": 103,
+        "primaryLanguage": "VimL",
+        "projects": []
+      },
+      {
+        "id": "58955515",
+        "name": "tri",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 38,
+        "pushedAt": "2016-05-16T18:11:16Z",
+        "languages": {},
+        "files": [],
+        "size": 5,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "622528",
+        "name": "PIV",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 250,
+        "pushedAt": "2016-02-08T14:19:50Z",
+        "languages": {},
+        "files": [],
+        "size": 8417,
+        "primaryLanguage": "VimL",
+        "projects": []
+      },
+      {
+        "id": "16554663",
+        "name": "kaiju",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 114,
+        "pushedAt": "2015-05-01T21:10:19Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "ui/package.json",
+            "content": "{\n  \"name\": \"kaiju-js\",\n  \"version\": \"0.0.0\",\n  \"private\": true,\n  \"dependencies\": {\n    \"jquery\": \"latest\",\n    \"msgpack\": \"latest\",\n    \"socket.io\": \"latest\",\n    \"socket.io-client\": \"latest\",\n    \"express\": \"latest\",\n    \"underscore\": \"latest\",\n    \"mongodb\": \"*\"\n  },\n  \"devDependencies\": {\n    \"browserify\": \"\"\n  }\n}\n",
+            "blobSha": "d9a917fe27acbf20dcca08d8469e6fad6c4a86c9",
+            "projectId": "ui",
+            "contextWeight": 1
+          }
+        ],
+        "size": 3662,
+        "primaryLanguage": "JavaScript",
+        "projects": [
+          {
+            "id": "ui",
+            "root": "ui",
+            "manifestPaths": [
+              "ui/package.json"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "24947595",
+        "name": "fsnotify.org",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2014-09-15T04:03:56Z",
+        "languages": {},
+        "files": [],
+        "size": 480,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "21206494",
+        "name": "firstGoApp-Planet",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 20,
+        "pushedAt": "2014-07-20T08:33:54Z",
+        "languages": {},
+        "files": [],
+        "size": 531,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "3896355",
+        "name": "spf13.github.com",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5,
+        "pushedAt": "2013-11-19T22:26:29Z",
+        "languages": {},
+        "files": [],
+        "size": 411,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "4984590",
+        "name": "One-More-For-The-Road",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2013-10-04T14:17:12Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Gemfile",
+            "content": "source :rubygems\ngem \"mongo\"\ngem \"bson_ext\"\ngem \"sinatra\"\ngem \"haml\"\ngem \"shotgun\"\n",
+            "blobSha": "485375039d4f894d1578ca8f1a020c03e7492417",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": "Gemfile.lock",
+            "content": "GEM\n  remote: http://rubygems.org/\n  specs:\n    bson (1.6.4)\n    bson_ext (1.6.4)\n      bson (~> 1.6.4)\n    haml (3.1.4)\n    mongo (1.6.4)\n      bson (~> 1.6.4)\n    rack (1.4.1)\n    rack-protection (1.2.0)\n      rack\n    shotgun (0.9)\n      rack (>= 1.0)\n    sinatra (1.3.2)\n      rack (~> 1.3, >= 1.3.6)\n      rack-protection (~> 1.2)\n      tilt (~> 1.3, >= 1.3.3)\n    tilt (1.3.3)\n\nPLATFORMS\n  ruby\n\nDEPENDENCIES\n  bson_ext\n  haml\n  mongo\n  shotgun\n  sinatra\n",
+            "blobSha": "c2ebfd754d786676baf6ce4eda100ae79d41476c",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 264,
+        "primaryLanguage": "JavaScript",
+        "projects": [
+          {
+            "id": ".",
+            "root": ".",
+            "manifestPaths": [
+              "Gemfile"
+            ]
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "1189953139",
+        "repoName": "go-skills",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/validate.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-18T00:37:05Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "12574344",
+        "repoName": "cobra",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/labeler.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-07-11T00:43:07Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "170244452",
+        "repoName": "cobra.dev",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/main.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-07-13T21:35:18Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "18369373",
+        "repoName": "viper",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/checks.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-01-12T21:42:47Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "18413405",
+        "repoName": "cast",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/analysis-scorecard.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-09T16:04:48Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "25872841",
+        "repoName": "afero",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/analysis-scorecard.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-06T20:08:46Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "457604364",
+        "repoName": "cobra-cli",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/test.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-07-28T10:50:54Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "888123944",
+        "repoName": "fileflow",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/test.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-07-10T01:36:52Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "899196095",
+        "repoName": "zap2itXMLTV",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/main.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-12-05T21:39:43Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "16554663",
+        "repoName": "kaiju",
+        "itemId": "express",
+        "itemKind": "school",
+        "sourcePath": "ui/package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2015-05-01T21:10:19Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "full",
+      "eligible": 30,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 0,
+      "reposCandidates": 37,
+      "treesDiscovered": 30,
+      "treesTruncated": 0,
+      "manifestsDiscovered": 19,
+      "manifestsFetched": 19,
+      "manifestsSkippedByBudget": 0,
+      "uncertainRepositories": 0,
+      "gap": "none",
+      "domains": {
+        "language": "unavailable",
+        "school": "full",
+        "artifact": "full"
+      }
+    },
+    "requests": {
+      "rest": 31,
+      "graphql": 1,
+      "manifestFetches": 19,
+      "reposInspected": 30,
+      "cacheHits": 0,
+      "treeRequests": 30,
+      "manifestRequests": 1,
+      "fallbackRequests": 0,
+      "treeCacheHits": 0,
+      "manifestCacheHits": 0,
+      "manifestsDiscovered": 19,
+      "manifestsSkippedByBudget": 0,
+      "projectsDiscovered": 2,
+      "rateLimitRemaining": 4892,
+      "timingsMs": {
+        "repositorySelection": 778,
+        "treeDiscovery": 1951,
+        "manifestFetch": 1667,
+        "parsing": 0
+      }
+    },
+    "warnings": []
+  },
+  "collectedAt": "2026-10-07T21:16:42.059Z",
+  "coldLatencyMs": 11065
+}

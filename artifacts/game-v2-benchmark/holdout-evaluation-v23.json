@@ -1,0 +1,1316 @@
+{
+  "generatedAt": "2026-10-07T14:23:29.515Z",
+  "evaluation": {
+    "summary": {
+      "ACCEPTABLE": 8,
+      "QUESTIONABLE": 2
+    },
+    "goodOrAcceptablePercent": 80,
+    "badPercent": 0
+  },
+  "profiles": [
+    {
+      "username": "antfu",
+      "categories": [
+        "tooling",
+        "frontend-ui",
+        "huge"
+      ],
+      "className": "Mago",
+      "scores": {
+        "architect": 43.82,
+        "artificer": 90.23,
+        "illusionist": 91.39,
+        "guardian": 75.11,
+        "chronomancer": 66.41
+      },
+      "top1": "illusionist",
+      "top2": "artificer",
+      "observedMargin": 1.15,
+      "lowerBound": 88.51,
+      "rivalUpperBound": 99.5,
+      "guaranteedMargin": -10.99,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "large",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "vue",
+          "score": 77.43,
+          "repos": 10
+        },
+        {
+          "id": "nuxt",
+          "score": 54.83,
+          "repos": 4
+        },
+        {
+          "id": "angular",
+          "score": 37.21,
+          "repos": 1
+        },
+        {
+          "id": "svelte",
+          "score": 37.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 85.33,
+          "repos": 25
+        },
+        {
+          "id": "pnpm",
+          "score": 81.99,
+          "repos": 26
+        },
+        {
+          "id": "vitest",
+          "score": 80.79,
+          "repos": 19
+        },
+        {
+          "id": "vite",
+          "score": 79.5,
+          "repos": 17
+        },
+        {
+          "id": "github-actions",
+          "score": 78.25,
+          "repos": 21
+        },
+        {
+          "id": "esbuild",
+          "score": 54.5,
+          "repos": 3
+        },
+        {
+          "id": "storybook",
+          "score": 53.67,
+          "repos": 4
+        },
+        {
+          "id": "rollup",
+          "score": 51.83,
+          "repos": 2
+        },
+        {
+          "id": "playwright",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "docker",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 12.15,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 6,
+        "manifestFetches": 180,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 6,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 247,
+        "manifestsSkippedByBudget": 67,
+        "projectsDiscovered": 77,
+        "rateLimitRemaining": 4370,
+        "timingsMs": {
+          "repositorySelection": 1073,
+          "treeDiscovery": 3182,
+          "manifestFetch": 6749,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "antfu",
+        "rating": "ACCEPTABLE",
+        "note": "Ilusionista and Artífice are separated by only 1.15 points; null preserves a real UI/tooling ambiguity under partial-large coverage."
+      }
+    },
+    {
+      "username": "beatrizmilz",
+      "categories": [
+        "polyglot",
+        "data"
+      ],
+      "className": "Bardo",
+      "scores": {
+        "architect": 7.82,
+        "artificer": 35.67,
+        "illusionist": 5.22,
+        "guardian": 17.43,
+        "chronomancer": 36.82
+      },
+      "top1": "chronomancer",
+      "top2": "artificer",
+      "observedMargin": 1.15,
+      "lowerBound": 36.82,
+      "rivalUpperBound": 35.67,
+      "guaranteedMargin": 1.15,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "full",
+      "gap": "none",
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "evolution": null,
+      "titles": [],
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 69.42,
+          "repos": 10
+        },
+        {
+          "id": "eslint",
+          "score": 36.67,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 36.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.47,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 29,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 29,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 4,
+        "rateLimitRemaining": 4472,
+        "timingsMs": {
+          "repositorySelection": 901,
+          "treeDiscovery": 2867,
+          "manifestFetch": 1609,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "beatrizmilz",
+        "rating": "ACCEPTABLE",
+        "note": "The leading signals are below strong and nearly tied; null is the defensible result."
+      }
+    },
+    {
+      "username": "diego3g",
+      "categories": [
+        "frontend-ui",
+        "backend"
+      ],
+      "className": "Mago",
+      "scores": {
+        "architect": 64.5,
+        "artificer": 58.39,
+        "illusionist": 76.02,
+        "guardian": 61.6,
+        "chronomancer": 61.65
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 11.53,
+      "lowerBound": 75.57,
+      "rivalUpperBound": 98.15,
+      "guaranteedMargin": -22.58,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "small",
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "react",
+          "score": 82.31,
+          "repos": 21
+        },
+        {
+          "id": "nextjs",
+          "score": 56.24,
+          "repos": 5
+        },
+        {
+          "id": "express",
+          "score": 44.92,
+          "repos": 2
+        },
+        {
+          "id": "react-native",
+          "score": 43.29,
+          "repos": 3
+        },
+        {
+          "id": "expo",
+          "score": 41.29,
+          "repos": 3
+        },
+        {
+          "id": "fastify",
+          "score": 34.21,
+          "repos": 1
+        },
+        {
+          "id": "nestjs",
+          "score": 34.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 73.01,
+          "repos": 16
+        },
+        {
+          "id": "tailwind",
+          "score": 69.79,
+          "repos": 10
+        },
+        {
+          "id": "prettier",
+          "score": 65.19,
+          "repos": 9
+        },
+        {
+          "id": "vite",
+          "score": 63.99,
+          "repos": 8
+        },
+        {
+          "id": "jest",
+          "score": 57,
+          "repos": 6
+        },
+        {
+          "id": "docker",
+          "score": 51.38,
+          "repos": 5
+        },
+        {
+          "id": "github-actions",
+          "score": 51.38,
+          "repos": 5
+        },
+        {
+          "id": "electron",
+          "score": 40.71,
+          "repos": 2
+        },
+        {
+          "id": "webpack",
+          "score": 40.6,
+          "repos": 3
+        },
+        {
+          "id": "esbuild",
+          "score": 33.92,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 33.92,
+          "repos": 1
+        },
+        {
+          "id": "pnpm",
+          "score": 30.42,
+          "repos": 1
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 30.42,
+          "repos": 1
+        },
+        {
+          "id": "storybook",
+          "score": 21.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.44,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 5,
+        "manifestFetches": 141,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 5,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 154,
+        "manifestsSkippedByBudget": 13,
+        "projectsDiscovered": 46,
+        "rateLimitRemaining": 4502,
+        "timingsMs": {
+          "repositorySelection": 729,
+          "treeDiscovery": 1841,
+          "manifestFetch": 5550,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "diego3g",
+        "rating": "QUESTIONABLE",
+        "note": "Ilusionista leads by 11.53 observed points, but a partial-small bound still vetoes the result; safe, yet under-informative."
+      }
+    },
+    {
+      "username": "filipedeschamps",
+      "categories": [
+        "frontend-ui",
+        "long-lived"
+      ],
+      "className": "Bardo",
+      "scores": {
+        "architect": 53.39,
+        "artificer": 21.86,
+        "illusionist": 48.8,
+        "guardian": 49.75,
+        "chronomancer": 52.36
+      },
+      "top1": "architect",
+      "top2": "chronomancer",
+      "observedMargin": 1.03,
+      "lowerBound": 52.85,
+      "rivalUpperBound": 95.48,
+      "guaranteedMargin": -42.63,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "large",
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "react",
+          "score": 64.96,
+          "repos": 6
+        },
+        {
+          "id": "express",
+          "score": 53.69,
+          "repos": 5
+        },
+        {
+          "id": "nextjs",
+          "score": 52.48,
+          "repos": 3
+        },
+        {
+          "id": "react-native",
+          "score": 41.81,
+          "repos": 3
+        },
+        {
+          "id": "flutter",
+          "score": 35.94,
+          "repos": 1
+        },
+        {
+          "id": "expo",
+          "score": 35.88,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 57.3,
+          "repos": 5
+        },
+        {
+          "id": "vitest",
+          "score": 55,
+          "repos": 1
+        },
+        {
+          "id": "prettier",
+          "score": 53,
+          "repos": 2
+        },
+        {
+          "id": "github-actions",
+          "score": 44.25,
+          "repos": 2
+        },
+        {
+          "id": "jest",
+          "score": 40,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 39.25,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 3.6,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 17,
+        "graphql": 3,
+        "manifestFetches": 63,
+        "reposInspected": 16,
+        "cacheHits": 0,
+        "treeRequests": 16,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 109,
+        "manifestsSkippedByBudget": 46,
+        "projectsDiscovered": 53,
+        "rateLimitRemaining": 4511,
+        "timingsMs": {
+          "repositorySelection": 477,
+          "treeDiscovery": 1030,
+          "manifestFetch": 1958,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "filipedeschamps",
+        "rating": "ACCEPTABLE",
+        "note": "The top four archetypes are close and the leading score remains below strong."
+      }
+    },
+    {
+      "username": "loiane",
+      "categories": [
+        "frontend-ui",
+        "backend",
+        "java"
+      ],
+      "className": "Mago",
+      "scores": {
+        "architect": 66.65,
+        "artificer": 41.09,
+        "illusionist": 54.38,
+        "guardian": 55.14,
+        "chronomancer": 67.12
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "observedMargin": 0.47,
+      "lowerBound": 67.12,
+      "rivalUpperBound": 66.65,
+      "guaranteedMargin": 0.47,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "full",
+      "gap": "none",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "angular",
+          "score": 78.89,
+          "repos": 11
+        },
+        {
+          "id": "spring",
+          "score": 78.39,
+          "repos": 9
+        },
+        {
+          "id": "express",
+          "score": 29.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 66.67,
+          "repos": 9
+        },
+        {
+          "id": "docker",
+          "score": 60.13,
+          "repos": 6
+        },
+        {
+          "id": "vitest",
+          "score": 58.43,
+          "repos": 5
+        },
+        {
+          "id": "prettier",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "webpack",
+          "score": 42.42,
+          "repos": 1
+        },
+        {
+          "id": "jest",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "playwright",
+          "score": 42.17,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.03,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 58,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 58,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 30,
+        "rateLimitRemaining": 4481,
+        "timingsMs": {
+          "repositorySelection": 964,
+          "treeDiscovery": 1924,
+          "manifestFetch": 1989,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "loiane",
+        "rating": "ACCEPTABLE",
+        "note": "Full evidence shows Cronomante and Arquiteto separated by 0.47; the null is legitimate ambiguity."
+      }
+    },
+    {
+      "username": "maykbrito",
+      "categories": [
+        "frontend-ui",
+        "education"
+      ],
+      "className": "Mago",
+      "scores": {
+        "architect": 54.04,
+        "artificer": 73.44,
+        "illusionist": 72.35,
+        "guardian": 25.11,
+        "chronomancer": 37.22
+      },
+      "top1": "artificer",
+      "top2": "illusionist",
+      "observedMargin": 1.1,
+      "lowerBound": 73.44,
+      "rivalUpperBound": 72.35,
+      "guaranteedMargin": 1.1,
+      "safeWinner": false,
+      "confidence": "high",
+      "coverage": "full",
+      "gap": "none",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "react",
+          "score": 82.03,
+          "repos": 10
+        },
+        {
+          "id": "astro",
+          "score": 75.74,
+          "repos": 7
+        },
+        {
+          "id": "nextjs",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "svelte",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "vue",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "sveltekit",
+          "score": 36.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "tailwind",
+          "score": 81.83,
+          "repos": 12
+        },
+        {
+          "id": "electron",
+          "score": 64.42,
+          "repos": 6
+        },
+        {
+          "id": "vite",
+          "score": 60.83,
+          "repos": 5
+        },
+        {
+          "id": "github-actions",
+          "score": 60.75,
+          "repos": 6
+        },
+        {
+          "id": "prettier",
+          "score": 57.17,
+          "repos": 4
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 50.98,
+          "repos": 4
+        },
+        {
+          "id": "eslint",
+          "score": 45.71,
+          "repos": 2
+        },
+        {
+          "id": "vitest",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "pnpm",
+          "score": 38.67,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 38.42,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 3.41,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "manifestFetches": 76,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 76,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 25,
+        "rateLimitRemaining": 4492,
+        "timingsMs": {
+          "repositorySelection": 1184,
+          "treeDiscovery": 1998,
+          "manifestFetch": 3627,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "maykbrito",
+        "rating": "ACCEPTABLE",
+        "note": "Full/high evidence still leaves Artífice and Ilusionista separated by only 1.10."
+      }
+    },
+    {
+      "username": "omariosouto",
+      "categories": [
+        "frontend-ui",
+        "small"
+      ],
+      "className": "Mago",
+      "scores": {
+        "architect": 72.26,
+        "artificer": 46.8,
+        "illusionist": 71.37,
+        "guardian": 59.48,
+        "chronomancer": 59.16
+      },
+      "top1": "architect",
+      "top2": "illusionist",
+      "observedMargin": 0.89,
+      "lowerBound": 71.13,
+      "rivalUpperBound": 97.24,
+      "guaranteedMargin": -26.11,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "small",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "react",
+          "score": 78.22,
+          "repos": 13
+        },
+        {
+          "id": "nextjs",
+          "score": 71.5,
+          "repos": 9
+        },
+        {
+          "id": "express",
+          "score": 55.33,
+          "repos": 4
+        },
+        {
+          "id": "flutter",
+          "score": 34.21,
+          "repos": 1
+        },
+        {
+          "id": "fastify",
+          "score": 24.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 65.18,
+          "repos": 8
+        },
+        {
+          "id": "vitest",
+          "score": 57.98,
+          "repos": 5
+        },
+        {
+          "id": "vite",
+          "score": 57.68,
+          "repos": 5
+        },
+        {
+          "id": "tailwind",
+          "score": 50.42,
+          "repos": 4
+        },
+        {
+          "id": "eslint",
+          "score": 49.83,
+          "repos": 3
+        },
+        {
+          "id": "playwright",
+          "score": 45.71,
+          "repos": 2
+        },
+        {
+          "id": "jest",
+          "score": 45.42,
+          "repos": 4
+        },
+        {
+          "id": "prettier",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 41.6,
+          "repos": 3
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 38.96,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.83,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 109,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 111,
+        "manifestsSkippedByBudget": 2,
+        "projectsDiscovered": 45,
+        "rateLimitRemaining": 4459,
+        "timingsMs": {
+          "repositorySelection": 1847,
+          "treeDiscovery": 2020,
+          "manifestFetch": 3648,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "omariosouto",
+        "rating": "ACCEPTABLE",
+        "note": "Arquiteto and Ilusionista differ by 0.89 before uncertainty, so null is appropriate."
+      }
+    },
+    {
+      "username": "samuelcolvin",
+      "categories": [
+        "tooling",
+        "python",
+        "backend"
+      ],
+      "className": "Alquimista",
+      "scores": {
+        "architect": 46.97,
+        "artificer": 73.48,
+        "illusionist": 56.93,
+        "guardian": 37.42,
+        "chronomancer": 62.08
+      },
+      "top1": "artificer",
+      "top2": "chronomancer",
+      "observedMargin": 11.4,
+      "lowerBound": 69.04,
+      "rivalUpperBound": 97.98,
+      "guaranteedMargin": -28.94,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "small",
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "fastapi",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "react",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "prettier",
+          "score": 64.98,
+          "repos": 5
+        },
+        {
+          "id": "github-actions",
+          "score": 64.1,
+          "repos": 7
+        },
+        {
+          "id": "eslint",
+          "score": 56.96,
+          "repos": 2
+        },
+        {
+          "id": "tailwind",
+          "score": 54.42,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 54.42,
+          "repos": 1
+        },
+        {
+          "id": "esbuild",
+          "score": 53.25,
+          "repos": 3
+        },
+        {
+          "id": "vite",
+          "score": 51.83,
+          "repos": 2
+        },
+        {
+          "id": "vitest",
+          "score": 44.71,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.08,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 56,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 60,
+        "manifestsSkippedByBudget": 4,
+        "projectsDiscovered": 26,
+        "rateLimitRemaining": 4358,
+        "timingsMs": {
+          "repositorySelection": 1060,
+          "treeDiscovery": 1878,
+          "manifestFetch": 2593,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "samuelcolvin",
+        "rating": "QUESTIONABLE",
+        "note": "Artífice has an 11.40 observed margin, but a partial-small bound vetoes it; safe, yet under-informative."
+      }
+    },
+    {
+      "username": "swyxio",
+      "categories": [
+        "polyglot",
+        "frontend-ui"
+      ],
+      "className": "Bardo",
+      "scores": {
+        "architect": 47.37,
+        "artificer": 59.12,
+        "illusionist": 72.16,
+        "guardian": 67.36,
+        "chronomancer": 34.73
+      },
+      "top1": "illusionist",
+      "top2": "guardian",
+      "observedMargin": 4.81,
+      "lowerBound": 72.16,
+      "rivalUpperBound": 67.36,
+      "guaranteedMargin": 4.81,
+      "safeWinner": false,
+      "confidence": "high",
+      "coverage": "full",
+      "gap": "none",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "react",
+          "score": 69.58,
+          "repos": 6
+        },
+        {
+          "id": "svelte",
+          "score": 50.63,
+          "repos": 3
+        },
+        {
+          "id": "astro",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "nextjs",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "sveltekit",
+          "score": 41.92,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "tailwind",
+          "score": 64.79,
+          "repos": 6
+        },
+        {
+          "id": "vite",
+          "score": 57.28,
+          "repos": 5
+        },
+        {
+          "id": "github-actions",
+          "score": 56.33,
+          "repos": 5
+        },
+        {
+          "id": "eslint",
+          "score": 54.98,
+          "repos": 4
+        },
+        {
+          "id": "prettier",
+          "score": 50.42,
+          "repos": 3
+        },
+        {
+          "id": "rollup",
+          "score": 46.58,
+          "repos": 2
+        },
+        {
+          "id": "playwright",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "vitest",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 3.58,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "manifestFetches": 73,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 73,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 25,
+        "rateLimitRemaining": 4388,
+        "timingsMs": {
+          "repositorySelection": 1303,
+          "treeDiscovery": 2269,
+          "manifestFetch": 2631,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "swyxio",
+        "rating": "ACCEPTABLE",
+        "note": "Full/high evidence leaves Ilusionista only 4.81 above Guardião, just below the unchanged margin gate."
+      }
+    },
+    {
+      "username": "ThePrimeagen",
+      "categories": [
+        "tooling",
+        "low-level",
+        "polyglot"
+      ],
+      "className": "Aventureiro",
+      "scores": {
+        "architect": 62.98,
+        "artificer": 47.77,
+        "illusionist": 47.97,
+        "guardian": 57.1,
+        "chronomancer": 60.29
+      },
+      "top1": "architect",
+      "top2": "chronomancer",
+      "observedMargin": 2.69,
+      "lowerBound": 56.84,
+      "rivalUpperBound": 95.92,
+      "guaranteedMargin": -39.08,
+      "safeWinner": false,
+      "confidence": "medium",
+      "coverage": "partial",
+      "gap": "large",
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "evolution": null,
+      "titles": [],
+      "schools": [
+        {
+          "id": "nextjs",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "react",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "express",
+          "score": 40.21,
+          "repos": 1
+        },
+        {
+          "id": "laravel",
+          "score": 40.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 68.58,
+          "repos": 9
+        },
+        {
+          "id": "jest",
+          "score": 50.83,
+          "repos": 2
+        },
+        {
+          "id": "vite",
+          "score": 50.67,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 49.83,
+          "repos": 3
+        },
+        {
+          "id": "tailwind",
+          "score": 47.21,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 45,
+          "repos": 3
+        },
+        {
+          "id": "eslint",
+          "score": 44.71,
+          "repos": 2
+        },
+        {
+          "id": "prettier",
+          "score": 44.71,
+          "repos": 2
+        },
+        {
+          "id": "webpack",
+          "score": 42.96,
+          "repos": 2
+        }
+      ],
+      "deterministicReplay": true,
+      "engineMs": 3.74,
+      "requestsAdded": 0,
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "manifestFetches": 72,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 120,
+        "manifestsSkippedByBudget": 48,
+        "projectsDiscovered": 47,
+        "rateLimitRemaining": 4347,
+        "timingsMs": {
+          "repositorySelection": 923,
+          "treeDiscovery": 2416,
+          "manifestFetch": 2361,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "ThePrimeagen",
+        "rating": "ACCEPTABLE",
+        "note": "Arquiteto and Cronomante remain close under a large gap; null preserves uncertainty."
+      }
+    }
+  ]
+}

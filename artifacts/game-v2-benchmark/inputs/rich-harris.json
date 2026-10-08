@@ -1,0 +1,5467 @@
+{
+  "profile": {
+    "username": "Rich-Harris",
+    "cohort": "calibration",
+    "categories": [
+      "frontend-ui",
+      "tooling"
+    ],
+    "mandatory": false
+  },
+  "rawProfile": {
+    "username": "Rich-Harris",
+    "displayName": "Rich Harris",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1162160?v=4",
+    "bio": null,
+    "location": "NYC",
+    "company": null,
+    "createdAt": "2011-10-31T10:36:05.000Z",
+    "fetchedAt": "2026-10-07T04:58:53.319Z",
+    "isDemo": false,
+    "followers": {
+      "value": 20723,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "magic-string",
+          "isFork": false,
+          "stars": 2779,
+          "forks": 129,
+          "languages": {
+            "TypeScript": 276839,
+            "JavaScript": 36142,
+            "HTML": 40
+          }
+        },
+        {
+          "name": "degit",
+          "isFork": false,
+          "stars": 7945,
+          "forks": 283,
+          "languages": {
+            "TypeScript": 221645,
+            "JavaScript": 4623,
+            "Shell": 71
+          }
+        },
+        {
+          "name": "svg-parser",
+          "isFork": false,
+          "stars": 216,
+          "forks": 16,
+          "languages": {
+            "JavaScript": 8872
+          }
+        },
+        {
+          "name": "vite",
+          "isFork": true,
+          "stars": 10,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "kit",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "periscopic",
+          "isFork": false,
+          "stars": 108,
+          "forks": 10,
+          "languages": {
+            "JavaScript": 10857
+          }
+        },
+        {
+          "name": "sveltesnaps",
+          "isFork": false,
+          "stars": 163,
+          "forks": 13,
+          "languages": {
+            "Svelte": 29412,
+            "TypeScript": 24704,
+            "JavaScript": 2622,
+            "HTML": 662,
+            "CSS": 149
+          }
+        },
+        {
+          "name": "slide-park",
+          "isFork": false,
+          "stars": 12,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 8707,
+            "Svelte": 5629
+          }
+        },
+        {
+          "name": "comark",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "toofer",
+          "isFork": false,
+          "stars": 90,
+          "forks": 7,
+          "languages": {
+            "Svelte": 67661,
+            "TypeScript": 38367,
+            "CSS": 10621,
+            "JavaScript": 2656,
+            "HTML": 1051
+          }
+        },
+        {
+          "name": "jsbenchmarks",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "is-reference",
+          "isFork": false,
+          "stars": 26,
+          "forks": 10,
+          "languages": {
+            "JavaScript": 3837
+          }
+        },
+        {
+          "name": "livestore",
+          "isFork": true,
+          "stars": 16,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-split-pane",
+          "isFork": false,
+          "stars": 136,
+          "forks": 13,
+          "languages": {
+            "Svelte": 6617,
+            "JavaScript": 886,
+            "HTML": 284
+          }
+        },
+        {
+          "name": "kit-14444",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 1826,
+            "JavaScript": 753,
+            "Svelte": 396,
+            "HTML": 286
+          }
+        },
+        {
+          "name": "estree-walker",
+          "isFork": false,
+          "stars": 426,
+          "forks": 33,
+          "languages": {
+            "JavaScript": 23194
+          }
+        },
+        {
+          "name": "nuxt",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sveltekit-superforms",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vite-plugin-devtools-json",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "remote-functions-demo",
+          "isFork": false,
+          "stars": 11,
+          "forks": 2,
+          "languages": {
+            "CSS": 4274,
+            "Svelte": 3883,
+            "TypeScript": 2911,
+            "HTML": 346,
+            "JavaScript": 276
+          }
+        },
+        {
+          "name": "proposal-async-context",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "snek",
+          "isFork": false,
+          "stars": 38,
+          "forks": 3,
+          "languages": {
+            "Svelte": 8133,
+            "HTML": 455,
+            "CSS": 433,
+            "JavaScript": 360,
+            "TypeScript": 189
+          }
+        },
+        {
+          "name": "repro-kit-13616",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 926,
+            "TypeScript": 547,
+            "HTML": 346,
+            "Svelte": 282
+          }
+        },
+        {
+          "name": "hash-based-routing",
+          "isFork": false,
+          "stars": 13,
+          "forks": 1,
+          "languages": {
+            "Svelte": 7286,
+            "CSS": 1856,
+            "JavaScript": 698,
+            "HTML": 346,
+            "TypeScript": 144
+          }
+        },
+        {
+          "name": "threlte",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "locate-character",
+          "isFork": false,
+          "stars": 40,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 3800
+          }
+        },
+        {
+          "name": "kit-after-navigate-timing",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Svelte": 987,
+            "JavaScript": 662,
+            "HTML": 346,
+            "TypeScript": 219
+          }
+        },
+        {
+          "name": "pkg.pr.new",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "local-storage-test",
+          "isFork": false,
+          "stars": 69,
+          "forks": 6,
+          "languages": {
+            "TypeScript": 2130,
+            "Svelte": 778,
+            "JavaScript": 688,
+            "HTML": 346
+          }
+        },
+        {
+          "name": "tarparser",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "esperanto",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "HTML": 65
+          }
+        },
+        {
+          "name": "superjson-and-devalue",
+          "isFork": false,
+          "stars": 11,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 29141
+          }
+        },
+        {
+          "name": "vlq",
+          "isFork": false,
+          "stars": 222,
+          "forks": 18,
+          "languages": {
+            "JavaScript": 2414,
+            "HTML": 392,
+            "CoffeeScript": 25
+          }
+        },
+        {
+          "name": "agadoo",
+          "isFork": false,
+          "stars": 547,
+          "forks": 16,
+          "languages": {
+            "JavaScript": 3437
+          }
+        },
+        {
+          "name": "yootils",
+          "isFork": false,
+          "stars": 105,
+          "forks": 7,
+          "languages": {
+            "JavaScript": 17213
+          }
+        },
+        {
+          "name": "declarative-handlers",
+          "isFork": false,
+          "stars": 64,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 2965,
+            "JavaScript": 1352,
+            "Svelte": 742,
+            "HTML": 692
+          }
+        },
+        {
+          "name": "ssr-performance-showdown",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sander",
+          "isFork": false,
+          "stars": 120,
+          "forks": 13,
+          "languages": {
+            "JavaScript": 24834
+          }
+        },
+        {
+          "name": "cryptography-app-svelte",
+          "isFork": true,
+          "stars": 7,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "acorn-typescript",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "shimport",
+          "isFork": false,
+          "stars": 1234,
+          "forks": 34,
+          "languages": {
+            "JavaScript": 1808383,
+            "TypeScript": 16399
+          }
+        },
+        {
+          "name": "vite-glob-css",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 650,
+            "CSS": 25
+          }
+        },
+        {
+          "name": "sorcery",
+          "isFork": false,
+          "stars": 336,
+          "forks": 37,
+          "languages": {
+            "JavaScript": 34274,
+            "Shell": 1435,
+            "CoffeeScript": 488,
+            "Less": 174,
+            "CSS": 60
+          }
+        },
+        {
+          "name": "svelte-json-tree",
+          "isFork": true,
+          "stars": 15,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelteflix",
+          "isFork": false,
+          "stars": 75,
+          "forks": 10,
+          "languages": {
+            "Svelte": 16388,
+            "TypeScript": 6774,
+            "JavaScript": 3671,
+            "CSS": 1215,
+            "HTML": 329
+          }
+        },
+        {
+          "name": "ssr-benchmark",
+          "isFork": true,
+          "stars": 14,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "sveltekit-movies-demo",
+          "isFork": false,
+          "stars": 119,
+          "forks": 7,
+          "languages": {
+            "Svelte": 6423,
+            "TypeScript": 3641,
+            "JavaScript": 675,
+            "HTML": 346
+          }
+        },
+        {
+          "name": "stacking-order",
+          "isFork": false,
+          "stars": 76,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 4311,
+            "HTML": 1391
+          }
+        },
+        {
+          "name": "fowl-play",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 933,
+            "HTML": 346,
+            "Svelte": 244,
+            "TypeScript": 219
+          }
+        },
+        {
+          "name": "sveltekit-pdf-demo",
+          "isFork": false,
+          "stars": 57,
+          "forks": 3,
+          "languages": {
+            "TypeScript": 1382,
+            "JavaScript": 1277,
+            "Svelte": 1111,
+            "HTML": 329
+          }
+        },
+        {
+          "name": "adapter-node-repro",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 879,
+            "TypeScript": 353,
+            "HTML": 346,
+            "Svelte": 121
+          }
+        },
+        {
+          "name": "melt-ui-preprocessor",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "code-red",
+          "isFork": false,
+          "stars": 334,
+          "forks": 22,
+          "languages": {
+            "JavaScript": 73623
+          }
+        },
+        {
+          "name": "estree-toolkit",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ai",
+          "isFork": true,
+          "stars": 24,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pancake",
+          "isFork": false,
+          "stars": 1321,
+          "forks": 64,
+          "languages": {
+            "JavaScript": 27657,
+            "Svelte": 25789,
+            "CSS": 1335,
+            "HTML": 319
+          }
+        },
+        {
+          "name": "auto-import-repro",
+          "isFork": false,
+          "stars": 7,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 550
+          }
+        },
+        {
+          "name": "sevenup",
+          "isFork": false,
+          "stars": 61,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 7714,
+            "HTML": 1252
+          }
+        },
+        {
+          "name": "object-cull",
+          "isFork": false,
+          "stars": 147,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 6490,
+            "JavaScript": 575
+          }
+        },
+        {
+          "name": "transition-this",
+          "isFork": false,
+          "stars": 13,
+          "forks": 0,
+          "languages": {
+            "Svelte": 2237,
+            "JavaScript": 750,
+            "HTML": 329
+          }
+        },
+        {
+          "name": "headless-qr",
+          "isFork": false,
+          "stars": 466,
+          "forks": 10,
+          "languages": {
+            "JavaScript": 26583
+          }
+        },
+        {
+          "name": "ematchi",
+          "isFork": false,
+          "stars": 105,
+          "forks": 13,
+          "languages": {
+            "Svelte": 10700,
+            "TypeScript": 2990,
+            "JavaScript": 859,
+            "CSS": 626,
+            "HTML": 329
+          }
+        },
+        {
+          "name": "dom-monster",
+          "isFork": false,
+          "stars": 6,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 5547,
+            "HTML": 3380,
+            "CSS": 487
+          }
+        },
+        {
+          "name": "sveltekit-isr-ssr-edge",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "vite-dev-server-crashes",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 250
+          }
+        },
+        {
+          "name": "dotfiles",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "Shell": 878,
+            "Vim Script": 858
+          }
+        },
+        {
+          "name": "port-authority",
+          "isFork": false,
+          "stars": 57,
+          "forks": 7,
+          "languages": {
+            "JavaScript": 10105
+          }
+        },
+        {
+          "name": "golden-fleece",
+          "isFork": false,
+          "stars": 61,
+          "forks": 5,
+          "languages": {
+            "TypeScript": 34214,
+            "HTML": 8063,
+            "JavaScript": 2139
+          }
+        },
+        {
+          "name": "sveltekit-on-the-edge",
+          "isFork": false,
+          "stars": 226,
+          "forks": 25,
+          "languages": {
+            "Svelte": 15741,
+            "JavaScript": 2488,
+            "CSS": 1278,
+            "HTML": 333
+          }
+        },
+        {
+          "name": "vite-env-reload",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "HTML": 600,
+            "JavaScript": 79
+          }
+        },
+        {
+          "name": "modulepreload-demo",
+          "isFork": false,
+          "stars": 9,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 500,
+            "HTML": 367
+          }
+        },
+        {
+          "name": "webcontainer-docs",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vercel-prerender-test",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 189
+          }
+        },
+        {
+          "name": "vercel-edge-test",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 143
+          }
+        },
+        {
+          "name": "vercel-serverless-test",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 116
+          }
+        },
+        {
+          "name": "vite-non-deterministic-build-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Svelte": 538,
+            "HTML": 329,
+            "JavaScript": 269
+          }
+        },
+        {
+          "name": "vite-asset-query-repro",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 530,
+            "CSS": 25
+          }
+        },
+        {
+          "name": "vite-dynamic-import-repro",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1413
+          }
+        },
+        {
+          "name": "svelte-vscode-prettier-repro",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 135313,
+            "Svelte": 17813,
+            "CSS": 1856,
+            "HTML": 329
+          }
+        },
+        {
+          "name": "docs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sirv",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bundler-comparison",
+          "isFork": false,
+          "stars": 66,
+          "forks": 6,
+          "languages": {
+            "JavaScript": 18637
+          }
+        },
+        {
+          "name": "svelte-cubed",
+          "isFork": false,
+          "stars": 1185,
+          "forks": 73,
+          "languages": {
+            "Svelte": 46302,
+            "JavaScript": 13699,
+            "CSS": 552,
+            "HTML": 307
+          }
+        },
+        {
+          "name": "my-blog",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "birdland-starter",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 8022,
+            "HTML": 3214,
+            "CSS": 1003
+          }
+        },
+        {
+          "name": "birdland",
+          "isFork": false,
+          "stars": 35,
+          "forks": 7,
+          "languages": {
+            "HTML": 21939,
+            "JavaScript": 12478,
+            "CSS": 1003
+          }
+        },
+        {
+          "name": "svelte-workshop",
+          "isFork": false,
+          "stars": 117,
+          "forks": 35,
+          "languages": {
+            "JavaScript": 8358,
+            "HTML": 4293,
+            "CSS": 3417
+          }
+        },
+        {
+          "name": "react-svelte",
+          "isFork": false,
+          "stars": 311,
+          "forks": 22,
+          "languages": {
+            "JavaScript": 576
+          }
+        },
+        {
+          "name": "vite-ssr-assets",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 442
+          }
+        },
+        {
+          "name": "packd",
+          "isFork": false,
+          "stars": 265,
+          "forks": 25,
+          "languages": {
+            "JavaScript": 18701,
+            "HTML": 3329
+          }
+        },
+        {
+          "name": "begin-svelte-app",
+          "isFork": false,
+          "stars": 45,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 7220,
+            "HTML": 1012,
+            "CSS": 850,
+            "Arc": 99
+          }
+        },
+        {
+          "name": "svelte-gl-boxes",
+          "isFork": false,
+          "stars": 75,
+          "forks": 3,
+          "languages": {
+            "HTML": 2277,
+            "JavaScript": 1942,
+            "CSS": 900
+          }
+        },
+        {
+          "name": "sourcemap-codec",
+          "isFork": false,
+          "stars": 69,
+          "forks": 25,
+          "languages": {
+            "JavaScript": 4515,
+            "TypeScript": 3880
+          }
+        },
+        {
+          "name": "svelte-gl-stress-test",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1520,
+            "CSS": 835,
+            "HTML": 342
+          }
+        },
+        {
+          "name": "svelte-gl-demo",
+          "isFork": false,
+          "stars": 62,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 5193,
+            "HTML": 4534,
+            "CSS": 833
+          }
+        },
+        {
+          "name": "svelte-codemirror-editor",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-kit-netlify-issue",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "js-repaint-perfs",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vite-browserhash-repro",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 492,
+            "HTML": 119
+          }
+        },
+        {
+          "name": "sveltekit-app-overrides-demo",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1063,
+            "Svelte": 346,
+            "HTML": 267
+          }
+        },
+        {
+          "name": "rollup-unescaped-assets",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 924,
+            "CSS": 40
+          }
+        },
+        {
+          "name": "generated-types",
+          "isFork": false,
+          "stars": 33,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 583
+          }
+        },
+        {
+          "name": "vite-workers-repro",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 539
+          }
+        },
+        {
+          "name": "vite-mode-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 588
+          }
+        },
+        {
+          "name": "vite-ssrloadmodule-strict-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 340
+          }
+        },
+        {
+          "name": "edge-fetch-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Svelte": 553,
+            "HTML": 284,
+            "JavaScript": 185
+          }
+        },
+        {
+          "name": "vc-deploy-test",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 86116,
+            "HTML": 275,
+            "Svelte": 15
+          }
+        },
+        {
+          "name": "nft",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sveltekit-shiki-endpoint-error",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vercel-nft-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 122
+          }
+        },
+        {
+          "name": "vercel-adapter-bug-reproduction",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vite-relative-base-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2089,
+            "HTML": 374,
+            "CSS": 76
+          }
+        },
+        {
+          "name": "empty-component-destroy-repro",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 5981,
+            "CSS": 890,
+            "Svelte": 508,
+            "HTML": 393
+          }
+        },
+        {
+          "name": "vite-ssr-hmr-repro",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 592
+          }
+        },
+        {
+          "name": "oscars-data",
+          "isFork": false,
+          "stars": 15,
+          "forks": 0,
+          "languages": {
+            "Svelte": 6008,
+            "JavaScript": 662,
+            "HTML": 316,
+            "CSS": 290
+          }
+        },
+        {
+          "name": "sveltekit-cloudflare-cache-issue",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "proposal-type-annotations",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-knobby",
+          "isFork": false,
+          "stars": 202,
+          "forks": 16,
+          "languages": {
+            "Svelte": 37646,
+            "JavaScript": 26611,
+            "HTML": 272
+          }
+        },
+        {
+          "name": "vite-preload-repro",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 493,
+            "CSS": 19
+          }
+        },
+        {
+          "name": "vite-double-import-repro",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1097
+          }
+        },
+        {
+          "name": "vite-safe-modules-repro",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 673,
+            "HTML": 328,
+            "Svelte": 121
+          }
+        },
+        {
+          "name": "svelte-three-demo",
+          "isFork": false,
+          "stars": 38,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 441,
+            "HTML": 272,
+            "Svelte": 210
+          }
+        },
+        {
+          "name": "ffmpeg-wasm-demo",
+          "isFork": false,
+          "stars": 10,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2422,
+            "HTML": 945
+          }
+        },
+        {
+          "name": "vite-top-level-await-repro",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 553,
+            "HTML": 97
+          }
+        },
+        {
+          "name": "es-module-shims",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tape-modern",
+          "isFork": false,
+          "stars": 62,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 4944,
+            "JavaScript": 665
+          }
+        },
+        {
+          "name": "phonograph",
+          "isFork": false,
+          "stars": 211,
+          "forks": 12,
+          "languages": {
+            "TypeScript": 24600,
+            "HTML": 632,
+            "JavaScript": 345
+          }
+        },
+        {
+          "name": "endpoint-fetch-repro",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 4229,
+            "JavaScript": 561,
+            "Svelte": 527
+          }
+        },
+        {
+          "name": "svelte-undo",
+          "isFork": false,
+          "stars": 199,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 3021
+          }
+        },
+        {
+          "name": "vite-repro-ssr-sourcemap-sources",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 365
+          }
+        },
+        {
+          "name": "vite-repro-ssr-fix-stacktrace",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 828,
+            "Svelte": 44
+          }
+        },
+        {
+          "name": "vite-ssr-load-errors",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 761
+          }
+        },
+        {
+          "name": "d3-modules",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 360
+          }
+        },
+        {
+          "name": "vite-repro-transformation",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 266,
+            "HTML": 264
+          }
+        },
+        {
+          "name": "meriyah",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "cameoparison-starter",
+          "isFork": false,
+          "stars": 25,
+          "forks": 22,
+          "languages": {
+            "JavaScript": 3245,
+            "CSS": 900,
+            "HTML": 846
+          }
+        },
+        {
+          "name": "snowpack",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "esinstall-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 916,
+            "Svelte": 58
+          }
+        },
+        {
+          "name": "snowpack-non-deterministic-builds-repro",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 227,
+            "TypeScript": 29
+          }
+        },
+        {
+          "name": "svelte-template-electron",
+          "isFork": false,
+          "stars": 89,
+          "forks": 17,
+          "languages": {
+            "TypeScript": 1715,
+            "JavaScript": 801,
+            "HTML": 457,
+            "CSS": 358
+          }
+        },
+        {
+          "name": "snowpack-svelte-ssr",
+          "isFork": false,
+          "stars": 117,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 9856,
+            "Svelte": 1845,
+            "CSS": 33
+          }
+        },
+        {
+          "name": "snowpack-alias-bug",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 1022,
+            "JavaScript": 451,
+            "CSS": 178
+          }
+        },
+        {
+          "name": "tippex",
+          "isFork": false,
+          "stars": 14,
+          "forks": 7,
+          "languages": {
+            "JavaScript": 331720,
+            "HTML": 597
+          }
+        },
+        {
+          "name": "terser-playground",
+          "isFork": false,
+          "stars": 13,
+          "forks": 2,
+          "languages": {
+            "HTML": 2265,
+            "JavaScript": 1465,
+            "CSS": 998
+          }
+        },
+        {
+          "name": "WebFundamentals",
+          "isFork": true,
+          "stars": 5,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "sapper-ws-chat",
+          "isFork": false,
+          "stars": 17,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 8680,
+            "HTML": 4751,
+            "CSS": 584
+          }
+        },
+        {
+          "name": "svelte-ssr-bundle",
+          "isFork": false,
+          "stars": 34,
+          "forks": 5,
+          "languages": {
+            "JavaScript": 19704,
+            "HTML": 2263
+          }
+        },
+        {
+          "name": "svelte-custom-elements-demo",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "degit-test-repo",
+          "isFork": false,
+          "stars": 0,
+          "forks": 5,
+          "languages": {}
+        },
+        {
+          "name": "deepClone",
+          "isFork": false,
+          "stars": 19,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1327
+          }
+        },
+        {
+          "name": "micro-graphql-react",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "simulant",
+          "isFork": false,
+          "stars": 209,
+          "forks": 18,
+          "languages": {
+            "JavaScript": 17620,
+            "HTML": 1899
+          }
+        },
+        {
+          "name": "astring",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "smooth-keyframes",
+          "isFork": false,
+          "stars": 14,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 3705,
+            "JavaScript": 622
+          }
+        },
+        {
+          "name": "typescript-lib",
+          "isFork": false,
+          "stars": 25,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 569,
+            "TypeScript": 329
+          }
+        },
+        {
+          "name": "svelte-d3-arc-demo",
+          "isFork": false,
+          "stars": 49,
+          "forks": 6,
+          "languages": {
+            "JavaScript": 23506,
+            "HTML": 2345
+          }
+        },
+        {
+          "name": "roadtrip",
+          "isFork": false,
+          "stars": 156,
+          "forks": 13,
+          "languages": {
+            "JavaScript": 21183
+          }
+        },
+        {
+          "name": "rollup-plugin-workz0r",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-gl",
+          "isFork": false,
+          "stars": 198,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "rollup-bug-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 214
+          }
+        },
+        {
+          "name": "Points",
+          "isFork": false,
+          "stars": 96,
+          "forks": 18,
+          "languages": {
+            "JavaScript": 57073
+          }
+        },
+        {
+          "name": "lit-node",
+          "isFork": false,
+          "stars": 75,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 1669
+          }
+        },
+        {
+          "name": "spelunk",
+          "isFork": false,
+          "stars": 30,
+          "forks": 6,
+          "languages": {
+            "JavaScript": 6846
+          }
+        },
+        {
+          "name": "jess",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sql",
+          "isFork": false,
+          "stars": 14,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 4563
+          }
+        },
+        {
+          "name": "svelte-sapper-community",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rxjs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "nodejs-docs-samples",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-repro-2461",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 952
+          }
+        },
+        {
+          "name": "wkx",
+          "isFork": true,
+          "stars": 2,
+          "forks": 6,
+          "languages": {}
+        },
+        {
+          "name": "idlize",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "web-components-todo",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "layercake.graphics",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-waterfall-demo",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 527,
+            "HTML": 352
+          }
+        },
+        {
+          "name": "rollup-watch-hash-bug",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 300
+          }
+        },
+        {
+          "name": "shimport-demos",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "HTML": 5923,
+            "JavaScript": 3202,
+            "CSS": 658
+          }
+        },
+        {
+          "name": "kleur",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-loadz0r",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-loadz0r-issue-repro",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 822,
+            "HTML": 426,
+            "Shell": 86
+          }
+        },
+        {
+          "name": "worker-dom",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-template-workerdom",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1354,
+            "CSS": 905,
+            "HTML": 389
+          }
+        },
+        {
+          "name": "svelte-google-maps",
+          "isFork": false,
+          "stars": 16,
+          "forks": 2,
+          "languages": {
+            "HTML": 1831,
+            "JavaScript": 1557,
+            "CSS": 835
+          }
+        },
+        {
+          "name": "wtf-mocha",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 224
+          }
+        },
+        {
+          "name": "slide-treeshaking-demo",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1258,
+            "CSS": 835,
+            "HTML": 590
+          }
+        },
+        {
+          "name": "cats-of-youtube",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "HTML": 3067,
+            "JavaScript": 1339,
+            "CSS": 861
+          }
+        },
+        {
+          "name": "three.js",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "convert-threejs-to-classes",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 13613,
+            "JavaScript": 12895
+          }
+        },
+        {
+          "name": "marko",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "neo-blessed",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "micromatch",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-panel-click",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ivy-code-size",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sucrase",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pretty-ms",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "x_team_build_tool_round_up",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "graphql-crunch",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "CSVParser",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 211377,
+            "HTML": 6493
+          }
+        },
+        {
+          "name": "js-framework-benchmark",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tonyfsullivan.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-options-bug-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 196
+          }
+        },
+        {
+          "name": "rollup-svelte-code-splitting",
+          "isFork": false,
+          "stars": 50,
+          "forks": 6,
+          "languages": {
+            "JavaScript": 1923,
+            "HTML": 1119,
+            "CSS": 419
+          }
+        },
+        {
+          "name": "polka-middleware-order-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 335
+          }
+        },
+        {
+          "name": "webpack-format-messages",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "magic-viewbox",
+          "isFork": false,
+          "stars": 20,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 24475,
+            "JavaScript": 587
+          }
+        },
+        {
+          "name": "Leaflet",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gl-transitions",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "amp-letter.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "realworld-starter-kit",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "use-jitter",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "HTML": 1534
+          }
+        },
+        {
+          "name": "store-dynamic-component-demo",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 2031,
+            "CSS": 835,
+            "HTML": 420
+          }
+        },
+        {
+          "name": "smooth-keyframes-demo",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 7899,
+            "JavaScript": 2622,
+            "CSS": 1007
+          }
+        },
+        {
+          "name": "svelte-preprocessor-demo",
+          "isFork": false,
+          "stars": 30,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1864,
+            "CSS": 858,
+            "HTML": 395
+          }
+        },
+        {
+          "name": "golden-fleece-demo",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "HTML": 2398,
+            "JavaScript": 1319,
+            "CSS": 835
+          }
+        },
+        {
+          "name": "XTAudioBeacons",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "BabyParse",
+          "isFork": true,
+          "stars": 258,
+          "forks": 23,
+          "languages": {}
+        },
+        {
+          "name": "svelte-heatmap",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "offline-issues",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "acorn-object-spread",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "namey-mcnameface",
+          "isFork": false,
+          "stars": 13,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 63177
+          }
+        },
+        {
+          "name": "pathologist-demo",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "HTML": 8599,
+            "CSS": 5243,
+            "JavaScript": 1509
+          }
+        },
+        {
+          "name": "pathologist",
+          "isFork": false,
+          "stars": 9,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 11198
+          }
+        },
+        {
+          "name": "reorder-topojson",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 4183
+          }
+        },
+        {
+          "name": "eases-jsnext",
+          "isFork": true,
+          "stars": 28,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "indian-ocean",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-hash",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "eslint-plugin-jsx-a11y",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "laziestloader",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svelte-amd-demo",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1312,
+            "CSS": 835,
+            "HTML": 576
+          }
+        },
+        {
+          "name": "svelte-fractal",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "butternut",
+          "isFork": false,
+          "stars": 1162,
+          "forks": 16,
+          "languages": {
+            "JavaScript": 3826017,
+            "Shell": 36
+          }
+        },
+        {
+          "name": "stardustjs.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "butternut.now.sh",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 7862,
+            "JavaScript": 5356
+          }
+        },
+        {
+          "name": "rollup-plugin-legacy-example",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 319
+          }
+        },
+        {
+          "name": "mr-data-converter",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "example-template-svelte-data-circles",
+          "isFork": false,
+          "stars": 0,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 3232,
+            "HTML": 1330
+          }
+        },
+        {
+          "name": "video.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "svelte-accessors-demo",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 5814,
+            "HTML": 144
+          }
+        },
+        {
+          "name": "webpack.js.org",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "example-template-svelte-draggable-circle",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "example-template-svelte-circle",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "preact-hello-world-equivalent",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "HTML": 1044,
+            "JavaScript": 685,
+            "CSS": 586
+          }
+        },
+        {
+          "name": "design-and-code-2",
+          "isFork": false,
+          "stars": 1,
+          "forks": 4,
+          "languages": {
+            "HTML": 265677,
+            "JavaScript": 21298,
+            "CSS": 1466
+          }
+        },
+        {
+          "name": "esmod",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "the-answer",
+          "isFork": false,
+          "stars": 70,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 451
+          }
+        },
+        {
+          "name": "canvas-demo",
+          "isFork": false,
+          "stars": 4,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 1158,
+            "HTML": 594,
+            "CSS": 293
+          }
+        },
+        {
+          "name": "simple-css-parser",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "CSS": 105345,
+            "JavaScript": 3280
+          }
+        },
+        {
+          "name": "prettier",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ramjet",
+          "isFork": false,
+          "stars": 5431,
+          "forks": 157,
+          "languages": {
+            "JavaScript": 31637,
+            "HTML": 8160,
+            "CSS": 907,
+            "Shell": 398
+          }
+        },
+        {
+          "name": "wzrd.in",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "node-console-group",
+          "isFork": false,
+          "stars": 42,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 1589
+          }
+        },
+        {
+          "name": "sample-framework-boot",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "react",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "examples.ractivejs.org",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "CSS": 92322,
+            "JavaScript": 76889,
+            "HTML": 10264,
+            "Shell": 199
+          }
+        },
+        {
+          "name": "brooklynjs.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ractive-dbmonster",
+          "isFork": false,
+          "stars": 23,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 17137,
+            "HTML": 1193,
+            "CSS": 512
+          }
+        },
+        {
+          "name": "regl",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "styled-components",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gl-vec2-esm",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gurgle",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 30149
+          }
+        },
+        {
+          "name": "create",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "symbol-observable",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "node-safestart",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "FileIcons",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gl-mat4-esm",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hammer.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "topojson",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "optimize-js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "repro",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ionic-app-generators",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-commonjs-issue-85",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 4775,
+            "HTML": 118
+          }
+        },
+        {
+          "name": "rollup-plugin-node-globals",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-commonjs-issue-90",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 160059,
+            "HTML": 34
+          }
+        },
+        {
+          "name": "ABANDONED-agadoo",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 12825
+          }
+        },
+        {
+          "name": "ractive-rollup-demo",
+          "isFork": false,
+          "stars": 5,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 899,
+            "HTML": 423
+          }
+        },
+        {
+          "name": "acorn",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "parse-css",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-issue-861",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 2023
+          }
+        },
+        {
+          "name": "expect",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-issue-854",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1859
+          }
+        },
+        {
+          "name": "pwa-list",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "svg-flatten",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-watch-gh-3-repro",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 248
+          }
+        },
+        {
+          "name": "rollup-plugin-ascii",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mapbox-gl-js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mapbox-gl-shaders",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "webworkify",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-642",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 663
+          }
+        },
+        {
+          "name": "the-cat-in-the-hat",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "HTML": 40949,
+            "CSS": 13981,
+            "JavaScript": 4704
+          }
+        },
+        {
+          "name": "samsara",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-todomvc",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 21299,
+            "HTML": 1198
+          }
+        },
+        {
+          "name": "NoSleep.js",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "The-cost-of-transpiling-es2015-in-2016",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-redux-debug",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 8177
+          }
+        },
+        {
+          "name": "rollup-cc-sorcery-demo",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "Shell": 293,
+            "JavaScript": 217,
+            "HTML": 160
+          }
+        },
+        {
+          "name": "ractive-load-example",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 449524,
+            "HTML": 3440
+          }
+        },
+        {
+          "name": "redux",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bundle-all-spike",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-plugin-typescript",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1193,
+            "TypeScript": 196
+          }
+        },
+        {
+          "name": "rsvp.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "custom-resolver-example",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 625
+          }
+        },
+        {
+          "name": "babel.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "immutable-js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "es6-module-transpiler",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "grunt-rollup-babel",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pouchdb",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nodebooks",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rollup-starter-project",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "incremental-dom",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "esri-leaflet",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gobble-app-starter",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 108317,
+            "HTML": 355,
+            "CSS": 302
+          }
+        },
+        {
+          "name": "brooklyn-js-rollup-talk",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2261257,
+            "HTML": 56872,
+            "CSS": 45537,
+            "Shell": 502
+          }
+        },
+        {
+          "name": "ractive",
+          "isFork": true,
+          "stars": 5,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "list-bower-paths",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 2991
+          }
+        },
+        {
+          "name": "rollup-example-for-srcspider",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 491
+          }
+        },
+        {
+          "name": "d3-color",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "d3-selection",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gobble-starter-project",
+          "isFork": false,
+          "stars": 0,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1707,
+            "HTML": 273
+          }
+        },
+        {
+          "name": "example-gobble-babel",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 594,
+            "HTML": 436
+          }
+        },
+        {
+          "name": "Ractive-plugins",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 10065
+          }
+        },
+        {
+          "name": "eval2",
+          "isFork": false,
+          "stars": 5,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 9215,
+            "HTML": 446
+          }
+        },
+        {
+          "name": "stevedore",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1089
+          }
+        },
+        {
+          "name": "elizanode",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "boxxy",
+          "isFork": false,
+          "stars": 87,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 47280,
+            "CSS": 1099,
+            "HTML": 1089
+          }
+        },
+        {
+          "name": "jsdom",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ractive-adaptors-backbone",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "node-ractify",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "log-syntax-error",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2697
+          }
+        },
+        {
+          "name": "cdnjs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "babel",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "dismantling",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 399535,
+            "HTML": 65422,
+            "CSS": 28904
+          }
+        },
+        {
+          "name": "ractive-component-loader",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "parallel.js",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "es6-transpiler",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "basic-transpiler-benchmarks",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "broccoli-es6modules",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "uncaged",
+          "isFork": false,
+          "stars": 1,
+          "forks": 3,
+          "languages": {
+            "JavaScript": 1067860,
+            "CSS": 6095
+          }
+        },
+        {
+          "name": "canvg",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "canvg-mirror",
+          "isFork": false,
+          "stars": 2,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 128225
+          }
+        },
+        {
+          "name": "geotile",
+          "isFork": false,
+          "stars": 10,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 92054,
+            "CSS": 13406
+          }
+        },
+        {
+          "name": "nyc-nodejs",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "CSS": 3490,
+            "JavaScript": 767
+          }
+        },
+        {
+          "name": "brooklynjs-sep14",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "CSS": 6235,
+            "JavaScript": 1204,
+            "CoffeeScript": 405
+          }
+        },
+        {
+          "name": "matter-js",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "list-npm-paths",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1293
+          }
+        },
+        {
+          "name": "graceful-chokidar",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "promo",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1101
+          }
+        },
+        {
+          "name": "ractive-touch",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "esnext",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Rich-Harris.github.io",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "CSS": 2028
+          }
+        },
+        {
+          "name": "minimatch",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "broccoli-kitchen-sink-helpers",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "collection",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "srccon",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "jshint",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "broccoli-spelunk",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 2213
+          }
+        },
+        {
+          "name": "operative",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flexarray",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 2019
+          }
+        },
+        {
+          "name": "localForage",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Ractive-transitions-scale",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "d3",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "broccoli",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "viewbox",
+          "isFork": false,
+          "stars": 14,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1131449,
+            "CSS": 1029
+          }
+        },
+        {
+          "name": "node-tosource",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "broccoli-browserify",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ractive-ui-virtual-scroll",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 464767,
+            "CSS": 3579
+          }
+        },
+        {
+          "name": "liquidmetal",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "string_score",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "stackblur",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 17607
+          }
+        },
+        {
+          "name": "page.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "reactive-programming",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 962610,
+            "CSS": 29420
+          }
+        },
+        {
+          "name": "Chartbuilder",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "enhancer",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "leaflet.mapbox.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "json3",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "reindex",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 989
+          }
+        },
+        {
+          "name": "reqwest",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "d3-amd",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 62922
+          }
+        },
+        {
+          "name": "grunt-spelunk",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 4694
+          }
+        },
+        {
+          "name": "c9-test",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "agave",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Statesman",
+          "isFork": false,
+          "stars": 44,
+          "forks": 5,
+          "languages": {
+            "JavaScript": 262869,
+            "Erlang": 1054,
+            "Shell": 72
+          }
+        },
+        {
+          "name": "todomvc",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "amdclean",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Soundbite",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 94862,
+            "CSS": 4611
+          }
+        },
+        {
+          "name": "a-race-to-publish",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "fastdom",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ractive-js-example-presentation",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pixi.js",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Ractive-TodoMVC",
+          "isFork": false,
+          "stars": 10,
+          "forks": 0,
+          "languages": {
+            "CSS": 9683,
+            "JavaScript": 9194
+          }
+        },
+        {
+          "name": "sensor",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 28726
+          }
+        },
+        {
+          "name": "talkie",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Neo",
+          "isFork": false,
+          "stars": 17,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 78883
+          }
+        },
+        {
+          "name": "Carpenter",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 110247
+          }
+        },
+        {
+          "name": "Monkey-Panic",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 14310
+          }
+        },
+        {
+          "name": "treemaptest",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "yourtopia",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 34123,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 5827,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 4749,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 2501,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 3529,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 54,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 283,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          15,
+          13,
+          6,
+          0,
+          1,
+          0,
+          3,
+          18,
+          18,
+          47,
+          86,
+          29,
+          109,
+          12,
+          206,
+          121,
+          235,
+          146,
+          147,
+          217,
+          109,
+          143,
+          125,
+          165,
+          229,
+          158,
+          157,
+          516,
+          349,
+          333,
+          332,
+          584,
+          299,
+          395,
+          213,
+          275,
+          327,
+          309,
+          425,
+          402,
+          844,
+          490,
+          463,
+          584,
+          498,
+          950,
+          369,
+          461,
+          460,
+          205,
+          54,
+          557,
+          233,
+          825,
+          248,
+          289,
+          598,
+          201,
+          308,
+          871,
+          330,
+          124,
+          696,
+          525,
+          678,
+          434,
+          466,
+          833,
+          379,
+          50,
+          294,
+          871,
+          423,
+          361,
+          768,
+          680,
+          541,
+          333,
+          176,
+          609,
+          406,
+          299,
+          130,
+          255,
+          241,
+          379,
+          341,
+          463,
+          505,
+          245,
+          137,
+          177,
+          203,
+          128,
+          226,
+          32,
+          84,
+          56,
+          17,
+          2,
+          48,
+          120,
+          37,
+          21,
+          41,
+          254,
+          98,
+          145,
+          72,
+          57,
+          223,
+          169,
+          73,
+          94,
+          181,
+          49,
+          18,
+          15,
+          133,
+          165,
+          317,
+          306,
+          183,
+          299,
+          394,
+          250,
+          320,
+          418,
+          303,
+          167,
+          330,
+          220,
+          355,
+          402,
+          231,
+          168,
+          179,
+          88,
+          11,
+          159,
+          68,
+          43,
+          253,
+          280,
+          258,
+          128,
+          241,
+          230,
+          224,
+          324,
+          299,
+          276,
+          309,
+          768,
+          348,
+          502,
+          249,
+          78,
+          210,
+          213,
+          206,
+          251,
+          280,
+          347,
+          228,
+          289,
+          129,
+          87,
+          336,
+          270,
+          224,
+          220,
+          198,
+          338,
+          407,
+          390,
+          278,
+          60
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2011,
+            "contributions": 1,
+            "activeDays": 1,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 236,
+            "activeDays": 47,
+            "commits": 227,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 3
+          },
+          {
+            "year": 2013,
+            "contributions": 1735,
+            "activeDays": 192,
+            "commits": 1640,
+            "pullRequests": 11,
+            "reviews": 0,
+            "issues": 64
+          },
+          {
+            "year": 2014,
+            "contributions": 3840,
+            "activeDays": 307,
+            "commits": 3305,
+            "pullRequests": 287,
+            "reviews": 0,
+            "issues": 192
+          },
+          {
+            "year": 2015,
+            "contributions": 6122,
+            "activeDays": 294,
+            "commits": 5628,
+            "pullRequests": 243,
+            "reviews": 0,
+            "issues": 205
+          },
+          {
+            "year": 2016,
+            "contributions": 4849,
+            "activeDays": 246,
+            "commits": 4445,
+            "pullRequests": 232,
+            "reviews": 1,
+            "issues": 131
+          },
+          {
+            "year": 2017,
+            "contributions": 5680,
+            "activeDays": 278,
+            "commits": 4737,
+            "pullRequests": 529,
+            "reviews": 6,
+            "issues": 357
+          },
+          {
+            "year": 2018,
+            "contributions": 4981,
+            "activeDays": 292,
+            "commits": 4056,
+            "pullRequests": 490,
+            "reviews": 16,
+            "issues": 366
+          },
+          {
+            "year": 2019,
+            "contributions": 3077,
+            "activeDays": 274,
+            "commits": 2537,
+            "pullRequests": 302,
+            "reviews": 18,
+            "issues": 205
+          },
+          {
+            "year": 2020,
+            "contributions": 923,
+            "activeDays": 127,
+            "commits": 707,
+            "pullRequests": 88,
+            "reviews": 9,
+            "issues": 96
+          },
+          {
+            "year": 2021,
+            "contributions": 1249,
+            "activeDays": 190,
+            "commits": 724,
+            "pullRequests": 293,
+            "reviews": 67,
+            "issues": 148
+          },
+          {
+            "year": 2022,
+            "contributions": 3507,
+            "activeDays": 281,
+            "commits": 1416,
+            "pullRequests": 670,
+            "reviews": 1195,
+            "issues": 189
+          },
+          {
+            "year": 2023,
+            "contributions": 2237,
+            "activeDays": 210,
+            "commits": 1018,
+            "pullRequests": 464,
+            "reviews": 581,
+            "issues": 143
+          },
+          {
+            "year": 2024,
+            "contributions": 3907,
+            "activeDays": 299,
+            "commits": 1687,
+            "pullRequests": 1102,
+            "reviews": 830,
+            "issues": 268
+          },
+          {
+            "year": 2025,
+            "contributions": 2567,
+            "activeDays": 265,
+            "commits": 1029,
+            "pullRequests": 553,
+            "reviews": 921,
+            "issues": 52
+          },
+          {
+            "year": 2026,
+            "contributions": 2721,
+            "activeDays": 226,
+            "commits": 967,
+            "pullRequests": 563,
+            "reviews": 1105,
+            "issues": 82
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2017-02-26",
+        "end": "2017-04-20"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "26143240",
+        "name": "magic-string",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2779,
+        "pushedAt": "2026-10-05T04:50:49Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"magic-string\",\n  \"type\": \"module\",\n  \"version\": \"1.4.3\",\n  \"packageManager\": \"pnpm@12.3.4\",\n  \"description\": \"Modify strings, generate sourcemaps\",\n  \"author\": \"Rich Harris\",\n  \"license\": \"MIT\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Rich-Harris/magic-string.git\"\n  },\n  \"keywords\": [\n    \"string\",\n    \"string manipulation\",\n    \"sourcemap\",\n    \"templating\",\n    \"transpilation\"\n  ],\n  \"sideEffects\": false,\n  \"exports\": {\n    \".\": \"./dist/index.mjs\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"types\": \"./dist/index.d.mts\",\n  \"files\": [\n    \"README.md\",\n    \"dist/*\"\n  ],\n  \"scripts\": {\n    \"build\": \"tsdown\",\n    \"changelog\": \"conventional-changelog -p angular -i CHANGELOG.md -s\",\n    \"lint\": \"eslint\",\n    \"lint:fix\": \"eslint --fix\",\n    \"prepare\": \"pnpm run build\",\n    \"prepublishOnly\": \"pnpm run lint && rm -rf dist && pnpm test\",\n    \"release\": \"bumpp -x \\\"pnpm run changelog\\\" --all\",\n    \"pretest\": \"pnpm run build\",\n    \"test\": \"vitest run\",\n    \"test:dev\": \"vitest\",\n    \"typecheck\": \"tsc && tsc -p tsconfig.test.json\",\n    \"bench\": \"pnpm run build && node benchmark/index.mjs\",\n    \"watch\": \"tsdown -w\"\n  },\n  \"dependencies\": {\n    \"@jridgewell/sourcemap-codec\": \"^1.6.0\"\n  },\n  \"devDependencies\": {\n    \"@antfu/eslint-config\": \"^9.5.1\",\n    \"@types/node\": \"^26.5.1\",\n    \"@vitest/coverage-v8\": \"^5.0.0\",\n    \"benchmark\": \"^2.1.4\",\n    \"bumpp\": \"^12.3.0\",\n    \"conventional-changelog\": \"^8.1.3\",\n    \"conventional-changelog-angular\": \"^9.4.0\",\n    \"eslint\": \"^10.10.0\",\n    \"publint\": \"^0.3.24\",\n    \"source-map-js\": \"^1.2.1\",\n    \"source-map-support\": \"^0.5.21\",\n    \"tsdown\": \"^0.23.0\",\n    \"typescript\": \"~6.0.3\",\n    \"vitest\": \"^5.0.0\"\n  }\n}\n"
+          },
+          {
+            "path": ".github/workflows/release.yml",
+            "content": "name: Release\n\non:\n  push:\n    tags:\n      - 'v*'\n\njobs:\n  release:\n    uses: sxzz/workflows/.github/workflows/release.yml@main\n    with:\n      publish: true\n    permissions:\n      contents: write\n      id-token: write\n"
+          }
+        ]
+      },
+      {
+        "id": "98913789",
+        "name": "degit",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7945,
+        "pushedAt": "2026-09-13T14:15:11Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"degit\",\n\t\"version\": \"3.10.0\",\n\t\"description\": \"Straightforward project scaffolding\",\n\t\"keywords\": [\n\t\t\"git\",\n\t\t\"scaffolding\",\n\t\t\"template\"\n\t],\n\t\"homepage\": \"https://github.com/Rich-Harris/degit#readme\",\n\t\"bugs\": {\n\t\t\"url\": \"https://github.com/Rich-Harris/degit/issues\"\n\t},\n\t\"license\": \"MIT\",\n\t\"author\": \"Rich Harris\",\n\t\"maintainers\": [\n\t\t\"YogliB <me@yogev.dev>\"\n\t],\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"git+https://github.com/Rich-Harris/degit.git\"\n\t},\n\t\"bin\": {\n\t\t\"degit\": \"degit\"\n\t},\n\t\"files\": [\n\t\t\"assets/help.md\",\n\t\t\"dist\",\n\t\t\"docs/CHANGELOG.md\",\n\t\t\"docs/USAGE.md\",\n\t\t\"LICENSE.md\",\n\t\t\"README.md\",\n\t\t\"schemas\"\n\t],\n\t\"type\": \"module\",\n\t\"main\": \"dist/index.js\",\n\t\"types\": \"dist/index.d.ts\",\n\t\"scripts\": {\n\t\t\"lint\": \"oxlint --fix .\",\n\t\t\"lint:ci\": \"oxlint .\",\n\t\t\"typecheck\": \"tsc --noEmit\",\n\t\t\"audit\": \"bun audit\",\n\t\t\"knip:ci\": \"knip\",\n\t\t\"perf\": \"bun perf/bench.ts\",\n\t\t\"prepare\": \"husky\",\n\t\t\"format\": \"oxfmt --write .\",\n\t\t\"format:ci\": \"oxfmt --check .\",\n\t\t\"duplicates:ci\": \"jscpd --gitignore --reporters console --threshold 5 tsdown.config.ts vitest.config.ts src test\",\n\t\t\"dev\": \"tsdown --config tsdown.config.ts --watch\",\n\t\t\"build\": \"tsdown --config tsdown.config.ts\",\n\t\t\"test\": \"vitest run --exclude test/integration/private.test.ts\",\n\t\t\"test:integration\": \"vitest run test/integration\",\n\t\t\"test:integration:release\": \"bun test/integration/release.ts\",\n\t\t\"test:coverage\": \"vitest run --coverage\",\n\t\t\"pretest\": \"bun run build\",\n\t\t\"prepublishOnly\": \"bun run test\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@types/node\": \"25.6.0\",\n\t\t\"@vitest/coverage-v8\": \"4.1.11\",\n\t\t\"enquirer\": \"2.3.6\",\n\t\t\"eslint-plugin-security\": \"4.0.0\",\n\t\t\"fuzzysearch\": \"1.0.3\",\n\t\t\"https-proxy-agent\": \"5.0.0\",\n\t\t\"husky\": \"9.1.7\",\n\t\t\"isomorphic-git\": \"1.38.1\",\n\t\t\"jscpd\": \"4.0.9\",\n\t\t\"knip\": \"6.34.0\",\n\t\t\"lint-staged\": \"10.5.4\",\n\t\t\"mri\": \"1.1.6\",\n\t\t\"oxfmt\": \"0.47.0\",\n\t\t\"oxlint\": \"1.72.0\",\n\t\t\"tar\": \"7.5.21\",\n\t\t\"tiny-glob\": \"0.2.8\",\n\t\t\"tsdown\": \"0.21.10\",\n\t\t\"typescript\": \"6.0.3\",\n\t\t\"vite\": \"8.0.16\",\n\t\t\"vitest\": \"4.1.11\",\n\t\t\"yoctocolors\": \"2.1.2\"\n\t},\n\t\"overrides\": {\n\t\t\"brace-expansion\": \"1.1.16\",\n\t\t\"nanoid\": \"3.3.18\",\n\t\t\"postcss\": \"8.5.23\",\n\t\t\"vite\": \"8.0.16\"\n\t},\n\t\"lint-staged\": {\n\t\t\"*.{js,ts}\": [\n\t\t\t\"oxlint --fix\",\n\t\t\t\"git add\"\n\t\t],\n\t\t\"**/*\": [\n\t\t\t\"oxfmt --write --no-error-on-unmatched-pattern\",\n\t\t\t\"git add\"\n\t\t]\n\t},\n\t\"engines\": {\n\t\t\"node\": \">=20.0.0\"\n\t},\n\t\"packageManager\": \"bun@1.3.14\"\n}\n"
+          },
+          {
+            "path": ".github/workflows/anti-slop.yml",
+            "content": "name: PR Quality\n\npermissions:\n    contents: read\n    issues: read\n    pull-requests: write\n\non:\n    pull_request_target:\n        types: [opened, reopened, synchronize]\n\njobs:\n    anti-slop:\n        runs-on: ubuntu-latest\n\n        steps:\n            - uses: peakoss/anti-slop@57858eead489d08b255fab2af45a506c2ca6eab2\n              with:\n                  max-failures: 4\n"
+          }
+        ]
+      },
+      {
+        "id": "104581332",
+        "name": "svg-parser",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 216,
+        "pushedAt": "2026-09-07T08:09:46Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"svg-parser\",\n  \"version\": \"2.1.0\",\n  \"description\": \"Create a JSON-friendly object from an SVG string\",\n  \"main\": \"dist/svg-parser.umd.js\",\n  \"jsnext:main\": \"dist/svg-parser.esm.js\",\n  \"module\": \"dist/svg-parser.esm.js\",\n  \"files\": [\n    \"dist\",\n    \"LICENSE\",\n    \"README.md\"\n  ],\n  \"scripts\": {\n    \"test\": \"mocha\",\n    \"build\": \"tsdown\",\n    \"pretest\": \"npm run build\",\n    \"prepublishOnly\": \"npm run lint && npm test\",\n    \"lint\": \"oxlint src && oxfmt --check .\",\n    \"format\": \"oxfmt --write .\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Rich-Harris/svg-parser.git\"\n  },\n  \"keywords\": [\n    \"SVG\",\n    \"parser\",\n    \"JSON\",\n    \"object\"\n  ],\n  \"author\": \"Rich Harris\",\n  \"contributors\": [\n    {\n      \"name\": \"Bogdan Chadkin\",\n      \"email\": \"opensource@trysound.io\"\n    }\n  ],\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \">=8\"\n  },\n  \"tsdown\": {\n    \"entry\": {\n      \"svg-parser\": \"src/index.js\"\n    },\n    \"format\": {\n      \"esm\": {\n        \"outputOptions\": {\n          \"entryFileNames\": \"[name].esm.js\"\n        }\n      },\n      \"umd\": {\n        \"globalName\": \"svgParser\",\n        \"outputOptions\": {\n          \"entryFileNames\": \"[name].umd.js\"\n        }\n      }\n    },\n    \"platform\": \"browser\",\n    \"target\": \"es2015\",\n    \"deps\": {\n      \"onlyBundle\": [\n        \"locate-character\"\n      ]\n    },\n    \"sourcemap\": true\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/Rich-Harris/svg-parser/issues\"\n  },\n  \"homepage\": \"https://github.com/Rich-Harris/svg-parser#README\",\n  \"overrides\": {\n    \"debug\": \"3.2.7\",\n    \"diff\": \"3.5.1\",\n    \"js-yaml\": \"3.15.1\",\n    \"minimatch\": \"3.1.4\"\n  },\n  \"devDependencies\": {\n    \"locate-character\": \"^2.0.5\",\n    \"mocha\": \"^7.2.0\",\n    \"oxfmt\": \"^0.64.0\",\n    \"oxlint\": \"^1.79.0\",\n    \"source-map-support\": \"^0.4.2\",\n    \"tsdown\": \"^0.22.14\"\n  }\n}\n"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  lint:\n    name: Lint and format\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n      - name: Set up Node.js\n        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0\n        with:\n          node-version: 24\n      - run: npm ci\n      - run: npm run lint\n\n  build:\n    name: Build\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n      - name: Set up Node.js\n        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0\n        with:\n          node-version: 24\n      - run: npm ci\n      - run: npm run build\n      - name: Upload build artifacts\n        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0\n        with:\n          name: dist\n          path: dist\n\n  test:\n    name: Node.js ${{ matrix.node-version }}\n    needs: build\n    runs-on: ubuntu-latest\n    timeout-minutes: 10\n    strategy:\n      fail-fast: false\n      matrix:\n        node-version: [8, 10, 12, 14, 16, 18, 20, 22, 24]\n\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1\n      - name: Set up Node.js ${{ matrix.node-version }}\n        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0\n        with:\n          node-version: ${{ matrix.node-version }}\n      - run: npm ci --ignore-scripts\n      - name: Download build artifacts\n        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0\n        with:\n          name: dist\n          path: dist\n      - run: npm test --ignore-scripts\n"
+          }
+        ]
+      },
+      {
+        "id": "207163270",
+        "name": "periscopic",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 108,
+        "pushedAt": "2026-04-21T09:09:59Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"periscopic\",\n\t\"description\": \"periscopic\",\n\t\"version\": \"4.0.3\",\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"https://github.com/Rich-Harris/periscopic\"\n\t},\n\t\"main\": \"src/index.js\",\n\t\"module\": \"src/index.js\",\n\t\"type\": \"module\",\n\t\"exports\": {\n\t\t\"types\": \"./types/index.js\",\n\t\t\"default\": \"./src/index.js\"\n\t},\n\t\"types\": \"types/index.d.ts\",\n\t\"files\": [\n\t\t\"src\",\n\t\t\"types\"\n\t],\n\t\"devDependencies\": {\n\t\t\"@changesets/cli\": \"^2.31.0\",\n\t\t\"acorn\": \"^8.10.0\",\n\t\t\"dts-buddy\": \"^0.2.4\",\n\t\t\"typescript\": \"^5.2.2\",\n\t\t\"uvu\": \"^0.5.6\"\n\t},\n\t\"scripts\": {\n\t\t\"test\": \"uvu test\",\n\t\t\"prepublishOnly\": \"npm test && dts-buddy\",\n\t\t\"changeset:version\": \"changeset version\",\n\t\t\"changeset:publish\": \"changeset publish\"\n\t},\n\t\"license\": \"MIT\",\n\t\"dependencies\": {\n\t\t\"@types/estree\": \"*\",\n\t\t\"is-reference\": \"^3.0.2\",\n\t\t\"zimmerframe\": \"^1.0.0\"\n\t},\n\t\"packageManager\": \"pnpm@10.33.0\",\n\t\"publishConfig\": {\n\t\t\"access\": \"public\"\n\t}\n}\n"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches:\n      - master\n  pull_request:\n\n# cancel in-progress runs on new commits to same PR (github.event.number)\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}\n  cancel-in-progress: true\n\njobs:\n  Tests:\n    runs-on: ${{ matrix.os }}\n    timeout-minutes: 30\n    strategy:\n      fail-fast: false\n      matrix:\n        node-version: [24]\n        os: [ubuntu-latest]\n    steps:\n      - run: git config --global core.autocrlf false\n      - uses: actions/checkout@v6\n      - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4\n      - uses: actions/setup-node@v6\n        with:\n          node-version: ${{ matrix.node-version }}\n          cache: pnpm\n      - run: pnpm install --frozen-lockfile\n      - run: pnpm test\n"
+          }
+        ]
+      },
+      {
+        "id": "632647726",
+        "name": "sveltesnaps",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 163,
+        "pushedAt": "2026-04-20T09:23:23Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"sveltesnaps\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build && node scripts/update-vercel-config\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"lint\": \"prettier --plugin-search-dir . --check .\",\n\t\t\"format\": \"prettier --plugin-search-dir . --write .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-vercel\": \"^6.3.3\",\n\t\t\"@sveltejs/kit\": \"^2.57.1\",\n\t\t\"autoprefixer\": \"^10.5.0\",\n\t\t\"postcss\": \"^8.5.10\",\n\t\t\"prettier\": \"^2.8.8\",\n\t\t\"prettier-plugin-svelte\": \"^3.5.1\",\n\t\t\"svelte\": \"^5.55.4\",\n\t\t\"svelte-check\": \"^3.8.6\",\n\t\t\"tailwindcss\": \"^3.4.19\",\n\t\t\"tslib\": \"^2.8.1\",\n\t\t\"typescript\": \"^5.9.3\",\n\t\t\"vite\": \"^8.0.9\"\n\t},\n\t\"type\": \"module\",\n\t\"dependencies\": {\n\t\t\"@fontsource/pangolin\": \"^4.5.9\",\n\t\t\"@vercel/blob\": \"^0.3.2\",\n\t\t\"@vercel/postgres\": \"0.1.0-canary.5\",\n\t\t\"postgres\": \"^3.4.9\",\n\t\t\"svelte-autosize\": \"^1.1.5\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"pluginSearchDirs\": [\".\"],\n\t\"overrides\": [{ \"files\": \"*.svelte\", \"options\": { \"parser\": \"svelte\" } }]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "626506554",
+        "name": "slide-park",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2026-04-15T21:49:05Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"slide-park-monorepo\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"type\": \"module\",\n\t\"devDependencies\": {\n\t\t\"@changesets/cli\": \"^2.30.0\"\n\t},\n\t\"scripts\": {\n\t\t\"changeset:version\": \"changeset version\",\n\t\t\"changeset:publish\": \"changeset publish\"\n\t},\n\t\"packageManager\": \"pnpm@10.33.0\",\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"https://github.com/Rich-Harris/slide-park\"\n\t}\n}\n"
+          },
+          {
+            "path": "packages/slide-park/package.json",
+            "content": "{\n    \"name\": \"@rich_harris/slide-park\",\n    \"version\": \"0.2.4\",\n    \"author\": \"Rich Harris\",\n    \"type\": \"module\",\n    \"exports\": {\n        \".\": {\n            \"types\": \"./types/index.d.ts\",\n            \"svelte\": \"./src/components/SlidePark.svelte\",\n            \"default\": \"./src/components/SlidePark.svelte\"\n        },\n        \"./vite\": {\n            \"types\": \"./types/index.d.ts\",\n            \"default\": \"./src/vite/index.js\"\n        }\n    },\n    \"scripts\": {\n        \"prepublishOnly\": \"node scripts/generate-dts.js\"\n    },\n    \"files\": [\n        \"src\",\n        \"types\"\n    ],\n    \"license\": \"MIT\",\n    \"dependencies\": {\n        \"marked\": \"^18.0.0\"\n    },\n    \"devDependencies\": {\n        \"@sveltejs/kit\": \"^2.5.27\",\n        \"@types/node\": \"^18.15.9\",\n        \"dts-buddy\": \"^0.5.3\",\n        \"svelte\": \"^5.55.3\",\n        \"typescript\": \"^5.0.0\",\n        \"vite\": \"^8.0.8\"\n    },\n    \"peerDependencies\": {\n        \"@sveltejs/kit\": \"^2.5.27\",\n        \"svelte\": \"^5.1.12\"\n    },\n    \"repository\": {\n        \"type\": \"git\",\n        \"url\": \"https://github.com/Rich-Harris/slide-park\"\n    },\n    \"publishConfig\": {\n        \"access\": \"public\"\n    }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1133166198",
+        "name": "toofer",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 90,
+        "pushedAt": "2026-03-17T20:13:03Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"toofer\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"prepare\": \"svelte-kit sync || echo ''\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\",\n\t\t\"test\": \"vitest run\",\n\t\t\"test:watch\": \"vitest\",\n\t\t\"test:e2e\": \"playwright test\",\n\t\t\"test:e2e:ui\": \"playwright test --ui\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@playwright/test\": \"^1.57.0\",\n\t\t\"@sveltejs/adapter-vercel\": \"^6.2.0\",\n\t\t\"@sveltejs/kit\": \"^2.55.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^6.2.4\",\n\t\t\"@types/qrcode\": \"^1.5.6\",\n\t\t\"prettier\": \"^3.7.4\",\n\t\t\"prettier-plugin-svelte\": \"^3.4.0\",\n\t\t\"svelte\": \"^5.53.13\",\n\t\t\"svelte-check\": \"^4.3.4\",\n\t\t\"typescript\": \"^5.9.3\",\n\t\t\"vite\": \"^7.2.6\",\n\t\t\"vite-plugin-devtools-json\": \"^1.0.0\",\n\t\t\"vitest\": \"^4.0.17\"\n\t},\n\t\"dependencies\": {\n\t\t\"@lucide/svelte\": \"^0.562.0\",\n\t\t\"html5-qrcode\": \"^2.3.8\",\n\t\t\"qrcode\": \"^1.5.4\"\n\t}\n}\n"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [main]\n  pull_request:\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: pnpm/action-setup@v4\n        with:\n          version: 10\n\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n          cache: pnpm\n\n      - run: pnpm install\n\n      - run: pnpm test\n\n      - run: pnpm check\n\n      - run: pnpm exec playwright install chromium\n\n      - run: pnpm test:e2e\n"
+          }
+        ]
+      },
+      {
+        "id": "77088110",
+        "name": "is-reference",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 26,
+        "pushedAt": "2026-01-20T18:49:55Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"is-reference\",\n\t\"version\": \"3.0.3\",\n\t\"description\": \"Determine whether an AST node is a reference\",\n\t\"type\": \"module\",\n\t\"module\": \"src/index.js\",\n\t\"types\": \"types/index.d.ts\",\n\t\"exports\": {\n\t\t\"types\": \"./types/index.d.ts\",\n\t\t\"import\": \"./src/index.js\"\n\t},\n\t\"files\": [\n\t\t\"src\",\n\t\t\"types\"\n\t],\n\t\"scripts\": {\n\t\t\"test\": \"uvu\",\n\t\t\"prepublishOnly\": \"npm test && dts-buddy\"\n\t},\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"git+https://github.com/Rich-Harris/is-reference.git\"\n\t},\n\t\"keywords\": [\n\t\t\"ast\",\n\t\t\"javascript\",\n\t\t\"estree\",\n\t\t\"acorn\"\n\t],\n\t\"author\": \"Rich Harris\",\n\t\"license\": \"MIT\",\n\t\"bugs\": {\n\t\t\"url\": \"https://github.com/Rich-Harris/is-reference/issues\"\n\t},\n\t\"homepage\": \"https://github.com/Rich-Harris/is-reference#readme\",\n\t\"dependencies\": {\n\t\t\"@types/estree\": \"^1.0.6\"\n\t},\n\t\"devDependencies\": {\n\t\t\"acorn\": \"^8.0.5\",\n\t\t\"acorn-class-fields\": \"^1.0.0\",\n\t\t\"acorn-static-class-features\": \"^1.0.0\",\n\t\t\"dts-buddy\": \"^0.5.3\",\n\t\t\"estree-walker\": \"^3.0.0\",\n\t\t\"typescript\": \"^5.6.3\",\n\t\t\"uvu\": \"^0.5.6\"\n\t}\n}\n"
+          },
+          {
+            "path": "package-lock.json",
+            "content": "{\n\t\"name\": \"is-reference\",\n\t\"version\": \"3.0.1\",\n\t\"lockfileVersion\": 3,\n\t\"requires\": true,\n\t\"packages\": {\n\t\t\"\": {\n\t\t\t\"name\": \"is-reference\",\n\t\t\t\"version\": \"3.0.1\",\n\t\t\t\"license\": \"MIT\",\n\t\t\t\"dependencies\": {\n\t\t\t\t\"@types/estree\": \"*\"\n\t\t\t},\n\t\t\t\"devDependencies\": {\n\t\t\t\t\"acorn\": \"^8.0.5\",\n\t\t\t\t\"acorn-class-fields\": \"^1.0.0\",\n\t\t\t\t\"acorn-static-class-features\": \"^1.0.0\",\n\t\t\t\t\"estree-walker\": \"^3.0.0\",\n\t\t\t\t\"typescript\": \"^4.1.5\",\n\t\t\t\t\"uvu\": \"^0.5.1\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/@types/estree\": {\n\t\t\t\"version\": \"1.0.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz\",\n\t\t\t\"integrity\": \"sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==\"\n\t\t},\n\t\t\"node_modules/acorn\": {\n\t\t\t\"version\": \"8.8.1\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/acorn/-/acorn-8.8.1.tgz\",\n\t\t\t\"integrity\": \"sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==\",\n\t\t\t\"dev\": true,\n\t\t\t\"bin\": {\n\t\t\t\t\"acorn\": \"bin/acorn\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=0.4.0\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/acorn-class-fields\": {\n\t\t\t\"version\": \"1.0.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/acorn-class-fields/-/acorn-class-fields-1.0.0.tgz\",\n\t\t\t\"integrity\": \"sha512-l+1FokF34AeCXGBHkrXFmml9nOIRI+2yBnBpO5MaVAaTIJ96irWLtcCxX+7hAp6USHFCe+iyyBB4ZhxV807wmA==\",\n\t\t\t\"dev\": true,\n\t\t\t\"dependencies\": {\n\t\t\t\t\"acorn-private-class-elements\": \"^1.0.0\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=4.8.2\"\n\t\t\t},\n\t\t\t\"peerDependencies\": {\n\t\t\t\t\"acorn\": \"^6 || ^7 || ^8\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/acorn-private-class-elements\": {\n\t\t\t\"version\": \"1.0.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/acorn-private-class-elements/-/acorn-private-class-elements-1.0.0.tgz\",\n\t\t\t\"integrity\": \"sha512-zYNcZtxKgVCg1brS39BEou86mIao1EV7eeREG+6WMwKbuYTeivRRs6S2XdWnboRde6G9wKh2w+WBydEyJsJ6mg==\",\n\t\t\t\"dev\": true,\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=4.8.2\"\n\t\t\t},\n\t\t\t\"peerDependencies\": {\n\t\t\t\t\"acorn\": \"^6.1.0 || ^7 || ^8\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/acorn-static-class-features\": {\n\t\t\t\"version\": \"1.0.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/acorn-static-class-features/-/acorn-static-class-features-1.0.0.tgz\",\n\t\t\t\"integrity\": \"sha512-XZJECjbmMOKvMHiNzbiPXuXpLAJfN3dAKtfIYbk1eHiWdsutlek+gS7ND4B8yJ3oqvHo1NxfafnezVmq7NXK0A==\",\n\t\t\t\"dev\": true,\n\t\t\t\"dependencies\": {\n\t\t\t\t\"acorn-private-class-elements\": \"^1.0.0\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=4.8.2\"\n\t\t\t},\n\t\t\t\"peerDependencies\": {\n\t\t\t\t\"acorn\": \"^6.1.0 || ^7 || ^8\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/dequal\": {\n\t\t\t\"version\": \"2.0.3\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/dequal/-/dequal-2.0.3.tgz\",\n\t\t\t\"integrity\": \"sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==\",\n\t\t\t\"dev\": true,\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=6\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/diff\": {\n\t\t\t\"version\": \"5.1.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/diff/-/diff-5.1.0.tgz\",\n\t\t\t\"integrity\": \"sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==\",\n\t\t\t\"dev\": true,\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=0.3.1\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/estree-walker\": {\n\t\t\t\"version\": \"3.0.2\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/estree-walker/-/estree-walker-3.0.2.tgz\",\n\t\t\t\"integrity\": \"sha512-C03BvXCQIH/po+PNPONx/zSM9ziPr9weX8xNhYb/IJtdJ9z+L4z9VKPTB+UTHdmhnIopA2kc419ueyVyHVktwA==\",\n\t\t\t\"dev\": true\n\t\t},\n\t\t\"node_modules/kleur\": {\n\t\t\t\"version\": \"4.1.5\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz\",\n\t\t\t\"integrity\": \"sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==\",\n\t\t\t\"dev\": true,\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=6\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/mri\": {\n\t\t\t\"version\": \"1.2.0\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/mri/-/mri-1.2.0.tgz\",\n\t\t\t\"integrity\": \"sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==\",\n\t\t\t\"dev\": true,\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=4\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/sade\": {\n\t\t\t\"version\": \"1.8.1\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/sade/-/sade-1.8.1.tgz\",\n\t\t\t\"integrity\": \"sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==\",\n\t\t\t\"dev\": true,\n\t\t\t\"dependencies\": {\n\t\t\t\t\"mri\": \"^1.1.0\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=6\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/typescript\": {\n\t\t\t\"version\": \"4.9.4\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/typescript/-/typescript-4.9.4.tgz\",\n\t\t\t\"integrity\": \"sha512-Uz+dTXYzxXXbsFpM86Wh3dKCxrQqUcVMxwU54orwlJjOpO3ao8L7j5lH+dWfTwgCwIuM9GQ2kvVotzYJMXTBZg==\",\n\t\t\t\"dev\": true,\n\t\t\t\"bin\": {\n\t\t\t\t\"tsc\": \"bin/tsc\",\n\t\t\t\t\"tsserver\": \"bin/tsserver\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=4.2.0\"\n\t\t\t}\n\t\t},\n\t\t\"node_modules/uvu\": {\n\t\t\t\"version\": \"0.5.6\",\n\t\t\t\"resolved\": \"https://registry.npmjs.org/uvu/-/uvu-0.5.6.tgz\",\n\t\t\t\"integrity\": \"sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==\",\n\t\t\t\"dev\": true,\n\t\t\t\"dependencies\": {\n\t\t\t\t\"dequal\": \"^2.0.0\",\n\t\t\t\t\"diff\": \"^5.0.0\",\n\t\t\t\t\"kleur\": \"^4.0.3\",\n\t\t\t\t\"sade\": \"^1.7.3\"\n\t\t\t},\n\t\t\t\"bin\": {\n\t\t\t\t\"uvu\": \"bin.js\"\n\t\t\t},\n\t\t\t\"engines\": {\n\t\t\t\t\"node\": \">=8\"\n\t\t\t}\n\t\t}\n\t}\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "611839968",
+        "name": "svelte-split-pane",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 136,
+        "pushedAt": "2025-11-11T12:36:18Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"@rich_harris/svelte-split-pane\",\n\t\"version\": \"3.0.0\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build && npm run package\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"package\": \"svelte-kit sync && svelte-package && publint\",\n\t\t\"prepublishOnly\": \"npm run package\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./jsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch\",\n\t\t\"test:unit\": \"vitest\",\n\t\t\"lint\": \"prettier --plugin-search-dir . --check .\",\n\t\t\"format\": \"prettier --plugin-search-dir . --write .\"\n\t},\n\t\"exports\": {\n\t\t\".\": {\n\t\t\t\"types\": \"./dist/types.d.ts\",\n\t\t\t\"svelte\": \"./dist/index.js\"\n\t\t}\n\t},\n\t\"files\": [\n\t\t\"dist\"\n\t],\n\t\"peerDependencies\": {\n\t\t\"svelte\": \"^5.43.6\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-vercel\": \"^6.1.1\",\n\t\t\"@sveltejs/kit\": \"^2.5.27\",\n\t\t\"@sveltejs/package\": \"^2.3.7\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0\",\n\t\t\"prettier\": \"^3.4.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.3.2\",\n\t\t\"publint\": \"^0.1.9\",\n\t\t\"svelte\": \"^5.43.6\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"tslib\": \"^2.4.1\",\n\t\t\"typescript\": \"^5.5.0\",\n\t\t\"vite\": \"^5.4.4\",\n\t\t\"vitest\": \"^1.0.0\"\n\t},\n\t\"svelte\": \"./dist/index.js\",\n\t\"types\": \"./dist/index.d.ts\",\n\t\"type\": \"module\"\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"pluginSearchDirs\": [\".\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": { \"parser\": \"svelte\" }\n\t\t},\n\t\t{\n\t\t\t\"files\": \"*.md\",\n\t\t\t\"options\": { \"requirePragma\": true }\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1067845132",
+        "name": "kit-14444",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2025-10-01T13:25:33Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"build-error-reproduce\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"prepare\": \"svelte-kit sync || echo ''\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-node\": \"5.3.2\",\n\t\t\"@sveltejs/kit\": \"https://pkg.pr.new/@sveltejs/kit@14456\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"6.2.0\",\n\t\t\"@types/node\": \"22.14.1\",\n\t\t\"svelte\": \"5.39.3\",\n\t\t\"svelte-check\": \"4.3.1\",\n\t\t\"typescript\": \"5.9.2\",\n\t\t\"vite\": \"7.1.6\"\n\t},\n\t\"dependencies\": {\n\t\t\"ioredis\": \"^5.7.0\",\n\t\t\"vite-plugin-devtools-json\": \"^1.0.0\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "33668779",
+        "name": "estree-walker",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 426,
+        "pushedAt": "2025-09-07T19:57:21Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"estree-walker\",\n\t\"description\": \"Traverse an ESTree-compliant AST\",\n\t\"version\": \"3.0.3\",\n\t\"private\": false,\n\t\"author\": \"Rich Harris\",\n\t\"license\": \"MIT\",\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"https://github.com/Rich-Harris/estree-walker\"\n\t},\n\t\"type\": \"module\",\n\t\"module\": \"./src/index.js\",\n\t\"exports\": {\n\t\t\"./package.json\": \"./package.json\",\n\t\t\".\": {\n\t\t\t\"types\": \"./types/index.d.ts\",\n\t\t\t\"import\": \"./src/index.js\"\n\t\t}\n\t},\n\t\"types\": \"types/index.d.ts\",\n\t\"scripts\": {\n\t\t\"prepublishOnly\": \"tsc && npm test\",\n\t\t\"test\": \"uvu test\"\n\t},\n\t\"dependencies\": {\n\t\t\"@types/estree\": \"^1.0.0\"\n\t},\n\t\"devDependencies\": {\n\t\t\"typescript\": \"^4.9.0\",\n\t\t\"uvu\": \"^0.5.1\"\n\t},\n\t\"files\": [\n\t\t\"src\",\n\t\t\"types\",\n\t\t\"README.md\"\n\t]\n}\n"
+          },
+          {
+            "path": ".eslintrc",
+            "content": "{\n    \"rules\": {\n        \"indent\": [ 2, \"tab\", { \"SwitchCase\": 1 } ],\n        \"quotes\": [ 2, \"single\" ],\n        \"linebreak-style\": [ 2, \"unix\" ],\n        \"semi\": [ 2, \"always\" ],\n        \"keyword-spacing\": [ 2, { \"before\": true, \"after\": true } ],\n        \"space-before-blocks\": [ 2, \"always\" ],\n        \"space-before-function-paren\": [ 2, \"always\" ],\n        \"no-mixed-spaces-and-tabs\": [ 2, \"smart-tabs\" ],\n        \"no-cond-assign\": [ 0 ]\n    },\n    \"env\": {\n        \"es6\": true,\n        \"browser\": true,\n        \"mocha\": true,\n        \"node\": true\n    },\n    \"extends\": \"eslint:recommended\",\n    \"parserOptions\": {\n        \"ecmaVersion\": 6,\n        \"sourceType\": \"module\"\n    }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1021657096",
+        "name": "remote-functions-demo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2025-07-24T15:57:53Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"remote-functions-demo\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"prepare\": \"svelte-kit sync || echo ''\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-vercel\": \"^5.6.3\",\n\t\t\"@sveltejs/kit\": \"https://pkg.pr.new/sveltejs/kit/@sveltejs/kit@f1ba3b9\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^6.0.0\",\n\t\t\"prettier\": \"^3.4.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.3.3\",\n\t\t\"svelte\": \"^5.36.15\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^7.0.4\",\n\t\t\"vite-plugin-devtools-json\": \"^0.2.0\"\n\t},\n\t\"pnpm\": {\n\t\t\"onlyBuiltDependencies\": [\n\t\t\t\"esbuild\"\n\t\t]\n\t},\n\t\"dependencies\": {\n\t\t\"valibot\": \"^1.1.0\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "907057962",
+        "name": "snek",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 38,
+        "pushedAt": "2025-05-18T16:05:43Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"snek\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-static\": \"^3.0.8\",\n\t\t\"@sveltejs/kit\": \"^2.21.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^5.0.0\",\n\t\t\"prettier\": \"^3.3.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.2.6\",\n\t\t\"svelte\": \"^5.28.6\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^6.0.0\"\n\t},\n\t\"dependencies\": {\n\t\t\"@fontsource/vt323\": \"^5.1.0\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "952235535",
+        "name": "repro-kit-13616",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2025-03-21T00:28:17Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"kit-13616\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"prepare\": \"svelte-kit sync || echo ''\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^5.0.0\",\n\t\t\"@sveltejs/kit\": \"https://pkg.pr.new/@sveltejs/kit@13616\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^5.0.3\",\n\t\t\"prettier\": \"^3.5.3\",\n\t\t\"prettier-plugin-svelte\": \"^3.3.3\",\n\t\t\"svelte\": \"^5.23.2\",\n\t\t\"svelte-check\": \"^4.1.5\",\n\t\t\"typescript\": \"^5.8.2\",\n\t\t\"vite\": \"^6.2.2\"\n\t},\n\t\"pnpm\": {\n\t\t\"onlyBuiltDependencies\": [\n\t\t\t\"esbuild\"\n\t\t]\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "906714827",
+        "name": "hash-based-routing",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 13,
+        "pushedAt": "2024-12-21T18:02:25Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"hash-based-routing\",\n\t\"private\": true,\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@fontsource/fira-mono\": \"^5.0.0\",\n\t\t\"@neoconfetti/svelte\": \"^2.0.0\",\n\t\t\"@sveltejs/adapter-static\": \"^3.0.7\",\n\t\t\"@sveltejs/kit\": \"^2.0.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0\",\n\t\t\"prettier\": \"^3.3.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.2.6\",\n\t\t\"svelte\": \"^5.0.0\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.4.11\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "104581502",
+        "name": "locate-character",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 40,
+        "pushedAt": "2024-12-10T22:28:41Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"locate-character\",\n  \"version\": \"3.0.0\",\n  \"description\": \"Get the line and column number of a specific character in a string\",\n  \"type\": \"module\",\n  \"types\": \"./types/index.d.ts\",\n  \"exports\": {\n    \"types\": \"./types/index.d.ts\",\n    \"import\": \"./src/index.js\"\n  },\n  \"scripts\": {\n    \"test\": \"node test/test.js\",\n    \"build\": \"dts-buddy\",\n    \"prepublishOnly\": \"npm test && npm run build\"\n  },\n  \"files\": [\n    \"src\",\n    \"types\",\n    \"README.md\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/Rich-Harris/locate-character.git\"\n  },\n  \"keywords\": [\n    \"string\",\n    \"character\",\n    \"locate\",\n    \"line\",\n    \"column\",\n    \"location\"\n  ],\n  \"author\": \"Rich Harris\",\n  \"license\": \"MIT\",\n  \"bugs\": {\n    \"url\": \"https://github.com/Rich-Harris/locate-character/issues\"\n  },\n  \"homepage\": \"https://github.com/Rich-Harris/locate-character#README\",\n  \"devDependencies\": {\n    \"dts-buddy\": \"^0.1.6\",\n    \"typescript\": \"^5.1.3\"\n  },\n  \"packageManager\": \"pnpm@8.6.2\"\n}\n"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches:\n      - master\n  pull_request:\n\n# cancel in-progress runs on new commits to same PR (gitub.event.number)\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.event.number || github.sha }}\n  cancel-in-progress: true\n\njobs:\n  Tests:\n    runs-on: ${{ matrix.os }}\n    timeout-minutes: 30\n    strategy:\n      fail-fast: false\n      matrix:\n        include:\n          - node-version: 16\n            os: [ubuntu-latest]\n          - node-version: 16\n            os: windows-latest\n    steps:\n      - run: git config --global core.autocrlf false\n      - uses: actions/checkout@v3\n      - uses: pnpm/action-setup@v2.2.2\n      - uses: actions/setup-node@v3\n        with:\n          node-version: ${{ matrix.node-version }}\n          cache: pnpm\n      - run: pnpm install --frozen-lockfile\n      - run: pnpm test\n"
+          }
+        ]
+      },
+      {
+        "id": "889951586",
+        "name": "kit-after-navigate-timing",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2024-11-17T16:49:17Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"kit-after-navigate-timing\",\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^3.0.0\",\n\t\t\"@sveltejs/kit\": \"^2.0.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0\",\n\t\t\"prettier\": \"^3.3.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.2.6\",\n\t\t\"svelte\": \"^5.0.0\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.0.3\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "883367049",
+        "name": "local-storage-test",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 69,
+        "pushedAt": "2024-11-07T14:40:10Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"local-storage-test\",\n\t\"version\": \"0.0.1\",\n\t\"type\": \"module\",\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"lint\": \"prettier --check .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^3.0.0\",\n\t\t\"@sveltejs/kit\": \"^2.0.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0\",\n\t\t\"prettier\": \"^3.3.2\",\n\t\t\"prettier-plugin-svelte\": \"^3.2.6\",\n\t\t\"svelte\": \"^5.0.0\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.0.3\"\n\t}\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [\n\t\t{\n\t\t\t\"files\": \"*.svelte\",\n\t\t\t\"options\": {\n\t\t\t\t\"parser\": \"svelte\"\n\t\t\t}\n\t\t}\n\t]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "28785780",
+        "name": "esperanto",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2024-10-11T11:47:28Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "281743665",
+        "name": "superjson-and-devalue",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2024-09-27T15:25:30Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"dependencies\": {\n\t\t\"arson\": \"^0.2.6\",\n\t\t\"devalue\": \"^4.0.0\",\n\t\t\"kleur\": \"^4.0.2\",\n\t\t\"superjson\": \"^1.9.1\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@rollup/plugin-node-resolve\": \"^13.3.0\",\n\t\t\"rollup\": \"^2\"\n\t},\n\t\"scripts\": {\n\t\t\"build\": \"rollup -c\"\n\t},\n\t\"type\": \"module\"\n}\n"
+          },
+          {
+            "path": "rollup.config.js",
+            "content": "import { nodeResolve } from '@rollup/plugin-node-resolve';\n\nexport default [\n\t{\n\t\tinput: 'bundle-size/input-superjson.js',\n\t\toutput: {\n\t\t\tfile: 'bundle-size/output-superjson.js',\n\t\t\tformat: 'esm'\n\t\t},\n\t\tplugins: [nodeResolve()]\n\t},\n\t{\n\t\tinput: 'bundle-size/input-devalue-parse.js',\n\t\toutput: {\n\t\t\tfile: 'bundle-size/output-devalue-parse.js',\n\t\t\tformat: 'esm'\n\t\t},\n\t\tplugins: [nodeResolve()]\n\t}\n];\n"
+          }
+        ]
+      },
+      {
+        "id": "24567888",
+        "name": "vlq",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 222,
+        "pushedAt": "2024-09-27T06:58:16Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"vlq\",\n\t\"description\": \"Generate, and decode, base64 VLQ mappings for source maps and other uses\",\n\t\"author\": \"Rich Harris\",\n\t\"repository\": \"https://github.com/Rich-Harris/vlq\",\n\t\"license\": \"MIT\",\n\t\"version\": \"2.0.4\",\n\t\"type\": \"module\",\n\t\"exports\": {\n\t\t\"./package.json\": \"./package.json\",\n\t\t\".\": {\n\t\t\t\"import\": \"./src/index.js\",\n\t\t\t\"require\": \"./dist/index.cjs\"\n\t\t}\n\t},\n\t\"main\": \"dist/index.cjs\",\n\t\"module\": \"src/index.js\",\n\t\"types\": \"types/index.d.ts\",\n\t\"files\": [\n\t\t\"src\",\n\t\t\"dist\",\n\t\t\"types\"\n\t],\n\t\"devDependencies\": {\n\t\t\"rollup\": \"^2.58.0\",\n\t\t\"typescript\": \"^4.4.4\"\n\t},\n\t\"scripts\": {\n\t\t\"build\": \"rm -rf dist && rollup -c && tsc\",\n\t\t\"test\": \"node test\",\n\t\t\"prepublishOnly\": \"npm test && npm run build\"\n\t},\n\t\"keywords\": [\n\t\t\"sourcemap\",\n\t\t\"sourcemaps\",\n\t\t\"base64\",\n\t\t\"vlq\"\n\t]\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\"\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "145456909",
+        "name": "agadoo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 547,
+        "pushedAt": "2024-09-27T05:16:15Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"agadoo\",\n\t\"version\": \"3.0.0\",\n\t\"description\": \"Check whether a package is tree-shakeable\",\n\t\"type\": \"module\",\n\t\"main\": \"index.js\",\n\t\"scripts\": {\n\t\t\"test\": \"node test\"\n\t},\n\t\"bin\": {\n\t\t\"agadoo\": \"cli.js\"\n\t},\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"git+https://github.com/Rich-Harris/agadoo.git\"\n\t},\n\t\"keywords\": [\n\t\t\"modules\",\n\t\t\"bundlers\",\n\t\t\"rollup\",\n\t\t\"webpack\",\n\t\t\"parcel\",\n\t\t\"tree-shaking\"\n\t],\n\t\"author\": \"Rich Harris\",\n\t\"license\": \"MIT\",\n\t\"bugs\": {\n\t\t\"url\": \"https://github.com/Rich-Harris/agadoo/issues\"\n\t},\n\t\"homepage\": \"https://github.com/Rich-Harris/agadoo#readme\",\n\t\"dependencies\": {\n\t\t\"@rollup/plugin-virtual\": \"^3.0.1\",\n\t\t\"acorn\": \"^8.8.1\",\n\t\t\"rollup\": \"^3.5.0\"\n\t},\n\t\"devDependencies\": {\n\t\t\"kleur\": \"^3.0.3\"\n\t}\n}\n"
+          },
+          {
+            "path": "test/fail/side-effect/package.json",
+            "content": "{}"
+          }
+        ]
+      },
+      {
+        "id": "102546736",
+        "name": "yootils",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 105,
+        "pushedAt": "2024-09-23T23:19:27Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"yootils\",\n\t\"description\": \"Stuff I often need\",\n\t\"version\": \"0.3.1\",\n\t\"type\": \"module\",\n\t\"main\": \"dist/yootils.cjs\",\n\t\"module\": \"src/index.js\",\n\t\"exports\": {\n\t\t\"./package.json\": \"./package.json\",\n\t\t\".\": {\n\t\t\t\"import\": \"./src/index.js\",\n\t\t\t\"require\": \"./dist/yootils.cjs\"\n\t\t}\n\t},\n\t\"types\": \"types/index.d.ts\",\n\t\"files\": [\n\t\t\"src\",\n\t\t\"dist\",\n\t\t\"types\"\n\t],\n\t\"devDependencies\": {\n\t\t\"agadoo\": \"^2.0.0\",\n\t\t\"esbuild\": \"^0.12.8\",\n\t\t\"prettier\": \"^2.3.1\",\n\t\t\"typescript\": \"^4.3.2\",\n\t\t\"uvu\": \"^0.5.1\"\n\t},\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"git+https://github.com/Rich-Harris/yootils.git\"\n\t},\n\t\"scripts\": {\n\t\t\"bundle\": \"esbuild --bundle src/index.js --format=cjs --outfile=dist/yootils.cjs\",\n\t\t\"types\": \"tsc\",\n\t\t\"build\": \"prettier -c src && npm run types && npm run bundle && agadoo src/index.js\",\n\t\t\"format\": \"prettier -w src\",\n\t\t\"test\": \"uvu src \\\".\\\\.spec\\\\.js\\\"\",\n\t\t\"prepublishOnly\": \"npm test && npm run build\"\n\t},\n\t\"license\": \"MIT\"\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true\n}"
+          }
+        ]
+      },
+      {
+        "id": "858300260",
+        "name": "declarative-handlers",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 64,
+        "pushedAt": "2024-09-16T17:25:55Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "option-one/package.json",
+            "content": "{\n\t\"name\": \"option-one\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"lint\": \"prettier --check .\",\n\t\t\"format\": \"prettier --write .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^3.0.0\",\n\t\t\"@sveltejs/kit\": \"^2.0.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0-next.6\",\n\t\t\"prettier\": \"^3.1.1\",\n\t\t\"prettier-plugin-svelte\": \"^3.1.2\",\n\t\t\"svelte\": \"^5.0.0-next.1\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.0.3\"\n\t},\n\t\"type\": \"module\"\n}\n"
+          },
+          {
+            "path": "option-two/package.json",
+            "content": "{\n\t\"name\": \"option-one\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"lint\": \"prettier --check .\",\n\t\t\"format\": \"prettier --write .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^3.0.0\",\n\t\t\"@sveltejs/kit\": \"^2.0.0\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^4.0.0-next.6\",\n\t\t\"prettier\": \"^3.1.1\",\n\t\t\"prettier-plugin-svelte\": \"^3.1.2\",\n\t\t\"svelte\": \"^5.0.0-next.1\",\n\t\t\"svelte-check\": \"^4.0.0\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.0.3\"\n\t},\n\t\"type\": \"module\"\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "24006231",
+        "name": "sander",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 120,
+        "pushedAt": "2024-08-16T01:29:49Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"sander\",\n  \"description\": \"Promise-based power tool for common filesystem tasks\",\n  \"author\": \"Rich Harris\",\n  \"version\": \"0.6.0\",\n  \"license\": \"MIT\",\n  \"repository\": \"https://github.com/rich-harris/sander\",\n  \"dependencies\": {\n    \"mkdirp\": \"^0.5.1\",\n    \"rimraf\": \"^2.5.2\",\n    \"graceful-fs\": \"^4.1.3\"\n  },\n  \"main\": \"dist/sander.cjs.js\",\n  \"jsnext:main\": \"dist/sander.es.js\",\n  \"devDependencies\": {\n    \"buffer-crc32\": \"^0.2.5\",\n    \"mocha\": \"^3.2.0\",\n    \"rollup\": \"^0.36.4\",\n    \"rollup-plugin-buble\": \"^0.14.0\"\n  },\n  \"scripts\": {\n    \"test\": \"mocha\",\n    \"pretest\": \"npm run build\",\n    \"build\": \"rollup -c\",\n    \"prepublish\": \"npm test\"\n  },\n  \"files\": [\n    \"dist\",\n    \"README.md\"\n  ]\n}\n"
+          },
+          {
+            "path": "rollup.config.js",
+            "content": "import buble from 'rollup-plugin-buble';\n\nexport default {\n\tentry: 'src/sander.js',\n\ttargets: [\n\t\t{ dest: 'dist/sander.cjs.js', format: 'cjs' },\n\t\t{ dest: 'dist/sander.es.js', format: 'es' },\n\t],\n\texternal: [ 'graceful-fs', 'path', 'mkdirp', 'fs', 'rimraf' ],\n\tplugins: [ buble() ],\n\tsourceMap: true\n};\n"
+          }
+        ]
+      },
+      {
+        "id": "146150693",
+        "name": "shimport",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1234,
+        "pushedAt": "2024-06-26T08:57:15Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"shimport\",\n  \"description\": \"Shim for dynamic import()\",\n  \"version\": \"2.0.5\",\n  \"repository\": \"Rich-Harris/shimport\",\n  \"main\": \"index.js\",\n  \"files\": [\n    \"index.js\",\n    \"index.dev.js\"\n  ],\n  \"devDependencies\": {\n    \"@rollup/plugin-replace\": \"^2.3.3\",\n    \"@rollup/plugin-typescript\": \"^6.0.0\",\n    \"@types/mocha\": \"^8.0.3\",\n    \"@types/node\": \"^14.11.1\",\n    \"kleur\": \"^4.1.1\",\n    \"locate-character\": \"^2.0.5\",\n    \"pretty-ms\": \"^7.0.0\",\n    \"rollup\": \"^2.27.1\",\n    \"rollup-plugin-terser\": \"^7.0.2\",\n    \"sirv-cli\": \"^1.0.6\",\n    \"sucrase\": \"^3.15.0\",\n    \"surge\": \"^0.21.6\",\n    \"typescript\": \"^4.0.3\",\n    \"uvu\": \"^0.3.3\"\n  },\n  \"scripts\": {\n    \"dev\": \"rollup -cw\",\n    \"build\": \"rollup -c\",\n    \"test\": \"uvu -r sucrase/register/ts test test.ts\",\n    \"prepublishOnly\": \"npm test && npm run build\",\n    \"deploy\": \"npm run build && npm run demos:build && surge demos --domain shimport-demos.surge.sh\",\n    \"demos:build\": \"cp index.js demos/shimport.js && cp index.dev.js demos/shimport.dev.js && node demos/build.js\",\n    \"demos:start\": \"sirv demos --dev\"\n  },\n  \"license\": \"MIT\"\n}\n"
+          },
+          {
+            "path": "rollup.config.js",
+            "content": "import typescript from '@rollup/plugin-typescript';\nimport replace from '@rollup/plugin-replace';\nimport { terser } from 'rollup-plugin-terser';\nimport pkg from './package.json';\n\nconst config = dev => ({\n\tinput: 'src/index.ts',\n\toutput: [\n\t\t{\n\t\t\tfile: dev ? 'index.dev.js' : pkg.main,\n\t\t\tformat: 'iife',\n\t\t\tname: '__shimport__'\n\t\t}\n\t],\n\tplugins: [\n\t\treplace({\n\t\t\t__VERSION__: pkg.version\n\t\t}),\n\t\ttypescript({\n\t\t\ttypescript: require('typescript')\n\t\t}),\n\t\t!dev && terser({\n\t\t\toutput: {\n\t\t\t\tcomments: false\n\t\t\t}\n\t\t})\n\t]\n})\n\nexport default [\n\tconfig(false),\n\tconfig(true)\n];"
+          }
+        ]
+      },
+      {
+        "id": "815320955",
+        "name": "vite-glob-css",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2024-06-14T21:16:13Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"type\": \"module\",\n\t\"dependencies\": {\n\t\t\"vite\": \"^5.3.1\"\n\t},\n\t\"scripts\": {\n\t\t\"build\": \"vite build\"\n\t}\n}\n"
+          },
+          {
+            "path": "vite.config.js",
+            "content": "import { defineConfig } from 'vite';\n\nexport default defineConfig({\n\tbuild: {\n\t\tassetsInlineLimit: 0,\n\t\trollupOptions: {\n\t\t\tinput: {\n\t\t\t\ta: 'src/a.js',\n\t\t\t\tb: 'src/b.js',\n\t\t\t\tc: 'src/c.js'\n\t\t\t},\n\t\t\toutput: {\n\t\t\t\tassetFileNames: 'assets/[name][extname]',\n\t\t\t\tentryFileNames: '[name].js',\n\t\t\t\tchunkFileNames: 'chunks/[name].js'\n\t\t\t}\n\t\t},\n\t\tmanifest: true,\n\t\tminify: false,\n\t\ttarget: 'esnext'\n\t}\n});\n"
+          }
+        ]
+      },
+      {
+        "id": "24690303",
+        "name": "sorcery",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 336,
+        "pushedAt": "2024-06-12T13:31:42Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"sorcery\",\n\t\"description\": \"Resolve a chain of sourcemaps back to the original source\",\n\t\"version\": \"1.0.0\",\n\t\"author\": \"Rich Harris\",\n\t\"repository\": \"https://github.com/Rich-Harris/sorcery\",\n\t\"type\": \"module\",\n\t\"exports\": {\n\t\t\".\": {\n\t\t\t\"types\": \"./types/index.d.ts\",\n\t\t\t\"default\": \"./src/index.js\"\n\t\t}\n\t},\n\t\"license\": \"MIT\",\n\t\"dependencies\": {\n\t\t\"@jridgewell/sourcemap-codec\": \"^1.4.14\",\n\t\t\"minimist\": \"^1.2.0\",\n\t\t\"tiny-glob\": \"^0.2.9\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@types/node\": \"^20.14.2\",\n\t\t\"coffee-script\": \"^1.10.0\",\n\t\t\"less\": \"^2.6.1\",\n\t\t\"prettier\": \"^3.3.2\",\n\t\t\"rimraf\": \"^5.0.7\",\n\t\t\"source-map\": \"^0.5.3\",\n\t\t\"typescript\": \"^5.4.5\",\n\t\t\"uglify-js\": \"^2.6.2\"\n\t},\n\t\"bin\": {\n\t\t\"sorcery\": \"bin/sorcery\"\n\t},\n\t\"scripts\": {\n\t\t\"build\": \"tsc\",\n\t\t\"prepare-tests\": \"node test/samples/prepare-tests.js\",\n\t\t\"prepublishOnly\": \"pnpm test && pnpm build\",\n\t\t\"lint\": \"prettier .\",\n\t\t\"format\": \"prettier --write .\",\n\t\t\"test\": \"node test/sorcery.test.js\"\n\t},\n\t\"files\": [\n\t\t\"src/\",\n\t\t\"bin/\",\n\t\t\"README.md\"\n\t],\n\t\"packageManager\": \"pnpm@9.3.0\"\n}\n"
+          },
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\non:\n  push:\n    branches: [master]\n  pull_request:\npermissions:\n  contents: read # to fetch code (actions/checkout)\n\njobs:\n  Tests:\n    runs-on: ${{ matrix.os }}\n    timeout-minutes: 15\n    strategy:\n      matrix:\n        include:\n          - node-version: 18\n            os: windows-latest\n          - node-version: 18\n            os: macOS-latest\n          - node-version: 18\n            os: ubuntu-latest\n          - node-version: 20\n            os: ubuntu-latest\n          - node-version: 22\n            os: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: ${{ matrix.node-version }}\n          cache: pnpm\n      - run: pnpm install --frozen-lockfile\n      - run: pnpm test\n        env:\n          CI: true\n  Lint:\n    runs-on: ubuntu-latest\n    timeout-minutes: 5\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v4\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: pnpm\n      - name: install\n        run: pnpm install --frozen-lockfile\n      - name: type check\n        run: pnpm build\n      - name: lint\n        run: pnpm lint\n"
+          }
+        ]
+      },
+      {
+        "id": "625412872",
+        "name": "svelteflix",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 75,
+        "pushedAt": "2024-05-18T02:35:02Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"movies\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"test\": \"playwright test\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"lint\": \"prettier --plugin-search-dir . --check .\",\n\t\t\"format\": \"prettier --plugin-search-dir . --write .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@playwright/test\": \"^1.28.1\",\n\t\t\"@sveltejs/adapter-auto\": \"^2.0.0\",\n\t\t\"@sveltejs/kit\": \"^1.5.0\",\n\t\t\"prettier\": \"^2.8.0\",\n\t\t\"prettier-plugin-svelte\": \"^2.8.1\",\n\t\t\"svelte\": \"^3.54.0\",\n\t\t\"svelte-check\": \"^3.0.1\",\n\t\t\"tslib\": \"^2.4.1\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^4.2.0\"\n\t},\n\t\"dependencies\": {\n\t\t\"@supabase/supabase-js\": \"^2.15.0\",\n\t\t\"zod\": \"^3.21.4\"\n\t},\n\t\"type\": \"module\"\n}"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"pluginSearchDirs\": [\".\"],\n\t\"overrides\": [{ \"files\": \"*.svelte\", \"options\": { \"parser\": \"svelte\" } }]\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "768986073",
+        "name": "sveltekit-movies-demo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 119,
+        "pushedAt": "2024-03-15T20:04:58Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\": \"movies\",\n\t\"version\": \"0.0.1\",\n\t\"private\": true,\n\t\"scripts\": {\n\t\t\"dev\": \"vite dev\",\n\t\t\"build\": \"vite build\",\n\t\t\"preview\": \"vite preview\",\n\t\t\"check\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json\",\n\t\t\"check:watch\": \"svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch\",\n\t\t\"lint\": \"prettier --check .\",\n\t\t\"format\": \"prettier --write .\"\n\t},\n\t\"devDependencies\": {\n\t\t\"@sveltejs/adapter-auto\": \"^3.0.0\",\n\t\t\"@sveltejs/adapter-vercel\": \"^5.1.0\",\n\t\t\"@sveltejs/kit\": \"^2.5.4\",\n\t\t\"@sveltejs/vite-plugin-svelte\": \"^3.0.0\",\n\t\t\"prettier\": \"^3.1.1\",\n\t\t\"prettier-plugin-svelte\": \"^3.1.2\",\n\t\t\"svelte\": \"5.0.0-next.79\",\n\t\t\"svelte-check\": \"^3.6.0\",\n\t\t\"tslib\": \"^2.4.1\",\n\t\t\"typescript\": \"^5.0.0\",\n\t\t\"vite\": \"^5.0.3\"\n\t},\n\t\"type\": \"module\"\n}\n"
+          },
+          {
+            "path": ".prettierrc",
+            "content": "{\n\t\"useTabs\": true,\n\t\"singleQuote\": true,\n\t\"trailingComma\": \"none\",\n\t\"printWidth\": 100,\n\t\"plugins\": [\"prettier-plugin-svelte\"],\n\t\"overrides\": [{ \"files\": \"*.svelte\", \"options\": { \"parser\": \"svelte\" } }]\n}\n"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "102546736",
+        "repoName": "yootils",
+        "itemId": "esbuild",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-23T23:19:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "26143240",
+        "repoName": "magic-string",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-10-05T04:50:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "33668779",
+        "repoName": "estree-walker",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": ".eslintrc",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-09-07T19:57:21Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "104581332",
+        "repoName": "svg-parser",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-07T08:09:46Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "104581502",
+        "repoName": "locate-character",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-12-10T22:28:41Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "207163270",
+        "repoName": "periscopic",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-04-21T09:09:59Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "24690303",
+        "repoName": "sorcery",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-06-12T13:31:42Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "26143240",
+        "repoName": "magic-string",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/release.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-05T04:50:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "98913789",
+        "repoName": "degit",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/anti-slop.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-13T14:15:11Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "playwright",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "625412872",
+        "repoName": "svelteflix",
+        "itemId": "playwright",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-05-18T02:35:02Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1021657096",
+        "repoName": "remote-functions-demo",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-07-24T15:57:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "102546736",
+        "repoName": "yootils",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-23T23:19:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1067845132",
+        "repoName": "kit-14444",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": ".prettierrc",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-10-01T13:25:33Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "24567888",
+        "repoName": "vlq",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": ".prettierrc",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-09-27T06:58:16Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "24690303",
+        "repoName": "sorcery",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-12T13:31:42Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "611839968",
+        "repoName": "svelte-split-pane",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-11-11T12:36:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "625412872",
+        "repoName": "svelteflix",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-05-18T02:35:02Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "632647726",
+        "repoName": "sveltesnaps",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-20T09:23:23Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "768986073",
+        "repoName": "sveltekit-movies-demo",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-03-15T20:04:58Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "858300260",
+        "repoName": "declarative-handlers",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "option-one/package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-16T17:25:55Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "883367049",
+        "repoName": "local-storage-test",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-07T14:40:10Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "889951586",
+        "repoName": "kit-after-navigate-timing",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-17T16:49:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "906714827",
+        "repoName": "hash-based-routing",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-12-21T18:02:25Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "907057962",
+        "repoName": "snek",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-05-18T16:05:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "952235535",
+        "repoName": "repro-kit-13616",
+        "itemId": "prettier",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-03-21T00:28:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "145456909",
+        "repoName": "agadoo",
+        "itemId": "rollup",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2024-09-27T05:16:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "146150693",
+        "repoName": "shimport",
+        "itemId": "rollup",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-06-26T08:57:15Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "24006231",
+        "repoName": "sander",
+        "itemId": "rollup",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-08-16T01:29:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "24567888",
+        "repoName": "vlq",
+        "itemId": "rollup",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-27T06:58:16Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "281743665",
+        "repoName": "superjson-and-devalue",
+        "itemId": "rollup",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-27T15:25:30Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "632647726",
+        "repoName": "sveltesnaps",
+        "itemId": "tailwind",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-20T09:23:23Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1021657096",
+        "repoName": "remote-functions-demo",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-07-24T15:57:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1067845132",
+        "repoName": "kit-14444",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-10-01T13:25:33Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "611839968",
+        "repoName": "svelte-split-pane",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-11-11T12:36:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "625412872",
+        "repoName": "svelteflix",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-05-18T02:35:02Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "626506554",
+        "repoName": "slide-park",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "packages/slide-park/package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-15T21:49:05Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "632647726",
+        "repoName": "sveltesnaps",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-20T09:23:23Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "768986073",
+        "repoName": "sveltekit-movies-demo",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-03-15T20:04:58Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "815320955",
+        "repoName": "vite-glob-css",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2024-06-14T21:16:13Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "858300260",
+        "repoName": "declarative-handlers",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "option-one/package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-16T17:25:55Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "883367049",
+        "repoName": "local-storage-test",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-07T14:40:10Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "889951586",
+        "repoName": "kit-after-navigate-timing",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-17T16:49:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "906714827",
+        "repoName": "hash-based-routing",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-12-21T18:02:25Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "907057962",
+        "repoName": "snek",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-05-18T16:05:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "952235535",
+        "repoName": "repro-kit-13616",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-03-21T00:28:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "98913789",
+        "repoName": "degit",
+        "itemId": "vite",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-09-13T14:15:11Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "26143240",
+        "repoName": "magic-string",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-10-05T04:50:49Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "611839968",
+        "repoName": "svelte-split-pane",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-11-11T12:36:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "98913789",
+        "repoName": "degit",
+        "itemId": "vitest",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-09-13T14:15:11Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1021657096",
+        "repoName": "remote-functions-demo",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-07-24T15:57:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1067845132",
+        "repoName": "kit-14444",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-10-01T13:25:33Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "611839968",
+        "repoName": "svelte-split-pane",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "peerDependency",
+        "strength": 80,
+        "observedAt": "2025-11-11T12:36:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "625412872",
+        "repoName": "svelteflix",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-05-18T02:35:02Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "626506554",
+        "repoName": "slide-park",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "packages/slide-park/package.json",
+        "sourceKind": "peerDependency",
+        "strength": 80,
+        "observedAt": "2026-04-15T21:49:05Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "632647726",
+        "repoName": "sveltesnaps",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-20T09:23:23Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "768986073",
+        "repoName": "sveltekit-movies-demo",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-03-15T20:04:58Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "858300260",
+        "repoName": "declarative-handlers",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "option-one/package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-16T17:25:55Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "883367049",
+        "repoName": "local-storage-test",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-07T14:40:10Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "889951586",
+        "repoName": "kit-after-navigate-timing",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-17T16:49:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "906714827",
+        "repoName": "hash-based-routing",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-12-21T18:02:25Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "907057962",
+        "repoName": "snek",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-05-18T16:05:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "952235535",
+        "repoName": "repro-kit-13616",
+        "itemId": "svelte",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-03-21T00:28:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1021657096",
+        "repoName": "remote-functions-demo",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-07-24T15:57:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1067845132",
+        "repoName": "kit-14444",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-10-01T13:25:33Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1133166198",
+        "repoName": "toofer",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-03-17T20:13:03Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "611839968",
+        "repoName": "svelte-split-pane",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-11-11T12:36:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "625412872",
+        "repoName": "svelteflix",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-05-18T02:35:02Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "626506554",
+        "repoName": "slide-park",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "packages/slide-park/package.json",
+        "sourceKind": "peerDependency",
+        "strength": 80,
+        "observedAt": "2026-04-15T21:49:05Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "632647726",
+        "repoName": "sveltesnaps",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-04-20T09:23:23Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "768986073",
+        "repoName": "sveltekit-movies-demo",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-03-15T20:04:58Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "858300260",
+        "repoName": "declarative-handlers",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "option-one/package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-09-16T17:25:55Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "883367049",
+        "repoName": "local-storage-test",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-07T14:40:10Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "889951586",
+        "repoName": "kit-after-navigate-timing",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-11-17T16:49:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "906714827",
+        "repoName": "hash-based-routing",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2024-12-21T18:02:25Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "907057962",
+        "repoName": "snek",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-05-18T16:05:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "952235535",
+        "repoName": "repro-kit-13616",
+        "itemId": "sveltekit",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2025-03-21T00:28:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 71,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 127
+    },
+    "requests": {
+      "rest": 89,
+      "graphql": 0,
+      "manifestFetches": 88,
+      "reposInspected": 30,
+      "cacheHits": 0
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T04:59:37.484Z",
+  "coldLatencyMs": 44392,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "rich-harris",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 12,
+    "totalRequests": 13,
+    "durationMs": 17461,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "rich-harris",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

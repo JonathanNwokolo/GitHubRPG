@@ -1,0 +1,1104 @@
+{
+  "matrixProfile": {
+    "username": "julienschmidt",
+    "category": "backend-architecture",
+    "publicReposAtFreeze": 55,
+    "reason": "Public Go HTTP and routing-oriented repositories."
+  },
+  "rawProfile": {
+    "username": "julienschmidt",
+    "displayName": "Julien Schmidt",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/944947?v=4",
+    "bio": null,
+    "location": "Cologne, Germany",
+    "company": "SumUp",
+    "createdAt": "2011-07-28T17:18:14.000Z",
+    "fetchedAt": "2026-10-07T21:16:19.594Z",
+    "isDemo": false,
+    "followers": {
+      "value": 1389,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "httprouter",
+          "isFork": false,
+          "stars": 17132,
+          "forks": 1463,
+          "languages": {
+            "Go": 76898
+          }
+        },
+        {
+          "name": "go-http-routing-benchmark",
+          "isFork": false,
+          "stars": 1658,
+          "forks": 241,
+          "languages": {
+            "Go": 154412
+          }
+        },
+        {
+          "name": "dependabot-core",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "FrameworkBenchmarks",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sse",
+          "isFork": false,
+          "stars": 108,
+          "forks": 14,
+          "languages": {
+            "Go": 12382
+          }
+        },
+        {
+          "name": "bawang",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Go": 148645,
+            "Makefile": 858
+          }
+        },
+        {
+          "name": "go-rabbitmq",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "amqp091-go",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "golangci-lint",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hugoDocs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tumi-app",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "statify",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "atom",
+          "isFork": false,
+          "stars": 27,
+          "forks": 1,
+          "languages": {
+            "Go": 28705
+          }
+        },
+        {
+          "name": "sqlclosecheck",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mulint",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "dotfiles",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "Shell": 17588
+          }
+        },
+        {
+          "name": "go",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "spinlock",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "Go": 14925
+          }
+        },
+        {
+          "name": "libmoepgf",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gonids",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "acme-dns",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "homebrew-cask",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "protocol-design",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "Python": 134087,
+            "Shell": 194,
+            "Makefile": 125
+          }
+        },
+        {
+          "name": "quictun",
+          "isFork": false,
+          "stars": 53,
+          "forks": 4,
+          "languages": {
+            "Go": 124848
+          }
+        },
+        {
+          "name": "quic-go",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Report",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "complete-subtree-cover-size",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "TeX": 16656
+          }
+        },
+        {
+          "name": "rspamd",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "voltdb-client-go",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "N-Queens",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Java": 5002
+          }
+        },
+        {
+          "name": "ShadowsocksX-NG",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "systemd",
+          "isFork": false,
+          "stars": 12,
+          "forks": 1,
+          "languages": {
+            "Go": 13481
+          }
+        },
+        {
+          "name": "socketinfo",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "Go": 1562
+          }
+        },
+        {
+          "name": "sssniff",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim",
+          "isFork": false,
+          "stars": 11,
+          "forks": 7,
+          "languages": {
+            "Vim Script": 19364
+          }
+        },
+        {
+          "name": "JS16_ProjectF",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "remotephotoshow",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "HTML": 8601,
+            "Go": 4815
+          }
+        },
+        {
+          "name": "JS16_ProjectA",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "contentloaded",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gmysql",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "android_packages_apps_GmsCore",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "fcgi",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Go": 20814
+          }
+        },
+        {
+          "name": "boulder",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "hitch",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "seafile-docs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "seafile",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gin",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "moderndbs",
+          "isFork": false,
+          "stars": 13,
+          "forks": 3,
+          "languages": {
+            "C++": 100394
+          }
+        },
+        {
+          "name": "golang-mux-benchmark",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "go-database-sql-tutorial",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "art",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "specter",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "video-js-swf",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "julienschmidt.github.com",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "go-sql-test",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 2543,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 270,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 265,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 108,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 2045,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 19,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 10,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 191,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          17,
+          0,
+          0,
+          1,
+          0,
+          6,
+          2,
+          7,
+          82,
+          35,
+          69,
+          40,
+          31,
+          46,
+          18,
+          1,
+          23,
+          60,
+          57,
+          68,
+          3,
+          1,
+          15,
+          38,
+          31,
+          94,
+          6,
+          17,
+          2,
+          0,
+          0,
+          10,
+          47,
+          29,
+          6,
+          21,
+          43,
+          23,
+          7,
+          6,
+          20,
+          10,
+          0,
+          3,
+          42,
+          41,
+          297,
+          38,
+          7,
+          9,
+          69,
+          5,
+          0,
+          25,
+          13,
+          2,
+          2,
+          1,
+          15,
+          45,
+          43,
+          18,
+          2,
+          6,
+          9,
+          64,
+          43,
+          70,
+          10,
+          88,
+          13,
+          117,
+          121,
+          30,
+          18,
+          1,
+          17,
+          50,
+          28,
+          68,
+          63,
+          23,
+          5,
+          32,
+          84,
+          3,
+          5,
+          3,
+          116,
+          102,
+          38,
+          25,
+          37,
+          12,
+          2,
+          65,
+          96,
+          44,
+          176,
+          387,
+          449,
+          314,
+          165,
+          91,
+          387,
+          500,
+          460,
+          229,
+          210,
+          595,
+          718,
+          370,
+          606,
+          442,
+          562,
+          501,
+          368,
+          365,
+          790,
+          444,
+          610,
+          868,
+          1223,
+          1068,
+          225,
+          342,
+          269,
+          230,
+          475,
+          530,
+          341,
+          179,
+          72,
+          506,
+          276,
+          464,
+          301,
+          338,
+          102,
+          64,
+          586,
+          522,
+          455,
+          257,
+          214,
+          260,
+          209,
+          151,
+          98,
+          136,
+          194,
+          37,
+          213,
+          149,
+          460,
+          244,
+          109,
+          35,
+          89,
+          246,
+          287,
+          261,
+          127,
+          230,
+          240,
+          242,
+          187,
+          240,
+          0,
+          64,
+          554,
+          619,
+          704,
+          248
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2011,
+            "contributions": 1,
+            "activeDays": 1,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 33,
+            "activeDays": 12,
+            "commits": 30,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2013,
+            "contributions": 530,
+            "activeDays": 111,
+            "commits": 416,
+            "pullRequests": 71,
+            "reviews": 0,
+            "issues": 29
+          },
+          {
+            "year": 2014,
+            "contributions": 217,
+            "activeDays": 66,
+            "commits": 201,
+            "pullRequests": 12,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2015,
+            "contributions": 215,
+            "activeDays": 84,
+            "commits": 187,
+            "pullRequests": 10,
+            "reviews": 0,
+            "issues": 5
+          },
+          {
+            "year": 2016,
+            "contributions": 548,
+            "activeDays": 95,
+            "commits": 417,
+            "pullRequests": 80,
+            "reviews": 6,
+            "issues": 36
+          },
+          {
+            "year": 2017,
+            "contributions": 318,
+            "activeDays": 81,
+            "commits": 181,
+            "pullRequests": 29,
+            "reviews": 37,
+            "issues": 16
+          },
+          {
+            "year": 2018,
+            "contributions": 561,
+            "activeDays": 126,
+            "commits": 387,
+            "pullRequests": 16,
+            "reviews": 28,
+            "issues": 5
+          },
+          {
+            "year": 2019,
+            "contributions": 499,
+            "activeDays": 105,
+            "commits": 335,
+            "pullRequests": 17,
+            "reviews": 12,
+            "issues": 8
+          },
+          {
+            "year": 2020,
+            "contributions": 1838,
+            "activeDays": 158,
+            "commits": 351,
+            "pullRequests": 12,
+            "reviews": 23,
+            "issues": 7
+          },
+          {
+            "year": 2021,
+            "contributions": 5580,
+            "activeDays": 224,
+            "commits": 11,
+            "pullRequests": 0,
+            "reviews": 5,
+            "issues": 1
+          },
+          {
+            "year": 2022,
+            "contributions": 6802,
+            "activeDays": 239,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 2,
+            "issues": 0
+          },
+          {
+            "year": 2023,
+            "contributions": 3648,
+            "activeDays": 211,
+            "commits": 3,
+            "pullRequests": 3,
+            "reviews": 4,
+            "issues": 0
+          },
+          {
+            "year": 2024,
+            "contributions": 3119,
+            "activeDays": 209,
+            "commits": 8,
+            "pullRequests": 4,
+            "reviews": 9,
+            "issues": 0
+          },
+          {
+            "year": 2025,
+            "contributions": 2450,
+            "activeDays": 160,
+            "commits": 11,
+            "pullRequests": 10,
+            "reviews": 68,
+            "issues": 0
+          },
+          {
+            "year": 2026,
+            "contributions": 3098,
+            "activeDays": 163,
+            "commits": 5,
+            "pullRequests": 5,
+            "reviews": 71,
+            "issues": 0
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2023-01-02",
+        "end": "2023-01-20"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "14956897",
+        "name": "httprouter",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 17132,
+        "pushedAt": "2024-07-22T10:31:53Z",
+        "languages": {},
+        "files": [],
+        "size": 265,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "15237681",
+        "name": "go-http-routing-benchmark",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1658,
+        "pushedAt": "2023-09-12T13:30:57Z",
+        "languages": {},
+        "files": [],
+        "size": 357,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "36385188",
+        "name": "sse",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 108,
+        "pushedAt": "2023-04-14T04:02:50Z",
+        "languages": {},
+        "files": [],
+        "size": 16,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "208364266",
+        "name": "atom",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 27,
+        "pushedAt": "2020-09-18T09:07:47Z",
+        "languages": {},
+        "files": [],
+        "size": 43,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "139446803",
+        "name": "dotfiles",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2019-10-09T23:44:09Z",
+        "languages": {},
+        "files": [],
+        "size": 23,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "43225231",
+        "name": "spinlock",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6,
+        "pushedAt": "2019-09-15T22:50:49Z",
+        "languages": {},
+        "files": [],
+        "size": 9,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "113771745",
+        "name": "quictun",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 53,
+        "pushedAt": "2018-03-26T04:29:35Z",
+        "languages": {},
+        "files": [],
+        "size": 53,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "93157744",
+        "name": "complete-subtree-cover-size",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2017-06-02T19:38:34Z",
+        "languages": {},
+        "files": [],
+        "size": 16,
+        "primaryLanguage": "TeX",
+        "projects": []
+      },
+      {
+        "id": "7083375",
+        "name": "N-Queens",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2017-05-03T18:35:57Z",
+        "languages": {},
+        "files": [],
+        "size": 9,
+        "primaryLanguage": "Java",
+        "projects": []
+      },
+      {
+        "id": "89767097",
+        "name": "systemd",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2017-05-01T16:27:36Z",
+        "languages": {},
+        "files": [],
+        "size": 28,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "89809896",
+        "name": "socketinfo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2017-04-29T21:22:47Z",
+        "languages": {},
+        "files": [],
+        "size": 2,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "28803958",
+        "name": "remotephotoshow",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10,
+        "pushedAt": "2016-03-28T14:08:53Z",
+        "languages": {},
+        "files": [],
+        "size": 15,
+        "primaryLanguage": "HTML",
+        "projects": []
+      },
+      {
+        "id": "43529804",
+        "name": "fcgi",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2015-10-02T01:24:08Z",
+        "languages": {},
+        "files": [],
+        "size": 132,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "18562176",
+        "name": "moderndbs",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 13,
+        "pushedAt": "2014-06-17T13:13:13Z",
+        "languages": {},
+        "files": [],
+        "size": 4660,
+        "primaryLanguage": "C++",
+        "projects": []
+      },
+      {
+        "id": "10333107",
+        "name": "art",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2013-05-28T10:20:18Z",
+        "languages": {},
+        "files": [],
+        "size": 56,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "6913376",
+        "name": "julienschmidt.github.com",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 0,
+        "pushedAt": "2012-11-29T01:47:12Z",
+        "languages": {},
+        "files": [],
+        "size": 100,
+        "primaryLanguage": null,
+        "projects": []
+      }
+    ],
+    "evidence": [],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 16,
+      "examined": 16,
+      "failed": 1,
+      "omittedByBudget": 0,
+      "reposCandidates": 16,
+      "treesDiscovered": 15,
+      "treesTruncated": 0,
+      "manifestsDiscovered": 0,
+      "manifestsFetched": 0,
+      "manifestsSkippedByBudget": 0,
+      "uncertainRepositories": 1,
+      "gap": "small",
+      "domains": {
+        "language": "unavailable",
+        "school": "partial",
+        "artifact": "partial"
+      }
+    },
+    "requests": {
+      "rest": 17,
+      "graphql": 0,
+      "manifestFetches": 0,
+      "reposInspected": 16,
+      "cacheHits": 0,
+      "treeRequests": 16,
+      "manifestRequests": 0,
+      "fallbackRequests": 0,
+      "treeCacheHits": 0,
+      "manifestCacheHits": 0,
+      "manifestsDiscovered": 0,
+      "manifestsSkippedByBudget": 0,
+      "projectsDiscovered": 0,
+      "rateLimitRemaining": 4735,
+      "timingsMs": {
+        "repositorySelection": 749,
+        "treeDiscovery": 995,
+        "manifestFetch": 0,
+        "parsing": 0
+      }
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T21:16:30.992Z",
+  "coldLatencyMs": 11620
+}

@@ -1,0 +1,3892 @@
+{
+  "generatedAt": "2026-10-07T14:07:54.814Z",
+  "stage": "3D-R0-ANALYSIS-ONLY",
+  "cohort": "calibration",
+  "holdoutRead": false,
+  "engineVersion": "2.0-experimental-v22",
+  "balanceVersion": "game-engine-v2-balance-stage3-r3",
+  "totals": {
+    "profiles": 30,
+    "subclasses": 2
+  },
+  "scoreMatrix": [
+    {
+      "username": "addyosmani",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "high",
+      "maturity": 97,
+      "schools": [
+        "React",
+        "Astro",
+        "Next.js"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Vite",
+        "Tailwind CSS",
+        "GitHub Actions",
+        "Vitest",
+        "Docker",
+        "shadcn/ui",
+        "Prettier",
+        "Webpack",
+        "pnpm"
+      ],
+      "scores": {
+        "architect": 57.4,
+        "artificer": 59.45,
+        "illusionist": 70.31,
+        "guardian": 66.89,
+        "chronomancer": 63.44
+      },
+      "top1": "illusionist",
+      "top2": "guardian",
+      "margin": 3.42,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 30.25,
+          "maturity": 14.55,
+          "versatility": 4.9,
+          "quality": 5.1,
+          "automation": 2.6
+        },
+        "artificer": {
+          "craft": 33.07,
+          "automation": 6.93,
+          "versatility": 4.9,
+          "maturity": 14.55
+        },
+        "illusionist": {
+          "visual": 40,
+          "structural": 5.04,
+          "versatility": 7.35,
+          "maturity": 9.7
+        },
+        "guardian": {
+          "quality": 28.05,
+          "collaboration": 15,
+          "consistency": 13.8,
+          "maturity": 4.85,
+          "automation": 5.19
+        },
+        "chronomancer": {
+          "automation": 33.75,
+          "consistency": 13.8,
+          "craft": 6.2,
+          "maturity": 9.7
+        }
+      }
+    },
+    {
+      "username": "ahejlsberg",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 73,
+      "schools": [
+        "Express",
+        "React"
+      ],
+      "artifacts": [
+        "Webpack"
+      ],
+      "scores": {
+        "architect": 32.53,
+        "artificer": 21.05,
+        "illusionist": 28.84,
+        "guardian": 32.3,
+        "chronomancer": 22.5
+      },
+      "top1": "architect",
+      "top2": "guardian",
+      "margin": 0.23,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 20.78,
+          "maturity": 10.95,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 9.3,
+          "automation": 0,
+          "versatility": 0.8,
+          "maturity": 10.95
+        },
+        "illusionist": {
+          "visual": 16.88,
+          "structural": 3.46,
+          "versatility": 1.2,
+          "maturity": 7.3
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.65,
+          "maturity": 3.65,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 13.65,
+          "craft": 1.55,
+          "maturity": 7.3
+        }
+      }
+    },
+    {
+      "username": "antirez",
+      "className": "Guerreiro",
+      "coverage": "partial",
+      "confidence": "low",
+      "maturity": 69,
+      "schools": [],
+      "artifacts": [],
+      "scores": {
+        "architect": 16.65,
+        "artificer": 16.65,
+        "illusionist": 16.35,
+        "guardian": 17.63,
+        "chronomancer": 20.25
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 2.63,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 10.35,
+          "versatility": 6.3,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 0,
+          "versatility": 6.3,
+          "maturity": 10.35
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 9.45,
+          "maturity": 6.9
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 0.83,
+          "consistency": 13.35,
+          "maturity": 3.45,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 13.35,
+          "craft": 0,
+          "maturity": 6.9
+        }
+      }
+    },
+    {
+      "username": "dhh",
+      "className": "Oráculo",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 78,
+      "schools": [],
+      "artifacts": [],
+      "scores": {
+        "architect": 12.5,
+        "artificer": 12.5,
+        "illusionist": 9,
+        "guardian": 31.95,
+        "chronomancer": 20.85
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 11.1,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 11.7,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 0,
+          "versatility": 0.8,
+          "maturity": 11.7
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 1.2,
+          "maturity": 7.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.05,
+          "maturity": 3.9,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 13.05,
+          "craft": 0,
+          "maturity": 7.8
+        }
+      }
+    },
+    {
+      "username": "emilkowalski",
+      "className": "Aventureiro",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 51,
+      "schools": [
+        "Next.js",
+        "React"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Tailwind CSS",
+        "Playwright",
+        "Prettier",
+        "GitHub Actions",
+        "pnpm"
+      ],
+      "scores": {
+        "architect": 55.11,
+        "artificer": 48.64,
+        "illusionist": 55.4,
+        "guardian": 51.14,
+        "chronomancer": 41.74
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 0.29,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 37.75,
+          "maturity": 7.65,
+          "versatility": 2.8,
+          "quality": 5.58,
+          "automation": 1.33
+        },
+        "artificer": {
+          "craft": 34.2,
+          "automation": 3.99,
+          "versatility": 2.8,
+          "maturity": 7.65
+        },
+        "illusionist": {
+          "visual": 39.81,
+          "structural": 6.29,
+          "versatility": 4.2,
+          "maturity": 5.1
+        },
+        "guardian": {
+          "quality": 30.71,
+          "collaboration": 1.58,
+          "consistency": 13.65,
+          "maturity": 2.55,
+          "automation": 2.66
+        },
+        "chronomancer": {
+          "automation": 17.29,
+          "consistency": 13.65,
+          "craft": 5.7,
+          "maturity": 5.1
+        }
+      }
+    },
+    {
+      "username": "EvanBacon",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 94,
+      "schools": [
+        "React",
+        "Expo",
+        "React Native",
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Tailwind CSS",
+        "GitHub Actions",
+        "Prettier",
+        "Jest",
+        "esbuild"
+      ],
+      "scores": {
+        "architect": 49.03,
+        "artificer": 59.6,
+        "illusionist": 75.76,
+        "guardian": 66.5,
+        "chronomancer": 51.75
+      },
+      "top1": "illusionist",
+      "top2": "guardian",
+      "margin": 9.27,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 22.32,
+          "maturity": 14.1,
+          "versatility": 5.5,
+          "quality": 5.37,
+          "automation": 1.74
+        },
+        "artificer": {
+          "craft": 34.89,
+          "automation": 5.11,
+          "versatility": 5.5,
+          "maturity": 14.1
+        },
+        "illusionist": {
+          "visual": 40,
+          "structural": 3.72,
+          "versatility": 8.25,
+          "maturity": 9.4
+        },
+        "guardian": {
+          "quality": 29.52,
+          "collaboration": 15,
+          "consistency": 13.8,
+          "maturity": 4.7,
+          "automation": 3.48
+        },
+        "chronomancer": {
+          "automation": 22.61,
+          "consistency": 13.8,
+          "craft": 5.93,
+          "maturity": 9.4
+        }
+      }
+    },
+    {
+      "username": "gaearon",
+      "className": "Aventureiro",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 94,
+      "schools": [
+        "React",
+        "Next.js",
+        "React Native",
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Prettier",
+        "GitHub Actions",
+        "Jest",
+        "Vite",
+        "Vitest",
+        "Webpack",
+        "Tailwind CSS",
+        "pnpm",
+        "Rollup",
+        "Yarn",
+        "Electron"
+      ],
+      "scores": {
+        "architect": 52.61,
+        "artificer": 56.66,
+        "illusionist": 56.64,
+        "guardian": 61.27,
+        "chronomancer": 46.04
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "margin": 4.61,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 29.87,
+          "maturity": 14.1,
+          "versatility": 2.6,
+          "quality": 4.69,
+          "automation": 1.35
+        },
+        "artificer": {
+          "craft": 35.9,
+          "automation": 4.06,
+          "versatility": 2.6,
+          "maturity": 14.1
+        },
+        "illusionist": {
+          "visual": 38.37,
+          "structural": 4.98,
+          "versatility": 3.9,
+          "maturity": 9.4
+        },
+        "guardian": {
+          "quality": 25.81,
+          "collaboration": 15,
+          "consistency": 13.05,
+          "maturity": 4.7,
+          "automation": 2.71
+        },
+        "chronomancer": {
+          "automation": 17.61,
+          "consistency": 13.05,
+          "craft": 5.98,
+          "maturity": 9.4
+        }
+      }
+    },
+    {
+      "username": "gvanrossum",
+      "className": "Bardo",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 86,
+      "schools": [
+        "Flask"
+      ],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 45.69,
+        "artificer": 19.92,
+        "illusionist": 19.23,
+        "guardian": 35.26,
+        "chronomancer": 35.62
+      },
+      "top1": "architect",
+      "top2": "chronomancer",
+      "margin": 10.07,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 27.78,
+          "maturity": 12.9,
+          "versatility": 4,
+          "quality": 0,
+          "automation": 1.01
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 3.02,
+          "versatility": 4,
+          "maturity": 12.9
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 4.63,
+          "versatility": 6,
+          "maturity": 8.6
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.95,
+          "maturity": 4.3,
+          "automation": 2.01
+        },
+        "chronomancer": {
+          "automation": 13.07,
+          "consistency": 13.95,
+          "craft": 0,
+          "maturity": 8.6
+        }
+      }
+    },
+    {
+      "username": "iamkun",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 68,
+      "schools": [
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Jest",
+        "Prettier",
+        "Rollup",
+        "GitHub Actions",
+        "Webpack"
+      ],
+      "scores": {
+        "architect": 40.58,
+        "artificer": 42.2,
+        "illusionist": 19.51,
+        "guardian": 60.26,
+        "chronomancer": 40.06
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "margin": 18.06,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 23.83,
+          "maturity": 10.2,
+          "versatility": 0.8,
+          "quality": 4.64,
+          "automation": 1.12
+        },
+        "artificer": {
+          "craft": 27.85,
+          "automation": 3.35,
+          "versatility": 0.8,
+          "maturity": 10.2
+        },
+        "illusionist": {
+          "visual": 7.54,
+          "structural": 3.97,
+          "versatility": 1.2,
+          "maturity": 6.8
+        },
+        "guardian": {
+          "quality": 25.53,
+          "collaboration": 15,
+          "consistency": 14.1,
+          "maturity": 3.4,
+          "automation": 2.23
+        },
+        "chronomancer": {
+          "automation": 14.52,
+          "consistency": 14.1,
+          "craft": 4.64,
+          "maturity": 6.8
+        }
+      }
+    },
+    {
+      "username": "JakeWharton",
+      "className": "Bardo",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 98,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 23.67,
+        "artificer": 31.01,
+        "illusionist": 17.75,
+        "guardian": 41.64,
+        "chronomancer": 64.2
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 22.56,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 14.7,
+          "versatility": 5.3,
+          "quality": 0,
+          "automation": 3.67
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 11.01,
+          "versatility": 5.3,
+          "maturity": 14.7
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 7.95,
+          "maturity": 9.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.4,
+          "maturity": 4.9,
+          "automation": 7.34
+        },
+        "chronomancer": {
+          "automation": 40,
+          "consistency": 14.4,
+          "craft": 0,
+          "maturity": 9.8
+        }
+      }
+    },
+    {
+      "username": "jesseduffield",
+      "className": "Patrulheiro",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 84,
+      "schools": [
+        "React",
+        "Rails"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Vite",
+        "Vitest",
+        "Electron",
+        "Webpack",
+        "Prettier"
+      ],
+      "scores": {
+        "architect": 43.66,
+        "artificer": 46,
+        "illusionist": 46.9,
+        "guardian": 61.18,
+        "chronomancer": 60.69
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 0.49,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 20.52,
+          "maturity": 12.6,
+          "versatility": 3.6,
+          "quality": 4.22,
+          "automation": 2.72
+        },
+        "artificer": {
+          "craft": 21.65,
+          "automation": 8.15,
+          "versatility": 3.6,
+          "maturity": 12.6
+        },
+        "illusionist": {
+          "visual": 29.68,
+          "structural": 3.42,
+          "versatility": 5.4,
+          "maturity": 8.4
+        },
+        "guardian": {
+          "quality": 23.19,
+          "collaboration": 15,
+          "consistency": 13.35,
+          "maturity": 4.2,
+          "automation": 5.44
+        },
+        "chronomancer": {
+          "automation": 35.33,
+          "consistency": 13.35,
+          "craft": 3.61,
+          "maturity": 8.4
+        }
+      }
+    },
+    {
+      "username": "JonathanNwokolo",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 32,
+      "schools": [
+        "Express",
+        "React",
+        "Expo",
+        "Next.js",
+        "React Native",
+        "Vue"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Jest",
+        "Playwright",
+        "Tailwind CSS",
+        "Vitest",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 43.49,
+        "artificer": 27.45,
+        "illusionist": 44.87,
+        "guardian": 37.66,
+        "chronomancer": 30.11
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 1.38,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 28.77,
+          "maturity": 4.8,
+          "versatility": 4.9,
+          "quality": 4.05,
+          "automation": 0.97
+        },
+        "artificer": {
+          "craft": 14.84,
+          "automation": 2.91,
+          "versatility": 4.9,
+          "maturity": 4.8
+        },
+        "illusionist": {
+          "visual": 29.53,
+          "structural": 4.8,
+          "versatility": 7.35,
+          "maturity": 3.2
+        },
+        "guardian": {
+          "quality": 22.27,
+          "collaboration": 0,
+          "consistency": 11.85,
+          "maturity": 1.6,
+          "automation": 1.94
+        },
+        "chronomancer": {
+          "automation": 12.59,
+          "consistency": 11.85,
+          "craft": 2.47,
+          "maturity": 3.2
+        }
+      }
+    },
+    {
+      "username": "kelseyhightower",
+      "className": "Patrulheiro",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 75,
+      "schools": [],
+      "artifacts": [
+        "Docker",
+        "Terraform",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 15.45,
+        "artificer": 19.84,
+        "illusionist": 10.5,
+        "guardian": 19.47,
+        "chronomancer": 47.17
+      },
+      "top1": "chronomancer",
+      "top2": "artificer",
+      "margin": 27.32,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 11.25,
+          "versatility": 2,
+          "quality": 0,
+          "automation": 2.2
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 6.59,
+          "versatility": 2,
+          "maturity": 11.25
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 3,
+          "maturity": 7.5
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 0.22,
+          "consistency": 11.1,
+          "maturity": 3.75,
+          "automation": 4.39
+        },
+        "chronomancer": {
+          "automation": 28.57,
+          "consistency": 11.1,
+          "craft": 0,
+          "maturity": 7.5
+        }
+      }
+    },
+    {
+      "username": "kentcdodds",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 99,
+      "schools": [
+        "React",
+        "Remix",
+        "Vue"
+      ],
+      "artifacts": [
+        "Prettier",
+        "GitHub Actions",
+        "esbuild",
+        "Vite",
+        "Playwright",
+        "Vitest",
+        "Docker",
+        "ESLint",
+        "Tailwind CSS",
+        "Rollup",
+        "Jest",
+        "Cypress",
+        "pnpm"
+      ],
+      "scores": {
+        "architect": 56.98,
+        "artificer": 60.05,
+        "illusionist": 59.88,
+        "guardian": 74.2,
+        "chronomancer": 64.15
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 10.05,
+      "subclass": "guardian",
+      "components": {
+        "architect": {
+          "structural": 27.12,
+          "maturity": 14.85,
+          "versatility": 5.2,
+          "quality": 6.39,
+          "automation": 3.41
+        },
+        "artificer": {
+          "craft": 32.52,
+          "automation": 7.48,
+          "versatility": 5.2,
+          "maturity": 14.85
+        },
+        "illusionist": {
+          "visual": 37.66,
+          "structural": 4.52,
+          "versatility": 7.8,
+          "maturity": 9.9
+        },
+        "guardian": {
+          "quality": 33.5,
+          "collaboration": 15,
+          "consistency": 14.25,
+          "maturity": 4.95,
+          "automation": 6.5
+        },
+        "chronomancer": {
+          "automation": 34.27,
+          "consistency": 14.25,
+          "craft": 5.73,
+          "maturity": 9.9
+        }
+      }
+    },
+    {
+      "username": "matz",
+      "className": "Guerreiro",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 61,
+      "schools": [],
+      "artifacts": [
+        "Docker",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 14.3,
+        "artificer": 19.21,
+        "illusionist": 10.15,
+        "guardian": 28.73,
+        "chronomancer": 52.4
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 23.67,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 9.15,
+          "versatility": 2.7,
+          "quality": 0,
+          "automation": 2.45
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 7.36,
+          "versatility": 2.7,
+          "maturity": 9.15
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 4.05,
+          "maturity": 6.1
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 6.38,
+          "consistency": 14.4,
+          "maturity": 3.05,
+          "automation": 4.91
+        },
+        "chronomancer": {
+          "automation": 31.9,
+          "consistency": 14.4,
+          "craft": 0,
+          "maturity": 6.1
+        }
+      }
+    },
+    {
+      "username": "mdo",
+      "className": "Bardo",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 89,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 16.53,
+        "artificer": 18.48,
+        "illusionist": 12.2,
+        "guardian": 35.35,
+        "chronomancer": 35.54
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 0.19,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 13.35,
+          "versatility": 2.2,
+          "quality": 0,
+          "automation": 0.98
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 2.93,
+          "versatility": 2.2,
+          "maturity": 13.35
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 3.3,
+          "maturity": 8.9
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.95,
+          "maturity": 4.45,
+          "automation": 1.95
+        },
+        "chronomancer": {
+          "automation": 12.69,
+          "consistency": 13.95,
+          "craft": 0,
+          "maturity": 8.9
+        }
+      }
+    },
+    {
+      "username": "mhevery",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "high",
+      "maturity": 93,
+      "schools": [
+        "React",
+        "Angular",
+        "Next.js",
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Prettier",
+        "Vite",
+        "Vitest",
+        "Tailwind CSS",
+        "Material UI",
+        "Playwright",
+        "GitHub Actions",
+        "Storybook",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 44.11,
+        "artificer": 58.45,
+        "illusionist": 47.18,
+        "guardian": 57.78,
+        "chronomancer": 50.24
+      },
+      "top1": "artificer",
+      "top2": "guardian",
+      "margin": 0.67,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 19.84,
+          "maturity": 13.95,
+          "versatility": 4.5,
+          "quality": 4.14,
+          "automation": 1.69
+        },
+        "artificer": {
+          "craft": 35.7,
+          "automation": 4.3,
+          "versatility": 4.5,
+          "maturity": 13.95
+        },
+        "illusionist": {
+          "visual": 27.82,
+          "structural": 3.31,
+          "versatility": 6.75,
+          "maturity": 9.3
+        },
+        "guardian": {
+          "quality": 22.76,
+          "collaboration": 15,
+          "consistency": 12,
+          "maturity": 4.65,
+          "automation": 3.38
+        },
+        "chronomancer": {
+          "automation": 21.94,
+          "consistency": 12,
+          "craft": 7,
+          "maturity": 9.3
+        }
+      }
+    },
+    {
+      "username": "mitchellh",
+      "className": "Guerreiro",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 97,
+      "schools": [
+        "Next.js",
+        "React",
+        "Flask"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "ESLint",
+        "Jest",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 49.15,
+        "artificer": 42.54,
+        "illusionist": 48.56,
+        "guardian": 62.85,
+        "chronomancer": 60.34
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 2.51,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 23.82,
+          "maturity": 14.55,
+          "versatility": 4,
+          "quality": 4.22,
+          "automation": 2.56
+        },
+        "artificer": {
+          "craft": 16.33,
+          "automation": 7.67,
+          "versatility": 4,
+          "maturity": 14.55
+        },
+        "illusionist": {
+          "visual": 28.89,
+          "structural": 3.97,
+          "versatility": 6,
+          "maturity": 9.7
+        },
+        "guardian": {
+          "quality": 23.19,
+          "collaboration": 15,
+          "consistency": 14.7,
+          "maturity": 4.85,
+          "automation": 5.11
+        },
+        "chronomancer": {
+          "automation": 33.22,
+          "consistency": 14.7,
+          "craft": 2.72,
+          "maturity": 9.7
+        }
+      }
+    },
+    {
+      "username": "mitsuhiko",
+      "className": "Guerreiro",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 100,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 23.37,
+        "artificer": 29.12,
+        "illusionist": 18.25,
+        "guardian": 40.6,
+        "chronomancer": 62.2
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 21.6,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 15,
+          "versatility": 5.5,
+          "quality": 0,
+          "automation": 2.87
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 8.62,
+          "versatility": 5.5,
+          "maturity": 15
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 8.25,
+          "maturity": 10
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.85,
+          "maturity": 5,
+          "automation": 5.75
+        },
+        "chronomancer": {
+          "automation": 37.35,
+          "consistency": 14.85,
+          "craft": 0,
+          "maturity": 10
+        }
+      }
+    },
+    {
+      "username": "necolas",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 89,
+      "schools": [
+        "Next.js",
+        "React"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Jest",
+        "Prettier",
+        "Webpack",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 50.24,
+        "artificer": 45.52,
+        "illusionist": 49.34,
+        "guardian": 58.62,
+        "chronomancer": 38.21
+      },
+      "top1": "guardian",
+      "top2": "architect",
+      "margin": 8.38,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 27.12,
+          "maturity": 13.35,
+          "versatility": 4.6,
+          "quality": 4.3,
+          "automation": 0.87
+        },
+        "artificer": {
+          "craft": 24.95,
+          "automation": 2.62,
+          "versatility": 4.6,
+          "maturity": 13.35
+        },
+        "illusionist": {
+          "visual": 29.02,
+          "structural": 4.52,
+          "versatility": 6.9,
+          "maturity": 8.9
+        },
+        "guardian": {
+          "quality": 23.63,
+          "collaboration": 15,
+          "consistency": 13.8,
+          "maturity": 4.45,
+          "automation": 1.75
+        },
+        "chronomancer": {
+          "automation": 11.35,
+          "consistency": 13.8,
+          "craft": 4.16,
+          "maturity": 8.9
+        }
+      }
+    },
+    {
+      "username": "pacocoursey",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 65,
+      "schools": [
+        "React",
+        "Next.js"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Prettier",
+        "Playwright",
+        "Vitest",
+        "GitHub Actions",
+        "Tailwind CSS",
+        "Electron",
+        "Vite"
+      ],
+      "scores": {
+        "architect": 62.32,
+        "artificer": 43.27,
+        "illusionist": 65.72,
+        "guardian": 57.19,
+        "chronomancer": 37.89
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 3.4,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 42.65,
+          "maturity": 9.75,
+          "versatility": 4.8,
+          "quality": 4.13,
+          "automation": 0.99
+        },
+        "artificer": {
+          "craft": 25.75,
+          "automation": 2.97,
+          "versatility": 4.8,
+          "maturity": 9.75
+        },
+        "illusionist": {
+          "visual": 40,
+          "structural": 7.11,
+          "versatility": 7.2,
+          "maturity": 6.5
+        },
+        "guardian": {
+          "quality": 22.71,
+          "collaboration": 15,
+          "consistency": 14.25,
+          "maturity": 3.25,
+          "automation": 1.98
+        },
+        "chronomancer": {
+          "automation": 12.85,
+          "consistency": 14.25,
+          "craft": 4.29,
+          "maturity": 6.5
+        }
+      }
+    },
+    {
+      "username": "Rich-Harris",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 100,
+      "schools": [
+        "Svelte",
+        "SvelteKit"
+      ],
+      "artifacts": [
+        "Vite",
+        "Prettier",
+        "GitHub Actions",
+        "pnpm",
+        "Vitest",
+        "Rollup",
+        "ESLint",
+        "Playwright",
+        "Tailwind CSS",
+        "esbuild"
+      ],
+      "scores": {
+        "architect": 67.39,
+        "artificer": 55.8,
+        "illusionist": 62.98,
+        "guardian": 64.3,
+        "chronomancer": 53.08
+      },
+      "top1": "architect",
+      "top2": "guardian",
+      "margin": 3.09,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 45.01,
+          "maturity": 15,
+          "versatility": 0.8,
+          "quality": 4.87,
+          "automation": 1.7
+        },
+        "artificer": {
+          "craft": 35.6,
+          "automation": 4.4,
+          "versatility": 0.8,
+          "maturity": 15
+        },
+        "illusionist": {
+          "visual": 40,
+          "structural": 7.5,
+          "versatility": 1.2,
+          "maturity": 10
+        },
+        "guardian": {
+          "quality": 26.8,
+          "collaboration": 15,
+          "consistency": 14.1,
+          "maturity": 5,
+          "automation": 3.4
+        },
+        "chronomancer": {
+          "automation": 22.1,
+          "consistency": 14.1,
+          "craft": 6.88,
+          "maturity": 10
+        }
+      }
+    },
+    {
+      "username": "sebmarkbage",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 90,
+      "schools": [
+        "React",
+        "Next.js"
+      ],
+      "artifacts": [
+        "Tailwind CSS",
+        "ESLint",
+        "Webpack"
+      ],
+      "scores": {
+        "architect": 41.43,
+        "artificer": 34.74,
+        "illusionist": 45.42,
+        "guardian": 31.8,
+        "chronomancer": 24.71
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 3.99,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 27.12,
+          "maturity": 13.5,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 20.44,
+          "automation": 0,
+          "versatility": 0.8,
+          "maturity": 13.5
+        },
+        "illusionist": {
+          "visual": 30.7,
+          "structural": 4.52,
+          "versatility": 1.2,
+          "maturity": 9
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 12.3,
+          "maturity": 4.5,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 12.3,
+          "craft": 3.41,
+          "maturity": 9
+        }
+      }
+    },
+    {
+      "username": "segunadebayo",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 76,
+      "schools": [
+        "React",
+        "Next.js"
+      ],
+      "artifacts": [
+        "Prettier",
+        "ESLint",
+        "Chakra UI",
+        "Jest",
+        "esbuild",
+        "Cypress",
+        "Vite",
+        "pnpm",
+        "GitHub Actions",
+        "Yarn",
+        "Vitest",
+        "Rollup",
+        "Storybook"
+      ],
+      "scores": {
+        "architect": 55.3,
+        "artificer": 55.6,
+        "illusionist": 65.57,
+        "guardian": 59.03,
+        "chronomancer": 40.9
+      },
+      "top1": "illusionist",
+      "top2": "guardian",
+      "margin": 6.54,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 34.13,
+          "maturity": 11.4,
+          "versatility": 4.2,
+          "quality": 4.54,
+          "automation": 1.03
+        },
+        "artificer": {
+          "craft": 37.14,
+          "automation": 2.86,
+          "versatility": 4.2,
+          "maturity": 11.4
+        },
+        "illusionist": {
+          "visual": 40,
+          "structural": 5.69,
+          "versatility": 6.3,
+          "maturity": 7.6
+        },
+        "guardian": {
+          "quality": 24.97,
+          "collaboration": 15,
+          "consistency": 13.2,
+          "maturity": 3.8,
+          "automation": 2.06
+        },
+        "chronomancer": {
+          "automation": 13.41,
+          "consistency": 13.2,
+          "craft": 6.69,
+          "maturity": 7.6
+        }
+      }
+    },
+    {
+      "username": "sharkdp",
+      "className": "Alquimista",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 93,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Terraform",
+        "Rollup"
+      ],
+      "scores": {
+        "architect": 22.87,
+        "artificer": 37.75,
+        "illusionist": 18.75,
+        "guardian": 38.68,
+        "chronomancer": 58.73
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 20.04,
+      "subclass": "chronomancer",
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 13.95,
+          "versatility": 6.3,
+          "quality": 0,
+          "automation": 2.62
+        },
+        "artificer": {
+          "craft": 9.65,
+          "automation": 7.85,
+          "versatility": 6.3,
+          "maturity": 13.95
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 9.45,
+          "maturity": 9.3
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.8,
+          "maturity": 4.65,
+          "automation": 5.23
+        },
+        "chronomancer": {
+          "automation": 34.02,
+          "consistency": 13.8,
+          "craft": 1.61,
+          "maturity": 9.3
+        }
+      }
+    },
+    {
+      "username": "sindresorhus",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "high",
+      "maturity": 100,
+      "schools": [
+        "Svelte"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "ESLint",
+        "Electron"
+      ],
+      "scores": {
+        "architect": 21.89,
+        "artificer": 59.04,
+        "illusionist": 35.34,
+        "guardian": 38.28,
+        "chronomancer": 56.76
+      },
+      "top1": "artificer",
+      "top2": "chronomancer",
+      "margin": 2.28,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 15,
+          "versatility": 4.8,
+          "quality": 0,
+          "automation": 2.09
+        },
+        "artificer": {
+          "craft": 32.98,
+          "automation": 6.27,
+          "versatility": 4.8,
+          "maturity": 15
+        },
+        "illusionist": {
+          "visual": 18.14,
+          "structural": 0,
+          "versatility": 7.2,
+          "maturity": 10
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.1,
+          "maturity": 5,
+          "automation": 4.18
+        },
+        "chronomancer": {
+          "automation": 27.16,
+          "consistency": 14.1,
+          "craft": 5.5,
+          "maturity": 10
+        }
+      }
+    },
+    {
+      "username": "TaylorOtwell",
+      "className": "Escriba",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 78,
+      "schools": [
+        "Laravel",
+        "Express",
+        "Flask",
+        "Rails"
+      ],
+      "artifacts": [
+        "Tailwind CSS",
+        "Vite",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 49.03,
+        "artificer": 38.15,
+        "illusionist": 28.92,
+        "guardian": 37.35,
+        "chronomancer": 51.04
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "margin": 2.01,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 30,
+          "maturity": 11.7,
+          "versatility": 5.3,
+          "quality": 0,
+          "automation": 2.03
+        },
+        "artificer": {
+          "craft": 15.08,
+          "automation": 6.08,
+          "versatility": 5.3,
+          "maturity": 11.7
+        },
+        "illusionist": {
+          "visual": 8.17,
+          "structural": 5,
+          "versatility": 7.95,
+          "maturity": 7.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.4,
+          "maturity": 3.9,
+          "automation": 4.05
+        },
+        "chronomancer": {
+          "automation": 26.33,
+          "consistency": 14.4,
+          "craft": 2.51,
+          "maturity": 7.8
+        }
+      }
+    },
+    {
+      "username": "tiangolo",
+      "className": "Alquimista",
+      "coverage": "partial",
+      "confidence": "low",
+      "maturity": 90,
+      "schools": [
+        "FastAPI",
+        "Flask",
+        "React"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Vitest"
+      ],
+      "scores": {
+        "architect": 52.76,
+        "artificer": 27.2,
+        "illusionist": 46.37,
+        "guardian": 62.83,
+        "chronomancer": 62.5
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 0.33,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 28.96,
+          "maturity": 13.5,
+          "versatility": 2.5,
+          "quality": 4.07,
+          "automation": 3.73
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 11.2,
+          "versatility": 2.5,
+          "maturity": 13.5
+        },
+        "illusionist": {
+          "visual": 28.79,
+          "structural": 4.83,
+          "versatility": 3.75,
+          "maturity": 9
+        },
+        "guardian": {
+          "quality": 22.36,
+          "collaboration": 15,
+          "consistency": 13.5,
+          "maturity": 4.5,
+          "automation": 7.46
+        },
+        "chronomancer": {
+          "automation": 40,
+          "consistency": 13.5,
+          "craft": 0,
+          "maturity": 9
+        }
+      }
+    },
+    {
+      "username": "torvalds",
+      "className": "Guerreiro",
+      "coverage": "partial",
+      "confidence": "low",
+      "maturity": 60,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 10.81,
+        "artificer": 12.84,
+        "illusionist": 7.2,
+        "guardian": 21.6,
+        "chronomancer": 33.71
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 12.11,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 9,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 1.01
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 3.04,
+          "versatility": 0.8,
+          "maturity": 9
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 1.2,
+          "maturity": 6
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 2.03,
+          "consistency": 14.55,
+          "maturity": 3,
+          "automation": 2.03
+        },
+        "chronomancer": {
+          "automation": 13.16,
+          "consistency": 14.55,
+          "craft": 0,
+          "maturity": 6
+        }
+      }
+    },
+    {
+      "username": "yyx990803",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 89,
+      "schools": [
+        "Vue",
+        "Express",
+        "Next.js",
+        "React",
+        "Laravel",
+        "Svelte"
+      ],
+      "artifacts": [
+        "esbuild",
+        "Vite",
+        "Webpack",
+        "ESLint",
+        "Rollup",
+        "pnpm",
+        "Prettier",
+        "Jest",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 39.67,
+        "artificer": 47.69,
+        "illusionist": 39.67,
+        "guardian": 54.03,
+        "chronomancer": 38.18
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "margin": 6.33,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 20.07,
+          "maturity": 13.35,
+          "versatility": 2.1,
+          "quality": 3.39,
+          "automation": 0.76
+        },
+        "artificer": {
+          "craft": 29.96,
+          "automation": 2.28,
+          "versatility": 2.1,
+          "maturity": 13.35
+        },
+        "illusionist": {
+          "visual": 24.27,
+          "structural": 3.34,
+          "versatility": 3.15,
+          "maturity": 8.9
+        },
+        "guardian": {
+          "quality": 18.65,
+          "collaboration": 15,
+          "consistency": 14.4,
+          "maturity": 4.45,
+          "automation": 1.52
+        },
+        "chronomancer": {
+          "automation": 9.89,
+          "consistency": 14.4,
+          "craft": 4.99,
+          "maturity": 8.9
+        }
+      }
+    }
+  ],
+  "scoreDistributions": {
+    "architect": {
+      "mean": 38.88,
+      "median": 43.58,
+      "p25": 23,
+      "p50": 43.58,
+      "p75": 52.02,
+      "p90": 57.02,
+      "min": 10.81,
+      "max": 67.39,
+      "atLeast40": 18,
+      "atLeast50": 9,
+      "atLeast60": 2,
+      "atLeast70": 0
+    },
+    "artificer": {
+      "mean": 38.21,
+      "median": 40.17,
+      "p25": 22.59,
+      "p50": 40.17,
+      "p75": 53.86,
+      "p90": 59.08,
+      "min": 12.5,
+      "max": 60.05,
+      "atLeast40": 15,
+      "atLeast50": 8,
+      "atLeast60": 1,
+      "atLeast70": 0
+    },
+    "illusionist": {
+      "mean": 37.75,
+      "median": 42.27,
+      "p25": 18.38,
+      "p50": 42.27,
+      "p75": 53.89,
+      "p90": 65.58,
+      "min": 7.2,
+      "max": 75.76,
+      "atLeast40": 15,
+      "atLeast50": 8,
+      "atLeast60": 5,
+      "atLeast70": 2
+    },
+    "guardian": {
+      "mean": 46.88,
+      "median": 46.39,
+      "p25": 35.28,
+      "p50": 46.39,
+      "p75": 60.95,
+      "p90": 64.52,
+      "min": 17.63,
+      "max": 74.2,
+      "atLeast40": 17,
+      "atLeast50": 15,
+      "atLeast60": 9,
+      "atLeast70": 1
+    },
+    "chronomancer": {
+      "mean": 45.5,
+      "median": 46.61,
+      "p25": 36.19,
+      "p50": 46.61,
+      "p75": 58.24,
+      "p90": 62.59,
+      "min": 20.25,
+      "max": 64.2,
+      "atLeast40": 19,
+      "atLeast50": 14,
+      "atLeast60": 7,
+      "atLeast70": 0
+    }
+  },
+  "correlations": {
+    "architect": {
+      "architect": 1,
+      "artificer": 0.705,
+      "illusionist": 0.879,
+      "guardian": 0.812,
+      "chronomancer": 0.245
+    },
+    "artificer": {
+      "architect": 0.705,
+      "artificer": 1,
+      "illusionist": 0.821,
+      "guardian": 0.812,
+      "chronomancer": 0.486
+    },
+    "illusionist": {
+      "architect": 0.879,
+      "artificer": 0.821,
+      "illusionist": 1,
+      "guardian": 0.809,
+      "chronomancer": 0.266
+    },
+    "guardian": {
+      "architect": 0.812,
+      "artificer": 0.812,
+      "illusionist": 0.809,
+      "guardian": 1,
+      "chronomancer": 0.521
+    },
+    "chronomancer": {
+      "architect": 0.245,
+      "artificer": 0.486,
+      "illusionist": 0.266,
+      "guardian": 0.521,
+      "chronomancer": 1
+    }
+  },
+  "excessiveCorrelations": [
+    {
+      "left": "architect",
+      "right": "illusionist",
+      "value": 0.879
+    },
+    {
+      "left": "architect",
+      "right": "guardian",
+      "value": 0.812
+    },
+    {
+      "left": "artificer",
+      "right": "illusionist",
+      "value": 0.821
+    },
+    {
+      "left": "artificer",
+      "right": "guardian",
+      "value": 0.812
+    },
+    {
+      "left": "illusionist",
+      "right": "guardian",
+      "value": 0.809
+    }
+  ],
+  "marginBuckets": [
+    {
+      "label": "0–2",
+      "count": 7,
+      "percent": 23.3
+    },
+    {
+      "label": ">2–4",
+      "count": 8,
+      "percent": 26.7
+    },
+    {
+      "label": ">4–6",
+      "count": 1,
+      "percent": 3.3
+    },
+    {
+      "label": ">6–8",
+      "count": 2,
+      "percent": 6.7
+    },
+    {
+      "label": ">8–12",
+      "count": 5,
+      "percent": 16.7
+    },
+    {
+      "label": ">12–20",
+      "count": 2,
+      "percent": 6.7
+    },
+    {
+      "label": ">20",
+      "count": 5,
+      "percent": 16.7
+    }
+  ],
+  "contributionMatrix": [
+    {
+      "signal": "React",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Vue",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Svelte",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Angular",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Next.js",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Nuxt",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "SvelteKit",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Astro",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Remix",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Express",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "NestJS",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Fastify",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Django",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Flask",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "FastAPI",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Laravel",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Rails",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Spring",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "ASP.NET Core",
+      "weights": {
+        "architect": 0.6,
+        "illusionist": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "architect",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "React Native",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Expo",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Flutter",
+      "weights": {
+        "illusionist": 0.4875
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Vite",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Webpack",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Rollup",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "esbuild",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Docker",
+      "weights": {
+        "architect": 0.05,
+        "artificer": 0.15,
+        "guardian": 0.1,
+        "chronomancer": 0.65
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "artificer",
+        "guardian",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "GitHub Actions",
+      "weights": {
+        "architect": 0.05,
+        "artificer": 0.15,
+        "guardian": 0.1,
+        "chronomancer": 0.65
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "artificer",
+        "guardian",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Terraform",
+      "weights": {
+        "architect": 0.05,
+        "artificer": 0.15,
+        "guardian": 0.1,
+        "chronomancer": 0.65
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "artificer",
+        "guardian",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Playwright",
+      "weights": {
+        "architect": 0.1,
+        "illusionist": 0.1625,
+        "guardian": 0.55
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "illusionist",
+        "guardian"
+      ]
+    },
+    {
+      "signal": "Vitest",
+      "weights": {
+        "architect": 0.1,
+        "illusionist": 0.1625,
+        "guardian": 0.55
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "illusionist",
+        "guardian"
+      ]
+    },
+    {
+      "signal": "Jest",
+      "weights": {
+        "architect": 0.1,
+        "illusionist": 0.1625,
+        "guardian": 0.55
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "illusionist",
+        "guardian"
+      ]
+    },
+    {
+      "signal": "Cypress",
+      "weights": {
+        "architect": 0.1,
+        "illusionist": 0.1625,
+        "guardian": 0.55
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "illusionist",
+        "guardian"
+      ]
+    },
+    {
+      "signal": "Storybook",
+      "weights": {
+        "architect": 0.1,
+        "illusionist": 0.1625,
+        "guardian": 0.55
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "illusionist",
+        "guardian"
+      ]
+    },
+    {
+      "signal": "Tailwind CSS",
+      "weights": {
+        "illusionist": 0.1625
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Material UI",
+      "weights": {
+        "illusionist": 0.1625
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Chakra UI",
+      "weights": {
+        "illusionist": 0.1625
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "shadcn/ui",
+      "weights": {
+        "illusionist": 0.1625
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "Electron",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Tauri",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "pnpm",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Yarn",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "ESLint",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "Prettier",
+      "weights": {
+        "artificer": 0.6,
+        "chronomancer": 0.1
+      },
+      "overlap": "mostly-specific",
+      "significantArchetypes": [
+        "artificer",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "maturity",
+      "weights": {
+        "architect": 0.15,
+        "artificer": 0.15,
+        "illusionist": 0.1,
+        "guardian": 0.05,
+        "chronomancer": 0.1
+      },
+      "overlap": "overly-generic",
+      "significantArchetypes": [
+        "architect",
+        "artificer",
+        "illusionist",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "versatility",
+      "weights": {
+        "architect": 0.1,
+        "artificer": 0.1,
+        "illusionist": 0.15
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "architect",
+        "artificer",
+        "illusionist"
+      ]
+    },
+    {
+      "signal": "consistency",
+      "weights": {
+        "guardian": 0.15,
+        "chronomancer": 0.15
+      },
+      "overlap": "shared",
+      "significantArchetypes": [
+        "guardian",
+        "chronomancer"
+      ]
+    },
+    {
+      "signal": "collaboration",
+      "weights": {
+        "guardian": 0.15
+      },
+      "overlap": "exclusive",
+      "significantArchetypes": [
+        "guardian"
+      ]
+    }
+  ],
+  "overlapCriteria": {
+    "significant": "formula coefficient >= 0.10",
+    "exclusive": "one significant archetype",
+    "mostlySpecific": "two significant archetypes and dominant coefficient >= 2x runner-up",
+    "shared": "two or three significant archetypes without dominant 2x separation",
+    "overlyGeneric": "four or five significant archetypes"
+  },
+  "ambiguous": [
+    {
+      "username": "mdo",
+      "className": "Bardo",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 89,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 16.53,
+        "artificer": 18.48,
+        "illusionist": 12.2,
+        "guardian": 35.35,
+        "chronomancer": 35.54
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 0.19,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 13.35,
+          "versatility": 2.2,
+          "quality": 0,
+          "automation": 0.98
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 2.93,
+          "versatility": 2.2,
+          "maturity": 13.35
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 3.3,
+          "maturity": 8.9
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.95,
+          "maturity": 4.45,
+          "automation": 1.95
+        },
+        "chronomancer": {
+          "automation": 12.69,
+          "consistency": 13.95,
+          "craft": 0,
+          "maturity": 8.9
+        }
+      }
+    },
+    {
+      "username": "ahejlsberg",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 73,
+      "schools": [
+        "Express",
+        "React"
+      ],
+      "artifacts": [
+        "Webpack"
+      ],
+      "scores": {
+        "architect": 32.53,
+        "artificer": 21.05,
+        "illusionist": 28.84,
+        "guardian": 32.3,
+        "chronomancer": 22.5
+      },
+      "top1": "architect",
+      "top2": "guardian",
+      "margin": 0.23,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 20.78,
+          "maturity": 10.95,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 9.3,
+          "automation": 0,
+          "versatility": 0.8,
+          "maturity": 10.95
+        },
+        "illusionist": {
+          "visual": 16.88,
+          "structural": 3.46,
+          "versatility": 1.2,
+          "maturity": 7.3
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.65,
+          "maturity": 3.65,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 13.65,
+          "craft": 1.55,
+          "maturity": 7.3
+        }
+      }
+    },
+    {
+      "username": "emilkowalski",
+      "className": "Aventureiro",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 51,
+      "schools": [
+        "Next.js",
+        "React"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Tailwind CSS",
+        "Playwright",
+        "Prettier",
+        "GitHub Actions",
+        "pnpm"
+      ],
+      "scores": {
+        "architect": 55.11,
+        "artificer": 48.64,
+        "illusionist": 55.4,
+        "guardian": 51.14,
+        "chronomancer": 41.74
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 0.29,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 37.75,
+          "maturity": 7.65,
+          "versatility": 2.8,
+          "quality": 5.58,
+          "automation": 1.33
+        },
+        "artificer": {
+          "craft": 34.2,
+          "automation": 3.99,
+          "versatility": 2.8,
+          "maturity": 7.65
+        },
+        "illusionist": {
+          "visual": 39.81,
+          "structural": 6.29,
+          "versatility": 4.2,
+          "maturity": 5.1
+        },
+        "guardian": {
+          "quality": 30.71,
+          "collaboration": 1.58,
+          "consistency": 13.65,
+          "maturity": 2.55,
+          "automation": 2.66
+        },
+        "chronomancer": {
+          "automation": 17.29,
+          "consistency": 13.65,
+          "craft": 5.7,
+          "maturity": 5.1
+        }
+      }
+    },
+    {
+      "username": "tiangolo",
+      "className": "Alquimista",
+      "coverage": "partial",
+      "confidence": "low",
+      "maturity": 90,
+      "schools": [
+        "FastAPI",
+        "Flask",
+        "React"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Vitest"
+      ],
+      "scores": {
+        "architect": 52.76,
+        "artificer": 27.2,
+        "illusionist": 46.37,
+        "guardian": 62.83,
+        "chronomancer": 62.5
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 0.33,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 28.96,
+          "maturity": 13.5,
+          "versatility": 2.5,
+          "quality": 4.07,
+          "automation": 3.73
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 11.2,
+          "versatility": 2.5,
+          "maturity": 13.5
+        },
+        "illusionist": {
+          "visual": 28.79,
+          "structural": 4.83,
+          "versatility": 3.75,
+          "maturity": 9
+        },
+        "guardian": {
+          "quality": 22.36,
+          "collaboration": 15,
+          "consistency": 13.5,
+          "maturity": 4.5,
+          "automation": 7.46
+        },
+        "chronomancer": {
+          "automation": 40,
+          "consistency": 13.5,
+          "craft": 0,
+          "maturity": 9
+        }
+      }
+    },
+    {
+      "username": "jesseduffield",
+      "className": "Patrulheiro",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 84,
+      "schools": [
+        "React",
+        "Rails"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Vite",
+        "Vitest",
+        "Electron",
+        "Webpack",
+        "Prettier"
+      ],
+      "scores": {
+        "architect": 43.66,
+        "artificer": 46,
+        "illusionist": 46.9,
+        "guardian": 61.18,
+        "chronomancer": 60.69
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 0.49,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 20.52,
+          "maturity": 12.6,
+          "versatility": 3.6,
+          "quality": 4.22,
+          "automation": 2.72
+        },
+        "artificer": {
+          "craft": 21.65,
+          "automation": 8.15,
+          "versatility": 3.6,
+          "maturity": 12.6
+        },
+        "illusionist": {
+          "visual": 29.68,
+          "structural": 3.42,
+          "versatility": 5.4,
+          "maturity": 8.4
+        },
+        "guardian": {
+          "quality": 23.19,
+          "collaboration": 15,
+          "consistency": 13.35,
+          "maturity": 4.2,
+          "automation": 5.44
+        },
+        "chronomancer": {
+          "automation": 35.33,
+          "consistency": 13.35,
+          "craft": 3.61,
+          "maturity": 8.4
+        }
+      }
+    },
+    {
+      "username": "mhevery",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "high",
+      "maturity": 93,
+      "schools": [
+        "React",
+        "Angular",
+        "Next.js",
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Prettier",
+        "Vite",
+        "Vitest",
+        "Tailwind CSS",
+        "Material UI",
+        "Playwright",
+        "GitHub Actions",
+        "Storybook",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 44.11,
+        "artificer": 58.45,
+        "illusionist": 47.18,
+        "guardian": 57.78,
+        "chronomancer": 50.24
+      },
+      "top1": "artificer",
+      "top2": "guardian",
+      "margin": 0.67,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 19.84,
+          "maturity": 13.95,
+          "versatility": 4.5,
+          "quality": 4.14,
+          "automation": 1.69
+        },
+        "artificer": {
+          "craft": 35.7,
+          "automation": 4.3,
+          "versatility": 4.5,
+          "maturity": 13.95
+        },
+        "illusionist": {
+          "visual": 27.82,
+          "structural": 3.31,
+          "versatility": 6.75,
+          "maturity": 9.3
+        },
+        "guardian": {
+          "quality": 22.76,
+          "collaboration": 15,
+          "consistency": 12,
+          "maturity": 4.65,
+          "automation": 3.38
+        },
+        "chronomancer": {
+          "automation": 21.94,
+          "consistency": 12,
+          "craft": 7,
+          "maturity": 9.3
+        }
+      }
+    },
+    {
+      "username": "JonathanNwokolo",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 32,
+      "schools": [
+        "Express",
+        "React",
+        "Expo",
+        "Next.js",
+        "React Native",
+        "Vue"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Jest",
+        "Playwright",
+        "Tailwind CSS",
+        "Vitest",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 43.49,
+        "artificer": 27.45,
+        "illusionist": 44.87,
+        "guardian": 37.66,
+        "chronomancer": 30.11
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "margin": 1.38,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 28.77,
+          "maturity": 4.8,
+          "versatility": 4.9,
+          "quality": 4.05,
+          "automation": 0.97
+        },
+        "artificer": {
+          "craft": 14.84,
+          "automation": 2.91,
+          "versatility": 4.9,
+          "maturity": 4.8
+        },
+        "illusionist": {
+          "visual": 29.53,
+          "structural": 4.8,
+          "versatility": 7.35,
+          "maturity": 3.2
+        },
+        "guardian": {
+          "quality": 22.27,
+          "collaboration": 0,
+          "consistency": 11.85,
+          "maturity": 1.6,
+          "automation": 1.94
+        },
+        "chronomancer": {
+          "automation": 12.59,
+          "consistency": 11.85,
+          "craft": 2.47,
+          "maturity": 3.2
+        }
+      }
+    },
+    {
+      "username": "TaylorOtwell",
+      "className": "Escriba",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 78,
+      "schools": [
+        "Laravel",
+        "Express",
+        "Flask",
+        "Rails"
+      ],
+      "artifacts": [
+        "Tailwind CSS",
+        "Vite",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 49.03,
+        "artificer": 38.15,
+        "illusionist": 28.92,
+        "guardian": 37.35,
+        "chronomancer": 51.04
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "margin": 2.01,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 30,
+          "maturity": 11.7,
+          "versatility": 5.3,
+          "quality": 0,
+          "automation": 2.03
+        },
+        "artificer": {
+          "craft": 15.08,
+          "automation": 6.08,
+          "versatility": 5.3,
+          "maturity": 11.7
+        },
+        "illusionist": {
+          "visual": 8.17,
+          "structural": 5,
+          "versatility": 7.95,
+          "maturity": 7.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.4,
+          "maturity": 3.9,
+          "automation": 4.05
+        },
+        "chronomancer": {
+          "automation": 26.33,
+          "consistency": 14.4,
+          "craft": 2.51,
+          "maturity": 7.8
+        }
+      }
+    },
+    {
+      "username": "sindresorhus",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "high",
+      "maturity": 100,
+      "schools": [
+        "Svelte"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "ESLint",
+        "Electron"
+      ],
+      "scores": {
+        "architect": 21.89,
+        "artificer": 59.04,
+        "illusionist": 35.34,
+        "guardian": 38.28,
+        "chronomancer": 56.76
+      },
+      "top1": "artificer",
+      "top2": "chronomancer",
+      "margin": 2.28,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 15,
+          "versatility": 4.8,
+          "quality": 0,
+          "automation": 2.09
+        },
+        "artificer": {
+          "craft": 32.98,
+          "automation": 6.27,
+          "versatility": 4.8,
+          "maturity": 15
+        },
+        "illusionist": {
+          "visual": 18.14,
+          "structural": 0,
+          "versatility": 7.2,
+          "maturity": 10
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.1,
+          "maturity": 5,
+          "automation": 4.18
+        },
+        "chronomancer": {
+          "automation": 27.16,
+          "consistency": 14.1,
+          "craft": 5.5,
+          "maturity": 10
+        }
+      }
+    },
+    {
+      "username": "mitchellh",
+      "className": "Guerreiro",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 97,
+      "schools": [
+        "Next.js",
+        "React",
+        "Flask"
+      ],
+      "artifacts": [
+        "GitHub Actions",
+        "ESLint",
+        "Jest",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 49.15,
+        "artificer": 42.54,
+        "illusionist": 48.56,
+        "guardian": 62.85,
+        "chronomancer": 60.34
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 2.51,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 23.82,
+          "maturity": 14.55,
+          "versatility": 4,
+          "quality": 4.22,
+          "automation": 2.56
+        },
+        "artificer": {
+          "craft": 16.33,
+          "automation": 7.67,
+          "versatility": 4,
+          "maturity": 14.55
+        },
+        "illusionist": {
+          "visual": 28.89,
+          "structural": 3.97,
+          "versatility": 6,
+          "maturity": 9.7
+        },
+        "guardian": {
+          "quality": 23.19,
+          "collaboration": 15,
+          "consistency": 14.7,
+          "maturity": 4.85,
+          "automation": 5.11
+        },
+        "chronomancer": {
+          "automation": 33.22,
+          "consistency": 14.7,
+          "craft": 2.72,
+          "maturity": 9.7
+        }
+      }
+    }
+  ],
+  "clear": [
+    {
+      "username": "kelseyhightower",
+      "className": "Patrulheiro",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 75,
+      "schools": [],
+      "artifacts": [
+        "Docker",
+        "Terraform",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 15.45,
+        "artificer": 19.84,
+        "illusionist": 10.5,
+        "guardian": 19.47,
+        "chronomancer": 47.17
+      },
+      "top1": "chronomancer",
+      "top2": "artificer",
+      "margin": 27.32,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 11.25,
+          "versatility": 2,
+          "quality": 0,
+          "automation": 2.2
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 6.59,
+          "versatility": 2,
+          "maturity": 11.25
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 3,
+          "maturity": 7.5
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 0.22,
+          "consistency": 11.1,
+          "maturity": 3.75,
+          "automation": 4.39
+        },
+        "chronomancer": {
+          "automation": 28.57,
+          "consistency": 11.1,
+          "craft": 0,
+          "maturity": 7.5
+        }
+      }
+    },
+    {
+      "username": "matz",
+      "className": "Guerreiro",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 61,
+      "schools": [],
+      "artifacts": [
+        "Docker",
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 14.3,
+        "artificer": 19.21,
+        "illusionist": 10.15,
+        "guardian": 28.73,
+        "chronomancer": 52.4
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 23.67,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 9.15,
+          "versatility": 2.7,
+          "quality": 0,
+          "automation": 2.45
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 7.36,
+          "versatility": 2.7,
+          "maturity": 9.15
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 4.05,
+          "maturity": 6.1
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 6.38,
+          "consistency": 14.4,
+          "maturity": 3.05,
+          "automation": 4.91
+        },
+        "chronomancer": {
+          "automation": 31.9,
+          "consistency": 14.4,
+          "craft": 0,
+          "maturity": 6.1
+        }
+      }
+    },
+    {
+      "username": "JakeWharton",
+      "className": "Bardo",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 98,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 23.67,
+        "artificer": 31.01,
+        "illusionist": 17.75,
+        "guardian": 41.64,
+        "chronomancer": 64.2
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 22.56,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 14.7,
+          "versatility": 5.3,
+          "quality": 0,
+          "automation": 3.67
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 11.01,
+          "versatility": 5.3,
+          "maturity": 14.7
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 7.95,
+          "maturity": 9.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.4,
+          "maturity": 4.9,
+          "automation": 7.34
+        },
+        "chronomancer": {
+          "automation": 40,
+          "consistency": 14.4,
+          "craft": 0,
+          "maturity": 9.8
+        }
+      }
+    },
+    {
+      "username": "mitsuhiko",
+      "className": "Guerreiro",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 100,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker"
+      ],
+      "scores": {
+        "architect": 23.37,
+        "artificer": 29.12,
+        "illusionist": 18.25,
+        "guardian": 40.6,
+        "chronomancer": 62.2
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 21.6,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 15,
+          "versatility": 5.5,
+          "quality": 0,
+          "automation": 2.87
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 8.62,
+          "versatility": 5.5,
+          "maturity": 15
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 8.25,
+          "maturity": 10
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 14.85,
+          "maturity": 5,
+          "automation": 5.75
+        },
+        "chronomancer": {
+          "automation": 37.35,
+          "consistency": 14.85,
+          "craft": 0,
+          "maturity": 10
+        }
+      }
+    },
+    {
+      "username": "sharkdp",
+      "className": "Alquimista",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 93,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions",
+        "Docker",
+        "Terraform",
+        "Rollup"
+      ],
+      "scores": {
+        "architect": 22.87,
+        "artificer": 37.75,
+        "illusionist": 18.75,
+        "guardian": 38.68,
+        "chronomancer": 58.73
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 20.04,
+      "subclass": "chronomancer",
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 13.95,
+          "versatility": 6.3,
+          "quality": 0,
+          "automation": 2.62
+        },
+        "artificer": {
+          "craft": 9.65,
+          "automation": 7.85,
+          "versatility": 6.3,
+          "maturity": 13.95
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 9.45,
+          "maturity": 9.3
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.8,
+          "maturity": 4.65,
+          "automation": 5.23
+        },
+        "chronomancer": {
+          "automation": 34.02,
+          "consistency": 13.8,
+          "craft": 1.61,
+          "maturity": 9.3
+        }
+      }
+    },
+    {
+      "username": "iamkun",
+      "className": "Mago",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 68,
+      "schools": [
+        "Express"
+      ],
+      "artifacts": [
+        "ESLint",
+        "Jest",
+        "Prettier",
+        "Rollup",
+        "GitHub Actions",
+        "Webpack"
+      ],
+      "scores": {
+        "architect": 40.58,
+        "artificer": 42.2,
+        "illusionist": 19.51,
+        "guardian": 60.26,
+        "chronomancer": 40.06
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "margin": 18.06,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 23.83,
+          "maturity": 10.2,
+          "versatility": 0.8,
+          "quality": 4.64,
+          "automation": 1.12
+        },
+        "artificer": {
+          "craft": 27.85,
+          "automation": 3.35,
+          "versatility": 0.8,
+          "maturity": 10.2
+        },
+        "illusionist": {
+          "visual": 7.54,
+          "structural": 3.97,
+          "versatility": 1.2,
+          "maturity": 6.8
+        },
+        "guardian": {
+          "quality": 25.53,
+          "collaboration": 15,
+          "consistency": 14.1,
+          "maturity": 3.4,
+          "automation": 2.23
+        },
+        "chronomancer": {
+          "automation": 14.52,
+          "consistency": 14.1,
+          "craft": 4.64,
+          "maturity": 6.8
+        }
+      }
+    },
+    {
+      "username": "torvalds",
+      "className": "Guerreiro",
+      "coverage": "partial",
+      "confidence": "low",
+      "maturity": 60,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 10.81,
+        "artificer": 12.84,
+        "illusionist": 7.2,
+        "guardian": 21.6,
+        "chronomancer": 33.71
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "margin": 12.11,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 9,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 1.01
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 3.04,
+          "versatility": 0.8,
+          "maturity": 9
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 1.2,
+          "maturity": 6
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 2.03,
+          "consistency": 14.55,
+          "maturity": 3,
+          "automation": 2.03
+        },
+        "chronomancer": {
+          "automation": 13.16,
+          "consistency": 14.55,
+          "craft": 0,
+          "maturity": 6
+        }
+      }
+    },
+    {
+      "username": "dhh",
+      "className": "Oráculo",
+      "coverage": "full",
+      "confidence": "low",
+      "maturity": 78,
+      "schools": [],
+      "artifacts": [],
+      "scores": {
+        "architect": 12.5,
+        "artificer": 12.5,
+        "illusionist": 9,
+        "guardian": 31.95,
+        "chronomancer": 20.85
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 11.1,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 0,
+          "maturity": 11.7,
+          "versatility": 0.8,
+          "quality": 0,
+          "automation": 0
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 0,
+          "versatility": 0.8,
+          "maturity": 11.7
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 0,
+          "versatility": 1.2,
+          "maturity": 7.8
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.05,
+          "maturity": 3.9,
+          "automation": 0
+        },
+        "chronomancer": {
+          "automation": 0,
+          "consistency": 13.05,
+          "craft": 0,
+          "maturity": 7.8
+        }
+      }
+    },
+    {
+      "username": "gvanrossum",
+      "className": "Bardo",
+      "coverage": "full",
+      "confidence": "medium",
+      "maturity": 86,
+      "schools": [
+        "Flask"
+      ],
+      "artifacts": [
+        "GitHub Actions"
+      ],
+      "scores": {
+        "architect": 45.69,
+        "artificer": 19.92,
+        "illusionist": 19.23,
+        "guardian": 35.26,
+        "chronomancer": 35.62
+      },
+      "top1": "architect",
+      "top2": "chronomancer",
+      "margin": 10.07,
+      "subclass": null,
+      "components": {
+        "architect": {
+          "structural": 27.78,
+          "maturity": 12.9,
+          "versatility": 4,
+          "quality": 0,
+          "automation": 1.01
+        },
+        "artificer": {
+          "craft": 0,
+          "automation": 3.02,
+          "versatility": 4,
+          "maturity": 12.9
+        },
+        "illusionist": {
+          "visual": 0,
+          "structural": 4.63,
+          "versatility": 6,
+          "maturity": 8.6
+        },
+        "guardian": {
+          "quality": 0,
+          "collaboration": 15,
+          "consistency": 13.95,
+          "maturity": 4.3,
+          "automation": 2.01
+        },
+        "chronomancer": {
+          "automation": 13.07,
+          "consistency": 13.95,
+          "craft": 0,
+          "maturity": 8.6
+        }
+      }
+    },
+    {
+      "username": "kentcdodds",
+      "className": "Mago",
+      "coverage": "partial",
+      "confidence": "medium",
+      "maturity": 99,
+      "schools": [
+        "React",
+        "Remix",
+        "Vue"
+      ],
+      "artifacts": [
+        "Prettier",
+        "GitHub Actions",
+        "esbuild",
+        "Vite",
+        "Playwright",
+        "Vitest",
+        "Docker",
+        "ESLint",
+        "Tailwind CSS",
+        "Rollup",
+        "Jest",
+        "Cypress",
+        "pnpm"
+      ],
+      "scores": {
+        "architect": 56.98,
+        "artificer": 60.05,
+        "illusionist": 59.88,
+        "guardian": 74.2,
+        "chronomancer": 64.15
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "margin": 10.05,
+      "subclass": "guardian",
+      "components": {
+        "architect": {
+          "structural": 27.12,
+          "maturity": 14.85,
+          "versatility": 5.2,
+          "quality": 6.39,
+          "automation": 3.41
+        },
+        "artificer": {
+          "craft": 32.52,
+          "automation": 7.48,
+          "versatility": 5.2,
+          "maturity": 14.85
+        },
+        "illusionist": {
+          "visual": 37.66,
+          "structural": 4.52,
+          "versatility": 7.8,
+          "maturity": 9.9
+        },
+        "guardian": {
+          "quality": 33.5,
+          "collaboration": 15,
+          "consistency": 14.25,
+          "maturity": 4.95,
+          "automation": 6.5
+        },
+        "chronomancer": {
+          "automation": 34.27,
+          "consistency": 14.25,
+          "craft": 5.73,
+          "maturity": 9.9
+        }
+      }
+    }
+  ],
+  "issueCounts": {
+    "signalOverlap": 11,
+    "weakSpecificity": 2,
+    "saturation": 0,
+    "threshold": 2,
+    "margin": 10,
+    "confidence": 1,
+    "legitimateAmbiguity": 7
+  }
+}

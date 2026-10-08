@@ -1,0 +1,1596 @@
+{
+  "profile": {
+    "username": "sebmarkbage",
+    "cohort": "calibration",
+    "categories": [
+      "frontend-ui",
+      "tooling"
+    ],
+    "mandatory": true
+  },
+  "rawProfile": {
+    "username": "sebmarkbage",
+    "displayName": "Sebastian Markbåge",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/63648?v=4",
+    "bio": null,
+    "location": "New York City",
+    "company": "Vercel",
+    "createdAt": "2009-03-15T15:25:49.000Z",
+    "fetchedAt": "2026-10-07T04:51:57.965Z",
+    "isDemo": false,
+    "followers": {
+      "value": 9518,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "next-gestures-demo",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 18655,
+            "CSS": 1923,
+            "JavaScript": 559
+          }
+        },
+        {
+          "name": "react",
+          "isFork": true,
+          "stars": 26,
+          "forks": 7,
+          "languages": {}
+        },
+        {
+          "name": "react-typewriter-reveal",
+          "isFork": false,
+          "stars": 56,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 18257
+          }
+        },
+        {
+          "name": "next.js",
+          "isFork": true,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "animation-timelines",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 23437,
+            "HTML": 673
+          }
+        },
+        {
+          "name": "app-playground",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "reactjs.org",
+          "isFork": true,
+          "stars": 7,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "art",
+          "isFork": true,
+          "stars": 1093,
+          "forks": 108,
+          "languages": {}
+        },
+        {
+          "name": "react-builds",
+          "isFork": false,
+          "stars": 7,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 9987793
+          }
+        },
+        {
+          "name": "create-react-app",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "symlinked-node-modules-example",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 184
+          }
+        },
+        {
+          "name": "reason-react",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prepack",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-generator-expression",
+          "isFork": false,
+          "stars": 98,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-shallow-equal",
+          "isFork": false,
+          "stars": 60,
+          "forks": 6,
+          "languages": {}
+        },
+        {
+          "name": "yoga",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-realm-snapshot",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "isfiberreadyyet",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prepack-2",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1735618,
+            "Shell": 201
+          }
+        },
+        {
+          "name": "reason-react-example",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-immutable-data-structures",
+          "isFork": false,
+          "stars": 602,
+          "forks": 17,
+          "languages": {}
+        },
+        {
+          "name": "ocamlrun-wasm",
+          "isFork": false,
+          "stars": 257,
+          "forks": 11,
+          "languages": {
+            "Shell": 1142,
+            "JavaScript": 1076,
+            "HTML": 177,
+            "OCaml": 144
+          }
+        },
+        {
+          "name": "ocaml",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "labeled-modules-spec",
+          "isFork": false,
+          "stars": 7,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "react-art",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "jest",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "reason",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecma262",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "preact",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "react-devtools",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-undefined-propagation",
+          "isFork": false,
+          "stars": 80,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "react-native",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ecmascript-scoped-constructor-arguments",
+          "isFork": false,
+          "stars": 12,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "agendas",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "esprima",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "react-future",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "blink-devtools",
+          "isFork": false,
+          "stars": 12,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 4533421,
+            "CSS": 258249
+          }
+        },
+        {
+          "name": "react-page-middleware",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "react-page",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "node-haste",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "react-server-rendering",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Ejecta",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "d3",
+          "isFork": true,
+          "stars": 4,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "art-canvas",
+          "isFork": false,
+          "stars": 8,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "art-svg",
+          "isFork": false,
+          "stars": 10,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "art-script",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "art-morph",
+          "isFork": false,
+          "stars": 8,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "ast-js",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 13187
+          }
+        },
+        {
+          "name": "link.js",
+          "isFork": false,
+          "stars": 30,
+          "forks": 10,
+          "languages": {
+            "JavaScript": 146281
+          }
+        },
+        {
+          "name": "calyptus.mvc.protobuf",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "C#": 4484
+          }
+        },
+        {
+          "name": "htm",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "C#": 70339
+          }
+        },
+        {
+          "name": "signapk",
+          "isFork": false,
+          "stars": 12,
+          "forks": 4,
+          "languages": {
+            "C#": 55327
+          }
+        },
+        {
+          "name": "mootools-core",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "NSweep",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nodes",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prime",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "wrapup",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "moofx",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "inject",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "slick",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "amdjs-tests",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "calyptus.lob",
+          "isFork": false,
+          "stars": 7,
+          "forks": 7,
+          "languages": {
+            "C#": 146002
+          }
+        },
+        {
+          "name": "linq-to-sqlxml",
+          "isFork": false,
+          "stars": 12,
+          "forks": 6,
+          "languages": {
+            "C#": 71500
+          }
+        },
+        {
+          "name": "mootools-color",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "calyptus.resourcemanager",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 880473,
+            "C#": 195557,
+            "ASP": 1236
+          }
+        },
+        {
+          "name": "mootools-core-specs",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "art-illustrator",
+          "isFork": false,
+          "stars": 18,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1484
+          }
+        },
+        {
+          "name": "coretools",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 28209
+          }
+        },
+        {
+          "name": "commonjs",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "collectables",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 11664
+          }
+        },
+        {
+          "name": "mootools-draggable",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 26336
+          }
+        },
+        {
+          "name": "calyptus.mvc",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "C#": 220891,
+            "ASP": 2721
+          }
+        },
+        {
+          "name": "mootools-more",
+          "isFork": true,
+          "stars": 7,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mootools-lang",
+          "isFork": false,
+          "stars": 4,
+          "forks": 2,
+          "languages": {
+            "JavaScript": 50019
+          }
+        },
+        {
+          "name": "mootools-editable",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 54339
+          }
+        }
+      ],
+      "coverage": "partial"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 3731,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 1802,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 2042,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 242,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 2053,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 29,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 49,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          8,
+          27,
+          2,
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          17,
+          8,
+          5,
+          10,
+          11,
+          0,
+          0,
+          4,
+          13,
+          41,
+          37,
+          2,
+          12,
+          3,
+          0,
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          2,
+          5,
+          17,
+          6,
+          1,
+          0,
+          0,
+          4,
+          0,
+          0,
+          3,
+          0,
+          2,
+          3,
+          8,
+          0,
+          0,
+          2,
+          1,
+          1,
+          3,
+          16,
+          4,
+          3,
+          4,
+          29,
+          4,
+          24,
+          4,
+          21,
+          54,
+          21,
+          36,
+          35,
+          246,
+          46,
+          34,
+          69,
+          125,
+          63,
+          3,
+          9,
+          35,
+          13,
+          64,
+          24,
+          23,
+          9,
+          4,
+          2,
+          95,
+          31,
+          45,
+          22,
+          45,
+          47,
+          22,
+          38,
+          139,
+          158,
+          77,
+          35,
+          54,
+          54,
+          53,
+          78,
+          68,
+          80,
+          47,
+          19,
+          84,
+          30,
+          12,
+          51,
+          31,
+          56,
+          60,
+          46,
+          22,
+          48,
+          46,
+          12,
+          339,
+          44,
+          11,
+          17,
+          27,
+          36,
+          29,
+          28,
+          20,
+          22,
+          46,
+          46,
+          38,
+          35,
+          23,
+          22,
+          59,
+          93,
+          93,
+          91,
+          7,
+          10,
+          12,
+          6,
+          15,
+          39,
+          42,
+          6,
+          3,
+          72,
+          74,
+          12,
+          46,
+          12,
+          2,
+          16,
+          21,
+          2,
+          10,
+          2,
+          40,
+          139,
+          20,
+          12,
+          25,
+          3,
+          24,
+          41,
+          76,
+          34,
+          5,
+          17,
+          53,
+          68,
+          97,
+          40,
+          35,
+          5,
+          36,
+          73,
+          103,
+          25,
+          9,
+          19,
+          98,
+          64,
+          95,
+          67,
+          72,
+          146,
+          102,
+          130,
+          198,
+          40,
+          94,
+          91,
+          22,
+          100,
+          96,
+          109,
+          161,
+          139,
+          108,
+          120,
+          187,
+          68,
+          20,
+          52,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2009,
+            "contributions": 43,
+            "activeDays": 16,
+            "commits": 35,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 112,
+            "activeDays": 40,
+            "commits": 101,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2011,
+            "contributions": 59,
+            "activeDays": 21,
+            "commits": 53,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 38,
+            "activeDays": 18,
+            "commits": 19,
+            "pullRequests": 4,
+            "reviews": 0,
+            "issues": 1
+          },
+          {
+            "year": 2013,
+            "contributions": 45,
+            "activeDays": 22,
+            "commits": 34,
+            "pullRequests": 3,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2014,
+            "contributions": 554,
+            "activeDays": 108,
+            "commits": 478,
+            "pullRequests": 48,
+            "reviews": 0,
+            "issues": 22
+          },
+          {
+            "year": 2015,
+            "contributions": 441,
+            "activeDays": 102,
+            "commits": 329,
+            "pullRequests": 68,
+            "reviews": 0,
+            "issues": 42
+          },
+          {
+            "year": 2016,
+            "contributions": 721,
+            "activeDays": 164,
+            "commits": 485,
+            "pullRequests": 106,
+            "reviews": 91,
+            "issues": 33
+          },
+          {
+            "year": 2017,
+            "contributions": 614,
+            "activeDays": 188,
+            "commits": 178,
+            "pullRequests": 79,
+            "reviews": 269,
+            "issues": 79
+          },
+          {
+            "year": 2018,
+            "contributions": 766,
+            "activeDays": 177,
+            "commits": 384,
+            "pullRequests": 94,
+            "reviews": 242,
+            "issues": 44
+          },
+          {
+            "year": 2019,
+            "contributions": 367,
+            "activeDays": 159,
+            "commits": 83,
+            "pullRequests": 88,
+            "reviews": 188,
+            "issues": 8
+          },
+          {
+            "year": 2020,
+            "contributions": 489,
+            "activeDays": 147,
+            "commits": 158,
+            "pullRequests": 141,
+            "reviews": 181,
+            "issues": 6
+          },
+          {
+            "year": 2021,
+            "contributions": 276,
+            "activeDays": 88,
+            "commits": 101,
+            "pullRequests": 101,
+            "reviews": 68,
+            "issues": 0
+          },
+          {
+            "year": 2022,
+            "contributions": 421,
+            "activeDays": 135,
+            "commits": 158,
+            "pullRequests": 81,
+            "reviews": 174,
+            "issues": 5
+          },
+          {
+            "year": 2023,
+            "contributions": 561,
+            "activeDays": 173,
+            "commits": 192,
+            "pullRequests": 147,
+            "reviews": 220,
+            "issues": 0
+          },
+          {
+            "year": 2024,
+            "contributions": 1125,
+            "activeDays": 248,
+            "commits": 380,
+            "pullRequests": 394,
+            "reviews": 348,
+            "issues": 2
+          },
+          {
+            "year": 2025,
+            "contributions": 1221,
+            "activeDays": 237,
+            "commits": 533,
+            "pullRequests": 433,
+            "reviews": 253,
+            "issues": 0
+          },
+          {
+            "year": 2026,
+            "contributions": 52,
+            "activeDays": 10,
+            "commits": 30,
+            "pullRequests": 13,
+            "reviews": 8,
+            "issues": 0
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2025-07-21",
+        "end": "2025-08-18"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "1137925507",
+        "name": "next-gestures-demo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2026-01-23T01:45:13Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"next-gestures-demo\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"eslint\"\n  },\n  \"dependencies\": {\n    \"next\": \"16.2.0-canary.4\",\n    \"react\": \"19.2.3\",\n    \"react-dom\": \"19.2.3\"\n  },\n  \"devDependencies\": {\n    \"@tailwindcss/postcss\": \"^4\",\n    \"@types/node\": \"^20\",\n    \"@types/react\": \"^19\",\n    \"@types/react-dom\": \"^19\",\n    \"eslint\": \"^9\",\n    \"eslint-config-next\": \"16.2.0-canary.4\",\n    \"tailwindcss\": \"^4\",\n    \"typescript\": \"^5\"\n  }\n}\n"
+          },
+          {
+            "path": "eslint.config.mjs",
+            "content": "import { defineConfig, globalIgnores } from \"eslint/config\";\nimport nextVitals from \"eslint-config-next/core-web-vitals\";\nimport nextTs from \"eslint-config-next/typescript\";\n\nconst eslintConfig = defineConfig([\n  ...nextVitals,\n  ...nextTs,\n  // Override default ignores of eslint-config-next.\n  globalIgnores([\n    // Default ignores of eslint-config-next:\n    \".next/**\",\n    \"out/**\",\n    \"build/**\",\n    \"next-env.d.ts\",\n  ]),\n]);\n\nexport default eslintConfig;\n"
+          }
+        ]
+      },
+      {
+        "id": "1094678584",
+        "name": "react-typewriter-reveal",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 56,
+        "pushedAt": "2025-11-14T16:16:53Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"react-typewriter-reveal\",\n  \"description\": \"React component for animating in text content as if it was being written on the fly.\",\n  \"keywords\": [\n    \"react\"\n  ],\n  \"version\": \"0.0.7\",\n  \"bugs\": \"https://github.com/sebmarkbage/react-typewriter-reveal/issues\",\n  \"main\": \"dist/TypeWriter.js\",\n  \"files\": [\n    \"LICENSE\",\n    \"README.md\",\n    \"src/\"\n  ],\n  \"type\": \"module\",\n  \"exports\": {\n    \".\": \"./src/TypeWriter.js\"\n  },\n  \"peerDependencies\": {\n    \"react\": \"^17.0.0 || ^18.0.0 || ^19.0.0 || ^0.0.0-experimental\"\n  }\n}\n"
+          },
+          {
+            "path": "pnpm-lock.yaml",
+            "content": "lockfileVersion: '9.0'\n\nsettings:\n  autoInstallPeers: true\n  excludeLinksFromLockfile: false\n\nimporters:\n\n  .:\n    dependencies:\n      react:\n        specifier: ^17.0.0 || ^18.0.0 || ^19.0.0 || ^0.0.0-experimental\n        version: 19.2.0\n\npackages:\n\n  react@19.2.0:\n    resolution: {integrity: sha512-tmbWg6W31tQLeB5cdIBOicJDJRR2KzXsV7uSK9iNfLWQ5bIZfxuPEHp7M8wiHyHnn0DD1i7w3Zmin0FtkrwoCQ==}\n    engines: {node: '>=0.10.0'}\n\nsnapshots:\n\n  react@19.2.0: {}\n"
+          }
+        ]
+      },
+      {
+        "id": "1001019064",
+        "name": "animation-timelines",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 9,
+        "pushedAt": "2025-06-19T17:57:26Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"animation-timelines\",\n  \"description\": \"A collection of Custom AnimationTimeline for use with Web Animations.\",\n  \"version\": \"0.0.4\",\n  \"keywords\": [\n    \"AnimationTimeline\",\n    \"ScrollTimeline\",\n    \"ViewTimeline\"\n  ],\n  \"homepage\": \"https://animation-timelines.vercel.app\",\n  \"bugs\": \"https://github.com/sebmarkbage/animation-timelines/issues\",\n  \"license\": \"MIT\",\n  \"files\": [\n    \"LICENSE\",\n    \"README.md\",\n    \"index.js\",\n    \"scroll-timeline.js\",\n    \"touch-pan-timeline.js\",\n    \"view-timeline.js\",\n    \"utils/\"\n  ],\n  \"type\": \"module\",\n  \"exports\": {\n    \".\": \"./index.js\",\n    \"./scroll-timeline\": \"./scroll-timeline.js\",\n    \"./touch-pan-timeline\": \"./touch-pan-timeline.js\",\n    \"./view-timeline\": \"./view-timeline.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/sebmarkbage/animation-timelines.git\"\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "242627217",
+        "name": "react-builds",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2022-11-25T18:18:45Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "245482723",
+        "name": "symlinked-node-modules-example",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2020-03-06T17:45:08Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n    \"type\": \"module\"\n}"
+          }
+        ]
+      },
+      {
+        "id": "106367990",
+        "name": "ecmascript-generator-expression",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 98,
+        "pushedAt": "2017-11-28T23:34:07Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "63472350",
+        "name": "ecmascript-shallow-equal",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 60,
+        "pushedAt": "2017-10-06T18:56:48Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "93547725",
+        "name": "ecmascript-realm-snapshot",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2017-06-16T01:44:27Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "88195400",
+        "name": "prepack-2",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2017-05-18T22:31:27Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"prepack\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Execute a JS bundle, serialize global state and side effects to a snapshot that can be quickly restored.\",\n  \"homepage\": \"https://github.com/facebook/prepack\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/facebook/prepack.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/facebook/prepack/issues\"\n  },\n  \"files\": [\n    \"src/*\",\n    \"lib/*\"\n  ],\n  \"main\": \"lib/prepack.js\",\n  \"scripts\": {\n    \"build\": \"babel src --out-dir lib --source-maps && npm run build-bundle\",\n    \"build-bundle\": \"webpack\",\n    \"watch\": \"babel src --out-dir lib --watch --source-maps\",\n    \"lint\": \"eslint src\",\n    \"flow\": \"flow\",\n    \"test-serializer\": \"node lib/scripts/test-runner.js\",\n    \"test-serializer-with-coverage\": \"cd lib && ../node_modules/.bin/istanbul cover scripts/test-runner.js && ../node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage-sourcemapped -t html && echo You can find coverage reports here: && echo   lib/coverage/lcov-report/index.html && echo   lib/coverage-sourcemapped/index.html\",\n    \"test-sourcemaps\": \"node lib/scripts/generate-sourcemaps-test.js && bash < src/scripts/test-sourcemaps.sh\",\n    \"test-test262\": \"node lib/scripts/test262-runner.js\",\n    \"test-internal\": \"node --stack_size=10000 --stack_trace_limit=200 --max_old_space_size=8192 lib/scripts/test-internal.js\",\n    \"test\": \"npm run test-serializer && npm run test-sourcemaps && npm run test-test262 && npm run test-internal\",\n    \"repl\": \"node lib/repl.js\",\n    \"prepack\": \"node lib/run_util.js\",\n    \"validate\": \"npm run build && npm run lint && npm run flow && npm test\",\n    \"prepublish\": \"npm run build\"\n  },\n  \"dependencies\": {\n    \"babel-core\": \"^6.8.0\",\n    \"babel-generator\": \"^6.8.0\",\n    \"babel-helper-function-name\": \"^6.8.0\",\n    \"babel-helper-get-function-arity\": \"^6.8.0\",\n    \"babel-preset-react\": \"^6.5.0\",\n    \"babel-template\": \"^6.9.0\",\n    \"babel-traverse\": \"^6.9.0\",\n    \"babel-types\": \"^6.9.0\",\n    \"babylon\": \"^6.5.2\",\n    \"base62\": \"^1.1.2\",\n    \"chalk\": \"^1.1.3\",\n    \"invariant\": \"^2.2.0\",\n    \"istanbul\": \"^0.4.5\",\n    \"js-yaml\": \"^3.6.1\",\n    \"jsdom\": \"^9.2.1\",\n    \"minimist\": \"^1.2.0\",\n    \"remap-istanbul\": \"^0.9.1\",\n    \"repeating\": \"^2.0.0\",\n    \"seedrandom\": \"^2.4.2\",\n    \"source-map\": \"^0.5.6\",\n    \"source-map-support\": \"^0.4.6\",\n    \"uglify-js\": \"^2.6.2\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.18.0\",\n    \"babel-eslint\": \"^7.1.1\",\n    \"babel-plugin-transform-class-properties\": \"^6.6.0\",\n    \"babel-plugin-transform-object-rest-spread\": \"^6.8.0\",\n    \"babel-preset-es2015\": \"^6.5.0\",\n    \"eslint\": \"^3.8.1\",\n    \"eslint-plugin-babel\": \"^3.3.0\",\n    \"eslint-plugin-flow-header\": \"^0.1.1\",\n    \"eslint-plugin-flowtype\": \"^2.20.0\",\n    \"eslint-plugin-header\": \"^1.0.0\",\n    \"flow-bin\": \"^0.43.0\",\n    \"graceful-fs\": \"^4.1.11\",\n    \"kcheck\": \"^2.0.0\",\n    \"webpack\": \"^2.3.3\"\n  },\n  \"engines\": {\n    \"node\": \">=6.1.0 <7.0.0\"\n  },\n  \"keywords\": [\n    \"prepack\"\n  ],\n  \"license\": \"BSD-3-Clause\",\n  \"author\": \"Facebook\",\n  \"private\": true\n}\n"
+          },
+          {
+            "path": ".eslintrc",
+            "content": "// Adapted from React Native .eslintrc.\n// However, at this time, some rules have been disabled to ease the transition\n\n{\n  \"parser\": \"babel-eslint\",\n\n  \"plugins\": [\n    \"flowtype\",\n    \"header\",\n    \"flow-header\",\n  ],\n\n  \"ecmaFeatures\": {\n    \"jsx\": true\n  },\n\n  \"env\": {\n    \"es6\": true,\n    \"jasmine\": true,\n  },\n\n  \"globals\": {\n    \"console\": false,\n    \"process\": false,\n    \"require\": false,\n    \"setTimeout\": false,\n    \"setInterval\": false,\n    \"__dirname\": false,\n    \"Set\": false\n  },\n\n  \"rules\": {\n    \"comma-dangle\": 0,               // disallow trailing commas in object literals\n    \"no-cond-assign\": 2,             // disallow assignment in conditional expressions\n    \"no-console\": 0,                 // disallow use of console (off by default in the node environment)\n    \"no-const-assign\": 2,            // disallow assignment to const-declared variables\n    \"no-constant-condition\": 0,      // disallow use of constant expressions in conditions\n    \"no-control-regex\": 2,           // disallow control characters in regular expressions\n    \"no-debugger\": 2,                // disallow use of debugger\n    \"no-dupe-keys\": 2,               // disallow duplicate keys when creating object literals\n    \"no-empty\": 0,                   // disallow empty statements\n    \"no-ex-assign\": 2,               // disallow assigning to the exception in a catch block\n    \"no-extra-boolean-cast\": 2,      // disallow double-negation boolean casts in a boolean context\n    \"no-extra-parens\": 0,            // disallow unnecessary parentheses (off by default)\n    \"no-extra-semi\": 2,              // disallow unnecessary semicolons\n    \"no-func-assign\": 2,             // disallow overwriting functions written as function declarations\n    \"no-inner-declarations\": 0,      // disallow function or variable declarations in nested blocks\n    \"no-invalid-regexp\": 2,          // disallow invalid regular expression strings in the RegExp constructor\n    \"no-negated-in-lhs\": 2,          // disallow negation of the left operand of an in expression\n    \"no-obj-calls\": 2,               // disallow the use of object properties of the global object (Math and JSON) as functions\n    \"no-regex-spaces\": 2,            // disallow multiple spaces in a regular expression literal\n    \"no-reserved-keys\": 0,           // disallow reserved words being used as object literal keys (off by default)\n    \"no-sparse-arrays\": 2,           // disallow sparse arrays\n    // \"no-unreachable\": 1,             // disallow unreachable statements after a return, throw, continue, or break statement\n    \"use-isnan\": 2,                  // disallow comparisons with the value NaN\n    \"valid-jsdoc\": 0,                // Ensure JSDoc comments are valid (off by default)\n    \"valid-typeof\": 2,               // Ensure that the results of typeof are compared against a valid string\n    \"no-var\": 2,\n\n  // Best Practices\n  // These are rules designed to prevent you from making mistakes. They either prescribe a better way of doing something or help you avoid footguns.\n\n    \"block-scoped-var\": 0,           // treat var statements as if they were block scoped (off by default)\n    \"complexity\": 0,                 // specify the maximum cyclomatic complexity allowed in a program (off by default)\n    \"consistent-return\": 0,          // require return statements to either always or never specify values\n    // \"curly\": 1,                      // specify curly brace conventions for all control statements\n    \"default-case\": 2,               // require default case in switch statements (off by default)\n    \"dot-notation\": 2,               // encourages use of dot notation whenever possible\n    \"eqeqeq\": [2, \"allow-null\"],     // require the use of === and !==\n    \"guard-for-in\": 0,               // make sure for-in loops have an if statement (off by default)\n    \"no-alert\": 2,                   // disallow the use of alert, confirm, and prompt\n    \"no-caller\": 2,                  // disallow use of arguments.caller or arguments.callee\n    \"no-div-regex\": 2,               // disallow division operators explicitly at beginning of regular expression (off by default)\n    \"no-else-return\": 0,             // disallow else after a return in an if (off by default)\n    \"no-eq-null\": 0,                 // disallow comparisons to null without a type-checking operator (off by default)\n    \"no-eval\": 2,                    // disallow use of eval()\n    \"no-extend-native\": 2,           // disallow adding to native types\n    \"no-extra-bind\": 2,              // disallow unnecessary function binding\n    \"no-fallthrough\": 2,             // disallow fallthrough of case statements\n    \"no-floating-decimal\": 2,        // disallow the use of leading or trailing decimal points in numeric literals (off by default)\n    \"no-implicit-globals\": 2,\n    \"no-implied-eval\": 2,            // disallow use of eval()-like methods\n    \"no-invalid-this\": 2,\n    \"no-labels\": 0,                  // disallow use of labeled statements\n    \"no-iterator\": 2,                // disallow usage of __iterator__ property\n    \"no-lone-blocks\": 2,             // disallow unnecessary nested blocks\n    \"no-loop-func\": 0,               // disallow creation of functions within loops\n    \"no-multi-str\": 0,               // disallow use of multiline strings\n    \"no-native-reassign\": 0,         // disallow reassignments of native objects\n    \"no-new\": 2,                     // disallow use of new operator when not part of the assignment or comparison\n    \"no-new-func\": 2,                // disallow use of new operator for Function object\n    \"no-new-wrappers\": 2,            // disallows creating new instances of String,Number, and Boolean\n    \"no-octal\": 2,                   // disallow use of octal literals\n    \"no-octal-escape\": 2,            // disallow use of octal escape sequences in string literals, such as var foo = \"Copyright \\251\";\n    \"no-proto\": 2,                   // disallow usage of __proto__ property\n    \"no-redeclare\": 2,               // disallow declaring the same variable more then once\n    \"no-return-assign\": 2,           // disallow use of assignment in return statement\n    \"no-script-url\": 2,              // disallow use of javascript: urls.\n    \"no-self-assign\": 2,\n    \"no-self-compare\": 2,            // disallow comparisons where both sides are exactly the same (off by default)\n    \"no-sequences\": 2,               // disallow use of comma operator\n    \"no-throw-literal\": 2,\n    \"no-unused-expressions\": 0,      // disallow usage of expressions in statement position\n    \"no-void\": 2,                    // disallow use of void operator (off by default)\n    \"no-warning-comments\": 0,        // disallow usage of configurable warning terms in comments\": 1,                        // e.g. TODO or FIXME (off by default)\n    \"no-with\": 2,                    // disallow use of the with statement\n    \"radix\": 2,                      // require use of the second argument for parseInt() (off by default)\n    \"semi-spacing\": 2,               // require a space after a semi-colon\n    \"vars-on-top\": 0,                // requires to declare all vars on top of their containing scope (off by default)\n    \"wrap-iife\": 0,                  // require immediate function invocation to be wrapped in parentheses (off by default)\n    \"yoda\": 2,                       // require or disallow Yoda conditions\n\n  // Variables\n  // These rules have to do with variable declarations.\n\n    \"no-catch-shadow\": 2,            // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)\n    \"no-delete-var\": 2,              // disallow deletion of variables\n    \"no-label-var\": 2,               // disallow labels that share a name with a variable\n    \"no-shadow\": 2,                  // disallow declaration of variables already declared in the outer scope\n    \"no-shadow-restricted-names\": 2, // disallow shadowing of names such as arguments\n    \"no-undef\": 2,                   // disallow use of undeclared variables unless mentioned in a /*global */ block\n    \"no-undefined\": 0,               // disallow use of undefined variable (off by default)\n    \"no-undef-init\": 2,              // disallow use of undefined when initializing variables\n    \"no-unused-vars\": [2, {\"vars\": \"all\", \"args\": \"none\"}], // disallow declaration of variables that are not used in the code\n    \"no-use-before-define\": 0,       // disallow use of variables before they are defined\n\n  // Node.js\n  // These rules are specific to JavaScript running on Node.js.\n\n    \"handle-callback-err\": 2,        // enforces error handling in callbacks (off by default) (on by default in the node environment)\n    \"no-mixed-requires\": 2,          // disallow mixing regular variable and require declarations (off by default) (on by default in the node environment)\n    \"no-new-require\": 2,             // disallow use of new operator with the require function (off by default) (on by default in the node environment)\n    \"no-path-concat\": 2,             // disallow string concatenation with __dirname and __filename (off by default) (on by default in the node environment)\n    \"no-process-exit\": 0,            // disallow process.exit() (on by default in the node environment)\n    \"no-restricted-modules\": 2,      // restrict usage of specified node modules (off by default)\n    \"no-sync\": 0,                    // disallow use of synchronous methods (off by default)\n\n  // Stylistic Issues\n  // These rules are purely matters of style and are quite subjective.\n\n    \"key-spacing\": 2,\n    \"keyword-spacing\": 2,            // enforce spacing before and after keywords\n    \"jsx-quotes\": [2, \"prefer-double\"],\n    \"comma-spacing\": 2,\n    \"comma-style\": 2,\n    \"no-multi-spaces\": 0,\n    \"brace-style\": 2,                // enforce one true brace style (off by default)\n    \"camelcase\": 0,                  // require camel case names\n    \"consistent-this\": [0, \"self\"],            // enforces consistent naming when capturing the current execution context (off by default)\n    \"eol-last\": 2,                   // enforce newline at the end of file, with no multiple empty lines\n    \"func-names\": 0,                 // require function expressions to have a name (off by default)\n    \"func-name-matching\": 2,\n    \"func-call-spacing\": 2,\n    \"func-style\": 0,                 // enforces use of function declarations or expressions (off by default)\n    \"new-cap\": [2, { \"capIsNew\": false }],                    // require a capital letter for constructors\n    \"new-parens\": 2,                 // disallow the omission of parentheses when invoking a constructor with no arguments\n    \"no-nested-ternary\": 0,          // disallow nested ternary expressions (off by default)\n    \"no-array-constructor\": 2,       // disallow use of the Array constructor\n    \"no-lonely-if\": 0,               // disallow if as the only statement in an else block (off by default)\n    \"no-new-object\": 2,              // disallow use of the Object constructor\n    \"no-spaced-func\": 2,             // disallow space between function identifier and application\n    \"no-tabs\": 2,\n    \"no-ternary\": 0,                 // disallow the use of ternary operators (off by default)\n    \"no-trailing-spaces\": 2,         // disallow trailing whitespace at the end of lines\n    \"no-underscore-dangle\": 0,       // disallow dangling underscores in identifiers\n    \"no-mixed-spaces-and-tabs\": 2,   // disallow mixed spaces and tabs for indentation\n    // \"quotes\": [1, \"single\", \"avoid-escape\"], // specify whether double or single quotes should be used\n    \"quote-props\": 0,                // require quotes around object literal property names (off by default)\n    \"semi\": 2,                       // require or disallow use of semicolons instead of ASI\n    \"sort-vars\": 0,                  // sort variables within the same declaration block (off by default)\n    \"object-curly-spacing\": [2, \"always\"],\n    \"array-bracket-spacing\": 2,\n    \"computed-property-spacing\": 2,\n    \"space-in-parens\": 2,            // require or disallow spaces inside parentheses (off by default)\n    \"space-infix-ops\": 2,            // require spaces around operators\n    \"space-unary-ops\": [2, { \"words\": true, \"nonwords\": false }], // require or disallow spaces before/after unary operators (words on by default, nonwords off by default)\n    \"max-nested-callbacks\": 0,       // specify the maximum depth callbacks can be nested (off by default)\n    \"one-var\": 0,                    // allow just one var statement per function (off by default)\n    \"wrap-regex\": 0,                 // require regex literals to be wrapped in parentheses (off by default)\n\n  // Legacy\n  // The following rules are included for compatibility with JSHint and JSLint. While the names of the rules may not match up with the JSHint/JSLint counterpart, the functionality is the same.\n\n    \"max-depth\": 0,                  // specify the maximum depth that blocks can be nested (off by default)\n    \"max-len\": 0,                    // specify the maximum length of a line in your program (off by default)\n    \"max-params\": 0,                 // limits the number of parameters that can be used in the function declaration. (off by default)\n    \"max-statements\": 0,             // specify the maximum number of statement allowed in a function (off by default)\n    \"no-bitwise\": 0,                 // disallow use of bitwise operators (off by default)\n    \"no-plusplus\": 0,                // disallow use of unary operators, ++ and -- (off by default)\n\n  // Flow\n    \"flowtype/boolean-style\": [2, \"boolean\"], // a problem is raised when using bool instead of boolean\n    \"flowtype/generic-spacing\": [2, \"never\"],\n    \"flowtype/space-before-type-colon\": [2, \"never\"],\n    \"flowtype/space-before-generic-bracket\": [2, \"never\"],\n    \"flowtype/space-after-type-colon\": [2, \"always\"],\n    \"flowtype/no-dupe-keys\": 2,\n    \"flowtype/union-intersection-spacing\": [2, \"always\"],\n    \"flowtype/no-weak-types\": [2, {\"any\": false, \"Object\": true, \"Function\": false}],\n    \"flow-header/flow-header\": 2,\n\n  // Headers\n    \"header/header\": [2, \"block\", [\n      \"*\",\n      \" * Copyright (c) 2017-present, Facebook, Inc.\",\n      \" * All rights reserved.\",\n      \" *\",\n      \" * This source code is licensed under the BSD-style license found in the\",\n      \" * LICENSE file in the root directory of this source tree. An additional grant\",\n      \" * of patent rights can be found in the PATENTS file in the same directory.\",\n      \" \",\n      ]\n    ],\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "24434101",
+        "name": "ecmascript-immutable-data-structures",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 602,
+        "pushedAt": "2017-03-09T08:49:37Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "84104547",
+        "name": "ocamlrun-wasm",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 257,
+        "pushedAt": "2017-03-06T18:04:52Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "3481755",
+        "name": "labeled-modules-spec",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2017-02-18T12:22:04Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "62342805",
+        "name": "ecmascript-undefined-propagation",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 80,
+        "pushedAt": "2016-07-02T11:31:13Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "55173857",
+        "name": "ecmascript-scoped-constructor-arguments",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2016-03-31T19:15:59Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "14534826",
+        "name": "blink-devtools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2013-11-22T16:23:46Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1244536",
+        "name": "art-canvas",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8,
+        "pushedAt": "2013-02-05T01:26:50Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1202007",
+        "name": "art-svg",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10,
+        "pushedAt": "2013-02-05T01:24:34Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "706675",
+        "name": "art-script",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2013-02-05T01:21:38Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1324063",
+        "name": "art-morph",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8,
+        "pushedAt": "2013-02-05T01:19:59Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "706671",
+        "name": "ast-js",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10,
+        "pushedAt": "2013-02-05T00:59:18Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "3481707",
+        "name": "link.js",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 30,
+        "pushedAt": "2013-01-14T12:13:35Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n\t\"name\" : \"link\",\n\t\"version\" : \"0.1.5\",\n\t\"description\" : \"Module runtime and converter for Labeled Modules, CommonJS and AMD.\",\n\t\"homepage\" : \"http://github.com/calyptus/link.js\",\n\t\"keywords\" : [\"util\", \"modules\", \"label\", \"client\", \"browser\", \"amd\", \"commonjs\"],\n\t\"author\" : \"Sebastian Markbage <sebastian@calyptus.eu>\",\n\t\"bugs\": \"https://github.com/calyptus/link.js/issues\",\n\t\"licenses\": [\n\t\t{ \"type\": \"BSD-2-Clause\", \"url\": \"http://raw.github.com/calyptus/link.js/master/LICENSE\" },\n\t\t{ \"type\": \"MIT\", \"url\": \"http://raw.github.com/calyptus/link.js/master/LICENSE\" }\n\t],\n\t\"dependencies\" : {},\n\t\"engines\" : { \"node\": \"> 0.4.x < 0.9.0\" },\n\t\"repository\" : {\"type\": \"git\", \"url\": \"git://github.com/calyptus/link.js.git\"},\n\t\"main\" : \"./Source/Node/link.js\",\n\t\"bin\": { \"linkjs\": \"./Source/Node/link.js\", \"link.js\": \"./Source/Node/link.js\" }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "6218822",
+        "name": "calyptus.mvc.protobuf",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2012-10-14T22:22:17Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Source/Calyptus.Mvc.Protobuf/Calyptus.Mvc.Protobuf.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>9.0.30729</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{A92A5C68-659E-4012-871B-E2DB4118C040}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>Calyptus.Mvc.Protobuf</RootNamespace>\r\n    <AssemblyName>Calyptus.Mvc.Protobuf</AssemblyName>\r\n    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <FileUpgradeFlags>\r\n    </FileUpgradeFlags>\r\n    <OldToolsVersion>3.5</OldToolsVersion>\r\n    <UpgradeBackupLocation />\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"Calyptus.Mvc, Version=0.1.5.36859, Culture=neutral, PublicKeyToken=3294f10dfa02f039, processorArchitecture=MSIL\">\r\n      <SpecificVersion>False</SpecificVersion>\r\n      <HintPath>..\\..\\Lib\\Calyptus.Mvc.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"Google.ProtocolBuffers, Version=0.9.0.0, Culture=neutral, PublicKeyToken=17b3b1f090c3ea48, processorArchitecture=MSIL\">\r\n      <SpecificVersion>False</SpecificVersion>\r\n      <HintPath>..\\..\\Lib\\Google.ProtocolBuffers.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n    <Reference Include=\"System.Web\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"ProtobufControllerAttribute.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "6218698",
+        "name": "htm",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2012-10-14T22:13:30Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Src/HTM.Runner/HTM.Runner.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">x86</Platform>\r\n    <ProductVersion>8.0.30703</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{09B5B8F0-724E-4D85-8470-41C989C4D8CF}</ProjectGuid>\r\n    <OutputType>Exe</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>HTM.Runner</RootNamespace>\r\n    <AssemblyName>HTM</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <TargetFrameworkProfile>Client</TargetFrameworkProfile>\r\n    <FileAlignment>512</FileAlignment>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup>\r\n    <StartupObject>HTM.Runner.Program</StartupObject>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\" />\r\n    <Reference Include=\"Microsoft.CSharp\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"Program.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\HTM\\HTM.csproj\">\r\n      <Project>{D370446A-B1ED-47D5-8CF8-DFF47078F8D2}</Project>\r\n      <Name>HTM</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          },
+          {
+            "path": "Src/HTM.Tests/HTM.Tests.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>\r\n    </ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{C3B411FA-8955-4154-A132-DB21863FD16D}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>HTM.Tests</RootNamespace>\r\n    <AssemblyName>HTM.Tests</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL\" />\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <CodeAnalysisDependentAssemblyPaths Condition=\" '$(VS100COMNTOOLS)' != '' \" Include=\"$(VS100COMNTOOLS)..\\IDE\\PrivateAssemblies\">\r\n      <Visible>False</Visible>\r\n    </CodeAnalysisDependentAssemblyPaths>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"BitMapper.cs\" />\r\n    <Compile Include=\"Classifier.cs\" />\r\n    <Compile Include=\"AlsingClassifierTest.cs\" />\r\n    <Compile Include=\"SoftmaxClassifierTest.cs\" />\r\n    <Compile Include=\"Tree.cs\" />\r\n    <Compile Include=\"Helpers.cs\" />\r\n    <Compile Include=\"Node.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n    <Compile Include=\"SpatialPooler.cs\" />\r\n    <Compile Include=\"SpatialPoolerWithClassifier.cs\" />\r\n    <Compile Include=\"TemporalPooler.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\HTM\\HTM.csproj\">\r\n      <Project>{D370446A-B1ED-47D5-8CF8-DFF47078F8D2}</Project>\r\n      <Name>HTM</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildBinPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "5198928",
+        "name": "signapk",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2012-07-27T00:29:12Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Source/SignApk.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">x86</Platform>\r\n    <ProductVersion>8.0.30703</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{25157B45-6A8B-4C77-AFF7-FCB01587E069}</ProjectGuid>\r\n    <OutputType>Exe</OutputType>\r\n    <RootNamespace>SignApk</RootNamespace>\r\n    <AssemblyName>SignApk</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <TargetFrameworkProfile>Client</TargetFrameworkProfile>\r\n    <FileAlignment>512</FileAlignment>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"ICSharpCode.SharpZipLib\">\r\n      <HintPath>..\\Lib\\ICSharpCode.SharpZipLib.dll</HintPath>\r\n    </Reference>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Security\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"Attributes.cs\" />\r\n    <Compile Include=\"JarEntry.cs\" />\r\n    <Compile Include=\"JarFile.cs\" />\r\n    <Compile Include=\"Manifest.cs\" />\r\n    <Compile Include=\"AssemblyInfo.cs\" />\r\n    <Compile Include=\"SignApk.cs\" />\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "234673",
+        "name": "calyptus.lob",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2011-12-28T11:22:48Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Src/Calyptus.Lob/Calyptus.Lob.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>9.0.21022</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{548E083F-F742-41B7-8971-6004E85907AA}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>Calyptus.Lob</RootNamespace>\r\n    <AssemblyName>Calyptus.Lob</AssemblyName>\r\n    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <SignAssembly>true</SignAssembly>\r\n    <AssemblyOriginatorKeyFile>..\\NHibernate.Lob.snk</AssemblyOriginatorKeyFile>\r\n    <FileUpgradeFlags>\r\n    </FileUpgradeFlags>\r\n    <OldToolsVersion>3.5</OldToolsVersion>\r\n    <UpgradeBackupLocation />\r\n    <PublishUrl>publish\\</PublishUrl>\r\n    <Install>true</Install>\r\n    <InstallFrom>Disk</InstallFrom>\r\n    <UpdateEnabled>false</UpdateEnabled>\r\n    <UpdateMode>Foreground</UpdateMode>\r\n    <UpdateInterval>7</UpdateInterval>\r\n    <UpdateIntervalUnits>Days</UpdateIntervalUnits>\r\n    <UpdatePeriodically>false</UpdatePeriodically>\r\n    <UpdateRequired>false</UpdateRequired>\r\n    <MapFileExtensions>true</MapFileExtensions>\r\n    <ApplicationRevision>0</ApplicationRevision>\r\n    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>\r\n    <IsWebBootstrapper>false</IsWebBootstrapper>\r\n    <UseApplicationTrust>false</UseApplicationTrust>\r\n    <BootstrapperEnabled>true</BootstrapperEnabled>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"AssemblyInfo.cs\" />\r\n    <Compile Include=\"Blob.cs\" />\r\n    <Compile Include=\"Clob.cs\" />\r\n    <Compile Include=\"ArrayBlob.cs\" />\r\n    <Compile Include=\"FileXlob.cs\" />\r\n    <Compile Include=\"FileClob.cs\" />\r\n    <Compile Include=\"WebXlob.cs\" />\r\n    <Compile Include=\"WebClob.cs\" />\r\n    <Compile Include=\"EmptyXlob.cs\" />\r\n    <Compile Include=\"EmptyClob.cs\" />\r\n    <Compile Include=\"EmptyBlob.cs\" />\r\n    <Compile Include=\"FileBlob.cs\" />\r\n    <Compile Include=\"StringXlob.cs\" />\r\n    <Compile Include=\"WebBlob.cs\" />\r\n    <Compile Include=\"XmlNodeXlob.cs\" />\r\n    <Compile Include=\"XmlReaderXlob.cs\" />\r\n    <Compile Include=\"TextReaderClob.cs\" />\r\n    <Compile Include=\"StringClob.cs\" />\r\n    <Compile Include=\"StreamBlob.cs\" />\r\n    <Compile Include=\"Xlob.cs\" />\r\n    <Compile Include=\"XmlSerializableObjectXlob.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Client.3.5\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>\r\n      <Install>false</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Framework.3.5.SP1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Windows.Installer.3.1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>Windows Installer 3.1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          },
+          {
+            "path": "Src/FluentNHibernate.Lob/FluentNHibernate.Lob.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>9.0.21022</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{7660D273-7EED-4CF2-97DB-3D18A01FF4B5}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <RootNamespace>FluentNHibernate.Lob</RootNamespace>\r\n    <AssemblyName>FluentNHibernate.Lob</AssemblyName>\r\n    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <SignAssembly>true</SignAssembly>\r\n    <AssemblyOriginatorKeyFile>..\\NHibernate.Lob.snk</AssemblyOriginatorKeyFile>\r\n    <FileUpgradeFlags>\r\n    </FileUpgradeFlags>\r\n    <OldToolsVersion>3.5</OldToolsVersion>\r\n    <UpgradeBackupLocation />\r\n    <PublishUrl>publish\\</PublishUrl>\r\n    <Install>true</Install>\r\n    <InstallFrom>Disk</InstallFrom>\r\n    <UpdateEnabled>false</UpdateEnabled>\r\n    <UpdateMode>Foreground</UpdateMode>\r\n    <UpdateInterval>7</UpdateInterval>\r\n    <UpdateIntervalUnits>Days</UpdateIntervalUnits>\r\n    <UpdatePeriodically>false</UpdatePeriodically>\r\n    <UpdateRequired>false</UpdateRequired>\r\n    <MapFileExtensions>true</MapFileExtensions>\r\n    <ApplicationRevision>0</ApplicationRevision>\r\n    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>\r\n    <IsWebBootstrapper>false</IsWebBootstrapper>\r\n    <UseApplicationTrust>false</UseApplicationTrust>\r\n    <BootstrapperEnabled>true</BootstrapperEnabled>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n    <Reference Include=\"System.Xml.Linq\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n    <Reference Include=\"System.Data.DataSetExtensions\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n    <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"AssemblyInfo.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Client.3.5\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>\r\n      <Install>false</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Framework.3.5.SP1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Windows.Installer.3.1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>Windows Installer 3.1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "1430614",
+        "name": "linq-to-sqlxml",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 12,
+        "pushedAt": "2011-03-04T11:02:27Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Source/LinqToSqlXml.BlogSample/BlogSample.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">x86</Platform>\r\n    <ProductVersion>8.0.30703</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{9413E425-9DC9-451E-85AD-478F7B631C65}</ProjectGuid>\r\n    <OutputType>Exe</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>BlogSample</RootNamespace>\r\n    <AssemblyName>BlogSample</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <TargetFrameworkProfile>Client</TargetFrameworkProfile>\r\n    <FileAlignment>512</FileAlignment>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\" />\r\n    <Reference Include=\"System.Xml.Linq\" />\r\n    <Reference Include=\"System.Data.DataSetExtensions\" />\r\n    <Reference Include=\"Microsoft.CSharp\" />\r\n    <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"Program.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\LinqToSqlXml\\LinqToSqlXml.csproj\">\r\n      <Project>{0B728524-A481-4450-B501-64699655A5DB}</Project>\r\n      <Name>LinqToSqlXml</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          },
+          {
+            "path": "Source/LinqToSqlXml.ProjectionSample/ProjectionSample.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">x86</Platform>\r\n    <ProductVersion>8.0.30703</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{AC69F2D6-680A-42EF-BC13-1278F9330A2D}</ProjectGuid>\r\n    <OutputType>Exe</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>ProjectionSample</RootNamespace>\r\n    <AssemblyName>ProjectionSample</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <TargetFrameworkProfile>Client</TargetFrameworkProfile>\r\n    <FileAlignment>512</FileAlignment>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|x86' \">\r\n    <PlatformTarget>x86</PlatformTarget>\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\" />\r\n    <Reference Include=\"System.Xml.Linq\" />\r\n    <Reference Include=\"System.Data.DataSetExtensions\" />\r\n    <Reference Include=\"Microsoft.CSharp\" />\r\n    <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"Program.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <None Include=\"app.config\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\LinqToSqlXml\\LinqToSqlXml.csproj\">\r\n      <Project>{0B728524-A481-4450-B501-64699655A5DB}</Project>\r\n      <Name>LinqToSqlXml</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "234841",
+        "name": "calyptus.resourcemanager",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 4,
+        "pushedAt": "2010-11-02T13:34:07Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Src/Calyptus.ClientSide/Calyptus.ClientSide.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>9.0.21022</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{E6F0FAB4-E37A-435C-BBF2-25E598E20C3D}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <RootNamespace>Calyptus</RootNamespace>\r\n    <AssemblyName>Calyptus.ClientSide</AssemblyName>\r\n    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <SignAssembly>true</SignAssembly>\r\n    <AssemblyOriginatorKeyFile>Properties\\Calyptus.ClientSide.snk</AssemblyOriginatorKeyFile>\r\n    <FileUpgradeFlags>0</FileUpgradeFlags>\r\n    <OldToolsVersion>4.0</OldToolsVersion>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"Upload.Swiff.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n    <Compile Include=\"Swiff\\ProxySwiffClassResource.cs\" />\r\n    <Compile Include=\"Swiff\\SwiffClassFactory.cs\" />\r\n    <Compile Include=\"Swiff\\PlainSwiffClassResource.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <EmbeddedResource Include=\"Editable.DefaultText.js\">\r\n      <LogicalName>Calyptus.Editable.DefaultText.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Selection.js\">\r\n      <LogicalName>Calyptus.Selection.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Debug.Tracer.js\">\r\n      <LogicalName>Calyptus.Debug.Tracer.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <PackageWebResource Include=\"Debug.Firebug.js\">\r\n      <LogicalName>Calyptus.Debug.Firebug.js</LogicalName>\r\n    </PackageWebResource>\r\n    <EmbeddedResource Include=\"Editable.Exec.js\">\r\n      <LogicalName>Calyptus.Editable.Exec.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Editable.Extras.js\">\r\n      <LogicalName>Calyptus.Editable.Extras.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Editable.js\">\r\n      <LogicalName>Calyptus.Editable.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Editable.Toolbox.js\">\r\n      <LogicalName>Calyptus.Editable.Toolbox.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Range.Edit.js\">\r\n      <LogicalName>Calyptus.Range.Edit.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Range.js\">\r\n      <LogicalName>Calyptus.Range.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"String.js\">\r\n      <LogicalName>Calyptus.String.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Uri.js\">\r\n      <LogicalName>Calyptus.Uri.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Popup.js\">\r\n      <LogicalName>Calyptus.Popup.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Popup.Lightbox.js\">\r\n      <LogicalName>Calyptus.Popup.Lightbox.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Popup.Load.js\">\r\n      <LogicalName>Calyptus.Popup.Load.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Popup.Overlay.js\">\r\n      <LogicalName>Calyptus.Popup.Overlay.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Popup.Videobox.js\">\r\n      <LogicalName>Calyptus.Popup.Videobox.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Draggable.js\">\r\n      <LogicalName>Calyptus.Draggable.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Droppable.js\">\r\n      <LogicalName>Calyptus.Droppable.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"SortableList.js\">\r\n      <LogicalName>Calyptus.SortableList.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"EditableList.js\">\r\n      <LogicalName>Calyptus.EditableList.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"SwiffClass.js\">\r\n      <LogicalName>Calyptus.SwiffClass.js</LogicalName>\r\n    </EmbeddedResource>\r\n    <EmbeddedResource Include=\"Upload.js\">\r\n      <LogicalName>Calyptus.Upload.js</LogicalName>\r\n    </EmbeddedResource>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Content Include=\"ClientSide License.txt\">\r\n      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>\r\n    </Content>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"Calyptus.ResourceManager, Version=1.0.3315.30091, Culture=neutral, PublicKeyToken=8f43c39ba091cdf2, processorArchitecture=MSIL\">\r\n      <SpecificVersion>False</SpecificVersion>\r\n      <HintPath>..\\Calyptus.ResourceManager\\bin\\Release\\Calyptus.ResourceManager.dll</HintPath>\r\n      <Private>False</Private>\r\n    </Reference>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <None Include=\"Properties\\Calyptus.ClientSide.snk\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\MooTools\\MooTools.csproj\">\r\n      <Project>{BE0659AA-4C69-4C79-92F1-C5F2C2F150C5}</Project>\r\n      <Name>MooTools</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <Import Project=\"..\\Calyptus.ResourceManager\\bin\\Release\\Calyptus.ResourceManager.targets\" />\r\n</Project>"
+          },
+          {
+            "path": "Src/Calyptus.ResourceManager.Mvc/Calyptus.ResourceManager.Mvc.csproj",
+            "content": "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<Project ToolsVersion=\"4.0\" DefaultTargets=\"Build\" xmlns=\"http://schemas.microsoft.com/developer/msbuild/2003\">\r\n  <PropertyGroup>\r\n    <Configuration Condition=\" '$(Configuration)' == '' \">Debug</Configuration>\r\n    <Platform Condition=\" '$(Platform)' == '' \">AnyCPU</Platform>\r\n    <ProductVersion>9.0.21022</ProductVersion>\r\n    <SchemaVersion>2.0</SchemaVersion>\r\n    <ProjectGuid>{AC738112-2C47-475B-9A8C-3CF2F7ABDB32}</ProjectGuid>\r\n    <OutputType>Library</OutputType>\r\n    <AppDesignerFolder>Properties</AppDesignerFolder>\r\n    <RootNamespace>Calyptus.ResourceManager</RootNamespace>\r\n    <AssemblyName>Calyptus.ResourceManager.Mvc</AssemblyName>\r\n    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>\r\n    <FileAlignment>512</FileAlignment>\r\n    <FileUpgradeFlags>\r\n    </FileUpgradeFlags>\r\n    <OldToolsVersion>3.5</OldToolsVersion>\r\n    <UpgradeBackupLocation />\r\n    <IsWebBootstrapper>false</IsWebBootstrapper>\r\n    <TargetFrameworkProfile />\r\n    <PublishUrl>publish\\</PublishUrl>\r\n    <Install>true</Install>\r\n    <InstallFrom>Disk</InstallFrom>\r\n    <UpdateEnabled>false</UpdateEnabled>\r\n    <UpdateMode>Foreground</UpdateMode>\r\n    <UpdateInterval>7</UpdateInterval>\r\n    <UpdateIntervalUnits>Days</UpdateIntervalUnits>\r\n    <UpdatePeriodically>false</UpdatePeriodically>\r\n    <UpdateRequired>false</UpdateRequired>\r\n    <MapFileExtensions>true</MapFileExtensions>\r\n    <ApplicationRevision>0</ApplicationRevision>\r\n    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>\r\n    <UseApplicationTrust>false</UseApplicationTrust>\r\n    <BootstrapperEnabled>true</BootstrapperEnabled>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' \">\r\n    <DebugSymbols>true</DebugSymbols>\r\n    <DebugType>full</DebugType>\r\n    <Optimize>false</Optimize>\r\n    <OutputPath>bin\\Debug\\</OutputPath>\r\n    <DefineConstants>DEBUG;TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <PropertyGroup Condition=\" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' \">\r\n    <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <ErrorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>\r\n  </PropertyGroup>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.Core\">\r\n      <RequiredTargetFramework>3.5</RequiredTargetFramework>\r\n    </Reference>\r\n    <Reference Include=\"System.Web\" />\r\n    <Reference Include=\"System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <Compile Include=\"MultiRoute.cs\" />\r\n    <Compile Include=\"RoutingResourceHttpHandler.cs\" />\r\n    <Compile Include=\"HtmlHelperExtensions.cs\" />\r\n    <Compile Include=\"ResourceRouteHandler.cs\" />\r\n    <Compile Include=\"RoutingExtensions.cs\" />\r\n    <Compile Include=\"RoutingResourceURLFactory.cs\" />\r\n    <Compile Include=\"Properties\\AssemblyInfo.cs\" />\r\n    <Compile Include=\"UrlHelperExtensions.cs\" />\r\n    <Compile Include=\"ViewContext.cs\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Client.3.5\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>\r\n      <Install>false</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Net.Framework.3.5.SP1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>.NET Framework 3.5 SP1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n    <BootstrapperPackage Include=\"Microsoft.Windows.Installer.3.1\">\r\n      <Visible>False</Visible>\r\n      <ProductName>Windows Installer 3.1</ProductName>\r\n      <Install>true</Install>\r\n    </BootstrapperPackage>\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n    <ProjectReference Include=\"..\\Calyptus.ResourceManager\\Calyptus.ResourceManager.csproj\">\r\n      <Project>{BFDEC588-9458-42B6-824B-F6D3B43C8899}</Project>\r\n      <Name>Calyptus.ResourceManager</Name>\r\n    </ProjectReference>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" />\r\n  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. \r\n       Other similar extension points exist, see Microsoft.Common.targets.\r\n  <Target Name=\"BeforeBuild\">\r\n  </Target>\r\n  <Target Name=\"AfterBuild\">\r\n  </Target>\r\n  -->\r\n</Project>"
+          }
+        ]
+      },
+      {
+        "id": "706678",
+        "name": "art-illustrator",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 18,
+        "pushedAt": "2010-06-07T01:03:26Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "696253",
+        "name": "coretools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8,
+        "pushedAt": "2010-05-31T23:03:13Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "613690",
+        "name": "collectables",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5,
+        "pushedAt": "2010-04-16T14:32:47Z",
+        "languages": {},
+        "files": []
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "1137925507",
+        "repoName": "next-gestures-demo",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-01-23T01:45:13Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "88195400",
+        "repoName": "prepack-2",
+        "itemId": "eslint",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2017-05-18T22:31:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1094678584",
+        "repoName": "react-typewriter-reveal",
+        "itemId": "pnpm",
+        "itemKind": "artifact",
+        "sourcePath": "pnpm-lock.yaml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-11-14T16:16:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1137925507",
+        "repoName": "next-gestures-demo",
+        "itemId": "tailwind",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2026-01-23T01:45:13Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "88195400",
+        "repoName": "prepack-2",
+        "itemId": "webpack",
+        "itemKind": "artifact",
+        "sourcePath": "package.json",
+        "sourceKind": "devDependency",
+        "strength": 60,
+        "observedAt": "2017-05-18T22:31:27Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1137925507",
+        "repoName": "next-gestures-demo",
+        "itemId": "nextjs",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2026-01-23T01:45:13Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1094678584",
+        "repoName": "react-typewriter-reveal",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "peerDependency",
+        "strength": 85,
+        "observedAt": "2025-11-14T16:16:53Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1137925507",
+        "repoName": "next-gestures-demo",
+        "itemId": "react",
+        "itemKind": "school",
+        "sourcePath": "package.json",
+        "sourceKind": "directDependency",
+        "strength": 100,
+        "observedAt": "2026-01-23T01:45:13Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 35,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 22
+    },
+    "requests": {
+      "rest": 50,
+      "graphql": 0,
+      "manifestFetches": 49,
+      "reposInspected": 30,
+      "cacheHits": 0
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T04:52:18.414Z",
+  "coldLatencyMs": 20662,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "sebmarkbage",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 6,
+    "totalRequests": 7,
+    "durationMs": 3992,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "sebmarkbage",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

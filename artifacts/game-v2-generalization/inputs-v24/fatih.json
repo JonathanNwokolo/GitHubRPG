@@ -1,0 +1,1733 @@
+{
+  "matrixProfile": {
+    "username": "fatih",
+    "category": "backend-architecture",
+    "publicReposAtFreeze": 65,
+    "reason": "Public Go service and developer-platform projects."
+  },
+  "rawProfile": {
+    "username": "fatih",
+    "displayName": "Fatih Arslan",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/438920?v=4",
+    "bio": "Software Engineer. Gopher. Design and Coffee geek. Creator of vim-go. Tool maker.",
+    "location": "Ankara, TR",
+    "company": null,
+    "createdAt": "2010-10-14T05:48:53.000Z",
+    "fetchedAt": "2026-10-07T21:16:09.395Z",
+    "isDemo": false,
+    "followers": {
+      "value": 9033,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "dotfiles",
+          "isFork": false,
+          "stars": 890,
+          "forks": 134,
+          "languages": {
+            "Shell": 34894,
+            "Lua": 23125,
+            "Vim Script": 15206,
+            "C": 10642,
+            "Ruby": 7582,
+            "Makefile": 4152
+          }
+        },
+        {
+          "name": "color",
+          "isFork": false,
+          "stars": 8003,
+          "forks": 649,
+          "languages": {
+            "Go": 43031
+          }
+        },
+        {
+          "name": "humanlog",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vim-go",
+          "isFork": false,
+          "stars": 16221,
+          "forks": 1424,
+          "languages": {
+            "Vim Script": 596340,
+            "Go": 58127,
+            "Vim Snippet": 17848,
+            "Shell": 12289,
+            "Python": 3297,
+            "Makefile": 612,
+            "Dockerfile": 605
+          }
+        },
+        {
+          "name": "qmk_userspace",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Adv360-Pro-ZMK",
+          "isFork": true,
+          "stars": 3,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "kfmt",
+          "isFork": false,
+          "stars": 16,
+          "forks": 1,
+          "languages": {
+            "Go": 12625
+          }
+        },
+        {
+          "name": "amp.nvim",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "terminalpoint",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gomodifytags",
+          "isFork": false,
+          "stars": 2397,
+          "forks": 140,
+          "languages": {
+            "Go": 50658
+          }
+        },
+        {
+          "name": "errwrap",
+          "isFork": false,
+          "stars": 380,
+          "forks": 16,
+          "languages": {
+            "Go": 13697
+          }
+        },
+        {
+          "name": "faillint",
+          "isFork": false,
+          "stars": 243,
+          "forks": 22,
+          "languages": {
+            "Go": 21029
+          }
+        },
+        {
+          "name": "semgroup",
+          "isFork": false,
+          "stars": 320,
+          "forks": 16,
+          "languages": {
+            "Go": 7706
+          }
+        },
+        {
+          "name": "talks",
+          "isFork": false,
+          "stars": 28,
+          "forks": 2,
+          "languages": {
+            "Go": 7876
+          }
+        },
+        {
+          "name": "structtag",
+          "isFork": false,
+          "stars": 651,
+          "forks": 47,
+          "languages": {
+            "Go": 14767
+          }
+        },
+        {
+          "name": "starhook",
+          "isFork": false,
+          "stars": 100,
+          "forks": 1,
+          "languages": {
+            "Go": 56099,
+            "Makefile": 258
+          }
+        },
+        {
+          "name": "vim-nginx",
+          "isFork": false,
+          "stars": 17,
+          "forks": 2,
+          "languages": {
+            "Vim Script": 116017
+          }
+        },
+        {
+          "name": "motion",
+          "isFork": false,
+          "stars": 185,
+          "forks": 16,
+          "languages": {
+            "Go": 30139
+          }
+        },
+        {
+          "name": "kodla-talk-2022",
+          "isFork": false,
+          "stars": 22,
+          "forks": 2,
+          "languages": {
+            "Go": 8454,
+            "Shell": 199
+          }
+        },
+        {
+          "name": "twirpdemo",
+          "isFork": false,
+          "stars": 33,
+          "forks": 4,
+          "languages": {
+            "Go": 3105
+          }
+        },
+        {
+          "name": "qmk_firmware",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "go-mysqlstack",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "letters",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "client_golang",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "dark-mode-notify",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "raft",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "camelcase",
+          "isFork": false,
+          "stars": 184,
+          "forks": 26,
+          "languages": {
+            "Go": 4070
+          }
+        },
+        {
+          "name": "templatectl",
+          "isFork": false,
+          "stars": 41,
+          "forks": 3,
+          "languages": {
+            "Go": 3272
+          }
+        },
+        {
+          "name": "twirp-opentracing",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "shoulda-matchers",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "deep-copy",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "astrewrite",
+          "isFork": false,
+          "stars": 172,
+          "forks": 12,
+          "languages": {
+            "Go": 8751
+          }
+        },
+        {
+          "name": "addlint",
+          "isFork": false,
+          "stars": 58,
+          "forks": 4,
+          "languages": {
+            "Go": 1649
+          }
+        },
+        {
+          "name": "molokai",
+          "isFork": true,
+          "stars": 184,
+          "forks": 91,
+          "languages": {}
+        },
+        {
+          "name": "csi-test",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tools",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "dvb-t2",
+          "isFork": false,
+          "stars": 17,
+          "forks": 10,
+          "languages": {
+            "Objective-C": 53817,
+            "MATLAB": 20351
+          }
+        },
+        {
+          "name": "awesome-kubernetes",
+          "isFork": true,
+          "stars": 12,
+          "forks": 6,
+          "languages": {}
+        },
+        {
+          "name": "stopwatch",
+          "isFork": false,
+          "stars": 73,
+          "forks": 12,
+          "languages": {
+            "Go": 8779
+          }
+        },
+        {
+          "name": "flags",
+          "isFork": false,
+          "stars": 19,
+          "forks": 6,
+          "languages": {
+            "Go": 16102
+          }
+        },
+        {
+          "name": "images",
+          "isFork": false,
+          "stars": 69,
+          "forks": 10,
+          "languages": {
+            "Go": 84678,
+            "Makefile": 1548
+          }
+        },
+        {
+          "name": "hclfmt",
+          "isFork": false,
+          "stars": 229,
+          "forks": 48,
+          "languages": {
+            "Go": 2365
+          }
+        },
+        {
+          "name": "vim-hclfmt",
+          "isFork": false,
+          "stars": 74,
+          "forks": 19,
+          "languages": {
+            "Vim Script": 1937
+          }
+        },
+        {
+          "name": "vim-go-tutorial",
+          "isFork": false,
+          "stars": 2089,
+          "forks": 180,
+          "languages": {
+            "Vim Script": 6116,
+            "Go": 67
+          }
+        },
+        {
+          "name": "structs",
+          "isFork": false,
+          "stars": 3922,
+          "forks": 694,
+          "languages": {
+            "Go": 60106
+          }
+        },
+        {
+          "name": "testmod",
+          "isFork": false,
+          "stars": 11,
+          "forks": 1,
+          "languages": {
+            "AMPL": 227,
+            "Go": 216
+          }
+        },
+        {
+          "name": "set",
+          "isFork": false,
+          "stars": 664,
+          "forks": 86,
+          "languages": {
+            "Go": 28577
+          }
+        },
+        {
+          "name": "kube-exec",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pool",
+          "isFork": false,
+          "stars": 1370,
+          "forks": 287,
+          "languages": {
+            "Go": 9939
+          }
+        },
+        {
+          "name": "twirp-serverhook-prometheus",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "blog.arsln.org-backup",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "CSS": 27350,
+            "JavaScript": 18951,
+            "HTML": 9255
+          }
+        },
+        {
+          "name": "cafetiere",
+          "isFork": false,
+          "stars": 8,
+          "forks": 2,
+          "languages": {
+            "Objective-C": 197050,
+            "JavaScript": 28281,
+            "CSS": 9089,
+            "HTML": 7585
+          }
+        },
+        {
+          "name": "hcl",
+          "isFork": false,
+          "stars": 44,
+          "forks": 4,
+          "languages": {
+            "Go": 63132,
+            "HCL": 1264
+          }
+        },
+        {
+          "name": "unexport",
+          "isFork": false,
+          "stars": 23,
+          "forks": 2,
+          "languages": {
+            "Go": 10170
+          }
+        },
+        {
+          "name": "sicp",
+          "isFork": false,
+          "stars": 16,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "kite",
+          "isFork": true,
+          "stars": 1,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "gb-example",
+          "isFork": false,
+          "stars": 47,
+          "forks": 0,
+          "languages": {
+            "Go": 1034
+          }
+        },
+        {
+          "name": "docker-ubuntu-go",
+          "isFork": false,
+          "stars": 5,
+          "forks": 5,
+          "languages": {
+            "Shell": 522
+          }
+        },
+        {
+          "name": "subvim",
+          "isFork": false,
+          "stars": 1122,
+          "forks": 66,
+          "languages": {
+            "C++": 26312487,
+            "Python": 3042609,
+            "C": 1057512,
+            "Vim Script": 786065,
+            "C#": 284260,
+            "Shell": 27096,
+            "Perl": 1993,
+            "CSS": 976,
+            "Ruby": 226
+          }
+        },
+        {
+          "name": "RailsDashboard.kdapp",
+          "isFork": false,
+          "stars": 7,
+          "forks": 4,
+          "languages": {
+            "CoffeeScript": 17887
+          }
+        },
+        {
+          "name": "koding-wiki",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "snippets",
+          "isFork": false,
+          "stars": 1,
+          "forks": 2,
+          "languages": {
+            "C": 22075,
+            "Python": 4528
+          }
+        },
+        {
+          "name": "amqp-examples",
+          "isFork": false,
+          "stars": 16,
+          "forks": 2,
+          "languages": {
+            "Go": 6869,
+            "JavaScript": 1439
+          }
+        },
+        {
+          "name": "pisi-vim",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Vim Script": 7318
+          }
+        },
+        {
+          "name": "sinerji",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Python": 167783,
+            "Shell": 93
+          }
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 11272,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 1304,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 361,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 273,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 3273,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 62,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 59,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 286,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          8,
+          1,
+          0,
+          1,
+          6,
+          39,
+          16,
+          1,
+          2,
+          34,
+          33,
+          1,
+          24,
+          123,
+          10,
+          4,
+          281,
+          224,
+          139,
+          92,
+          79,
+          202,
+          248,
+          209,
+          197,
+          371,
+          376,
+          328,
+          312,
+          450,
+          362,
+          367,
+          412,
+          385,
+          441,
+          115,
+          316,
+          187,
+          160,
+          216,
+          321,
+          360,
+          279,
+          227,
+          152,
+          121,
+          384,
+          271,
+          163,
+          53,
+          82,
+          44,
+          84,
+          45,
+          79,
+          128,
+          49,
+          33,
+          51,
+          80,
+          62,
+          93,
+          106,
+          34,
+          14,
+          55,
+          69,
+          62,
+          47,
+          33,
+          28,
+          69,
+          43,
+          93,
+          62,
+          40,
+          94,
+          66,
+          26,
+          37,
+          135,
+          164,
+          273,
+          383,
+          84,
+          198,
+          151,
+          52,
+          58,
+          54,
+          75,
+          130,
+          85,
+          156,
+          115,
+          44,
+          135,
+          104,
+          167,
+          124,
+          123,
+          326,
+          172,
+          81,
+          155,
+          153,
+          194,
+          135,
+          49,
+          262,
+          212,
+          324,
+          199,
+          305,
+          140,
+          191,
+          230,
+          200,
+          176,
+          129,
+          101,
+          118,
+          143,
+          135,
+          175,
+          170,
+          159,
+          107,
+          174,
+          188,
+          227,
+          137,
+          137,
+          146,
+          181,
+          187,
+          221,
+          177,
+          115,
+          105,
+          112,
+          136,
+          116,
+          118,
+          157,
+          120,
+          132,
+          195,
+          181,
+          179,
+          73,
+          140,
+          79,
+          106,
+          140,
+          123,
+          86,
+          127,
+          144,
+          149,
+          143,
+          158,
+          211,
+          181,
+          184,
+          210,
+          229,
+          168,
+          164,
+          326,
+          206,
+          142,
+          168,
+          223,
+          555,
+          603,
+          633,
+          2020,
+          296
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2010,
+            "contributions": 1,
+            "activeDays": 1,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2011,
+            "contributions": 19,
+            "activeDays": 5,
+            "commits": 17,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 158,
+            "activeDays": 48,
+            "commits": 154,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2013,
+            "contributions": 1808,
+            "activeDays": 232,
+            "commits": 1773,
+            "pullRequests": 12,
+            "reviews": 0,
+            "issues": 17
+          },
+          {
+            "year": 2014,
+            "contributions": 4235,
+            "activeDays": 319,
+            "commits": 3731,
+            "pullRequests": 353,
+            "reviews": 0,
+            "issues": 91
+          },
+          {
+            "year": 2015,
+            "contributions": 2841,
+            "activeDays": 285,
+            "commits": 2428,
+            "pullRequests": 338,
+            "reviews": 0,
+            "issues": 56
+          },
+          {
+            "year": 2016,
+            "contributions": 790,
+            "activeDays": 194,
+            "commits": 625,
+            "pullRequests": 66,
+            "reviews": 11,
+            "issues": 27
+          },
+          {
+            "year": 2017,
+            "contributions": 653,
+            "activeDays": 144,
+            "commits": 347,
+            "pullRequests": 64,
+            "reviews": 38,
+            "issues": 19
+          },
+          {
+            "year": 2018,
+            "contributions": 1457,
+            "activeDays": 193,
+            "commits": 428,
+            "pullRequests": 99,
+            "reviews": 18,
+            "issues": 37
+          },
+          {
+            "year": 2019,
+            "contributions": 1253,
+            "activeDays": 216,
+            "commits": 163,
+            "pullRequests": 30,
+            "reviews": 14,
+            "issues": 2
+          },
+          {
+            "year": 2020,
+            "contributions": 1783,
+            "activeDays": 241,
+            "commits": 147,
+            "pullRequests": 27,
+            "reviews": 20,
+            "issues": 5
+          },
+          {
+            "year": 2021,
+            "contributions": 2469,
+            "activeDays": 249,
+            "commits": 869,
+            "pullRequests": 260,
+            "reviews": 184,
+            "issues": 14
+          },
+          {
+            "year": 2022,
+            "contributions": 1870,
+            "activeDays": 234,
+            "commits": 122,
+            "pullRequests": 25,
+            "reviews": 52,
+            "issues": 1
+          },
+          {
+            "year": 2023,
+            "contributions": 1771,
+            "activeDays": 229,
+            "commits": 149,
+            "pullRequests": 12,
+            "reviews": 13,
+            "issues": 0
+          },
+          {
+            "year": 2024,
+            "contributions": 1554,
+            "activeDays": 218,
+            "commits": 68,
+            "pullRequests": 8,
+            "reviews": 7,
+            "issues": 1
+          },
+          {
+            "year": 2025,
+            "contributions": 2068,
+            "activeDays": 232,
+            "commits": 152,
+            "pullRequests": 10,
+            "reviews": 4,
+            "issues": 3
+          },
+          {
+            "year": 2026,
+            "contributions": 5172,
+            "activeDays": 233,
+            "commits": 99,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2026-06-07",
+        "end": "2026-08-07"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "19358112",
+        "name": "dotfiles",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 890,
+        "pushedAt": "2026-09-23T09:28:55Z",
+        "languages": {},
+        "files": [],
+        "size": 559,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "16907502",
+        "name": "color",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8003,
+        "pushedAt": "2026-09-09T01:02:14Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n\njobs:\n  test:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v7\n\n    - name: Set up Go \n      uses: actions/setup-go@v7\n      with:\n        go-version-file: go.mod\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: go test -race ./...\n\n    - name: Lint\n      run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.4.1\n      with:\n        version: \"2025.1.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "f27009ff9b7076c4ec7884c49e429766fcbbe827",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 2110,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "18062944",
+        "name": "vim-go",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 16221,
+        "pushedAt": "2026-08-23T13:41:54Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Dockerfile",
+            "content": "FROM golang:1.27.0\n\nRUN apt-get update -y --allow-insecure-repositories && \\\n  apt-get install -y build-essential curl git libncurses5-dev python3-pip && \\\n  apt-get clean && \\\n  rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*\n\nRUN pip3 install setuptools==81.0.0 vim-vint --break-system-packages\n\nRUN useradd -ms /bin/bash -d /vim-go vim-go\nUSER vim-go\n\nCOPY scripts/install-vim /vim-go/scripts/install-vim\nWORKDIR /vim-go\n\nRUN scripts/install-vim vim-8.2\nRUN scripts/install-vim vim-9.1\nRUN scripts/install-vim nvim\n\nCOPY . /vim-go/\nWORKDIR /vim-go\n\nRUN scripts/install-tools vim-9.1\n\nENTRYPOINT [\"make\"]\n",
+            "blobSha": "6e383ad65359d62615625950f764f408a96cf21b",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/git.yml",
+            "content": "name: git checks\non: [pull_request]\n\njobs:\n  autosquash-commits-integrated:\n    runs-on: ubuntu-22.04\n\n    steps:\n    - uses: actions/checkout@v2.0.0\n    - name: Block Fixup Commit Merge\n      uses: 13rac1/block-fixup-merge-action@v2.0.0\n",
+            "blobSha": "10ff8a55247ef4b8a51c552def0c8d69c2774fe7",
+            "projectId": ".",
+            "contextWeight": 1
+          },
+          {
+            "path": ".github/workflows/test.yml",
+            "content": "name: test\non: [push, pull_request]\njobs:\n  lint:\n    name: lint\n    runs-on: ubuntu-22.04\n    steps:\n    - name: set up python\n      uses: actions/setup-python@v5.5.0\n      with:\n        python-version: 3.7\n    - name: install vim-vint\n      run: |\n        python -m pip install --upgrade pip\n        pip install vim-vint pathlib\n    - name: checkout\n      uses: actions/checkout@v2.1.0\n    - name: install vim\n      run: $GITHUB_WORKSPACE/scripts/install-vim vim-9.1\n    - name: install tools\n      run: $GITHUB_WORKSPACE/scripts/install-tools vim-9.1\n    - name: lint\n      run: $GITHUB_WORKSPACE/scripts/lint vim-9.1\n  test:\n    name: test\n    runs-on: ubuntu-22.04\n    strategy:\n      fail-fast: false\n      matrix:\n        go: ['1.26','1.27']\n        vim: ['vim-8.2', 'vim-9.1', 'nvim']\n    steps:\n    - name: setup Go\n      uses: actions/setup-go@v2.1.3\n      with:\n        go-version: ${{ matrix.go }}\n    - name: set up python\n      uses: actions/setup-python@v5.5.0\n      with:\n        python-version: 3.7\n    - name: install covimerage\n      run: |\n        python -m pip install --upgrade pip\n        pip install click==7.1.2 covimerage==0.2.1 codecov pathlib\n    - name: checkout\n      uses: actions/checkout@v2.1.0\n    - name: install vim\n      run: $GITHUB_WORKSPACE/scripts/install-vim ${{ matrix.vim }}\n    - name: install tools\n      run: $GITHUB_WORKSPACE/scripts/install-tools ${{ matrix.vim }}\n    - name: test\n      run: $GITHUB_WORKSPACE/scripts/test -c ${{ matrix.vim }}\n    - uses: codecov/codecov-action@v1\n      with:\n        # token is not required for public repos\n        #token: ${{ secrets.CODECOV_TOKEN }}\n        file: $GITHUB_WORKSPACE/coverage.xml\n        flags: unittests\n        name: vim-go\n        fail_ci_if_error: false\n",
+            "blobSha": "72c41a8f87b40af148c7103e8aac7308a1b72354",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 6932,
+        "primaryLanguage": "Vim Script",
+        "projects": []
+      },
+      {
+        "id": "1109755039",
+        "name": "kfmt",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 16,
+        "pushedAt": "2025-12-05T06:19:48Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n\njobs:\n  test:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v6\n\n    - name: Set up Go\n      uses: actions/setup-go@v6\n      with:\n        go-version-file: go.mod\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n\n    - name: Test\n      run: go test -race ./...\n\n    - name: Lint\n      run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.3.1\n      with:\n        version: \"2025.1.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "6b0af90260a8514b699c672f43d619f36221ae10",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 8,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "78461005",
+        "name": "gomodifytags",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2397,
+        "pushedAt": "2025-04-23T14:27:48Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n\njobs:\n  test:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go \n      uses: actions/setup-go@v5\n      with:\n        go-version: '>=1.22.0'\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v4\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: go test -race ./...\n\n    - name: Lint\n      run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.3.0\n      with:\n        version: \"2025.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "973923182b232761b9ee2b57845c83410fae6fa2",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 178,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "225055874",
+        "name": "errwrap",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 380,
+        "pushedAt": "2025-04-07T07:06:25Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\n\non:\n  push:\n    branches:\n      - main\n    tags:\n      - 'v*'\n  pull_request:\n\n\njobs:\n\n  test-build:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v4\n\n    - name: Set up Go \n      uses: actions/setup-go@v5\n      with:\n        go-version-file: go.mod\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: |\n        go test -race ./...\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.3.1\n      with:\n        version: \"2025.1.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n\n    - name: Run GoReleaser\n      uses: goreleaser/goreleaser-action@v2\n      # only release on tags\n      if: success() && startsWith(github.ref, 'refs/tags/')\n      with:\n        version: latest\n        args: release --rm-dist\n      env:\n        GITHUB_TOKEN: ${{ secrets.ERRWRAP_ACTIONS_BOT_TOKEN }}\n",
+            "blobSha": "d80b069b3e940f6bc2a22aad8e64cfe404e4c294",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 39,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "239253118",
+        "name": "faillint",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 243,
+        "pushedAt": "2025-03-05T11:52:42Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\n\non:\n  push:\n    branches:\n      - main\n    tags:\n      - 'v*'\n  pull_request:\n\n\njobs:\n\n  test-build:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go \n      uses: actions/setup-go@v5\n      with:\n        go-version: '>=1.24.0'\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v4\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: |\n        go test -race ./...\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.3.1\n      with:\n        version: \"2025.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n\n    - name: Run GoReleaser\n      uses: goreleaser/goreleaser-action@v2\n      # only release on tags\n      if: success() && startsWith(github.ref, 'refs/tags/')\n      with:\n        version: latest\n        args: release --rm-dist\n      env:\n        GITHUB_TOKEN: ${{ secrets.FAILLINT_ACTIONS_BOT_TOKEN }}\n",
+            "blobSha": "d0acfb9f4ac003a4d0a61de8420cecd9895efa2f",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 61,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "466097262",
+        "name": "semgroup",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 320,
+        "pushedAt": "2024-10-03T06:56:41Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: CI\n\non: [push, pull_request]\n\njobs:\n  ci:\n    name: \"Go build\"\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go 1.17\n      uses: actions/setup-go@v2\n      with:\n        go-version: 1.17\n      id: go\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v2\n      \n    - name: Test\n      run: |\n        go mod tidy -v\n        go test -race ./...\n\n    - run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.1.0\n      with:\n        version: \"2021.1.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "01b074cd7f20d70ee613d17d0b17f147874077e0",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 22,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "32219571",
+        "name": "talks",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 28,
+        "pushedAt": "2024-02-17T09:44:33Z",
+        "languages": {},
+        "files": [],
+        "size": 9016,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "79814267",
+        "name": "structtag",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 651,
+        "pushedAt": "2023-09-07T20:17:17Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non: [push, pull_request]\njobs:\n\n  test-build:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go 1.13\n      uses: actions/setup-go@v1\n      with:\n        go-version: 1.13\n      id: go\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v1\n      \n    - name: Test\n      run: |\n        go mod tidy -v\n        go test -race ./...\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "efd782f0d1845b3cbd46e974985b09d13a2c289b",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 12,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "260841688",
+        "name": "starhook",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 100,
+        "pushedAt": "2023-03-25T07:31:47Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: CI\n\non: [push, pull_request]\n\njobs:\n  ci:\n    name: \"Go build\"\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go \n      uses: actions/setup-go@v4\n      with:\n        go-version: '>=1.20.0'\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v3\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: go test -race ./...\n\n    - name: Lint\n      run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.2.0\n      with:\n        version: \"2023.1.3\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "75704df16066b4dee3bd7d6a72ca42345009e98f",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 129,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "23490502",
+        "name": "vim-nginx",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 17,
+        "pushedAt": "2023-03-23T08:09:30Z",
+        "languages": {},
+        "files": [],
+        "size": 46,
+        "primaryLanguage": "Vim Script",
+        "projects": []
+      },
+      {
+        "id": "51225120",
+        "name": "motion",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 185,
+        "pushedAt": "2023-02-16T09:25:41Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non:\n  push:\n    branches:\n      - main\n  pull_request:\n\njobs:\n  test-build:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go \n      uses: actions/setup-go@v3\n      with:\n        go-version: '>=1.20.0'\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v3\n\n    - name: Run go mod tidy\n      run: |\n        set -e\n        go mod tidy\n        output=$(git status -s)\n        if [ -z \"${output}\" ]; then\n         exit 0\n        fi\n        echo 'We wish to maintain a tidy state for go mod. Please run `go mod tidy` on your branch, commit and push again.'\n        echo 'Running `go mod tidy` on this CI test yields with the following changes:'\n        echo \"$output\"\n        exit 1\n      \n    - name: Test\n      run: go test -race ./...\n\n    - name: Lint\n      run: \"go vet ./...\"\n\n    - name: Staticcheck\n      uses: dominikh/staticcheck-action@v1.2.0\n      with:\n        version: \"2023.1.1\"\n        install-go: false\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "72474f62128fdd087324abaecb5c04df046dfc06",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 55,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "492309824",
+        "name": "kodla-talk-2022",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 22,
+        "pushedAt": "2022-05-23T10:14:03Z",
+        "languages": {},
+        "files": [],
+        "size": 3350,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "429741460",
+        "name": "twirpdemo",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 33,
+        "pushedAt": "2021-11-19T14:54:55Z",
+        "languages": {},
+        "files": [],
+        "size": 16,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "34217386",
+        "name": "camelcase",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 184,
+        "pushedAt": "2020-12-02T16:07:28Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/go.yml",
+            "content": "name: build\non: [push, pull_request]\njobs:\n\n  test-build:\n    name: Test & Build\n    runs-on: ubuntu-latest\n    steps:\n\n    - name: Set up Go 1.15\n      uses: actions/setup-go@v1\n      with:\n        go-version: 1.15\n      id: go\n\n    - name: Check out code into the Go module directory\n      uses: actions/checkout@v1\n      \n    - name: Test\n      run: |\n        go mod tidy -v\n        go test -race ./...\n\n    - name: Build\n      run: go build ./...\n",
+            "blobSha": "0df913377ff54f1bfbc6cb151384db3460744f4c",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 12,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "212419379",
+        "name": "templatectl",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 41,
+        "pushedAt": "2020-11-17T11:19:00Z",
+        "languages": {},
+        "files": [],
+        "size": 5,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "186913574",
+        "name": "addlint",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 58,
+        "pushedAt": "2019-09-06T18:19:22Z",
+        "languages": {},
+        "files": [],
+        "size": 4,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "2962625",
+        "name": "dvb-t2",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 17,
+        "pushedAt": "2018-10-31T15:23:00Z",
+        "languages": {},
+        "files": [],
+        "size": 648,
+        "primaryLanguage": "Objective-C",
+        "projects": []
+      },
+      {
+        "id": "146738269",
+        "name": "testmod",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2018-08-30T12:06:58Z",
+        "languages": {},
+        "files": [],
+        "size": 2,
+        "primaryLanguage": "AMPL",
+        "projects": []
+      },
+      {
+        "id": "10019870",
+        "name": "cafetiere",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8,
+        "pushedAt": "2017-01-07T21:46:34Z",
+        "languages": {},
+        "files": [],
+        "size": 7442,
+        "primaryLanguage": "Objective-C",
+        "projects": []
+      },
+      {
+        "id": "38176915",
+        "name": "sicp",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 16,
+        "pushedAt": "2015-08-12T20:58:21Z",
+        "languages": {},
+        "files": [],
+        "size": 2000,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "36302887",
+        "name": "gb-example",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 47,
+        "pushedAt": "2015-06-05T12:35:26Z",
+        "languages": {},
+        "files": [],
+        "size": 164,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "20971105",
+        "name": "docker-ubuntu-go",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 5,
+        "pushedAt": "2014-06-18T17:26:02Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "Dockerfile",
+            "content": "FROM ubuntu:14.04\nMAINTAINER Fatih Arslan <ftharsln@gmail.com>\n\n# Update and upgrade repo\nRUN apt-get update -y -q && apt-get upgrade -y -q \n\n# Install tools we might need\nRUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y -q curl build-essential ca-certificates git \n\n# Download Go 1.2.2 and install it to /usr/local/go\nRUN curl -s https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz| tar -v -C /usr/local -xz\n\n# Let's people find our Go binaries\nENV PATH $PATH:/usr/local/go/bin\n\n",
+            "blobSha": "0de54a409e35e62f63a5ce82e87e152a83900c24",
+            "projectId": ".",
+            "contextWeight": 1
+          }
+        ],
+        "size": 124,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "7016528",
+        "name": "RailsDashboard.kdapp",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2013-07-30T20:16:59Z",
+        "languages": {},
+        "files": [],
+        "size": 1413,
+        "primaryLanguage": "CoffeeScript",
+        "projects": []
+      },
+      {
+        "id": "7487161",
+        "name": "koding-wiki",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6,
+        "pushedAt": "2013-06-07T06:46:24Z",
+        "languages": {},
+        "files": [],
+        "size": 690,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "6120493",
+        "name": "snippets",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2013-05-12T21:36:34Z",
+        "languages": {},
+        "files": [],
+        "size": 120,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "8057058",
+        "name": "amqp-examples",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 16,
+        "pushedAt": "2013-02-06T18:21:34Z",
+        "languages": {},
+        "files": [],
+        "size": 104,
+        "primaryLanguage": "Go",
+        "projects": []
+      },
+      {
+        "id": "3109810",
+        "name": "pisi-vim",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2012-01-05T14:08:35Z",
+        "languages": {},
+        "files": [],
+        "size": 100,
+        "primaryLanguage": "VimL",
+        "projects": []
+      },
+      {
+        "id": "1813691",
+        "name": "sinerji",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2011-08-17T06:21:57Z",
+        "languages": {},
+        "files": [],
+        "size": 198,
+        "primaryLanguage": "Python",
+        "projects": []
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "18062944",
+        "repoName": "vim-go",
+        "itemId": "docker",
+        "itemKind": "artifact",
+        "sourcePath": "Dockerfile",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-08-23T13:41:54Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "20971105",
+        "repoName": "docker-ubuntu-go",
+        "itemId": "docker",
+        "itemKind": "artifact",
+        "sourcePath": "Dockerfile",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2014-06-18T17:26:02Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "1109755039",
+        "repoName": "kfmt",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-12-05T06:19:48Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "16907502",
+        "repoName": "color",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-09T01:02:14Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "18062944",
+        "repoName": "vim-go",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/git.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-08-23T13:41:54Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "225055874",
+        "repoName": "errwrap",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-04-07T07:06:25Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "239253118",
+        "repoName": "faillint",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-03-05T11:52:42Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "260841688",
+        "repoName": "starhook",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-03-25T07:31:47Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "34217386",
+        "repoName": "camelcase",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2020-12-02T16:07:28Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "466097262",
+        "repoName": "semgroup",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2024-10-03T06:56:41Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "51225120",
+        "repoName": "motion",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-02-16T09:25:41Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "78461005",
+        "repoName": "gomodifytags",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2025-04-23T14:27:48Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      },
+      {
+        "repoId": "79814267",
+        "repoName": "structtag",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/go.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2023-09-07T20:17:17Z",
+        "detectorVersion": "game-engine-v2-detectors-3-collector-v21",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "full",
+      "eligible": 30,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 0,
+      "reposCandidates": 30,
+      "treesDiscovered": 30,
+      "treesTruncated": 0,
+      "manifestsDiscovered": 14,
+      "manifestsFetched": 14,
+      "manifestsSkippedByBudget": 0,
+      "uncertainRepositories": 0,
+      "gap": "none",
+      "domains": {
+        "language": "unavailable",
+        "school": "full",
+        "artifact": "full"
+      }
+    },
+    "requests": {
+      "rest": 31,
+      "graphql": 1,
+      "manifestFetches": 14,
+      "reposInspected": 30,
+      "cacheHits": 0,
+      "treeRequests": 30,
+      "manifestRequests": 1,
+      "fallbackRequests": 0,
+      "treeCacheHits": 0,
+      "manifestCacheHits": 0,
+      "manifestsDiscovered": 14,
+      "manifestsSkippedByBudget": 0,
+      "projectsDiscovered": 0,
+      "rateLimitRemaining": 4906,
+      "timingsMs": {
+        "repositorySelection": 694,
+        "treeDiscovery": 1897,
+        "manifestFetch": 1688,
+        "parsing": 0
+      }
+    },
+    "warnings": []
+  },
+  "collectedAt": "2026-10-07T21:16:19.370Z",
+  "coldLatencyMs": 10188
+}

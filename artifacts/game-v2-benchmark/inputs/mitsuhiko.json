@@ -1,0 +1,4261 @@
+{
+  "profile": {
+    "username": "mitsuhiko",
+    "cohort": "calibration",
+    "categories": [
+      "backend",
+      "python",
+      "polyglot"
+    ],
+    "mandatory": false
+  },
+  "rawProfile": {
+    "username": "mitsuhiko",
+    "displayName": "Armin Ronacher",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/7396?v=4",
+    "bio": "Software developer and Open Source nut. Creator of the Flask framework. Founder of @earendil-works. Other things of interest: @pallets and @getsentry",
+    "location": "Austria",
+    "company": "Earendil",
+    "createdAt": "2008-04-15T10:03:57.000Z",
+    "fetchedAt": "2026-10-07T04:55:15.241Z",
+    "isDemo": false,
+    "followers": {
+      "value": 26358,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "minijinja",
+          "isFork": false,
+          "stars": 2790,
+          "forks": 174,
+          "languages": {
+            "Rust": 1518590,
+            "Go": 673247,
+            "Python": 47491,
+            "C": 39329,
+            "HTML": 10119,
+            "JavaScript": 7742,
+            "Makefile": 6325,
+            "Shell": 5782,
+            "Jinja": 225,
+            "Q#": 46,
+            "RenderScript": 1
+          }
+        },
+        {
+          "name": "lucumr",
+          "isFork": false,
+          "stars": 308,
+          "forks": 84,
+          "languages": {
+            "Python": 59662,
+            "JavaScript": 56555,
+            "HTML": 21012,
+            "CSS": 15215,
+            "Makefile": 238
+          }
+        },
+        {
+          "name": "deser",
+          "isFork": false,
+          "stars": 448,
+          "forks": 8,
+          "languages": {
+            "Rust": 6640043,
+            "Python": 126833,
+            "PHP": 82871,
+            "C": 59473,
+            "Shell": 50487,
+            "JavaScript": 20705,
+            "CMake": 11278,
+            "Makefile": 8386,
+            "Mako": 5010,
+            "Go": 1477,
+            "HTML": 740
+          }
+        },
+        {
+          "name": "miniline",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 274116
+          }
+        },
+        {
+          "name": "argument",
+          "isFork": false,
+          "stars": 25,
+          "forks": 1,
+          "languages": {
+            "Rust": 261438,
+            "Python": 2903,
+            "Shell": 806,
+            "Makefile": 490
+          }
+        },
+        {
+          "name": "insta-website",
+          "isFork": false,
+          "stars": 11,
+          "forks": 25,
+          "languages": {
+            "HTML": 11438,
+            "SCSS": 6687,
+            "Makefile": 279
+          }
+        },
+        {
+          "name": "insta",
+          "isFork": false,
+          "stars": 2972,
+          "forks": 164,
+          "languages": {
+            "Rust": 792677,
+            "TypeScript": 27389,
+            "Makefile": 1128,
+            "Shell": 652
+          }
+        },
+        {
+          "name": "flatex-pdf-download",
+          "isFork": false,
+          "stars": 53,
+          "forks": 11,
+          "languages": {
+            "Python": 21708
+          }
+        },
+        {
+          "name": "tankgame",
+          "isFork": false,
+          "stars": 24,
+          "forks": 4,
+          "languages": {
+            "C": 1849652,
+            "Python": 131783,
+            "GLSL": 46009,
+            "HTML": 28289,
+            "C++": 16939,
+            "CMake": 13926,
+            "Shell": 2160,
+            "Objective-C": 275,
+            "Dockerfile": 145
+          }
+        },
+        {
+          "name": "similar",
+          "isFork": false,
+          "stars": 1332,
+          "forks": 56,
+          "languages": {
+            "Rust": 488425,
+            "Makefile": 830,
+            "Shell": 189
+          }
+        },
+        {
+          "name": "agent-stuff",
+          "isFork": false,
+          "stars": 3176,
+          "forks": 229,
+          "languages": {
+            "TypeScript": 512952,
+            "JavaScript": 184844,
+            "Shell": 71344,
+            "Java": 35230,
+            "Python": 18971,
+            "OpenSCAD": 5891
+          }
+        },
+        {
+          "name": "dotfiles",
+          "isFork": false,
+          "stars": 445,
+          "forks": 54,
+          "languages": {
+            "Vim Script": 27549,
+            "Shell": 16514,
+            "Python": 13468,
+            "Makefile": 1806
+          }
+        },
+        {
+          "name": "senderkataster-bookmarklet",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "HTML": 3387,
+            "CSS": 3067,
+            "JavaScript": 1480
+          }
+        },
+        {
+          "name": "qr",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 70346,
+            "HTML": 9737,
+            "CSS": 7438
+          }
+        },
+        {
+          "name": "pi-ds4",
+          "isFork": false,
+          "stars": 174,
+          "forks": 45,
+          "languages": {
+            "TypeScript": 85968,
+            "Shell": 11212
+          }
+        },
+        {
+          "name": "fragile",
+          "isFork": false,
+          "stars": 193,
+          "forks": 14,
+          "languages": {
+            "Rust": 79555,
+            "Makefile": 403
+          }
+        },
+        {
+          "name": "memo-map",
+          "isFork": false,
+          "stars": 32,
+          "forks": 5,
+          "languages": {
+            "Rust": 24779,
+            "Makefile": 410
+          }
+        },
+        {
+          "name": "procspawn",
+          "isFork": false,
+          "stars": 166,
+          "forks": 24,
+          "languages": {
+            "Rust": 88977,
+            "Makefile": 1294
+          }
+        },
+        {
+          "name": "catplay-v821-fel-flow",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Python": 34964
+          }
+        },
+        {
+          "name": "pi-drinking-game",
+          "isFork": false,
+          "stars": 33,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 23420
+          }
+        },
+        {
+          "name": "fstrings-wtf",
+          "isFork": false,
+          "stars": 105,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 30056,
+            "CSS": 16349,
+            "HTML": 8939
+          }
+        },
+        {
+          "name": "json",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "serde",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "dark",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "Python": 51613,
+            "JavaScript": 47046,
+            "HTML": 16280,
+            "CSS": 16014,
+            "Makefile": 238
+          }
+        },
+        {
+          "name": "zine",
+          "isFork": false,
+          "stars": 32,
+          "forks": 8,
+          "languages": {
+            "Python": 1055131,
+            "JavaScript": 215269,
+            "HTML": 132279,
+            "CSS": 53974,
+            "Makefile": 2921
+          }
+        },
+        {
+          "name": "talks",
+          "isFork": false,
+          "stars": 26,
+          "forks": 0,
+          "languages": {
+            "HTML": 231489,
+            "CSS": 31094,
+            "JavaScript": 6297,
+            "Makefile": 535
+          }
+        },
+        {
+          "name": "insta-cmd",
+          "isFork": false,
+          "stars": 52,
+          "forks": 7,
+          "languages": {
+            "Rust": 13602,
+            "Makefile": 577
+          }
+        },
+        {
+          "name": "ronacher.eu",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 13732,
+            "CSS": 3783,
+            "HTML": 2330
+          }
+        },
+        {
+          "name": "ds4",
+          "isFork": true,
+          "stars": 65,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "amazon-how-much",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 31073
+          }
+        },
+        {
+          "name": "pi-llamacpp",
+          "isFork": false,
+          "stars": 146,
+          "forks": 13,
+          "languages": {
+            "TypeScript": 60280,
+            "Shell": 5455
+          }
+        },
+        {
+          "name": "pi-mono",
+          "isFork": true,
+          "stars": 102,
+          "forks": 5,
+          "languages": {}
+        },
+        {
+          "name": "rope-man-game",
+          "isFork": false,
+          "stars": 14,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 302098,
+            "HTML": 48434,
+            "Python": 6635,
+            "Makefile": 963
+          }
+        },
+        {
+          "name": "mlx-lm",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pi-draw",
+          "isFork": false,
+          "stars": 100,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 14447
+          }
+        },
+        {
+          "name": "oss-coding-sessions",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mini-presenter",
+          "isFork": false,
+          "stars": 75,
+          "forks": 4,
+          "languages": {
+            "JavaScript": 306616,
+            "HTML": 55293,
+            "CSS": 43853
+          }
+        },
+        {
+          "name": "self-replace",
+          "isFork": false,
+          "stars": 824,
+          "forks": 34,
+          "languages": {
+            "Rust": 31535,
+            "Batchfile": 930,
+            "Shell": 874,
+            "Makefile": 496
+          }
+        },
+        {
+          "name": "similar-asserts",
+          "isFork": false,
+          "stars": 170,
+          "forks": 12,
+          "languages": {
+            "Rust": 29857,
+            "Makefile": 517
+          }
+        },
+        {
+          "name": "gas-prices",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "Python": 26818
+          }
+        },
+        {
+          "name": "gh-issue-sync",
+          "isFork": false,
+          "stars": 167,
+          "forks": 14,
+          "languages": {
+            "Go": 330866,
+            "Shell": 1996,
+            "Makefile": 961
+          }
+        },
+        {
+          "name": "VoiceInk",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "minijinja-playground",
+          "isFork": false,
+          "stars": 18,
+          "forks": 6,
+          "languages": {
+            "JavaScript": 12980,
+            "Rust": 3363,
+            "HTML": 835
+          }
+        },
+        {
+          "name": "pi-codemode-mcp",
+          "isFork": false,
+          "stars": 38,
+          "forks": 2,
+          "languages": {
+            "TypeScript": 110157
+          }
+        },
+        {
+          "name": "google-workspace-mcp",
+          "isFork": false,
+          "stars": 7,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 24022
+          }
+        },
+        {
+          "name": "idasen-control",
+          "isFork": false,
+          "stars": 440,
+          "forks": 26,
+          "languages": {
+            "Go": 39341,
+            "Rust": 31665
+          }
+        },
+        {
+          "name": "openclaw",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sloppy-xml-py",
+          "isFork": false,
+          "stars": 114,
+          "forks": 8,
+          "languages": {
+            "Python": 111617,
+            "Makefile": 1091
+          }
+        },
+        {
+          "name": "shittycodingagent.ai",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "aoc25",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "Python": 103431,
+            "Makefile": 730
+          }
+        },
+        {
+          "name": "mitsuhiko.at",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "HTML": 326
+          }
+        },
+        {
+          "name": "rsc-rce-poc",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 33478,
+            "Shell": 5496
+          }
+        },
+        {
+          "name": "simplejson",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nanochat",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mini-agent",
+          "isFork": false,
+          "stars": 67,
+          "forks": 5,
+          "languages": {
+            "JavaScript": 22295
+          }
+        },
+        {
+          "name": "playwrightess-mcp",
+          "isFork": false,
+          "stars": 75,
+          "forks": 8,
+          "languages": {
+            "JavaScript": 11737,
+            "TypeScript": 4471
+          }
+        },
+        {
+          "name": "pexpect-mcp",
+          "isFork": false,
+          "stars": 74,
+          "forks": 11,
+          "languages": {
+            "Python": 5546,
+            "C": 1992
+          }
+        },
+        {
+          "name": "vibe-transcripts",
+          "isFork": false,
+          "stars": 17,
+          "forks": 2,
+          "languages": {
+            "C++": 8068380,
+            "C": 6361062,
+            "Cuda": 977934,
+            "Objective-C": 403631,
+            "Metal": 319778,
+            "Shell": 218060,
+            "Python": 133552,
+            "HTML": 104097,
+            "Java": 89428,
+            "JavaScript": 87094,
+            "Go": 62718,
+            "Ruby": 52854,
+            "Kotlin": 30083,
+            "Swift": 27149,
+            "CMake": 26070,
+            "Vim Script": 15906,
+            "Makefile": 9802,
+            "CSS": 5453,
+            "Batchfile": 5333,
+            "Dockerfile": 4903,
+            "Objective-C++": 2224,
+            "PowerShell": 497,
+            "Procfile": 103
+          }
+        },
+        {
+          "name": "minibb",
+          "isFork": false,
+          "stars": 34,
+          "forks": 1,
+          "languages": {
+            "TypeScript": 24968,
+            "Go": 22846,
+            "Python": 8723,
+            "Shell": 6015,
+            "Makefile": 1419,
+            "JavaScript": 516,
+            "HTML": 354,
+            "Procfile": 102,
+            "CSS": 23
+          }
+        },
+        {
+          "name": "vibe-throwback-chat",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "TypeScript": 107920,
+            "Go": 81918,
+            "HTML": 13963,
+            "Shell": 4870,
+            "CSS": 2174,
+            "Makefile": 637,
+            "Procfile": 93
+          }
+        },
+        {
+          "name": "vite-console-forward-plugin",
+          "isFork": false,
+          "stars": 161,
+          "forks": 5,
+          "languages": {
+            "TypeScript": 8330,
+            "HTML": 927
+          }
+        },
+        {
+          "name": "vibe-tracker-failure",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "agent-prompts",
+          "isFork": false,
+          "stars": 131,
+          "forks": 15,
+          "languages": {}
+        },
+        {
+          "name": "vibe-minisentry",
+          "isFork": false,
+          "stars": 130,
+          "forks": 18,
+          "languages": {
+            "Go": 245813,
+            "TypeScript": 153010,
+            "JavaScript": 22198,
+            "CSS": 2895,
+            "Makefile": 1510,
+            "HTML": 780,
+            "Dockerfile": 689
+          }
+        },
+        {
+          "name": "vibe-astro-stuff",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Python": 27193,
+            "Makefile": 569
+          }
+        },
+        {
+          "name": "NaNoGenMo-2015",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "macos-automator-mcp",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mailparse",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gib-potato",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "from-string",
+          "isFork": false,
+          "stars": 14,
+          "forks": 1,
+          "languages": {
+            "Rust": 2712
+          }
+        },
+        {
+          "name": "tokio-unix-ipc",
+          "isFork": false,
+          "stars": 50,
+          "forks": 12,
+          "languages": {
+            "Rust": 47540,
+            "Makefile": 406
+          }
+        },
+        {
+          "name": "rstblog",
+          "isFork": false,
+          "stars": 209,
+          "forks": 59,
+          "languages": {
+            "Python": 51050,
+            "HTML": 4340
+          }
+        },
+        {
+          "name": "memfrob",
+          "isFork": false,
+          "stars": 5,
+          "forks": 0,
+          "languages": {
+            "HTML": 8452
+          }
+        },
+        {
+          "name": "can-i-have-your-username",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "datafusion-sqlparser-rs",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "aHash",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "systemfd",
+          "isFork": false,
+          "stars": 662,
+          "forks": 18,
+          "languages": {
+            "Rust": 19103,
+            "Makefile": 394
+          }
+        },
+        {
+          "name": "listenfd",
+          "isFork": false,
+          "stars": 242,
+          "forks": 19,
+          "languages": {
+            "Rust": 14761,
+            "Makefile": 371
+          }
+        },
+        {
+          "name": "fair.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "teetty",
+          "isFork": false,
+          "stars": 340,
+          "forks": 6,
+          "languages": {
+            "CSS": 43570,
+            "Rust": 28595,
+            "Python": 1444,
+            "Shell": 1205,
+            "HTML": 918,
+            "Makefile": 469
+          }
+        },
+        {
+          "name": "small-ctor",
+          "isFork": false,
+          "stars": 17,
+          "forks": 4,
+          "languages": {
+            "Rust": 14060,
+            "Makefile": 405,
+            "Python": 261
+          }
+        },
+        {
+          "name": "sha1-smol",
+          "isFork": false,
+          "stars": 78,
+          "forks": 31,
+          "languages": {
+            "Rust": 30112,
+            "Makefile": 230
+          }
+        },
+        {
+          "name": "when",
+          "isFork": false,
+          "stars": 476,
+          "forks": 18,
+          "languages": {
+            "Rust": 37487,
+            "JavaScript": 6796,
+            "CSS": 1595,
+            "Makefile": 637,
+            "HTML": 411
+          }
+        },
+        {
+          "name": "phpserialize",
+          "isFork": false,
+          "stars": 132,
+          "forks": 66,
+          "languages": {
+            "Python": 23472,
+            "Makefile": 23
+          }
+        },
+        {
+          "name": "mistral.rs",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "text-generation-inference",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pyastutil",
+          "isFork": false,
+          "stars": 21,
+          "forks": 4,
+          "languages": {
+            "Python": 19652
+          }
+        },
+        {
+          "name": "rust-runas",
+          "isFork": false,
+          "stars": 51,
+          "forks": 22,
+          "languages": {
+            "Rust": 10305,
+            "Shell": 514,
+            "Makefile": 383
+          }
+        },
+        {
+          "name": "localzone",
+          "isFork": false,
+          "stars": 15,
+          "forks": 2,
+          "languages": {
+            "Rust": 58875,
+            "Python": 999,
+            "Makefile": 343
+          }
+        },
+        {
+          "name": "pantry",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "maxminddb-rust",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "lagon",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "serde-plain",
+          "isFork": false,
+          "stars": 61,
+          "forks": 10,
+          "languages": {
+            "Rust": 27974
+          }
+        },
+        {
+          "name": "machfind",
+          "isFork": false,
+          "stars": 4,
+          "forks": 4,
+          "languages": {
+            "Rust": 3431
+          }
+        },
+        {
+          "name": "better-panic",
+          "isFork": false,
+          "stars": 438,
+          "forks": 11,
+          "languages": {
+            "Rust": 16845,
+            "Makefile": 375
+          }
+        },
+        {
+          "name": "maturin",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-web-framework-comparison",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "axum-template",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "python-inifile",
+          "isFork": false,
+          "stars": 32,
+          "forks": 6,
+          "languages": {
+            "Python": 20758
+          }
+        },
+        {
+          "name": "elementtree-rust",
+          "isFork": false,
+          "stars": 61,
+          "forks": 8,
+          "languages": {
+            "Rust": 242304,
+            "Makefile": 510
+          }
+        },
+        {
+          "name": "pep440-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "source-map-spec",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "source-map-rfc",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "cargo",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-clippy",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "jinja2-htmlcompress",
+          "isFork": false,
+          "stars": 133,
+          "forks": 26,
+          "languages": {
+            "Python": 6354
+          }
+        },
+        {
+          "name": "pyo3",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "webgame",
+          "isFork": false,
+          "stars": 25,
+          "forks": 3,
+          "languages": {
+            "Rust": 61288,
+            "CSS": 4648,
+            "JavaScript": 943,
+            "Makefile": 275,
+            "HTML": 153
+          }
+        },
+        {
+          "name": "nix",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "helix",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "stack-tokens",
+          "isFork": false,
+          "stars": 33,
+          "forks": 1,
+          "languages": {
+            "Rust": 5545,
+            "Makefile": 371
+          }
+        },
+        {
+          "name": "flask-oauth",
+          "isFork": false,
+          "stars": 575,
+          "forks": 203,
+          "languages": {
+            "Python": 28910,
+            "HTML": 1433,
+            "CSS": 675
+          }
+        },
+        {
+          "name": "advisory-db",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nextest",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sourcemaps-experiment",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 728,
+            "Rust": 665,
+            "TypeScript": 525,
+            "Makefile": 238,
+            "HTML": 53
+          }
+        },
+        {
+          "name": "test-repo-please-ignore",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {
+            "HTML": 156885
+          }
+        },
+        {
+          "name": "pdb",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "miniserde",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "lol-html",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "unix-ipc",
+          "isFork": false,
+          "stars": 39,
+          "forks": 7,
+          "languages": {
+            "Rust": 28685,
+            "Makefile": 747
+          }
+        },
+        {
+          "name": "when-data",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "Python": 6099,
+            "Makefile": 659
+          }
+        },
+        {
+          "name": "chrono-tz",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "kuchiki",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hq",
+          "isFork": false,
+          "stars": 60,
+          "forks": 1,
+          "languages": {
+            "Rust": 8541,
+            "HTML": 470
+          }
+        },
+        {
+          "name": "covidcalc",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "HTML": 2073,
+            "JavaScript": 1544,
+            "CSS": 666
+          }
+        },
+        {
+          "name": "is-jonschlinkert",
+          "isFork": false,
+          "stars": 54,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 705
+          }
+        },
+        {
+          "name": "self_cell",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "tiny-http",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "test-actions",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rustfix",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "python-unio",
+          "isFork": false,
+          "stars": 164,
+          "forks": 3,
+          "languages": {
+            "Python": 15676
+          }
+        },
+        {
+          "name": "confluent-kafka-python",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pluginbase",
+          "isFork": false,
+          "stars": 1140,
+          "forks": 141,
+          "languages": {
+            "Python": 27320,
+            "Makefile": 211
+          }
+        },
+        {
+          "name": "serde-big-array",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "struckdown",
+          "isFork": false,
+          "stars": 42,
+          "forks": 0,
+          "languages": {
+            "Rust": 105182,
+            "Python": 2667,
+            "Makefile": 465
+          }
+        },
+        {
+          "name": "ClickHouse",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "easylist",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "syn",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mockito",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "predicates-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "this-week-in-rust",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "difference.rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "vscode",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "unbox",
+          "isFork": false,
+          "stars": 141,
+          "forks": 8,
+          "languages": {
+            "Rust": 31913,
+            "Makefile": 63
+          }
+        },
+        {
+          "name": "webgl-meincraft",
+          "isFork": false,
+          "stars": 121,
+          "forks": 17,
+          "languages": {
+            "JavaScript": 79894,
+            "CoffeeScript": 68566
+          }
+        },
+        {
+          "name": "wasm-example-please-ignore",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 3304,
+            "HTML": 1204,
+            "Rust": 220
+          }
+        },
+        {
+          "name": "rustc-147-macro-regression",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 676
+          }
+        },
+        {
+          "name": "python-modernize",
+          "isFork": false,
+          "stars": 531,
+          "forks": 26,
+          "languages": {
+            "Python": 56286
+          }
+        },
+        {
+          "name": "fruity-vim-colorscheme",
+          "isFork": false,
+          "stars": 47,
+          "forks": 4,
+          "languages": {
+            "Vim Script": 9014
+          }
+        },
+        {
+          "name": "mictoggle",
+          "isFork": false,
+          "stars": 25,
+          "forks": 0,
+          "languages": {
+            "Swift": 5753,
+            "Objective-C": 3823,
+            "C": 128,
+            "Ruby": 83
+          }
+        },
+        {
+          "name": "clicolors-control",
+          "isFork": false,
+          "stars": 18,
+          "forks": 11,
+          "languages": {
+            "Rust": 7736
+          }
+        },
+        {
+          "name": "proximity-tracing",
+          "isFork": false,
+          "stars": 31,
+          "forks": 1,
+          "languages": {
+            "Rust": 24952,
+            "Makefile": 900
+          }
+        },
+        {
+          "name": "dp3tsrv",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "Rust": 16861,
+            "Makefile": 159
+          }
+        },
+        {
+          "name": "covidcotra",
+          "isFork": false,
+          "stars": 22,
+          "forks": 3,
+          "languages": {
+            "Rust": 14413,
+            "Makefile": 565
+          }
+        },
+        {
+          "name": "jsmn",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "shared_memory-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "envdir-plusplus",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ipc-channel",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "actix-net",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "actix-web",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "aoc19",
+          "isFork": false,
+          "stars": 17,
+          "forks": 0,
+          "languages": {
+            "Rust": 26508
+          }
+        },
+        {
+          "name": "uap-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "cpp_demangle",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rure-python",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "redis-py-cluster",
+          "isFork": true,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "rusoto",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "gimli",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-base64",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pipsi",
+          "isFork": false,
+          "stars": 1992,
+          "forks": 135,
+          "languages": {
+            "Python": 30058
+          }
+        },
+        {
+          "name": "curl-rust",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-macho",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "jinja2-tmbundle",
+          "isFork": false,
+          "stars": 34,
+          "forks": 35,
+          "languages": {}
+        },
+        {
+          "name": "backoff",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mac-process-info",
+          "isFork": false,
+          "stars": 5,
+          "forks": 2,
+          "languages": {
+            "Rust": 2339,
+            "C": 658
+          }
+        },
+        {
+          "name": "java-properties",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "might-be-minified",
+          "isFork": false,
+          "stars": 16,
+          "forks": 1,
+          "languages": {
+            "Rust": 6328
+          }
+        },
+        {
+          "name": "clickhouse-driver",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "logteewoop",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Rust": 14162,
+            "HTML": 683,
+            "Python": 516,
+            "Makefile": 424
+          }
+        },
+        {
+          "name": "proc-macro2",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "python-json-read-adapter",
+          "isFork": false,
+          "stars": 8,
+          "forks": 1,
+          "languages": {
+            "Rust": 6639
+          }
+        },
+        {
+          "name": "cargo-expand",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "s3autoindex",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "qq",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Rust": 5894
+          }
+        },
+        {
+          "name": "serde-value",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bat",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prettyprint-1",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "www.rust-lang.org",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "synstructure",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "goblin",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "foobar",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pdoc",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "im-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "error-chain-compat",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 298
+          }
+        },
+        {
+          "name": "defeat",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 20434
+          }
+        },
+        {
+          "name": "failure",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "platter",
+          "isFork": false,
+          "stars": 334,
+          "forks": 51,
+          "languages": {
+            "Python": 25453
+          }
+        },
+        {
+          "name": "rust-execution-context",
+          "isFork": false,
+          "stars": 36,
+          "forks": 1,
+          "languages": {
+            "Rust": 20028
+          }
+        },
+        {
+          "name": "timesched",
+          "isFork": false,
+          "stars": 209,
+          "forks": 27,
+          "languages": {
+            "JavaScript": 220296,
+            "HTML": 12989,
+            "CSS": 11353,
+            "Python": 7831,
+            "Makefile": 1130
+          }
+        },
+        {
+          "name": "actix-website",
+          "isFork": false,
+          "stars": 1,
+          "forks": 1,
+          "languages": {
+            "HTML": 23153,
+            "CSS": 11209,
+            "Shell": 458
+          }
+        },
+        {
+          "name": "hugo",
+          "isFork": true,
+          "stars": 1,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "vim-jinja",
+          "isFork": false,
+          "stars": 86,
+          "forks": 14,
+          "languages": {
+            "Vim Script": 8561
+          }
+        },
+        {
+          "name": "serde-rs.github.io",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "htmldiff",
+          "isFork": false,
+          "stars": 29,
+          "forks": 14,
+          "languages": {
+            "Python": 10611
+          }
+        },
+        {
+          "name": "raven-cfml",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-uchardet",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-www",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "snaek",
+          "isFork": false,
+          "stars": 223,
+          "forks": 4,
+          "languages": {
+            "Python": 11029,
+            "Rust": 2724,
+            "C": 317,
+            "Makefile": 62
+          }
+        },
+        {
+          "name": "cbindgen",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "u2f-api",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-memdata",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "Rust": 11498
+          }
+        },
+        {
+          "name": "rfcs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "difflib",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "calm-test",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1220,
+            "Python": 835
+          }
+        },
+        {
+          "name": "tickets-oebb-fixes",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 1141
+          }
+        },
+        {
+          "name": "vim-python-combined",
+          "isFork": false,
+          "stars": 77,
+          "forks": 4,
+          "languages": {
+            "Vim Script": 19586
+          }
+        },
+        {
+          "name": "rust-osascript",
+          "isFork": false,
+          "stars": 16,
+          "forks": 2,
+          "languages": {
+            "Rust": 4508
+          }
+        },
+        {
+          "name": "unp",
+          "isFork": false,
+          "stars": 455,
+          "forks": 55,
+          "languages": {
+            "Python": 16949
+          }
+        },
+        {
+          "name": "tableau",
+          "isFork": false,
+          "stars": 11,
+          "forks": 1,
+          "languages": {
+            "Rust": 13575
+          }
+        },
+        {
+          "name": "multipart",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-poly2tri",
+          "isFork": false,
+          "stars": 11,
+          "forks": 2,
+          "languages": {
+            "Rust": 7153,
+            "C++": 3577,
+            "Makefile": 288
+          }
+        },
+        {
+          "name": "saaaaandboooox",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust",
+          "isFork": true,
+          "stars": 10,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "python-regex-scanner",
+          "isFork": false,
+          "stars": 221,
+          "forks": 15,
+          "languages": {
+            "Python": 3373
+          }
+        },
+        {
+          "name": "xmltree-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "mac-notification-sys",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "clap-rs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "das-gfraster",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "HTML": 6722,
+            "CSS": 4870,
+            "JavaScript": 1419
+          }
+        },
+        {
+          "name": "splash-stuff",
+          "isFork": false,
+          "stars": 4,
+          "forks": 1,
+          "languages": {
+            "Python": 1593,
+            "HTML": 750,
+            "CSS": 72
+          }
+        },
+        {
+          "name": "python-logical-call-context",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "Python": 11287,
+            "Makefile": 52
+          }
+        },
+        {
+          "name": "flask-pastebin",
+          "isFork": false,
+          "stars": 266,
+          "forks": 54,
+          "languages": {
+            "Python": 5442,
+            "JavaScript": 1567
+          }
+        },
+        {
+          "name": "matt-thing",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Rust": 2094
+          }
+        },
+        {
+          "name": "requests",
+          "isFork": true,
+          "stars": 14,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "citizenship",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-carrier",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Rust": 11558
+          }
+        },
+        {
+          "name": "classy",
+          "isFork": false,
+          "stars": 265,
+          "forks": 43,
+          "languages": {
+            "Python": 11738,
+            "JavaScript": 11466,
+            "Shell": 4106
+          }
+        },
+        {
+          "name": "sentry",
+          "isFork": true,
+          "stars": 8,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "rust-openssl",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pencil",
+          "isFork": true,
+          "stars": 0,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "twofactorauth",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "prettyprint",
+          "isFork": false,
+          "stars": 19,
+          "forks": 1,
+          "languages": {
+            "Python": 19478
+          }
+        },
+        {
+          "name": "django-sudo",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "mangodb",
+          "isFork": true,
+          "stars": 5,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "pyotp",
+          "isFork": true,
+          "stars": 8,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "MacOSX-SDKs",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "osx-openconnect-helper",
+          "isFork": false,
+          "stars": 30,
+          "forks": 8,
+          "languages": {
+            "Python": 12298
+          }
+        },
+        {
+          "name": "lektor-atom",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "changes",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "quasi",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "libfixmath",
+          "isFork": false,
+          "stars": 11,
+          "forks": 5,
+          "languages": {
+            "C": 816643,
+            "C++": 11035,
+            "Makefile": 4821,
+            "Python": 3508
+          }
+        },
+        {
+          "name": "speaklater",
+          "isFork": false,
+          "stars": 61,
+          "forks": 13,
+          "languages": {
+            "Python": 6349
+          }
+        },
+        {
+          "name": "staticgen",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "linguist",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "python-atomicfile",
+          "isFork": false,
+          "stars": 19,
+          "forks": 4,
+          "languages": {
+            "Python": 4430
+          }
+        },
+        {
+          "name": "ooe15-wahl",
+          "isFork": false,
+          "stars": 0,
+          "forks": 0,
+          "languages": {
+            "Python": 4571,
+            "Shell": 700,
+            "HTML": 240
+          }
+        },
+        {
+          "name": "rust-setuptools",
+          "isFork": false,
+          "stars": 8,
+          "forks": 2,
+          "languages": {
+            "Python": 4193
+          }
+        },
+        {
+          "name": "hyper",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "johanson",
+          "isFork": false,
+          "stars": 15,
+          "forks": 0,
+          "languages": {
+            "C": 100525,
+            "Lua": 2101,
+            "Shell": 1685,
+            "Makefile": 1471,
+            "Python": 1044,
+            "C++": 148
+          }
+        },
+        {
+          "name": "rust-incidents",
+          "isFork": false,
+          "stars": 17,
+          "forks": 4,
+          "languages": {
+            "Rust": 32479,
+            "Shell": 520,
+            "Makefile": 126
+          }
+        },
+        {
+          "name": "sentry-hipchat",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pyladies-flask",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "Python": 4146,
+            "HTML": 2200,
+            "CSS": 937
+          }
+        },
+        {
+          "name": "gfx_gl",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "nameko",
+          "isFork": true,
+          "stars": 3,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "little-tanks",
+          "isFork": false,
+          "stars": 11,
+          "forks": 1,
+          "languages": {
+            "Rust": 30784
+          }
+        },
+        {
+          "name": "rust-excessive-bools-lint",
+          "isFork": false,
+          "stars": 34,
+          "forks": 1,
+          "languages": {
+            "Rust": 3819
+          }
+        },
+        {
+          "name": "rust-welder",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "Rust": 13163
+          }
+        },
+        {
+          "name": "rust-eh",
+          "isFork": false,
+          "stars": 17,
+          "forks": 1,
+          "languages": {
+            "Rust": 15912
+          }
+        },
+        {
+          "name": "arewewebyet",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hematite",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gfx_voxel",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "redis-doc",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pip",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "click_example",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "pycon.ru",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "babel-website",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "CSS": 2173
+          }
+        },
+        {
+          "name": "python-geoip",
+          "isFork": false,
+          "stars": 246,
+          "forks": 50,
+          "languages": {
+            "Python": 29282,
+            "Shell": 4427
+          }
+        },
+        {
+          "name": "CoreSymbolication",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "cli-tools",
+          "isFork": false,
+          "stars": 31,
+          "forks": 1,
+          "languages": {
+            "Python": 10596,
+            "Shell": 1126
+          }
+        },
+        {
+          "name": "vim-json",
+          "isFork": false,
+          "stars": 15,
+          "forks": 2,
+          "languages": {
+            "Vim Script": 4586
+          }
+        },
+        {
+          "name": "vim-rst",
+          "isFork": false,
+          "stars": 17,
+          "forks": 0,
+          "languages": {
+            "Vim Script": 8485
+          }
+        },
+        {
+          "name": "sqlalchemy",
+          "isFork": true,
+          "stars": 4,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "vim-sparkup",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "worldtime-scheduler",
+          "isFork": false,
+          "stars": 6,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 32518,
+            "Python": 12763,
+            "CSS": 9429
+          }
+        },
+        {
+          "name": "maximum-awesome",
+          "isFork": true,
+          "stars": 3,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "rust-game",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "Rust": 5683,
+            "Shell": 36
+          }
+        },
+        {
+          "name": "paramiko",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flask-feedback",
+          "isFork": false,
+          "stars": 39,
+          "forks": 8,
+          "languages": {
+            "Python": 5195,
+            "CSS": 3877,
+            "JavaScript": 2484
+          }
+        },
+        {
+          "name": "curl",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "pocoo-sprint-18052013",
+          "isFork": false,
+          "stars": 5,
+          "forks": 7,
+          "languages": {}
+        },
+        {
+          "name": "nat-tools",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "Python": 8079
+          }
+        },
+        {
+          "name": "templatetk",
+          "isFork": false,
+          "stars": 68,
+          "forks": 1,
+          "languages": {
+            "Python": 150750,
+            "JavaScript": 10098
+          }
+        },
+        {
+          "name": "msgpack-python",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "redsocks",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flask-js-hostname-example",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Python": 452,
+            "JavaScript": 70
+          }
+        },
+        {
+          "name": "flask-oldsessions",
+          "isFork": false,
+          "stars": 2,
+          "forks": 1,
+          "languages": {
+            "Python": 11743
+          }
+        },
+        {
+          "name": "leakfinder",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "salt",
+          "isFork": true,
+          "stars": 11,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "kickstarter-scraper",
+          "isFork": false,
+          "stars": 16,
+          "forks": 7,
+          "languages": {
+            "Python": 9408
+          }
+        },
+        {
+          "name": "python-pbkdf2",
+          "isFork": false,
+          "stars": 149,
+          "forks": 28,
+          "languages": {
+            "Python": 5403
+          }
+        },
+        {
+          "name": "probe",
+          "isFork": false,
+          "stars": 47,
+          "forks": 4,
+          "languages": {
+            "Python": 20563,
+            "JavaScript": 449
+          }
+        },
+        {
+          "name": "greenlet",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "yamldb",
+          "isFork": false,
+          "stars": 15,
+          "forks": 1,
+          "languages": {
+            "Python": 14163
+          }
+        },
+        {
+          "name": "dota2-demoinfo2",
+          "isFork": false,
+          "stars": 38,
+          "forks": 8,
+          "languages": {
+            "C++": 30852
+          }
+        },
+        {
+          "name": "unicode-literals-pep",
+          "isFork": false,
+          "stars": 13,
+          "forks": 1,
+          "languages": {
+            "Python": 27311
+          }
+        },
+        {
+          "name": "osx-keyboard-layouts",
+          "isFork": false,
+          "stars": 8,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "immersedcode",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "gl-matrix",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "jsonjinja",
+          "isFork": false,
+          "stars": 83,
+          "forks": 7,
+          "languages": {
+            "Python": 70203,
+            "JavaScript": 3317
+          }
+        },
+        {
+          "name": "python-juggernaut",
+          "isFork": false,
+          "stars": 25,
+          "forks": 4,
+          "languages": {
+            "Python": 8261
+          }
+        },
+        {
+          "name": "tugraz-flask-demo",
+          "isFork": false,
+          "stars": 10,
+          "forks": 1,
+          "languages": {
+            "Python": 3950
+          }
+        },
+        {
+          "name": "frostbite2-stuff",
+          "isFork": false,
+          "stars": 34,
+          "forks": 6,
+          "languages": {
+            "Python": 25325
+          }
+        },
+        {
+          "name": "libbattlelog",
+          "isFork": false,
+          "stars": 12,
+          "forks": 2,
+          "languages": {
+            "Python": 3967
+          }
+        },
+        {
+          "name": "raven",
+          "isFork": true,
+          "stars": 2,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "ponyguruma",
+          "isFork": false,
+          "stars": 33,
+          "forks": 5,
+          "languages": {
+            "Python": 120300,
+            "C": 17191
+          }
+        },
+        {
+          "name": "bf3-aggregator",
+          "isFork": false,
+          "stars": 82,
+          "forks": 15,
+          "languages": {
+            "Python": 27972,
+            "JavaScript": 762
+          }
+        },
+        {
+          "name": "redis-py",
+          "isFork": true,
+          "stars": 6,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "django",
+          "isFork": true,
+          "stars": 7,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "sqlalchemy-django-query",
+          "isFork": false,
+          "stars": 54,
+          "forks": 9,
+          "languages": {
+            "Python": 7151
+          }
+        },
+        {
+          "name": "brink-aggregator",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Python": 31469,
+            "JavaScript": 762
+          }
+        },
+        {
+          "name": "badideas",
+          "isFork": false,
+          "stars": 61,
+          "forks": 8,
+          "languages": {
+            "Python": 13705
+          }
+        },
+        {
+          "name": "multiversion",
+          "isFork": false,
+          "stars": 90,
+          "forks": 9,
+          "languages": {
+            "Python": 4456
+          }
+        },
+        {
+          "name": "cocos2d-iphone",
+          "isFork": true,
+          "stars": 7,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "reddit-game-jam",
+          "isFork": false,
+          "stars": 3,
+          "forks": 0,
+          "languages": {
+            "C": 1530331,
+            "C++": 769266,
+            "Python": 6632
+          }
+        },
+        {
+          "name": "sdl-quickstart",
+          "isFork": false,
+          "stars": 6,
+          "forks": 1,
+          "languages": {
+            "C++": 5038
+          }
+        },
+        {
+          "name": "frameworkify",
+          "isFork": false,
+          "stars": 16,
+          "forks": 3,
+          "languages": {
+            "Python": 3830
+          }
+        },
+        {
+          "name": "unicode-nazi",
+          "isFork": false,
+          "stars": 74,
+          "forks": 7,
+          "languages": {
+            "Python": 8148
+          }
+        },
+        {
+          "name": "pycon",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "daap-forward",
+          "isFork": false,
+          "stars": 9,
+          "forks": 1,
+          "languages": {
+            "Python": 2007
+          }
+        },
+        {
+          "name": "flask-kitchensink",
+          "isFork": false,
+          "stars": 12,
+          "forks": 1,
+          "languages": {
+            "Python": 810
+          }
+        },
+        {
+          "name": "sandboxcraft",
+          "isFork": false,
+          "stars": 15,
+          "forks": 1,
+          "languages": {
+            "C": 2292249,
+            "Objective-C": 5354,
+            "Python": 425
+          }
+        },
+        {
+          "name": "pip-1",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "blockpuzzle",
+          "isFork": false,
+          "stars": 4,
+          "forks": 3,
+          "languages": {
+            "C#": 65929
+          }
+        },
+        {
+          "name": "fungiform",
+          "isFork": false,
+          "stars": 45,
+          "forks": 4,
+          "languages": {
+            "Python": 129346
+          }
+        },
+        {
+          "name": "zine-rst-fun",
+          "isFork": false,
+          "stars": 1,
+          "forks": 0,
+          "languages": {
+            "Python": 1883
+          }
+        },
+        {
+          "name": "solace",
+          "isFork": false,
+          "stars": 63,
+          "forks": 7,
+          "languages": {
+            "Python": 360535,
+            "JavaScript": 77071
+          }
+        },
+        {
+          "name": "terminalcolours",
+          "isFork": true,
+          "stars": 9,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "unz",
+          "isFork": false,
+          "stars": 2,
+          "forks": 0,
+          "languages": {
+            "Ruby": 4149
+          }
+        },
+        {
+          "name": "super-secret-wsgi-replacement",
+          "isFork": false,
+          "stars": 26,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flask-extension-wizard",
+          "isFork": false,
+          "stars": 34,
+          "forks": 4,
+          "languages": {
+            "Python": 9075
+          }
+        },
+        {
+          "name": "celery",
+          "isFork": true,
+          "stars": 5,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "flask-stupid-ideas",
+          "isFork": false,
+          "stars": 8,
+          "forks": 0,
+          "languages": {
+            "Python": 3468
+          }
+        },
+        {
+          "name": "flask-extended-logging",
+          "isFork": false,
+          "stars": 9,
+          "forks": 0,
+          "languages": {
+            "Python": 16865
+          }
+        },
+        {
+          "name": "iskratch",
+          "isFork": false,
+          "stars": 4,
+          "forks": 0,
+          "languages": {
+            "JavaScript": 123509,
+            "Python": 26606
+          }
+        },
+        {
+          "name": "flask-fungiform",
+          "isFork": false,
+          "stars": 18,
+          "forks": 1,
+          "languages": {
+            "Python": 11113
+          }
+        },
+        {
+          "name": "twitterlog",
+          "isFork": false,
+          "stars": 14,
+          "forks": 1,
+          "languages": {
+            "Python": 4671
+          }
+        },
+        {
+          "name": "twig",
+          "isFork": false,
+          "stars": 37,
+          "forks": 4,
+          "languages": {
+            "PHP": 52973
+          }
+        }
+      ],
+      "coverage": "partial"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 24813,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 2327,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 1991,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 1069,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 4695,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 312,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 312,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 364,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          126,
+          133,
+          94,
+          29,
+          11,
+          39,
+          11,
+          21,
+          22,
+          32,
+          104,
+          29,
+          25,
+          7,
+          9,
+          59,
+          37,
+          105,
+          33,
+          4,
+          0,
+          9,
+          135,
+          32,
+          207,
+          174,
+          111,
+          237,
+          111,
+          276,
+          187,
+          149,
+          132,
+          138,
+          135,
+          264,
+          84,
+          116,
+          230,
+          221,
+          119,
+          276,
+          91,
+          38,
+          172,
+          66,
+          68,
+          80,
+          74,
+          21,
+          49,
+          29,
+          37,
+          16,
+          88,
+          9,
+          10,
+          25,
+          27,
+          14,
+          7,
+          358,
+          174,
+          305,
+          89,
+          126,
+          11,
+          11,
+          99,
+          72,
+          96,
+          8,
+          118,
+          275,
+          151,
+          99,
+          152,
+          110,
+          81,
+          125,
+          73,
+          124,
+          86,
+          91,
+          94,
+          36,
+          48,
+          189,
+          210,
+          225,
+          202,
+          411,
+          364,
+          221,
+          158,
+          233,
+          205,
+          422,
+          264,
+          265,
+          110,
+          117,
+          291,
+          164,
+          232,
+          347,
+          312,
+          411,
+          380,
+          318,
+          255,
+          134,
+          173,
+          286,
+          257,
+          107,
+          137,
+          135,
+          97,
+          294,
+          250,
+          267,
+          203,
+          99,
+          193,
+          215,
+          211,
+          240,
+          171,
+          306,
+          273,
+          140,
+          163,
+          177,
+          96,
+          104,
+          121,
+          103,
+          120,
+          137,
+          123,
+          174,
+          223,
+          124,
+          126,
+          185,
+          64,
+          23,
+          34,
+          59,
+          80,
+          102,
+          121,
+          210,
+          220,
+          31,
+          36,
+          42,
+          25,
+          29,
+          119,
+          133,
+          82,
+          52,
+          179,
+          200,
+          158,
+          105,
+          34,
+          27,
+          46,
+          115,
+          202,
+          318,
+          115,
+          233,
+          265,
+          321,
+          315,
+          289,
+          434,
+          591,
+          386,
+          221,
+          302,
+          243,
+          233,
+          194,
+          198,
+          349,
+          508,
+          433,
+          334,
+          249,
+          187,
+          217,
+          169,
+          146,
+          171,
+          141,
+          185,
+          249,
+          255,
+          284,
+          184,
+          83,
+          597,
+          289,
+          283,
+          449,
+          547,
+          348,
+          665,
+          996,
+          579,
+          636,
+          606,
+          560,
+          550,
+          796,
+          969,
+          1051,
+          353
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2008,
+            "contributions": 652,
+            "activeDays": 183,
+            "commits": 650,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2009,
+            "contributions": 444,
+            "activeDays": 102,
+            "commits": 444,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2010,
+            "contributions": 1760,
+            "activeDays": 239,
+            "commits": 1657,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 68
+          },
+          {
+            "year": 2011,
+            "contributions": 1884,
+            "activeDays": 245,
+            "commits": 1530,
+            "pullRequests": 5,
+            "reviews": 0,
+            "issues": 68
+          },
+          {
+            "year": 2012,
+            "contributions": 547,
+            "activeDays": 129,
+            "commits": 418,
+            "pullRequests": 8,
+            "reviews": 0,
+            "issues": 32
+          },
+          {
+            "year": 2013,
+            "contributions": 1246,
+            "activeDays": 139,
+            "commits": 1191,
+            "pullRequests": 4,
+            "reviews": 0,
+            "issues": 31
+          },
+          {
+            "year": 2014,
+            "contributions": 1360,
+            "activeDays": 191,
+            "commits": 1183,
+            "pullRequests": 11,
+            "reviews": 0,
+            "issues": 34
+          },
+          {
+            "year": 2015,
+            "contributions": 2080,
+            "activeDays": 253,
+            "commits": 1823,
+            "pullRequests": 24,
+            "reviews": 0,
+            "issues": 68
+          },
+          {
+            "year": 2016,
+            "contributions": 2682,
+            "activeDays": 309,
+            "commits": 2081,
+            "pullRequests": 182,
+            "reviews": 82,
+            "issues": 112
+          },
+          {
+            "year": 2017,
+            "contributions": 3117,
+            "activeDays": 301,
+            "commits": 2391,
+            "pullRequests": 179,
+            "reviews": 344,
+            "issues": 88
+          },
+          {
+            "year": 2018,
+            "contributions": 2375,
+            "activeDays": 288,
+            "commits": 1529,
+            "pullRequests": 219,
+            "reviews": 478,
+            "issues": 68
+          },
+          {
+            "year": 2019,
+            "contributions": 1863,
+            "activeDays": 285,
+            "commits": 950,
+            "pullRequests": 312,
+            "reviews": 362,
+            "issues": 43
+          },
+          {
+            "year": 2020,
+            "contributions": 1315,
+            "activeDays": 248,
+            "commits": 705,
+            "pullRequests": 222,
+            "reviews": 208,
+            "issues": 43
+          },
+          {
+            "year": 2021,
+            "contributions": 1158,
+            "activeDays": 220,
+            "commits": 766,
+            "pullRequests": 151,
+            "reviews": 109,
+            "issues": 38
+          },
+          {
+            "year": 2022,
+            "contributions": 1818,
+            "activeDays": 269,
+            "commits": 1023,
+            "pullRequests": 202,
+            "reviews": 103,
+            "issues": 98
+          },
+          {
+            "year": 2023,
+            "contributions": 3727,
+            "activeDays": 351,
+            "commits": 1143,
+            "pullRequests": 276,
+            "reviews": 184,
+            "issues": 101
+          },
+          {
+            "year": 2024,
+            "contributions": 3089,
+            "activeDays": 340,
+            "commits": 869,
+            "pullRequests": 224,
+            "reviews": 86,
+            "issues": 59
+          },
+          {
+            "year": 2025,
+            "contributions": 4233,
+            "activeDays": 323,
+            "commits": 1179,
+            "pullRequests": 134,
+            "reviews": 9,
+            "issues": 83
+          },
+          {
+            "year": 2026,
+            "contributions": 7096,
+            "activeDays": 280,
+            "commits": 3281,
+            "pullRequests": 174,
+            "reviews": 26,
+            "issues": 35
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2025-11-30",
+        "end": "2026-10-07"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "406663386",
+        "name": "minijinja",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2790,
+        "pushedAt": "2026-10-06T17:31:53Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "minijinja-js/package.json",
+            "content": "{\n  \"browser\": \"dist/web/minijinja_js.js\",\n  \"description\": \"JavaScript bindings for minijinja\",\n  \"devDependencies\": {\n    \"chai\": \"^5.0.0\",\n    \"cross-env\": \"^7.0.3\",\n    \"mocha\": \"^12.0.3\"\n  },\n  \"files\": [\n    \"dist/**/*\",\n    \"package.json\"\n  ],\n  \"license\": \"Apache-2.0\",\n  \"author\": \"Armin Ronacher\",\n  \"main\": \"dist/node/minijinja_js.js\",\n  \"name\": \"minijinja-js\",\n  \"bugs\": {\n    \"url\": \"https://github.com/mitsuhiko/minijinja/issues\"\n  },\n  \"homepage\": \"https://github.com/mitsuhiko/minijinja\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/mitsuhiko/minijinja.git\",\n    \"directory\": \"minijinja-js\"\n  },\n  \"keywords\": [\n    \"jinja2\",\n    \"minijinja\",\n    \"templating\",\n    \"templates\"\n  ],\n  \"scripts\": {\n    \"build\": \"npm run build:node && npm run build:web && npm run build:bundler\",\n    \"build:bundler\": \"npx cross-env wasm-pack build --target bundler --out-dir dist/bundler --${PROFILE} && rm dist/bundler/.gitignore\",\n    \"build:node\": \"npx cross-env wasm-pack build --target nodejs --out-dir dist/node --${PROFILE} && rm dist/node/.gitignore\",\n    \"build:web\": \"npx cross-env wasm-pack build --target web --out-dir dist/web --${PROFILE} && rm dist/web/.gitignore\",\n    \"prepare\": \"npm run build\",\n    \"test\": \"mocha tests\"\n  },\n  \"types\": \"dist/node/minijinja_js.d.ts\",\n  \"version\": \"3.0.0-alpha.3\"\n}\n"
+          },
+          {
+            "path": "minijinja-py/pyproject.toml",
+            "content": "[build-system]\nrequires = [\"maturin>=1.9.4,<2\"]\nbuild-backend = \"maturin\"\n\n[project]\nname = \"minijinja\"\nversion = \"3.0.0-alpha.3\"\ndescription = \"An experimental Python binding of the Rust MiniJinja template engine.\"\nrequires-python = \">=3.10\"\nlicense = { file = \"LICENSE\" }\nauthors = [\n    { name = \"Armin Ronacher\", email = \"armin.ronacher@active-4.com\" }\n]\nmaintainers = [\n    { name = \"Armin Ronacher\", email = \"armin.ronacher@active-4.com\" }\n]\nkeywords = [\"jinja\", \"template-engine\"]\nclassifiers = [\n    \"Programming Language :: Rust\",\n    \"Programming Language :: Python :: Implementation :: CPython\",\n    \"Programming Language :: Python :: Implementation :: PyPy\",\n    \"Environment :: Web Environment\",\n    \"License :: OSI Approved :: Apache Software License\",\n    \"Topic :: Text Processing :: Markup :: HTML\",\n    \"Topic :: Internet :: WWW/HTTP :: Dynamic Content\",\n    \"Typing :: Typed\",\n]\n\n[project.urls]\nRepository = \"https://github.com/mitsuhiko/minijinja\"\n\"Issue Tracker\" = \"https://github.com/mitsuhiko/minijinja/issues\"\n\"Donate\" = \"https://github.com/sponsors/mitsuhiko\"\n\n[tool.maturin]\nmodule-name = \"minijinja._lowlevel\"\npython-source = \"python\"\n\n[tool.pyright]\ninclude = [\"python/**/*.pyi\"]\nexclude = [\"python/**/*.py\"]\ntypeCheckingMode = \"strict\"\npythonVersion = \"3.10\"\n\n[dependency-groups]\ndev = [\n    \"maturin>=1.9.4\",\n    \"pyright>=1.1.401\",\n    \"pytest>=8.3.5\",\n]\n"
+          }
+        ]
+      },
+      {
+        "id": "1104257",
+        "name": "lucumr",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 308,
+        "pushedAt": "2026-10-06T13:30:42Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "pyproject.toml",
+            "content": "[build-system]\nrequires = [\"hatchling\"]\nbuild-backend = \"hatchling.build\"\n\n[project]\nname = \"generator\"\nversion = \"1.0.0\"\ndescription = \"A simple static blog software based on Markdown and Jinja2\"\nauthors = [\n    {name = \"Armin Ronacher\", email = \"armin.ronacher@active-4.com\"},\n]\nlicense = {text = \"BSD-3-Clause\"}\nreadme = {file = \"README.md\", content-type = \"text/markdown\"}\nrequires-python = \">=3.8\"\ndependencies = [\n    \"Jinja2>=3.0\",\n    \"Pygments\",\n    \"marko\",\n    \"watchdog\",\n    \"pyyaml\",\n    \"Pillow\",\n    \"smartypants>=2.0.2\",\n]\n\n[project.scripts]\nbuild-blog = \"generator.commands:main_build\"\nserve-blog = \"generator.commands:main_serve\"\n\n[project.entry-points.\"pygments.lexers\"]\nphpinline = \"generator.lexers:PhpInlineLexer\"\n\n[tool.hatch.build.targets.wheel]\npackages = [\"generator\"]\n"
+          },
+          {
+            "path": ".github/workflows/deploy.yml",
+            "content": "name: Build and Deploy Blog\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    branches: [ main ]\n  schedule:\n    # Run at 6:00 AM and 6:00 PM UTC daily\n    - cron: '0 6 * * *'\n    - cron: '0 18 * * *'\n  # Allow manual trigger\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Install uv\n        uses: astral-sh/setup-uv@v4\n        with:\n          enable-cache: true\n\n      - name: Set up Python\n        run: uv python install\n\n      - name: Install dependencies\n        run: uv sync\n\n      - name: Cache blog build\n        uses: actions/cache@v4\n        with:\n          path: blog/_build\n          key: blog-build-${{ hashFiles('blog/static/**', 'templates/**') }}\n          restore-keys: |\n            blog-build-\n\n      - name: Build blog\n        run: make build\n\n      - name: Copy 404 page for GitHub Pages\n        run: cp blog/_build/404/index.html blog/_build/404.html\n\n      - name: Copy CNAME file\n        run: cp blog/CNAME blog/_build/CNAME\n\n      - name: Setup Pages\n        uses: actions/configure-pages@v5\n        with:\n          enablement: true\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: ./blog/_build\n\n  deploy:\n    if: github.ref == 'refs/heads/main'\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "455334691",
+        "name": "deser",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 448,
+        "pushedAt": "2026-10-06T11:33:04Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n      - uses: dtolnay/rust-toolchain@master\n        with:\n          toolchain: stable\n          components: clippy, rustfmt\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/docs.yml",
+            "content": "name: Docs\n\non:\n  push:\n    branches:\n      - main\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: pages\n  cancel-in-progress: true\n\njobs:\n  build:\n    name: Build\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: dtolnay/rust-toolchain@master\n        with:\n          toolchain: nightly\n      # rustdoc only links to another crate's docs if its directory already\n      # exists in target/doc; crates are documented in parallel, so create\n      # them upfront or links to e.g. deser_core end up as raw paths.\n      - name: Pre-create doc directories\n        run: |\n          cargo metadata --no-deps --format-version 1 \\\n            | jq -r '.packages[].targets[] | select(.kind[] == \"lib\" or .kind[] == \"proc-macro\") | .name' \\\n            | tr - _ | sed 's|^|target/doc/|' | xargs mkdir -p\n      - name: Build docs\n        env:\n          RUSTDOCFLAGS: --cfg docsrs\n        run: cargo doc --no-deps --all-features -p 'deser*'\n      - name: Point docs.rs links of deser crates to the dev docs\n        run: |\n          find target/doc -name '*.html' -print0 | xargs -0 perl -pi -e '\n            s{href=\"https://docs\\.rs/(deser(?:-[a-z0-9]+)*)(?:/latest/\\w+)?(/[^\"]*)?\"}{\n              my ($crate, $path) = ($1, $2);\n              (my $module = $crate) =~ tr/-/_/;\n              \"href=\\\"/deser/$module\" . ($path && $path ne \"/\" ? $path : \"/index.html\") . \"\\\"\"\n            }ge'\n      - name: Add index redirect\n        run: echo '<meta http-equiv=\"refresh\" content=\"0; url=deser/index.html\">' > target/doc/index.html\n      - uses: actions/upload-pages-artifact@v3\n        with:\n          path: target/doc\n\n  deploy:\n    name: Deploy\n    needs: build\n    runs-on: ubuntu-latest\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n\n    steps:\n      - id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "1404907193",
+        "name": "miniline",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2026-10-04T23:17:01Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n\nenv:\n  CARGO_TERM_COLOR: always\n\njobs:\n  test:\n    name: Test (${{ matrix.os }}, ${{ matrix.features }})\n    runs-on: ${{ matrix.os }}\n    strategy:\n      fail-fast: false\n      matrix:\n        os: [ubuntu-latest, macos-latest, windows-latest]\n        features: [default, unicode]\n    steps:\n      - uses: actions/checkout@v5\n      - uses: dtolnay/rust-toolchain@stable\n      - name: Test\n        shell: bash\n        run: |\n          if [ \"${{ matrix.features }}\" = \"default\" ]; then\n            cargo test\n          else\n            cargo test --features ${{ matrix.features }}\n          fi\n\n  msrv:\n    name: MSRV (1.78)\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v5\n      - uses: dtolnay/rust-toolchain@1.78.0\n      - name: Pin dependencies compatible with the MSRV\n        run: |\n          cargo generate-lockfile\n          cargo update -p unicode-segmentation --precise 1.12.0\n      - name: Test\n        run: |\n          cargo test\n          cargo test --features unicode\n\n  lint:\n    name: Lint\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v5\n      - uses: dtolnay/rust-toolchain@stable\n        with:\n          components: clippy, rustfmt\n          targets: x86_64-pc-windows-gnu, x86_64-apple-darwin, wasm32-wasip1\n      - name: Rustfmt\n        run: cargo fmt --all -- --check\n      - name: Clippy\n        run: |\n          for target in x86_64-unknown-linux-gnu x86_64-pc-windows-gnu x86_64-apple-darwin wasm32-wasip1; do\n            echo \"::group::$target\"\n            cargo clippy --all-targets --target $target -- -D warnings\n            cargo clippy --all-targets --target $target --features unicode -- -D warnings\n            echo \"::endgroup::\"\n          done\n      - name: Docs\n        run: cargo doc --no-deps\n        env:\n          RUSTDOCFLAGS: -D warnings\n"
+          }
+        ]
+      },
+      {
+        "id": "920668284",
+        "name": "argument",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 25,
+        "pushedAt": "2026-10-04T22:23:01Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push, pull_request]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: Swatinem/rust-cache@v2\n      - uses: dtolnay/rust-toolchain@master\n        with:\n          toolchain: stable\n          components: clippy, rustfmt\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/publish-crates.yml",
+            "content": "name: Publish Crates\n\non:\n  push:\n    tags:\n      - '**[0-9]+.[0-9]+.[0-9]+*'\n  pull_request:\n\njobs:\n  publish-crates:\n    name: Publish to crates.io\n    runs-on: ubuntu-latest\n    env:\n      CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}\n    if: ${{ !github.event.pull_request }}\n    steps:\n      - uses: actions/checkout@v4\n      - uses: swatinem/rust-cache@v2\n      - name: Publish\n        run: |\n          ./scripts/publish-all.sh\n"
+          }
+        ]
+      },
+      {
+        "id": "326805451",
+        "name": "insta-website",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 11,
+        "pushedAt": "2026-10-03T01:19:09Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/main.yml",
+            "content": "name: Deploy\non:\n  push:\n    branches:\n      - main\n  pull_request:\n  workflow_dispatch:\n  # Rebuild daily so the changelog page picks up new CHANGELOG.md entries from\n  # the insta repo, which are fetched at build time rather than committed here.\n  schedule:\n    - cron: '17 4 * * *'\njobs:\n  build:\n    runs-on: ubuntu-latest\n    if: github.ref != 'refs/heads/main'\n    steps:\n      - name: 'Checkout'\n        uses: actions/checkout@main\n      - name: 'Fetch Installers'\n        run: make fetch-installers\n      - name: 'Build only' \n        uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed\n        env:\n          BUILD_DIR: .\n          BUILD_ONLY: true\n  build_and_deploy:\n    runs-on: ubuntu-latest\n    if: github.ref == 'refs/heads/main'\n    steps:\n      - name: 'Checkout'\n        uses: actions/checkout@main\n      - name: 'Fetch Installers'\n        run: make fetch-installers\n      - name: 'Build'\n        uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed\n        env:\n          BUILD_DIR: .\n          BUILD_ONLY: true\n      # The deploy action force-pushes gh-pages on every run, so a scheduled\n      # rebuild commits even when nothing changed. Skip the deploy when the\n      # freshly built site is identical to what's already published.\n      - name: 'Check for changes'\n        id: diff\n        run: |\n          rm -rf ../published && mkdir -p ../published\n          if git fetch --depth=1 origin gh-pages 2>/dev/null; then\n            git archive FETCH_HEAD | tar -x -C ../published\n          fi\n          if diff -rq ../published public >/dev/null 2>&1; then\n            echo \"Built site matches the published one; skipping deploy.\"\n            echo \"changed=false\" >> \"$GITHUB_OUTPUT\"\n          else\n            echo \"changed=true\" >> \"$GITHUB_OUTPUT\"\n          fi\n      - name: 'Deploy'\n        if: steps.diff.outputs.changed == 'true'\n        uses: shalzz/zola-deploy-action@71190a69bbadd5fea222346d79b960e687e898ed\n        env:\n          PAGES_BRANCH: gh-pages\n          BUILD_DIR: .\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+          }
+        ]
+      },
+      {
+        "id": "165561258",
+        "name": "insta",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2972,
+        "pushedAt": "2026-10-03T01:12:40Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "vscode-insta/package.json",
+            "content": "{\n  \"name\": \"insta\",\n  \"displayName\": \"insta snapshots\",\n  \"description\": \"Syntax support for insta snapshots\",\n  \"version\": \"1.0.7\",\n  \"publisher\": \"mitsuhiko\",\n  \"license\": \"Apache-2.0\",\n  \"author\": {\n    \"name\": \"mitsuhiko\"\n  },\n  \"engines\": {\n    \"vscode\": \"^1.52.0\"\n  },\n  \"categories\": [\n    \"Programming Languages\"\n  ],\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/mitsuhiko/insta.git\"\n  },\n  \"homepage\": \"https://github.com/mitsuhiko/insta\",\n  \"icon\": \"images/icon.png\",\n  \"activationEvents\": [\n    \"workspaceContains:Cargo.lock\",\n    \"onLanguage:rust\",\n    \"onLanguage:insta-snapshots\",\n    \"onView:pendingInstaSnapshots\",\n    \"onCommand:mitsuhiko.insta.open-snapshot-diff\",\n    \"onCommand:mitsuhiko.insta.accept-snapshot\",\n    \"onCommand:mitsuhiko.insta.reject-snapshot\",\n    \"onCommand:mitsuhiko.insta.switch-snapshot-view\",\n    \"onCommand:mitsuhiko.insta.accept-all-snapshots\",\n    \"onCommand:mitsuhiko.insta.reject-all-snapshots\"\n  ],\n  \"main\": \"./out/extension\",\n  \"contributes\": {\n    \"commands\": [\n      {\n        \"command\": \"mitsuhiko.insta.open-snapshot-diff\",\n        \"title\": \"Compare Snapshots\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(diff)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.accept-snapshot\",\n        \"title\": \"Accept New Snapshot\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(check)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.reject-snapshot\",\n        \"title\": \"Reject New Snapshot\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(discard)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.switch-snapshot-view\",\n        \"title\": \"Switch Between Snapshots\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(symbol-boolean)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.refresh-pending-snapshots\",\n        \"title\": \"Refresh Pending Snapshots\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(refresh)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.accept-all-snapshots\",\n        \"title\": \"Accept All Snapshots\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(check-all)\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.reject-all-snapshots\",\n        \"title\": \"Reject All Snapshots\",\n        \"category\": \"Insta\",\n        \"icon\": \"$(discard)\"\n      }\n    ],\n    \"keybindings\": [\n      {\n        \"command\": \"mitsuhiko.insta.accept-snapshot\",\n        \"when\": \"isInDiffEditor || editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\",\n        \"key\": \"ctrl+i ctrl+a\",\n        \"mac\": \"cmd+i cmd+a\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.reject-snapshot\",\n        \"when\": \"isInDiffEditor || editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\",\n        \"key\": \"ctrl+i ctrl+r\",\n        \"mac\": \"cmd+i cmd+r\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.switch-snapshot-view\",\n        \"when\": \"!isInDiffEditor && editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\",\n        \"key\": \"ctrl+i ctrl+o\",\n        \"mac\": \"cmd+i cmd+o\"\n      },\n      {\n        \"command\": \"mitsuhiko.insta.open-snapshot-diff\",\n        \"when\": \"!isInDiffEditor && editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\",\n        \"key\": \"ctrl+i ctrl+d\",\n        \"mac\": \"cmd+i cmd+d\"\n      }\n    ],\n    \"menus\": {\n      \"editor/title\": [\n        {\n          \"command\": \"mitsuhiko.insta.accept-snapshot\",\n          \"group\": \"navigation@-1.4\",\n          \"when\": \"isInDiffEditor || editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\"\n        },\n        {\n          \"command\": \"mitsuhiko.insta.reject-snapshot\",\n          \"group\": \"navigation@-1.3\",\n          \"when\": \"isInDiffEditor || editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\"\n        },\n        {\n          \"command\": \"mitsuhiko.insta.switch-snapshot-view\",\n          \"group\": \"navigation@-1.2\",\n          \"when\": \"!isInDiffEditor && editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\"\n        },\n        {\n          \"command\": \"mitsuhiko.insta.open-snapshot-diff\",\n          \"group\": \"navigation@-1.1\",\n          \"when\": \"!isInDiffEditor && editorIsOpen && resourceFilename =~ /\\\\.snap(\\\\.new)?$/\"\n        }\n      ],\n      \"explorer/context\": [\n        {\n          \"command\": \"mitsuhiko.insta.open-snapshot-diff\",\n          \"group\": \"3_compare\",\n          \"when\": \"resourceFilename =~ /\\\\.snap\\\\.new$/\"\n        }\n      ],\n      \"view/title\": [\n        {\n          \"command\": \"mitsuhiko.insta.accept-all-snapshots\",\n          \"when\": \"view == pendingInstaSnapshots\",\n          \"group\": \"navigation\"\n        },\n        {\n          \"command\": \"mitsuhiko.insta.reject-all-snapshots\",\n          \"when\": \"view == pendingInstaSnapshots\",\n          \"group\": \"navigation\"\n        },\n        {\n          \"command\": \"mitsuhiko.insta.refresh-pending-snapshots\",\n          \"when\": \"view == pendingInstaSnapshots\",\n          \"group\": \"navigation\"\n        }\n      ],\n      \"view/item/context\": [\n        {\n          \"command\": \"mitsuhiko.insta.open-snapshot-diff\",\n          \"when\": \"view == pendingInstaSnapshots\",\n          \"group\": \"inline\"\n        }\n      ]\n    },\n    \"views\": {\n      \"explorer\": [\n        {\n          \"id\": \"pendingInstaSnapshots\",\n          \"name\": \"Pending Insta Snapshots\",\n          \"when\": \"inInstaSnapshotsProject\",\n          \"contextualTitle\": \"Pending Insta Snapshots\"\n        }\n      ]\n    },\n    \"languages\": [\n      {\n        \"id\": \"insta-snapshots\",\n        \"aliases\": [\n          \"Insta Snapshots\",\n          \"insta-snapshots\"\n        ],\n        \"extensions\": [\n          \".snap.new\",\n          \".snap\"\n        ],\n        \"configuration\": \"./language-configuration.json\"\n      }\n    ],\n    \"grammars\": [\n      {\n        \"language\": \"insta-snapshots\",\n        \"scopeName\": \"source.insta-snapshots\",\n        \"path\": \"./syntaxes/insta-snapshots.tmLanguage.json\"\n      }\n    ]\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^14.14.19\",\n    \"typescript\": \"^4.1.3\",\n    \"@types/vscode\": \"^1.52.0\",\n    \"@vscode/test-electron\": \"2.5.2\"\n  },\n  \"scripts\": {\n    \"vscode:prepublish\": \"npm run compile\",\n    \"compile\": \"tsc -p ./\",\n    \"watch\": \"tsc -watch -p ./\",\n    \"vsce-package\": \"vsce package -o ruff.vsix\"\n  }\n}\n"
+          },
+          {
+            "path": ".github/workflows/publish-crates.yml",
+            "content": "name: Publish Crates\n\non:\n  push:\n    tags:\n      - '**[0-9]+.[0-9]+.[0-9]+*'\n\njobs:\n  publish-crates:\n    name: Publish to crates.io\n    runs-on: ubuntu-latest\n    env:\n      CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}\n    steps:\n      - uses: actions/checkout@v4\n      - uses: swatinem/rust-cache@v2\n      - name: Publish\n        run: |\n          ./scripts/publish-all.sh\n"
+          }
+        ]
+      },
+      {
+        "id": "389753931",
+        "name": "flatex-pdf-download",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 53,
+        "pushedAt": "2026-09-30T21:34:06Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1126960752",
+        "name": "tankgame",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 24,
+        "pushedAt": "2026-09-29T20:47:43Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/ci.yml",
+            "content": "name: CI\n\non:\n  push:\n    branches: [main, master]\n  pull_request:\n    branches: [main, master]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    \n    steps:\n      - uses: actions/checkout@v4\n        with:\n          submodules: recursive\n      \n      - name: Install dependencies\n        run: |\n          sudo apt-get update\n          sudo apt-get install -y \\\n            cmake \\\n            libgl1-mesa-dev \\\n            libglu1-mesa-dev \\\n            libasound2-dev \\\n            libx11-dev \\\n            libxi-dev \\\n            libxcursor-dev\n      \n      - name: Configure\n        run: cmake -B build -DCMAKE_BUILD_TYPE=Dev\n      \n      - name: Build\n        run: cmake --build build --parallel\n      \n      - name: Test\n        run: ctest --test-dir build --output-on-failure\n"
+          },
+          {
+            "path": ".github/workflows/deploy.yml",
+            "content": "name: Deploy to GitHub Pages\n\non:\n  push:\n    branches: [main, master]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: pages\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    \n    steps:\n      - uses: actions/checkout@v4\n        with:\n          submodules: recursive\n      \n      - name: Setup Emscripten\n        uses: mymindstorm/setup-emsdk@v14\n        with:\n          version: 3.1.51\n      \n      - name: Setup Python\n        uses: actions/setup-python@v5\n        with:\n          python-version: '3.11'\n      \n      - name: Prepare web assets\n        run: |\n          mkdir -p build-web-assets\n          rsync -a assets/ build-web-assets/\n          python3 tools/strip_soundfont.py \\\n            --input assets/sounds/soundfont.sf2 \\\n            --output build-web-assets/sounds/soundfont.sf2 \\\n            --midi-dir assets/music\n      \n      - name: Build WebAssembly\n        run: |\n          mkdir -p build-web\n          cd build-web\n          emcmake cmake .. -DCMAKE_BUILD_TYPE=Release -DPZ_WEB_BUILD=ON -DPZ_WEB_ASSETS_DIR=\"${GITHUB_WORKSPACE}/build-web-assets\"\n          cmake --build . --parallel\n      \n      - name: Prepare deployment\n        run: |\n          mkdir -p _site\n          cp build-web/tankgame.html _site/index.html\n          cp build-web/tankgame.js _site/\n          cp build-web/tankgame.wasm _site/\n          cp build-web/tankgame.data _site/\n      \n      - name: Setup Pages\n        uses: actions/configure-pages@v4\n      \n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: _site\n\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    needs: build\n    \n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "330488939",
+        "name": "similar",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1332,
+        "pushedAt": "2026-09-28T21:11:17Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n      - uses: dtolnay/rust-toolchain@master\n        with:\n          toolchain: stable\n          components: clippy, rustfmt\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/publish.yml",
+            "content": "name: Publish\n\non:\n  push:\n    tags:\n      - '*.*.*'\n\njobs:\n  publish:\n    name: Publish to crates.io\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      id-token: write\n\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: dtolnay/rust-toolchain@stable\n        with:\n          toolchain: stable\n\n      - uses: Swatinem/rust-cache@v2\n\n      - name: Verify tag matches crate version\n        run: |\n          VERSION=$(cargo metadata --no-deps --format-version 1 | jq -r '.packages[] | select(.name == \"similar\") | .version')\n          TAG=${GITHUB_REF_NAME}\n          test \"$VERSION\" = \"$TAG\"\n\n      - id: auth\n        uses: rust-lang/crates-io-auth-action@v1\n\n      - name: Publish\n        run: cargo publish --locked\n        env:\n          CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}\n"
+          }
+        ]
+      },
+      {
+        "id": "1088125612",
+        "name": "agent-stuff",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3176,
+        "pushedAt": "2026-09-27T21:10:45Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"mitsupi\",\n  \"version\": \"1.6.0\",\n  \"description\": \"Armin's pi coding agent commands, skills, extensions, and themes\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/mitsuhiko/agent-stuff.git\"\n  },\n  \"readme\": \"README.md\",\n  \"type\": \"module\",\n  \"keywords\": [\n    \"pi-package\",\n    \"pi-extension\",\n    \"pi-skill\",\n    \"pi-theme\"\n  ],\n  \"pi\": {\n    \"extensions\": [\n      \"./extensions/*.ts\"\n    ],\n    \"skills\": [\n      \"./skills\"\n    ],\n    \"themes\": [\n      \"./themes\"\n    ],\n    \"prompts\": [\n      \"./commands\"\n    ]\n  },\n  \"dependencies\": {\n    \"diff\": \"^8.0.2\"\n  },\n  \"peerDependencies\": {\n    \"@earendil-works/pi-coding-agent\": \"*\",\n    \"@earendil-works/pi-ai\": \"*\",\n    \"@earendil-works/pi-tui\": \"*\",\n    \"typebox\": \"*\"\n  }\n}\n"
+          },
+          {
+            "path": "skills/google-workspace/package.json",
+            "content": "{\n  \"name\": \"google-workspace-skill\",\n  \"private\": true,\n  \"type\": \"commonjs\",\n  \"dependencies\": {\n    \"@google-cloud/local-auth\": \"^3.0.1\",\n    \"googleapis\": \"^171.0.0\"\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "928725",
+        "name": "dotfiles",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 445,
+        "pushedAt": "2026-09-24T18:51:44Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1375670870",
+        "name": "senderkataster-bookmarklet",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2026-09-18T09:48:05Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1371038760",
+        "name": "qr",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 9,
+        "pushedAt": "2026-09-15T07:01:31Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"static-qr-generator\",\n  \"private\": true,\n  \"scripts\": {\n    \"test\": \"node --test tests/core.test.cjs\",\n    \"test:browser\": \"node tests/browser.mjs\"\n  },\n  \"devDependencies\": {\n    \"@zxing/library\": \"^0.23.0\",\n    \"jsqr\": \"^1.4.0\",\n    \"playwright\": \"^1.63.0\"\n  }\n}\n"
+          },
+          {
+            "path": "package-lock.json",
+            "content": "{\n  \"name\": \"static-qr-generator\",\n  \"lockfileVersion\": 3,\n  \"requires\": true,\n  \"packages\": {\n    \"\": {\n      \"name\": \"static-qr-generator\",\n      \"devDependencies\": {\n        \"@zxing/library\": \"^0.23.0\",\n        \"jsqr\": \"^1.4.0\",\n        \"playwright\": \"^1.63.0\"\n      }\n    },\n    \"node_modules/@zxing/library\": {\n      \"version\": \"0.23.0\",\n      \"resolved\": \"https://registry.npmjs.org/@zxing/library/-/library-0.23.0.tgz\",\n      \"integrity\": \"sha512-6fkkoFwP8CHxl6ugnPsj74PLJgX2iRv5zczGAyt5OBzQgxFhuhF0NCEc4t4OvSr8xAv2MRLlI0Iu9ZGDZQ2urA==\",\n      \"dev\": true,\n      \"license\": \"Apache-2.0\",\n      \"dependencies\": {\n        \"ts-custom-error\": \"^3.3.1\"\n      },\n      \"engines\": {\n        \"node\": \">= 24.0.0\"\n      },\n      \"optionalDependencies\": {\n        \"@zxing/text-encoding\": \"~0.9.0\"\n      }\n    },\n    \"node_modules/@zxing/text-encoding\": {\n      \"version\": \"0.9.0\",\n      \"resolved\": \"https://registry.npmjs.org/@zxing/text-encoding/-/text-encoding-0.9.0.tgz\",\n      \"integrity\": \"sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==\",\n      \"dev\": true,\n      \"license\": \"(Unlicense OR Apache-2.0)\",\n      \"optional\": true\n    },\n    \"node_modules/jsqr\": {\n      \"version\": \"1.4.0\",\n      \"resolved\": \"https://registry.npmjs.org/jsqr/-/jsqr-1.4.0.tgz\",\n      \"integrity\": \"sha512-dxLob7q65Xg2DvstYkRpkYtmKm2sPJ9oFhrhmudT1dZvNFFTlroai3AWSpLey/w5vMcLBXRgOJsbXpdN9HzU/A==\",\n      \"dev\": true,\n      \"license\": \"Apache-2.0\"\n    },\n    \"node_modules/playwright\": {\n      \"version\": \"1.63.0\",\n      \"resolved\": \"https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz\",\n      \"integrity\": \"sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==\",\n      \"dev\": true,\n      \"license\": \"Apache-2.0\",\n      \"dependencies\": {\n        \"playwright-core\": \"1.63.0\"\n      },\n      \"bin\": {\n        \"playwright\": \"cli.js\"\n      },\n      \"engines\": {\n        \"node\": \">=20\"\n      }\n    },\n    \"node_modules/playwright-core\": {\n      \"version\": \"1.63.0\",\n      \"resolved\": \"https://registry.npmjs.org/playwright-core/-/playwright-core-1.63.0.tgz\",\n      \"integrity\": \"sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==\",\n      \"dev\": true,\n      \"license\": \"Apache-2.0\",\n      \"bin\": {\n        \"playwright-core\": \"cli.js\"\n      },\n      \"engines\": {\n        \"node\": \">=20\"\n      }\n    },\n    \"node_modules/ts-custom-error\": {\n      \"version\": \"3.3.1\",\n      \"resolved\": \"https://registry.npmjs.org/ts-custom-error/-/ts-custom-error-3.3.1.tgz\",\n      \"integrity\": \"sha512-5OX1tzOjxWEgsr/YEUWSuPrQ00deKLh6D7OTWcvNHm12/7QPyRh8SYpyWvA4IZv8H/+GQWQEh/kwo95Q9OVW1A==\",\n      \"dev\": true,\n      \"license\": \"MIT\",\n      \"engines\": {\n        \"node\": \">=14.0.0\"\n      }\n    }\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1232769331",
+        "name": "pi-ds4",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 174,
+        "pushedAt": "2026-09-14T21:49:05Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"pi-ds4\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Pi provider extension for local ds4.c DeepSeek V4, DeepSeek V4.1 and GLM 5.2 inference.\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"pi-package\",\n    \"pi-extension\",\n    \"ds4\",\n    \"deepseek\",\n    \"glm\"\n  ],\n  \"pi\": {\n    \"extensions\": [\n      \"./index.ts\"\n    ],\n    \"skills\": [\n      \"./pi-ds4-config\"\n    ]\n  },\n  \"files\": [\n    \"index.ts\",\n    \"ds4-watchdog.sh\",\n    \"install-pi-extension-local.sh\",\n    \"settings.example.json\",\n    \"settings.schema.json\",\n    \"pi-ds4-config/SKILL.md\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"peerDependencies\": {\n    \"@earendil-works/pi-ai\": \"*\",\n    \"@earendil-works/pi-coding-agent\": \"*\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@earendil-works/pi-ai\": {\n      \"optional\": true\n    },\n    \"@earendil-works/pi-coding-agent\": {\n      \"optional\": true\n    }\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "138081835",
+        "name": "fragile",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 193,
+        "pushedAt": "2026-09-04T22:54:21Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n      - uses: dtolnay/rust-toolchain@master\n        with:\n          toolchain: stable\n          components: clippy, rustfmt\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/miri.yml",
+            "content": "name: Miri\n\non: [push, pull_request]\n\njobs:\n  test:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: dtolnay/rust-toolchain@nightly\n        with:\n          components: miri\n      - name: Prepare Miri\n        run: cargo miri setup\n      - name: Test sticky cleanup without leaks\n        run: |\n          cargo miri test --no-default-features sticky::\n          cargo miri test --all-features sticky::\n      - name: Test without default features\n        run: cargo miri test --no-default-features\n        env:\n          MIRIFLAGS: -Zmiri-ignore-leaks\n      - name: Test default features\n        run: cargo miri test\n        env:\n          MIRIFLAGS: -Zmiri-ignore-leaks\n      - name: Test all features\n        run: cargo miri test --all-features\n        env:\n          MIRIFLAGS: -Zmiri-ignore-leaks\n"
+          }
+        ]
+      },
+      {
+        "id": "471846061",
+        "name": "memo-map",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 32,
+        "pushedAt": "2026-09-03T09:53:18Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/rustfmt.yml",
+            "content": "name: Rustfmt\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run rustfmt\n        run: make format-check\n"
+          }
+        ]
+      },
+      {
+        "id": "238882858",
+        "name": "procspawn",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 166,
+        "pushedAt": "2026-08-30T23:17:22Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/rustfmt.yml",
+            "content": "name: Rustfmt\n\non: [push]\n\njobs:\n  build:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run rustfmt\n        run: make style\n"
+          }
+        ]
+      },
+      {
+        "id": "1351696985",
+        "name": "catplay-v821-fel-flow",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 2,
+        "pushedAt": "2026-08-30T19:39:09Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1348977577",
+        "name": "pi-drinking-game",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 33,
+        "pushedAt": "2026-08-28T09:58:37Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"pi-drinking-game\",\n  \"version\": \"0.1.0\",\n  \"description\": \"A pi extension that calls out stereotypical LLM language with a very visible drinking-game alert.\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"author\": \"Armin Ronacher\",\n  \"keywords\": [\n    \"pi-package\",\n    \"pi-extension\",\n    \"llm\",\n    \"drinking-game\"\n  ],\n  \"files\": [\n    \"extensions\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"scripts\": {\n    \"test\": \"node --test test/*.test.ts\"\n  },\n  \"pi\": {\n    \"extensions\": [\n      \"./extensions/drinking-game.ts\"\n    ]\n  },\n  \"peerDependencies\": {\n    \"@earendil-works/pi-coding-agent\": \"*\"\n  },\n  \"engines\": {\n    \"node\": \">=22.19.0\"\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1022357317",
+        "name": "fstrings-wtf",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 105,
+        "pushedAt": "2026-08-06T17:14:23Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1116178869",
+        "name": "dark",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 6,
+        "pushedAt": "2026-07-20T23:35:18Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "pyproject.toml",
+            "content": "[build-system]\nrequires = [\"hatchling\"]\nbuild-backend = \"hatchling.build\"\n\n[project]\nname = \"dark\"\nversion = \"1.0.0\"\ndescription = \"A simple static blog software based on Markdown and Jinja2\"\nlicense = {text = \"BSD-3-Clause\"}\nrequires-python = \">=3.8\"\ndependencies = [\n    \"Jinja2>=3.0\",\n    \"Pygments\",\n    \"marko\",\n    \"watchdog\",\n    \"pyyaml\",\n    \"Pillow\",\n    \"smartypants>=2.0.2\",\n]\n\n[project.scripts]\nbuild-blog = \"generator.commands:main_build\"\nserve-blog = \"generator.commands:main_serve\"\n\n[tool.hatch.build.targets.wheel]\npackages = [\"generator\"]\n"
+          },
+          {
+            "path": ".github/workflows/deploy.yml",
+            "content": "name: Build and Deploy\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Install uv\n        uses: astral-sh/setup-uv@v4\n        with:\n          enable-cache: true\n\n      - name: Set up Python\n        run: uv python install\n\n      - name: Install dependencies\n        run: uv sync\n\n      - name: Build site\n        run: make build\n\n      - name: Setup Pages\n        uses: actions/configure-pages@v5\n        with:\n          enablement: true\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: ./blog/_build\n\n  deploy:\n    if: github.ref == 'refs/heads/main'\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "1626971",
+        "name": "zine",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 32,
+        "pushedAt": "2026-07-14T12:46:08Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "pyproject.toml",
+            "content": "[build-system]\nrequires = [\"setuptools>=77\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"Zine\"\nversion = \"0.2.dev0\"\ndescription = \"A Python-powered blog engine\"\nreadme = \"README.md\"\nrequires-python = \">=3.12,<3.15\"\nlicense = \"BSD-3-Clause\"\nauthors = [\n    { name = \"Armin Ronacher\", email = \"armin.ronacher@active-4.com\" },\n]\nclassifiers = [\n    \"Development Status :: 2 - Pre-Alpha\",\n    \"Environment :: Web Environment\",\n    \"Framework :: WSGI\",\n    \"Programming Language :: Python :: 3\",\n    \"Programming Language :: Python :: 3 :: Only\",\n    \"Programming Language :: Python :: 3.12\",\n    \"Programming Language :: Python :: 3.13\",\n    \"Programming Language :: Python :: 3.14\",\n    \"Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary\",\n]\ndependencies = [\n    \"Babel>=2.15\",\n    \"cachelib>=0.13\",\n    \"creoleparser>=0.7.5\",\n    \"docutils>=0.21\",\n    \"genshi>=0.7.9\",\n    \"html5lib>=1.1\",\n    \"itsdangerous>=2.2\",\n    \"Jinja2>=3.1\",\n    \"lxml>=5.2\",\n    \"markdown>=3.6\",\n    \"pygments>=2.18\",\n    \"pytz>=2024.1\",\n    \"SQLAlchemy>=2.0\",\n    \"Werkzeug>=3.0\",\n]\n\n[project.optional-dependencies]\ntest = [\n    \"build>=1.2\",\n    \"pytest>=8.2\",\n    \"setuptools>=77\",\n]\ndocs = [\n    \"sphinx>=8.1\",\n    \"sphinxcontrib-serializinghtml>=2.0\",\n]\nfastcgi = [\n    \"flup6>=1.1.1\",\n]\n\n[project.scripts]\nzine-create-apache-config = \"zine.cli:create_apache_config_main\"\nzine-regenerate-post-uids = \"zine.cli:regenerate_post_uids_main\"\nzine-reset-instance = \"zine.cli:reset_instance_main\"\nzine-server = \"zine.cli:server_main\"\nzine-shell = \"zine.cli:shell_main\"\n\n[project.urls]\nSource = \"https://github.com/mitsuhiko/zine\"\n\n[tool.setuptools]\ninclude-package-data = true\n\n[tool.setuptools.packages.find]\ninclude = [\"zine*\"]\n\n[tool.pytest.ini_options]\nminversion = \"8.2\"\ntestpaths = [\"tests\"]\naddopts = [\"--import-mode=importlib\"]\nfilterwarnings = [\"error\"]\n"
+          },
+          {
+            "path": ".github/workflows/tests.yml",
+            "content": "name: Tests\n\non:\n  push:\n  pull_request:\n\npermissions:\n  contents: read\n\njobs:\n  python:\n    name: Python ${{ matrix.python-version }}\n    runs-on: ubuntu-latest\n    strategy:\n      fail-fast: false\n      matrix:\n        python-version: [\"3.12\", \"3.13\", \"3.14\"]\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: astral-sh/setup-uv@v7\n        with:\n          python-version: ${{ matrix.python-version }}\n          enable-cache: true\n      - name: Install dependencies\n        run: uv sync --locked --all-extras\n      - name: Compile and test\n        run: uv run pytest\n"
+          }
+        ]
+      },
+      {
+        "id": "1043340158",
+        "name": "talks",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 26,
+        "pushedAt": "2026-07-13T12:56:59Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/deploy.yml",
+            "content": "name: Deploy Talks to GitHub Pages\n\non:\n  push:\n    branches: [main, master]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: '20'\n\n      - name: Setup Pages\n        uses: actions/configure-pages@v5\n\n      - name: Build all talks\n        run: |\n          mkdir -p _site\n          \n          # Build each talk in dynamic/\n          for talk_dir in dynamic/*/; do\n            if [ -d \"$talk_dir\" ]; then\n              talk_name=$(basename \"$talk_dir\")\n              echo \"Building talk: $talk_name\"\n              \n              cd \"$talk_dir\"\n              \n              # Find the markdown source file\n              md_file=$(ls *.md 2>/dev/null | head -1)\n              \n              # Create output directory\n              mkdir -p \"../../_site/${talk_name}\"\n              \n              if [ -n \"$md_file\" ]; then\n                # Marp-based talk: build from markdown\n                base_name=\"${md_file%.md}\"\n                \n                # Build HTML with marp\n                npx @marp-team/marp-cli --html \"$md_file\" -o \"${base_name}.html\"\n                \n                # Run inject script if present\n                if [ -f \"inject-backdrop.js\" ]; then\n                  node inject-backdrop.js \"${base_name}.html\"\n                fi\n                \n                # Copy HTML output\n                cp \"${base_name}.html\" \"../../_site/${talk_name}/index.html\"\n                \n                echo \"Built (marp): $talk_name\"\n              elif [ -f \"index.html\" ]; then\n                # Pre-built HTML talk: just copy as-is\n                cp index.html \"../../_site/${talk_name}/index.html\"\n                \n                # Copy subdirectories (e.g., notes/)\n                for subdir in */; do\n                  if [ -d \"$subdir\" ] && [ \"$subdir\" != \".pi/\" ]; then\n                    cp -r \"$subdir\" \"../../_site/${talk_name}/\"\n                  fi\n                done 2>/dev/null || true\n                \n                echo \"Copied (pre-built): $talk_name\"\n              else\n                echo \"Skipped (no source): $talk_name\"\n                cd - > /dev/null\n                continue\n              fi\n              \n              # Copy all assets (images, videos, etc.)\n              for ext in png jpg jpeg gif svg mp4 mov webm webp css js json; do\n                cp *.${ext} \"../../_site/${talk_name}/\" 2>/dev/null || true\n              done\n              \n              cd - > /dev/null\n            fi\n          done\n\n      - name: Generate index page\n        run: |\n          cat > _site/index.html << 'HTMLEOF'\n          <!DOCTYPE html>\n          <html lang=\"en\">\n          <head>\n            <meta charset=\"UTF-8\">\n            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n            <title>Talks</title>\n            <style>\n              body {\n                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\n                max-width: 800px;\n                margin: 50px auto;\n                padding: 20px;\n                background: #f5f5f5;\n                color: #333;\n              }\n              h1 {\n                border-bottom: 2px solid #333;\n                padding-bottom: 10px;\n              }\n              ul {\n                list-style: none;\n                padding: 0;\n              }\n              li {\n                margin: 15px 0;\n              }\n              a {\n                color: #0066cc;\n                text-decoration: none;\n                font-size: 1.2em;\n              }\n              a:hover {\n                text-decoration: underline;\n              }\n            </style>\n          </head>\n          <body>\n            <h1>Talks</h1>\n            <ul>\n          HTMLEOF\n          \n          # List all talks\n          for talk_dir in _site/*/; do\n            if [ -d \"$talk_dir\" ]; then\n              talk_name=$(basename \"$talk_dir\")\n              if [ -f \"dynamic/${talk_name}/.hidden\" ]; then\n                echo \"Skipping hidden talk: $talk_name\"\n                continue\n              fi\n              # Convert dashes to spaces and title case for display\n              display_name=$(echo \"$talk_name\" | tr '-' ' ' | sed 's/\\b\\(.\\)/\\u\\1/g')\n              echo \"      <li><a href=\\\"${talk_name}/\\\">${display_name}</a></li>\" >> _site/index.html\n            fi\n          done\n          \n          cat >> _site/index.html << 'HTMLEOF'\n            </ul>\n          </body>\n          </html>\n          HTMLEOF\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: '_site'\n\n  deploy:\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "516532399",
+        "name": "insta-cmd",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 52,
+        "pushedAt": "2026-06-14T18:11:21Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/clippy.yml",
+            "content": "name: Clippy\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run clippy\n        run: make lint\n"
+          },
+          {
+            "path": ".github/workflows/rustfmt.yml",
+            "content": "name: Rustfmt\n\non: [push]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v1\n      - uses: actions-rs/toolchain@v1\n        with:\n          toolchain: stable\n          profile: minimal\n          components: clippy, rustfmt\n          override: true\n      - name: Run rustfmt\n        run: make format-check\n"
+          }
+        ]
+      },
+      {
+        "id": "1116192899",
+        "name": "ronacher.eu",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1,
+        "pushedAt": "2026-06-13T23:35:21Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1235729597",
+        "name": "amazon-how-much",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2026-05-11T20:28:19Z",
+        "languages": {},
+        "files": [
+          {
+            "path": ".github/workflows/pages.yml",
+            "content": "name: Deploy GitHub Pages\n\non:\n  push:\n    branches: [main]\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: github-pages\n  cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n\n      - name: Set up Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 22\n\n      - name: Validate bookmarklet source\n        run: node --check src/bookmarklet.js\n\n      - name: Build static site\n        run: node tools/build.mjs\n\n      - name: Upload Pages artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: dist\n\n  deploy:\n    needs: build\n    runs-on: ubuntu-latest\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n"
+          }
+        ]
+      },
+      {
+        "id": "1234192163",
+        "name": "pi-llamacpp",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 146,
+        "pushedAt": "2026-05-11T12:26:34Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"pi-llamacpp\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Pi provider extension for managed local llama.cpp inference.\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"keywords\": [\n    \"pi-package\",\n    \"pi-extension\",\n    \"llama.cpp\",\n    \"gguf\",\n    \"qwen\"\n  ],\n  \"pi\": {\n    \"extensions\": [\n      \"./index.ts\"\n    ]\n  },\n  \"files\": [\n    \"index.ts\",\n    \"llamacpp-watchdog.sh\",\n    \"install-pi-extension-local.sh\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"peerDependencies\": {\n    \"@earendil-works/pi-ai\": \"*\",\n    \"@earendil-works/pi-coding-agent\": \"*\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@earendil-works/pi-ai\": {\n      \"optional\": true\n    },\n    \"@earendil-works/pi-coding-agent\": {\n      \"optional\": true\n    }\n  }\n}\n"
+          }
+        ]
+      },
+      {
+        "id": "1221447339",
+        "name": "rope-man-game",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 14,
+        "pushedAt": "2026-04-28T20:04:22Z",
+        "languages": {},
+        "files": []
+      },
+      {
+        "id": "1221172353",
+        "name": "pi-draw",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 100,
+        "pushedAt": "2026-04-26T15:51:11Z",
+        "languages": {},
+        "files": [
+          {
+            "path": "package.json",
+            "content": "{\n  \"name\": \"pi-draw\",\n  \"version\": \"0.1.0\",\n  \"description\": \"A pi extension that opens a tldraw canvas and submits drawings as prompt image attachments.\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"keywords\": [\n    \"pi-package\",\n    \"pi-extension\",\n    \"tldraw\",\n    \"drawing\",\n    \"canvas\"\n  ],\n  \"files\": [\n    \"draw.ts\",\n    \"README.md\"\n  ],\n  \"peerDependencies\": {\n    \"@mariozechner/pi-coding-agent\": \"*\"\n  },\n  \"pi\": {\n    \"extensions\": [\n      \"./draw.ts\"\n    ]\n  }\n}\n"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "repoId": "1043340158",
+        "repoName": "talks",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/deploy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-07-13T12:56:59Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1104257",
+        "repoName": "lucumr",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/deploy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-06T13:30:42Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1116178869",
+        "repoName": "dark",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/deploy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-07-20T23:35:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1126960752",
+        "repoName": "tankgame",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-29T20:47:43Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1235729597",
+        "repoName": "amazon-how-much",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/pages.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-05-11T20:28:19Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "138081835",
+        "repoName": "fragile",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-04T22:54:21Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1404907193",
+        "repoName": "miniline",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/ci.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-04T23:17:01Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "1626971",
+        "repoName": "zine",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/tests.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-07-14T12:46:08Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "165561258",
+        "repoName": "insta",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/publish-crates.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-03T01:12:40Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "238882858",
+        "repoName": "procspawn",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-08-30T23:17:22Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "326805451",
+        "repoName": "insta-website",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/main.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-03T01:19:09Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "330488939",
+        "repoName": "similar",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-28T21:11:17Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "455334691",
+        "repoName": "deser",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-06T11:33:04Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "471846061",
+        "repoName": "memo-map",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-09-03T09:53:18Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "516532399",
+        "repoName": "insta-cmd",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-06-14T18:11:21Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      },
+      {
+        "repoId": "920668284",
+        "repoName": "argument",
+        "itemId": "github-actions",
+        "itemKind": "artifact",
+        "sourcePath": ".github/workflows/clippy.yml",
+        "sourceKind": "config",
+        "strength": 55,
+        "observedAt": "2026-10-04T22:23:01Z",
+        "detectorVersion": "game-engine-v2-detectors-1",
+        "direct": true
+      }
+    ],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 72,
+      "examined": 30,
+      "failed": 0,
+      "omittedByBudget": 73
+    },
+    "requests": {
+      "rest": 69,
+      "graphql": 0,
+      "manifestFetches": 68,
+      "reposInspected": 30,
+      "cacheHits": 0
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T04:55:51.419Z",
+  "coldLatencyMs": 36413,
+  "warmLatencyMs": 0,
+  "v1Report": {
+    "username": "mitsuhiko",
+    "cache": "miss",
+    "restRequests": 1,
+    "graphqlRequests": 11,
+    "totalRequests": 12,
+    "durationMs": 15748,
+    "authenticated": true,
+    "ok": true
+  },
+  "warmV1Report": {
+    "username": "mitsuhiko",
+    "cache": "hit",
+    "restRequests": 0,
+    "graphqlRequests": 0,
+    "totalRequests": 0,
+    "durationMs": 0,
+    "authenticated": true,
+    "ok": true
+  }
+}

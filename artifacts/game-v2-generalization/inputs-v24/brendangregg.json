@@ -1,0 +1,1232 @@
+{
+  "matrixProfile": {
+    "username": "brendangregg",
+    "category": "automation-devops",
+    "publicReposAtFreeze": 42,
+    "reason": "Public observability and operational tooling repositories."
+  },
+  "rawProfile": {
+    "username": "brendangregg",
+    "displayName": "Brendan Gregg",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/1101211?v=4",
+    "bio": "Cloud computing performance engineer.",
+    "location": "Sydney, Australia",
+    "company": "Intel",
+    "createdAt": "2011-10-04T08:48:56.000Z",
+    "fetchedAt": "2026-10-07T21:25:19.135Z",
+    "isDemo": false,
+    "followers": {
+      "value": 8932,
+      "coverage": "full"
+    },
+    "repositories": {
+      "items": [
+        {
+          "name": "FlameGraph",
+          "isFork": false,
+          "stars": 19787,
+          "forks": 2110,
+          "languages": {
+            "Perl": 125494,
+            "Awk": 16256,
+            "PHP": 5691,
+            "Shell": 4397,
+            "Python": 3910,
+            "DTrace": 1036
+          }
+        },
+        {
+          "name": "bpf-perf-tools-book",
+          "isFork": false,
+          "stars": 1828,
+          "forks": 306,
+          "languages": {
+            "Python": 9608
+          }
+        },
+        {
+          "name": "bcc",
+          "isFork": true,
+          "stars": 67,
+          "forks": 15,
+          "languages": {}
+        },
+        {
+          "name": "perf-tools",
+          "isFork": false,
+          "stars": 10474,
+          "forks": 1666,
+          "languages": {
+            "Shell": 123103,
+            "Perl": 13613,
+            "Roff": 2618
+          }
+        },
+        {
+          "name": "GuessingGame",
+          "isFork": false,
+          "stars": 34,
+          "forks": 28,
+          "languages": {
+            "Batchfile": 6085,
+            "M": 5955,
+            "Assembly": 4367,
+            "Shell": 4241,
+            "Java": 2335,
+            "DTrace": 2055,
+            "Scheme": 1810,
+            "Awk": 1727,
+            "Ada": 1720,
+            "C": 1680,
+            "C++": 1557,
+            "Euphoria": 1555,
+            "Go": 1518,
+            "Fortran": 1493,
+            "Common Lisp": 1404,
+            "JavaScript": 1289,
+            "Pascal": 1253,
+            "PostScript": 1232,
+            "Nim": 1169,
+            "Yacc": 1142,
+            "Ruby": 1122,
+            "Python": 1101,
+            "Perl": 1079,
+            "Tcl": 999,
+            "REXX": 918
+          }
+        },
+        {
+          "name": "BPF-tools",
+          "isFork": false,
+          "stars": 134,
+          "forks": 32,
+          "languages": {
+            "C": 42321,
+            "Python": 37472,
+            "Shell": 3308
+          }
+        },
+        {
+          "name": "FlameScope",
+          "isFork": false,
+          "stars": 15,
+          "forks": 1,
+          "languages": {
+            "Perl": 66548,
+            "Python": 10265,
+            "JavaScript": 5680
+          }
+        },
+        {
+          "name": "pmc-cloud-tools",
+          "isFork": false,
+          "stars": 286,
+          "forks": 41,
+          "languages": {
+            "Shell": 22456
+          }
+        },
+        {
+          "name": "HeatMap",
+          "isFork": false,
+          "stars": 330,
+          "forks": 58,
+          "languages": {
+            "Perl": 16832
+          }
+        },
+        {
+          "name": "Chaosreader",
+          "isFork": false,
+          "stars": 239,
+          "forks": 50,
+          "languages": {}
+        },
+        {
+          "name": "wss",
+          "isFork": false,
+          "stars": 240,
+          "forks": 32,
+          "languages": {
+            "C": 16616,
+            "Perl": 9331
+          }
+        },
+        {
+          "name": "msr-cloud-tools",
+          "isFork": false,
+          "stars": 186,
+          "forks": 33,
+          "languages": {
+            "Shell": 14295
+          }
+        },
+        {
+          "name": "bpf-perf-workshop",
+          "isFork": false,
+          "stars": 195,
+          "forks": 34,
+          "languages": {
+            "C": 3004,
+            "Makefile": 142
+          }
+        },
+        {
+          "name": "systemtap-lwtools",
+          "isFork": false,
+          "stars": 185,
+          "forks": 38,
+          "languages": {}
+        },
+        {
+          "name": "bpf-typewriter",
+          "isFork": false,
+          "stars": 23,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bpftrace-tetris",
+          "isFork": true,
+          "stars": 3,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "hexyl",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bpf-docs",
+          "isFork": true,
+          "stars": 12,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "Misc",
+          "isFork": false,
+          "stars": 64,
+          "forks": 12,
+          "languages": {
+            "Shell": 28069,
+            "C": 8290,
+            "Perl": 4204,
+            "Python": 1377
+          }
+        },
+        {
+          "name": "wrmsrbench",
+          "isFork": false,
+          "stars": 8,
+          "forks": 1,
+          "languages": {
+            "C": 1848,
+            "Makefile": 275
+          }
+        },
+        {
+          "name": "d3-flame-graph",
+          "isFork": true,
+          "stars": 12,
+          "forks": 1,
+          "languages": {}
+        },
+        {
+          "name": "bpftrace",
+          "isFork": true,
+          "stars": 21,
+          "forks": 4,
+          "languages": {}
+        },
+        {
+          "name": "p1bench",
+          "isFork": false,
+          "stars": 20,
+          "forks": 0,
+          "languages": {
+            "C": 11768
+          }
+        },
+        {
+          "name": "proc-profiler",
+          "isFork": false,
+          "stars": 33,
+          "forks": 6,
+          "languages": {
+            "Perl": 1808
+          }
+        },
+        {
+          "name": "DTrace-tools",
+          "isFork": false,
+          "stars": 72,
+          "forks": 28,
+          "languages": {
+            "DTrace": 60849
+          }
+        },
+        {
+          "name": "vector",
+          "isFork": true,
+          "stars": 4,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "Test",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "JavaScript": 1163,
+            "D": 420
+          }
+        },
+        {
+          "name": "skid-testing",
+          "isFork": false,
+          "stars": 7,
+          "forks": 0,
+          "languages": {
+            "C": 1584,
+            "R": 623
+          }
+        },
+        {
+          "name": "brendangregg.github.io",
+          "isFork": false,
+          "stars": 3,
+          "forks": 1,
+          "languages": {
+            "HTML": 93
+          }
+        },
+        {
+          "name": "ply",
+          "isFork": true,
+          "stars": 8,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "llnode",
+          "isFork": true,
+          "stars": 1,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "bcc-1",
+          "isFork": true,
+          "stars": 0,
+          "forks": 0,
+          "languages": {}
+        },
+        {
+          "name": "perf-map-agent",
+          "isFork": true,
+          "stars": 2,
+          "forks": 3,
+          "languages": {}
+        },
+        {
+          "name": "perf-labs",
+          "isFork": false,
+          "stars": 115,
+          "forks": 38,
+          "languages": {
+            "C": 6712,
+            "Makefile": 239
+          }
+        },
+        {
+          "name": "WSPerfLab",
+          "isFork": true,
+          "stars": 8,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "sysdig",
+          "isFork": true,
+          "stars": 17,
+          "forks": 2,
+          "languages": {}
+        },
+        {
+          "name": "PerfModels",
+          "isFork": false,
+          "stars": 72,
+          "forks": 14,
+          "languages": {
+            "R": 41573,
+            "Gnuplot": 8111,
+            "Shell": 6995
+          }
+        },
+        {
+          "name": "DTrace-book-scripts",
+          "isFork": false,
+          "stars": 179,
+          "forks": 53,
+          "languages": {}
+        },
+        {
+          "name": "metrics-catalog",
+          "isFork": true,
+          "stars": 19,
+          "forks": 5,
+          "languages": {}
+        },
+        {
+          "name": "dtrace-cloud-tools",
+          "isFork": false,
+          "stars": 204,
+          "forks": 58,
+          "languages": {
+            "D": 173333
+          }
+        },
+        {
+          "name": "Dump2PNG",
+          "isFork": false,
+          "stars": 40,
+          "forks": 6,
+          "languages": {
+            "C": 14353
+          }
+        },
+        {
+          "name": "DTraceToolkit",
+          "isFork": false,
+          "stars": 15,
+          "forks": 0,
+          "languages": {}
+        }
+      ],
+      "coverage": "full"
+    },
+    "languagesCoverage": "full",
+    "commits": {
+      "value": 1423,
+      "coverage": "full"
+    },
+    "pullRequests": {
+      "value": 225,
+      "coverage": "full"
+    },
+    "reviews": {
+      "value": 22,
+      "coverage": "full"
+    },
+    "issues": {
+      "value": 427,
+      "coverage": "full"
+    },
+    "activity": {
+      "activeDays": {
+        "value": 704,
+        "coverage": "full"
+      },
+      "longestStreakDays": {
+        "value": 24,
+        "coverage": "full"
+      },
+      "currentStreakDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "recentActiveDays": {
+        "value": 0,
+        "coverage": "full"
+      },
+      "monthlyContributions": {
+        "months": [
+          1,
+          12,
+          2,
+          1,
+          0,
+          1,
+          0,
+          4,
+          2,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          9,
+          4,
+          3,
+          2,
+          0,
+          0,
+          0,
+          0,
+          13,
+          0,
+          2,
+          0,
+          0,
+          25,
+          15,
+          32,
+          123,
+          8,
+          28,
+          17,
+          9,
+          18,
+          23,
+          11,
+          13,
+          5,
+          5,
+          13,
+          22,
+          44,
+          82,
+          30,
+          7,
+          14,
+          33,
+          89,
+          32,
+          12,
+          5,
+          19,
+          48,
+          17,
+          17,
+          42,
+          12,
+          17,
+          21,
+          37,
+          16,
+          17,
+          8,
+          34,
+          30,
+          40,
+          25,
+          6,
+          5,
+          21,
+          36,
+          13,
+          68,
+          11,
+          4,
+          7,
+          6,
+          51,
+          182,
+          68,
+          7,
+          18,
+          78,
+          70,
+          44,
+          45,
+          28,
+          29,
+          26,
+          15,
+          3,
+          32,
+          2,
+          14,
+          19,
+          6,
+          1,
+          2,
+          0,
+          2,
+          2,
+          1,
+          4,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          8,
+          3,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          3,
+          11,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coverage": "full"
+      },
+      "yearly": {
+        "years": [
+          {
+            "year": 2011,
+            "contributions": 15,
+            "activeDays": 7,
+            "commits": 10,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2012,
+            "contributions": 10,
+            "activeDays": 10,
+            "commits": 5,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 2
+          },
+          {
+            "year": 2013,
+            "contributions": 31,
+            "activeDays": 14,
+            "commits": 18,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 12
+          },
+          {
+            "year": 2014,
+            "contributions": 277,
+            "activeDays": 83,
+            "commits": 237,
+            "pullRequests": 5,
+            "reviews": 0,
+            "issues": 25
+          },
+          {
+            "year": 2015,
+            "contributions": 269,
+            "activeDays": 83,
+            "commits": 178,
+            "pullRequests": 27,
+            "reviews": 0,
+            "issues": 56
+          },
+          {
+            "year": 2016,
+            "contributions": 343,
+            "activeDays": 126,
+            "commits": 202,
+            "pullRequests": 62,
+            "reviews": 1,
+            "issues": 76
+          },
+          {
+            "year": 2017,
+            "contributions": 260,
+            "activeDays": 107,
+            "commits": 159,
+            "pullRequests": 30,
+            "reviews": 4,
+            "issues": 62
+          },
+          {
+            "year": 2018,
+            "contributions": 471,
+            "activeDays": 106,
+            "commits": 289,
+            "pullRequests": 52,
+            "reviews": 12,
+            "issues": 115
+          },
+          {
+            "year": 2019,
+            "contributions": 386,
+            "activeDays": 129,
+            "commits": 263,
+            "pullRequests": 44,
+            "reviews": 1,
+            "issues": 71
+          },
+          {
+            "year": 2020,
+            "contributions": 38,
+            "activeDays": 20,
+            "commits": 29,
+            "pullRequests": 4,
+            "reviews": 2,
+            "issues": 3
+          },
+          {
+            "year": 2021,
+            "contributions": 14,
+            "activeDays": 6,
+            "commits": 10,
+            "pullRequests": 0,
+            "reviews": 1,
+            "issues": 3
+          },
+          {
+            "year": 2022,
+            "contributions": 8,
+            "activeDays": 2,
+            "commits": 8,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2023,
+            "contributions": 16,
+            "activeDays": 8,
+            "commits": 13,
+            "pullRequests": 0,
+            "reviews": 1,
+            "issues": 2
+          },
+          {
+            "year": 2024,
+            "contributions": 3,
+            "activeDays": 3,
+            "commits": 2,
+            "pullRequests": 1,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2025,
+            "contributions": 0,
+            "activeDays": 0,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          },
+          {
+            "year": 2026,
+            "contributions": 0,
+            "activeDays": 0,
+            "commits": 0,
+            "pullRequests": 0,
+            "reviews": 0,
+            "issues": 0
+          }
+        ],
+        "coverage": "full"
+      },
+      "longestStreakPeriod": {
+        "start": "2014-07-12",
+        "end": "2014-08-04"
+      }
+    }
+  },
+  "evidence": {
+    "repositories": [
+      {
+        "id": "2992074",
+        "name": "FlameGraph",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 19787,
+        "pushedAt": "2024-10-20T21:48:45Z",
+        "languages": {},
+        "files": [],
+        "size": 1914,
+        "primaryLanguage": "Perl",
+        "projects": []
+      },
+      {
+        "id": "186472173",
+        "name": "bpf-perf-tools-book",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 1828,
+        "pushedAt": "2024-04-30T11:20:32Z",
+        "languages": {},
+        "files": [],
+        "size": 1039,
+        "primaryLanguage": "Python",
+        "projects": []
+      },
+      {
+        "id": "21708091",
+        "name": "perf-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 10474,
+        "pushedAt": "2023-11-22T18:01:21Z",
+        "languages": {},
+        "files": [],
+        "size": 758,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "2763996",
+        "name": "GuessingGame",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 34,
+        "pushedAt": "2023-09-21T10:43:05Z",
+        "languages": {},
+        "files": [],
+        "size": 32,
+        "primaryLanguage": "Batchfile",
+        "projects": []
+      },
+      {
+        "id": "20638354",
+        "name": "BPF-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 134,
+        "pushedAt": "2023-07-29T09:15:02Z",
+        "languages": {},
+        "files": [],
+        "size": 48,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "83076473",
+        "name": "FlameScope",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 15,
+        "pushedAt": "2022-04-16T09:36:40Z",
+        "languages": {},
+        "files": [],
+        "size": 29,
+        "primaryLanguage": "Perl",
+        "projects": []
+      },
+      {
+        "id": "89950095",
+        "name": "pmc-cloud-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 286,
+        "pushedAt": "2021-12-14T18:44:16Z",
+        "languages": {},
+        "files": [],
+        "size": 15,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "10159312",
+        "name": "HeatMap",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 330,
+        "pushedAt": "2021-10-06T07:53:23Z",
+        "languages": {},
+        "files": [],
+        "size": 430,
+        "primaryLanguage": "Perl",
+        "projects": []
+      },
+      {
+        "id": "18618886",
+        "name": "Chaosreader",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 239,
+        "pushedAt": "2021-08-21T15:22:51Z",
+        "languages": {},
+        "files": [],
+        "size": 87,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "117171558",
+        "name": "wss",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 240,
+        "pushedAt": "2021-08-15T08:20:41Z",
+        "languages": {},
+        "files": [],
+        "size": 36,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "24076349",
+        "name": "msr-cloud-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 186,
+        "pushedAt": "2020-07-29T22:50:04Z",
+        "languages": {},
+        "files": [],
+        "size": 15,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "217799300",
+        "name": "bpf-perf-workshop",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 195,
+        "pushedAt": "2020-04-05T21:15:11Z",
+        "languages": {},
+        "files": [],
+        "size": 1772,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "30124377",
+        "name": "systemtap-lwtools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 185,
+        "pushedAt": "2020-01-12T06:27:00Z",
+        "languages": {},
+        "files": [],
+        "size": 261,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "229627426",
+        "name": "bpf-typewriter",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 23,
+        "pushedAt": "2019-12-22T20:40:17Z",
+        "languages": {},
+        "files": [],
+        "size": 10,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "19525914",
+        "name": "Misc",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 64,
+        "pushedAt": "2019-02-19T23:21:28Z",
+        "languages": {},
+        "files": [],
+        "size": 227,
+        "primaryLanguage": "Shell",
+        "projects": []
+      },
+      {
+        "id": "171525108",
+        "name": "wrmsrbench",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 8,
+        "pushedAt": "2019-02-19T18:16:19Z",
+        "languages": {},
+        "files": [],
+        "size": 1,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "125411073",
+        "name": "p1bench",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 20,
+        "pushedAt": "2018-03-15T19:13:11Z",
+        "languages": {},
+        "files": [],
+        "size": 5,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "114973944",
+        "name": "proc-profiler",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 33,
+        "pushedAt": "2017-12-21T07:17:34Z",
+        "languages": {},
+        "files": [],
+        "size": 1,
+        "primaryLanguage": "Perl",
+        "projects": []
+      },
+      {
+        "id": "26087400",
+        "name": "DTrace-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 72,
+        "pushedAt": "2017-09-25T11:29:14Z",
+        "languages": {},
+        "files": [],
+        "size": 22,
+        "primaryLanguage": "DTrace",
+        "projects": []
+      },
+      {
+        "id": "2731302",
+        "name": "Test",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2017-08-17T19:57:02Z",
+        "languages": {},
+        "files": [],
+        "size": 4,
+        "primaryLanguage": "JavaScript",
+        "projects": []
+      },
+      {
+        "id": "98675013",
+        "name": "skid-testing",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 7,
+        "pushedAt": "2017-07-29T02:47:20Z",
+        "languages": {},
+        "files": [],
+        "size": 124,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "39746629",
+        "name": "brendangregg.github.io",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 3,
+        "pushedAt": "2017-07-27T16:11:23Z",
+        "languages": {},
+        "files": [],
+        "size": 112,
+        "primaryLanguage": "HTML",
+        "projects": []
+      },
+      {
+        "id": "36038091",
+        "name": "perf-labs",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 115,
+        "pushedAt": "2015-05-26T05:01:43Z",
+        "languages": {},
+        "files": [],
+        "size": 120,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "4374407",
+        "name": "PerfModels",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 72,
+        "pushedAt": "2014-12-05T18:44:46Z",
+        "languages": {},
+        "files": [],
+        "size": 171,
+        "primaryLanguage": "R",
+        "projects": []
+      },
+      {
+        "id": "20840295",
+        "name": "DTrace-book-scripts",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 179,
+        "pushedAt": "2014-06-14T21:20:00Z",
+        "languages": {},
+        "files": [],
+        "size": 259,
+        "primaryLanguage": null,
+        "projects": []
+      },
+      {
+        "id": "5405760",
+        "name": "dtrace-cloud-tools",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 204,
+        "pushedAt": "2013-11-24T17:36:32Z",
+        "languages": {},
+        "files": [],
+        "size": 390,
+        "primaryLanguage": "D",
+        "projects": []
+      },
+      {
+        "id": "4236720",
+        "name": "Dump2PNG",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 40,
+        "pushedAt": "2012-05-05T21:52:55Z",
+        "languages": {},
+        "files": [],
+        "size": 194,
+        "primaryLanguage": "C",
+        "projects": []
+      },
+      {
+        "id": "2768669",
+        "name": "DTraceToolkit",
+        "isFork": false,
+        "isArchived": false,
+        "isEmpty": false,
+        "stars": 15,
+        "pushedAt": "1970-01-01T00:00:00Z",
+        "languages": {},
+        "files": [],
+        "size": 48,
+        "primaryLanguage": null,
+        "projects": []
+      }
+    ],
+    "evidence": [],
+    "coverage": {
+      "coverage": "partial",
+      "eligible": 28,
+      "examined": 28,
+      "failed": 1,
+      "omittedByBudget": 0,
+      "reposCandidates": 28,
+      "treesDiscovered": 27,
+      "treesTruncated": 0,
+      "manifestsDiscovered": 0,
+      "manifestsFetched": 0,
+      "manifestsSkippedByBudget": 0,
+      "uncertainRepositories": 1,
+      "gap": "small",
+      "domains": {
+        "language": "unavailable",
+        "school": "partial",
+        "artifact": "partial"
+      }
+    },
+    "requests": {
+      "rest": 29,
+      "graphql": 0,
+      "manifestFetches": 0,
+      "reposInspected": 28,
+      "cacheHits": 0,
+      "treeRequests": 28,
+      "manifestRequests": 0,
+      "fallbackRequests": 0,
+      "treeCacheHits": 0,
+      "manifestCacheHits": 0,
+      "manifestsDiscovered": 0,
+      "manifestsSkippedByBudget": 0,
+      "projectsDiscovered": 0,
+      "rateLimitRemaining": 4231,
+      "timingsMs": {
+        "repositorySelection": 498,
+        "treeDiscovery": 1630,
+        "manifestFetch": 0,
+        "parsing": 0
+      }
+    },
+    "warnings": [
+      "manifest_coverage_is_lower_bound"
+    ]
+  },
+  "collectedAt": "2026-10-07T21:25:23.726Z",
+  "coldLatencyMs": 4810
+}

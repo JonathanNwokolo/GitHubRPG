@@ -1,0 +1,912 @@
+{
+  "round": "r0-baseline",
+  "sample": {
+    "total": 40,
+    "calibration": 30,
+    "holdout": 10,
+    "matureCalibration": 30
+  },
+  "calibration": {
+    "classes": {
+      "Alquimista": 2,
+      "Aventureiro": 2,
+      "Bardo": 3,
+      "Escriba": 1,
+      "Guerreiro": 5,
+      "Mago": 14,
+      "Oráculo": 1,
+      "Patrulheiro": 2
+    },
+    "subclasses": {
+      "null": 30
+    },
+    "subclassLeaders": {
+      "chronomancer": 10,
+      "guardian": 15,
+      "illusionist": 5
+    },
+    "subclassReasons": {
+      "coverage_could_change_winner": 28,
+      "score_below_threshold": 2
+    },
+    "evolutions": {
+      "null": 30
+    },
+    "evolutionBlockers": {
+      "subclass_required": 30
+    },
+    "confidence": {
+      "low": 18,
+      "medium": 12
+    },
+    "manifestCoverage": {
+      "full": 2,
+      "partial": 28
+    },
+    "languageCoverage": {
+      "full": 27,
+      "partial": 3
+    },
+    "performance": {
+      "coldLatencyMs": {
+        "mean": 24458,
+        "p50": 22023,
+        "p75": 34827,
+        "p90": 41843,
+        "max": 67323
+      },
+      "warmLatencyMs": {
+        "mean": 0,
+        "p50": 0,
+        "p75": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "restRequests": {
+        "mean": 49,
+        "p50": 52,
+        "p75": 73,
+        "p90": 89,
+        "max": 90
+      },
+      "graphqlRequests": {
+        "mean": 0,
+        "p50": 0,
+        "p75": 0,
+        "p90": 0,
+        "max": 0
+      },
+      "manifestRequests": {
+        "mean": 48,
+        "p50": 51,
+        "p75": 72,
+        "p90": 88,
+        "max": 89
+      },
+      "reposInspected": {
+        "mean": 22,
+        "p50": 30,
+        "p75": 30,
+        "p90": 30,
+        "max": 30
+      }
+    },
+    "achievementCounts": {
+      "age-1": 30,
+      "age-3": 29,
+      "age-5": 29,
+      "age-10": 27,
+      "age-15": 16,
+      "repos-1": 30,
+      "repos-5": 26,
+      "repos-25": 19,
+      "repos-50": 13,
+      "repos-100": 10,
+      "commits-100": 30,
+      "commits-1000": 27,
+      "commits-5000": 20,
+      "commits-10000": 18,
+      "prs-1": 30,
+      "prs-25": 30,
+      "prs-100": 26,
+      "prs-500": 22,
+      "reviews-10": 28,
+      "reviews-50": 25,
+      "reviews-200": 24,
+      "issues-10": 28,
+      "issues-50": 26,
+      "issues-200": 19,
+      "stars-1": 29,
+      "stars-25": 29,
+      "stars-100": 28,
+      "stars-1000": 25,
+      "languages-2": 24,
+      "languages-5": 2,
+      "languages-8": 0,
+      "active-days-30": 30,
+      "active-days-365": 29,
+      "streak-30": 25,
+      "consistent-years-5": 29,
+      "forks-received-10": 28,
+      "starred-repos-5": 25,
+      "collaboration-triad-25": 25,
+      "reviews-500": 19,
+      "issues-500": 12,
+      "languages-balanced-3": 5,
+      "language-specialist-70": 8,
+      "schools-first": 16,
+      "schools-3": 2,
+      "school-recurring-5": 7,
+      "schools-fullstack": 0,
+      "artifacts-3": 10,
+      "testing-recurring-3": 6,
+      "automation-ci-3": 12,
+      "containers-3": 2,
+      "ecosystems-3": 0,
+      "five-paths": 21,
+      "perfect-balance": 0,
+      "living-legend": 0
+    },
+    "achievementRarity": {
+      "common": 301,
+      "rare": 277,
+      "epic": 274,
+      "legendary": 149,
+      "mythic": 29
+    },
+    "titleCounts": {
+      "title-stars-10": 29,
+      "title-stars-50": 28,
+      "title-stars-100": 28,
+      "title-stars-500": 26,
+      "title-stars-1000": 25,
+      "title-commits-500": 27,
+      "title-commits-1000": 27,
+      "title-commits-5000": 20,
+      "title-commits-10000": 18,
+      "title-prs-10": 30,
+      "title-prs-50": 28,
+      "title-prs-100": 26,
+      "title-prs-500": 22,
+      "title-languages-3": 17,
+      "title-languages-5": 2,
+      "title-languages-8": 0,
+      "title-years-3": 29,
+      "title-years-5": 29,
+      "title-years-10": 27,
+      "title-years-15": 16,
+      "title-class-mago-alquimista": 0,
+      "title-class-mago-guerreiro": 0,
+      "title-class-mago-bardo": 3,
+      "title-class-alquimista-guerreiro": 0,
+      "title-class-paladino-mago": 0,
+      "title-class-patrulheiro-alquimista": 0,
+      "title-class-ladino-mago": 0,
+      "title-practice-architect": 0,
+      "title-practice-artificer": 0,
+      "title-practice-illusionist": 0,
+      "title-practice-guardian": 0,
+      "title-practice-chronomancer": 0,
+      "title-school-ui": 6,
+      "title-school-portals": 2,
+      "title-school-services": 0,
+      "title-school-mobile": 1,
+      "title-hybrid-bridgekeeper": 0,
+      "title-hybrid-rune-engineer": 0,
+      "title-hybrid-pipeline-seer": 0,
+      "title-living-legend": 0
+    },
+    "titleRarity": {
+      "common": 132,
+      "rare": 117,
+      "epic": 110,
+      "legendary": 82,
+      "mythic": 25
+    }
+  },
+  "profiles": [
+    {
+      "username": "JonathanNwokolo",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "illusionist",
+      "score": 52.4,
+      "secondScore": 47.3912037037037,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Express:51(2)",
+        "React:51(2)",
+        "Expo:45(1)",
+        "Next.js:45(1)",
+        "React Native:45(1)"
+      ],
+      "artifacts": [
+        "ESLint:49(3)",
+        "Jest:40(1)",
+        "Playwright:40(1)",
+        "Tailwind CSS:40(1)",
+        "Vitest:40(1)",
+        "GitHub Actions:39(1)"
+      ],
+      "coldLatencyMs": 13351,
+      "restRequests": 39
+    },
+    {
+      "username": "torvalds",
+      "class": "Guerreiro",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 48.7,
+      "secondScore": 32.15,
+      "confidence": "low",
+      "coverage": "full",
+      "reasonCode": "score_below_threshold",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions:41(1)"
+      ],
+      "coldLatencyMs": 7301,
+      "restRequests": 11
+    },
+    {
+      "username": "ahejlsberg",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 45.5,
+      "secondScore": 31.6265625,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Express:35(1)",
+        "React:35(1)"
+      ],
+      "artifacts": [],
+      "coldLatencyMs": 5523,
+      "restRequests": 7
+    },
+    {
+      "username": "yyx990803",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 64,
+      "secondScore": 62.550000000000004,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Vue:49(4)",
+        "Express:37(2)",
+        "Next.js:34(1)",
+        "React:34(1)",
+        "Laravel:29(1)"
+      ],
+      "artifacts": [
+        "esbuild:51(2)",
+        "Vite:49(5)",
+        "Webpack:49(2)",
+        "Yarn:48(5)",
+        "ESLint:43(3)",
+        "Rollup:43(3)",
+        "pnpm:35(2)",
+        "Jest:32(1)"
+      ],
+      "coldLatencyMs": 32248,
+      "restRequests": 77
+    },
+    {
+      "username": "sindresorhus",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 63.8,
+      "secondScore": 57.15833333333333,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Svelte:37(1)"
+      ],
+      "artifacts": [
+        "GitHub Actions:84(29)",
+        "ESLint:61(4)",
+        "Electron:49(3)"
+      ],
+      "coldLatencyMs": 67323,
+      "restRequests": 90
+    },
+    {
+      "username": "kentcdodds",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 78.9,
+      "secondScore": 63.86695188492064,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:69(6)",
+        "Remix:45(1)",
+        "Vue:37(1)"
+      ],
+      "artifacts": [
+        "Prettier:76(11)",
+        "GitHub Actions:74(14)",
+        "esbuild:72(8)",
+        "Vite:71(9)",
+        "Playwright:66(7)",
+        "Vitest:66(7)",
+        "ESLint:56(4)",
+        "Rollup:54(1)"
+      ],
+      "coldLatencyMs": 61008,
+      "restRequests": 89
+    },
+    {
+      "username": "dhh",
+      "class": "Oráculo",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 45.2,
+      "secondScore": 29.1,
+      "confidence": "low",
+      "coverage": "full",
+      "reasonCode": "score_below_threshold",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [],
+      "coldLatencyMs": 4183,
+      "restRequests": 5
+    },
+    {
+      "username": "gvanrossum",
+      "class": "Bardo",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 51.6,
+      "secondScore": 51.22222222222223,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Flask:46(2)"
+      ],
+      "artifacts": [
+        "GitHub Actions:40(1)"
+      ],
+      "coldLatencyMs": 8628,
+      "restRequests": 14
+    },
+    {
+      "username": "matz",
+      "class": "Guerreiro",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 52.9,
+      "secondScore": 38.708333333333336,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions:49(2)"
+      ],
+      "coldLatencyMs": 5543,
+      "restRequests": 8
+    },
+    {
+      "username": "antirez",
+      "class": "Guerreiro",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 28.2,
+      "secondScore": 25.800000000000004,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [],
+      "coldLatencyMs": 18468,
+      "restRequests": 37
+    },
+    {
+      "username": "gaearon",
+      "class": "Aventureiro",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 67.9,
+      "secondScore": 65.2547619047619,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:83(21)",
+        "Next.js:73(7)",
+        "Express:27(2)"
+      ],
+      "artifacts": [
+        "ESLint:68(15)",
+        "Prettier:53(5)",
+        "GitHub Actions:48(3)",
+        "Vite:45(2)",
+        "Vitest:45(2)",
+        "Webpack:42(4)",
+        "Tailwind CSS:40(1)",
+        "Jest:37(2)"
+      ],
+      "coldLatencyMs": 39268,
+      "restRequests": 79
+    },
+    {
+      "username": "addyosmani",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 73.9,
+      "secondScore": 70.72682291666666,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:81(10)",
+        "Astro:50(2)",
+        "Next.js:50(2)"
+      ],
+      "artifacts": [
+        "ESLint:70(9)",
+        "Vite:70(9)",
+        "Tailwind CSS:63(6)",
+        "GitHub Actions:61(6)",
+        "Vitest:49(3)",
+        "Prettier:40(1)",
+        "Webpack:40(1)"
+      ],
+      "coldLatencyMs": 35686,
+      "restRequests": 71
+    },
+    {
+      "username": "sebmarkbage",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "illusionist",
+      "score": 47.2,
+      "secondScore": 45.400000000000006,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:49(2)",
+        "Next.js:45(1)"
+      ],
+      "artifacts": [
+        "Tailwind CSS:40(1)",
+        "ESLint:39(2)",
+        "pnpm:39(1)",
+        "Webpack:28(1)"
+      ],
+      "coldLatencyMs": 20662,
+      "restRequests": 50
+    },
+    {
+      "username": "mdo",
+      "class": "Bardo",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 47.5,
+      "secondScore": 31.950000000000003,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [],
+      "coldLatencyMs": 12497,
+      "restRequests": 24
+    },
+    {
+      "username": "necolas",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 68,
+      "secondScore": 54.925000000000004,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "ESLint:43(2)",
+        "Jest:43(2)",
+        "Prettier:43(2)",
+        "GitHub Actions:35(1)",
+        "Webpack:28(1)"
+      ],
+      "coldLatencyMs": 20390,
+      "restRequests": 53
+    },
+    {
+      "username": "mhevery",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 65,
+      "secondScore": 58.724203431372544,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:49(5)",
+        "Angular:34(1)",
+        "Next.js:34(1)",
+        "Express:31(2)"
+      ],
+      "artifacts": [
+        "ESLint:70(17)",
+        "Prettier:69(16)",
+        "Vite:69(16)",
+        "Vitest:47(3)",
+        "Tailwind CSS:46(3)",
+        "Material UI:45(4)",
+        "Playwright:39(2)",
+        "GitHub Actions:37(2)"
+      ],
+      "coldLatencyMs": 28556,
+      "restRequests": 74
+    },
+    {
+      "username": "segunadebayo",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 71,
+      "secondScore": 67.74635416666666,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:77(9)",
+        "Next.js:54(4)"
+      ],
+      "artifacts": [
+        "Prettier:74(8)",
+        "ESLint:73(9)",
+        "Chakra UI:56(2)",
+        "Jest:55(4)",
+        "esbuild:52(2)",
+        "Cypress:43(1)",
+        "Vite:42(3)",
+        "GitHub Actions:39(1)"
+      ],
+      "coldLatencyMs": 18584,
+      "restRequests": 49
+    },
+    {
+      "username": "emilkowalski",
+      "class": "Aventureiro",
+      "subclass": null,
+      "leader": "illusionist",
+      "score": 54.9,
+      "secondScore": 48.20833333333334,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Next.js:63(2)",
+        "React:63(2)"
+      ],
+      "artifacts": [
+        "ESLint:62(2)",
+        "Tailwind CSS:57(1)",
+        "Playwright:55(2)",
+        "Prettier:55(2)"
+      ],
+      "coldLatencyMs": 6723,
+      "restRequests": 8
+    },
+    {
+      "username": "iamkun",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 64.2,
+      "secondScore": 41.4,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Express:40(1)"
+      ],
+      "artifacts": [
+        "ESLint:46(1)",
+        "Jest:46(1)",
+        "Prettier:46(1)",
+        "Rollup:46(1)",
+        "Webpack:43(1)"
+      ],
+      "coldLatencyMs": 5522,
+      "restRequests": 8
+    },
+    {
+      "username": "pacocoursey",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "illusionist",
+      "score": 64,
+      "secondScore": 62.01538461538462,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:79(8)",
+        "Next.js:59(5)"
+      ],
+      "artifacts": [
+        "ESLint:49(4)",
+        "Prettier:43(2)",
+        "Playwright:41(1)",
+        "Vitest:41(1)",
+        "Yarn:41(3)",
+        "Electron:33(1)",
+        "pnpm:31(1)",
+        "Vite:29(1)"
+      ],
+      "coldLatencyMs": 16534,
+      "restRequests": 33
+    },
+    {
+      "username": "tiangolo",
+      "class": "Alquimista",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 71.1,
+      "secondScore": 61.5,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "FastAPI:51(2)",
+        "Flask:46(1)",
+        "React:46(1)"
+      ],
+      "artifacts": [
+        "GitHub Actions:78(15)",
+        "Vitest:41(1)"
+      ],
+      "coldLatencyMs": 26525,
+      "restRequests": 63
+    },
+    {
+      "username": "TaylorOtwell",
+      "class": "Escriba",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 58.4,
+      "secondScore": 57.224999999999994,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Laravel:55(2)",
+        "Express:48(1)",
+        "Flask:48(1)",
+        "Rails:48(1)"
+      ],
+      "artifacts": [
+        "Tailwind CSS:49(2)",
+        "Vite:49(2)",
+        "GitHub Actions:41(1)"
+      ],
+      "coldLatencyMs": 16751,
+      "restRequests": 20
+    },
+    {
+      "username": "mitsuhiko",
+      "class": "Guerreiro",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 64.8,
+      "secondScore": 57.291666666666664,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions:75(16)"
+      ],
+      "coldLatencyMs": 36413,
+      "restRequests": 69
+    },
+    {
+      "username": "jesseduffield",
+      "class": "Patrulheiro",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 67.3,
+      "secondScore": 60.4,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:39(3)",
+        "Rails:34(1)"
+      ],
+      "artifacts": [
+        "GitHub Actions:55(6)",
+        "Docker:43(2)",
+        "Vite:40(1)",
+        "Vitest:40(1)",
+        "Electron:34(1)",
+        "Webpack:32(1)",
+        "Prettier:28(1)"
+      ],
+      "coldLatencyMs": 25559,
+      "restRequests": 54
+    },
+    {
+      "username": "sharkdp",
+      "class": "Alquimista",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 62.4,
+      "secondScore": 54.970000000000006,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions:73(15)",
+        "Rollup:32(1)"
+      ],
+      "coldLatencyMs": 26445,
+      "restRequests": 60
+    },
+    {
+      "username": "mitchellh",
+      "class": "Guerreiro",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 71,
+      "secondScore": 64.15,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Next.js:45(1)",
+        "React:45(1)",
+        "Flask:34(1)"
+      ],
+      "artifacts": [
+        "GitHub Actions:71(19)",
+        "ESLint:54(1)",
+        "Jest:40(1)",
+        "Docker:39(3)"
+      ],
+      "coldLatencyMs": 28928,
+      "restRequests": 67
+    },
+    {
+      "username": "kelseyhightower",
+      "class": "Patrulheiro",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 48,
+      "secondScore": 26.997222222222224,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "Docker:60(9)",
+        "Terraform:37(2)",
+        "GitHub Actions:35(1)"
+      ],
+      "coldLatencyMs": 23383,
+      "restRequests": 44
+    },
+    {
+      "username": "EvanBacon",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "illusionist",
+      "score": 73.4,
+      "secondScore": 72.69166666666668,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "React:91(20)",
+        "Expo:90(19)",
+        "React Native:89(18)",
+        "Express:37(1)"
+      ],
+      "artifacts": [
+        "Tailwind CSS:72(6)",
+        "ESLint:72(9)",
+        "Prettier:54(4)",
+        "GitHub Actions:52(4)",
+        "Jest:49(3)",
+        "esbuild:47(1)",
+        "Yarn:39(1)"
+      ],
+      "coldLatencyMs": 41560,
+      "restRequests": 78
+    },
+    {
+      "username": "JakeWharton",
+      "class": "Bardo",
+      "subclass": null,
+      "leader": "chronomancer",
+      "score": 63.9,
+      "secondScore": 56.55833333333334,
+      "confidence": "low",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [],
+      "artifacts": [
+        "GitHub Actions:76(17)"
+      ],
+      "coldLatencyMs": 35774,
+      "restRequests": 90
+    },
+    {
+      "username": "Rich-Harris",
+      "class": "Mago",
+      "subclass": null,
+      "leader": "guardian",
+      "score": 74,
+      "secondScore": 65.60684523809525,
+      "confidence": "medium",
+      "coverage": "partial",
+      "reasonCode": "coverage_could_change_winner",
+      "evolution": null,
+      "schools": [
+        "Svelte:74(14)",
+        "SvelteKit:74(14)"
+      ],
+      "artifacts": [
+        "Vite:74(16)",
+        "Prettier:72(16)",
+        "GitHub Actions:63(7)",
+        "Vitest:54(4)",
+        "Rollup:53(5)",
+        "ESLint:42(2)",
+        "Playwright:41(2)",
+        "Tailwind CSS:40(1)"
+      ],
+      "coldLatencyMs": 44392,
+      "restRequests": 89
+    }
+  ]
+}

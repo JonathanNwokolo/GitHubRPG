@@ -1,0 +1,24 @@
+{
+  "collector": "2.1",
+  "balanceVersion": "game-engine-v2-balance-stage3-r3",
+  "method": "Technical review of holdout output against collected evidence only; the holdout was not used to tune rules.",
+  "summary": {
+    "GOOD": 0,
+    "ACCEPTABLE": 9,
+    "QUESTIONABLE": 1,
+    "BAD": 0,
+    "goodOrAcceptablePercent": 90
+  },
+  "profiles": [
+    { "username": "filipedeschamps", "rating": "ACCEPTABLE", "note": "Null is honest with partial-large coverage, score below strong and a 0.7 margin." },
+    { "username": "diego3g", "rating": "ACCEPTABLE", "note": "Null is honest with partial-small coverage and a 3.1 margin." },
+    { "username": "maykbrito", "rating": "ACCEPTABLE", "note": "Full/high evidence but a 2.2 margin correctly keeps the specialization ambiguous." },
+    { "username": "loiane", "rating": "ACCEPTABLE", "note": "Full coverage removed the old coverage veto; a 1.2 margin remains a valid blocker." },
+    { "username": "beatrizmilz", "rating": "ACCEPTABLE", "note": "Full evidence and score 48.4 correctly remain below the strong gate." },
+    { "username": "omariosouto", "rating": "ACCEPTABLE", "note": "Partial-small evidence and a 3.3 margin justify null without forcing a winner." },
+    { "username": "swyxio", "rating": "ACCEPTABLE", "note": "Full coverage and a 4.6 margin narrowly but correctly fail the unchanged margin gate." },
+    { "username": "antfu", "rating": "QUESTIONABLE", "note": "Strong leader and margin exist, but 67 discovered manifests remain outside the global budget; the conservative null is safe but not product-satisfying." },
+    { "username": "samuelcolvin", "rating": "ACCEPTABLE", "note": "A 0.1 leader margin makes null the coherent outcome independently of the small coverage gap." },
+    { "username": "ThePrimeagen", "rating": "ACCEPTABLE", "note": "Large coverage gap plus a 2.7 margin make null the defensible result." }
+  ]
+}

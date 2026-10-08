@@ -1,0 +1,58 @@
+{
+  "status": "PREVIEW_FAILED_DO_NOT_ROLLOUT",
+  "environment": "preview",
+  "productionModified": false,
+  "finalDeployment": {
+    "id": "dpl_Hyhz8c9G7EnD9vqZCaE1eUEkB9LX",
+    "url": "https://githubrpg-nq4tvkffi-jonathans-projects-3d942e5c.vercel.app",
+    "inspectorUrl": "https://vercel.com/jonathans-projects-3d942e5c/githubrpg/Hyhz8c9G7EnD9vqZCaE1eUEkB9LX",
+    "createdAt": "2026-10-07T21:26:11-03:00",
+    "target": "preview",
+    "readyState": "READY",
+    "protectedBy": "vercel_authentication"
+  },
+  "git": {
+    "branch": "main",
+    "commit": "92e6340f83a4cafae93d44e28d01caf533def556",
+    "originMain": "92e6340f83a4cafae93d44e28d01caf533def556"
+  },
+  "previewEnvironment": {
+    "GAME_ENGINE_V2_UI_ENABLED": true,
+    "GAME_ENGINE_V2_UI_ALLOWLIST": ["JonathanNwokolo"],
+    "GITHUB_DATA_SOURCE": "github",
+    "GITHUB_TOKEN": "NOT_CONFIGURED"
+  },
+  "productionEnvironmentObserved": {
+    "GAME_ENGINE_V2_UI_ENABLED": "ABSENT_DEFAULT_OFF",
+    "GAME_ENGINE_V2_UI_ALLOWLIST": "ABSENT",
+    "GITHUB_DATA_SOURCE": "PRESENT_HIDDEN",
+    "GITHUB_TOKEN": "PRESENT_HIDDEN"
+  },
+  "intermediateDeployments": [
+    {
+      "id": "dpl_3S24DeWogU7sYoJDaPyTAGaZFVvU",
+      "purpose": "initial preview; exposed missing GITHUB_DATA_SOURCE",
+      "result": "HTTP_500_MISCONFIGURED"
+    },
+    {
+      "id": "dpl_J99kKsxEV16hCaELMZrWz4onSeDq",
+      "purpose": "cold, after, UI and L1 proof",
+      "result": "CORE_FLOW_PROVEN"
+    },
+    {
+      "id": "dpl_95xr9qtAWJ1jAsna2VvnAKFhh4cT",
+      "purpose": "new deployment L2 proof",
+      "result": "L2_PROVEN_AND_ANONYMOUS_RATE_LIMIT_OBSERVED"
+    },
+    {
+      "id": "dpl_6ki4ecczRhKTyckZbqhjo7DCQm5h",
+      "purpose": "feature flag OFF rollback",
+      "result": "V1_RESTORED"
+    },
+    {
+      "id": "dpl_6mARAfDR5EQ5xHbEGRCdJYoPvNpT",
+      "purpose": "allowlist removal rollback",
+      "result": "V1_RESTORED"
+    }
+  ]
+}

@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import type { AchievementProgress, Rarity } from "@/game/types";
 import {
-  Card,
-  Badge,
   Dialog,
   Button,
   RpgIconFrame,
@@ -23,13 +21,6 @@ interface AchievementsGridProps {
   /** Opens the share card of an UNLOCKED achievement. Without it, no share action is offered. */
   onShareAchievement?: (achievement: AchievementProgress) => void;
 }
-
-const RARITY_BORDER: Record<Rarity, string> = {
-  common: "border-slate-500 shadow-sm",
-  rare: "border-sky-400 shadow-pixel-azure",
-  epic: "border-purple-400 shadow-pixel-arcane",
-  legendary: "border-amber-400 shadow-pixel-gold",
-};
 
 export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements, onShareAchievement }) => {
   const { language } = useUiStore();
@@ -78,58 +69,65 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map((achievement) => (
-          <div key={achievement.id} className="relative group">
-          <button
-            type="button"
-            onClick={() => setSelected(achievement)}
-            className={`w-full h-full text-left p-4 border-2 transition-all flex flex-col justify-between gap-3 relative overflow-hidden ${
-              achievement.unlocked
-                ? `bg-rpg-surface hover:-translate-y-1 hover:shadow-lg ${RARITY_BORDER[achievement.rarity]}`
-                : "bg-rpg-void border-rpg-border/40 hover:opacity-90"
-            } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold`}
-          >
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Badge variant={achievement.rarity} size="sm">
-                  {t.rarity[achievement.rarity]}
-                </Badge>
-                {achievement.unlocked ? (
-                  <RpgIconFrame size="xs" shape="circle" rarity={achievement.rarity} glow>
-                    <RpgUnlock className="w-3.5 h-3.5" />
-                  </RpgIconFrame>
-                ) : (
-                  <RpgIconFrame size="xs" shape="circle" rarity="common">
-                    <RpgLock className="w-3.5 h-3.5 text-slate-500" />
-                  </RpgIconFrame>
-                )}
-              </div>
-
-              <div>
-                <h3 className="font-sans font-bold text-sm text-slate-100 group-hover:text-amber-300 transition-colors leading-snug">
-                  {achievement.name}
-                </h3>
-                <p className="font-sans text-xs text-slate-300 mt-1 leading-relaxed">
-                  {achievement.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-2 border-t border-rpg-border/60">
-              <ProgressDetail progress={achievement} compact />
-            </div>
-          </button>
-          {/* A sibling of the card button (a button cannot hold a button): visible on hover/focus, always on touch. */}
-          {achievement.unlocked && onShareAchievement && (
+          <div key={achievement.id} className="relative group flex">
             <button
               type="button"
-              onClick={() => onShareAchievement(achievement)}
-              aria-label={fill(t.shareCard.achievementAction, { name: achievement.name })}
-              className="absolute bottom-2 right-2 inline-flex items-center gap-1 px-2 min-h-[36px] min-w-[36px] justify-center bg-rpg-obsidian border border-rpg-border text-xs font-sans font-bold text-amber-300 hover:border-rpg-gold opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold"
+              onClick={() => setSelected(achievement)}
+              className={`pf-achievement-card pf-achievement-card--${achievement.rarity} ${
+                achievement.unlocked
+                  ? "pf-achievement-card--unlocked"
+                  : "pf-achievement-card--locked"
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold`}
             >
-              <RpgShare className="w-3.5 h-3.5" />
-              <span>{t.shareCard.shareAction}</span>
+              <div className="space-y-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className={`pf-seal pf-seal--rarity-${achievement.rarity}`}>
+                    {t.rarity[achievement.rarity]}
+                  </span>
+                  {achievement.unlocked ? (
+                    <RpgIconFrame size="sm" shape="circle" rarity={achievement.rarity} glow>
+                      <RpgUnlock className="w-3.5 h-3.5" />
+                    </RpgIconFrame>
+                  ) : (
+                    <RpgIconFrame size="sm" shape="circle" rarity="common">
+                      <RpgLock className="w-3.5 h-3.5 text-slate-400" />
+                    </RpgIconFrame>
+                  )}
+                </div>
+
+                <div>
+                  <h3
+                    className={`font-sans font-bold text-sm leading-snug tracking-wide transition-colors ${
+                      achievement.unlocked
+                        ? "text-amber-100 group-hover:text-amber-300"
+                        : "text-slate-300"
+                    }`}
+                  >
+                    {achievement.name}
+                  </h3>
+                  <p className="font-sans text-xs text-slate-300/90 mt-1 leading-relaxed">
+                    {achievement.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2.5 mt-auto border-t border-[#4a3822]/60">
+                <ProgressDetail progress={achievement} compact tone="profile" />
+              </div>
             </button>
-          )}
+
+            {/* A sibling of the card button: visible on hover/focus, always on touch. */}
+            {achievement.unlocked && onShareAchievement && (
+              <button
+                type="button"
+                onClick={() => onShareAchievement(achievement)}
+                aria-label={fill(t.shareCard.achievementAction, { name: achievement.name })}
+                className="absolute bottom-2.5 right-2.5 pf-share-badge-btn opacity-100 md:opacity-0 md:group-hover:opacity-100 focus-visible:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold z-10"
+              >
+                <RpgShare className="w-3.5 h-3.5" />
+                <span>{t.shareCard.shareAction}</span>
+              </button>
+            )}
           </div>
         ))}
       </div>
@@ -143,10 +141,12 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
       >
         {selected && (
           <div className="space-y-4 py-2">
-            <Card
-              className={`space-y-3 ${selected.unlocked ? "border-rpg-goldDark shadow-pixel-gold" : "opacity-90"}`}
+            <div
+              className={`pf-achievement-card pf-achievement-card--${selected.rarity} ${
+                selected.unlocked ? "pf-achievement-card--unlocked" : "pf-achievement-card--locked"
+              } p-5 space-y-3.5`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   {selected.unlocked ? (
                     <RpgIconFrame size="sm" shape="circle" rarity={selected.rarity} glow>
@@ -154,10 +154,12 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
                     </RpgIconFrame>
                   ) : (
                     <RpgIconFrame size="sm" shape="circle" rarity="common">
-                      <RpgLock className="w-4 h-4 text-slate-500" />
+                      <RpgLock className="w-4 h-4 text-slate-400" />
                     </RpgIconFrame>
                   )}
-                  <Badge variant={selected.rarity}>{t.rarity[selected.rarity]}</Badge>
+                  <span className={`pf-seal pf-seal--rarity-${selected.rarity}`}>
+                    {t.rarity[selected.rarity]}
+                  </span>
                 </div>
                 <span className="font-sans text-xs font-bold text-amber-400">
                   {selected.unlocked ? t.progress.unlocked : t.progress.locked}
@@ -166,11 +168,11 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
               <p className="font-sans text-sm text-slate-100 font-medium leading-relaxed">
                 {selected.description}
               </p>
-              <ProgressDetail progress={selected} />
+              <ProgressDetail progress={selected} tone="profile" />
               {selected.category === "reviews" && (
                 <p className="font-sans text-xs text-slate-400 italic">{t.achievements.reviewsNote}</p>
               )}
-            </Card>
+            </div>
 
             <div className="flex flex-wrap justify-end gap-2">
               {selected.unlocked && onShareAchievement && (
@@ -179,7 +181,6 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
                   variant="primary"
                   className="gap-2"
                   onClick={() => {
-                    // One dialog at a time: the detail closes (returning focus to its card) and the share card opens.
                     const achievement = selected;
                     setSelected(null);
                     onShareAchievement(achievement);

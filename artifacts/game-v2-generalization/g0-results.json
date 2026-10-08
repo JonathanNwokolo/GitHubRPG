@@ -1,0 +1,5446 @@
+{
+  "generatedAt": "2026-10-07T21:29:33.661Z",
+  "stage": "3E-G0-INDEPENDENT-BASELINE",
+  "matrixFrozenAt": "2026-10-07",
+  "engineVersion": "2.0-experimental-v23",
+  "balanceVersion": "game-engine-v2-balance-v23-r1-signals",
+  "tunablesChangedBeforeG0": false,
+  "profiles": [
+    {
+      "username": "bradtraversy",
+      "category": "frontend-ui",
+      "reason": "Broad public web-project set with recurring client-side applications.",
+      "scores": {
+        "architect": 72.35,
+        "artificer": 64.72,
+        "illusionist": 75.28,
+        "guardian": 42.58,
+        "chronomancer": 35.14
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 2.93,
+      "guaranteedMargin": -23.12,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "medium",
+      "maturity": 70,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "margin_insufficient",
+      "schools": [
+        {
+          "id": "react",
+          "score": 84.17,
+          "repos": 12
+        },
+        {
+          "id": "express",
+          "score": 71.25,
+          "repos": 6
+        },
+        {
+          "id": "nextjs",
+          "score": 69.58,
+          "repos": 6
+        },
+        {
+          "id": "astro",
+          "score": 60.83,
+          "repos": 4
+        },
+        {
+          "id": "expo",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "react-native",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "fastapi",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "tailwind",
+          "score": 76.61,
+          "repos": 9
+        },
+        {
+          "id": "eslint",
+          "score": 67.38,
+          "repos": 7
+        },
+        {
+          "id": "github-actions",
+          "score": 56.33,
+          "repos": 5
+        },
+        {
+          "id": "vite",
+          "score": 50.42,
+          "repos": 3
+        },
+        {
+          "id": "vitest",
+          "score": 49.25,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 46.83,
+          "repos": 3
+        },
+        {
+          "id": "electron",
+          "score": 45.71,
+          "repos": 2
+        },
+        {
+          "id": "jest",
+          "score": 45.71,
+          "repos": 2
+        },
+        {
+          "id": "esbuild",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "shadcn-ui",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend",
+          "three-signals"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 72.3502625,
+        "artificer": 64.71883333333334,
+        "illusionist": 75.27881666666667,
+        "guardian": 42.577343750000004,
+        "chronomancer": 35.13570833333333
+      },
+      "uniformSpecificity": {
+        "architect": 82.84850000000002,
+        "artificer": 82.94666666666667,
+        "illusionist": 91.20675,
+        "guardian": 63.11,
+        "chronomancer": 49.54291666666667
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-class-mago-bardo",
+        "title-school-ui",
+        "title-school-services"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "schools-first",
+        "schools-3",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 11.62,
+      "coldLatencyMs": 27327,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 96,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 105,
+        "manifestsSkippedByBudget": 9,
+        "projectsDiscovered": 45,
+        "rateLimitRemaining": 4987,
+        "timingsMs": {
+          "repositorySelection": 1119,
+          "treeDiscovery": 2674,
+          "manifestFetch": 4819,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "bradtraversy",
+        "rating": "GOOD",
+        "note": "React/UI evidence is strong, but Architect and Illusionist are separated by only 2.93 observed points; null preserves observed ambiguity."
+      }
+    },
+    {
+      "username": "wesbos",
+      "category": "frontend-ui",
+      "reason": "Large public JavaScript and browser-facing project set.",
+      "scores": {
+        "architect": 65.34,
+        "artificer": 57.53,
+        "illusionist": 57.7,
+        "guardian": 51.74,
+        "chronomancer": 33.41
+      },
+      "top1": "architect",
+      "top2": "illusionist",
+      "observedMargin": 7.64,
+      "guaranteedMargin": -38.64,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "medium",
+      "maturity": 90,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 82.5,
+          "repos": 9
+        },
+        {
+          "id": "svelte",
+          "score": 46.92,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "remix",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "sveltekit",
+          "score": 38.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "vite",
+          "score": 85.11,
+          "repos": 19
+        },
+        {
+          "id": "pnpm",
+          "score": 69.58,
+          "repos": 8
+        },
+        {
+          "id": "eslint",
+          "score": 53.23,
+          "repos": 4
+        },
+        {
+          "id": "github-actions",
+          "score": 51.92,
+          "repos": 4
+        },
+        {
+          "id": "vitest",
+          "score": 49.83,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 49.25,
+          "repos": 3
+        },
+        {
+          "id": "playwright",
+          "score": 42.17,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend",
+          "three-signals"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 65.34043125000001,
+        "artificer": 57.97623903508773,
+        "illusionist": 57.697976041666664,
+        "guardian": 51.74250000000001,
+        "chronomancer": 33.43863212719299
+      },
+      "uniformSpecificity": {
+        "architect": 83.24154166666666,
+        "artificer": 68.13,
+        "illusionist": 72.5033125,
+        "guardian": 64.98500000000001,
+        "chronomancer": 48.925000000000004
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-class-mago-bardo",
+        "title-school-ui"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "issues-500",
+        "schools-first",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 3.52,
+      "coldLatencyMs": 30410,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 111,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 122,
+        "manifestsSkippedByBudget": 11,
+        "projectsDiscovered": 51,
+        "rateLimitRemaining": 4969,
+        "timingsMs": {
+          "repositorySelection": 1134,
+          "treeDiscovery": 2143,
+          "manifestFetch": 4068,
+          "parsing": 2
+        }
+      },
+      "evaluation": {
+        "username": "wesbos",
+        "rating": "ACCEPTABLE",
+        "note": "Architect leads by 7.64, but the partial-small interval can still invert the winner; the conservative null is supported by the bounds."
+      }
+    },
+    {
+      "username": "cassidoo",
+      "category": "frontend-ui",
+      "reason": "Public UI and web application projects with varied repository sizes.",
+      "scores": {
+        "architect": 29.14,
+        "artificer": 68.21,
+        "illusionist": 53.63,
+        "guardian": 29.71,
+        "chronomancer": 30.76
+      },
+      "top1": "artificer",
+      "top2": "illusionist",
+      "observedMargin": 14.58,
+      "guaranteedMargin": 14.58,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 84,
+      "safeWinner": true,
+      "subclass": "artificer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "react",
+          "score": 70.42,
+          "repos": 6
+        },
+        {
+          "id": "astro",
+          "score": 46.42,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "vite",
+          "score": 72.4,
+          "repos": 8
+        },
+        {
+          "id": "eslint",
+          "score": 58.73,
+          "repos": 5
+        },
+        {
+          "id": "electron",
+          "score": 54.54,
+          "repos": 4
+        },
+        {
+          "id": "github-actions",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "tailwind",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "prettier",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 40.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 29.141624999999998,
+        "artificer": 68.20937500000001,
+        "illusionist": 53.63004166666667,
+        "guardian": 29.710000000000004,
+        "chronomancer": 30.764375
+      },
+      "uniformSpecificity": {
+        "architect": 45.36666666666666,
+        "artificer": 76.98333333333333,
+        "illusionist": 69.0125,
+        "guardian": 47.5125,
+        "chronomancer": 49.33208333333333
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-class-paladino-mago",
+        "title-practice-artificer",
+        "title-school-ui",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "reviews-50",
+        "issues-10",
+        "issues-50",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "languages-balanced-3",
+        "schools-first",
+        "school-recurring-5",
+        "artifacts-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.94,
+      "coldLatencyMs": 16767,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 42,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 42,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 16,
+        "rateLimitRemaining": 4961,
+        "timingsMs": {
+          "repositorySelection": 914,
+          "treeDiscovery": 1778,
+          "manifestFetch": 2034,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "cassidoo",
+        "rating": "ACCEPTABLE",
+        "note": "Recurring Vite plus Electron and supporting build tools form a defensible Artificer pattern with full coverage and a 14.58 margin."
+      }
+    },
+    {
+      "username": "joshwcomeau",
+      "category": "frontend-ui",
+      "reason": "Public React and interactive-web project set.",
+      "scores": {
+        "architect": 61.01,
+        "artificer": 43.11,
+        "illusionist": 71.62,
+        "guardian": 57.5,
+        "chronomancer": 13.21
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 10.61,
+      "guaranteedMargin": 10.61,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "high",
+      "maturity": 84,
+      "safeWinner": true,
+      "subclass": "illusionist",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "react",
+          "score": 88.82,
+          "repos": 26
+        },
+        {
+          "id": "nextjs",
+          "score": 75.53,
+          "repos": 10
+        },
+        {
+          "id": "express",
+          "score": 40.92,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "prettier",
+          "score": 73.42,
+          "repos": 15
+        },
+        {
+          "id": "eslint",
+          "score": 70.87,
+          "repos": 14
+        },
+        {
+          "id": "vite",
+          "score": 52.42,
+          "repos": 4
+        },
+        {
+          "id": "jest",
+          "score": 51.75,
+          "repos": 3
+        },
+        {
+          "id": "storybook",
+          "score": 45.83,
+          "repos": 3
+        },
+        {
+          "id": "pnpm",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "vitest",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 37.96,
+          "repos": 2
+        },
+        {
+          "id": "yarn",
+          "score": 30.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "storybook+ui"
+        ],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 61.006524999999996,
+        "artificer": 43.109023809523805,
+        "illusionist": 71.61938878205129,
+        "guardian": 57.49625,
+        "chronomancer": 13.206813988095238
+      },
+      "uniformSpecificity": {
+        "architect": 67.8505,
+        "artificer": 63.24,
+        "illusionist": 78.31741666666667,
+        "guardian": 80.405,
+        "chronomancer": 14.465
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-practice-illusionist",
+        "title-school-ui",
+        "title-school-portals",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "reviews-50",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "schools-first",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.42,
+      "coldLatencyMs": 21690,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 104,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 104,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 34,
+        "rateLimitRemaining": 4949,
+        "timingsMs": {
+          "repositorySelection": 2304,
+          "treeDiscovery": 1859,
+          "manifestFetch": 4286,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "joshwcomeau",
+        "rating": "GOOD",
+        "note": "Recurring React/Next.js with Storybook and UI tooling supports Illusionist under full, high-confidence evidence."
+      }
+    },
+    {
+      "username": "adamwathan",
+      "category": "frontend-ui",
+      "reason": "Public UI-system and web-tool projects.",
+      "scores": {
+        "architect": 66.58,
+        "artificer": 48.02,
+        "illusionist": 74.07,
+        "guardian": 34.04,
+        "chronomancer": 13.77
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 7.49,
+      "guaranteedMargin": 7.49,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "high",
+      "maturity": 89,
+      "safeWinner": true,
+      "subclass": "illusionist",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "react",
+          "score": 73.89,
+          "repos": 11
+        },
+        {
+          "id": "nextjs",
+          "score": 67.32,
+          "repos": 7
+        },
+        {
+          "id": "vue",
+          "score": 56.24,
+          "repos": 5
+        },
+        {
+          "id": "astro",
+          "score": 40.21,
+          "repos": 1
+        },
+        {
+          "id": "nuxt",
+          "score": 39.42,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 34.21,
+          "repos": 1
+        },
+        {
+          "id": "svelte",
+          "score": 33.42,
+          "repos": 2
+        },
+        {
+          "id": "sveltekit",
+          "score": 33.42,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "tailwind",
+          "score": 84.46,
+          "repos": 27
+        },
+        {
+          "id": "eslint",
+          "score": 67.99,
+          "repos": 10
+        },
+        {
+          "id": "vite",
+          "score": 52.48,
+          "repos": 5
+        },
+        {
+          "id": "webpack",
+          "score": 46.25,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 45.58,
+          "repos": 3
+        },
+        {
+          "id": "jest",
+          "score": 44.46,
+          "repos": 2
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend",
+          "three-signals"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 66.5752017857143,
+        "artificer": 48.019800000000004,
+        "illusionist": 74.0692212391775,
+        "guardian": 34.0446875,
+        "chronomancer": 13.7687375
+      },
+      "uniformSpecificity": {
+        "architect": 76.82050000000001,
+        "artificer": 68.16000000000001,
+        "illusionist": 92.27208333333334,
+        "guardian": 50.540000000000006,
+        "chronomancer": 15.027500000000002
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-practice-illusionist",
+        "title-school-ui",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "schools-first",
+        "schools-3",
+        "school-recurring-5",
+        "artifacts-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.48,
+      "coldLatencyMs": 18584,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 102,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 102,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 30,
+        "rateLimitRemaining": 4938,
+        "timingsMs": {
+          "repositorySelection": 2642,
+          "treeDiscovery": 1947,
+          "manifestFetch": 4527,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "adamwathan",
+        "rating": "GOOD",
+        "note": "React/Vue plus highly recurrent Tailwind evidence produces a coherent Illusionist result with full coverage."
+      }
+    },
+    {
+      "username": "developit",
+      "category": "frontend-ui",
+      "reason": "Public client-framework and web-runtime projects.",
+      "scores": {
+        "architect": 25.08,
+        "artificer": 91.91,
+        "illusionist": 41.6,
+        "guardian": 64.27,
+        "chronomancer": 59.9
+      },
+      "top1": "artificer",
+      "top2": "guardian",
+      "observedMargin": 27.64,
+      "guaranteedMargin": 27.64,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "high",
+      "maturity": 97,
+      "safeWinner": true,
+      "subclass": "artificer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "express",
+          "score": 34.21,
+          "repos": 1
+        },
+        {
+          "id": "react",
+          "score": 26.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 72.66,
+          "repos": 20
+        },
+        {
+          "id": "webpack",
+          "score": 69.15,
+          "repos": 8
+        },
+        {
+          "id": "github-actions",
+          "score": 68,
+          "repos": 15
+        },
+        {
+          "id": "rollup",
+          "score": 65.56,
+          "repos": 7
+        },
+        {
+          "id": "prettier",
+          "score": 64.9,
+          "repos": 8
+        },
+        {
+          "id": "jest",
+          "score": 60.49,
+          "repos": 7
+        },
+        {
+          "id": "vite",
+          "score": 47.5,
+          "repos": 3
+        },
+        {
+          "id": "vitest",
+          "score": 46.58,
+          "repos": 2
+        },
+        {
+          "id": "esbuild",
+          "score": 46.33,
+          "repos": 2
+        },
+        {
+          "id": "tailwind",
+          "score": 41.33,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 41.21,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 30.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "two-specific",
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual"
+        ],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 25.077085714285715,
+        "artificer": 91.90937500000001,
+        "illusionist": 41.59543928571429,
+        "guardian": 64.27066964285714,
+        "chronomancer": 59.90000000000001
+      },
+      "uniformSpecificity": {
+        "architect": 41.02024999999999,
+        "artificer": 92.61625000000001,
+        "illusionist": 64.81508333333333,
+        "guardian": 80.79624999999999,
+        "chronomancer": 71.21
+      },
+      "evolution": "evo-ancestral-forger",
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-artificer",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "language-specialist-70",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.79,
+      "coldLatencyMs": 23903,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 108,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 108,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 44,
+        "rateLimitRemaining": 4922,
+        "timingsMs": {
+          "repositorySelection": 1100,
+          "treeDiscovery": 1796,
+          "manifestFetch": 3989,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "developit",
+        "rating": "GOOD",
+        "note": "Webpack, Rollup and other recurring build artifacts create a distinct Artificer pattern with a large safe margin."
+      }
+    },
+    {
+      "username": "ry",
+      "category": "backend-architecture",
+      "reason": "Public runtime and server-oriented repositories.",
+      "scores": {
+        "architect": 40.86,
+        "artificer": 38.54,
+        "illusionist": 61.25,
+        "guardian": 19.99,
+        "chronomancer": 29.45
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 20.39,
+      "guaranteedMargin": -36.8,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 91,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "nextjs",
+          "score": 53.05,
+          "repos": 3
+        },
+        {
+          "id": "react",
+          "score": 53.05,
+          "repos": 3
+        },
+        {
+          "id": "svelte",
+          "score": 37.92,
+          "repos": 2
+        },
+        {
+          "id": "sveltekit",
+          "score": 37.92,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 45.11,
+          "repos": 2
+        },
+        {
+          "id": "tailwind",
+          "score": 45.11,
+          "repos": 2
+        },
+        {
+          "id": "github-actions",
+          "score": 42.61,
+          "repos": 3
+        },
+        {
+          "id": "vite",
+          "score": 41.49,
+          "repos": 2
+        },
+        {
+          "id": "prettier",
+          "score": 30.62,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 40.86298260869566,
+        "artificer": 38.54120869565217,
+        "illusionist": 61.248887681159424,
+        "guardian": 19.988695652173913,
+        "chronomancer": 29.4530375
+      },
+      "uniformSpecificity": {
+        "architect": 54.65419565217392,
+        "artificer": 67.49173913043478,
+        "illusionist": 79.39972826086957,
+        "guardian": 21.130000000000003,
+        "chronomancer": 49.45198369565218
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-class-mago-guerreiro"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "artifacts-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.28,
+      "coldLatencyMs": 14312,
+      "requests": {
+        "rest": 24,
+        "graphql": 2,
+        "manifestFetches": 47,
+        "reposInspected": 23,
+        "cacheHits": 0,
+        "treeRequests": 23,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 64,
+        "manifestsSkippedByBudget": 17,
+        "projectsDiscovered": 37,
+        "rateLimitRemaining": 4913,
+        "timingsMs": {
+          "repositorySelection": 609,
+          "treeDiscovery": 2676,
+          "manifestFetch": 2252,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "ry",
+        "rating": "ACCEPTABLE",
+        "note": "Observed UI/meta signals favor Illusionist, but partial-large uncertainty can reverse the result; null is appropriately conservative."
+      }
+    },
+    {
+      "username": "fatih",
+      "category": "backend-architecture",
+      "reason": "Public Go service and developer-platform projects.",
+      "scores": {
+        "architect": 10.25,
+        "artificer": 11.36,
+        "illusionist": 6.6,
+        "guardian": 21.93,
+        "chronomancer": 55.47
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "observedMargin": 33.53,
+      "guaranteedMargin": 33.53,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 88,
+      "safeWinner": true,
+      "subclass": "chronomancer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 66.47,
+          "repos": 11
+        },
+        {
+          "id": "docker",
+          "score": 37.08,
+          "repos": 2
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 10.250965909090908,
+        "artificer": 11.364943181818182,
+        "illusionist": 6.6,
+        "guardian": 21.934943181818184,
+        "chronomancer": 55.469090909090916
+      },
+      "uniformSpecificity": {
+        "architect": 10.713750000000001,
+        "artificer": 12.13625,
+        "illusionist": 6.6,
+        "guardian": 22.706250000000004,
+        "chronomancer": 67.81
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-chronomancer"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.09,
+      "coldLatencyMs": 10188,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 14,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 14,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 0,
+        "rateLimitRemaining": 4906,
+        "timingsMs": {
+          "repositorySelection": 694,
+          "treeDiscovery": 1897,
+          "manifestFetch": 1688,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "fatih",
+        "rating": "ACCEPTABLE",
+        "note": "Recurring GitHub Actions plus Docker supports Chronomancer with full coverage and a wide margin."
+      }
+    },
+    {
+      "username": "julienschmidt",
+      "category": "backend-architecture",
+      "reason": "Public Go HTTP and routing-oriented repositories.",
+      "scores": {
+        "architect": 8.82,
+        "artificer": 8.82,
+        "illusionist": 6.9,
+        "guardian": 18.54,
+        "chronomancer": 10.83
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "observedMargin": 7.71,
+      "guaranteedMargin": -77.21,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "low",
+      "maturity": 77,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [],
+      "artifacts": [],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 8.82,
+        "artificer": 8.82,
+        "illusionist": 6.9,
+        "guardian": 18.54,
+        "chronomancer": 10.83
+      },
+      "uniformSpecificity": {
+        "architect": 8.82,
+        "artificer": 8.82,
+        "illusionist": 6.9,
+        "guardian": 18.54,
+        "chronomancer": 10.83
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-class-patrulheiro-alquimista"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.4,
+      "coldLatencyMs": 11620,
+      "requests": {
+        "rest": 17,
+        "graphql": 0,
+        "manifestFetches": 0,
+        "reposInspected": 16,
+        "cacheHits": 0,
+        "treeRequests": 16,
+        "manifestRequests": 0,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 0,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 0,
+        "rateLimitRemaining": 4735,
+        "timingsMs": {
+          "repositorySelection": 749,
+          "treeDiscovery": 995,
+          "manifestFetch": 0,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "julienschmidt",
+        "rating": "GOOD",
+        "note": "No catalog school or artifact evidence was detected and confidence is low, so a subclass would not be evidence-backed."
+      }
+    },
+    {
+      "username": "spf13",
+      "category": "backend-architecture",
+      "reason": "Public Go application architecture and CLI repositories.",
+      "scores": {
+        "architect": 19.66,
+        "artificer": 10.02,
+        "illusionist": 7.32,
+        "guardian": 10.2,
+        "chronomancer": 35.08
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "observedMargin": 15.42,
+      "guaranteedMargin": 15.42,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 72,
+      "safeWinner": true,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [
+        {
+          "id": "express",
+          "score": 29.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 68,
+          "repos": 9
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 19.660124999999997,
+        "artificer": 10.02,
+        "illusionist": 7.3171875,
+        "guardian": 10.2,
+        "chronomancer": 35.080000000000005
+      },
+      "uniformSpecificity": {
+        "architect": 32.5325,
+        "artificer": 10.59,
+        "illusionist": 8.120416666666667,
+        "guardian": 10.77,
+        "chronomancer": 44.20000000000001
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "issues-10",
+        "issues-50",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.68,
+      "coldLatencyMs": 11065,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 19,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 19,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 2,
+        "rateLimitRemaining": 4892,
+        "timingsMs": {
+          "repositorySelection": 778,
+          "treeDiscovery": 1951,
+          "manifestFetch": 1667,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "spf13",
+        "rating": "GOOD",
+        "note": "GitHub Actions is recurrent but does not create a strong multi-signal pattern; null at score 35.08 is appropriate."
+      }
+    },
+    {
+      "username": "adamchainz",
+      "category": "backend-architecture",
+      "reason": "Large public Python/Django maintenance and package set.",
+      "scores": {
+        "architect": 61.87,
+        "artificer": 14.37,
+        "illusionist": 12.93,
+        "guardian": 21.38,
+        "chronomancer": 43.4
+      },
+      "top1": "architect",
+      "top2": "chronomancer",
+      "observedMargin": 18.47,
+      "guaranteedMargin": 18.47,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 99,
+      "safeWinner": true,
+      "subclass": "architect",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "django",
+          "score": 82.5,
+          "repos": 9
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 84.25,
+          "repos": 30
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 61.869875,
+        "artificer": 14.365625000000001,
+        "illusionist": 12.93375,
+        "guardian": 21.375625,
+        "chronomancer": 43.400000000000006
+      },
+      "uniformSpecificity": {
+        "architect": 78.08000000000001,
+        "artificer": 14.57,
+        "illusionist": 13.965,
+        "guardian": 21.580000000000002,
+        "chronomancer": 46.67
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-architect",
+        "title-school-services",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "school-recurring-5",
+        "automation-ci-3",
+        "five-paths",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.99,
+      "coldLatencyMs": 66497,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 58,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 58,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 28,
+        "rateLimitRemaining": 4825,
+        "timingsMs": {
+          "repositorySelection": 1123,
+          "treeDiscovery": 2669,
+          "manifestFetch": 2472,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "adamchainz",
+        "rating": "ACCEPTABLE",
+        "note": "Highly recurrent Django evidence supports Architect and the full-coverage margin is safely above the gate."
+      }
+    },
+    {
+      "username": "tj",
+      "category": "backend-architecture",
+      "reason": "Public server, CLI, and systems-facing JavaScript/Go repositories.",
+      "scores": {
+        "architect": 25.31,
+        "artificer": 43.69,
+        "illusionist": 23.97,
+        "guardian": 25.68,
+        "chronomancer": 57.43
+      },
+      "top1": "chronomancer",
+      "top2": "artificer",
+      "observedMargin": 13.74,
+      "guaranteedMargin": 13.74,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 83,
+      "safeWinner": true,
+      "subclass": "chronomancer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "react",
+          "score": 38.92,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 34.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 64.52,
+          "repos": 8
+        },
+        {
+          "id": "eslint",
+          "score": 46.42,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "docker",
+          "score": 40.75,
+          "repos": 3
+        },
+        {
+          "id": "vite",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 33.92,
+          "repos": 1
+        },
+        {
+          "id": "yarn",
+          "score": 30.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 25.31238125,
+        "artificer": 43.690260416666675,
+        "illusionist": 23.9653125,
+        "guardian": 25.68021875,
+        "chronomancer": 57.42854166666667
+      },
+      "uniformSpecificity": {
+        "architect": 41.37591666666667,
+        "artificer": 69.45125,
+        "illusionist": 42.69624999999999,
+        "guardian": 43.18375,
+        "chronomancer": 72.293125
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-chronomancer",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "issues-500",
+        "schools-first",
+        "artifacts-3",
+        "automation-ci-3",
+        "containers-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.72,
+      "coldLatencyMs": 23224,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 49,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 49,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 21,
+        "rateLimitRemaining": 4814,
+        "timingsMs": {
+          "repositorySelection": 800,
+          "treeDiscovery": 2058,
+          "manifestFetch": 2666,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "tj",
+        "rating": "ACCEPTABLE",
+        "note": "GitHub Actions with Docker and supporting tooling yields a defensible Chronomancer pattern under full coverage."
+      }
+    },
+    {
+      "username": "paulirish",
+      "category": "tooling-library",
+      "reason": "Public browser tooling and performance-oriented library set.",
+      "scores": {
+        "architect": 29.25,
+        "artificer": 55.53,
+        "illusionist": 19.04,
+        "guardian": 65.19,
+        "chronomancer": 39.96
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "observedMargin": 9.65,
+      "guaranteedMargin": 9.65,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 96,
+      "safeWinner": true,
+      "subclass": "guardian",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "express",
+          "score": 45.25,
+          "repos": 2
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 70.65,
+          "repos": 8
+        },
+        {
+          "id": "eslint",
+          "score": 48.01,
+          "repos": 4
+        },
+        {
+          "id": "rollup",
+          "score": 46.85,
+          "repos": 2
+        },
+        {
+          "id": "pnpm",
+          "score": 43.35,
+          "repos": 2
+        },
+        {
+          "id": "playwright",
+          "score": 42.3,
+          "repos": 1
+        },
+        {
+          "id": "prettier",
+          "score": 42.3,
+          "repos": 1
+        },
+        {
+          "id": "jest",
+          "score": 30.55,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 29.250495,
+        "artificer": 55.534925,
+        "illusionist": 19.0436025,
+        "guardian": 65.18656250000001,
+        "chronomancer": 39.95683125000001
+      },
+      "uniformSpecificity": {
+        "architect": 47.0586,
+        "artificer": 71.16,
+        "illusionist": 45.73395,
+        "guardian": 77.40874999999998,
+        "chronomancer": 49.067499999999995
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-guardian",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "artifacts-3",
+        "automation-ci-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.78,
+      "coldLatencyMs": 29598,
+      "requests": {
+        "rest": 26,
+        "graphql": 3,
+        "manifestFetches": 64,
+        "reposInspected": 25,
+        "cacheHits": 0,
+        "treeRequests": 25,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 64,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 25,
+        "rateLimitRemaining": 4798,
+        "timingsMs": {
+          "repositorySelection": 2120,
+          "treeDiscovery": 1833,
+          "manifestFetch": 3027,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "paulirish",
+        "rating": "QUESTIONABLE",
+        "note": "Guardian wins safely, but the visible testing evidence is narrow relative to the strength of the granted score; the result deserves catalog-level review, not tuning from this profile."
+      }
+    },
+    {
+      "username": "isaacs",
+      "category": "tooling-library",
+      "reason": "Large public package and runtime-tooling set.",
+      "scores": {
+        "architect": 10.36,
+        "artificer": 74.33,
+        "illusionist": 7.08,
+        "guardian": 21.32,
+        "chronomancer": 45.03
+      },
+      "top1": "artificer",
+      "top2": "chronomancer",
+      "observedMargin": 29.3,
+      "guaranteedMargin": 29.3,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "high",
+      "maturity": 98,
+      "safeWinner": true,
+      "subclass": "artificer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "prettier",
+          "score": 84.97,
+          "repos": 27
+        },
+        {
+          "id": "github-actions",
+          "score": 82.92,
+          "repos": 28
+        },
+        {
+          "id": "esbuild",
+          "score": 68.67,
+          "repos": 7
+        },
+        {
+          "id": "eslint",
+          "score": 40.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 10.359375,
+        "artificer": 74.33309166666668,
+        "illusionist": 7.08,
+        "guardian": 21.315625000000004,
+        "chronomancer": 45.03171666666667
+      },
+      "uniformSpecificity": {
+        "architect": 10.5,
+        "artificer": 87.60333333333334,
+        "illusionist": 7.08,
+        "guardian": 21.550000000000004,
+        "chronomancer": 49.59645833333333
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-artificer",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "artifacts-3",
+        "automation-ci-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.8,
+      "coldLatencyMs": 36427,
+      "requests": {
+        "rest": 31,
+        "graphql": 5,
+        "manifestFetches": 130,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 5,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 130,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 31,
+        "rateLimitRemaining": 4779,
+        "timingsMs": {
+          "repositorySelection": 1019,
+          "treeDiscovery": 2232,
+          "manifestFetch": 5524,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "isaacs",
+        "rating": "GOOD",
+        "note": "Recurring esbuild plus a broad package-tooling footprint yields a clear Artificer result with a 29.30 margin."
+      }
+    },
+    {
+      "username": "feross",
+      "category": "tooling-library",
+      "reason": "Public JavaScript libraries and cross-platform tooling.",
+      "scores": {
+        "architect": 47.05,
+        "artificer": 16.41,
+        "illusionist": 57.75,
+        "guardian": 20.14,
+        "chronomancer": 34.61
+      },
+      "top1": "illusionist",
+      "top2": "architect",
+      "observedMargin": 10.7,
+      "guaranteedMargin": 10.7,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "low",
+      "maturity": 98,
+      "safeWinner": true,
+      "subclass": null,
+      "reasonCode": "confidence_insufficient",
+      "schools": [
+        {
+          "id": "express",
+          "score": 50.29,
+          "repos": 3
+        },
+        {
+          "id": "nextjs",
+          "score": 34.21,
+          "repos": 1
+        },
+        {
+          "id": "react",
+          "score": 34.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 64.9,
+          "repos": 11
+        },
+        {
+          "id": "chakra-ui",
+          "score": 46.17,
+          "repos": 1
+        },
+        {
+          "id": "eslint",
+          "score": 30.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend"
+        ],
+        "artificer": [],
+        "illusionist": [
+          "ui+visual"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 47.05115795454546,
+        "artificer": 16.406950757575757,
+        "illusionist": 57.75494791666667,
+        "guardian": 20.14028409090909,
+        "chronomancer": 34.60871212121213
+      },
+      "uniformSpecificity": {
+        "architect": 66.14474999999999,
+        "artificer": 36.513333333333335,
+        "illusionist": 70.85645833333335,
+        "guardian": 20.78,
+        "chronomancer": 46.06083333333334
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.65,
+      "coldLatencyMs": 14824,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 45,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 45,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 29,
+        "rateLimitRemaining": 4771,
+        "timingsMs": {
+          "repositorySelection": 982,
+          "treeDiscovery": 2210,
+          "manifestFetch": 3091,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "feross",
+        "rating": "GOOD",
+        "note": "The observed leader is strong, but primary evidence spans too few repositories for medium confidence; null correctly enforces the confidence gate."
+      }
+    },
+    {
+      "username": "lukeed",
+      "category": "tooling-library",
+      "reason": "Public small libraries, build tools, and server utilities.",
+      "scores": {
+        "architect": 34.48,
+        "artificer": 77.43,
+        "illusionist": 34.53,
+        "guardian": 35.87,
+        "chronomancer": 43.62
+      },
+      "top1": "artificer",
+      "top2": "chronomancer",
+      "observedMargin": 33.81,
+      "guaranteedMargin": -21.72,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 95,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "astro",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "react",
+          "score": 30.21,
+          "repos": 1
+        },
+        {
+          "id": "svelte",
+          "score": 26.21,
+          "repos": 1
+        },
+        {
+          "id": "sveltekit",
+          "score": 25.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 76.62,
+          "repos": 23
+        },
+        {
+          "id": "rollup",
+          "score": 62.8,
+          "repos": 8
+        },
+        {
+          "id": "vite",
+          "score": 47.42,
+          "repos": 1
+        },
+        {
+          "id": "jest",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "esbuild",
+          "score": 44.17,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 40.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "multi-ui"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 34.4767527173913,
+        "artificer": 77.42635869565218,
+        "illusionist": 34.52873958333333,
+        "guardian": 35.865108695652175,
+        "chronomancer": 43.61502038043478
+      },
+      "uniformSpecificity": {
+        "architect": 52.768750000000004,
+        "artificer": 93.26999999999998,
+        "illusionist": 47.75479166666667,
+        "guardian": 52.61,
+        "chronomancer": 50.6
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-class-mago-guerreiro"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "artifacts-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 4.21,
+      "coldLatencyMs": 28832,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 105,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 137,
+        "manifestsSkippedByBudget": 32,
+        "projectsDiscovered": 91,
+        "rateLimitRemaining": 4756,
+        "timingsMs": {
+          "repositorySelection": 1321,
+          "treeDiscovery": 1982,
+          "manifestFetch": 4369,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "lukeed",
+        "rating": "QUESTIONABLE",
+        "note": "Artificer leads by 33.81 with strong Rollup evidence, yet partial-large uncertainty erases the guarantee; the null is safe but under-informative."
+      }
+    },
+    {
+      "username": "orta",
+      "category": "tooling-library",
+      "reason": "Large public TypeScript and developer-tool repository set.",
+      "scores": {
+        "architect": 59.84,
+        "artificer": 62.74,
+        "illusionist": 69.01,
+        "guardian": 62.02,
+        "chronomancer": 62.26
+      },
+      "top1": "illusionist",
+      "top2": "artificer",
+      "observedMargin": 6.27,
+      "guaranteedMargin": -32.15,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "medium",
+      "maturity": 100,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 65.92,
+          "repos": 6
+        },
+        {
+          "id": "nuxt",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "vue",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "eslint",
+          "score": 71.49,
+          "repos": 8
+        },
+        {
+          "id": "vite",
+          "score": 70.43,
+          "repos": 8
+        },
+        {
+          "id": "github-actions",
+          "score": 68.92,
+          "repos": 9
+        },
+        {
+          "id": "yarn",
+          "score": 67.15,
+          "repos": 8
+        },
+        {
+          "id": "tailwind",
+          "score": 54.42,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 52.67,
+          "repos": 3
+        },
+        {
+          "id": "prettier",
+          "score": 49.1,
+          "repos": 4
+        },
+        {
+          "id": "jest",
+          "score": 43.17,
+          "repos": 3
+        },
+        {
+          "id": "docker",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "electron",
+          "score": 38.42,
+          "repos": 1
+        },
+        {
+          "id": "esbuild",
+          "score": 38.42,
+          "repos": 1
+        },
+        {
+          "id": "webpack",
+          "score": 35.71,
+          "repos": 2
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 59.8445875,
+        "artificer": 62.73991666666667,
+        "illusionist": 69.01368958333333,
+        "guardian": 62.018625,
+        "chronomancer": 62.26030729166666
+      },
+      "uniformSpecificity": {
+        "architect": 80.14750000000001,
+        "artificer": 70.44416666666667,
+        "illusionist": 90.15216666666667,
+        "guardian": 81.60416666666666,
+        "chronomancer": 75.19166666666668
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "languages-balanced-3",
+        "schools-first",
+        "schools-3",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 2.16,
+      "coldLatencyMs": 67092,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 92,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 95,
+        "manifestsSkippedByBudget": 3,
+        "projectsDiscovered": 33,
+        "rateLimitRemaining": 4729,
+        "timingsMs": {
+          "repositorySelection": 2348,
+          "treeDiscovery": 2111,
+          "manifestFetch": 4357,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "orta",
+        "rating": "ACCEPTABLE",
+        "note": "UI and build/tooling evidence are both strong and only 6.27 points apart; partial-small bounds preserve a real competing interpretation."
+      }
+    },
+    {
+      "username": "bahmutov",
+      "category": "testing-quality",
+      "reason": "Public browser-testing, CI, and test-example repositories.",
+      "scores": {
+        "architect": 27.71,
+        "artificer": 59.05,
+        "illusionist": 45.41,
+        "guardian": 85.13,
+        "chronomancer": 62.23
+      },
+      "top1": "guardian",
+      "top2": "chronomancer",
+      "observedMargin": 22.89,
+      "guaranteedMargin": -11.99,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "medium",
+      "maturity": 98,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 52.96,
+          "repos": 3
+        },
+        {
+          "id": "angular",
+          "score": 41.21,
+          "repos": 1
+        },
+        {
+          "id": "express",
+          "score": 37.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "cypress",
+          "score": 77.76,
+          "repos": 16
+        },
+        {
+          "id": "prettier",
+          "score": 75.21,
+          "repos": 13
+        },
+        {
+          "id": "github-actions",
+          "score": 74.92,
+          "repos": 16
+        },
+        {
+          "id": "jest",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "webpack",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "esbuild",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "eslint",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "vite",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "docker",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 27.714491666666667,
+        "artificer": 59.04729166666667,
+        "illusionist": 45.40893958333332,
+        "guardian": 85.12521875,
+        "chronomancer": 62.23447916666668
+      },
+      "uniformSpecificity": {
+        "architect": 44.6905,
+        "artificer": 70.29666666666668,
+        "illusionist": 65.60541666666667,
+        "guardian": 98.1,
+        "chronomancer": 72.31479166666666
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.88,
+      "coldLatencyMs": 61886,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 109,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 115,
+        "manifestsSkippedByBudget": 6,
+        "projectsDiscovered": 34,
+        "rateLimitRemaining": 4703,
+        "timingsMs": {
+          "repositorySelection": 1019,
+          "treeDiscovery": 2231,
+          "manifestFetch": 4468,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "bahmutov",
+        "rating": "ACCEPTABLE",
+        "note": "Cypress strongly supports Guardian, but partial-small upper bounds can mathematically admit a rival; null follows the frozen safety rule."
+      }
+    },
+    {
+      "username": "vitalets",
+      "category": "testing-quality",
+      "reason": "Public test tooling and JavaScript library repositories.",
+      "scores": {
+        "architect": 64.31,
+        "artificer": 43.24,
+        "illusionist": 67.07,
+        "guardian": 76.19,
+        "chronomancer": 59.25
+      },
+      "top1": "guardian",
+      "top2": "illusionist",
+      "observedMargin": 9.12,
+      "guaranteedMargin": -21.49,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 79,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 71.89,
+          "repos": 7
+        },
+        {
+          "id": "nextjs",
+          "score": 54.83,
+          "repos": 4
+        },
+        {
+          "id": "express",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "vue",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "astro",
+          "score": 35.21,
+          "repos": 1
+        },
+        {
+          "id": "remix",
+          "score": 35.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "playwright",
+          "score": 76.77,
+          "repos": 15
+        },
+        {
+          "id": "prettier",
+          "score": 75.48,
+          "repos": 14
+        },
+        {
+          "id": "eslint",
+          "score": 74.57,
+          "repos": 14
+        },
+        {
+          "id": "github-actions",
+          "score": 72.73,
+          "repos": 14
+        },
+        {
+          "id": "vitest",
+          "score": 56.78,
+          "repos": 5
+        },
+        {
+          "id": "vite",
+          "score": 49.73,
+          "repos": 4
+        },
+        {
+          "id": "pnpm",
+          "score": 38.67,
+          "repos": 1
+        },
+        {
+          "id": "jest",
+          "score": 38.42,
+          "repos": 1
+        },
+        {
+          "id": "tailwind",
+          "score": 35.21,
+          "repos": 2
+        },
+        {
+          "id": "docker",
+          "score": 34.92,
+          "repos": 1
+        },
+        {
+          "id": "cypress",
+          "score": 29.92,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend",
+          "three-signals"
+        ],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test"
+        ],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 64.30790232142857,
+        "artificer": 43.244059523809526,
+        "illusionist": 67.06642800595237,
+        "guardian": 76.18946428571431,
+        "chronomancer": 59.24624702380953
+      },
+      "uniformSpecificity": {
+        "architect": 80.381625,
+        "artificer": 67.48375000000001,
+        "illusionist": 84.58072916666666,
+        "guardian": 89.27375,
+        "chronomancer": 70.655
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-class-mago-bardo",
+        "title-school-ui"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "schools-first",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.53,
+      "coldLatencyMs": 21406,
+      "requests": {
+        "rest": 31,
+        "graphql": 6,
+        "manifestFetches": 157,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 6,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 401,
+        "manifestsSkippedByBudget": 244,
+        "projectsDiscovered": 150,
+        "rateLimitRemaining": 4690,
+        "timingsMs": {
+          "repositorySelection": 1745,
+          "treeDiscovery": 2031,
+          "manifestFetch": 6842,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "vitalets",
+        "rating": "ACCEPTABLE",
+        "note": "Playwright supports Guardian while substantial UI evidence supports Illusionist; partial-large uncertainty makes null defensible."
+      }
+    },
+    {
+      "username": "boneskull",
+      "category": "testing-quality",
+      "reason": "Public test-runner, automation, and maintenance repositories.",
+      "scores": {
+        "architect": 30.83,
+        "artificer": 59.93,
+        "illusionist": 31.97,
+        "guardian": 71.67,
+        "chronomancer": 44.47
+      },
+      "top1": "guardian",
+      "top2": "artificer",
+      "observedMargin": 11.74,
+      "guaranteedMargin": -33.37,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 100,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 45.21,
+          "repos": 1
+        },
+        {
+          "id": "astro",
+          "score": 37.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "prettier",
+          "score": 82.15,
+          "repos": 24
+        },
+        {
+          "id": "eslint",
+          "score": 80.75,
+          "repos": 22
+        },
+        {
+          "id": "github-actions",
+          "score": 79.58,
+          "repos": 23
+        },
+        {
+          "id": "vite",
+          "score": 54.42,
+          "repos": 1
+        },
+        {
+          "id": "playwright",
+          "score": 47.42,
+          "repos": 1
+        },
+        {
+          "id": "jest",
+          "score": 44.83,
+          "repos": 2
+        },
+        {
+          "id": "esbuild",
+          "score": 40.42,
+          "repos": 1
+        },
+        {
+          "id": "vitest",
+          "score": 40.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 30.829349999999998,
+        "artificer": 59.92520075757576,
+        "illusionist": 31.970502083333333,
+        "guardian": 71.66796875000001,
+        "chronomancer": 44.469035984848496
+      },
+      "uniformSpecificity": {
+        "architect": 46.395666666666656,
+        "artificer": 69.77,
+        "illusionist": 58.11279166666667,
+        "guardian": 88.27937500000002,
+        "chronomancer": 50.015
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-class-mago-bardo"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "languages-balanced-3",
+        "artifacts-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.99,
+      "coldLatencyMs": 46224,
+      "requests": {
+        "rest": 31,
+        "graphql": 6,
+        "manifestFetches": 180,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 6,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 223,
+        "manifestsSkippedByBudget": 43,
+        "projectsDiscovered": 45,
+        "rateLimitRemaining": 4668,
+        "timingsMs": {
+          "repositorySelection": 1955,
+          "treeDiscovery": 1887,
+          "manifestFetch": 6192,
+          "parsing": 1
+        }
+      },
+      "evaluation": {
+        "username": "boneskull",
+        "rating": "ACCEPTABLE",
+        "note": "Testing and automation evidence favor Guardian, but the partial-large gap cannot preserve the winner."
+      }
+    },
+    {
+      "username": "jquense",
+      "category": "testing-quality",
+      "reason": "Public UI libraries with recurring testing infrastructure.",
+      "scores": {
+        "architect": 19.42,
+        "artificer": 76.85,
+        "illusionist": 63.61,
+        "guardian": 62.77,
+        "chronomancer": 30.06
+      },
+      "top1": "artificer",
+      "top2": "illusionist",
+      "observedMargin": 13.25,
+      "guaranteedMargin": -18.88,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 95,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [
+        {
+          "id": "react",
+          "score": 70.94,
+          "repos": 9
+        },
+        {
+          "id": "svelte",
+          "score": 30.42,
+          "repos": 2
+        },
+        {
+          "id": "express",
+          "score": 21.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "webpack",
+          "score": 68.81,
+          "repos": 7
+        },
+        {
+          "id": "eslint",
+          "score": 68.01,
+          "repos": 16
+        },
+        {
+          "id": "prettier",
+          "score": 66.03,
+          "repos": 14
+        },
+        {
+          "id": "tailwind",
+          "score": 64.38,
+          "repos": 6
+        },
+        {
+          "id": "jest",
+          "score": 62.04,
+          "repos": 10
+        },
+        {
+          "id": "vitest",
+          "score": 52.23,
+          "repos": 4
+        },
+        {
+          "id": "yarn",
+          "score": 50.04,
+          "repos": 4
+        },
+        {
+          "id": "rollup",
+          "score": 47.67,
+          "repos": 4
+        },
+        {
+          "id": "github-actions",
+          "score": 43.85,
+          "repos": 4
+        },
+        {
+          "id": "vite",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "two-specific",
+          "build+craft"
+        ],
+        "illusionist": [
+          "ui+visual",
+          "multi-ui"
+        ],
+        "guardian": [
+          "multi-test",
+          "multi-test+collaboration"
+        ],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 19.42494375,
+        "artificer": 76.85367113095238,
+        "illusionist": 63.606278125,
+        "guardian": 62.773984375000005,
+        "chronomancer": 30.062309523809528
+      },
+      "uniformSpecificity": {
+        "architect": 29.9765,
+        "artificer": 91.16999999999999,
+        "illusionist": 76.87841666666668,
+        "guardian": 78.60999999999999,
+        "chronomancer": 48.7
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-school-ui"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "language-specialist-70",
+        "schools-first",
+        "school-recurring-5",
+        "artifacts-3",
+        "testing-recurring-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.57,
+      "coldLatencyMs": 19232,
+      "requests": {
+        "rest": 31,
+        "graphql": 4,
+        "manifestFetches": 100,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 4,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 117,
+        "manifestsSkippedByBudget": 17,
+        "projectsDiscovered": 50,
+        "rateLimitRemaining": 4655,
+        "timingsMs": {
+          "repositorySelection": 2280,
+          "treeDiscovery": 1997,
+          "manifestFetch": 4180,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "jquense",
+        "rating": "ACCEPTABLE",
+        "note": "Webpack and other build tools favor Artificer, while UI/testing evidence remains substantial under partial-large coverage; null is defensible."
+      }
+    },
+    {
+      "username": "geerlingguy",
+      "category": "automation-devops",
+      "reason": "Public infrastructure automation and configuration repositories.",
+      "scores": {
+        "architect": 31.54,
+        "artificer": 16.94,
+        "illusionist": 12,
+        "guardian": 22.56,
+        "chronomancer": 64.6
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "observedMargin": 33.06,
+      "guaranteedMargin": 33.06,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 96,
+      "safeWinner": true,
+      "subclass": "chronomancer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "express",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 80.92,
+          "repos": 25
+        },
+        {
+          "id": "docker",
+          "score": 43.08,
+          "repos": 2
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 31.541925,
+        "artificer": 16.942999999999998,
+        "illusionist": 11.9971875,
+        "guardian": 22.563000000000002,
+        "chronomancer": 64.598
+      },
+      "uniformSpecificity": {
+        "architect": 48.740500000000004,
+        "artificer": 17.454166666666666,
+        "illusionist": 13.08,
+        "guardian": 23.074166666666667,
+        "chronomancer": 72.77666666666669
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-chronomancer",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "issues-500",
+        "automation-ci-3",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.67,
+      "coldLatencyMs": 23781,
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "manifestFetches": 72,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 72,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 3,
+        "rateLimitRemaining": 4640,
+        "timingsMs": {
+          "repositorySelection": 817,
+          "treeDiscovery": 3151,
+          "manifestFetch": 2954,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "geerlingguy",
+        "rating": "GOOD",
+        "note": "Highly recurrent GitHub Actions with Docker gives Chronomancer a clear full-coverage margin."
+      }
+    },
+    {
+      "username": "alexellis",
+      "category": "automation-devops",
+      "reason": "Public container, delivery, and infrastructure repositories.",
+      "scores": {
+        "architect": 60.75,
+        "artificer": 24.63,
+        "illusionist": 50.49,
+        "guardian": 38.12,
+        "chronomancer": 84.84
+      },
+      "top1": "chronomancer",
+      "top2": "architect",
+      "observedMargin": 24.09,
+      "guaranteedMargin": 24.09,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 97,
+      "safeWinner": true,
+      "subclass": "chronomancer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [
+        {
+          "id": "nextjs",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "react",
+          "score": 50.42,
+          "repos": 2
+        },
+        {
+          "id": "fastapi",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 77.58,
+          "repos": 20
+        },
+        {
+          "id": "docker",
+          "score": 54.44,
+          "repos": 5
+        },
+        {
+          "id": "eslint",
+          "score": 50.42,
+          "repos": 3
+        },
+        {
+          "id": "tailwind",
+          "score": 45.71,
+          "repos": 2
+        },
+        {
+          "id": "jest",
+          "score": 42.17,
+          "repos": 1
+        },
+        {
+          "id": "terraform",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [
+          "meta+backend"
+        ],
+        "artificer": [],
+        "illusionist": [
+          "ui+visual"
+        ],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery",
+          "delivery+infra",
+          "three-signals"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 60.75147425,
+        "artificer": 24.63349875,
+        "illusionist": 50.49397916666666,
+        "guardian": 38.118082083333334,
+        "chronomancer": 84.84348
+      },
+      "uniformSpecificity": {
+        "architect": 75.91050000000001,
+        "artificer": 50.7,
+        "illusionist": 72.67041666666668,
+        "guardian": 55.919999999999995,
+        "chronomancer": 94.97
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-practice-chronomancer",
+        "title-hybrid-pipeline-seer",
+        "title-living-legend"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "schools-first",
+        "artifacts-3",
+        "automation-ci-3",
+        "containers-3",
+        "five-paths",
+        "living-legend"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.74,
+      "coldLatencyMs": 32907,
+      "requests": {
+        "rest": 31,
+        "graphql": 3,
+        "manifestFetches": 65,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 3,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 65,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 12,
+        "rateLimitRemaining": 4624,
+        "timingsMs": {
+          "repositorySelection": 1699,
+          "treeDiscovery": 1862,
+          "manifestFetch": 2819,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "alexellis",
+        "rating": "GOOD",
+        "note": "GitHub Actions, Docker and Terraform activate a portable automation/infra composite and support Chronomancer."
+      }
+    },
+    {
+      "username": "lizrice",
+      "category": "automation-devops",
+      "reason": "Public container, cloud-native, and systems repositories.",
+      "scores": {
+        "architect": 11.11,
+        "artificer": 12.44,
+        "illusionist": 7.08,
+        "guardian": 21.34,
+        "chronomancer": 63.46
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "observedMargin": 42.12,
+      "guaranteedMargin": 42.12,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 85,
+      "safeWinner": true,
+      "subclass": "chronomancer",
+      "reasonCode": "strong_archetype_evidence",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "docker",
+          "score": 61.08,
+          "repos": 9
+        },
+        {
+          "id": "github-actions",
+          "score": 43.23,
+          "repos": 2
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 11.107837499999999,
+        "artificer": 12.439729166666666,
+        "illusionist": 7.08,
+        "guardian": 21.339729166666668,
+        "chronomancer": 63.455666666666666
+      },
+      "uniformSpecificity": {
+        "architect": 11.8605,
+        "artificer": 13.694166666666668,
+        "illusionist": 7.08,
+        "guardian": 22.59416666666667,
+        "chronomancer": 83.52666666666667
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-practice-chronomancer"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "containers-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.23,
+      "coldLatencyMs": 15516,
+      "requests": {
+        "rest": 28,
+        "graphql": 1,
+        "manifestFetches": 21,
+        "reposInspected": 27,
+        "cacheHits": 0,
+        "treeRequests": 27,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 21,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 0,
+        "rateLimitRemaining": 4616,
+        "timingsMs": {
+          "repositorySelection": 2689,
+          "treeDiscovery": 1716,
+          "manifestFetch": 1518,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "lizrice",
+        "rating": "GOOD",
+        "note": "Recurring Docker plus GitHub Actions creates a distinct Chronomancer result with full coverage and a large margin."
+      }
+    },
+    {
+      "username": "brendangregg",
+      "category": "automation-devops",
+      "reason": "Public observability and operational tooling repositories.",
+      "scores": {
+        "architect": 11.23,
+        "artificer": 11.23,
+        "illusionist": 9,
+        "guardian": 8.12,
+        "chronomancer": 10.83
+      },
+      "top1": "architect",
+      "top2": "artificer",
+      "observedMargin": 0,
+      "guaranteedMargin": -84.48,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "low",
+      "maturity": 73,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [],
+      "artifacts": [],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 11.23,
+        "artificer": 11.23,
+        "illusionist": 9,
+        "guardian": 8.12,
+        "chronomancer": 10.83
+      },
+      "uniformSpecificity": {
+        "architect": 11.23,
+        "artificer": 11.23,
+        "illusionist": 9,
+        "guardian": 8.12,
+        "chronomancer": 10.83
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-languages-5",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "languages-5",
+        "active-days-30",
+        "active-days-365",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "languages-balanced-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.4,
+      "coldLatencyMs": 4810,
+      "requests": {
+        "rest": 29,
+        "graphql": 0,
+        "manifestFetches": 0,
+        "reposInspected": 28,
+        "cacheHits": 0,
+        "treeRequests": 28,
+        "manifestRequests": 0,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 0,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 0,
+        "rateLimitRemaining": 4231,
+        "timingsMs": {
+          "repositorySelection": 498,
+          "treeDiscovery": 1630,
+          "manifestFetch": 0,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "brendangregg",
+        "rating": "GOOD",
+        "note": "No catalog school or artifact evidence was observed and confidence is low; null avoids inferring a practice from unrelated reputation."
+      }
+    },
+    {
+      "username": "BurntSushi",
+      "category": "systems-low-level",
+      "reason": "Public Rust and performance-oriented systems repositories.",
+      "scores": {
+        "architect": 12.41,
+        "artificer": 13.09,
+        "illusionist": 8.94,
+        "guardian": 21.09,
+        "chronomancer": 39.63
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "observedMargin": 18.55,
+      "guaranteedMargin": -54.92,
+      "coverage": "partial-small",
+      "gap": "small",
+      "confidence": "medium",
+      "maturity": 96,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 75.46,
+          "repos": 19
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 12.408657894736843,
+        "artificer": 13.087763157894738,
+        "illusionist": 8.94,
+        "guardian": 21.087763157894738,
+        "chronomancer": 39.63421052631579
+      },
+      "uniformSpecificity": {
+        "architect": 12.65,
+        "artificer": 13.49,
+        "illusionist": 8.94,
+        "guardian": 21.490000000000002,
+        "chronomancer": 46.07
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15",
+        "title-class-alquimista-guerreiro"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "languages-balanced-3",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.67,
+      "coldLatencyMs": 17344,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 25,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 25,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 1,
+        "rateLimitRemaining": 4602,
+        "timingsMs": {
+          "repositorySelection": 916,
+          "treeDiscovery": 1698,
+          "manifestFetch": 3628,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "BurntSushi",
+        "rating": "GOOD",
+        "note": "GitHub Actions alone remains below the strong threshold and partial-small uncertainty is large; null is evidence-correct."
+      }
+    },
+    {
+      "username": "dtolnay",
+      "category": "systems-low-level",
+      "reason": "Public Rust compiler/tooling and library repositories.",
+      "scores": {
+        "architect": 10.15,
+        "artificer": 18.17,
+        "illusionist": 6.24,
+        "guardian": 22.51,
+        "chronomancer": 62.03
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "observedMargin": 39.52,
+      "guaranteedMargin": -32.1,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "medium",
+      "maturity": 96,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "partial_can_change_winner",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 81.58,
+          "repos": 26
+        },
+        {
+          "id": "docker",
+          "score": 43.08,
+          "repos": 2
+        },
+        {
+          "id": "eslint",
+          "score": 42.17,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 10.152800000000001,
+        "artificer": 18.17466666666667,
+        "illusionist": 6.24,
+        "guardian": 22.508000000000003,
+        "chronomancer": 62.02966666666668
+      },
+      "uniformSpecificity": {
+        "architect": 10.4505,
+        "artificer": 45.52416666666667,
+        "illusionist": 6.24,
+        "guardian": 23.004166666666666,
+        "chronomancer": 71.64666666666666
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "language-specialist-70",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.29,
+      "coldLatencyMs": 11972,
+      "requests": {
+        "rest": 31,
+        "graphql": 2,
+        "manifestFetches": 53,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 70,
+        "manifestsSkippedByBudget": 17,
+        "projectsDiscovered": 1,
+        "rateLimitRemaining": 4595,
+        "timingsMs": {
+          "repositorySelection": 888,
+          "treeDiscovery": 1692,
+          "manifestFetch": 2273,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "dtolnay",
+        "rating": "ACCEPTABLE",
+        "note": "Automation artifacts favor Chronomancer, but partial-large bounds can reverse the winner; null is conservative and supported."
+      }
+    },
+    {
+      "username": "fasterthanlime",
+      "category": "systems-low-level",
+      "reason": "Public Rust, networking, and systems-learning repositories.",
+      "scores": {
+        "architect": 9.42,
+        "artificer": 40.91,
+        "illusionist": 33.12,
+        "guardian": 21.63,
+        "chronomancer": 52.61
+      },
+      "top1": "chronomancer",
+      "top2": "artificer",
+      "observedMargin": 11.7,
+      "guaranteedMargin": 11.7,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 92,
+      "safeWinner": true,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [
+        {
+          "id": "svelte",
+          "score": 45.21,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 56.88,
+          "repos": 6
+        },
+        {
+          "id": "vite",
+          "score": 54.42,
+          "repos": 1
+        },
+        {
+          "id": "pnpm",
+          "score": 38.67,
+          "repos": 1
+        },
+        {
+          "id": "docker",
+          "score": 30.42,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [
+          "build+craft"
+        ],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 9.4194375,
+        "artificer": 40.905729166666674,
+        "illusionist": 33.12499999999999,
+        "guardian": 21.629062500000003,
+        "chronomancer": 52.61041666666667
+      },
+      "uniformSpecificity": {
+        "architect": 9.99375,
+        "artificer": 60.65625,
+        "illusionist": 42.166666666666664,
+        "guardian": 22.586250000000003,
+        "chronomancer": 69.10000000000001
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-commits-10000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "repos-50",
+        "repos-100",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "commits-10000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "issues-500",
+        "language-specialist-70",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.93,
+      "coldLatencyMs": 31893,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 22,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 22,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 7,
+        "rateLimitRemaining": 4582,
+        "timingsMs": {
+          "repositorySelection": 879,
+          "treeDiscovery": 1793,
+          "manifestFetch": 1893,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "fasterthanlime",
+        "rating": "GOOD",
+        "note": "The observed automation signal is coherent but remains below the frozen strong threshold; null is appropriate."
+      }
+    },
+    {
+      "username": "KrzysztofZablocki",
+      "category": "mobile-polyglot",
+      "reason": "Public Apple-platform and mobile-tooling repositories.",
+      "scores": {
+        "architect": 11.19,
+        "artificer": 12.22,
+        "illusionist": 7.62,
+        "guardian": 21.34,
+        "chronomancer": 52.83
+      },
+      "top1": "chronomancer",
+      "top2": "guardian",
+      "observedMargin": 31.49,
+      "guaranteedMargin": 31.49,
+      "coverage": "full",
+      "gap": "none",
+      "confidence": "medium",
+      "maturity": 75,
+      "safeWinner": true,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 47.98,
+          "repos": 4
+        },
+        {
+          "id": "docker",
+          "score": 38.67,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [],
+        "guardian": [],
+        "chronomancer": [
+          "pipeline+delivery"
+        ]
+      },
+      "withoutGenericCap": {
+        "architect": 11.186315625,
+        "artificer": 12.217192708333334,
+        "illusionist": 7.62,
+        "guardian": 21.337192708333333,
+        "chronomancer": 52.82508333333333
+      },
+      "uniformSpecificity": {
+        "architect": 11.788,
+        "artificer": 13.22,
+        "illusionist": 7.62,
+        "guardian": 22.340000000000003,
+        "chronomancer": 68.86999999999999
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.46,
+      "coldLatencyMs": 7597,
+      "requests": {
+        "rest": 31,
+        "graphql": 1,
+        "manifestFetches": 18,
+        "reposInspected": 30,
+        "cacheHits": 0,
+        "treeRequests": 30,
+        "manifestRequests": 1,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 18,
+        "manifestsSkippedByBudget": 0,
+        "projectsDiscovered": 2,
+        "rateLimitRemaining": 4577,
+        "timingsMs": {
+          "repositorySelection": 631,
+          "treeDiscovery": 2038,
+          "manifestFetch": 1240,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "KrzysztofZablocki",
+        "rating": "GOOD",
+        "note": "The available automation evidence is coherent but below threshold; the model correctly avoids using mobile reputation as ground truth."
+      }
+    },
+    {
+      "username": "chrisbanes",
+      "category": "mobile-polyglot",
+      "reason": "Public Android, Kotlin, and UI-platform repositories.",
+      "scores": {
+        "architect": 11.49,
+        "artificer": 29.11,
+        "illusionist": 44.17,
+        "guardian": 19.85,
+        "chronomancer": 30.77
+      },
+      "top1": "illusionist",
+      "top2": "chronomancer",
+      "observedMargin": 13.41,
+      "guaranteedMargin": -56.64,
+      "coverage": "partial-large",
+      "gap": "large",
+      "confidence": "low",
+      "maturity": 88,
+      "safeWinner": false,
+      "subclass": null,
+      "reasonCode": "score_below_threshold",
+      "schools": [
+        {
+          "id": "react",
+          "score": 46.16,
+          "repos": 1
+        }
+      ],
+      "artifacts": [
+        {
+          "id": "github-actions",
+          "score": 49.79,
+          "repos": 3
+        },
+        {
+          "id": "tailwind",
+          "score": 42.93,
+          "repos": 1
+        },
+        {
+          "id": "vite",
+          "score": 42.93,
+          "repos": 1
+        }
+      ],
+      "compositeSignals": {
+        "architect": [],
+        "artificer": [],
+        "illusionist": [
+          "ui+visual"
+        ],
+        "guardian": [],
+        "chronomancer": []
+      },
+      "withoutGenericCap": {
+        "architect": 11.492107142857144,
+        "artificer": 29.111607142857146,
+        "illusionist": 44.17414285714286,
+        "guardian": 19.85017857142857,
+        "chronomancer": 30.76607142857143
+      },
+      "uniformSpecificity": {
+        "architect": 12.08,
+        "artificer": 46.52,
+        "illusionist": 66.6,
+        "guardian": 20.830000000000002,
+        "chronomancer": 47.47000000000001
+      },
+      "evolution": null,
+      "titles": [
+        "title-stars-10",
+        "title-stars-50",
+        "title-stars-100",
+        "title-stars-500",
+        "title-stars-1000",
+        "title-commits-500",
+        "title-commits-1000",
+        "title-commits-5000",
+        "title-prs-10",
+        "title-prs-50",
+        "title-prs-100",
+        "title-prs-500",
+        "title-languages-3",
+        "title-years-3",
+        "title-years-5",
+        "title-years-10",
+        "title-years-15"
+      ],
+      "achievements": [
+        "age-1",
+        "age-3",
+        "age-5",
+        "age-10",
+        "age-15",
+        "repos-1",
+        "repos-5",
+        "repos-25",
+        "commits-100",
+        "commits-1000",
+        "commits-5000",
+        "prs-1",
+        "prs-25",
+        "prs-100",
+        "prs-500",
+        "reviews-10",
+        "reviews-50",
+        "reviews-200",
+        "issues-10",
+        "issues-50",
+        "issues-200",
+        "stars-1",
+        "stars-25",
+        "stars-100",
+        "stars-1000",
+        "languages-2",
+        "active-days-30",
+        "active-days-365",
+        "streak-30",
+        "consistent-years-5",
+        "forks-received-10",
+        "starred-repos-5",
+        "collaboration-triad-25",
+        "reviews-500",
+        "issues-500",
+        "automation-ci-3"
+      ],
+      "deterministicReplay": true,
+      "engineMs": 1.27,
+      "coldLatencyMs": 6772,
+      "requests": {
+        "rest": 15,
+        "graphql": 2,
+        "manifestFetches": 43,
+        "reposInspected": 14,
+        "cacheHits": 0,
+        "treeRequests": 14,
+        "manifestRequests": 2,
+        "fallbackRequests": 0,
+        "treeCacheHits": 0,
+        "manifestCacheHits": 0,
+        "manifestsDiscovered": 63,
+        "manifestsSkippedByBudget": 20,
+        "projectsDiscovered": 39,
+        "rateLimitRemaining": 4570,
+        "timingsMs": {
+          "repositorySelection": 730,
+          "treeDiscovery": 971,
+          "manifestFetch": 2109,
+          "parsing": 0
+        }
+      },
+      "evaluation": {
+        "username": "chrisbanes",
+        "rating": "GOOD",
+        "note": "Detected UI and automation evidence remains below threshold with low confidence and partial-large coverage; null is appropriate."
+      }
+    }
+  ]
+}

@@ -8,9 +8,7 @@ import type {
   TitleProgress,
 } from "@/game/types";
 import {
-  Badge,
   Button,
-  Card,
   RpgIconFrame,
   RpgCheck,
   RpgLock,
@@ -18,7 +16,7 @@ import {
   RpgClose,
 } from "@/design-system";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
-import { ProfileSectionHeader } from "@/features/profile-ui";
+import { ProfileActionButton, ProfileSectionHeader } from "@/features/profile-ui";
 import { fill } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation, type TranslationDictionary } from "@/i18n";
@@ -82,59 +80,72 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
       />
 
       {/* Unlocked */}
-      <section aria-labelledby="titles-unlocked" className="space-y-3">
+      <section aria-labelledby="titles-unlocked" className="space-y-3.5">
         <h3 id="titles-unlocked" className="font-sans font-bold text-sm uppercase tracking-wider text-emerald-300">
           {t.titles.unlockedSection} ({unlocked.length})
         </h3>
         {unlocked.length === 0 ? (
           <p className="font-sans text-sm text-slate-400">{t.titles.emptyUnlocked}</p>
         ) : (
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
             {unlocked.map((title) => {
               const isEquipped = title.id === equippedTitleId;
               return (
                 <li key={title.id}>
-                  <Card
-                    className={`flex items-start justify-between gap-3 ${
-                      isEquipped ? "border-rpg-goldDark shadow-pixel-gold" : ""
+                  <div
+                    className={`pf-title-card ${
+                      isEquipped ? "pf-title-card--equipped" : "pf-title-card--unlocked"
                     }`}
                   >
-                    <div className="space-y-1">
-                      <p className="font-sans font-bold text-sm text-slate-100 flex items-center gap-2">
-                        <RpgIconFrame size="xs" shape="circle" rarity="emerald" glow>
+                    <div className="space-y-1.5 min-w-0 pr-1">
+                      <p className="font-sans font-bold text-sm flex items-center gap-2">
+                        <RpgIconFrame
+                          size="xs"
+                          shape="circle"
+                          rarity={isEquipped ? "gold" : "emerald"}
+                          glow
+                        >
                           <RpgCheck className="w-3.5 h-3.5" />
                         </RpgIconFrame>
-                        <span>{title.name}</span>
+                        <span
+                          className={`truncate ${
+                            isEquipped
+                              ? "text-amber-100 font-extrabold tracking-wide"
+                              : "text-slate-100"
+                          }`}
+                        >
+                          {title.name}
+                        </span>
                       </p>
-                      <p className="font-sans text-xs text-slate-300">{title.description}</p>
-                      <div className="flex items-center gap-1.5 pt-1">
-                        <Badge variant="neutral" size="sm">
-                          {categoryLabel(title.category, t)}
-                        </Badge>
+                      <p className="font-sans text-xs text-slate-300/90 leading-relaxed">
+                        {title.description}
+                      </p>
+                      <div className="flex flex-wrap items-center gap-1.5 pt-1.5">
+                        <span className="pf-seal">{categoryLabel(title.category, t)}</span>
                         {title.id === defaultTitleId && (
-                          <Badge variant="azure" size="sm">
-                            {t.titles.defaultTag}
-                          </Badge>
+                          <span className="pf-seal pf-seal--default">{t.titles.defaultTag}</span>
                         )}
                       </div>
                     </div>
-                    {isEquipped ? (
-                      <Badge variant="gold" size="md" className="gap-1 flex-shrink-0">
-                        <RpgTrophy className="w-3.5 h-3.5" />
-                        {t.titles.equipped}
-                      </Badge>
-                    ) : (
-                      <Button
-                        size="sm"
-                        variant="secondary"
-                        onClick={() => onEquip(title.id)}
-                        aria-label={`${t.titles.equip}: ${title.name}`}
-                        className="flex-shrink-0"
-                      >
-                        {t.titles.equip}
-                      </Button>
-                    )}
-                  </Card>
+
+                    <div className="flex items-center shrink-0 self-center pl-2">
+                      {isEquipped ? (
+                        <span className="pf-seal pf-seal--equipped">
+                          <RpgTrophy className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+                          <span>{t.titles.equipped}</span>
+                        </span>
+                      ) : (
+                        <ProfileActionButton
+                          variant="small"
+                          onClick={() => onEquip(title.id)}
+                          aria-label={`${t.titles.equip}: ${title.name}`}
+                          className="shrink-0"
+                        >
+                          {t.titles.equip}
+                        </ProfileActionButton>
+                      )}
+                    </div>
+                  </div>
                 </li>
               );
             })}
@@ -144,27 +155,27 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
 
       {/* Next title of each ladder */}
       {nextThresholds.length > 0 && (
-        <section aria-labelledby="titles-progress" className="space-y-3">
+        <section aria-labelledby="titles-progress" className="space-y-3.5">
           <h3 id="titles-progress" className="font-sans font-bold text-sm uppercase tracking-wider text-amber-300">
             {t.titles.inProgressSection}
           </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
             {nextThresholds.map((title) => (
               <li key={title.id}>
-                <Card className="space-y-2 opacity-95">
-                  <div className="flex items-center justify-between gap-2">
-                    <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2">
+                <div className="pf-title-card pf-title-card--progress flex-col gap-2.5">
+                  <div className="flex items-center justify-between gap-2 w-full">
+                    <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2 min-w-0">
                       <RpgIconFrame size="xs" shape="circle" rarity="common">
                         <RpgLock className="w-3.5 h-3.5 text-slate-400" />
                       </RpgIconFrame>
-                      <span>{title.name}</span>
+                      <span className="truncate">{title.name}</span>
                     </p>
-                    <Badge variant="neutral" size="sm">
-                      {categoryLabel(title.category, t)}
-                    </Badge>
+                    <span className="pf-seal shrink-0">{categoryLabel(title.category, t)}</span>
                   </div>
-                  <ProgressDetail progress={title} />
-                </Card>
+                  <div className="w-full">
+                    <ProgressDetail progress={title} tone="profile" />
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
@@ -173,41 +184,46 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
 
       {/* Class + subclass combinations (conditions are not numeric: no percentage) */}
       {lockedCombinations.length > 0 && (
-        <section aria-labelledby="titles-combinations" className="space-y-3">
+        <section aria-labelledby="titles-combinations" className="space-y-3.5">
           <h3 id="titles-combinations" className="font-sans font-bold text-sm uppercase tracking-wider text-purple-300">
             {t.titles.combinationSection}
           </h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
             {lockedCombinations.map((title) => (
               <li key={title.id}>
-                <Card className="space-y-2 opacity-90">
-                  <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2">
-                    <RpgIconFrame size="xs" shape="circle" rarity="common">
-                      <RpgLock className="w-3.5 h-3.5 text-slate-400" />
-                    </RpgIconFrame>
-                    <span>{title.name}</span>
-                  </p>
+                <div className="pf-title-card pf-title-card--progress flex-col gap-2.5">
+                  <div className="flex items-center justify-between gap-2 w-full">
+                    <p className="font-sans font-bold text-sm text-slate-200 flex items-center gap-2 min-w-0">
+                      <RpgIconFrame size="xs" shape="circle" rarity="common">
+                        <RpgLock className="w-3.5 h-3.5 text-slate-400" />
+                      </RpgIconFrame>
+                      <span className="truncate">{title.name}</span>
+                    </p>
+                    <span className="pf-seal shrink-0">{categoryLabel("class", t)}</span>
+                  </div>
                   <p className="font-sans text-xs text-slate-400">{t.titles.requirements}:</p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-1.5 w-full">
                     {title.requirements.map((req) => (
                       <li
                         key={`${req.kind}-${req.value}`}
-                        className={`font-sans text-xs flex items-center gap-1.5 ${
+                        className={`font-sans text-xs flex items-center gap-2 px-2.5 py-1 rounded bg-black/30 border border-[#4a3822]/40 ${
                           req.met ? "text-emerald-300" : "text-slate-400"
                         }`}
                       >
                         {req.met ? (
-                          <RpgCheck className="w-3.5 h-3.5 text-emerald-400" aria-label={t.titles.requirementMet} />
+                          <RpgCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" aria-label={t.titles.requirementMet} />
                         ) : (
-                          <RpgClose className="w-3.5 h-3.5 text-slate-500" aria-label={t.titles.requirementPending} />
+                          <RpgClose className="w-3.5 h-3.5 text-slate-500 shrink-0" aria-label={t.titles.requirementPending} />
                         )}
-                        {fill(req.kind === "class" ? t.titles.classReq : t.titles.subclassReq, {
-                          value: req.value,
-                        })}
+                        <span>
+                          {fill(req.kind === "class" ? t.titles.classReq : t.titles.subclassReq, {
+                            value: req.value,
+                          })}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                </Card>
+                </div>
               </li>
             ))}
           </ul>
