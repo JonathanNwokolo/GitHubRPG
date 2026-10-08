@@ -20,6 +20,34 @@ export function createCharacterCacheKey(identity: EvidenceCacheIdentity): string
   return ["character", createEvidenceCacheKey(identity)].join("/");
 }
 
+/** Final-character alias used by polling before the GitHub base profile is loaded. */
+export function createLatestCharacterCacheKey(username: string): string {
+  return ["character-latest", CACHE_NAMESPACE, ENGINE_VERSION, SCHEMA_VERSION, DETECTOR_VERSION, CATALOG_VERSION, BALANCE_VERSION, username.trim().toLowerCase()]
+    .map(encodeURIComponent)
+    .join("/");
+}
+
+export function isCompatibleCachedCharacter(value: unknown, username?: string): value is RPGCharacterV2 {
+  if (!value || typeof value !== "object") return false;
+  const candidate = value as Partial<RPGCharacterV2>;
+  const cachedUsername = candidate.identity?.username;
+  return candidate.engineVersion === ENGINE_VERSION
+    && candidate.schemaVersion === SCHEMA_VERSION
+    && candidate.detectorVersion === DETECTOR_VERSION
+    && candidate.catalogVersion === CATALOG_VERSION
+    && candidate.balanceVersion === BALANCE_VERSION
+    && candidate.meta?.cacheNamespace === CACHE_NAMESPACE
+    && typeof cachedUsername === "string"
+    && (username === undefined || cachedUsername.trim().toLowerCase() === username.trim().toLowerCase())
+    && typeof candidate.explanation === "object"
+    && candidate.explanation !== null
+    && ["full", "partial", "unavailable"].includes(candidate.explanation.subclass?.coverage ?? "")
+    && Array.isArray(candidate.achievements)
+    && Array.isArray(candidate.titles)
+    && typeof candidate.grimoire === "object"
+    && candidate.grimoire !== null;
+}
+
 export interface CacheWritePolicy {
   ttlMs: number;
   staleTtlMs?: number;
