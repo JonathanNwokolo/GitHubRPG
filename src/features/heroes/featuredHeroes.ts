@@ -7,7 +7,7 @@ export interface FeaturedHeroCategory {
   usernames: readonly string[];
 }
 
-/** Editorial order only. It is deliberately not a ranking. */
+/** Editorial membership only. The Hall orders the loaded subset with its local category score. */
 export const FEATURED_HERO_CATEGORIES: readonly FeaturedHeroCategory[] = [
   {
     id: "legends",
