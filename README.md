@@ -13,7 +13,7 @@ com classe, atributos, habilidades, conquistas e duelos.
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-C9A227)](LICENSE)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-C9A227)](LICENSE)
 
 ### [⚔️ Experimentar agora](https://githubrpg.vercel.app/) &nbsp;·&nbsp; [📜 Repositório](https://github.com/JonathanNwokolo/GitHubRPG)
 
@@ -41,15 +41,8 @@ O estilo é dark fantasy em pixel art, com acabamento dourado e medieval sobre u
 | 🕰️ **Crônica** | A história do perfil contada por capítulos, ano a ano. |
 | ⚔️ **Duelos** | Confronte dois perfis lado a lado. |
 | 🏰 **Salão dos Heróis** | Vitrine de perfis para explorar e desafiar. |
-| 🏷️ **Badge para README** | Um SVG com sua ficha, pronto para colar no seu perfil. |
 
 A interface está disponível em português e inglês.
-
-### Badge para o seu README
-
-```md
-[![GitHub RPG](https://githubrpg.vercel.app/api/badge/SEU_USUARIO)](https://githubrpg.vercel.app/SEU_USUARIO)
-```
 
 ## Como funciona
 
@@ -122,11 +115,7 @@ O GitHub RPG usa apenas **dados públicos** do GitHub. Classes, níveis, título
 
 ## Contribuindo
 
-Ideias, bugs e PRs são bem-vindos. Antes de abrir um PR, rode:
-
-```bash
-npm run lint && npm run typecheck && npm test
-```
+Ideias, bugs e PRs são bem-vindos. Consulte o [guia de contribuição](CONTRIBUTING.md) para conhecer o fluxo sugerido e as verificações do projeto.
 
 ## Autor
 
@@ -134,4 +123,4 @@ npm run lint && npm run typecheck && npm test
 
 ## Licença
 
-Distribuído sob a licença [MIT](LICENSE).
+Este projeto é distribuído sob a licença [GNU AGPLv3](LICENSE).
