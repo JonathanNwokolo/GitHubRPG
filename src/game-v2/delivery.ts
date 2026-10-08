@@ -310,7 +310,7 @@ export class V2DeliveryService {
     if (evidence.requests.rateLimitRemaining !== null && evidence.requests.rateLimitRemaining !== undefined && evidence.requests.rateLimitResource) {
       const resetAt = evidence.requests.rateLimitResetAt ? new Date(evidence.requests.rateLimitResetAt) : null;
       await this.projectProtection.observeSnapshot(evidence.requests.rateLimitResource, {
-        limit: null,
+        limit: evidence.requests.rateLimitLimit ?? null,
         remaining: evidence.requests.rateLimitRemaining,
         resetAt: resetAt && !Number.isNaN(resetAt.getTime()) ? resetAt : null,
       }, input.protection);

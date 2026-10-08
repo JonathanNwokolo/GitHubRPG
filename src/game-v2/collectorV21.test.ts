@@ -72,12 +72,12 @@ function mockCollectorFetch(options: { truncated?: boolean; manifests?: number }
   const manifests = options.manifests ?? 1;
   return (async (input, init) => {
     const url = String(input);
-    if (url.includes("/users/") && url.includes("/repos?")) return response([{ id: 1, name: "app", fork: false, archived: false, size: 10, stargazers_count: 2, pushed_at: "2026-01-01T00:00:00Z", default_branch: "main", language: "TypeScript" }], { "x-ratelimit-remaining": "4999" });
-    if (url.includes("/git/trees/")) return response({ sha: "tree-sha", truncated: Boolean(options.truncated), tree: Array.from({ length: manifests }, (_, index) => blob(index === 0 ? "package.json" : `packages/p${index}/package.json`, index)) });
+    if (url.includes("/users/") && url.includes("/repos?")) return response([{ id: 1, name: "app", fork: false, archived: false, size: 10, stargazers_count: 2, pushed_at: "2026-01-01T00:00:00Z", default_branch: "main", language: "TypeScript" }], { "x-ratelimit-limit": "60", "x-ratelimit-remaining": "52" });
+    if (url.includes("/git/trees/")) return response({ sha: "tree-sha", truncated: Boolean(options.truncated), tree: Array.from({ length: manifests }, (_, index) => blob(index === 0 ? "package.json" : `packages/p${index}/package.json`, index)) }, { "x-ratelimit-limit": "60", "x-ratelimit-remaining": "51" });
     if (url.endsWith("/graphql")) {
       const query = JSON.parse(String(init?.body)) as { query: string };
       const aliases = [...query.query.matchAll(/r(\d+):repository/g)].map((match) => Number(match[1]));
-      return response({ data: Object.fromEntries(aliases.map((index) => [`r${index}`, { o: { text: JSON.stringify({ dependencies: { next: "*" } }), byteSize: 30, isBinary: false } }])) });
+      return response({ data: Object.fromEntries(aliases.map((index) => [`r${index}`, { o: { text: JSON.stringify({ dependencies: { next: "*" } }), byteSize: 30, isBinary: false } }])) }, { "x-ratelimit-limit": "5000", "x-ratelimit-remaining": "4999" });
     }
     throw new Error(`unexpected ${url}`);
   }) as typeof fetch;
@@ -98,6 +98,7 @@ describe("Evidence Collector V2.1 accounting and coverage", () => {
     expect(after.requests.repositoryDiscovery).toBe("reused");
     expect(after.requests.rest).toBe(before.requests.rest - 1);
     expect(after.requests.graphql).toBe(before.requests.graphql);
+    expect(after.requests.rateLimitLimit).toBe(before.requests.rateLimitLimit);
     expect(after.coverage).toEqual(before.coverage);
     expect(after.evidence).toEqual(before.evidence);
     const beforeCharacter = createRPGCharacterV2({ profile: makeAverageProfile(), evidence: before });

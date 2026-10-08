@@ -144,6 +144,8 @@ async function requestJson(fetchImpl: typeof fetch, url: string, init: RequestIn
 }
 
 function updateRateLimit(response: Response, accounting: RequestAccounting, resource: "rest" | "graphql"): void {
+  const limit = response.headers.get("x-ratelimit-limit");
+  if (limit !== null && Number.isFinite(Number(limit))) accounting.rateLimitLimit = Number(limit);
   const value = response.headers.get("x-ratelimit-remaining");
   if (value !== null && Number.isFinite(Number(value))) {
     accounting.rateLimitRemaining = Number(value);
