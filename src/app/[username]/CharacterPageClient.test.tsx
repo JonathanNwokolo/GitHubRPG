@@ -8,6 +8,9 @@ import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChro
 import { makeAverageProfile, makeProfile } from "@/test/builders";
 import { useUiStore } from "@/stores/useUiStore";
 import CharacterPageClient from "./CharacterPageClient";
+
+// The two share buttons are hidden in production; these tests exercise them with the flag on.
+vi.mock("./shareActions", () => ({ SHARE_ACTIONS_ENABLED: true }));
 import { createRPGCharacterV2 } from "@/game-v2/engine";
 import { GOLDEN_FIXTURES } from "@/game-v2/fixtures";
 import { createCharacterPresentationModel } from "@/game-v2/publicProjection";

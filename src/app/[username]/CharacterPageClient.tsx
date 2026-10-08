@@ -12,6 +12,7 @@ import { hasSparsePublicData } from "@/features/character/sparseProfile";
 import { SkillsTree } from "@/features/skills/SkillsTree";
 import { AchievementsGrid } from "@/features/achievements/AchievementsGrid";
 import { ReadmeBadgeModal } from "@/features/badge/ReadmeBadgeModal";
+import { SHARE_ACTIONS_ENABLED } from "./shareActions";
 import { ShareImageModal } from "@/features/share/ShareImageModal";
 import type { ShareTarget } from "@/features/share/shareTarget";
 import { TitlesPanel } from "@/features/titles/TitlesPanel";
@@ -106,9 +107,9 @@ export default function CharacterPage({
           character={character}
           equippedTitle={displayedTitle}
           v2={livePresentation.v2}
-          onOpenShareModal={() => setIsShareModalOpen(true)}
+          onOpenShareModal={SHARE_ACTIONS_ENABLED ? () => setIsShareModalOpen(true) : undefined}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
-          onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
+          onOpenReadmeModal={SHARE_ACTIONS_ENABLED ? () => setIsReadmeModalOpen(true) : undefined}
         />
 
         <CharacterTabs
