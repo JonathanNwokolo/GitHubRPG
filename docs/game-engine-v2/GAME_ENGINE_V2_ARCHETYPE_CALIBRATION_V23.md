@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3D
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Status
 
 Concluída em 2026-10-07. A V2 permanece experimental e isolada. V1.1, frontend, API pública, Duel, Chronicle, collector V2.1 e estrutura dos bounds V2.2 não foram alterados.

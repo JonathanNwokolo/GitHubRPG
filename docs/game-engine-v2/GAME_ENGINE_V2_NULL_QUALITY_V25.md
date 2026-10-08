@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3F
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Status
 
 Auditoria final de qualidade das decisões de subclasse concluída em 2026-10-07. A análise foi offline, usou somente os 70 snapshots existentes e não alterou runtime, pesos, thresholds, collector, frontend, API pública, V1, Duel, Chronicle ou evoluções.

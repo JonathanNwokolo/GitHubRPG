@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3E
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Status
 
 Etapa 3E executada em 2026-10-07. V1.1 permanece congelada; V2 permanece experimental. Nenhuma alteração foi feita em frontend, API pública, Duel, Chronicle, collector, bounds, catálogo, classes, subclasses, conquistas, títulos ou gates de evolução. Não houve commit, push, deploy ou promoção.
