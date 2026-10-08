@@ -6,7 +6,7 @@ import { analyzeLanguages } from "@/game/languages";
 import type { DeveloperProfile, RPGCharacter } from "@/game/types";
 import type { GitHubDataSource } from "./contracts";
 import { createDataSource } from "./datasource";
-import { isGameEngineV2UiEnabled } from "./datasource/config";
+import { isGameEngineV2E2EColdProfile, isGameEngineV2UiEnabled } from "./datasource/config";
 import { normalizeDeveloperProfile } from "./normalize";
 import { validateRawGitHubData } from "./schemas";
 import { createRPGCharacterV2 } from "@/game-v2/engine";
@@ -121,8 +121,7 @@ export async function loadCharacterProduct(
   emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
 
   try {
-    const forceColdMock = source.kind === "mock"
-      && process.env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === profile.username.toLowerCase();
+    const forceColdMock = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username);
     const result = forceColdMock
       ? { state: "enriching", character: null, cache: "miss", source: "fallback", durationMs: 0, enrichmentStarted: true } satisfies V2DeliveryResult
       : source.kind === "mock"

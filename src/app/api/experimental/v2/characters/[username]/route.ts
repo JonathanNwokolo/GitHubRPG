@@ -1,6 +1,7 @@
 import { after, NextResponse } from "next/server";
 import { describeError } from "@/data/api/errorResponse";
 import { createDataSource } from "@/data/datasource";
+import { isGameEngineV2E2EColdProfile } from "@/data/datasource/config";
 import { GitHubApiDataSource } from "@/data/github/GitHubApiDataSource";
 import { createMockV2Result } from "@/data/loadCharacter";
 import { parseGitHubUsername } from "@/data/github/username";
@@ -43,8 +44,7 @@ export async function GET(request: Request, context: RouteContext) {
     const baseDurationMs = Math.round(performance.now() - baseStarted);
     const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
     emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
-    const result = source.kind === "mock"
-      && process.env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === profile.username.toLowerCase()
+    const result = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username)
       ? createMockV2Result(profile)
       : await getExperimentalV2DeliveryService().deliver(
           { profile, sourceFingerprint: createProfileFingerprint(profile), telemetry: { correlationId, subjectId, baseDurationMs } },

@@ -74,3 +74,8 @@ export function isGameEngineV2UiEnabled(username: string, env: Env = process.env
   const config = readGameEngineV2UiConfig(env);
   return config.enabled && (config.allowlist.size === 0 || config.allowlist.has(username.trim().toLowerCase()));
 }
+
+/** Test-only cold-path seam. Callers must still restrict it to the mock data source. */
+export function isGameEngineV2E2EColdProfile(username: string, env: Env = process.env): boolean {
+  return env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === username.trim().toLowerCase();
+}
