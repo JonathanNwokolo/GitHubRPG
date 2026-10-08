@@ -28,7 +28,6 @@ export const REPOSITORIES_QUERY = `query ($login: String!, $first: Int!, $after:
         isArchived
         isEmpty
         pushedAt
-        defaultBranchRef { name }
         diskUsage
         primaryLanguage { name }
         stargazerCount
@@ -126,7 +125,9 @@ export async function fetchRepositoryDataGraphQL(
       isArchived: node.isArchived ?? false,
       isEmpty: node.isEmpty ?? false,
       pushedAt: node.pushedAt,
-      defaultBranch: node.defaultBranchRef?.name ?? "HEAD",
+      // Git Trees accepts HEAD and resolves it to the repository's default branch. Avoiding
+      // defaultBranchRef removes one nested GraphQL resolver per repository on large profiles.
+      defaultBranch: "HEAD",
       size: node.diskUsage ?? 0,
       primaryLanguage: node.primaryLanguage?.name ?? null,
     } } : {}),
