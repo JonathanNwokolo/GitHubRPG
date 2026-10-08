@@ -33,6 +33,21 @@ export const GRAPHQL_REPOS_PER_PAGE = 50;
 export const MAX_GRAPHQL_REPO_PAGES = 20;
 /** Languages read per repository in the batched query. A repository with more falls back to REST `/languages`. */
 export const GRAPHQL_LANGUAGES_PER_REPO = 30;
+/**
+ * Large profiles: `after` cursors form a chain, so full pages cannot be requested until the previous cursor is
+ * known. A cursor-only walk (100 per call, `edges { cursor }`) hands out the page boundaries early, and the
+ * full 50-repository pages then run side by side. Measured on a 1000-repository profile (sindresorhus): the
+ * sequential chain took 20 pages x ~3.1 s = ~62 s; the walk is 10 calls x ~2.5 s.
+ * Up to GRAPHQL_PIPELINE_MIN_REPOS public repositories the plain sequential chain is kept: it is just as fast
+ * and needs no extra requests.
+ */
+export const GRAPHQL_PIPELINE_MIN_REPOS = 150;
+export const GRAPHQL_CURSOR_PAGE_SIZE = 100;
+/**
+ * Full repository pages in flight at once. With the cursor walk (1) and the contribution requests (3) this
+ * keeps a profile at 7 requests at most while the client allows 6 in flight, and the walk is queued first.
+ */
+export const GRAPHQL_REPO_PAGE_CONCURRENCY = 3;
 
 /** Years bundled in one GraphQL request (aliased `contributionsCollection`s). */
 export const CONTRIBUTION_YEARS_PER_REQUEST = 5;

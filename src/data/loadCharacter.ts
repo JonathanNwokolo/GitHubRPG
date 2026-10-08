@@ -18,6 +18,7 @@ import {
 } from "@/game-v2/publicProjection";
 import { createProfileFingerprint, getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
 import { GitHubApiDataSource } from "./github/GitHubApiDataSource";
+import { summarizeGraphqlCost } from "./github/stats";
 import { createV2CorrelationId, createV2SubjectId, emitV2Telemetry } from "@/game-v2/telemetry";
 import { createRepositoryDiscoverySnapshot } from "./sharedDiscovery";
 
@@ -122,7 +123,7 @@ export async function loadCharacterProduct(
   const subjectId = options.requestOptions?.protection?.subjectId ?? createV2SubjectId(profile.username);
   const baseDurationMs = Math.round(performance.now() - baseStarted);
   const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
-  emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
+  emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0, ...summarizeGraphqlCost(baseReport) });
 
   try {
     const forceColdMock = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username);

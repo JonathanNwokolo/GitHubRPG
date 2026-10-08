@@ -171,12 +171,13 @@ describe("pagination", () => {
     expect(github.repositoryPageCalls()).toHaveLength(1);
   });
 
-  it("many repositories: 600 repos cost 12 repository pages, not 600 requests", async () => {
+  it("many repositories: 600 repos cost 12 repository pages (+ 6 cursor-walk calls), not 600 requests", async () => {
     const { source, github } = setup({ createdAt: "2026-01-10T00:00:00Z", repos: manyRepos(600) });
     const raw = await source.getProfile("octo-dev");
     expect(raw.repositories.items).toHaveLength(600);
     expect(github.repositoryPageCalls()).toHaveLength(12);
-    expect(github.count("rest") + github.count("graphql")).toBe(1 + 12 + 1);
+    expect(github.cursorWalkCalls()).toHaveLength(6);
+    expect(github.count("rest") + github.count("graphql")).toBe(1 + 12 + 6 + 1);
     expect(raw.languagesCoverage).toBe("full");
   });
 

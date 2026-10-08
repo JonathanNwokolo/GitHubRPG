@@ -14,6 +14,7 @@ import { V2_POLL_CONTRACT_VERSION } from "@/game-v2/pollContract";
 import { createV2CorrelationId, createV2SubjectId, emitV2Telemetry } from "@/game-v2/telemetry";
 import { createGitHubRequestProtectionContext } from "@/data/github/protection";
 import { createRepositoryDiscoverySnapshot } from "@/data/sharedDiscovery";
+import { summarizeGraphqlCost } from "@/data/github/stats";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -46,7 +47,7 @@ export async function GET(request: Request, context: RouteContext) {
     const profile = normalizeDeveloperProfile(raw);
     const baseDurationMs = Math.round(performance.now() - baseStarted);
     const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
-    emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
+    emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0, ...summarizeGraphqlCost(baseReport) });
     const result = source.kind === "mock" && isGameEngineV2E2EColdProfile(profile.username)
       ? createMockV2Result(profile)
       : await getExperimentalV2DeliveryService().deliver(

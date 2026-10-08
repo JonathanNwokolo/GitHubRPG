@@ -204,7 +204,7 @@ Uma falha de requisição (timeout, rate limit, erro GraphQL, resposta fora do f
 
 ## Paginação e concorrência
 
-- Repositórios via GraphQL (com token): `first: 50` com `pageInfo.endCursor`/`hasNextPage`, páginas **sequenciais**, limite de segurança de 20 páginas (1.000 repos); repositório repetido entre páginas (push no meio da paginação) é contado uma vez; `hasNextPage` sem cursor encerra a leitura e marca `partial`.
+- Repositórios via GraphQL (com token): `first: 50` com `pageInfo.endCursor`/`hasNextPage`, limite de segurança de 20 páginas (1.000 repos). Até 150 repos públicos as páginas são **sequenciais** (cada `after` vem da página anterior); acima disso, um percurso só de cursores (`edges { cursor }`, 100 por chamada) libera as mesmas páginas de 50 para rodarem em paralelo (3 por vez), com as mesmas queries, a mesma ordem e a mesma cobertura (ver `docs/game-engine-v2/RATE_BUDGET_AND_SHARED_DISCOVERY.md`); repositório repetido entre páginas (push no meio da paginação) é contado uma vez; `hasNextPage` sem cursor encerra a leitura e marca `partial`.
 - Repositórios via REST (sem token): `per_page=100`, páginas **sequenciais** pedidas por número (nunca seguindo URLs vindas da resposta), limite de 10 páginas; `Link: rel="next"` é a fonte da verdade (fallback: página cheia).
 - `/languages` (REST sem token, ou fallback do GraphQL): concorrência **6** por perfil (`mapWithConcurrency`), teto de 150 repos por perfil, e um limitador global de **6 requisições simultâneas por instância** no cliente HTTP (vale entre perfis diferentes).
 - Anos de contribuição: lotes de 5 anos, concorrência 3.
@@ -312,7 +312,7 @@ O caminho REST antigo pulava `/languages` para repositórios com `size == 0`, su
 
 ### Limitações
 
-- **Tempo de relógio em perfis grandes:** as páginas são sequenciais (cursor). `yyx990803` (198 repos): ~9–12 s com GraphQL contra ~7 s com REST, apesar de 9 contra 82 requisições. Perfis de até 50 repos não pioram (1 página). O cache de 15 min mitiga; o timeout é por requisição (10 s), não por perfil, mas um host serverless com limite de execução curto pode cortar perfis de 200+ repos.
+- **Tempo de relógio em perfis grandes:** até 150 repos as páginas são sequenciais (cursor); acima disso elas rodam em paralelo limitado (percurso de cursores à frente), o que levou `sindresorhus` (1.000 repos) de ~62 s para ~31 s. Antes disso: `yyx990803` (198 repos): ~9–12 s com GraphQL contra ~7 s com REST, apesar de 9 contra 82 requisições. Perfis de até 50 repos não pioram (1 página). O cache de 15 min mitiga; o timeout é por requisição (10 s), não por perfil, mas um host serverless com limite de execução curto pode cortar perfis de 200+ repos.
 - Mais de 1.000 repositórios: lista e linguagens `partial`.
 - Repositórios com mais de 30 linguagens ou `languages: null`: fallback REST, limitado a 150 por perfil.
 - Sem token: continua custando 1 requisição por repositório (limite 150, `partial` acima disso).

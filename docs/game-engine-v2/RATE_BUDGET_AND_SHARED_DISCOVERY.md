@@ -128,3 +128,36 @@ Protection events: `client_rate_limited`, `project_budget_denied`, `github_prima
 Collector/enrichment summaries include `repository_discovery=reused|fetched`. HTTP access logs provide the authoritative total of 429 responses; structured events explain why work was avoided. Tokens, raw addresses, headers, manifests, and usernames are never logged.
 
 Before declaring Stage 3 complete, deploy through the required PR checks, repeat the controlled sample, confirm `REST -1` on cold enrichment, verify semantic/coverage equality, and run the documented Production smoke. Until then this document describes implemented and locally verified behavior, not Production proof.
+
+## Large-profile base latency (Hotfix 3B)
+
+Production evidence: `sindresorhus` cold took `v2_base_loaded` = 56.6 s (24 GraphQL, 1 REST) and the runtime killed the invocation at 60 s, leaving no budget for the collector. The collector was not the cause.
+
+Measured decomposition of those 24 GraphQL requests (local instrumented run, same profile; durations are per request):
+
+| Type | Count | Sequential? | Parallelizable? | Shared? | Needed for V1? |
+| --- | ---: | --- | --- | --- | --- |
+| `user.repositories` pages (50 repos, languages) | 20 (cap: 1000 repos, `partial`) | Yes: each `after` came from the previous page; ~3.1 s each, ~62 s in total | Not by themselves; yes once the cursors are known | Feeds V1 and the V2 discovery snapshot | Yes |
+| `contributionsCollection` x 5 years (reviews included) | 4 (17 account years) | No: 3 at a time, finished in ~6.5 s, off the critical path | Already | No | Yes |
+| Reviews as a separate query | 0 | - | - | - | Reviews are `totalPullRequestReviewContributions` inside the contributions requests |
+
+Root cause: the repository cursor chain. Nothing else was on the critical path (the contribution requests ran beside it and ended 55 s earlier).
+
+Probe results (real GitHub, `sindresorhus`): a cursor-only call (`edges { cursor }`, 100 repos) still costs ~2.5 s, so the connection itself is the expensive part, not the languages. `edges[i].cursor` equals the `endCursor` the sequential page would have produced (same repository at position 50, same `endCursor`), and four full pages requested at once took 3.5 s in total, with no degradation.
+
+Change: for profiles with more than `GRAPHQL_PIPELINE_MIN_REPOS` (150) public repositories, `fetchRepositoryPagesPipelined` walks the cursors (10 calls for 1000 repos) and requests each unchanged 50-repository page as soon as its cursor is known, `GRAPHQL_REPO_PAGE_CONCURRENCY` (3) at a time, the first page immediately. Up to 150 repositories the sequential chain is unchanged (small profiles pay nothing). Same query, same page size, same order, same dedupe, same 20-page ceiling, same coverage rules, same REST `/languages` fallback. Every request still goes through `GitHubHttpClient` (limiter of 6, rate-limit gate, Retry-After, transient retry, timeout, abort) and the project circuit around `getProfile`. The next cursor-walk call is queued before the pages it unlocks, so the critical path never waits behind them. A failure anywhere rejects the whole fetch immediately and aborts the siblings; no partial list is returned.
+
+Cost: GraphQL requests go from 24 to 34 for a 1000-repository profile (+10 cursor calls, about +10 GraphQL points of 5000/hour); REST unchanged. Wall clock is bounded by the cursor walk (10 x ~2.7 s) instead of 20 pages x ~3.1 s.
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| Base total, local run | 62.7 s (production: 56.6 s) | 32.4 s |
+| REST | 1 | 1 |
+| GraphQL total | 24 | 34 |
+| Repository pages / cursor calls / contributions (incl. reviews) | 20 / 0 / 4 | 20 / 10 / 4 |
+
+Equivalence on real data (both implementations run concurrently against `sindresorhus`): same 1000 repositories in the same order, same flags, languages, discovery fields and coverage (`partial`, the 1000-repository ceiling); contributions, reviews and activity identical; the only difference was one live star count (`awesome`: 516240 vs 516241) and `fetchedAt`.
+
+`v2_base_loaded` now also logs `graphql_repository_requests`, `graphql_cursor_requests`, `graphql_contribution_requests`, `graphql_other_requests`, summed request time (`graphql_repository_work_ms`, `graphql_contribution_work_ms`; concurrent requests add up) and wall-clock phases (`user_ms`, `repositories_ms`, `contributions_ms`). No query text, variables, headers or tokens.
+
+`repository_discovery=reused` did not appear in the failed validation because it is only logged by `v2_collector_finished` / `v2_enrichment_summary`, at the end of the collector, which the runtime timeout prevented from running. The snapshot is built in the same invocation and passed through `deliver(...)` by closure, so it is available to `after()`; nothing was disconnected.
