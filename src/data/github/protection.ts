@@ -11,7 +11,8 @@ export const CLIENT_RATE_MAX_UNIQUE_COLD_USERNAMES = 30;
 export const CLIENT_RATE_MAX_COLD_WORK = 120;
 export const PROJECT_RATE_RESERVE: Readonly<Record<RequestKind, number>> = { rest: 100, graphql: 100 };
 export const PROJECT_RATE_RESERVE_FRACTION = 0.2;
-const PROJECT_CIRCUIT_KEY = `github-api-v2:${getVercelEnvironment()}`;
+// Version the key whenever circuit interpretation changes so a bad provisional state cannot outlive its code.
+const PROJECT_CIRCUIT_KEY = `github-api-v3:${getVercelEnvironment()}`;
 
 interface SharedBudgetStore {
   get(key: string): Promise<unknown | null>;
