@@ -146,7 +146,11 @@ describe("CharacterPageClient: V2 product presentation", () => {
       character: createRPGCharacterV2(fixture),
     }).v2;
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
+      contractVersion: 1,
+      engineVersion: "2.0-experimental-v24-evo",
+      schemaVersion: "game-engine-v2-schema-2",
       state: "ready",
+      terminal: true,
       character: projected,
     }), { status: 200, headers: { "Content-Type": "application/json" } })));
 

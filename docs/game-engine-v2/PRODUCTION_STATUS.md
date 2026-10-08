@@ -42,7 +42,9 @@ cold profile request
 → a completed final character replaces the V1 presentation layer with V2
 ```
 
-Polling is bounded to six attempts after delays of 4, 4, 8, 12, 16, and 16 seconds (about 60 seconds total). Each request uses `cache: no-store`, omits credentials, and accepts HTTP 202 while enrichment continues. Polling stops when a character arrives, a terminal non-enriching state arrives, the attempt budget ends, or the component unmounts. The server enrichment budget records a soft threshold at 20 seconds and aborts at 55 seconds.
+Polling is bounded to six attempts after delays of 4, 4, 8, 12, 16, and 16 seconds, with a 65-second wall-clock ceiling and 10-second request ceiling. It is sequential, pauses while the page is hidden, resumes with one immediate lookup, honors sanitized `Retry-After` metadata, and aborts on username change or unmount. `ready`, usable `partial`, and `unavailable` are terminal; timeout, rate-limit exhaustion, invalid payload, network failure, and attempt exhaustion also leave an explicit UI state instead of infinite analysis. A stale V2 character stays visible during refresh.
+
+The versioned polling payload and structured cold-path events are documented in [Cold path observability](./COLD_PATH_OBSERVABILITY.md). The server records base and enrichment durations, cache source, collector phase timings, REST/GraphQL/tree/manifest counts, classified errors, and polling attempts without logging usernames or secrets.
 
 The endpoint and service coalesce work only within the same running instance. Requests landing on different instances can still start duplicate enrichments; polling can finish without adopting V2 if enrichment exceeds the bounded client window or repeatedly lands on an instance that cannot observe the completed entry.
 

@@ -1,6 +1,31 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("GitHub RPG E2E Flows", () => {
+  test("V2 cold polling updates automatically and a profile change ignores the old response", async ({ page }) => {
+    test.setTimeout(30_000);
+    let releaseCold!: () => void;
+    const coldRequest = new Promise<void>((resolve) => { releaseCold = resolve; });
+    await page.route("**/api/experimental/v2/characters/cold-dev", async (route) => {
+      await coldRequest;
+      await route.continue();
+    });
+
+    await page.goto("/cold-dev");
+    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await page.waitForRequest((request) => request.url().includes("/api/experimental/v2/characters/cold-dev"));
+    await page.goto("/rookie-dev");
+    releaseCold();
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await page.waitForTimeout(500);
+    await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toHaveCount(0);
+    await expect(page.getByText("Analisando especializações…")).toHaveCount(0);
+
+    await page.unroute("**/api/experimental/v2/characters/cold-dev");
+    await page.goto("/cold-dev");
+    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toBeVisible({ timeout: 10_000 });
+  });
+
   test("V2 A/I: allowlist rollback keeps a profile on the complete V1 experience", async ({ page }) => {
     await page.goto("/rookie-dev");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();

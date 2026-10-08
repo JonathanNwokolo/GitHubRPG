@@ -25,7 +25,8 @@ export default defineConfig({
     env: {
       GITHUB_DATA_SOURCE: "mock",
       GAME_ENGINE_V2_UI_ENABLED: "true",
-      GAME_ENGINE_V2_UI_ALLOWLIST: "veteran-dev,polyglot-dev,popular-dev,empty-dev",
+      GAME_ENGINE_V2_UI_ALLOWLIST: "veteran-dev,polyglot-dev,popular-dev,empty-dev,cold-dev",
+      GAME_ENGINE_V2_E2E_COLD_USERNAME: "cold-dev",
     },
     timeout: 60000,
   },

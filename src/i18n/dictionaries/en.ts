@@ -455,6 +455,10 @@ export const en: TranslationDictionary = {
     noArtifacts: "No recurring artifact was identified in the analysed evidence.",
     partial: "Some evidence from this journey may still be incomplete.",
     enriching: "Analysing specializations…",
+    timedOut: "Analysis took longer than expected. The base sheet remains available.",
+    rateLimited: "GitHub requested a temporary pause. The base sheet remains available.",
+    unavailable: "The specialization is unavailable right now. The base sheet remains available.",
+    retry: "Try again",
     secretHidden: "The requirement stays hidden until this achievement is unlocked.",
     lockedTitles: "Titles to discover",
     affinityLevels: {
