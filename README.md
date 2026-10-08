@@ -6,13 +6,14 @@ Transforma a jornada **pública** de uma pessoa no GitHub em uma ficha de person
 
 ## Estado do projeto
 
-- **Frontend e Game Engine V1.1 prontos**, com testes unitários e e2e.
+- **Game Engine V2 ativa em produção**, com V1.1 preservada como base e fallback. O estado operacional canônico, flags, cache, polling, consumidores V1 e rollback estão em [PRODUCTION_STATUS.md](docs/game-engine-v2/PRODUCTION_STATUS.md).
+- **CI e release protegidos** por lint, typecheck, testes, build e a suíte E2E completa. O fluxo operacional e os checks obrigatórios estão em [docs/operations/CI.md](docs/operations/CI.md).
 - **Duas fontes de dados**, escolhidas no servidor por `GITHUB_DATA_SOURCE`: `mock` (padrão em desenvolvimento; perfis de demonstração determinísticos, a interface avisa "Dados de demonstração") e `github` (`GitHubApiDataSource`: perfis **públicos** reais via REST + GraphQL, com cache, timeout e tratamento de rate limit). Em produção a escolha é obrigatória. Veja [GITHUB_API_INTEGRATION.md](GITHUB_API_INTEGRATION.md), [ENGINE_ARCHITECTURE.md](docs/architecture/ENGINE_ARCHITECTURE.md) e [MOCKS.md](MOCKS.md).
 - Projeto **open source** sob licença MIT. Contribuições e ideias são bem-vindas (veja abaixo).
 
 ## Como rodar
 
-Requisitos: Node.js 20+ e npm.
+Requisitos: Node.js 24 e npm (mesma major usada na Vercel e no CI).
 
 ```bash
 npm install
@@ -68,7 +69,7 @@ NEXT_PUBLIC_SITE_URL=https://githubrpg.vercel.app
 
 `GITHUB_TOKEN` não deve usar prefixo `NEXT_PUBLIC_`. Sem `GITHUB_DATA_SOURCE`, produção falha explicitamente; com `GITHUB_DATA_SOURCE=github` e sem token, o app usa REST anônimo, mantém o básico funcional e deixa métricas de contribuição indisponíveis, com risco maior de rate limit.
 
-Em serverless, o cache atual é em memória por instância: cold starts e múltiplas instâncias podem reduzir a taxa de cache hit. Para tráfego maior, considerar futuramente GitHub App e cache compartilhado; não há Redis, banco ou analytics nesta versão.
+O datasource V1 mantém cache em memória por instância. A entrega V2 adiciona Vercel Runtime Cache para o personagem final, mas evidências e deduplicação continuam limitadas por instância; veja as limitações exatas em [PRODUCTION_STATUS.md](docs/game-engine-v2/PRODUCTION_STATUS.md).
 
 ## Compartilhamento e SEO
 

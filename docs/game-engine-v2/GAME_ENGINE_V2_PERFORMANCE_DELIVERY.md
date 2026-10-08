@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3H
 
+> **Historical delivery record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 > Atualização Etapa 3H-B: o Runtime Cache persistente, o delivery assíncrono e a rota experimental foram implementados. Resultado: **DELIVERY INFRA READY WITH DOCUMENTED MULTI-INSTANCE LIMITATION**. O relatório e as provas estão em `GAME_ENGINE_V2_PERSISTENT_DELIVERY.md` e `artifacts/game-v2-delivery-proof/`.
 
 ## Status

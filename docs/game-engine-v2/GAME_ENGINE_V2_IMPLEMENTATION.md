@@ -1,5 +1,7 @@
 # Game Engine V2 — implementação experimental
 
+> **Historical implementation record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Estado
 
 A V2 vive em `src/game-v2` e não substitui a V1.1. O entrypoint é `createRPGCharacterV2({ profile, evidence })`. A V1 continua responsável por Level/XP, cinco atributos, recursos e Skill Level; a V2 consome esses resultados sem alterar as regras existentes.

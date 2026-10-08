@@ -1,5 +1,7 @@
 # Game Engine V2 — Etapa 3C
 
+> **Historical record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 ## Status
 
 Concluída em 2026-10-07. Resultado: **BOUNDS IMPROVED, CALIBRATION STILL BLOCKED**.

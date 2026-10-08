@@ -1,5 +1,7 @@
 # GitHub RPG Game Engine V2
 
+> **Historical specification record — this document does not describe the current production state.** See [PRODUCTION_STATUS.md](PRODUCTION_STATUS.md) for the canonical operational status.
+
 > Status: especificação de produto e engenharia para implementação futura. Nenhum item deste documento altera a V1.1, seus snapshots, seu balanceamento, sua API ou sua UI.
 >
 > Regra de leitura: valores marcados **INITIAL BALANCE CANDIDATE / BALANCE TUNABLE** são implementáveis como defaults versionados, mas só podem ser promovidos a balanceamento V2.0 após o benchmark da seção 22.
