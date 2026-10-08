@@ -30,7 +30,6 @@ export function buildRootMetadata(env?: SiteUrlEnv): Metadata {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     applicationName: SITE_NAME,
-    icons: { icon: "/favicon.ico" },
   };
 }
 

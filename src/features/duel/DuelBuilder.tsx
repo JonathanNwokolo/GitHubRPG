@@ -199,7 +199,7 @@ export function DuelBuilder({ initialHeroA = "", compact = false }: DuelBuilderP
             type="submit"
             variant="duel"
             size="lg"
-            className="min-w-[260px] text-xs sm:text-sm tracking-widest shadow-[0_4px_24px_rgba(190,30,45,0.45)]"
+            className="min-w-[260px] text-xs sm:text-sm tracking-widest"
           >
             <RpgSwords className="h-5 w-5 mr-1" />
             <span>{t.start}</span>

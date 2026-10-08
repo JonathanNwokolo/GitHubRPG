@@ -659,7 +659,6 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
                 size="lg"
                 onClick={share}
                 aria-label={t.share}
-                className="shadow-[0_4px_20px_rgba(190,30,45,0.4)]"
               >
                 <RpgShare className="h-4 w-4" />
                 <span>{typeof navigator !== "undefined" && "share" in navigator ? t.share : t.copyLink}</span>
