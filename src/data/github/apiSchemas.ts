@@ -67,6 +67,16 @@ export const graphqlRepositoriesSchema = z.object({
     }),
   }),
 });
+/** The cursor-only walk of `user.repositories` (see REPOSITORY_CURSORS_QUERY). */
+export const graphqlCursorsSchema = z.object({
+  user: z.object({
+    repositories: z.object({
+      pageInfo: z.object({ hasNextPage: z.boolean(), endCursor: z.string().nullable() }),
+      edges: z.array(z.object({ cursor: z.string().min(1) })),
+    }),
+  }),
+});
+export type GraphqlCursorConnection = z.infer<typeof graphqlCursorsSchema>["user"]["repositories"];
 export type GraphqlRepositoryNode = z.infer<typeof graphqlRepositoriesSchema>["user"]["repositories"]["nodes"][number];
 
 const day = z.object({

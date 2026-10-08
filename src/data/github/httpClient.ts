@@ -20,6 +20,7 @@ import {
   RETRY_DELAY_MS,
   USER_AGENT,
 } from "./limits";
+import type { GraphqlPurpose } from "./stats";
 import type { RequestStats } from "./stats";
 
 export type RequestKind = "rest" | "graphql";
@@ -152,13 +153,19 @@ export class GitHubHttpClient {
   }
 
   /** GraphQL needs a token. Returns `data`; GraphQL-level errors are translated to typed errors. */
-  async graphql(query: string, variables: Record<string, unknown>, ctx: RequestContext): Promise<unknown> {
+  async graphql(
+    query: string,
+    variables: Record<string, unknown>,
+    ctx: RequestContext,
+    purpose: GraphqlPurpose = "other"
+  ): Promise<unknown> {
     if (!this.token) throw new GitHubUnavailableError("auth");
     const { body } = await this.execute(
       "graphql",
       `${GITHUB_API_BASE_URL}/graphql`,
       { method: "POST", headers: buildHeaders(this.token, true), body: JSON.stringify({ query, variables }) },
-      ctx
+      ctx,
+      purpose
     );
 
     const envelope = graphqlEnvelope.safeParse(body);
@@ -181,13 +188,14 @@ export class GitHubHttpClient {
     kind: RequestKind,
     url: string,
     init: RequestInit,
-    ctx: RequestContext
+    ctx: RequestContext,
+    purpose?: GraphqlPurpose
   ): Promise<{ body: unknown; headers: Headers }> {
     for (let attempt = 0; ; attempt++) {
       this.assertNotBlocked(kind);
       if (ctx.signal?.aborted) throw new RequestAbortedError();
       try {
-        return await this.limit(() => this.attempt(kind, url, init, ctx));
+        return await this.limit(() => this.attempt(kind, url, init, ctx, purpose));
       } catch (error) {
         if (!isTransient(error) || attempt >= MAX_TRANSIENT_RETRIES) throw error;
         await this.sleep(this.retryDelayMs);
@@ -199,7 +207,8 @@ export class GitHubHttpClient {
     kind: RequestKind,
     url: string,
     init: RequestInit,
-    ctx: RequestContext
+    ctx: RequestContext,
+    purpose: GraphqlPurpose = "other"
   ): Promise<{ body: unknown; headers: Headers }> {
     // Re-checked here: this task may have waited in the concurrency queue.
     if (ctx.signal?.aborted) throw new RequestAbortedError();
@@ -208,6 +217,7 @@ export class GitHubHttpClient {
     if (kind === "rest") ctx.stats.rest++;
     else ctx.stats.graphql++;
 
+    const startedAt = performance.now();
     const controller = new AbortController();
     let timedOut = false;
     const timer = setTimeout(() => {
@@ -229,6 +239,7 @@ export class GitHubHttpClient {
     } finally {
       clearTimeout(timer);
       ctx.signal?.removeEventListener("abort", onParentAbort);
+      if (kind === "graphql") ctx.stats.recordGraphql(purpose, performance.now() - startedAt);
     }
 
     this.recordRateLimit(kind, response.headers);

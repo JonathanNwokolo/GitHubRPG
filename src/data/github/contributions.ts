@@ -120,7 +120,7 @@ export async function fetchContributionHistory(
   }
 
   const results = await mapWithConcurrency(batches, CONTRIBUTION_REQUEST_CONCURRENCY, async (batch) => {
-    const data = await client.graphql(buildContributionsQuery(batch, now), { login }, ctx);
+    const data = await client.graphql(buildContributionsQuery(batch, now), { login }, ctx, "contributions");
     return readYears(data, batch);
   });
 

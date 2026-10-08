@@ -131,6 +131,8 @@ export class GitHubApiDataSource implements GitHubDataSource {
         durationMs: Math.round(this.monotonicNow() - startedAt),
         authenticated: this.authenticated,
         ok,
+        graphqlByPurpose: stats.graphqlByPurpose,
+        ...(stats.phases ? { phases: stats.phases } : {}),
       });
 
     const cached = this.cache.get(key);
@@ -226,18 +228,30 @@ export class GitHubApiDataSource implements GitHubDataSource {
     const controller = new AbortController();
     const ctx: RequestContext = { stats, signal: controller.signal };
     try {
+      const loadStarted = this.monotonicNow();
       const user = await fetchUser(this.client, login, ctx);
       lookup.resolve();
+      const userMs = Math.round(this.monotonicNow() - loadStarted);
       const fetchedAt = this.now();
 
       // Repositories (+ languages) and contributions are independent: run them side by side.
       const viaGraphQL = this.client.authenticated && this.repositoryTransport === "auto";
+      const timed = <T>(task: Promise<T>, record: (ms: number) => void): Promise<T> => {
+        const started = this.monotonicNow();
+        return task.then((value) => { record(Math.round(this.monotonicNow() - started)); return value; });
+      };
+      let repositoriesMs = 0;
+      let contributionsMs = 0;
       const [repositories, history] = await Promise.all([
-        viaGraphQL ? fetchRepositoryDataGraphQL(this.client, user, ctx) : fetchRepositoryData(this.client, user, ctx),
+        timed(
+          viaGraphQL ? fetchRepositoryDataGraphQL(this.client, user, ctx) : fetchRepositoryData(this.client, user, ctx),
+          (ms) => { repositoriesMs = ms; }
+        ),
         this.client.authenticated
-          ? fetchContributionHistory(this.client, user.login, user.created_at, fetchedAt, ctx)
+          ? timed(fetchContributionHistory(this.client, user.login, user.created_at, fetchedAt, ctx), (ms) => { contributionsMs = ms; })
           : Promise.resolve(null),
       ]);
+      stats.phases = { userMs, repositoriesMs, contributionsMs };
 
       return assembleRawProfile({ user, repositories, history, fetchedAt });
     } catch (error) {

@@ -125,6 +125,8 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
     return json({ message: "Not Found" }, { status: 404 });
   }
 
+  const isCursorWalk = (call: FakeCall) => Boolean(call.graphqlQuery?.includes("edges { cursor }"));
+
   /** user.repositories(first, after) with languages(first: $langs): cursors are "c<offset>". */
   function repositoriesPage(call: FakeCall): Response {
     const variables = call.graphqlVariables ?? {};
@@ -132,6 +134,16 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
     const langs = Number(variables.langs ?? 10);
     const offset = typeof variables.after === "string" ? Number(variables.after.slice(1)) : 0;
     const end = Math.min(offset + first, repos.length);
+    if (isCursorWalk(call)) {
+      // Cursor-only walk: the edge of repository i carries the cursor that continues right after it.
+      const edges = repos.slice(offset, end).map((_, i) => ({ cursor: `c${offset + i + 1}` }));
+      return json({
+        data: { user: { repositories: {
+          pageInfo: { hasNextPage: end < repos.length, endCursor: edges.length > 0 ? `c${end}` : null },
+          edges,
+        } } },
+      });
+    }
     const nodes = repos.slice(offset, end).map((repo) => {
       const entries = Object.entries(repo.languages ?? {}).sort((a, b) => b[1] - a[1]);
       return {
@@ -231,7 +243,10 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
     state,
     count: (kind: "rest" | "graphql") => calls.filter((c) => (c.path === "/graphql") === (kind === "graphql")).length,
     languageCalls: () => calls.filter((c) => c.path.endsWith("/languages")),
-    repositoryPageCalls: () => calls.filter((c) => c.graphqlQuery?.includes("repositories(")),
+    /** Full repository pages (the ones that carry languages). */
+    repositoryPageCalls: () => calls.filter((c) => c.graphqlQuery?.includes("repositories(") && !c.graphqlQuery.includes("edges { cursor }")),
+    /** The cursor-only walk used for large profiles. */
+    cursorWalkCalls: () => calls.filter((c) => c.graphqlQuery?.includes("edges { cursor }")),
   };
 }
 
