@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
 import { createDataSource } from "@/data/datasource";
-import { GitHubUnavailableError } from "@/data/github/errors";
+import { GitHubRateLimitError, GitHubUnavailableError } from "@/data/github/errors";
 import { getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
 import { makeRawData } from "@/test/builders";
 import { GET } from "./route";
@@ -61,6 +61,17 @@ describe("GET /api/experimental/v2/characters/[username]", () => {
     expect(response.status).toBe(502);
     expect(body.error.code).toBe("github_unavailable");
     expect(mockedService).not.toHaveBeenCalled();
+  });
+
+  it("returns sanitized bounded retry metadata for a GitHub rate limit", async () => {
+    mockedSource.mockReturnValue({ kind: "github", getProfile: vi.fn(async () => { throw new GitHubRateLimitError("primary", new Date(Date.now() + 30_000), 0); }) });
+    const response = await GET(new Request("http://localhost/api/experimental/v2/characters/limited-hero"), { params: Promise.resolve({ username: "limited-hero" }) });
+    const body = await response.json();
+    expect(response.status).toBe(429);
+    expect(body).toMatchObject({ contractVersion: 1, state: "enriching", terminal: false, retryAfterMs: expect.any(Number), error: { code: "rate_limited" } });
+    expect(body.retryAfterMs).toBeGreaterThanOrEqual(1_000);
+    expect(body.retryAfterMs).toBeLessThanOrEqual(60_000);
+    expect(JSON.stringify(body)).not.toMatch(/authorization|cookie|token/i);
   });
 
   it.each(["ready", "stale", "partial", "unavailable"] as const)("exposes the %s state without linking public UI", async (state) => {

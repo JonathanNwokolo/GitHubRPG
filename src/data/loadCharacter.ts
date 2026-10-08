@@ -17,6 +17,8 @@ import {
   type CharacterPresentationModel,
 } from "@/game-v2/publicProjection";
 import { createProfileFingerprint, getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
+import { GitHubApiDataSource } from "./github/GitHubApiDataSource";
+import { createV2CorrelationId, createV2SubjectId, emitV2Telemetry } from "@/game-v2/telemetry";
 
 async function loadProfile(username: string, source: GitHubDataSource): Promise<DeveloperProfile> {
   const raw = await source.getProfile(username);
@@ -72,7 +74,7 @@ export interface LoadedCharacterProduct {
   presentation: CharacterPresentationModel;
 }
 
-function mockV2Result(profile: DeveloperProfile): V2DeliveryResult {
+export function createMockV2Result(profile: DeveloperProfile): V2DeliveryResult {
   const fixtures = {
     "veteran-dev": GOLDEN_FIXTURES.toolingBuild,
     "polyglot-dev": GOLDEN_FIXTURES.architecturalSystem,
@@ -95,6 +97,7 @@ export async function loadCharacterProduct(
   source: GitHubDataSource = createDataSource(),
   options: LoadCharacterProductOptions = {}
 ): Promise<LoadedCharacterProduct> {
+  const baseStarted = performance.now();
   const profile = await loadProfile(username, source);
   const character = createRPGCharacter(profile);
   const base = {
@@ -111,17 +114,28 @@ export async function loadCharacterProduct(
     return { ...base, presentation: createCharacterPresentationModel(false) };
   }
 
+  const correlationId = createV2CorrelationId();
+  const subjectId = createV2SubjectId(profile.username);
+  const baseDurationMs = Math.round(performance.now() - baseStarted);
+  const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
+  emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
+
   try {
-    const result = source.kind === "mock"
-      ? mockV2Result(profile)
+    const forceColdMock = source.kind === "mock"
+      && process.env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === profile.username.toLowerCase();
+    const result = forceColdMock
+      ? { state: "enriching", character: null, cache: "miss", source: "fallback", durationMs: 0, enrichmentStarted: true } satisfies V2DeliveryResult
+      : source.kind === "mock"
+      ? createMockV2Result(profile)
       : options.scheduleBackground
         ? await getExperimentalV2DeliveryService().deliver(
-            { profile, sourceFingerprint: createProfileFingerprint(profile) },
+            { profile, sourceFingerprint: createProfileFingerprint(profile), telemetry: { correlationId, subjectId, baseDurationMs } },
             options.scheduleBackground
           )
-        : await getExperimentalV2DeliveryService().lookup({
+          : await getExperimentalV2DeliveryService().lookup({
             profile,
             sourceFingerprint: createProfileFingerprint(profile),
+            telemetry: { correlationId, subjectId, baseDurationMs },
           });
     return {
       ...base,
