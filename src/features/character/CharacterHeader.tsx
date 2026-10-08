@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import type { RPGCharacter, TitleProgress } from "@/game/types";
+import type { ClassName, RPGCharacter, TitleProgress } from "@/game/types";
 import {
   Badge,
   Tooltip,
@@ -96,9 +96,27 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
 
   const { identity, progression, archetype, resources, meta } = character;
   const displayName = identity.displayName ?? identity.username;
+  // Text and icon share one source: V2 when present, otherwise V1. The V2 projection types the class as a plain
+  // string; RpgClassIcon falls back to the generic insignia for anything outside the known classes.
   const className = v2?.identity.className ?? archetype.className;
-  const subclassName = v2?.identity.subclass?.name[language === "pt-BR" ? "pt" : "en"] ?? archetype.subclassName;
+  const classIconType = className as ClassName;
+  // With a V2 result the subclass comes only from V2 (null means none): the V1 subclass must not leak in,
+  // or the sheet would show a specialization the "Why this class?" dialog (also V2) says does not exist.
+  const subclassName = v2
+    ? v2.identity.subclass?.name[language === "pt-BR" ? "pt" : "en"] ?? null
+    : archetype.subclassName;
   const evolutionName = v2?.identity.evolution?.name[language === "pt-BR" ? "pt" : "en"];
+  // The tooltip follows the same source as the class itself. V1 describes the V1 class only; with a V2 result the
+  // V2 reason for the class is used instead, and when it is missing there is no tooltip rather than a V1 description
+  // of a class the sheet no longer shows.
+  const classDescription = v2 ? v2.explanation.class.reason[language === "pt-BR" ? "pt" : "en"]?.trim() || null : archetype.classDescription;
+
+  const classLabel = (
+    <span className="inline-flex items-center gap-1.5 font-sans text-sm font-extrabold uppercase tracking-wider text-amber-300">
+      <RpgClassIcon classNameType={classIconType} className="h-4 w-4 text-amber-300" />
+      <span>{className}</span>
+    </span>
+  );
 
   // The level plate hangs a constant 10px under the frame's visible edge, whichever frame this hero has.
   const plateOffset = Math.round(getAvatarFrameBottomOverflow(identity.username) * (AVATAR_SIZE / AVATAR_SLOT_RATIO)) + 10;
@@ -140,12 +158,13 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-start">
-            <Tooltip content={archetype.classDescription}>
-              <span className="inline-flex items-center gap-1.5 font-sans text-sm font-extrabold uppercase tracking-wider text-amber-300">
-                <RpgClassIcon classNameType={archetype.className} className="h-4 w-4 text-amber-300" />
-                <span>{className}</span>
-              </span>
-            </Tooltip>
+            {classDescription ? (
+              <Tooltip content={classDescription} className={v2 ? "max-w-xs whitespace-normal" : undefined}>
+                {classLabel}
+              </Tooltip>
+            ) : (
+              classLabel
+            )}
             {subclassName && (
               <>
                 <span aria-hidden="true" className="text-amber-700">
