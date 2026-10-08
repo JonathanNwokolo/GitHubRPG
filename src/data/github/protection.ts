@@ -4,14 +4,14 @@ import type { GitHubRequestProtectionContext } from "../contracts";
 import { GitHubRateLimitError, ProjectBudgetDeniedError, type RateLimitKind } from "./errors";
 import type { RateLimitSnapshot, RequestKind } from "./httpClient";
 import { emitV2Telemetry } from "@/game-v2/telemetry";
-import { isVercelRuntime } from "../datasource/config";
+import { getVercelEnvironment, isVercelRuntime } from "../datasource/config";
 
 export const CLIENT_RATE_WINDOW_MS = 60_000;
 export const CLIENT_RATE_MAX_UNIQUE_COLD_USERNAMES = 30;
 export const CLIENT_RATE_MAX_COLD_WORK = 120;
 export const PROJECT_RATE_RESERVE: Readonly<Record<RequestKind, number>> = { rest: 100, graphql: 100 };
 export const PROJECT_RATE_RESERVE_FRACTION = 0.2;
-const PROJECT_CIRCUIT_KEY = `github-api-v2:${process.env.VERCEL_ENV ?? "local"}`;
+const PROJECT_CIRCUIT_KEY = `github-api-v2:${getVercelEnvironment()}`;
 
 interface SharedBudgetStore {
   get(key: string): Promise<unknown | null>;

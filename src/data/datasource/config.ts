@@ -84,3 +84,9 @@ export function isGameEngineV2E2EColdProfile(username: string, env: Env = proces
 export function isVercelRuntime(env: Env = process.env): boolean {
   return Boolean(env.VERCEL);
 }
+
+/** Stable cache partition; never includes a secret or a user-controlled request value. */
+export function getVercelEnvironment(env: Env = process.env): "production" | "preview" | "development" | "local" {
+  const value = env.VERCEL_ENV?.trim().toLowerCase();
+  return value === "production" || value === "preview" || value === "development" ? value : "local";
+}
