@@ -48,6 +48,8 @@ The versioned polling payload and structured cold-path events are documented in 
 
 The endpoint and service coalesce work only within the same running instance. Requests landing on different instances can still start duplicate enrichments; polling can finish without adopting V2 if enrichment exceeds the bounded client window or repeatedly lands on an instance that cannot observe the completed entry.
 
+Stage 3 rate-budget and shared-discovery changes are introduced by the release documented in [Rate budget and shared discovery](./RATE_BUDGET_AND_SHARED_DISCOVERY.md). Its deterministic request delta is distinct from Production proof: the exact introducing commit must pass the required PR checks, be promoted, and then show `repository_discovery=reused` in Production logs before the stage is considered operationally verified.
+
 ## Cache
 
 - L1 final-character cache: bounded in-memory cache per process, fresh for 1 hour and stale-servable for another 23 hours.
