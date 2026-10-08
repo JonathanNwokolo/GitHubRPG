@@ -64,7 +64,7 @@ describe("GET /api/heroes", () => {
   });
   afterEach(() => vi.useRealTimers());
 
-  it("5/5 before the budget: complete answer, editorial order, shared cache, no post-response work", async () => {
+  it("5/5 before the budget: complete score order, shared cache, no post-response work", async () => {
     scenario();
     const response = await GET(request());
     const body = await response.json();
@@ -74,8 +74,8 @@ describe("GET /api/heroes", () => {
     expect(mockedLoadCharacter).toHaveBeenCalledTimes(5);
     expect(mockedLoadCharacter.mock.calls.every((call) => call.length === 2)).toBe(true);
     expect(body).toMatchObject({ category: "legends", requested: 5, failed: 0, pending: 0, partial: false });
-    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(LEGENDS);
-    expect(body.heroes[0]).toMatchObject({ displayName: "Hero torvalds", level: expect.any(Number), className: expect.any(String) });
+    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual([...LEGENDS].sort());
+    expect(body.heroes[0]).toMatchObject({ displayName: "Hero antirez", level: expect.any(Number), className: expect.any(String) });
     expect(body.heroes[0].skills).toBeUndefined();
     expect(body.heroes[0].achievements).toBeUndefined();
     expect(afterTasks).toHaveLength(0);
@@ -87,7 +87,7 @@ describe("GET /api/heroes", () => {
     const body = await response.json();
 
     expect(body).toMatchObject({ requested: 5, failed: 1, pending: 0, partial: true });
-    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(["torvalds", "gvanrossum", "antirez", "dhh"]);
+    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(["antirez", "dhh", "gvanrossum", "torvalds"]);
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(JSON.stringify(body)).not.toMatch(/upstream failed|ghp_SECRET/);
     expect(afterTasks).toHaveLength(0);
@@ -99,7 +99,7 @@ describe("GET /api/heroes", () => {
     const body = await response.json();
 
     expect(body).toMatchObject({ requested: 5, failed: 0, pending: 2, partial: true });
-    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(["torvalds", "matz", "dhh"]);
+    expect(body.heroes.map((hero: { username: string }) => hero.username)).toEqual(["dhh", "matz", "torvalds"]);
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect([...late.keys()].sort()).toEqual(["antirez", "gvanrossum"]);
   });

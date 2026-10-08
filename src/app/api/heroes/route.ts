@@ -8,7 +8,8 @@ import {
   HEROES_RESPONSE_BUDGET_MS,
   isHeroCategoryId,
 } from "@/features/heroes/featuredHeroes";
-import { toHeroSummary, type HeroSummary, type HeroesResponse } from "@/features/heroes/heroSummary";
+import { toHeroSummary, type HeroesResponse } from "@/features/heroes/heroSummary";
+import { orderHallHeroes, toHallScoreHero } from "@/features/heroes/hallScore";
 
 export const dynamic = "force-dynamic";
 
@@ -36,9 +37,14 @@ export async function GET(request: Request) {
   // so they finish and fill this instance's cache. Other instances do not share it.
   if (pending > 0) after(settled);
 
-  const heroes = slots.flatMap<HeroSummary>((slot) => (
-    slot.status === "fulfilled" ? [toHeroSummary(slot.value.character, slot.value.presentation)] : []
+  const loadedHeroes = slots.flatMap((slot) => (
+    slot.status === "fulfilled"
+      ? [{ ...toHallScoreHero(slot.value.character), product: slot.value }]
+      : []
   ));
+  const heroes = orderHallHeroes(loadedHeroes, categoryId).map(({ product }) =>
+    toHeroSummary(product.character, product.presentation)
+  );
   const failed = slots.filter((slot) => slot.status === "rejected").length;
   const response: HeroesResponse = {
     category: categoryId,

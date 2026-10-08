@@ -23,6 +23,13 @@ export const en: TranslationDictionary = {
   },
   disclaimer:
     "GitHub RPG stats are a gamification of the public activity available and are not an assessment of professional skill.",
+  footer: {
+    madeBy: "Made by",
+    portfolio: "Portfolio",
+    github: "GitHub",
+    sourceCode: "Source code",
+    externalLink: "opens in a new tab",
+  },
   nav: {
     home: "Home",
     hall: "Hall",

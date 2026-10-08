@@ -21,6 +21,13 @@ export const ptBR = {
   },
   disclaimer:
     "As estatísticas do GitHub RPG representam uma gamificação da atividade pública disponível e não uma avaliação de habilidade profissional.",
+  footer: {
+    madeBy: "Feito por",
+    portfolio: "Portfólio",
+    github: "GitHub",
+    sourceCode: "Código-fonte",
+    externalLink: "abre em nova aba",
+  },
   nav: {
     home: "Início",
     hall: "Salão",
