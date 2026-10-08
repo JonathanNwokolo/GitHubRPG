@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { RpgSparkles, TabPanel } from "@/design-system";
 import { getTranslation } from "@/i18n";
-import { RPGButton, RPGDivider, RPGPanel, RPGSectionOrnament, RPGSideOrnaments, RPGTabs } from "@/features/rpg-ui";
+import { RPGButton, RPGDivider, RPGPanel, RPGSectionOrnament, RPGTabs } from "@/features/rpg-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { FeaturedHeroCard } from "./FeaturedHeroCard";
 import { HERO_CATEGORY_IDS, type HeroCategoryId } from "./featuredHeroes";
@@ -62,7 +62,6 @@ export function HeroesHall() {
   return (
     <section id="heroes-hall" aria-labelledby="heroes-hall-title" className="rpg-hall relative w-full scroll-mt-20 overflow-x-clip px-4 py-14 sm:px-6 sm:py-20 lg:px-20">
       <span aria-hidden="true" className="rpg-embers" />
-      <RPGSideOrnaments />
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="mb-6 text-center">
           <RPGSectionOrnament />

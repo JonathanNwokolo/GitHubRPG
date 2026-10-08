@@ -278,6 +278,8 @@
     radial-gradient(ellipse at 50% 120%, rgba(0, 0, 0, 0.9), transparent 60%),
     linear-gradient(#0d0b0d, #120f11 45%, #0a0809);
   border-block: 1px solid rgba(180, 83, 9, 0.35);
+  /* Top edge keeps its 1px box (no layout shift) but draws no full-width line. */
+  border-top-color: transparent;
   box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.55);
 }
 
