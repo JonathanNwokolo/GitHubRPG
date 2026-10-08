@@ -11,18 +11,19 @@ test.describe("GitHub RPG E2E Flows", () => {
     });
 
     await page.goto("/cold-dev");
-    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(0);
     await page.waitForRequest((request) => request.url().includes("/api/experimental/v2/characters/cold-dev"));
     await page.goto("/rookie-dev");
     releaseCold();
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await page.waitForTimeout(500);
     await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toHaveCount(0);
-    await expect(page.getByText("Analisando especializações…")).toHaveCount(0);
+    await expect(page.getByText("Invocando sua ficha...")).toHaveCount(0);
 
     await page.unroute("**/api/experimental/v2/characters/cold-dev");
     await page.goto("/cold-dev");
-    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toBeVisible({ timeout: 10_000 });
   });
 
@@ -86,6 +87,29 @@ test.describe("GitHub RPG E2E Flows", () => {
       await expect(page.getByRole("dialog")).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `dialog ${width}px`).toBeLessThanOrEqual(0);
       await page.keyboard.press("Escape");
+    }
+  });
+
+  test("V2 loading skeleton fits mobile, tablet and desktop without revealing V1", async ({ page }) => {
+    await page.route("**/api/experimental/v2/characters/cold-dev", (route) => route.fulfill({
+      status: 202,
+      contentType: "application/json",
+      body: JSON.stringify({
+        contractVersion: 1,
+        engineVersion: "2.0-experimental-v24-evo",
+        schemaVersion: "game-engine-v2-schema-2",
+        state: "enriching",
+        terminal: false,
+        retryAfterMs: 4_000,
+      }),
+    }));
+    await page.goto("/cold-dev");
+
+    for (const width of [390, 430, 768, 1440]) {
+      await page.setViewportSize({ width, height: width <= 430 ? 844 : 900 });
+      await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
+      await expect(page.getByRole("heading", { level: 1 })).toHaveCount(0);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `${width}px`).toBeLessThanOrEqual(0);
     }
   });
   test("Flow 0: Hall of Heroes is navigable and fits a 375px viewport", async ({ page }) => {
@@ -276,17 +300,17 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
   });
 
-  test("Flow 6b: PT↔EN on a profile switches the footer and the share action, and <html lang> follows", async ({ page }) => {
+  test("Flow 6b: PT↔EN on a profile switches the footer and the page actions, and <html lang> follows", async ({ page }) => {
     await page.goto("/veteran-dev");
     await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
-    await expect(page.getByRole("button", { name: "Gerar Cartão de Herói" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Por que esta classe?" })).toBeVisible();
 
     await page.getByRole("button", { name: /Switch to English/i }).click();
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    await expect(page.getByRole("button", { name: "Forge Hero Card" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Why this class?" })).toBeVisible();
     await expect(page.locator("footer")).not.toContainText(/Feito com|Todos os direitos|Dados públicos/i);
     // UI chrome follows the language (game content such as achievement names stays in its original Portuguese).
-    await expect(page.locator("body")).not.toContainText(/Compartilhar perfil|Gerar Cartão|Baixar Cartão/);
+    await expect(page.locator("body")).not.toContainText(/Por que esta classe|Desafiar este herói/);
   });
 
   test("Flow 6c: Design System is not in the public navigation (the route still exists)", async ({ page }) => {
@@ -384,124 +408,20 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(page.getByText("« Caçador de Estrelas »")).toHaveCount(0);
   });
 
-  // Flow 10: Compartilhar perfil / baixar cartão
-  test("Flow 10: Share modal renders the card, both actions, and closes by Escape returning focus", async ({ page }) => {
+  // Flow 10: the hero card and README actions are intentionally hidden (SHARE_ACTIONS_ENABLED = false).
+  // The modals stay covered by unit tests; /api/card and /api/badge stay covered by the endpoint flows.
+  test("Flow 10: the hero card and README actions are not offered by default, in either language", async ({ page }) => {
     await page.goto("/veteran-dev");
-    const trigger = page.getByRole("button", { name: /Gerar Cartão de Herói/i });
-    await trigger.click();
+    await expect(page.getByRole("link", { name: /Desafiar este herói/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Por que esta classe?" })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Gerar Cartão de Herói/i })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /Adicionar ao README/i })).toHaveCount(0);
+    await expect(page.getByRole("dialog")).toHaveCount(0);
 
-    const dialog = page.getByRole("dialog", { name: /Cartão de Aventureiro/i });
-    await expect(dialog).toBeVisible();
-    await expect(dialog).toHaveAttribute("aria-modal", "true");
-    await expect(dialog.locator("canvas")).toBeVisible();
-    await expect(dialog.getByText(/1200 x 630/i)).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Compartilhar perfil" })).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Baixar Cartão de Herói" })).toBeVisible();
-
-    await page.keyboard.press("Escape");
-    await expect(dialog).toHaveCount(0);
-    await expect(trigger).toBeFocused();
-  });
-
-  test("Flow 10a: Share profile uses the Web Share API with the profile link, never the image URL", async ({ page }) => {
-    await page.addInitScript(() => {
-      const w = window as unknown as { __shared: unknown[] };
-      w.__shared = [];
-      Object.defineProperty(navigator, "share", {
-        configurable: true,
-        value: (data: unknown) => {
-          w.__shared.push(data);
-          return Promise.resolve();
-        },
-      });
-    });
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: /Gerar Cartão de Herói/i }).click();
-    await page.getByRole("dialog").getByRole("button", { name: "Compartilhar perfil" }).click();
-
-    await expect.poll(() => page.evaluate(() => (window as unknown as { __shared: unknown[] }).__shared.length)).toBe(1);
-    const shared = (await page.evaluate(() => (window as unknown as { __shared: unknown[] }).__shared[0])) as {
-      title: string;
-      text: string;
-      url: string;
-    };
-    expect(shared.url).toMatch(/\/veteran-dev$/);
-    expect(shared.url).not.toContain("/api/");
-    expect(shared.title).toContain("veteran-dev");
-    expect(shared.text).toContain("GitHub RPG");
-    // The native sheet already confirmed it: no extra toast, no error.
-    await expect(page.getByRole("dialog").getByRole("alert")).toHaveCount(0);
-  });
-
-  test("Flow 10b-cancel: dismissing the native share sheet is not an error", async ({ page }) => {
-    await page.addInitScript(() => {
-      Object.defineProperty(navigator, "share", {
-        configurable: true,
-        value: () => Promise.reject(new DOMException("Share canceled", "AbortError")),
-      });
-    });
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: /Gerar Cartão de Herói/i }).click();
-    const dialog = page.getByRole("dialog");
-    await dialog.getByRole("button", { name: "Compartilhar perfil" }).click();
-
-    await expect(dialog.getByRole("button", { name: "Compartilhar perfil" })).toBeEnabled();
-    await expect(page.getByRole("dialog").getByRole("alert")).toHaveCount(0);
-    await expect(page.getByText("Link copiado!")).toHaveCount(0);
-  });
-
-  test("Flow 10c: Without Web Share the profile link is copied and 'Link copiado!' is announced", async ({ page }) => {
-    await page.addInitScript(() => {
-      const w = window as unknown as { __copied: string[] };
-      w.__copied = [];
-      Object.defineProperty(navigator, "share", { configurable: true, value: undefined });
-      Object.defineProperty(navigator, "clipboard", {
-        configurable: true,
-        value: {
-          writeText: (text: string) => {
-            w.__copied.push(text);
-            return Promise.resolve();
-          },
-        },
-      });
-    });
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: /Gerar Cartão de Herói/i }).click();
-    await page.getByRole("dialog").getByRole("button", { name: "Compartilhar perfil" }).click();
-
-    await expect(page.getByRole("status").filter({ hasText: "Link copiado!" })).toBeVisible();
-    const copied = await page.evaluate(() => (window as unknown as { __copied: string[] }).__copied);
-    expect(copied).toHaveLength(1);
-    expect(copied[0]).toMatch(/\/veteran-dev$/);
-    expect(copied[0]).not.toContain("/api/");
-  });
-
-  test("Flow 10d: Download Hero Card still delivers the PNG", async ({ page }) => {
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: /Gerar Cartão de Herói/i }).click();
-    const [download] = await Promise.all([
-      page.waitForEvent("download"),
-      page.getByRole("dialog").getByRole("button", { name: "Baixar Cartão de Herói" }).click(),
-    ]);
-    expect(download.suggestedFilename()).toBe("github-rpg-veteran-dev.png");
-  });
-
-  test("Flow 10e: The share dialog keeps focus inside (Tab cycles) and unlocks scroll on close", async ({ page }) => {
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: /Gerar Cartão de Herói/i }).click();
-    const dialog = page.getByRole("dialog");
-    await expect(dialog).toBeVisible();
-
-    for (let i = 0; i < 8; i += 1) {
-      await page.keyboard.press("Tab");
-      const inside = await page.evaluate(() => !!document.activeElement?.closest('[role="dialog"]'));
-      expect(inside).toBe(true);
-    }
-    expect(await page.evaluate(() => getComputedStyle(document.body).overflow)).toBe("hidden");
-
-    await dialog.getByRole("button", { name: "Fechar" }).first().click();
-    await expect(dialog).toHaveCount(0);
-    expect(await page.evaluate(() => getComputedStyle(document.body).overflow)).not.toBe("hidden");
+    await page.getByRole("button", { name: /Switch to English/i }).click();
+    await expect(page.getByRole("button", { name: "Why this class?" })).toBeVisible();
+    await expect(page.getByRole("button", { name: /Forge Hero Card/i })).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /Add to README/i })).toHaveCount(0);
   });
 
   test("Flow 10b: Card image API endpoint returns 200 with PNG image", async ({ request }) => {
@@ -679,73 +599,13 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(dialog.getByText(/does not measure professional skill/)).toBeVisible();
   });
 
-  // Flow 17: badge para README
-  test("Flow 17: 'Add to README' shows the badge and copies the Markdown", async ({ page }) => {
-    let releasePrewarm!: () => void;
-    const prewarmGate = new Promise<void>((resolve) => {
-      releasePrewarm = resolve;
-    });
-    await page.route("**/api/badge/veteran-dev", async (route) => {
-      await prewarmGate;
-      await route.continue();
-    });
-    await page.addInitScript(() => {
-      const w = window as unknown as { __copied: string[] };
-      w.__copied = [];
-      Object.defineProperty(navigator, "clipboard", {
-        configurable: true,
-        value: {
-          writeText: (text: string) => {
-            w.__copied.push(text);
-            return Promise.resolve();
-          },
-        },
-      });
-    });
+  // Flow 17: "Adicionar ao README" is hidden by default; the badge endpoint itself is covered by Flow 17b.
+  test("Flow 17: no README action or dialog is reachable from the public profile", async ({ page }) => {
     await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: "Adicionar ao README" }).click();
-
-    const dialog = page.getByRole("dialog", { name: "Adicionar ao README" });
-    await expect(dialog.getByText("Preparando seu badge…")).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
-    releasePrewarm();
-    await expect(dialog.getByText("Badge pronto para o README.")).toBeVisible();
-    const badge = dialog.getByRole("img", { name: "Pré-visualização do badge" });
-    await expect(badge).toBeVisible();
-    await expect.poll(() => badge.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
-
-    await dialog.getByRole("button", { name: "Copiar Markdown" }).click();
-    await expect(page.getByRole("status").filter({ hasText: "Markdown copiado!" })).toBeVisible();
-    const copied = await page.evaluate(() => (window as unknown as { __copied: string[] }).__copied);
-    expect(copied).toHaveLength(1);
-    expect(copied[0]).toMatch(/^\[!\[GitHub RPG\]\(https?:\/\/[^)]+\/api\/badge\/veteran-dev\)\]\(https?:\/\/[^)]+\/veteran-dev\)$/);
-    expect(copied[0].replace(/^.*\]\(/, "")).not.toContain("/api/");
-  });
-
-  test("Flow 17a: a failed prewarm stays safe and retry reaches the ready state", async ({ page }) => {
-    let attempts = 0;
-    await page.route("**/api/badge/veteran-dev", async (route) => {
-      attempts += 1;
-      if (attempts === 1) {
-        await route.fulfill({ status: 503, contentType: "text/plain", body: "internal detail" });
-        return;
-      }
-      await route.continue();
-    });
-    await page.goto("/veteran-dev");
-    await page.getByRole("button", { name: "Adicionar ao README" }).click();
-
-    const dialog = page.getByRole("dialog", { name: "Adicionar ao README" });
-    const alert = dialog.getByRole("alert");
-    await expect(alert).toContainText("Não foi possível preparar o badge agora");
-    await expect(alert).not.toContainText(/503|internal detail/i);
-    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeDisabled();
-
-    await dialog.getByRole("button", { name: "Tentar novamente" }).click();
-
-    await expect(dialog.getByText("Badge pronto para o README.")).toBeVisible();
-    await expect(dialog.getByRole("button", { name: "Copiar Markdown" })).toBeEnabled();
-    expect(attempts).toBeGreaterThanOrEqual(2);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.getByText(/Adicionar ao README|Copiar Markdown/i)).toHaveCount(0);
+    await expect(page.getByRole("button", { name: /README/i })).toHaveCount(0);
+    await expect(page.getByRole("dialog")).toHaveCount(0);
   });
 
   test("Flow 17b: the badge endpoint is a small, cacheable, script-free SVG; unknown users are a 404", async ({ request }) => {
@@ -852,16 +712,17 @@ test.describe("GitHub RPG E2E Flows", () => {
     expect((await request.get("/api/card/missing-dev/chronicle/2015")).status()).toBe(404);
   });
 
-  test("Flow 19c: the new actions fit a phone screen without horizontal scroll", async ({ page }) => {
+  test("Flow 19c: the visible profile actions fit a phone screen without horizontal scroll", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto("/veteran-dev");
     await expect(page.getByRole("button", { name: "Por que esta classe?" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "Adicionar ao README" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Adicionar ao README" })).toHaveCount(0);
 
     const overflow = () => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
     expect(await overflow()).toBeLessThanOrEqual(0);
 
-    await page.getByRole("button", { name: "Adicionar ao README" }).click();
+    await page.getByRole("button", { name: "Por que esta classe?" }).click();
+    await expect(page.getByRole("dialog")).toBeVisible();
     expect(await overflow()).toBeLessThanOrEqual(0);
   });
 

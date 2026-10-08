@@ -12,6 +12,9 @@ import { useUiStore } from "@/stores/useUiStore";
 import { languagesFromShares, m } from "@/test/builders";
 import CharacterPageClient from "./CharacterPageClient";
 
+// The two share buttons are hidden in production; these tests exercise them with the flag on.
+vi.mock("./shareActions", () => ({ SHARE_ACTIONS_ENABLED: true }));
+
 const profile = yearlyProfile({
   createdAt: "2019-03-12T00:00:00Z",
   referenceDate: "2026-10-01T00:00:00Z",

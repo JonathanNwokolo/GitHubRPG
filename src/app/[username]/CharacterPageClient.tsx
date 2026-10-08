@@ -12,6 +12,7 @@ import { hasSparsePublicData } from "@/features/character/sparseProfile";
 import { SkillsTree } from "@/features/skills/SkillsTree";
 import { AchievementsGrid } from "@/features/achievements/AchievementsGrid";
 import { ReadmeBadgeModal } from "@/features/badge/ReadmeBadgeModal";
+import { SHARE_ACTIONS_ENABLED } from "./shareActions";
 import { ShareImageModal } from "@/features/share/ShareImageModal";
 import type { ShareTarget } from "@/features/share/shareTarget";
 import { TitlesPanel } from "@/features/titles/TitlesPanel";
@@ -29,6 +30,8 @@ import { GrimoireSection } from "@/features/character/GrimoireSection";
 import { AchievementsGridV2 } from "@/features/achievements/AchievementsGridV2";
 import { TitlesPanelV2 } from "@/features/titles/TitlesPanelV2";
 import { useLiveCharacterPresentation } from "@/features/character/useLiveCharacterPresentation";
+import { CharacterForgeLoading } from "@/features/character/CharacterForgeLoading";
+import { resolveCharacterRenderMode } from "@/features/character/characterPresentationState";
 
 // The share modal (canvas drawing code) is only needed once someone opens it: keep it out of the initial bundle.
 const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").then((mod) => mod.ShareCardModal), {
@@ -88,10 +91,15 @@ export default function CharacterPage({
   const titles = livePresentation.v2?.titles;
   const unlockedAchievements = (achievements ?? character.achievements).filter((a) => a.unlocked).length;
   const unlockedTitles = (titles ?? character.titles).filter((title) => title.unlocked).length;
+  const renderMode = resolveCharacterRenderMode(livePresentation, livePresentation.pollStatus);
+  const isWaitingForV2 = renderMode === "loading";
+  const usesV1Fallback = renderMode === "v1-fallback";
+
+  if (isWaitingForV2) return <CharacterForgeLoading language={language} />;
 
   return (
     <div className="pf-stage w-full flex-1">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 animate-fade-in">
+      <div className={`max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 ${livePresentation.v2 ? "motion-safe:animate-[fade-rise_220ms_ease-out_both] motion-reduce:animate-none" : "animate-fade-in"}`}>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
             href="/"
@@ -106,9 +114,9 @@ export default function CharacterPage({
           character={character}
           equippedTitle={displayedTitle}
           v2={livePresentation.v2}
-          onOpenShareModal={() => setIsShareModalOpen(true)}
+          onOpenShareModal={SHARE_ACTIONS_ENABLED ? () => setIsShareModalOpen(true) : undefined}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
-          onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
+          onOpenReadmeModal={SHARE_ACTIONS_ENABLED ? () => setIsReadmeModalOpen(true) : undefined}
         />
 
         <CharacterTabs
@@ -120,15 +128,11 @@ export default function CharacterPage({
           totalTitlesCount={titles?.length ?? character.titles.length}
         />
 
-        {livePresentation.v2Enabled && livePresentation.delivery === "enriching" && (
-          <div className="text-center font-sans text-xs text-slate-400" role="status">
-            {livePresentation.pollStatus === "polling" ? t.gameV2.enriching : (
-              <>
-                <span>{livePresentation.pollStatus === "rate_limited" ? t.gameV2.rateLimited : livePresentation.pollStatus === "timed_out" ? t.gameV2.timedOut : t.gameV2.unavailable}</span>
-                {(livePresentation.pollStatus === "rate_limited" || livePresentation.pollStatus === "timed_out" || livePresentation.pollStatus === "failed") && (
-                  <button type="button" onClick={livePresentation.retry} className="ml-2 underline underline-offset-2 hover:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold rounded">{t.gameV2.retry}</button>
-                )}
-              </>
+        {usesV1Fallback && (
+          <div className="border-l-2 border-rpg-goldDark/70 bg-black/25 px-4 py-3 text-center font-sans text-xs text-slate-400" role="status">
+            <span>{t.gameV2.fallback}</span>
+            {(livePresentation.pollStatus === "rate_limited" || livePresentation.pollStatus === "timed_out" || livePresentation.pollStatus === "failed") && (
+              <button type="button" onClick={livePresentation.retry} className="ml-2 rounded underline underline-offset-2 hover:text-amber-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">{t.gameV2.retry}</button>
             )}
           </div>
         )}
