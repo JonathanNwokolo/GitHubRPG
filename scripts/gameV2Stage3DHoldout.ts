@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { performance } from "node:perf_hooks";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import { ARCHETYPE_ORDER, createRPGCharacterV2, normalizeRepositoryEvidence, type PracticeArchetype, type TechnologyEvidenceProfile } from "@/game-v2";
@@ -21,6 +22,7 @@ const output = path.join(root, "benchmark-v23-holdout.json");
 const round = (value: number | null, digits = 2) => value === null ? null : Math.round(value * 10 ** digits) / 10 ** digits;
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21"]);
   try { await readFile(output, "utf8"); throw new Error("Final holdout artifact already exists. Refusing to execute the holdout a second time."); } catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
   const files = (await readdir(inputs)).filter((file) => file.endsWith(".json")).sort();
   const profiles = [];

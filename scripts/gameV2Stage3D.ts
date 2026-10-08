@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { normalizeDeveloperProfile } from "@/data/normalize";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { validateRawGitHubData } from "@/data/schemas";
 import {
   ARCHETYPE_NAMES,
@@ -140,6 +141,7 @@ async function loadCalibration(): Promise<Array<{ stored: StoredV21; v2: RPGChar
 }
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21"]);
   const calibration = await loadCalibration();
   const rows: ScoreRow[] = calibration.map(({ stored, v2 }) => {
     const ordered = [...v2.archetypes].sort((a, b) => (b.observedScore ?? -1) - (a.observedScore ?? -1) || ARCHETYPE_ORDER.indexOf(a.archetype) - ARCHETYPE_ORDER.indexOf(b.archetype));

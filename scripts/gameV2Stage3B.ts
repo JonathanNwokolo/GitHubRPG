@@ -5,6 +5,7 @@ import { loadEnvFiles } from "./loadEnv";
 import { GitHubApiDataSource } from "@/data/github/GitHubApiDataSource";
 import type { ProfileFetchReport } from "@/data/github/stats";
 import { normalizeDeveloperProfile } from "@/data/normalize";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { validateRawGitHubData } from "@/data/schemas";
 import { collectGitHubEvidenceV21, createRPGCharacterV2, normalizeRepositoryEvidence, type CollectionCoverage, type GitTreeSnapshot, type RPGCharacterV2, type TechnologyEvidenceProfile } from "@/game-v2";
 
@@ -133,5 +134,8 @@ async function build(entries: MatrixEntry[]): Promise<void> {
   console.log(JSON.stringify(analysis, null, 2));
 }
 
-async function main(): Promise<void> { const entries = await matrix(); if (collect) await collectInputs(entries); await build(entries); }
+async function main(): Promise<void> {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/benchmark-final.json", "artifacts/game-v2-benchmark/inputs-v21"]);
+  const entries = await matrix(); if (collect) await collectInputs(entries); await build(entries);
+}
 void main();

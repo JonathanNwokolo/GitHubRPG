@@ -13,6 +13,7 @@ import {
 import { VERCEL_RUNTIME_CACHE_ITEM_LIMIT_BYTES, VercelRuntimeEvidenceCache, type RuntimeCacheStore } from "@/game-v2/runtimeCache";
 import type { RawGitHubData } from "@/data/contracts";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "@/game-v2/types";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 
 const ROOT = path.resolve("artifacts/game-v2-delivery-proof");
 const INPUT_DIRS = [
@@ -55,6 +56,7 @@ function memoryStore(): RuntimeCacheStore & { values: Map<string, unknown> } {
 }
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21", "artifacts/game-v2-generalization/inputs-v24"]);
   const generatedAt = new Date().toISOString();
   const inputs = await loadInputs();
   assert.equal(inputs.length, 70);

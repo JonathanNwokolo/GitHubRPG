@@ -1,6 +1,7 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { performance } from "node:perf_hooks";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import { createRPGCharacterV2, diagnoseEvolutionRules, normalizeRepositoryEvidence, type EvolutionRuleDiagnostic, type RPGCharacterV2, type TechnologyEvidenceProfile } from "@/game-v2";
@@ -29,6 +30,7 @@ const holdoutEvaluation = [
 ] as const;
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/benchmark-v22-bounds-baseline.json", "artifacts/game-v2-benchmark/inputs-v21"]);
   const r1 = JSON.parse(await readFile(path.join(root, "benchmark-v23-r1-signals.json"), "utf8")) as { matrix: Array<{ username: string; subclass: string | null }>; subclassQuality: unknown; correlations: unknown; correlationDelta: unknown; scoreDistributions: unknown; marginBuckets: unknown; topScoreBuckets: unknown };
   const holdout = JSON.parse(await readFile(path.join(root, "benchmark-v23-holdout.json"), "utf8")) as HoldoutArtifact;
   const previous = JSON.parse(await readFile(path.join(root, "benchmark-v22-bounds-baseline.json"), "utf8")) as { profiles: PreviousProfile[] };

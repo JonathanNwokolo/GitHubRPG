@@ -47,3 +47,22 @@ next-env.d.ts
 
 # local source backups for production avatar frames
 /design-assets/avatar-frames-source/
+
+# Restorable Game V2 research raws (authority: GitHub Release + manifest)
+/artifacts/game-v2-benchmark/inputs/
+/artifacts/game-v2-benchmark/inputs-v21/
+/artifacts/game-v2-benchmark/benchmark-r0-baseline.json
+/artifacts/game-v2-benchmark/benchmark-r1-detectors.json
+/artifacts/game-v2-benchmark/benchmark-r2-balance.json
+/artifacts/game-v2-benchmark/benchmark-final.json
+/artifacts/game-v2-benchmark/benchmark-v21-collector.json
+/artifacts/game-v2-benchmark/benchmark-v22-bounds-baseline.json
+/artifacts/game-v2-benchmark/benchmark-v22-holdout.json
+/artifacts/game-v2-generalization/inputs-v24/
+/artifacts/game-v2-evolution/e0-baseline.json
+/artifacts/game-v2-null-quality/null-quality-all.json
+
+# Proven duplicate outputs; canonical compact authorities remain tracked.
+/artifacts/game-v2-benchmark/benchmark-r3-final.json
+/artifacts/game-v2-benchmark/benchmark-r2-balance.csv
+/artifacts/game-v2-benchmark/benchmark-r3-final.csv

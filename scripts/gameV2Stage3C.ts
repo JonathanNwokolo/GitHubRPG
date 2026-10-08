@@ -3,6 +3,7 @@ import { performance } from "node:perf_hooks";
 import path from "node:path";
 import { calculateAccountAge } from "@/game/age";
 import { normalizeDeveloperProfile } from "@/data/normalize";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { validateRawGitHubData } from "@/data/schemas";
 import { createRPGCharacterV2, diagnoseEvolutionRules, normalizeRepositoryEvidence, V2_BALANCE, type CollectionCoverage, type EvolutionRuleDiagnostic, type RPGCharacterV2, type TechnologyEvidenceProfile } from "@/game-v2";
 
@@ -47,6 +48,7 @@ const holdoutEvaluation = {
 async function save(file: string, value: unknown) { await mkdir(path.dirname(file), { recursive: true }); await writeFile(file, `${JSON.stringify(value, null, 2)}\n`, "utf8"); }
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/benchmark-v21-collector.json", "artifacts/game-v2-benchmark/inputs-v21"]);
   const previous = JSON.parse(await readFile(path.join(root, "benchmark-v21-collector.json"), "utf8")) as { profiles: PreviousProfile[] };
   const previousByName = new Map(previous.profiles.map((profile) => [profile.username.toLowerCase(), profile]));
   const profiles: ProcessedProfile[] = [];

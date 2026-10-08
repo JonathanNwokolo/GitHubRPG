@@ -6,6 +6,7 @@ import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import type { DeveloperProfile } from "@/game/types";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "@/game-v2";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 
 const ROOT = path.resolve("artifacts/game-v2-performance");
 const SOURCE = path.resolve("artifacts/game-v2-benchmark/benchmark-v21-collector.json");
@@ -64,6 +65,7 @@ async function readInput(username: string): Promise<BenchmarkInput> {
 }
 
 async function main(): Promise<void> {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/benchmark-v21-collector.json", "artifacts/game-v2-benchmark/inputs-v21"]);
   const source = JSON.parse(await readFile(SOURCE, "utf8")) as { generatedAt: string; profiles: LegacyRow[] };
   const rows = COHORT.map((username) => {
     const row = source.profiles.find((item) => item.username.toLowerCase() === username.toLowerCase());

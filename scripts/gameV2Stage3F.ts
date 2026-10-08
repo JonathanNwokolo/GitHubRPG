@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { performance } from "node:perf_hooks";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import {
@@ -169,6 +170,7 @@ async function loadJson<T>(file: string): Promise<T> {
 }
 
 async function main(): Promise<void> {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21", "artifacts/game-v2-generalization/inputs-v24"]);
   const calibrationArtifact = await loadJson<{ matrix: PriorRow[]; subclassQuality: { profiles: Array<{ username: string; rating: Quality; note: string }> } }>(path.join(benchmarkRoot, "benchmark-v23-r1-signals.json"));
   const holdoutArtifact = await loadJson<{ profiles: PriorRow[] }>(path.join(benchmarkRoot, "benchmark-v23-holdout.json"));
   const holdoutEvaluation = await loadJson<{ profiles: Array<{ username: string; rating: Quality; note: string }> }>(path.join(benchmarkRoot, "holdout-evaluation-v23.json"));

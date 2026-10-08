@@ -1,5 +1,6 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { calculateAccountAge } from "@/game/age";
 import { calculateStats } from "@/game/attributes/calculateAttributes";
 import { analyzeLanguages } from "@/game/languages";
@@ -199,6 +200,7 @@ async function loadJson<T>(file: string): Promise<T> {
 }
 
 async function main(): Promise<void> {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21", "artifacts/game-v2-generalization/inputs-v24"]);
   const finalMode = process.argv.includes("--final");
   const definitions = EVOLUTIONS.map((definition) => finalMode && definition.id === "evo-high-chronomancer" ? { ...definition, minConfidence: "medium" as const } : definition);
   const sources: Array<{ dataset: Dataset; file: string }> = [];

@@ -1,6 +1,7 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { performance } from "node:perf_hooks";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { loadEnvFiles } from "./loadEnv";
 import { GitHubApiDataSource } from "@/data/github/GitHubApiDataSource";
 import { normalizeDeveloperProfile } from "@/data/normalize";
@@ -260,6 +261,7 @@ async function finalizeHoldout(): Promise<void> {
 }
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21", "artifacts/game-v2-generalization/inputs-v24"]);
   const matrix = await loadMatrix();
   if (process.argv.includes("--collect")) await collect(matrix);
   await analyze(matrix);

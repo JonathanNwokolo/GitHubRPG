@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { RPGCharacterV2 } from "@/game-v2";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 
 interface Row {
   username: string;
@@ -16,6 +17,7 @@ interface Row {
 }
 
 const file = process.argv.find((arg) => arg.endsWith(".json")) ?? "artifacts/game-v2-benchmark/benchmark-r0-baseline.json";
+requireGameV2Artifacts([file]);
 const root = path.dirname(file);
 const round = path.basename(file, ".json").replace(/^benchmark-/, "");
 const parsed = JSON.parse(await readFile(file, "utf8")) as { profiles: Row[] };

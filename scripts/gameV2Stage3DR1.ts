@@ -1,5 +1,6 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { requireGameV2Artifacts } from "./gameV2ArtifactRequirement";
 import { normalizeDeveloperProfile } from "@/data/normalize";
 import { validateRawGitHubData } from "@/data/schemas";
 import { ARCHETYPE_ORDER, createRPGCharacterV2, normalizeRepositoryEvidence, V2_BALANCE, type PracticeArchetype, type RPGCharacterV2, type TechnologyEvidenceProfile } from "@/game-v2";
@@ -26,6 +27,7 @@ function contributions(archetype: PracticeArchetype, components: Record<string, 
 }
 
 async function main() {
+  requireGameV2Artifacts(["artifacts/game-v2-benchmark/inputs-v21"]);
   const files = (await readdir(inputs)).filter((file) => file.endsWith(".json")).sort();
   const profiles: Array<{ stored: StoredV21; v2: RPGCharacterV2 }> = [];
   for (const file of files) {

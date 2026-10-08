@@ -31,6 +31,8 @@
     "game:v2:stage3g": "vite-node --config vitest.config.ts scripts/gameV2Stage3G.ts --final",
     "game:v2:stage3h": "vite-node --config vitest.config.ts scripts/gameV2Stage3H.ts",
     "game:v2:stage3hb": "vite-node --config vitest.config.ts scripts/gameV2Stage3HB.ts",
+    "artifacts:archive": "vite-node --config vitest.config.ts scripts/gameV2ArtifactArchive.ts",
+    "artifacts:restore": "vite-node --config vitest.config.ts scripts/restoreGameV2Artifacts.ts",
     "game:v2:collector-review": "vitest run src/game-v2/collectorV21.test.ts",
     "github:smoke": "vite-node --config vitest.config.ts scripts/githubSmoke.ts",
     "github:reviews": "vite-node --config vitest.config.ts scripts/githubReviews.ts"
