@@ -7,6 +7,7 @@ import {
   GitHubTimeoutError,
   GitHubUnavailableError,
   InvalidUsernameError,
+  ProjectBudgetDeniedError,
 } from "../github/errors";
 import type { ApiErrorBody, ApiErrorCode } from "./types";
 
@@ -42,6 +43,18 @@ function describe(
 export function describeError(error: unknown, now: Date): ErrorDescription {
   if (error instanceof InvalidUsernameError) return describe(400, "invalid_username", MESSAGES.invalid_username);
   if (error instanceof ProfileNotFoundError) return describe(404, "not_found", error.message);
+
+  if (error instanceof ProjectBudgetDeniedError) {
+    const retryAfter = Math.min(3_600, Math.max(1, Math.ceil(error.retryAfterSeconds)));
+    return {
+      status: 429,
+      body: { error: { code: "rate_limited", message: error.reason === "client_rate"
+        ? "Muitas análises novas em pouco tempo. Aguarde um instante e tente novamente."
+        : "Análise avançada temporariamente indisponível. Tente novamente em alguns minutos.", retryAfterSeconds: retryAfter } },
+      headers: { "Retry-After": String(retryAfter) },
+      logLine: `Project GitHub budget denied (${error.reason})`,
+    };
+  }
 
   if (error instanceof GitHubRateLimitError) {
     const retryAfter = error.retryAfterSeconds(now);

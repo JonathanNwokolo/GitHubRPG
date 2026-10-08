@@ -1,5 +1,7 @@
 import { performance } from "node:perf_hooks";
 import { parseGitHubUsername } from "@/data/github/username";
+import type { RepositoryDiscoverySnapshot } from "@/data/sharedDiscovery";
+import { GitHubRateLimitError, GitHubUnavailableError } from "@/data/github/errors";
 import { CONTEXTUAL_PATH, DETECTOR_VERSION, IGNORED_PATH, V2_BALANCE } from "./constants";
 import { createEvidenceCacheKey, type SyncCacheStore } from "./cache";
 import { normalizeRepositoryEvidence, selectRepositories } from "./evidence";
@@ -37,6 +39,8 @@ export interface GitHubEvidenceCollectorV21Options {
   timeoutMs?: number;
   treeConcurrency?: number;
   signal?: AbortSignal;
+  /** Request-scope metadata already fetched by the base pipeline. */
+  repositoryDiscovery?: RepositoryDiscoverySnapshot;
   /** Observation only: reporting must not change collector decisions or limits. */
   onError?: (error: unknown, phase: "repositories" | "trees" | "manifests") => void;
 }
@@ -114,19 +118,47 @@ async function limitedMap<T, R>(values: readonly T[], concurrency: number, work:
 async function requestJson(fetchImpl: typeof fetch, url: string, init: RequestInit, timeoutMs: number, signal?: AbortSignal): Promise<{ body: unknown; response: Response }> {
   const timeoutSignal = AbortSignal.timeout(timeoutMs);
   const response = await fetchImpl(url, { ...init, cache: "no-store", signal: signal ? AbortSignal.any([signal, timeoutSignal]) : timeoutSignal });
-  if (!response.ok) throw new Error(`github_v21_http_${response.status}`);
-  return { body: await response.json(), response };
+  const text = await response.text();
+  let body: unknown;
+  try { body = JSON.parse(text); } catch { body = undefined; }
+  if (!response.ok) {
+    const remainingRaw = response.headers.get("x-ratelimit-remaining");
+    const resetRaw = response.headers.get("x-ratelimit-reset");
+    const retryAfterRaw = response.headers.get("retry-after");
+    const remaining = remainingRaw === null ? Number.NaN : Number(remainingRaw);
+    const reset = resetRaw === null ? Number.NaN : Number(resetRaw);
+    const retryAfter = retryAfterRaw === null ? Number.NaN : Number(retryAfterRaw);
+    const message = typeof body === "object" && body !== null && "message" in body ? String((body as { message: unknown }).message) : "";
+    const resetAt = Number.isFinite(reset) ? new Date(reset * 1_000) : null;
+    if ((response.status === 403 || response.status === 429) && remaining === 0) throw new GitHubRateLimitError("primary", resetAt, 0);
+    if (response.status === 429 || ((response.status === 403) && (Number.isFinite(retryAfter) || /secondary rate limit|abuse detection/i.test(message)))) {
+      const wait = Number.isFinite(retryAfter) ? retryAfter : 60;
+      throw new GitHubRateLimitError("secondary", new Date(Date.now() + wait * 1_000), Number.isFinite(remaining) ? remaining : null);
+    }
+    if (response.status === 401) throw new GitHubUnavailableError("auth", 401);
+    if (response.status === 403) throw new GitHubUnavailableError("forbidden", 403);
+    throw new GitHubUnavailableError("upstream", response.status);
+  }
+  if (body === undefined) throw new Error("github_v21_invalid_json");
+  return { body, response };
 }
 
-function updateRateLimit(response: Response, accounting: RequestAccounting): void {
+function updateRateLimit(response: Response, accounting: RequestAccounting, resource: "rest" | "graphql"): void {
+  const limit = response.headers.get("x-ratelimit-limit");
+  if (limit !== null && Number.isFinite(Number(limit))) accounting.rateLimitLimit = Number(limit);
   const value = response.headers.get("x-ratelimit-remaining");
-  if (value !== null && Number.isFinite(Number(value))) accounting.rateLimitRemaining = Number(value);
+  if (value !== null && Number.isFinite(Number(value))) {
+    accounting.rateLimitRemaining = Number(value);
+    accounting.rateLimitResource = resource;
+  }
+  const reset = response.headers.get("x-ratelimit-reset");
+  if (reset !== null && Number.isFinite(Number(reset))) accounting.rateLimitResetAt = new Date(Number(reset) * 1_000).toISOString();
 }
 
 async function fetchManifestRest(fetchImpl: typeof fetch, candidate: ManifestCandidate, token: string | undefined, accounting: RequestAccounting, timeoutMs: number, signal?: AbortSignal): Promise<string> {
   accounting.rest++; accounting.manifestRequests = (accounting.manifestRequests ?? 0) + 1; accounting.fallbackRequests = (accounting.fallbackRequests ?? 0) + 1;
   const { body, response } = await requestJson(fetchImpl, candidate.blobUrl, { headers: apiHeaders(token) }, timeoutMs, signal);
-  updateRateLimit(response, accounting);
+  updateRateLimit(response, accounting, "rest");
   const blob = body as BlobJson;
   if (blob.encoding !== "base64" || typeof blob.content !== "string") throw new Error("github_v21_manifest_invalid");
   return Buffer.from(blob.content.replace(/\s/g, ""), "base64").toString("utf8");
@@ -138,7 +170,7 @@ async function fetchGraphqlBatch(fetchImpl: typeof fetch, owner: string, targets
   const fields = targets.map((target, index) => `r${index}:repository(owner:${JSON.stringify(owner)},name:${JSON.stringify(target.repo.name)}){o:object(expression:${JSON.stringify(`${target.branch}:${target.candidate.path}`)}){... on Blob{text byteSize isBinary}}}`).join("\n");
   accounting.graphql++; accounting.manifestRequests = (accounting.manifestRequests ?? 0) + 1;
   const { body, response } = await requestJson(fetchImpl, "https://api.github.com/graphql", { method: "POST", headers: { ...apiHeaders(token), "Content-Type": "application/json" }, body: JSON.stringify({ query: `query CollectorV21{${fields}}` }) }, timeoutMs, signal);
-  updateRateLimit(response, accounting);
+  updateRateLimit(response, accounting, "graphql");
   const parsed = body as { data?: Record<string, { o?: { text?: string; byteSize?: number; isBinary?: boolean } | null }>; errors?: unknown[] };
   if (!parsed.data) throw new Error("github_v21_graphql_invalid");
   const result = new Map<string, string>();
@@ -158,19 +190,43 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
   const timeoutMs = options.timeoutMs ?? V2_BALANCE.collectorTimeoutMs;
   const accounting: RequestAccounting = { rest: 0, graphql: 0, manifestFetches: 0, reposInspected: 0, cacheHits: 0, treeRequests: 0, manifestRequests: 0, fallbackRequests: 0, treeCacheHits: 0, manifestCacheHits: 0, manifestsDiscovered: 0, manifestsSkippedByBudget: 0, projectsDiscovered: 0, rateLimitRemaining: null };
   const selectionStarted = performance.now();
-  let listed: unknown;
-  try {
-    accounting.rest++;
-    const response = await requestJson(fetchImpl, `https://api.github.com/users/${encodeURIComponent(username)}/repos?type=owner&sort=pushed&direction=desc&per_page=100`, { headers: apiHeaders(options.token) }, timeoutMs, options.signal);
-    listed = response.body; updateRateLimit(response.response, accounting);
-  } catch (error) {
-    options.onError?.(error, "repositories");
-    return normalizeRepositoryEvidence({ repositories: [], coverage: { coverage: "unavailable", eligible: 0, examined: 0, failed: 1, omittedByBudget: 0, reposCandidates: 0, gap: "large" }, requests: accounting });
+  const shared = options.repositoryDiscovery?.username === username.toLowerCase()
+    ? options.repositoryDiscovery
+    : null;
+  let branches: Map<string, string>;
+  let summaries: RawRepositoryEvidence[];
+  if (shared) {
+    accounting.repositoryDiscovery = "reused";
+    branches = new Map(shared.repositories.map((repository) => [repository.name, repository.defaultBranch]));
+    summaries = shared.repositories.map((repository) => ({
+      id: repository.id,
+      name: repository.name,
+      isFork: repository.isFork,
+      isArchived: repository.isArchived,
+      isEmpty: repository.isEmpty,
+      stars: repository.stars,
+      pushedAt: repository.pushedAt,
+      languages: { ...repository.languages },
+      files: [],
+      size: repository.size,
+      primaryLanguage: repository.primaryLanguage,
+    }));
+  } else {
+    accounting.repositoryDiscovery = "fetched";
+    let listed: unknown;
+    try {
+      accounting.rest++;
+      const response = await requestJson(fetchImpl, `https://api.github.com/users/${encodeURIComponent(username)}/repos?type=owner&sort=pushed&direction=desc&per_page=100`, { headers: apiHeaders(options.token) }, timeoutMs, options.signal);
+      listed = response.body; updateRateLimit(response.response, accounting, "rest");
+    } catch (error) {
+      options.onError?.(error, "repositories");
+      return normalizeRepositoryEvidence({ repositories: [], coverage: { coverage: "unavailable", eligible: 0, examined: 0, failed: 1, omittedByBudget: 0, reposCandidates: 0, gap: "large" }, requests: accounting });
+    }
+    if (!Array.isArray(listed)) throw new Error("github_v21_repository_list_invalid");
+    const repoRows = listed.filter((value): value is GitHubRepoJson => typeof value === "object" && value !== null && typeof (value as GitHubRepoJson).name === "string");
+    branches = new Map(repoRows.map((repo) => [repo.name!, repo.default_branch ?? "HEAD"]));
+    summaries = repoRows.map((repo) => ({ id: String(repo.id ?? repo.name), name: repo.name!, isFork: Boolean(repo.fork), isArchived: Boolean(repo.archived), isEmpty: (repo.size ?? 0) === 0, stars: repo.stargazers_count ?? 0, pushedAt: repo.pushed_at ?? "1970-01-01T00:00:00Z", languages: {}, files: [], size: repo.size ?? 0, primaryLanguage: repo.language ?? null }));
   }
-  if (!Array.isArray(listed)) throw new Error("github_v21_repository_list_invalid");
-  const repoRows = listed.filter((value): value is GitHubRepoJson => typeof value === "object" && value !== null && typeof (value as GitHubRepoJson).name === "string");
-  const branches = new Map(repoRows.map((repo) => [repo.name!, repo.default_branch ?? "HEAD"]));
-  const summaries: RawRepositoryEvidence[] = repoRows.map((repo) => ({ id: String(repo.id ?? repo.name), name: repo.name!, isFork: Boolean(repo.fork), isArchived: Boolean(repo.archived), isEmpty: (repo.size ?? 0) === 0, stars: repo.stargazers_count ?? 0, pushedAt: repo.pushed_at ?? "1970-01-01T00:00:00Z", languages: {}, files: [], size: repo.size ?? 0, primaryLanguage: repo.language ?? null }));
   const { selected, eligible } = selectRepositories(summaries);
   const selectionMs = performance.now() - selectionStarted;
 
@@ -186,7 +242,7 @@ export async function collectGitHubEvidenceV21(usernameInput: string, options: G
       else {
         accounting.rest++; accounting.treeRequests = (accounting.treeRequests ?? 0) + 1;
         const response = await requestJson(fetchImpl, `https://api.github.com/repos/${encodeURIComponent(username)}/${encodeURIComponent(repo.name)}/git/trees/${encodeURIComponent(branch)}?recursive=1`, { headers: apiHeaders(options.token) }, timeoutMs, options.signal);
-        updateRateLimit(response.response, accounting);
+        updateRateLimit(response.response, accounting, "rest");
         const raw = response.body as GitTreeJson;
         snapshot = { sha: raw.sha ?? branch, truncated: Boolean(raw.truncated), items: raw.tree ?? [] };
         options.treeCache?.set(headKey, snapshot);

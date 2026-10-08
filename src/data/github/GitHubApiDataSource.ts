@@ -1,15 +1,17 @@
-import { ProfileNotFoundError, type GitHubDataSource, type RawGitHubData } from "../contracts";
+import { ProfileNotFoundError, type GitHubDataSource, type GitHubProfileRequestOptions, type RawGitHubData } from "../contracts";
 import { assembleRawProfile } from "./assemble";
 import { TtlCache } from "./cache";
 import { systemClock, type Clock } from "./clock";
 import { fetchContributionHistory } from "./contributions";
-import { GitHubNotFoundError } from "./errors";
+import { GitHubNotFoundError, GitHubRateLimitError } from "./errors";
 import { fetchRepositoryDataGraphQL } from "./graphqlRepositories";
 import { GitHubHttpClient, type RequestContext } from "./httpClient";
 import { CACHE_MAX_ENTRIES, CACHE_TTL_MS, NOT_FOUND_TTL_MS } from "./limits";
 import { fetchRepositoryData, fetchUser } from "./restFetchers";
 import { RequestStats, type CacheOutcome, type ProfileFetchReport } from "./stats";
 import { parseGitHubUsername, usernameKey } from "./username";
+import { getGitHubProjectProtection, GitHubProjectProtection } from "./protection";
+import { isVercelRuntime } from "../datasource/config";
 
 export interface GitHubApiDataSourceOptions {
   /** The server-only credential. Optional: without it only the anonymous REST data is available. */
@@ -33,6 +35,7 @@ export interface GitHubApiDataSourceOptions {
   maxCacheEntries?: number;
   /** Called after every getProfile (hit or miss) with request counts. Internal instrumentation only. */
   onReport?: (report: ProfileFetchReport) => void;
+  projectProtection?: GitHubProjectProtection;
 }
 
 const MAX_REPORTS_KEPT = 50;
@@ -76,11 +79,14 @@ export class GitHubApiDataSource implements GitHubDataSource {
   /** Per running fetch: settles when the user lookup (its first request) has answered. See ensureProfileExists. */
   private readonly lookups = new Map<string, Promise<void>>();
   private readonly reports: ProfileFetchReport[] = [];
+  private readonly projectProtection: GitHubProjectProtection;
 
   constructor(options: GitHubApiDataSourceOptions = {}) {
     this.now = options.now ?? systemClock;
     this.monotonicNow = options.monotonicNow ?? (() => performance.now());
     this.onReport = options.onReport;
+    this.projectProtection = options.projectProtection
+      ?? (isVercelRuntime() ? getGitHubProjectProtection() : new GitHubProjectProtection({ store: null }));
     this.repositoryTransport = options.repositoryTransport ?? "auto";
     this.client = new GitHubHttpClient({
       token: options.token,
@@ -109,7 +115,7 @@ export class GitHubApiDataSource implements GitHubDataSource {
    * ProfileNotFoundError, GitHubRateLimitError, GitHubUnavailableError, GitHubTimeoutError,
    * GitHubDataValidationError otherwise.
    */
-  async getProfile(username: string): Promise<RawGitHubData> {
+  async getProfile(username: string, options: GitHubProfileRequestOptions = {}): Promise<RawGitHubData> {
     const login = parseGitHubUsername(username);
     const key = usernameKey(login);
     const startedAt = this.monotonicNow();
@@ -151,16 +157,23 @@ export class GitHubApiDataSource implements GitHubDataSource {
 
     const lookup = deferred();
     lookup.promise.catch(() => {}); // most callers never wait for it: a failure must not look unhandled
-    const promise = this.load(login, stats, lookup);
+    const promise = this.loadProtected(login, stats, lookup, options);
     this.inflight.set(key, promise);
     this.lookups.set(key, lookup.promise);
     try {
       const raw = await promise;
       this.cache.set(key, raw);
       finish("miss", true);
+      await Promise.all([
+        this.projectProtection.observeSnapshot("rest", this.client.getRateLimit("rest"), options.protection),
+        this.projectProtection.observeSnapshot("graphql", this.client.getRateLimit("graphql"), options.protection),
+        this.projectProtection.observeSuccess(options.protection),
+      ]);
       return raw;
     } catch (error) {
       if (error instanceof ProfileNotFoundError) this.notFound.set(key, true);
+      if (error instanceof GitHubRateLimitError) await this.projectProtection.observeRateLimit(error, options.protection);
+      else await this.projectProtection.observeProbeFailure(options.protection);
       finish("miss", false);
       throw error;
     } finally {
@@ -174,7 +187,7 @@ export class GitHubApiDataSource implements GitHubDataSource {
    * running and is shared with a later `getProfile` (same in-flight entry and cache), so this adds no request.
    * Throws exactly what `getProfile` would for an unknown/invalid user, or when the lookup itself fails.
    */
-  async ensureProfileExists(username: string): Promise<void> {
+  async ensureProfileExists(username: string, options: GitHubProfileRequestOptions = {}): Promise<void> {
     const login = parseGitHubUsername(username);
     const key = usernameKey(login);
 
@@ -183,7 +196,7 @@ export class GitHubApiDataSource implements GitHubDataSource {
 
     if (!this.lookups.has(key)) {
       // Start the full fetch exactly as getProfile does; only its first step is awaited here.
-      this.getProfile(login).catch(() => {});
+      this.getProfile(login, options).catch(() => {});
     }
     await this.lookups.get(key);
   }
@@ -192,6 +205,21 @@ export class GitHubApiDataSource implements GitHubDataSource {
     this.reports.push(report);
     if (this.reports.length > MAX_REPORTS_KEPT) this.reports.shift();
     this.onReport?.(report);
+  }
+
+  private async loadProtected(
+    login: string,
+    stats: RequestStats,
+    lookup: Deferred,
+    options: GitHubProfileRequestOptions
+  ): Promise<RawGitHubData> {
+    try {
+      await this.projectProtection.beforeColdWork(login, options.protection);
+      return await this.load(login, stats, lookup);
+    } catch (error) {
+      lookup.reject(error);
+      throw error;
+    }
   }
 
   private async load(login: string, stats: RequestStats, lookup: Deferred): Promise<RawGitHubData> {

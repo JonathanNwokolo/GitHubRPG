@@ -97,6 +97,10 @@ export interface RequestAccounting {
   manifestsSkippedByBudget?: number;
   projectsDiscovered?: number;
   rateLimitRemaining?: number | null;
+  rateLimitLimit?: number | null;
+  rateLimitResetAt?: string | null;
+  rateLimitResource?: "rest" | "graphql";
+  repositoryDiscovery?: "reused" | "fetched";
   timingsMs?: {
     repositorySelection: number;
     treeDiscovery: number;

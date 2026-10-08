@@ -2,6 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { makeAverageProfile } from "@/test/builders";
 import { InMemoryEvidenceCache, MultiLayerEvidenceCache, createCacheReferenceBucket, createEvidenceCacheKey, createManifestCacheKey, V2DeliveryService, V2EnrichmentAbortedError, normalizeRepositoryEvidence } from ".";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "./types";
+import { GitHubProjectProtection } from "@/data/github/protection";
+import { GitHubRateLimitError, ProjectBudgetDeniedError } from "@/data/github/errors";
 
 function evidence(coverage: "full" | "partial" | "unavailable" = "full"): TechnologyEvidenceProfile {
   return normalizeRepositoryEvidence({
@@ -147,6 +149,33 @@ describe("V2 delivery cache", () => {
     await expect(service.deliver(input, (task) => scheduled.push(task))).resolves.toMatchObject({ state: "stale", character: expect.any(Object) });
     await Promise.all(scheduled);
     await expect(service.lookup(input)).resolves.toMatchObject({ state: "stale", character: expect.any(Object) });
+  });
+
+  it("serves stale during an open project circuit and denies only a cold miss", async () => {
+    let now = 0;
+    const protection = new GitHubProjectProtection({ store: null, now: () => now });
+    const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>(250, () => now);
+    const seed = new V2DeliveryService({ characterCache, collector: async () => evidence(), projectProtection: protection, policy: { characterTtlMs: 10, characterStaleTtlMs: 100 } });
+    await seed.enrich(input);
+    now = 11;
+    await protection.observeRateLimit(new GitHubRateLimitError("secondary", new Date(now + 60_000), 10));
+    const service = new V2DeliveryService({ characterCache, collector: async () => evidence(), projectProtection: protection });
+    const scheduled: Promise<void>[] = [];
+    await expect(service.deliver(input, (task) => scheduled.push(task))).resolves.toMatchObject({ state: "stale", enrichmentStarted: false });
+    expect(scheduled).toHaveLength(0);
+    await expect(service.deliver({ ...input, sourceFingerprint: "cold-other" }, () => undefined)).rejects.toBeInstanceOf(ProjectBudgetDeniedError);
+  });
+
+  it("bounds the enrichment queue instead of extending function duration indefinitely", async () => {
+    let release!: () => void;
+    const gate = new Promise<void>((resolve) => { release = resolve; });
+    const protection = new GitHubProjectProtection({ store: null });
+    const service = new V2DeliveryService({ collector: async () => { await gate; return evidence(); }, projectProtection: protection, maxConcurrentEnrichments: 1, maxQueuedEnrichments: 0 });
+    const first = service.enrich(input);
+    await Promise.resolve();
+    await expect(service.enrich({ ...input, sourceFingerprint: "other" })).rejects.toMatchObject({ reason: "enrichment_concurrency" });
+    release();
+    await first;
   });
 
   it("coalesces a ten-request cold stampede into one collector", async () => {

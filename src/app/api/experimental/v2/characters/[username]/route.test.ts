@@ -2,7 +2,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
 import { createDataSource } from "@/data/datasource";
-import { GitHubRateLimitError, GitHubUnavailableError } from "@/data/github/errors";
+import { GitHubRateLimitError, GitHubUnavailableError, ProjectBudgetDeniedError } from "@/data/github/errors";
 import { getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
 import { makeRawData } from "@/test/builders";
 import { GET } from "./route";
@@ -72,6 +72,14 @@ describe("GET /api/experimental/v2/characters/[username]", () => {
     expect(body.retryAfterMs).toBeGreaterThanOrEqual(1_000);
     expect(body.retryAfterMs).toBeLessThanOrEqual(60_000);
     expect(JSON.stringify(body)).not.toMatch(/authorization|cookie|token/i);
+  });
+
+  it("uses the same polling-safe 429 contract for a project budget denial", async () => {
+    mockedSource.mockReturnValue({ kind: "github", getProfile: vi.fn(async () => { throw new ProjectBudgetDeniedError("github_budget", 45); }) });
+    const response = await GET(new Request("http://localhost/api/experimental/v2/characters/budget-hero"), { params: Promise.resolve({ username: "budget-hero" }) });
+    expect(response.status).toBe(429);
+    expect(response.headers.get("Retry-After")).toBe("45");
+    await expect(response.json()).resolves.toMatchObject({ state: "enriching", terminal: false, retryAfterMs: 45_000, error: { code: "rate_limited" } });
   });
 
   it.each(["ready", "stale", "partial", "unavailable"] as const)("exposes the %s state without linking public UI", async (state) => {

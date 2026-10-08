@@ -4,11 +4,14 @@ import { notFound } from "next/navigation";
 import { ProfileNotFoundError, type GitHubDataSource } from "@/data/datasource";
 import { InvalidUsernameError } from "@/data/github/errors";
 import { loadCharacterProduct } from "@/data/loadCharacter";
+import type { GitHubProfileRequestOptions } from "@/data/contracts";
 import CharacterPageClient from "./CharacterPageClient";
 
 interface CharacterSheetProps {
   username: string;
   source: GitHubDataSource;
+  requestOptions?: GitHubProfileRequestOptions;
+  allowEnrichment?: boolean;
 }
 
 /**
@@ -18,10 +21,11 @@ interface CharacterSheetProps {
  * Only an unknown profile becomes a 404 here (the normal path is decided earlier, before streaming starts).
  * Anything else (GitHub down, timeout, rate limit, internal error) is rethrown to error.tsx.
  */
-export default async function CharacterSheet({ username, source }: CharacterSheetProps) {
+export default async function CharacterSheet({ username, source, requestOptions, allowEnrichment = true }: CharacterSheetProps) {
   try {
     const { character, chronicle, classExplanation, presentation } = await loadCharacterProduct(username, source, {
-      scheduleBackground: (task) => after(task),
+      ...(allowEnrichment ? { scheduleBackground: (task: Promise<void>) => after(task) } : {}),
+      requestOptions,
     });
     return (
       <CharacterPageClient

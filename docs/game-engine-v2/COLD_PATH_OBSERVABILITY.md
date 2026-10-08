@@ -20,9 +20,13 @@ Server logs are one-line JSON and use a random `correlation_id` plus a stable 12
 - `v2_rate_limited`, `v2_timeout`, `v2_collector_error`: stable error classification without raw upstream bodies.
 - `v2_poll_started`, `v2_poll_attempt`: compact server-visible browser attempts.
 - `v2_poll_summary`: browser console summary with attempts, elapsed time, terminal result, and hidden pauses. Browser logs are not guaranteed to reach Vercel; server attempt events remain the production source for request-side polling analysis.
+- Protection: `client_rate_limited`, `project_budget_denied`, GitHub primary/secondary pressure, and circuit open/half-open/recovered transitions.
+- Shared discovery: collector and enrichment summaries record `repository_discovery=reused|fetched` so request reduction is observable.
 
 Filter Vercel Function logs by the event name, then group a flow by `correlation_id`. Cache sources are `l1`, `l2`, `stale`, `miss`, or `fallback`. No SLO is defined by this stage.
 
 ## Known limitation
 
 Runtime Cache has no distributed compare-and-set lock for this flow. Same-process reuse emits `v2_enrichment_reused`; cross-instance duplication cannot be identified reliably without shared coordination, so no `duplicate_suspected` metric is emitted. This is deliberately documented instead of presenting inference as fact.
+
+Rate-budget behavior, provisional limits, fail-open/fail-closed decisions, and shared repository discovery are documented in [Rate budget and shared discovery](./RATE_BUDGET_AND_SHARED_DISCOVERY.md).

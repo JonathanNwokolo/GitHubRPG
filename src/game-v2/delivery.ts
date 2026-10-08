@@ -14,6 +14,10 @@ import {
 import { collectGitHubEvidenceV21, type GitHubEvidenceCollectorV21Options, type GitTreeSnapshot } from "./collectorV21";
 import { createRPGCharacterV2 } from "./engine";
 import type { DeveloperProfile } from "@/game/types";
+import type { GitHubRequestProtectionContext } from "@/data/contracts";
+import type { RepositoryDiscoverySnapshot } from "@/data/sharedDiscovery";
+import { getGitHubProjectProtection, type GitHubProjectProtection } from "@/data/github/protection";
+import { GitHubRateLimitError, ProjectBudgetDeniedError } from "@/data/github/errors";
 import type { RPGCharacterV2, TechnologyEvidenceProfile } from "./types";
 import { classifyV2Error, emitV2Telemetry } from "./telemetry";
 
@@ -60,12 +64,16 @@ export interface V2DeliveryServiceOptions {
   policy?: Partial<V2DeliveryCachePolicy>;
   budget?: Partial<V2EnrichmentBudget>;
   maxConcurrentEnrichments?: number;
+  maxQueuedEnrichments?: number;
   onMetric?: (name: MetricName, value: number) => void;
+  projectProtection?: GitHubProjectProtection;
 }
 
 export interface V2EnrichmentInput {
   profile: DeveloperProfile;
   sourceFingerprint: string;
+  repositoryDiscovery?: RepositoryDiscoverySnapshot;
+  protection?: GitHubRequestProtectionContext;
   telemetry?: { correlationId: string; subjectId: string; baseDurationMs?: number };
 }
 export type V2BackgroundScheduler = (task: Promise<void>) => void;
@@ -99,7 +107,9 @@ export class V2DeliveryService {
   private readonly policy: V2DeliveryCachePolicy;
   private readonly budget: V2EnrichmentBudget;
   private readonly maxConcurrentEnrichments: number;
+  private readonly maxQueuedEnrichments: number;
   private readonly onMetric?: V2DeliveryServiceOptions["onMetric"];
+  private readonly projectProtection: GitHubProjectProtection;
   private readonly inflight = new Map<string, Promise<RPGCharacterV2>>();
   private readonly background = new Map<string, Promise<void>>();
   private readonly slotWaiters: Array<() => void> = [];
@@ -119,9 +129,12 @@ export class V2DeliveryService {
     this.policy = { ...DEFAULT_POLICY, ...options.policy };
     this.budget = { ...DEFAULT_BUDGET, ...options.budget };
     this.maxConcurrentEnrichments = options.maxConcurrentEnrichments ?? 2;
+    this.maxQueuedEnrichments = options.maxQueuedEnrichments ?? 4;
     this.onMetric = options.onMetric;
+    this.projectProtection = options.projectProtection ?? getGitHubProjectProtection();
     if (this.budget.softMs <= 0 || this.budget.hardMs <= this.budget.softMs) throw new Error("invalid_v2_enrichment_budget");
     if (!Number.isInteger(this.maxConcurrentEnrichments) || this.maxConcurrentEnrichments < 1) throw new Error("invalid_v2_enrichment_concurrency");
+    if (!Number.isInteger(this.maxQueuedEnrichments) || this.maxQueuedEnrichments < 0) throw new Error("invalid_v2_enrichment_queue");
   }
 
   private record(name: Exclude<MetricName, "durationMs">, value = 1): void {
@@ -175,10 +188,23 @@ export class V2DeliveryService {
   async deliver(input: V2EnrichmentInput, schedule: V2BackgroundScheduler): Promise<V2DeliveryResult> {
     const result = await this.lookup(input);
     if (result.cache === "hit") return result;
-    return { ...result, enrichmentStarted: this.scheduleBackground(input, schedule) };
+    try {
+      await this.projectProtection.beforeColdWork(input.profile.username, input.protection);
+    } catch (error) {
+      if (error instanceof ProjectBudgetDeniedError && result.character) {
+        this.emit(input, "v2_cache_served_during_protection", { cache_source: result.state === "stale" ? "stale" : result.source, reason: error.reason });
+        return { ...result, enrichmentStarted: false };
+      }
+      throw error;
+    }
+    if (this.activeEnrichments >= this.maxConcurrentEnrichments && this.slotWaiters.length >= this.maxQueuedEnrichments) {
+      this.emit(input, "project_budget_denied", { reason: "enrichment_concurrency", retry_after_seconds: 5 });
+      throw new ProjectBudgetDeniedError("enrichment_concurrency", 5);
+    }
+    return { ...result, enrichmentStarted: this.scheduleBackground(input, schedule, true) };
   }
 
-  private scheduleBackground(input: V2EnrichmentInput, schedule: V2BackgroundScheduler): boolean {
+  private scheduleBackground(input: V2EnrichmentInput, schedule: V2BackgroundScheduler, protectionChecked = false): boolean {
     const key = createCharacterCacheKey(this.identity(input));
     if (this.background.has(key)) {
       this.emit(input, "v2_enrichment_reused", { cache_source: "miss" });
@@ -186,7 +212,7 @@ export class V2DeliveryService {
     }
     this.record("enrichmentStarted");
     this.emit(input, "v2_enrichment_started", { cache_source: "miss" });
-    const task = this.enrich(input)
+    const task = this.enrich(input, protectionChecked)
       .then((result) => {
         this.record("enrichmentCompleted");
         this.emit(input, "v2_enrichment_finished", { result: result.state, total_ms: result.durationMs });
@@ -202,7 +228,7 @@ export class V2DeliveryService {
     return true;
   }
 
-  async enrich(input: V2EnrichmentInput): Promise<V2DeliveryResult> {
+  async enrich(input: V2EnrichmentInput, protectionChecked = false): Promise<V2DeliveryResult> {
     const started = performance.now();
     const identity = this.identity(input);
     const characterKey = createCharacterCacheKey(identity);
@@ -215,18 +241,36 @@ export class V2DeliveryService {
       const character = await running;
       return { state: stateFor(character), character, cache: "coalesced", source: "fresh-enrichment", durationMs: Math.round(performance.now() - started) };
     }
-    const promise = this.buildWithinBudget(input, identity, characterKey);
+    const promise = this.buildProtected(input, identity, characterKey, protectionChecked);
     this.inflight.set(characterKey, promise);
     try {
       const character = await promise;
+      await this.projectProtection.observeSuccess(input.protection);
       return { state: stateFor(character), character, cache: "miss", source: "fresh-enrichment", durationMs: Math.round(performance.now() - started) };
+    } catch (error) {
+      if (error instanceof GitHubRateLimitError) await this.projectProtection.observeRateLimit(error, input.protection);
+      else await this.projectProtection.observeProbeFailure(input.protection);
+      throw error;
     } finally {
       this.inflight.delete(characterKey);
     }
   }
 
+  private async buildProtected(
+    input: V2EnrichmentInput,
+    identity: EvidenceCacheIdentity,
+    characterKey: string,
+    protectionChecked: boolean
+  ): Promise<RPGCharacterV2> {
+    if (!protectionChecked) await this.projectProtection.beforeColdWork(input.profile.username, input.protection);
+    return this.buildWithinBudget(input, identity, characterKey);
+  }
+
   private async acquireSlot(): Promise<() => void> {
-    if (this.activeEnrichments >= this.maxConcurrentEnrichments) await new Promise<void>((resolve) => this.slotWaiters.push(resolve));
+    if (this.activeEnrichments >= this.maxConcurrentEnrichments) {
+      if (this.slotWaiters.length >= this.maxQueuedEnrichments) throw new ProjectBudgetDeniedError("enrichment_concurrency", 5);
+      await new Promise<void>((resolve) => this.slotWaiters.push(resolve));
+    }
     this.activeEnrichments++;
     return () => { this.activeEnrichments--; this.slotWaiters.shift()?.(); };
   }
@@ -251,6 +295,7 @@ export class V2DeliveryService {
       ...this.collectorOptions,
       referenceDate: input.profile.referenceDate,
       sourceFingerprint: input.sourceFingerprint,
+      repositoryDiscovery: input.repositoryDiscovery,
       treeCache: this.treeCache,
       manifestCache: this.manifestCache,
       signal,
@@ -258,9 +303,18 @@ export class V2DeliveryService {
         if (collectorErrorReported) return;
         collectorErrorReported = true;
         const errorKind = classifyV2Error(error);
+        if (error instanceof GitHubRateLimitError) void this.projectProtection.observeRateLimit(error, input.protection);
         this.emit(input, errorKind === "github_rate_limit" ? "v2_rate_limited" : errorKind === "timeout" ? "v2_timeout" : "v2_collector_error", { error_kind: errorKind, phase });
       },
     });
+    if (evidence.requests.rateLimitRemaining !== null && evidence.requests.rateLimitRemaining !== undefined && evidence.requests.rateLimitResource) {
+      const resetAt = evidence.requests.rateLimitResetAt ? new Date(evidence.requests.rateLimitResetAt) : null;
+      await this.projectProtection.observeSnapshot(evidence.requests.rateLimitResource, {
+        limit: evidence.requests.rateLimitLimit ?? null,
+        remaining: evidence.requests.rateLimitRemaining,
+        resetAt: resetAt && !Number.isNaN(resetAt.getTime()) ? resetAt : null,
+      }, input.protection);
+    }
     if (evidenceHit?.state !== "fresh") this.emit(input, "v2_collector_finished", {
       duration_ms: Math.round(performance.now() - collectorStarted),
       repo_selection_ms: evidence.requests.timingsMs?.repositorySelection ?? null,
@@ -272,6 +326,7 @@ export class V2DeliveryService {
       tree_requests: evidence.requests.treeRequests ?? 0,
       manifest_requests: evidence.requests.manifestRequests ?? 0,
       fallback_rest_requests: evidence.requests.fallbackRequests ?? 0,
+      repository_discovery: evidence.requests.repositoryDiscovery ?? "fetched",
     });
     if (signal.aborted) throw new V2EnrichmentAbortedError();
     if ((!evidenceHit || evidenceHit.state === "stale") && evidence.coverage.coverage !== "unavailable") {
@@ -288,6 +343,7 @@ export class V2DeliveryService {
       rest_requests: evidence.requests.rest,
       graphql_requests: evidence.requests.graphql,
       cache_source: evidenceHit?.state === "fresh" ? "l1" : "miss",
+      repository_discovery: evidence.requests.repositoryDiscovery ?? "fetched",
       timed_out: false,
     });
     if (signal.aborted) throw new V2EnrichmentAbortedError();

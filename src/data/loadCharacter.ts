@@ -4,7 +4,7 @@ import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { createRPGCharacter } from "@/game/engine";
 import { analyzeLanguages } from "@/game/languages";
 import type { DeveloperProfile, RPGCharacter } from "@/game/types";
-import type { GitHubDataSource } from "./contracts";
+import type { GitHubDataSource, GitHubProfileRequestOptions } from "./contracts";
 import { createDataSource } from "./datasource";
 import { isGameEngineV2E2EColdProfile, isGameEngineV2UiEnabled } from "./datasource/config";
 import { normalizeDeveloperProfile } from "./normalize";
@@ -19,11 +19,12 @@ import {
 import { createProfileFingerprint, getExperimentalV2DeliveryService } from "@/game-v2/runtimeDelivery";
 import { GitHubApiDataSource } from "./github/GitHubApiDataSource";
 import { createV2CorrelationId, createV2SubjectId, emitV2Telemetry } from "@/game-v2/telemetry";
+import { createRepositoryDiscoverySnapshot } from "./sharedDiscovery";
 
-async function loadProfile(username: string, source: GitHubDataSource): Promise<DeveloperProfile> {
-  const raw = await source.getProfile(username);
+async function loadProfile(username: string, source: GitHubDataSource, requestOptions?: GitHubProfileRequestOptions) {
+  const raw = await source.getProfile(username, requestOptions);
   const valid = validateRawGitHubData(raw);
-  return normalizeDeveloperProfile(valid);
+  return { profile: normalizeDeveloperProfile(valid), discovery: createRepositoryDiscoverySnapshot(valid) };
 }
 
 /**
@@ -33,9 +34,10 @@ async function loadProfile(username: string, source: GitHubDataSource): Promise<
  */
 export async function loadCharacter(
   username: string,
-  source: GitHubDataSource = createDataSource()
+  source: GitHubDataSource = createDataSource(),
+  requestOptions?: GitHubProfileRequestOptions
 ): Promise<RPGCharacter> {
-  return createRPGCharacter(await loadProfile(username, source));
+  return createRPGCharacter((await loadProfile(username, source, requestOptions)).profile);
 }
 
 /**
@@ -47,9 +49,10 @@ export async function loadCharacter(
  */
 export async function loadCharacterWithChronicle(
   username: string,
-  source: GitHubDataSource = createDataSource()
+  source: GitHubDataSource = createDataSource(),
+  requestOptions?: GitHubProfileRequestOptions
 ): Promise<{ character: RPGCharacter; chronicle: DeveloperChronicle; classExplanation: ClassExplanation }> {
-  const profile = await loadProfile(username, source);
+  const { profile } = await loadProfile(username, source, requestOptions);
   const character = createRPGCharacter(profile);
   return {
     character,
@@ -65,6 +68,7 @@ export async function loadCharacterWithChronicle(
 export interface LoadCharacterProductOptions {
   /** Omit for cache-only consumers such as the Hall. */
   scheduleBackground?: V2BackgroundScheduler;
+  requestOptions?: GitHubProfileRequestOptions;
 }
 
 export interface LoadedCharacterProduct {
@@ -98,7 +102,7 @@ export async function loadCharacterProduct(
   options: LoadCharacterProductOptions = {}
 ): Promise<LoadedCharacterProduct> {
   const baseStarted = performance.now();
-  const profile = await loadProfile(username, source);
+  const { profile, discovery } = await loadProfile(username, source, options.requestOptions);
   const character = createRPGCharacter(profile);
   const base = {
     character,
@@ -114,8 +118,8 @@ export async function loadCharacterProduct(
     return { ...base, presentation: createCharacterPresentationModel(false) };
   }
 
-  const correlationId = createV2CorrelationId();
-  const subjectId = createV2SubjectId(profile.username);
+  const correlationId = options.requestOptions?.protection?.correlationId ?? createV2CorrelationId();
+  const subjectId = options.requestOptions?.protection?.subjectId ?? createV2SubjectId(profile.username);
   const baseDurationMs = Math.round(performance.now() - baseStarted);
   const baseReport = source instanceof GitHubApiDataSource ? source.getReports().at(-1) : undefined;
   emitV2Telemetry({ event: "v2_base_loaded", correlation_id: correlationId, subject_id: subjectId, duration_ms: baseDurationMs, cache_source: baseReport?.cache ?? source.kind, rest_requests: baseReport?.restRequests ?? 0, graphql_requests: baseReport?.graphqlRequests ?? 0 });
@@ -128,12 +132,14 @@ export async function loadCharacterProduct(
       ? createMockV2Result(profile)
       : options.scheduleBackground
         ? await getExperimentalV2DeliveryService().deliver(
-            { profile, sourceFingerprint: createProfileFingerprint(profile), telemetry: { correlationId, subjectId, baseDurationMs } },
+            { profile, sourceFingerprint: createProfileFingerprint(profile), repositoryDiscovery: discovery ?? undefined, protection: options.requestOptions?.protection, telemetry: { correlationId, subjectId, baseDurationMs } },
             options.scheduleBackground
           )
           : await getExperimentalV2DeliveryService().lookup({
             profile,
             sourceFingerprint: createProfileFingerprint(profile),
+            repositoryDiscovery: discovery ?? undefined,
+            protection: options.requestOptions?.protection,
             telemetry: { correlationId, subjectId, baseDurationMs },
           });
     return {

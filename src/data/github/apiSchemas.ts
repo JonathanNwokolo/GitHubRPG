@@ -20,6 +20,7 @@ export const restUserSchema = z.object({
 export type RestUser = z.infer<typeof restUserSchema>;
 
 export const restRepoSchema = z.object({
+  id: count.optional(),
   name: z.string().min(1),
   owner: z.object({ login: z.string().min(1) }),
   fork: z.boolean(),
@@ -27,6 +28,10 @@ export const restRepoSchema = z.object({
   forks_count: count,
   /** KB. Informational only: it reads 0 for a freshly pushed repository, so never used to skip a request. */
   size: count,
+  archived: z.boolean().optional(),
+  pushed_at: z.string().refine((s) => !Number.isNaN(Date.parse(s)), "invalid date").optional(),
+  default_branch: z.string().min(1).optional(),
+  language: z.string().min(1).nullable().optional(),
 });
 export type RestRepo = z.infer<typeof restRepoSchema>;
 
@@ -46,8 +51,15 @@ export const graphqlRepositoriesSchema = z.object({
       pageInfo: z.object({ hasNextPage: z.boolean(), endCursor: z.string().nullable() }),
       nodes: z.array(
         z.object({
+          databaseId: count.nullable().optional(),
           name: z.string().min(1),
           isFork: z.boolean(),
+          isArchived: z.boolean().optional(),
+          isEmpty: z.boolean().optional(),
+          pushedAt: z.string().refine((s) => !Number.isNaN(Date.parse(s)), "invalid date").optional(),
+          defaultBranchRef: z.object({ name: z.string().min(1) }).nullable().optional(),
+          diskUsage: count.nullable().optional(),
+          primaryLanguage: z.object({ name: z.string().min(1) }).nullable().optional(),
           stargazerCount: count,
           forkCount: count,
           languages: z.object({ totalCount: count, edges: z.array(graphqlLanguageEdge) }).nullable(),

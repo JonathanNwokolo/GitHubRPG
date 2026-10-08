@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
+import { ProjectBudgetDeniedError } from "@/data/github/errors";
 import { loadCharacter } from "@/data/loadCharacter";
 import { GET } from "./route";
 
@@ -32,5 +33,13 @@ describe("GET /api/characters/[username]", () => {
     });
     expect(body.identity).toBeUndefined();
     expect(body.progression).toBeUndefined();
+  });
+
+  it("returns 429 and a sanitized Retry-After for project-side protection", async () => {
+    mockedLoadCharacter.mockRejectedValueOnce(new ProjectBudgetDeniedError("client_rate", 17));
+    const response = await GET(new Request("http://localhost/api/characters/burst"), { params: Promise.resolve({ username: "burst" }) });
+    expect(response.status).toBe(429);
+    expect(response.headers.get("Retry-After")).toBe("17");
+    await expect(response.json()).resolves.toMatchObject({ error: { code: "rate_limited", retryAfterSeconds: 17 } });
   });
 });

@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { MockDataSource } from "./MockDataSource";
 import {
   DataSourceConfigError,
+  getVercelEnvironment,
   isGameEngineV2UiEnabled,
   readDataSourceConfig,
   readGameEngineV2UiConfig,
@@ -44,6 +45,15 @@ describe("readDataSourceConfig", () => {
   it("logs fetch reports in development only", () => {
     expect(readDataSourceConfig({ NODE_ENV: "development" }).logFetchReports).toBe(true);
     expect(readDataSourceConfig({ NODE_ENV: "production", GITHUB_DATA_SOURCE: "github" }).logFetchReports).toBe(false);
+  });
+});
+
+describe("Vercel environment partition", () => {
+  it("accepts only platform environment names and otherwise uses local", () => {
+    expect(getVercelEnvironment({ VERCEL_ENV: " preview " })).toBe("preview");
+    expect(getVercelEnvironment({ VERCEL_ENV: "production" })).toBe("production");
+    expect(getVercelEnvironment({ VERCEL_ENV: "attacker-value" })).toBe("local");
+    expect(getVercelEnvironment({})).toBe("local");
   });
 });
 
