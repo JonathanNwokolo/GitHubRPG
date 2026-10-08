@@ -1,6 +1,6 @@
 import React from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { createRPGCharacter } from "@/game/createCharacter";
 import { analyzeLanguages } from "@/game/languages";
 import { buildClassExplanation } from "@/features/character/classExplanation";
@@ -22,6 +22,8 @@ beforeEach(() => {
 
 afterEach(() => {
   useUiStore.setState({ language: "pt-BR" });
+  vi.useRealTimers();
+  vi.unstubAllGlobals();
 });
 
 function renderPage(profile = makeAverageProfile({ username: "artorias" })) {
@@ -134,6 +136,46 @@ describe("CharacterPageClient: share modal", () => {
 });
 
 describe("CharacterPageClient: V2 product presentation", () => {
+  it("adopts the V2 result automatically after a cold production response", async () => {
+    vi.useFakeTimers();
+    const fixture = GOLDEN_FIXTURES.architecturalSystem();
+    const profile = fixture.profile;
+    const character = createRPGCharacter(profile);
+    const projected = createCharacterPresentationModel(true, {
+      state: "ready",
+      character: createRPGCharacterV2(fixture),
+    }).v2;
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
+      state: "ready",
+      character: projected,
+    }), { status: 200, headers: { "Content-Type": "application/json" } })));
+
+    render(
+      <CharacterPageClient
+        character={character}
+        chronicle={buildDeveloperChronicle(profile)}
+        classExplanation={buildClassExplanation(character.archetype, analyzeLanguages(profile.languages), profile.languagesCoverage)}
+        username={profile.username}
+        presentation={{ v2Enabled: true, delivery: "enriching", v2: null }}
+      />
+    );
+
+    expect(screen.getByText("Analisando especializações…")).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Conquistas.*31/i })).toBeInTheDocument();
+
+    await act(async () => {
+      await vi.advanceTimersByTimeAsync(4_000);
+    });
+
+    expect(screen.getByRole("heading", { name: "Grimório do Herói" })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Conquistas.*54/i })).toBeInTheDocument();
+    expect(screen.getByRole("tab", { name: /Títulos.*40/i })).toBeInTheDocument();
+    expect(fetch).toHaveBeenCalledWith(
+      `/api/experimental/v2/characters/${encodeURIComponent(profile.username)}`,
+      expect.objectContaining({ cache: "no-store", credentials: "omit" })
+    );
+  });
+
   it("shows the specialization and Grimoire while preserving the four-tab structure", () => {
     renderV2Page();
     expect(screen.getAllByRole("tab")).toHaveLength(4);

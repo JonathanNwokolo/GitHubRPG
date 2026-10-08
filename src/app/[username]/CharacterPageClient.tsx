@@ -28,6 +28,7 @@ import { resolvePublicEquippedTitle, type CharacterPresentationModel, type Publi
 import { GrimoireSection } from "@/features/character/GrimoireSection";
 import { AchievementsGridV2 } from "@/features/achievements/AchievementsGridV2";
 import { TitlesPanelV2 } from "@/features/titles/TitlesPanelV2";
+import { useLiveCharacterPresentation } from "@/features/character/useLiveCharacterPresentation";
 
 // The share modal (canvas drawing code) is only needed once someone opens it: keep it out of the initial bundle.
 const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").then((mod) => mod.ShareCardModal), {
@@ -43,15 +44,22 @@ interface CharacterPageProps {
   presentation?: CharacterPresentationModel;
 }
 
+const DEFAULT_PRESENTATION: CharacterPresentationModel = {
+  v2Enabled: false,
+  delivery: "unavailable",
+  v2: null,
+};
+
 export default function CharacterPage({
   character,
   chronicle,
   classExplanation,
   username,
-  presentation = { v2Enabled: false, delivery: "unavailable", v2: null },
+  presentation = DEFAULT_PRESENTATION,
 }: CharacterPageProps) {
   const { language } = useUiStore();
   const t = getTranslation(language);
+  const livePresentation = useLiveCharacterPresentation(presentation, username);
 
   const savedTitleId = useTitleStore((state) => state.equippedByUser[username]);
   const equipTitle = useTitleStore((state) => state.equipTitle);
@@ -70,14 +78,14 @@ export default function CharacterPage({
   );
   const localizedKey = language === "pt-BR" ? "pt" : "en";
   const equippedV2Title = useMemo(() => {
-    if (!presentation.v2) return null;
-    const title = resolvePublicEquippedTitle(presentation.v2.titles, savedTitleId, presentation.v2.defaultTitleId);
+    if (!livePresentation.v2) return null;
+    const title = resolvePublicEquippedTitle(livePresentation.v2.titles, savedTitleId, livePresentation.v2.defaultTitleId);
     return title ? { id: title.id, name: title.name[localizedKey] } : null;
-  }, [localizedKey, presentation.v2, savedTitleId]);
+  }, [livePresentation.v2, localizedKey, savedTitleId]);
   const displayedTitle = equippedV2Title ?? equippedTitle;
 
-  const achievements = presentation.v2?.achievements;
-  const titles = presentation.v2?.titles;
+  const achievements = livePresentation.v2?.achievements;
+  const titles = livePresentation.v2?.titles;
   const unlockedAchievements = (achievements ?? character.achievements).filter((a) => a.unlocked).length;
   const unlockedTitles = (titles ?? character.titles).filter((title) => title.unlocked).length;
 
@@ -97,7 +105,7 @@ export default function CharacterPage({
         <CharacterHeader
           character={character}
           equippedTitle={displayedTitle}
-          v2={presentation.v2}
+          v2={livePresentation.v2}
           onOpenShareModal={() => setIsShareModalOpen(true)}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
           onOpenReadmeModal={() => setIsReadmeModalOpen(true)}
@@ -112,7 +120,7 @@ export default function CharacterPage({
           totalTitlesCount={titles?.length ?? character.titles.length}
         />
 
-        {presentation.v2Enabled && presentation.delivery === "enriching" && (
+        {livePresentation.v2Enabled && livePresentation.delivery === "enriching" && (
           <p role="status" className="text-center font-sans text-xs text-slate-400">{t.gameV2.enriching}</p>
         )}
 
@@ -133,10 +141,10 @@ export default function CharacterPage({
                 onShareChapter={({ year, title }) => setShareTarget({ kind: "chronicle", year, title })}
               />
               <AttributesPanel stats={character.stats} />
-              {presentation.v2 && (
+              {livePresentation.v2 && (
                 <GrimoireSection
-                  v2={presentation.v2}
-                  partial={presentation.delivery === "partial" || presentation.v2.coverage.schools === "partial" || presentation.v2.coverage.artifacts === "partial"}
+                  v2={livePresentation.v2}
+                  partial={livePresentation.delivery === "partial" || livePresentation.v2.coverage.schools === "partial" || livePresentation.v2.coverage.artifacts === "partial"}
                 />
               )}
               <ActivitySummary summary={character.summary} />
@@ -170,7 +178,7 @@ export default function CharacterPage({
               {titles ? <TitlesPanelV2
                 titles={titles}
                 equippedTitleId={equippedV2Title?.id ?? null}
-                defaultTitleId={presentation.v2?.defaultTitleId ?? null}
+                defaultTitleId={livePresentation.v2?.defaultTitleId ?? null}
                 hasCustomPick={savedTitleId !== undefined && savedTitleId === equippedV2Title?.id}
                 onEquip={(titleId) => equipTitle(character.identity.username, titleId)}
                 onUseDefault={() => clearEquippedTitle(character.identity.username)}
@@ -192,7 +200,7 @@ export default function CharacterPage({
           isOpen={isClassExplanationOpen}
           onClose={() => setIsClassExplanationOpen(false)}
           explanation={classExplanation}
-          v2Explanation={presentation.v2?.explanation}
+          v2Explanation={livePresentation.v2?.explanation}
         />
 
         <ReadmeBadgeModal isOpen={isReadmeModalOpen} onClose={() => setIsReadmeModalOpen(false)} username={username} />
