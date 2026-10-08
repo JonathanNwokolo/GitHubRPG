@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import {
@@ -394,6 +394,7 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
   const [stateB, setStateB] = useState<LoadState>({ status: "loading" });
   const [visibleRounds, setVisibleRounds] = useState(0);
   const [shareStatus, setShareStatus] = useState<"idle" | "copied" | "error">("idle");
+  const roundTimersRef = useRef<number[]>([]);
 
   const load = useCallback(
     (side: DuelSide) => {
@@ -429,7 +430,13 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
     [stateA, stateB]
   );
 
+  const clearRoundTimers = useCallback(() => {
+    roundTimersRef.current.forEach(window.clearTimeout);
+    roundTimersRef.current = [];
+  }, []);
+
   useEffect(() => {
+    clearRoundTimers();
     if (!duel) {
       setVisibleRounds(0);
       return;
@@ -439,11 +446,18 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
       return;
     }
     setVisibleRounds(0);
-    const timers = duel.rounds.map((_, index) =>
+    roundTimersRef.current = duel.rounds.map((_, index) =>
       window.setTimeout(() => setVisibleRounds(index + 1), 500 + index * 1800)
     );
-    return () => timers.forEach(window.clearTimeout);
-  }, [duel, shouldReduce]);
+    return clearRoundTimers;
+  }, [duel, shouldReduce, clearRoundTimers]);
+
+  // Cancel pending reveal timers first: a stale one would otherwise shrink visibleRounds and hide the result.
+  const skipAnimation = () => {
+    if (!duel) return;
+    clearRoundTimers();
+    setVisibleRounds(duel.rounds.length);
+  };
 
   const finalVisible = Boolean(duel && visibleRounds >= duel.rounds.length);
   const hpA =
@@ -530,7 +544,7 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
       {!finalVisible ? (
         <div className="text-center">
           <button
-            onClick={() => setVisibleRounds(duel.rounds.length)}
+            onClick={skipAnimation}
             className="inline-flex items-center gap-2 border border-amber-900/60 bg-rpg-surface/90 px-4 py-2 font-pixel text-[10px] uppercase tracking-wider text-amber-200 shadow-pixel hover:border-amber-500 hover:text-amber-100 transition-colors"
           >
             <RpgZap className="h-3.5 w-3.5 text-amber-400" />
