@@ -11,18 +11,19 @@ test.describe("GitHub RPG E2E Flows", () => {
     });
 
     await page.goto("/cold-dev");
-    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(0);
     await page.waitForRequest((request) => request.url().includes("/api/experimental/v2/characters/cold-dev"));
     await page.goto("/rookie-dev");
     releaseCold();
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await page.waitForTimeout(500);
     await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toHaveCount(0);
-    await expect(page.getByText("Analisando especializações…")).toHaveCount(0);
+    await expect(page.getByText("Invocando sua ficha...")).toHaveCount(0);
 
     await page.unroute("**/api/experimental/v2/characters/cold-dev");
     await page.goto("/cold-dev");
-    await expect(page.getByText("Analisando especializações…")).toBeVisible();
+    await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
     await expect(page.getByRole("heading", { name: "Grimório do Herói" })).toBeVisible({ timeout: 10_000 });
   });
 
@@ -86,6 +87,29 @@ test.describe("GitHub RPG E2E Flows", () => {
       await expect(page.getByRole("dialog")).toBeVisible();
       expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `dialog ${width}px`).toBeLessThanOrEqual(0);
       await page.keyboard.press("Escape");
+    }
+  });
+
+  test("V2 loading skeleton fits mobile, tablet and desktop without revealing V1", async ({ page }) => {
+    await page.route("**/api/experimental/v2/characters/cold-dev", (route) => route.fulfill({
+      status: 202,
+      contentType: "application/json",
+      body: JSON.stringify({
+        contractVersion: 1,
+        engineVersion: "2.0-experimental-v24-evo",
+        schemaVersion: "game-engine-v2-schema-2",
+        state: "enriching",
+        terminal: false,
+        retryAfterMs: 4_000,
+      }),
+    }));
+    await page.goto("/cold-dev");
+
+    for (const width of [390, 430, 768, 1440]) {
+      await page.setViewportSize({ width, height: width <= 430 ? 844 : 900 });
+      await expect(page.getByText("Invocando sua ficha...")).toBeVisible();
+      await expect(page.getByRole("heading", { level: 1 })).toHaveCount(0);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth), `${width}px`).toBeLessThanOrEqual(0);
     }
   });
   test("Flow 0: Hall of Heroes is navigable and fits a 375px viewport", async ({ page }) => {

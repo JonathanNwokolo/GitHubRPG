@@ -167,8 +167,9 @@ describe("CharacterPageClient: V2 product presentation", () => {
       />
     );
 
-    expect(screen.getByText("Analisando especializações…")).toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: /Conquistas.*31/i })).toBeInTheDocument();
+    expect(screen.getByText("Invocando sua ficha...")).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { level: 1 })).not.toBeInTheDocument();
+    expect(screen.queryByRole("tab", { name: /Conquistas/i })).not.toBeInTheDocument();
 
     await act(async () => {
       await vi.advanceTimersByTimeAsync(4_000);
@@ -181,6 +182,39 @@ describe("CharacterPageClient: V2 product presentation", () => {
       `/api/experimental/v2/characters/${encodeURIComponent(profile.username)}`,
       expect.objectContaining({ cache: "no-store", credentials: "omit" })
     );
+  });
+
+  it.each(["ready", "partial"] as const)("renders the V2 sheet immediately for %s", (state) => {
+    const fixture = GOLDEN_FIXTURES.architecturalSystem();
+    const profile = fixture.profile;
+    const character = createRPGCharacter(profile);
+    render(
+      <CharacterPageClient
+        character={character}
+        chronicle={buildDeveloperChronicle(profile)}
+        classExplanation={buildClassExplanation(character.archetype, analyzeLanguages(profile.languages), profile.languagesCoverage)}
+        username={profile.username}
+        presentation={createCharacterPresentationModel(true, { state, character: createRPGCharacterV2(fixture) })}
+      />
+    );
+    expect(screen.getByRole("heading", { name: "Grimório do Herói" })).toBeInTheDocument();
+    expect(screen.queryByText("Invocando sua ficha...")).not.toBeInTheDocument();
+  });
+
+  it("uses V1 only for an unavailable V2 result and explains the fallback", () => {
+    const profile = makeAverageProfile({ username: "fallback-dev" });
+    const character = createRPGCharacter(profile);
+    render(
+      <CharacterPageClient
+        character={character}
+        chronicle={buildDeveloperChronicle(profile)}
+        classExplanation={buildClassExplanation(character.archetype, analyzeLanguages(profile.languages), profile.languagesCoverage)}
+        username={profile.username}
+        presentation={{ v2Enabled: true, delivery: "unavailable", v2: null }}
+      />
+    );
+    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+    expect(screen.getByText("A análise avançada não pôde ser concluída. Exibindo a ficha básica.")).toBeInTheDocument();
   });
 
   it("shows the specialization and Grimoire while preserving the four-tab structure", () => {
