@@ -20,6 +20,7 @@ import { ProfileActionButton, ProfileSectionHeader } from "@/features/profile-ui
 import { fill } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation, type TranslationDictionary } from "@/i18n";
+import { localizeClassName, localizeTitle } from "@/i18n/gameContent";
 
 interface TitlesPanelProps {
   titles: TitleProgress[];
@@ -88,7 +89,8 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
           <p className="font-sans text-sm text-slate-400">{t.titles.emptyUnlocked}</p>
         ) : (
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            {unlocked.map((title) => {
+            {unlocked.map((canonicalTitle) => {
+              const title = localizeTitle(canonicalTitle, language);
               const isEquipped = title.id === equippedTitleId;
               return (
                 <li key={title.id}>
@@ -160,7 +162,9 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
             {t.titles.inProgressSection}
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            {nextThresholds.map((title) => (
+            {nextThresholds.map((canonicalTitle) => {
+              const title = localizeTitle(canonicalTitle, language);
+              return (
               <li key={title.id}>
                 <div className="pf-title-card pf-title-card--progress flex-col gap-2.5">
                   <div className="flex items-center justify-between gap-2 w-full">
@@ -177,7 +181,8 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                   </div>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       )}
@@ -189,7 +194,9 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
             {t.titles.combinationSection}
           </h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            {lockedCombinations.map((title) => (
+            {lockedCombinations.map((canonicalTitle) => {
+              const title = localizeTitle(canonicalTitle, language);
+              return (
               <li key={title.id}>
                 <div className="pf-title-card pf-title-card--progress flex-col gap-2.5">
                   <div className="flex items-center justify-between gap-2 w-full">
@@ -217,7 +224,7 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                         )}
                         <span>
                           {fill(req.kind === "class" ? t.titles.classReq : t.titles.subclassReq, {
-                            value: req.value,
+                            value: localizeClassName(req.value, language),
                           })}
                         </span>
                       </li>
@@ -225,7 +232,8 @@ export const TitlesPanel: React.FC<TitlesPanelProps> = ({
                   </ul>
                 </div>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </section>
       )}

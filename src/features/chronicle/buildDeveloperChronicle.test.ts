@@ -31,6 +31,27 @@ function trend(a: number, b: number) {
   return chronicle.highlights.filter((h) => h.year === 2019 && (h.kind === "growth" || h.kind === "decline"));
 }
 
+describe("buildDeveloperChronicle: adventurer display name", () => {
+  const chronicleFor = (displayName: string | undefined, username = "fallback-user") =>
+    buildDeveloperChronicle(
+      yearlyProfile({
+        createdAt: "2026-09-20T00:00:00Z",
+        referenceDate: REF,
+        years: { 2026: 1 },
+        overrides: { username, displayName },
+      })
+    );
+
+  it.each([
+    ["The Octocat", "The Octocat"],
+    ["Ada", "Ada"],
+    ["Ada Lovelace", "Ada Lovelace"],
+    [undefined, "fallback-user"],
+  ])("preserves %s as %s", (displayName, expected) => {
+    expect(chronicleFor(displayName).adventurerName).toBe(expected);
+  });
+});
+
 describe("buildDeveloperChronicle: a brand-new account", () => {
   const chronicle = buildDeveloperChronicle(
     yearlyProfile({ createdAt: "2026-09-20T00:00:00Z", referenceDate: REF, years: { 2026: 12 } })
@@ -540,11 +561,11 @@ describe("buildDeveloperChronicle: today's snapshot", () => {
     expect(quiet.present).toEqual({ topLanguage: null, starsReceived: null });
   });
 
-  it("uses the first name of the display name", () => {
+  it("uses the complete display name, with username as fallback", () => {
     const named = buildDeveloperChronicle(
       yearlyProfile({ createdAt: "2019-03-12T00:00:00Z", referenceDate: REF, years: {}, overrides: { displayName: "Jonathan Nwokolo" } })
     );
-    expect(named.adventurerName).toBe("Jonathan");
+    expect(named.adventurerName).toBe("Jonathan Nwokolo");
     expect(buildDeveloperChronicle(makeProfile({ username: "octocat" })).adventurerName).toBe("octocat");
   });
 });

@@ -45,7 +45,7 @@ function journeyLength(profile: DeveloperProfile): ChronicleSummary["journeyLeng
 }
 
 function adventurerName(profile: DeveloperProfile): string {
-  return profile.displayName?.trim().split(/\s+/)[0] || profile.username;
+  return profile.displayName?.trim() || profile.username;
 }
 
 /**

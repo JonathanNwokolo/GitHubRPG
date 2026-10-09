@@ -81,7 +81,7 @@ describe("ChronicleSection", () => {
     expect(shown.length).toBeLessThanOrEqual(3);
     expect(shown[0]).toBe("O Início da Jornada");
     expect(shown[shown.length - 1]).toBe("Capítulo Atual");
-    expect(screen.getByText("Jonathan iniciou sua jornada no GitHub em 12 de mar. de 2019.")).toBeInTheDocument();
+    expect(screen.getByText("Jonathan Nwokolo iniciou sua jornada no GitHub em 12 de mar. de 2019.")).toBeInTheDocument();
     // The rest of the journey is not rendered until asked for.
     expect(screen.queryByText("2020–2022")).toBeNull();
   });
@@ -197,7 +197,7 @@ describe("ChronicleSection", () => {
     expect(screen.getByRole("heading", { level: 2, name: "Journey Chronicle" })).toBeInTheDocument();
     expect(screen.getByText("Your GitHub story, built only from real public data.")).toBeInTheDocument();
     expect(screen.getByText("The Journey Begins")).toBeInTheDocument();
-    expect(screen.getByText("Jonathan began their journey on GitHub on Mar 12, 2019.")).toBeInTheDocument();
+    expect(screen.getByText("Jonathan Nwokolo began their journey on GitHub on Mar 12, 2019.")).toBeInTheDocument();
     expect(screen.getByText("The journey continues.")).toBeInTheDocument();
     expect(screen.getByText("7 years")).toBeInTheDocument();
 

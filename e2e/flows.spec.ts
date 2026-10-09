@@ -591,8 +591,8 @@ test.describe("GitHub RPG E2E Flows", () => {
     await page.getByRole("button", { name: /Switch to English/i }).click();
     await page.getByRole("button", { name: "Why this class?" }).click();
 
-    const dialog = page.getByRole("dialog", { name: "Why Guerreiro?" });
-    await expect(dialog.getByRole("heading", { name: /Class Guerreiro/i })).toBeVisible();
+    const dialog = page.getByRole("dialog", { name: "Why Warrior?" });
+    await expect(dialog.getByRole("heading", { name: /Class Warrior/i })).toBeVisible();
     await expect(dialog.getByText(/Rust accounts for 58\.7% of observed bytes/i)).toBeVisible();
     await expect(dialog.getByRole("heading", { name: /Specialization Artificer/i })).toBeVisible();
     await expect(dialog.getByRole("heading", { name: /Evolution Rune Master/i })).toBeVisible();

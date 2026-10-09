@@ -37,6 +37,26 @@ const sample = buildDeveloperChronicle(
   })
 );
 
+describe("first Chronicle sentence", () => {
+  const octocat = buildDeveloperChronicle(
+    yearlyProfile({
+      createdAt: "2011-01-25T00:00:00Z",
+      referenceDate: REF,
+      years: { 2011: 1, 2026: 1 },
+      overrides: { username: "octocat", displayName: "The Octocat" },
+    })
+  );
+  const first = octocat.years.find((year) => year.isStart)!;
+
+  it("preserves The Octocat in Portuguese", () => {
+    expect(describeYear(first, octocat, "pt-BR").description).toContain("The Octocat iniciou sua jornada");
+  });
+
+  it("preserves The Octocat in English", () => {
+    expect(describeYear(first, octocat, "en").description).toContain("The Octocat began their journey");
+  });
+});
+
 function yearEntry(year: number): ChronicleYear {
   const found = sample.years.find((y) => y.year === year);
   if (!found) throw new Error(`no ${year}`);
@@ -94,11 +114,11 @@ describe("describeYear", () => {
     expect(describeYear(start, sample, "pt-BR")).toMatchObject({
       year: 2019,
       title: "O Início da Jornada",
-      description: "Jonathan iniciou sua jornada no GitHub em 12 de mar. de 2019.",
+      description: "Jonathan Nwokolo iniciou sua jornada no GitHub em 12 de mar. de 2019.",
     });
     expect(describeYear(start, sample, "en")).toMatchObject({
       title: "The Journey Begins",
-      description: "Jonathan began their journey on GitHub on Mar 12, 2019.",
+      description: "Jonathan Nwokolo began their journey on GitHub on Mar 12, 2019.",
     });
   });
 
