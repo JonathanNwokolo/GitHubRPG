@@ -4,7 +4,7 @@ import { ProfileNotFoundError } from "@/data/contracts";
 import { GitHubRateLimitError, InvalidUsernameError } from "@/data/github/errors";
 import { loadCharacter } from "@/data/loadCharacter";
 import { createRPGCharacter } from "@/game/createCharacter";
-import { makeAverageProfile } from "@/test/builders";
+import { makeAverageProfile, m } from "@/test/builders";
 import { GET } from "./route";
 
 vi.mock("@/data/loadCharacter", () => ({ loadCharacter: vi.fn() }));
@@ -48,6 +48,14 @@ describe("GET /api/card/[username]/achievement/[achievementId]", () => {
 
     expect(response.headers.get("cache-control")).toContain("s-maxage=900");
     expect(response.headers.get("set-cookie")).toBeNull();
+  });
+
+  it("does not publish an achievement image for a partial character", async () => {
+    mockedLoadCharacter.mockResolvedValueOnce(createRPGCharacter(makeAverageProfile({ commits: m(0, "unavailable") })));
+    const response = await get(unlockedId);
+    expect(response.status).toBe(503);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("content-type")).not.toContain("image/");
   });
 
   it("renders in English with ?lang=en", async () => {

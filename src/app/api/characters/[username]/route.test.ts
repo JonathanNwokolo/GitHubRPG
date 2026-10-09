@@ -3,6 +3,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
 import { ProjectBudgetDeniedError } from "@/data/github/errors";
 import { loadCharacter } from "@/data/loadCharacter";
+import { createRPGCharacter } from "@/game/createCharacter";
+import { makeAverageProfile, m } from "@/test/builders";
 import { GET } from "./route";
 
 vi.mock("@/data/loadCharacter", () => ({
@@ -41,5 +43,13 @@ describe("GET /api/characters/[username]", () => {
     expect(response.status).toBe(429);
     expect(response.headers.get("Retry-After")).toBe("17");
     await expect(response.json()).resolves.toMatchObject({ error: { code: "rate_limited", retryAfterSeconds: 17 } });
+  });
+
+  it("returns a partial character without placing it in the shared cache", async () => {
+    mockedLoadCharacter.mockResolvedValueOnce(createRPGCharacter(makeAverageProfile({ commits: m(0, "unavailable") })));
+    const response = await GET(new Request("http://localhost/api/characters/partial"), { params: Promise.resolve({ username: "partial" }) });
+    expect(response.status).toBe(200);
+    expect(response.headers.get("Cache-Control")).toBe("no-store");
+    await expect(response.json()).resolves.toMatchObject({ calculationCoverage: { status: "partial", xpLevel: "partial" } });
   });
 });

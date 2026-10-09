@@ -71,7 +71,7 @@ test.describe("unique profile counter", () => {
     await page.goto("/");
     const hall = page.getByRole("region", { name: "Salão dos Heróis" });
     const links = hall.getByRole("link", { name: /Ver ficha/i });
-    await expect(links).toHaveCount(5);
+    await expect(links).toHaveCount(3);
     await links.last().scrollIntoViewIfNeeded();
     const hrefs = await links.evaluateAll((anchors) => anchors.map((anchor) => anchor.getAttribute("href") ?? ""));
     await expect.poll(() => hrefs.filter((href) => prefetched.has(href)).length, { timeout: 10_000, message: "next/link prefetched the Hall profiles" }).toBeGreaterThan(0);

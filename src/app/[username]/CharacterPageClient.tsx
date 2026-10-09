@@ -95,6 +95,7 @@ export default function CharacterPage({
   const renderMode = resolveCharacterRenderMode(livePresentation, livePresentation.pollStatus);
   const isWaitingForV2 = renderMode === "loading";
   const usesV1Fallback = renderMode === "v1-fallback";
+  const calculatedNumbersPublishable = character.calculationCoverage.sharing.calculatedNumbersPublishable;
 
   if (isWaitingForV2) return <CharacterForgeLoading language={language} />;
 
@@ -115,10 +116,17 @@ export default function CharacterPage({
           character={character}
           equippedTitle={displayedTitle}
           v2={livePresentation.v2}
-          onOpenShareModal={SHARE_ACTIONS_ENABLED ? () => setIsShareModalOpen(true) : undefined}
+          onOpenShareModal={SHARE_ACTIONS_ENABLED && calculatedNumbersPublishable ? () => setIsShareModalOpen(true) : undefined}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
-          onOpenReadmeModal={SHARE_ACTIONS_ENABLED ? () => setIsReadmeModalOpen(true) : undefined}
+          onOpenReadmeModal={SHARE_ACTIONS_ENABLED && calculatedNumbersPublishable ? () => setIsReadmeModalOpen(true) : undefined}
         />
+
+        {character.calculationCoverage.status !== "complete" && (
+          <div role="status" aria-live="polite" className="border-l-4 border-amber-500 bg-amber-950/25 px-4 py-4 text-slate-200">
+            <p className="font-pixel text-xs leading-relaxed text-amber-200">{t.character.partialSheetTitle}</p>
+            <p className="mt-2 font-sans text-sm leading-relaxed text-slate-300">{t.character.partialSheetDescription}</p>
+          </div>
+        )}
 
         <CharacterTabs
           activeTab={activeTab}
@@ -152,9 +160,9 @@ export default function CharacterPage({
               <NextMilestones milestones={character.nextMilestones} />
               <ChronicleSection
                 chronicle={chronicle}
-                onShareChapter={({ year, title }) => setShareTarget({ kind: "chronicle", year, title })}
+                onShareChapter={calculatedNumbersPublishable ? ({ year, title }) => setShareTarget({ kind: "chronicle", year, title }) : undefined}
               />
-              <AttributesPanel stats={character.stats} />
+              <AttributesPanel stats={character.stats} coverage={character.calculationCoverage.attributes} />
               {livePresentation.v2 && (
                 <GrimoireSection
                   v2={livePresentation.v2}
@@ -176,13 +184,13 @@ export default function CharacterPage({
               {achievements ? <AchievementsGridV2
                 achievements={achievements}
                 legacyAchievements={character.achievements}
-                onShareAchievement={(achievement: PublicAchievementV2Localized) => {
+                onShareAchievement={calculatedNumbersPublishable ? (achievement: PublicAchievementV2Localized) => {
                   const v1 = character.achievements.find((candidate) => candidate.id === achievement.id && candidate.unlocked);
                   if (v1) setShareTarget({ kind: "achievement", id: v1.id, name: v1.name });
-                }}
+                } : undefined}
               /> : <AchievementsGrid
                 achievements={character.achievements}
-                onShareAchievement={({ id, name }) => setShareTarget({ kind: "achievement", id, name })}
+                onShareAchievement={calculatedNumbersPublishable ? ({ id, name }) => setShareTarget({ kind: "achievement", id, name }) : undefined}
               />}
             </div>
           )}

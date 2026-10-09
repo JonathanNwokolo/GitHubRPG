@@ -3,6 +3,17 @@ import { clampPower, normalizeLog, weightedPower } from "./normalizeDuelMetric";
 import type { DuelModifier, DuelResult, DuelResultType, DuelRound, DuelRoundHero, DuelRoundId, DuelWinner } from "./types";
 import { computeOfficialDuelScore, evaluateCreatorOverride } from "./creatorOverride";
 
+export class DuelCoverageError extends Error {
+  constructor(public readonly usernames: readonly string[]) {
+    super("duel_calculation_coverage_incomplete");
+    this.name = "DuelCoverageError";
+  }
+}
+
+export function canCharacterDuel(character: RPGCharacter): boolean {
+  return character.calculationCoverage.duel.comparable;
+}
+
 const ROUND_ORDER: DuelRoundId[] = ["journey", "arsenal", "forge", "legacy", "signature"];
 const CLASS_AFFINITIES: Record<ClassName, { round: DuelRoundId; amount: number }> = {
   Mago: { round: "arsenal", amount: 6 },
@@ -128,6 +139,10 @@ function roundHero(base: BaseRoundPower, modifier: DuelModifier | null, hpAfter:
 }
 
 export function createDuel(characterA: RPGCharacter, characterB: RPGCharacter): DuelResult {
+  const incomplete = [characterA, characterB].filter((character) => !canCharacterDuel(character));
+  if (incomplete.length > 0) {
+    throw new DuelCoverageError(incomplete.map((character) => character.identity.username));
+  }
   let hpA = 100;
   let hpB = 100;
   let scoreA = 0;

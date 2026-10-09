@@ -9,7 +9,7 @@ import {
   isHeroCategoryId,
 } from "@/features/heroes/featuredHeroes";
 import { toHeroSummary, type HeroesResponse } from "@/features/heroes/heroSummary";
-import { orderHallHeroes, toHallScoreHero } from "@/features/heroes/hallScore";
+import { isHallSortable, orderHallHeroes, toHallScoreHero } from "@/features/heroes/hallScore";
 
 export const dynamic = "force-dynamic";
 
@@ -37,8 +37,9 @@ export async function GET(request: Request) {
   // so they finish and fill this instance's cache. Other instances do not share it.
   if (pending > 0) after(settled);
 
+  const incompleteCoverage = slots.filter((slot) => slot.status === "fulfilled" && !isHallSortable(slot.value.character)).length;
   const loadedHeroes = slots.flatMap((slot) => (
-    slot.status === "fulfilled"
+    slot.status === "fulfilled" && isHallSortable(slot.value.character)
       ? [{ ...toHallScoreHero(slot.value.character), product: slot.value }]
       : []
   ));
@@ -52,7 +53,7 @@ export async function GET(request: Request) {
     requested: usernames.length,
     failed,
     pending,
-    partial: failed + pending > 0,
+    partial: failed + pending + incompleteCoverage > 0,
   };
 
   const complete = !response.partial && heroes.length > 0;

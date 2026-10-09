@@ -26,7 +26,7 @@ import type { RPGCharacter } from "@/game/types";
 import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
 import { DuelVsBadge } from "./DuelVsBadge";
-import { createDuel } from "./engine";
+import { canCharacterDuel, createDuel } from "./engine";
 import type { DuelRound as DuelRoundType, DuelSide } from "./engine";
 import { playClashSound, playUnlockSound } from "@/lib/audio/soundEffects";
 import { CreatorOverrideSequence, type OverridePhase } from "./CreatorOverrideSequence";
@@ -462,6 +462,7 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
   const duel = useMemo(
     () =>
       stateA.status === "success" && stateB.status === "success"
+        && canCharacterDuel(stateA.character) && canCharacterDuel(stateB.character)
         ? createDuel(stateA.character, stateB.character)
         : null,
     [stateA, stateB]
@@ -837,6 +838,21 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
           )}
         </div>
       </div>
+    );
+  }
+
+  if (!canCharacterDuel(stateA.character) || !canCharacterDuel(stateB.character)) {
+    return (
+      <RPGPanel variant="standard" className="mx-auto max-w-3xl border-rpg-goldDark bg-amber-950/20 p-8 text-center">
+        <div role="alert" className="flex flex-col items-center">
+          <RpgAlert className="mb-3 h-8 w-8 text-amber-400" />
+          <h1 className="font-pixel text-base leading-relaxed text-amber-100">{t.coverageUnavailableTitle}</h1>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">{t.coverageUnavailable}</p>
+          <RPGButton className="mt-5" variant="primary" size="sm" onClick={() => { load("A"); load("B"); }}>
+            {t.retry}
+          </RPGButton>
+        </div>
+      </RPGPanel>
     );
   }
 

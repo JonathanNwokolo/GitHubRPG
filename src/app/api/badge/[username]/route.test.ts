@@ -4,7 +4,7 @@ import { ProfileNotFoundError } from "@/data/contracts";
 import { GitHubRateLimitError, GitHubUnavailableError, InvalidUsernameError } from "@/data/github/errors";
 import { loadCharacter } from "@/data/loadCharacter";
 import { createRPGCharacter } from "@/game/createCharacter";
-import { makeAverageProfile, makeProfile } from "@/test/builders";
+import { makeAverageProfile, makeProfile, m } from "@/test/builders";
 import { GET } from "./route";
 
 vi.mock("@/data/loadCharacter", () => ({ loadCharacter: vi.fn() }));
@@ -77,6 +77,14 @@ describe("GET /api/badge/[username]", () => {
     mockedLoadCharacter.mockResolvedValue(character);
 
     expect(await (await get("artorias")).text()).toBe(await (await get("artorias")).text());
+  });
+
+  it("does not publish an artificial level for a partial character", async () => {
+    mockedLoadCharacter.mockResolvedValueOnce(createRPGCharacter(makeAverageProfile({ commits: m(0, "unavailable") })));
+    const response = await get("partial");
+    expect(response.status).toBe(503);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(await response.text()).not.toContain("LV.");
   });
 
   it("asks the data layer exactly once per request (the data source's cache does the rest)", async () => {

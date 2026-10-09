@@ -11,6 +11,7 @@ import { calculateResources } from "./resources";
 import { calculateSkills } from "./skills/calculateSkills";
 import { evaluateTitles, selectDefaultTitleId } from "./titles/titleList";
 import type { DeveloperProfile, RPGCharacter } from "./types";
+import { assessCharacterCalculationCoverage } from "./coverage";
 
 /**
  * Game Engine entry point. Pure and deterministic: the same DeveloperProfile
@@ -39,6 +40,7 @@ export function createRPGCharacter(profile: DeveloperProfile): RPGCharacter {
       company: profile.company,
     },
     meta: { isDemo: profile.isDemo, referenceDate: profile.referenceDate },
+    calculationCoverage: assessCharacterCalculationCoverage(profile),
     progression: {
       ...progress,
       tier: getLevelTier(progress.level),

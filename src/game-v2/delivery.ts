@@ -96,6 +96,8 @@ export class V2EnrichmentAbortedError extends Error {
 }
 
 function stateFor(character: RPGCharacterV2): "ready" | "partial" | "unavailable" {
+  if (character.calculationCoverage.status === "unavailable") return "unavailable";
+  if (character.calculationCoverage.status === "partial") return "partial";
   const coverage = character.explanation.subclass.coverage;
   return coverage === "unavailable" ? "unavailable" : coverage === "partial" ? "partial" : "ready";
 }
@@ -175,10 +177,15 @@ export class V2DeliveryService {
     if (hit.state === "fresh" && isCompatibleCachedCharacter(hit.value, input.profile.username)) {
       const remainingTtlMs = hit.expiresAt - Date.now();
       if (remainingTtlMs > 0) {
-        await this.safeSet(this.characterCache, createLatestCharacterCacheKey(input.profile.username), hit.value, {
-          ttlMs: remainingTtlMs,
-          staleTtlMs: Math.max(0, hit.staleUntil - hit.expiresAt),
-        });
+        const latestKey = createLatestCharacterCacheKey(input.profile.username);
+        const latest = await this.safeGet(this.characterCache, latestKey);
+        const preservesCompleteLatest = stateFor(hit.value) !== "ready" && latest && stateFor(latest.value) === "ready";
+        if (!preservesCompleteLatest) {
+          await this.safeSet(this.characterCache, latestKey, hit.value, {
+            ttlMs: remainingTtlMs,
+            staleTtlMs: Math.max(0, hit.staleUntil - hit.expiresAt),
+          });
+        }
       }
     }
     this.record(hit.source === "l2" ? "cacheL2Hit" : "cacheL1Hit");
@@ -381,10 +388,13 @@ export class V2DeliveryService {
     });
     if (signal.aborted) throw new V2EnrichmentAbortedError();
     if (evidence.coverage.coverage !== "unavailable") {
-      await Promise.all([
-        this.safeSet(this.characterCache, characterKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs }),
-        this.safeSet(this.characterCache, createLatestCharacterCacheKey(input.profile.username), character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs }),
-      ]);
+      const latestKey = createLatestCharacterCacheKey(input.profile.username);
+      const latest = await this.safeGet(this.characterCache, latestKey);
+      const preservesCompleteLatest = stateFor(character) !== "ready" && latest && stateFor(latest.value) === "ready";
+      await this.safeSet(this.characterCache, characterKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs });
+      if (!preservesCompleteLatest) {
+        await this.safeSet(this.characterCache, latestKey, character, { ttlMs: this.policy.characterTtlMs, staleTtlMs: this.policy.characterStaleTtlMs });
+      }
     }
     return character;
   }

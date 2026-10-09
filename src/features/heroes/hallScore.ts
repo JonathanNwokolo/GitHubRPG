@@ -36,6 +36,10 @@ export function toHallScoreHero(character: RPGCharacter): HallScoreHero {
   };
 }
 
+export function isHallSortable(character: RPGCharacter): boolean {
+  return character.calculationCoverage.hall.sortable;
+}
+
 export function hasWebFocus(hero: HallScoreHero): boolean {
   const webShare = hero.languageAffinities.reduce(
     (total, affinity) => total + (WEB_AFFINITIES.has(affinity.name.toLowerCase()) ? affinity.sharePercent : 0),

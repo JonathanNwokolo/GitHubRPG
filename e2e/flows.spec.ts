@@ -97,7 +97,7 @@ test.describe("GitHub RPG E2E Flows", () => {
       body: JSON.stringify({
         contractVersion: 1,
         engineVersion: "2.0-experimental-v24-evo",
-        schemaVersion: "game-engine-v2-schema-2",
+        schemaVersion: "game-engine-v2-schema-3",
         state: "enriching",
         terminal: false,
         retryAfterMs: 4_000,
@@ -118,11 +118,12 @@ test.describe("GitHub RPG E2E Flows", () => {
 
     await expect(page.getByRole("heading", { level: 2, name: "Salão dos Heróis" })).toBeVisible();
     const hall = page.getByRole("region", { name: "Salão dos Heróis" });
-    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(5);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(3);
+    await expect(hall.getByText("Alguns aventureiros estão em jornada e não puderam chegar ao salão.")).toBeVisible();
     await hall.getByRole("tab", { name: "Heróis do Brasil" }).focus();
     await page.keyboard.press("ArrowRight");
     await expect(hall.getByRole("tab", { name: "Forjadores da Web" })).toHaveAttribute("aria-selected", "true");
-    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(5);
+    await expect(hall.getByRole("link", { name: /Ver ficha/i })).toHaveCount(4);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
 
     const heroLink = hall.getByRole("link", { name: /Ver ficha/i }).first();
@@ -229,7 +230,7 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   // Flow 3: Persona veterano
-  test("Flow 3: Persona veteran-dev renders high level, class and demo notice", async ({ page }) => {
+  test("Flow 3: Persona veteran-dev renders an honest partial sheet, class and demo notice", async ({ page }) => {
     await page.goto("/");
     const vetCard = page.getByRole("heading", { name: /Veterano/i });
     await vetCard.click();
@@ -238,7 +239,9 @@ test.describe("GitHub RPG E2E Flows", () => {
     await expect(page.locator("h1")).toContainText("Valéria da Forja Sagrada");
     await expect(page.getByText("Guerreiro", { exact: true }).first()).toBeVisible();
     await expect(page.getByText(/Dados de demonstração/i).first()).toBeVisible();
-    await expect(page.getByText(/Faltam [\d.]+ XP para o Nível/i)).toBeVisible();
+    await expect(page.getByText("Ficha parcialmente revelada")).toBeVisible();
+    await expect(page.getByLabel("Atividade: Indisponível")).toBeVisible();
+    await expect(page.getByText(/Faltam [\d.]+ XP para o Nível/i)).toHaveCount(0);
   });
 
   // Flow 4: Perfil vazio
@@ -425,7 +428,7 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   test("Flow 10b: Card image API endpoint returns 200 with PNG image", async ({ request }) => {
-    const response = await request.get("/api/card/veteran-dev");
+    const response = await request.get("/api/card/popular-dev");
     expect(response.status()).toBe(200);
     expect(response.headers()["content-type"]).toBe("image/png");
     const body = await response.body();
@@ -458,6 +461,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     // The card itself, not its "Compartilhar" action (which also carries the achievement's name).
     const storm = page.getByRole("button", { name: /Tempestade de Código/i }).filter({ hasNotText: "Compartilhar" });
     await expect(storm).toContainText("Pelo menos 6.840 commits encontrados");
+    await expect(page.getByRole("button", { name: /^Compartilhar conquista: / })).toHaveCount(0);
   });
 
   // Flow 13: Features descartadas não aparecem
@@ -609,7 +613,7 @@ test.describe("GitHub RPG E2E Flows", () => {
   });
 
   test("Flow 17b: the badge endpoint is a small, cacheable, script-free SVG; unknown users are a 404", async ({ request }) => {
-    const response = await request.get("/api/badge/Veteran-Dev");
+    const response = await request.get("/api/badge/Popular-Dev");
     expect(response.status()).toBe(200);
     expect(response.headers()["content-type"]).toContain("image/svg+xml");
     expect(response.headers()["cache-control"]).toMatch(/s-maxage=\d+/);
@@ -619,7 +623,7 @@ test.describe("GitHub RPG E2E Flows", () => {
     const svg = await response.text();
     expect(svg.length).toBeLessThan(2_000);
     expect(svg).toMatch(/LV\.\d+/);
-    expect(svg).toContain("Guerreiro");
+    expect(svg).toContain("Patrulheiro");
     expect(svg).not.toMatch(/<script|foreignObject|\son\w+=/i);
 
     expect((await request.get("/api/badge/missing-dev")).status()).toBe(404);
@@ -638,7 +642,7 @@ test.describe("GitHub RPG E2E Flows", () => {
         },
       });
     });
-    await page.goto("/veteran-dev");
+    await page.goto("/popular-dev");
     await page.getByRole("tab", { name: /Conquistas/i }).click();
 
     const shareButtons = page.getByRole("button", { name: /^Compartilhar conquista: / });
@@ -657,37 +661,37 @@ test.describe("GitHub RPG E2E Flows", () => {
       page.waitForEvent("download"),
       dialog.getByRole("button", { name: "Baixar imagem" }).click(),
     ]);
-    expect(download.suggestedFilename()).toMatch(/^github-rpg-veteran-dev-achievement-[a-z0-9-]+\.png$/);
+    expect(download.suggestedFilename()).toMatch(/^github-rpg-popular-dev-achievement-[a-z0-9-]+\.png$/);
 
     await dialog.getByRole("button", { name: "Compartilhar", exact: true }).click();
     await expect.poll(() => page.evaluate(() => (window as unknown as { __shared: unknown[] }).__shared.length)).toBe(1);
     const shared = (await page.evaluate(() => (window as unknown as { __shared: unknown[] }).__shared[0])) as { url: string };
-    expect(shared.url).toMatch(/\/veteran-dev$/);
+    expect(shared.url).toMatch(/\/popular-dev$/);
 
     await page.keyboard.press("Escape");
     await expect(dialog).toHaveCount(0);
   });
 
   test("Flow 18b: achievement cards exist only for achievements the user really unlocked", async ({ request }) => {
-    const character = (await (await request.get("/api/characters/veteran-dev")).json()) as {
+    const character = (await (await request.get("/api/characters/popular-dev")).json()) as {
       achievements: Array<{ id: string; unlocked: boolean }>;
     };
     const unlocked = character.achievements.find((a) => a.unlocked)!;
     const locked = character.achievements.find((a) => !a.unlocked)!;
 
-    const ok = await request.get(`/api/card/veteran-dev/achievement/${unlocked.id}`);
+    const ok = await request.get(`/api/card/popular-dev/achievement/${unlocked.id}`);
     expect(ok.status()).toBe(200);
     expect(ok.headers()["content-type"]).toBe("image/png");
 
-    expect((await request.get(`/api/card/veteran-dev/achievement/${locked.id}`)).status()).toBe(404);
-    expect((await request.get("/api/card/veteran-dev/achievement/foo")).status()).toBe(404);
-    expect((await request.get("/api/card/veteran-dev/achievement/..%2Fetc")).status()).toBe(400);
+    expect((await request.get(`/api/card/popular-dev/achievement/${locked.id}`)).status()).toBe(404);
+    expect((await request.get("/api/card/popular-dev/achievement/foo")).status()).toBe(404);
+    expect((await request.get("/api/card/popular-dev/achievement/..%2Fetc")).status()).toBe(400);
     expect((await request.get(`/api/card/missing-dev/achievement/${unlocked.id}`)).status()).toBe(404);
   });
 
   // Flow 19: compartilhar capítulo da Crônica
   test("Flow 19: a Chronicle chapter can be shared and downloaded", async ({ page }) => {
-    await page.goto("/veteran-dev");
+    await page.goto("/popular-dev");
 
     const shareChapter = page.getByRole("button", { name: /^Compartilhar capítulo \d{4}:/ }).first();
     await expect(shareChapter).toBeVisible();
@@ -702,13 +706,13 @@ test.describe("GitHub RPG E2E Flows", () => {
       page.waitForEvent("download"),
       dialog.getByRole("button", { name: "Baixar imagem" }).click(),
     ]);
-    expect(download.suggestedFilename()).toMatch(/^github-rpg-veteran-dev-chronicle-\d{4}\.png$/);
+    expect(download.suggestedFilename()).toMatch(/^github-rpg-popular-dev-chronicle-\d{4}\.png$/);
   });
 
   test("Flow 19b: Chronicle cards exist only for real chapters", async ({ request }) => {
-    expect((await request.get("/api/card/veteran-dev/chronicle/2015")).status()).toBe(200);
-    expect((await request.get("/api/card/veteran-dev/chronicle/1999")).status()).toBe(404);
-    expect((await request.get("/api/card/veteran-dev/chronicle/abc")).status()).toBe(400);
+    expect((await request.get("/api/card/popular-dev/chronicle/2022")).status()).toBe(200);
+    expect((await request.get("/api/card/popular-dev/chronicle/1999")).status()).toBe(404);
+    expect((await request.get("/api/card/popular-dev/chronicle/abc")).status()).toBe(400);
     expect((await request.get("/api/card/missing-dev/chronicle/2015")).status()).toBe(404);
   });
 
@@ -735,11 +739,11 @@ test.describe("GitHub RPG E2E Flows", () => {
     });
     await page.goto("/duel");
     await expect(page.getByRole("heading", { name: "Duelo de Heróis" })).toBeVisible();
-    await page.getByLabel("Herói 1").fill("veteran-dev");
+    await page.getByLabel("Herói 1").fill("rookie-dev");
     await page.getByLabel("Herói 2").fill("https://github.com/polyglot-dev");
     await page.getByRole("button", { name: "Iniciar duelo" }).click();
-    await expect(page).toHaveURL(/\/duel\/veteran-dev\/vs\/polyglot-dev$/);
-    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+    await expect(page).toHaveURL(/\/duel\/rookie-dev\/vs\/polyglot-dev$/);
+    await expect(page.getByText("Arthur Aprendiz")).toBeVisible();
     await expect(page.getByText("Pietra Poliglota")).toBeVisible();
     await page.getByRole("button", { name: "Pular animação" }).click();
     await expect(page.getByRole("heading", { name: /venceu o duelo|Empate lendário/i })).toBeVisible();
@@ -748,13 +752,13 @@ test.describe("GitHub RPG E2E Flows", () => {
     await share.click();
     await expect(page.getByRole("status").filter({ hasText: "Link copiado!" })).toBeVisible({ timeout: 10_000 });
     await page.reload();
-    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+    await expect(page.getByText("Arthur Aprendiz")).toBeVisible();
   });
 
   test("Flow 20a: a direct duel keeps independent errors and retry", async ({ page }) => {
-    await page.goto("/duel/missing-dev/vs/veteran-dev");
+    await page.goto("/duel/missing-dev/vs/popular-dev");
     await expect(page.getByText("O herói @missing-dev não foi encontrado.")).toBeVisible();
-    await expect(page.getByText("Valéria da Forja Sagrada")).toBeVisible();
+    await expect(page.getByText("Estela Brilhante")).toBeVisible();
     await expect(page.getByRole("button", { name: "Tentar novamente" })).toBeVisible();
   });
 

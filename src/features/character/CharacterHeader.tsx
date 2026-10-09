@@ -96,6 +96,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   const t = getTranslation(language);
 
   const { identity, progression, archetype, resources, meta } = character;
+  const progressionAvailable = character.calculationCoverage.xpLevel === "complete";
   const displayName = identity.displayName ?? identity.username;
   // Text and icon share one source: V2 when present, otherwise V1. The V2 projection types the class as a plain
   // string; RpgClassIcon falls back to the generic insignia for anything outside the known classes.
@@ -152,8 +153,10 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             />
           </div>
           <div className="flex flex-col items-center gap-1.5" style={{ marginTop: plateOffset }}>
-            <ProfileStatPlate label={t.character.level} value={progression.level} />
-            <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">{localizeProgressionTier(progression.tier, language)}</span>
+            <ProfileStatPlate label={t.character.level} value={progressionAvailable ? progression.level : "—"} />
+            <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">
+              {progressionAvailable ? localizeProgressionTier(progression.tier, language) : t.character.calculationUnavailable}
+            </span>
           </div>
         </div>
 
@@ -237,7 +240,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
           <div className="xl:hidden">
             <ProfileDivider maxWidth={420} className="md:mx-0" />
           </div>
-          <ResourceRow
+          {progressionAvailable ? <ResourceRow
             tone="bright"
             label={
               <span className="inline-flex items-center gap-1.5">
@@ -250,7 +253,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             max={100}
             valueText={fill(t.character.xpTotal, { n: formatNumber(progression.totalXp, language) })}
             hint={xpHint}
-          />
+          /> : (
+            <div role="status" className="border border-amber-800/50 bg-black/25 px-4 py-3">
+              <p className="font-sans text-xs font-bold uppercase tracking-wider text-amber-200">{t.character.xp}</p>
+              <p className="mt-1 font-sans text-xs text-slate-300">{t.character.calculationUnavailable}</p>
+            </div>
+          )}
           <ResourceRow
             tone="hp"
             label={
