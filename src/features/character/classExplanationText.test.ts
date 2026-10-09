@@ -96,14 +96,14 @@ describe("class explanation text (en)", () => {
   it("class + subclass, with English number formatting", () => {
     const v = view({ TypeScript: 59.6, HTML: 25.8, Python: 14.6 }, "en");
 
-    expect(v.title).toBe("Why Mago?");
+    expect(v.title).toBe("Why Mage?");
     expect(v.classLines).toEqual([
       "Your main language is TypeScript.",
       "TypeScript makes up 59.6% of the language bytes analysed.",
     ]);
-    expect(v.mapping?.text).toBe("In GitHub RPG: TypeScript → Mago");
+    expect(v.mapping?.text).toBe("In GitHub RPG: TypeScript → Mage");
     expect(v.subclassLines[0]).toBe("HTML is your next eligible affinity.");
-    expect(v.subclassMapping?.text).toBe("In GitHub RPG: HTML → Bardo");
+    expect(v.subclassMapping?.text).toBe("In GitHub RPG: HTML → Bard");
     expect(v.disclaimer).toContain("does not measure professional skill");
   });
 

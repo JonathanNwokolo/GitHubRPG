@@ -21,7 +21,8 @@ const heroes: HeroSummary[] = ["alpha", "beta", "gamma", "delta", "epsilon"].map
   className: index === 0 ? "Mago" : "Guerreiro",
   subclassName: index === 0 ? "Bardo" : undefined,
   dominantLanguage: index === 0 ? "TypeScript" : "Rust",
-  title: index === 0 ? "Arcano" : undefined,
+  title: index === 0 ? "Lenda Celestial" : undefined,
+  titleId: index === 0 ? "title-stars-1000" : undefined,
   starsReceived: 20 + index,
 }));
 
@@ -193,5 +194,11 @@ describe("HeroesHall", () => {
     expect(screen.getByRole("tab", { name: "Heroes of Brazil" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /Discover a hero/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Hero alpha/ })).toHaveTextContent("View sheet");
+    expect(screen.getByRole("heading", { name: "Hero alpha" }).parentElement).toHaveTextContent("Mage");
+    expect(screen.getByRole("heading", { name: "Hero alpha" }).parentElement).toHaveTextContent("Bard");
+    expect(screen.getByRole("heading", { name: "Hero alpha" }).closest("article, div")?.parentElement).toHaveTextContent("Celestial Legend");
+    expect(screen.queryByText("Mago")).not.toBeInTheDocument();
+    expect(screen.queryByText("Bardo")).not.toBeInTheDocument();
+    expect(screen.queryByText("Lenda Celestial")).not.toBeInTheDocument();
   });
 });

@@ -14,6 +14,7 @@ export interface HeroSummary {
   evolutionV2?: LocalizedText;
   dominantLanguage?: string;
   title?: string;
+  titleId?: string;
   starsReceived: number;
 }
 
@@ -45,7 +46,7 @@ export function toHeroSummary(character: RPGCharacter, presentation?: CharacterP
     ...(presentation?.v2?.identity.subclass ? { subclassV2: presentation.v2.identity.subclass.name } : {}),
     ...(presentation?.v2?.identity.evolution ? { evolutionV2: presentation.v2.identity.evolution.name } : {}),
     ...(character.archetype.dominantLanguage ? { dominantLanguage: character.archetype.dominantLanguage } : {}),
-    ...(title ? { title: title.name } : {}),
+    ...(title ? { title: title.name, titleId: title.id } : {}),
     starsReceived: character.summary.starsReceived.value,
   };
 }

@@ -15,6 +15,7 @@ import { fill } from "@/lib/format";
 import { ProgressDetail } from "@/features/progress/ProgressDetail";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
+import { localizeAchievement } from "@/i18n/gameContent";
 
 interface AchievementsGridProps {
   achievements: AchievementProgress[];
@@ -68,7 +69,9 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((achievement) => (
+        {filtered.map((canonicalAchievement) => {
+          const achievement = localizeAchievement(canonicalAchievement, language);
+          return (
           <div key={achievement.id} className="relative group flex">
             <button
               type="button"
@@ -129,7 +132,8 @@ export const AchievementsGrid: React.FC<AchievementsGridProps> = ({ achievements
               </button>
             )}
           </div>
-        ))}
+          );
+        })}
       </div>
 
       <Dialog

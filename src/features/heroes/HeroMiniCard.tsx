@@ -7,6 +7,7 @@ import { useUiStore } from "@/stores/useUiStore";
 import { RPGButton, RPGDivider, RPGPanel } from "@/features/rpg-ui";
 import { HeroAvatar } from "./HeroAvatar";
 import type { HeroSummary } from "./heroSummary";
+import { localizeClassName } from "@/i18n/gameContent";
 
 function profileHref(username: string): string {
   return `/${encodeURIComponent(username)}`;
@@ -18,7 +19,8 @@ export function HeroMiniCard({ hero }: { hero: HeroSummary }) {
   const t = getTranslation(language).heroesHall;
   const duel = getTranslation(language).duel;
   const localized = language === "pt-BR" ? "pt" : "en";
-  const subclass = hero.subclassV2?.[localized] ?? hero.subclassName;
+  const className = localizeClassName(hero.className, language);
+  const subclass = hero.subclassV2?.[localized] ?? (hero.subclassName ? localizeClassName(hero.subclassName, language) : undefined);
 
   return (
     <RPGPanel variant="standard" interactive className="flex flex-col items-center px-4 pb-5 pt-5 text-center">
@@ -38,7 +40,7 @@ export function HeroMiniCard({ hero }: { hero: HeroSummary }) {
           <RpgClassIcon classNameType={hero.className} />
         </span>
         <span className="truncate text-xs font-semibold text-amber-300/90">
-          {hero.className}
+          {className}
           {subclass ? ` / ${subclass}` : ""}
         </span>
       </div>

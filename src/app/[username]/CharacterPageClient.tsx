@@ -32,6 +32,7 @@ import { TitlesPanelV2 } from "@/features/titles/TitlesPanelV2";
 import { useLiveCharacterPresentation } from "@/features/character/useLiveCharacterPresentation";
 import { CharacterForgeLoading } from "@/features/character/CharacterForgeLoading";
 import { resolveCharacterRenderMode } from "@/features/character/characterPresentationState";
+import { localizeTitle } from "@/i18n/gameContent";
 
 // The share modal (canvas drawing code) is only needed once someone opens it: keep it out of the initial bundle.
 const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").then((mod) => mod.ShareCardModal), {
@@ -85,7 +86,7 @@ export default function CharacterPage({
     const title = resolvePublicEquippedTitle(livePresentation.v2.titles, savedTitleId, livePresentation.v2.defaultTitleId);
     return title ? { id: title.id, name: title.name[localizedKey] } : null;
   }, [livePresentation.v2, localizedKey, savedTitleId]);
-  const displayedTitle = equippedV2Title ?? equippedTitle;
+  const displayedTitle = equippedV2Title ?? (equippedTitle ? localizeTitle(equippedTitle, language) : null);
 
   const achievements = livePresentation.v2?.achievements;
   const titles = livePresentation.v2?.titles;

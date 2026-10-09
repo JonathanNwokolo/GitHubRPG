@@ -2,6 +2,7 @@ import { getTranslation, type SupportedLanguage } from "@/i18n";
 import { fill, formatNumber } from "@/lib/format";
 import type { ClassName } from "@/game/types";
 import type { AffinityCheck, ClassExplanation } from "./classExplanation";
+import { localizeClassName } from "@/i18n/gameContent";
 
 /**
  * Turns a ClassExplanation into sentences. It only picks and fills dictionary templates with the figures
@@ -42,6 +43,7 @@ function nearMiss(checks: AffinityCheck[]): AffinityCheck | undefined {
 export function describeClassExplanation(explanation: ClassExplanation, language: SupportedLanguage): ClassExplanationView {
   const t = getTranslation(language).classExplanation;
   const { className, dominant, subclass, rules } = explanation;
+  const classLabel = localizeClassName(className, language);
   const thresholds = {
     threshold: percent(rules.subclassShare, language),
     relevantMin: percent(rules.relevantShare, language),
@@ -60,23 +62,23 @@ export function describeClassExplanation(explanation: ClassExplanation, language
         mapping = {
           language: dominant.language,
           className,
-          text: fill(t.mapping, { language: dominant.language, class: className }),
+          text: fill(t.mapping, { language: dominant.language, class: classLabel }),
         };
       }
       break;
     case "unmappedLanguage":
       if (dominant) {
         classLines.push(
-          fill(t.unmapped, { language: dominant.language, class: className }),
+          fill(t.unmapped, { language: dominant.language, class: classLabel }),
           fill(t.dominantShare, { language: dominant.language, share: percent(dominant.share, language) })
         );
       }
       break;
     case "noLanguages":
-      classLines.push(fill(t.noLanguages, { class: className }));
+      classLines.push(fill(t.noLanguages, { class: classLabel }));
       break;
     case "unavailable":
-      classLines.push(fill(t.unavailable, { class: className }));
+      classLines.push(fill(t.unavailable, { class: classLabel }));
       break;
   }
 
@@ -85,7 +87,7 @@ export function describeClassExplanation(explanation: ClassExplanation, language
 
   // Same-class languages that were weighed and skipped (JavaScript next to TypeScript), most relevant first.
   for (const check of explanation.checks.filter((c) => c.outcome === "sameClass")) {
-    subclassLines.push(fill(t.sameClass, { language: check.language, share: percent(check.share, language), class: check.className }));
+    subclassLines.push(fill(t.sameClass, { language: check.language, share: percent(check.share, language), class: localizeClassName(check.className, language) }));
   }
 
   if (subclass) {
@@ -97,7 +99,7 @@ export function describeClassExplanation(explanation: ClassExplanation, language
     subclassMapping = {
       language: subclass.language,
       className: subclass.className,
-      text: fill(t.mapping, { language: subclass.language, class: subclass.className }),
+      text: fill(t.mapping, { language: subclass.language, class: localizeClassName(subclass.className, language) }),
     };
     subclassLines.push(fill(t.subclassRule, thresholds));
   } else {
@@ -108,7 +110,7 @@ export function describeClassExplanation(explanation: ClassExplanation, language
           subclassLines.push(
             fill(t.belowThreshold, {
               language: miss.language,
-              class: miss.className,
+              class: localizeClassName(miss.className, language),
               relevant: percent(miss.relevantShare, language),
               threshold: thresholds.threshold,
             })
@@ -129,7 +131,7 @@ export function describeClassExplanation(explanation: ClassExplanation, language
   }
 
   return {
-    title: fill(t.title, { class: className }),
+    title: fill(t.title, { class: classLabel }),
     classHeading: t.classHeading,
     classLines,
     mapping,
