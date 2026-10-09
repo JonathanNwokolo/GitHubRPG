@@ -20,6 +20,7 @@ import { PersonaCard, PersonaItem } from "./PersonaCard";
 import { InvokedProfilesCounter } from "./InvokedProfilesCounter";
 import { fetchCharacter } from "@/data/api/fetchCharacter";
 import { parseGitHubProfileInput } from "@/lib/profileUrl";
+import { playClickSound } from "@/lib/audio/soundEffects";
 
 /** What the landing needs to know about each persona once the engine has run. */
 interface PersonaSummary {
@@ -171,18 +172,20 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
   };
 
   return (
-    <section id="home" aria-labelledby="landing-title" className="rpg-portal relative w-full overflow-hidden px-4 pb-10 pt-8 text-center sm:px-6 sm:pb-12 sm:pt-11 lg:pt-12">
+    <section id="home" aria-labelledby="landing-title" className="rpg-portal relative w-full overflow-hidden px-4 pb-12 pt-10 text-center sm:px-6 sm:pb-14 sm:pt-14 lg:pb-16 lg:pt-16">
       <span aria-hidden="true" className="rpg-portal__glow" />
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center">
-        <div className="inline-flex min-h-8 items-center gap-2 border border-[#6b5226] bg-black/35 px-3 py-1.5 font-sans text-[10px] font-bold uppercase tracking-[0.18em] text-amber-200 shadow-pixel sm:text-xs">
-          <RpgSparkles className="h-4 w-4 text-amber-400" />
+        <div className="rpg-crest-badge shadow-pixel sm:shadow-lg">
+          <span className="h-1.5 w-1.5 rotate-45 border border-amber-400/80 bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.8)]" aria-hidden="true" />
+          <RpgSparkles className="h-3.5 w-3.5 text-amber-400 drop-shadow-[0_0_6px_rgba(245,158,11,0.7)]" />
           <span>{t.landing.badge}</span>
+          <span className="h-1.5 w-1.5 rotate-45 border border-amber-400/80 bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.8)]" aria-hidden="true" />
         </div>
 
         <RPGSectionOrnament width={104} className="mt-4 opacity-75 sm:mt-5" />
 
-        <div className="mt-3 max-w-4xl sm:mt-4">
-          <h1 id="landing-title" className="font-pixel text-3xl leading-tight tracking-wide text-rpg-gold [text-shadow:0_3px_0_#3a2410,0_0_28px_rgba(240,164,58,0.2)] sm:text-5xl lg:text-6xl">
+        <div className="mt-3 max-w-4xl [text-shadow:0_2px_14px_rgba(0,0,0,0.9)] sm:mt-4">
+          <h1 id="landing-title" className="font-pixel text-3xl leading-tight tracking-wide text-rpg-gold [text-shadow:0_3px_0_#3a2410,0_6px_22px_rgba(0,0,0,0.85),0_0_28px_rgba(240,164,58,0.22)] sm:text-5xl lg:text-6xl">
             {t.landing.title}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-balance font-sans text-xl font-semibold leading-snug text-slate-100 sm:text-2xl lg:text-[1.75rem]">
@@ -236,14 +239,26 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
           </div>
         </form>
 
-        <nav aria-label={t.landing.secondaryActions} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm font-semibold">
-          <Link href="/duel" className="inline-flex min-h-11 items-center gap-2 px-2 text-slate-300 transition-colors hover:text-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">
-            <RpgSwords className="h-4 w-4 text-red-400" />
+        <nav aria-label={t.landing.secondaryActions} className="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
+          <Link
+            href="/duel"
+            onClick={() => playClickSound()}
+            className="rpg-action-chip rpg-action-chip--duel group"
+          >
+            <span className="h-1 w-1 rotate-45 bg-red-400/70 shadow-[0_0_4px_rgba(239,68,68,0.8)]" aria-hidden="true" />
+            <RpgSwords className="h-4 w-4 text-red-400 transition-transform duration-200 group-hover:scale-110 group-hover:text-red-300 drop-shadow-[0_0_4px_rgba(239,68,68,0.6)]" />
             <span>{t.landing.duelAction}</span>
+            <span className="text-[10px] text-red-400/70 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">⚔</span>
           </Link>
-          <a href="#heroes-hall" className="inline-flex min-h-11 items-center gap-2 px-2 text-slate-300 transition-colors hover:text-amber-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rpg-gold">
-            <span aria-hidden="true" className="text-amber-400">↓</span>
+          <a
+            href="#heroes-hall"
+            onClick={() => playClickSound()}
+            className="rpg-action-chip rpg-action-chip--hall group"
+          >
+            <span className="h-1 w-1 rotate-45 bg-amber-400/70 shadow-[0_0_4px_rgba(245,158,11,0.8)]" aria-hidden="true" />
+            <span aria-hidden="true" className="text-amber-400 font-bold transition-transform duration-200 group-hover:translate-y-0.5 drop-shadow-[0_0_4px_rgba(245,158,11,0.6)]">↓</span>
             <span>{t.landing.hallAction}</span>
+            <span className="h-1 w-1 rotate-45 bg-amber-400/70 shadow-[0_0_4px_rgba(245,158,11,0.8)]" aria-hidden="true" />
           </a>
         </nav>
 

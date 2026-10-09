@@ -1,0 +1,467 @@
+/*
+ * Home scene: a monumental hall drawn in depth planes behind the Home content.
+ * Everything is namespaced `home-scene*`. Motion is driven by four CSS variables
+ * written by HomeScene.tsx on the stage (no React re-render per frame):
+ *   --scene-px / --scene-py   pointer offset, -1..1 (desktop fine pointers only)
+ *   --scene-scroll            0..1 across the first viewport of scroll
+ *   --scene-sanctum           0..1 as the Hall of Heroes rises into view
+ * --scene-depth scales every displacement: 1 desktop, lighter on touch, 0 under reduced motion.
+ */
+
+.home-scene {
+  /* The stage starts under the sticky navbar so the set fills the first screen edge to edge. */
+  --home-scene-nav: 4rem;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .home-scene {
+    --home-scene-nav: 68px;
+  }
+}
+
+.home-scene__backdrop {
+  position: absolute;
+  inset: calc(-1 * var(--home-scene-nav)) 0 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-scene__stage {
+  --scene-px: 0;
+  --scene-py: 0;
+  --scene-scroll: 0;
+  --scene-sanctum: 0;
+  --scene-depth: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  contain: layout paint;
+  background: #07080c;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .home-scene__stage {
+    --scene-depth: 0.4;
+  }
+}
+
+.home-scene__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- Far plane: the nave, then the sanctum ---------- */
+.home-scene__plane {
+  position: absolute;
+  inset: -3%;
+  will-change: transform;
+}
+
+.home-scene__img {
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.home-scene__far {
+  transform:
+    translate3d(
+      calc(var(--scene-px) * -10px * var(--scene-depth)),
+      calc((var(--scene-py) * -6px - var(--scene-scroll) * 28px) * var(--scene-depth)),
+      0
+    )
+    scale(calc(1.02 + var(--scene-scroll) * 0.05 * var(--scene-depth)));
+}
+
+/* Walking in: the sanctum starts slightly zoomed and settles as it fades in. */
+.home-scene__sanctum {
+  opacity: var(--scene-sanctum);
+  transform:
+    translate3d(
+      calc(var(--scene-px) * -10px * var(--scene-depth)),
+      calc(var(--scene-py) * -6px * var(--scene-depth)),
+      0
+    )
+    scale(calc(1.04 + (1 - var(--scene-sanctum)) * 0.08 * var(--scene-depth)));
+}
+
+.home-scene__sanctum .home-scene__img {
+  object-position: 50% 48%;
+}
+
+/* Color grade: navy shadows above, a faint bloom where the far gate glows, dark floor below. */
+.home-scene__haze {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 26% 24% at 50% 40%, rgba(240, 164, 58, 0.1), transparent 70%),
+    linear-gradient(
+      180deg,
+      rgba(7, 9, 20, 0.62) 0%,
+      rgba(8, 9, 15, 0.22) 36%,
+      rgba(10, 8, 8, 0.28) 68%,
+      rgba(6, 6, 9, 0.78) 100%
+    ),
+    linear-gradient(rgba(6, 7, 12, 0.26), rgba(6, 7, 12, 0.26));
+}
+
+/* Dusty light shafts falling from the high windows. */
+.home-scene__shafts {
+  position: absolute;
+  inset: -8% 0 0;
+  background:
+    linear-gradient(103deg, transparent 31%, rgba(255, 196, 120, 0.055) 36%, transparent 41%),
+    linear-gradient(77deg, transparent 57%, rgba(255, 196, 120, 0.05) 62%, transparent 67%),
+    linear-gradient(96deg, transparent 45%, rgba(255, 214, 160, 0.03) 48.5%, transparent 52%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 82%);
+  mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.55) 45%, transparent 82%);
+  animation: home-scene-shafts 11s ease-in-out infinite alternate;
+}
+
+/* ---------- Fog: two bands drifting at different speeds (seamless 2-tile loop) ---------- */
+.home-scene__fog {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  will-change: transform;
+  animation: home-scene-drift linear infinite;
+}
+
+.home-scene__fog--back {
+  bottom: 4%;
+  height: 48%;
+  background-image:
+    radial-gradient(ellipse 36% 40% at 20% 66%, rgba(150, 146, 160, 0.15), transparent 70%),
+    radial-gradient(ellipse 30% 34% at 62% 58%, rgba(165, 150, 145, 0.11), transparent 70%),
+    radial-gradient(ellipse 24% 30% at 102% 70%, rgba(140, 140, 156, 0.12), transparent 70%),
+    radial-gradient(ellipse 24% 30% at 2% 70%, rgba(140, 140, 156, 0.12), transparent 70%);
+  animation-duration: 95s;
+}
+
+.home-scene__fog--front {
+  bottom: -8%;
+  height: 38%;
+  background-image:
+    radial-gradient(ellipse 34% 46% at 34% 62%, rgba(176, 164, 160, 0.13), transparent 72%),
+    radial-gradient(ellipse 28% 40% at 80% 70%, rgba(150, 146, 160, 0.11), transparent 72%),
+    radial-gradient(ellipse 18% 36% at 101% 60%, rgba(160, 150, 150, 0.08), transparent 72%),
+    radial-gradient(ellipse 18% 36% at 1% 60%, rgba(160, 150, 150, 0.08), transparent 72%);
+  animation-duration: 58s;
+  animation-direction: reverse;
+}
+
+/* ---------- Pillars: near plane, darker than the hall, part of each one off-frame ---------- */
+.home-scene__pillar {
+  --pillar-hide: 84%;
+  --pillar-opacity: 0.5;
+  position: absolute;
+  top: -6%;
+  bottom: -4%;
+  opacity: calc(var(--pillar-opacity) * (1 - var(--scene-sanctum) * 0.4));
+  will-change: transform;
+}
+
+.home-scene__pillar--left {
+  left: 0;
+  transform: translate3d(
+    calc((var(--scene-px) * -22px - var(--scene-sanctum) * 7vw) * var(--scene-depth)),
+    calc((var(--scene-py) * -10px - var(--scene-scroll) * 70px) * var(--scene-depth)),
+    0
+  );
+}
+
+.home-scene__pillar--right {
+  right: 0;
+  transform: translate3d(
+    calc((var(--scene-px) * -22px + var(--scene-sanctum) * 7vw) * var(--scene-depth)),
+    calc((var(--scene-py) * -10px - var(--scene-scroll) * 70px) * var(--scene-depth)),
+    0
+  );
+}
+
+.home-scene__pillar-body {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 615 / 1376;
+}
+
+/* Mirrored on the left so both torches face the nave. */
+.home-scene__pillar--left .home-scene__pillar-body {
+  transform: translateX(calc(-1 * var(--pillar-hide))) scaleX(-1);
+}
+
+.home-scene__pillar--right .home-scene__pillar-body {
+  transform: translateX(var(--pillar-hide));
+}
+
+.home-scene__pillar-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  filter: brightness(0.58) saturate(0.88) contrast(1.06);
+}
+
+.home-scene__torch {
+  position: absolute;
+  left: 23%;
+  top: 34%;
+  width: 78%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 176, 80, 0.34), rgba(255, 120, 30, 0.1) 40%, transparent 68%);
+  transform: translate(-50%, -50%);
+  animation: home-scene-flicker 2.8s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .home-scene__pillar {
+    --pillar-hide: 64%;
+    --pillar-opacity: 0.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-scene__pillar {
+    --pillar-hide: 46%;
+    --pillar-opacity: 1;
+  }
+}
+
+@media (min-width: 1440px) {
+  .home-scene__pillar {
+    --pillar-hide: 34%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .home-scene__pillar {
+    --pillar-hide: 22%;
+  }
+}
+
+/* ---------- Embers rising from the braziers ---------- */
+.home-scene__embers {
+  position: absolute;
+  inset: 0;
+}
+
+.home-scene__ember {
+  position: absolute;
+  bottom: -2%;
+  border-radius: 50%;
+  background: #ffc46b;
+  box-shadow: 0 0 6px 1px rgba(255, 146, 40, 0.7);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: home-scene-ember;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (max-width: 767px) {
+  .home-scene__ember:nth-child(even) {
+    display: none;
+  }
+}
+
+/* ---------- Foreground props: candles and fallen stone at the frame edges ---------- */
+.home-scene__props {
+  position: absolute;
+  bottom: -2%;
+  display: none;
+  opacity: calc(1 - var(--scene-sanctum) * 0.7);
+  will-change: transform;
+  transform: translate3d(
+    calc(var(--scene-px) * -34px * var(--scene-depth)),
+    calc((var(--scene-py) * -14px + var(--scene-scroll) * 60px) * var(--scene-depth)),
+    0
+  );
+}
+
+.home-scene__props--left {
+  left: -3%;
+  width: clamp(240px, 26vw, 470px);
+}
+
+.home-scene__props--right {
+  right: -2%;
+  width: clamp(170px, 19vw, 340px);
+}
+
+@media (min-width: 640px) {
+  .home-scene__props {
+    display: block;
+  }
+}
+
+.home-scene__props-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.62) saturate(0.9);
+}
+
+.home-scene__candle-glow {
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 180, 90, 0.26), rgba(255, 130, 40, 0.07) 42%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: home-scene-flicker 3.4s ease-in-out infinite;
+}
+
+.home-scene__props--left .home-scene__candle-glow {
+  left: 24%;
+  top: 48%;
+}
+
+.home-scene__props--right .home-scene__candle-glow {
+  left: 62%;
+  top: 44%;
+  animation-delay: -1.3s;
+}
+
+/* ---------- Reading zones ---------- */
+.home-scene__focus {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 46% 42% at 50% 45%, rgba(5, 5, 9, 0.72) 0%, rgba(5, 5, 9, 0.44) 52%, rgba(5, 5, 9, 0) 82%),
+    radial-gradient(ellipse 125% 100% at 50% 50%, transparent 50%, rgba(2, 2, 4, 0.78) 100%);
+}
+
+/* Behind the Hall cards the set recedes further, so the tabs and cards stay the protagonists. */
+.home-scene__focus--sanctum {
+  opacity: var(--scene-sanctum);
+  background:
+    radial-gradient(ellipse 64% 72% at 50% 56%, rgba(5, 5, 9, 0.7), rgba(5, 5, 9, 0.46) 60%, rgba(5, 5, 9, 0.16) 100%);
+}
+
+@media (max-width: 767px) {
+  .home-scene__focus {
+    background:
+      radial-gradient(ellipse 95% 48% at 50% 44%, rgba(5, 5, 9, 0.74) 0%, rgba(5, 5, 9, 0.5) 60%, rgba(5, 5, 9, 0.2) 100%),
+      radial-gradient(ellipse 140% 100% at 50% 50%, transparent 55%, rgba(2, 2, 4, 0.7) 100%);
+  }
+
+  .home-scene__focus--sanctum {
+    background: linear-gradient(rgba(5, 5, 9, 0.6), rgba(5, 5, 9, 0.6));
+  }
+}
+
+/* The set dissolves into the footer instead of ending on a hard edge. */
+.home-scene__threshold {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 240px;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(11, 13, 20, 0.85) 70%, #0d1018);
+}
+
+/* ---------- Motion ---------- */
+@keyframes home-scene-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes home-scene-shafts {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes home-scene-flicker {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  55% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(0.97);
+  }
+
+  80% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
+
+@keyframes home-scene-ember {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate3d(var(--ember-drift), -78vh, 0);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion (app setting or system): a still set. The crossfade into the sanctum stays, it is not movement. */
+.home-scene[data-motion="reduced"] .home-scene__stage {
+  --scene-depth: 0;
+}
+
+.home-scene[data-motion="reduced"] :is(.home-scene__fog, .home-scene__shafts, .home-scene__torch, .home-scene__candle-glow) {
+  animation: none;
+}
+
+.home-scene[data-motion="reduced"] .home-scene__embers {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-scene__stage {
+    --scene-depth: 0;
+  }
+
+  .home-scene__embers {
+    display: none;
+  }
+}

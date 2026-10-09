@@ -36,12 +36,14 @@
   }
 }
 
-/* The landing portal borrows the Hall's metals and amber light without becoming another card. */
+/*
+ * The landing portal sits inside the Home scene (features/landing/HomeScene): no opaque backdrop,
+ * only a soft dark reading cone so the title and the summon form stay clear over the hall.
+ */
 .rpg-portal {
   background:
-    radial-gradient(ellipse 54% 46% at 50% 38%, rgba(180, 83, 9, 0.12), transparent 72%),
-    linear-gradient(180deg, #090a0f 0%, #0b0b0e 74%, #100d0d 100%);
-  box-shadow: inset 0 -70px 90px rgba(180, 83, 9, 0.035);
+    radial-gradient(ellipse 54% 46% at 50% 38%, rgba(180, 83, 9, 0.07), transparent 72%),
+    radial-gradient(ellipse 60% 56% at 50% 46%, rgba(6, 6, 10, 0.5), rgba(6, 6, 10, 0.2) 62%, transparent 84%);
 }
 
 .rpg-portal__glow {
