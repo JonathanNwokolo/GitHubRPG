@@ -197,7 +197,7 @@ export const ptBR = {
     shareText: "Veja o duelo RPG entre @{heroA} e @{heroB}, baseado em suas jornadas públicas no GitHub.",
     creatorOverride: {
       apparentDefeat: "O combate parecia decidido...",
-      apparentDefeatSubtitle: "O desafiante triunfou em todos os 5 rounds.",
+      apparentDefeatSubtitle: "O desafiante venceu o duelo pelos rounds.",
       anomalyDetected: "ANOMALIA DETECTADA",
       anomalySubtitle: "Instabilidade dimensional detectada no tecido da arena.",
       anomalyCode: "ERR_ARENA_FABRIC_OVERFLOW_0x000",

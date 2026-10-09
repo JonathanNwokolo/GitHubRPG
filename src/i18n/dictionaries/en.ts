@@ -199,7 +199,7 @@ export const en: TranslationDictionary = {
     shareText: "See the RPG duel between @{heroA} and @{heroB}, based on their public GitHub journeys.",
     creatorOverride: {
       apparentDefeat: "The battle seemed decided...",
-      apparentDefeatSubtitle: "The challenger triumphed across all 5 rounds.",
+      apparentDefeatSubtitle: "The challenger won the duel on rounds.",
       anomalyDetected: "ANOMALY DETECTED",
       anomalySubtitle: "Dimensional instability detected within arena fabric.",
       anomalyCode: "ERR_ARENA_FABRIC_OVERFLOW_0x000",
