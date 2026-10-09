@@ -138,6 +138,8 @@ describe("Creator Override (section 24 tests)", () => {
     const result = createDuel(creator, opponent);
     expect(result.scoreA).toBe(0);
     expect(result.scoreB).toBe(5);
+    expect(result.officialScoreA).toBe(5);
+    expect(result.officialScoreB).toBe(0);
     expect(result.winner).toBe("A");
     expect(result.resultType).toBe("creator_override");
     expect(result.creatorOverride).toBe(true);
@@ -149,6 +151,8 @@ describe("Creator Override (section 24 tests)", () => {
     const result = createDuel(opponent, creator);
     expect(result.scoreA).toBe(5);
     expect(result.scoreB).toBe(0);
+    expect(result.officialScoreA).toBe(0);
+    expect(result.officialScoreB).toBe(5);
     expect(result.winner).toBe("B");
     expect(result.resultType).toBe("creator_override");
     expect(result.creatorOverride).toBe(true);

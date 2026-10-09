@@ -46,6 +46,8 @@ export interface DuelResult {
   rounds: DuelRound[];
   scoreA: number;
   scoreB: number;
+  officialScoreA?: number;
+  officialScoreB?: number;
   winner: DuelWinner;
   resultType: DuelResultType;
   creatorOverride: boolean;

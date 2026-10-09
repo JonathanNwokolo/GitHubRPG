@@ -28,8 +28,16 @@ import { useUiStore } from "@/stores/useUiStore";
 import { DuelVsBadge } from "./DuelVsBadge";
 import { createDuel } from "./engine";
 import type { DuelRound as DuelRoundType, DuelSide } from "./engine";
+import { playClashSound, playUnlockSound } from "@/lib/audio/soundEffects";
 import { CreatorOverrideSequence, type OverridePhase } from "./CreatorOverrideSequence";
 import { CreatorOverrideResult } from "./CreatorOverrideResult";
+import {
+  CREATOR_OVERRIDE_TIMELINE,
+  CREATOR_OVERRIDE_PACING,
+  CREATOR_OVERRIDE_READING_SEQUENCE,
+  DUEL_CARD_PACING,
+  DUEL_ROUND_REVEAL,
+} from "./creatorOverrideTimeline";
 
 type LoadState =
   | { status: "loading" }
@@ -285,10 +293,7 @@ function DuelRound({
 
           {/* Central Clash Mark */}
           <div className="flex flex-col items-center justify-center my-1 sm:my-0">
-            <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-amber-900/60 bg-rpg-void shadow-inner">
-              <RpgSwords className="h-5 w-5 text-rpg-crimson" />
-            </div>
-            <span className="mt-1 font-pixel text-[9px] text-amber-500/80">VS</span>
+            <DuelVsBadge size="sm" ariaLabel={t.versus} />
           </div>
 
           {/* Side B Totem */}
@@ -413,9 +418,20 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
   const [visibleRounds, setVisibleRounds] = useState(0);
   const [overridePhase, setOverridePhase] = useState<OverridePhase>("idle");
   const [overrideHpRestored, setOverrideHpRestored] = useState(false);
+  const [roundsComplete, setRoundsComplete] = useState(false);
+  const [isFollowingDuel, setIsFollowingDuel] = useState(true);
   const [shareStatus, setShareStatus] = useState<"idle" | "copied" | "error">("idle");
   const roundTimersRef = useRef<number[]>([]);
   const overrideTimersRef = useRef<number[]>([]);
+  const pacingTimerRef = useRef<number | null>(null);
+  const isSkippedRef = useRef(false);
+  const isFollowingRef = useRef(true);
+  const followResumeRef = useRef(false);
+  const roundRefs = useRef(new Map<number, HTMLElement>());
+  const overrideRef = useRef<HTMLDivElement | null>(null);
+  const resultRef = useRef<HTMLDivElement | null>(null);
+  const followFrameRef = useRef<number | null>(null);
+  const lastFollowTargetRef = useRef("");
 
   const load = useCallback(
     (side: DuelSide) => {
@@ -456,18 +472,26 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
     roundTimersRef.current = [];
     overrideTimersRef.current.forEach(window.clearTimeout);
     overrideTimersRef.current = [];
+    if (pacingTimerRef.current !== null) {
+      window.clearTimeout(pacingTimerRef.current);
+      pacingTimerRef.current = null;
+    }
   }, []);
 
   useEffect(() => {
     clearAllTimers();
+    isSkippedRef.current = false;
+
     if (!duel) {
       setVisibleRounds(0);
+      setRoundsComplete(false);
       setOverridePhase("idle");
       setOverrideHpRestored(false);
       return;
     }
     if (shouldReduce) {
       setVisibleRounds(duel.rounds.length);
+      setRoundsComplete(true);
       if (duel.creatorOverride) {
         setOverridePhase("final");
         setOverrideHpRestored(true);
@@ -475,41 +499,291 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
       return;
     }
     setVisibleRounds(0);
+    setRoundsComplete(false);
     setOverridePhase("idle");
     setOverrideHpRestored(false);
 
-    roundTimersRef.current = duel.rounds.map((_, index) =>
-      window.setTimeout(() => setVisibleRounds(index + 1), 500 + index * 1800)
-    );
-
-    if (duel.creatorOverride) {
-      const round5Time = 500 + (duel.rounds.length - 1) * 1800; // 7700ms
-      const apparentDefeatTime = round5Time + 800;              // 8500ms
-      const anomalyTime = apparentDefeatTime + 2000;            // 10500ms
-      const authorityTime = anomalyTime + 2400;                 // 12900ms
-      const restorationTime = authorityTime + 2800;             // 15700ms
-      const finalTime = restorationTime + 1600;                 // 17300ms
-
-      overrideTimersRef.current = [
-        window.setTimeout(() => setOverridePhase("apparent_defeat"), apparentDefeatTime),
-        window.setTimeout(() => setOverridePhase("anomaly"), anomalyTime),
-        window.setTimeout(() => setOverridePhase("authority"), authorityTime),
-        window.setTimeout(() => {
-          setOverridePhase("restoration");
-          setOverrideHpRestored(true);
-        }, restorationTime),
-        window.setTimeout(() => setOverridePhase("final"), finalTime),
-      ];
-    }
+    // Only the first round is scheduled here; every following card is released
+    // by the reading-paced sequence below once the previous one has been read.
+    roundTimersRef.current = [
+      window.setTimeout(() => {
+        if (isSkippedRef.current) return;
+        setVisibleRounds(1);
+      }, DUEL_ROUND_REVEAL.firstAt),
+    ];
 
     return clearAllTimers;
   }, [duel, shouldReduce, clearAllTimers]);
 
+  const suspendFollow = useCallback(() => {
+    isFollowingRef.current = false;
+    setIsFollowingDuel(false);
+  }, []);
+
+  const waitForPacingDelay = useCallback((duration: number, signal: AbortSignal) => {
+    return new Promise<boolean>((resolve) => {
+      if (signal.aborted || isSkippedRef.current) {
+        resolve(false);
+        return;
+      }
+
+      const finish = (completed: boolean) => {
+        if (pacingTimerRef.current !== null) {
+          window.clearTimeout(pacingTimerRef.current);
+          pacingTimerRef.current = null;
+        }
+        signal.removeEventListener("abort", onAbort);
+        resolve(completed);
+      };
+      const onAbort = () => finish(false);
+
+      signal.addEventListener("abort", onAbort, { once: true });
+      pacingTimerRef.current = window.setTimeout(() => finish(true), duration);
+    });
+  }, []);
+
+  const frameCard = useCallback(async (target: HTMLElement, signal: AbortSignal) => {
+    // Wait two frames so the card is mounted and laid out; abort cancels the pending frames.
+    await new Promise<void>((resolve) => {
+      let firstFrame = 0;
+      let secondFrame = 0;
+      const finish = () => {
+        window.cancelAnimationFrame(firstFrame);
+        window.cancelAnimationFrame(secondFrame);
+        signal.removeEventListener("abort", finish);
+        resolve();
+      };
+      if (signal.aborted) {
+        resolve();
+        return;
+      }
+      signal.addEventListener("abort", finish, { once: true });
+      firstFrame = window.requestAnimationFrame(() => {
+        secondFrame = window.requestAnimationFrame(finish);
+      });
+    });
+    if (signal.aborted || isSkippedRef.current || !isFollowingRef.current) return;
+
+    const rect = target.getBoundingClientRect();
+    const stickyHeader = document.querySelector<HTMLElement>("header.sticky");
+    const usableTop = (stickyHeader?.getBoundingClientRect().bottom ?? 0) + 16;
+    const usableBottom = window.innerHeight - 16;
+    const usableHeight = Math.max(1, usableBottom - usableTop);
+    if (rect.width === 0 && rect.height === 0) return;
+    const alreadyFramed = rect.height <= usableHeight
+      ? rect.top >= usableTop && rect.bottom <= usableBottom
+      : Math.abs(rect.top - usableTop) <= 2;
+    if (alreadyFramed) return;
+
+    const centeredTop = rect.height >= usableHeight
+      ? usableTop
+      : usableTop + (usableHeight - rect.height) / 2;
+    const top = Math.max(0, window.scrollY + rect.top - centeredTop);
+    window.scrollTo({ top, behavior: shouldReduce ? "auto" : "smooth" });
+    if (shouldReduce) return;
+
+    await new Promise<void>((resolve) => {
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        window.removeEventListener("scrollend", finish);
+        signal.removeEventListener("abort", finish);
+        if (pacingTimerRef.current !== null) {
+          window.clearTimeout(pacingTimerRef.current);
+          pacingTimerRef.current = null;
+        }
+        resolve();
+      };
+      window.addEventListener("scrollend", finish, { once: true });
+      signal.addEventListener("abort", finish, { once: true });
+      pacingTimerRef.current = window.setTimeout(
+        finish,
+        CREATOR_OVERRIDE_PACING.scrollSettleFallbackMs
+      );
+    });
+  }, [shouldReduce]);
+
+  // The approved invocation clock starts once the last round card has been read.
+  useEffect(() => {
+    if (!duel?.creatorOverride || !roundsComplete || shouldReduce || isSkippedRef.current) return;
+
+    overrideTimersRef.current = CREATOR_OVERRIDE_TIMELINE.map((event) =>
+      window.setTimeout(() => {
+        if (isSkippedRef.current) return;
+        if ("sound" in event && event.sound === "clash") playClashSound();
+        if ("sound" in event && event.sound === "unlock") playUnlockSound();
+        if ("restoreHp" in event && event.restoreHp) setOverrideHpRestored(true);
+        setOverridePhase(event.phase);
+      }, event.at)
+    );
+
+    return () => {
+      overrideTimersRef.current.forEach(window.clearTimeout);
+      overrideTimersRef.current = [];
+    };
+  }, [duel, roundsComplete, shouldReduce]);
+
+  // Round cards are released one at a time: frame → entry → read → transition.
+  useEffect(() => {
+    if (!duel || shouldReduce || isSkippedRef.current || roundsComplete || visibleRounds === 0) return;
+
+    const controller = new AbortController();
+    const runRound = async () => {
+      const target = roundRefs.current.get(visibleRounds - 1);
+      if (!target) return;
+
+      await frameCard(target, controller.signal);
+      if (controller.signal.aborted || isSkippedRef.current) return;
+
+      if (!(await waitForPacingDelay(DUEL_CARD_PACING.entryMs, controller.signal))) return;
+      if (!(await waitForPacingDelay(DUEL_CARD_PACING.readingMs, controller.signal))) return;
+      if (!(await waitForPacingDelay(DUEL_CARD_PACING.transitionMs, controller.signal))) return;
+
+      if (visibleRounds < duel.rounds.length) setVisibleRounds(visibleRounds + 1);
+      else setRoundsComplete(true);
+    };
+
+    void runRound();
+    return () => controller.abort();
+  }, [duel, frameCard, roundsComplete, shouldReduce, visibleRounds, waitForPacingDelay]);
+
+  useEffect(() => {
+    const onWheel = () => suspendFollow();
+    const onTouchMove = () => suspendFollow();
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.clientX >= document.documentElement.clientWidth - 24) suspendFollow();
+    };
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "].includes(event.key)) {
+        suspendFollow();
+      }
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: true });
+    window.addEventListener("touchmove", onTouchMove, { passive: true });
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [suspendFollow]);
+
+  useEffect(() => {
+    if (!duel?.creatorOverride || shouldReduce || isSkippedRef.current) return;
+
+    const phaseIndex = CREATOR_OVERRIDE_READING_SEQUENCE.findIndex(
+      (step) => step.phase === overridePhase
+    );
+    if (phaseIndex < 0) return;
+
+    const controller = new AbortController();
+    const runPhase = async () => {
+      const target = overrideRef.current;
+      if (!target) return;
+
+      await frameCard(target, controller.signal);
+      if (controller.signal.aborted || isSkippedRef.current) return;
+
+      const entryDuration = overridePhase === "card_reveal"
+        ? CREATOR_OVERRIDE_PACING.approvedCardFlipMs
+        : CREATOR_OVERRIDE_PACING.entryMs;
+      if (!(await waitForPacingDelay(entryDuration, controller.signal))) return;
+      if (!(await waitForPacingDelay(CREATOR_OVERRIDE_PACING.readingMs, controller.signal))) return;
+
+      const nextStep = CREATOR_OVERRIDE_READING_SEQUENCE[phaseIndex + 1];
+      if (nextStep) {
+        if ("sound" in nextStep && nextStep.sound === "clash") playClashSound();
+        if ("sound" in nextStep && nextStep.sound === "unlock") playUnlockSound();
+        if ("restoreHp" in nextStep && nextStep.restoreHp) setOverrideHpRestored(true);
+        setOverridePhase(nextStep.phase);
+        return;
+      }
+
+      setOverridePhase("card_dissolution");
+    };
+
+    void runPhase();
+    return () => controller.abort();
+  }, [duel, frameCard, overridePhase, shouldReduce, waitForPacingDelay]);
+
+  useEffect(() => {
+    if (overridePhase !== "card_dissolution" || shouldReduce || isSkippedRef.current) return;
+    const controller = new AbortController();
+    void waitForPacingDelay(CREATOR_OVERRIDE_PACING.transitionMs, controller.signal).then(
+      (completed) => {
+        if (completed && !isSkippedRef.current) setOverridePhase("final");
+      }
+    );
+    return () => controller.abort();
+  }, [overridePhase, shouldReduce, waitForPacingDelay]);
+
+  useEffect(() => {
+    if (!duel || !isFollowingDuel) return;
+
+    const roundPacingActive =
+      !shouldReduce && !isSkippedRef.current && !roundsComplete && visibleRounds > 0;
+    const pacingControlsThisPhase = roundPacingActive || CREATOR_OVERRIDE_READING_SEQUENCE.some(
+      (step) => step.phase === overridePhase
+    ) || overridePhase === "card_dissolution";
+    // The paced sequences frame their own cards; only an explicit resume may re-center.
+    if (pacingControlsThisPhase && !followResumeRef.current) return;
+    followResumeRef.current = false;
+
+    const isFinalVisible = duel.creatorOverride
+      ? overridePhase === "final"
+      : roundsComplete;
+
+    const targetKey = isFinalVisible
+      ? "result"
+      : overridePhase !== "idle"
+        ? `override:${overridePhase}`
+        : visibleRounds > 0
+          ? `round:${visibleRounds}`
+          : "";
+    if (!targetKey || targetKey === lastFollowTargetRef.current) return;
+
+    const target = isFinalVisible
+      ? resultRef.current
+      : overridePhase !== "idle"
+        ? overrideRef.current
+        : roundRefs.current.get(visibleRounds - 1) ?? null;
+    if (!target) return;
+
+    lastFollowTargetRef.current = targetKey;
+    if (followFrameRef.current !== null) window.cancelAnimationFrame(followFrameRef.current);
+    followFrameRef.current = window.requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      const stickyHeader = document.querySelector<HTMLElement>("header.sticky");
+      const usableTop = (stickyHeader?.getBoundingClientRect().bottom ?? 0) + 16;
+      const usableBottom = window.innerHeight - 16;
+      const usableHeight = Math.max(1, usableBottom - usableTop);
+      const centeredTop = rect.height >= usableHeight
+        ? usableTop
+        : usableTop + (usableHeight - rect.height) / 2;
+      const top = Math.max(0, window.scrollY + rect.top - centeredTop);
+      window.scrollTo({ top, behavior: shouldReduce ? "auto" : "smooth" });
+      followFrameRef.current = null;
+    });
+
+    return () => {
+      if (followFrameRef.current !== null) {
+        window.cancelAnimationFrame(followFrameRef.current);
+        followFrameRef.current = null;
+      }
+    };
+  }, [duel, isFollowingDuel, overridePhase, roundsComplete, shouldReduce, visibleRounds]);
+
   // Cancel all pending reveal and override timers: jumps straight to the stable final outcome.
   const skipAnimation = () => {
     if (!duel) return;
+    isSkippedRef.current = true;
     clearAllTimers();
     setVisibleRounds(duel.rounds.length);
+    setRoundsComplete(true);
     if (duel.creatorOverride) {
       setOverridePhase("final");
       setOverrideHpRestored(true);
@@ -518,7 +792,7 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
 
   const finalVisible = duel?.creatorOverride
     ? overridePhase === "final"
-    : Boolean(duel && visibleRounds >= duel.rounds.length);
+    : roundsComplete;
 
   const normalHpA =
     duel && visibleRounds > 0
@@ -613,58 +887,89 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
         />
       </div>
 
-      {/* Skip Animation Toggle */}
-      {!finalVisible ? (
-        <div className="text-center">
+      {/* Duel playback controls */}
+      <div className="flex flex-wrap items-center justify-center gap-3 text-center">
+        {!finalVisible ? (
           <button
+            type="button"
             onClick={skipAnimation}
             className="inline-flex items-center gap-2 border border-amber-900/60 bg-rpg-surface/90 px-4 py-2 font-pixel text-[10px] uppercase tracking-wider text-amber-200 shadow-pixel hover:border-amber-500 hover:text-amber-100 transition-colors"
           >
             <RpgZap className="h-3.5 w-3.5 text-amber-400" />
             <span>{t.skipAnimation}</span>
           </button>
-        </div>
-      ) : null}
-
-      {/* Rounds Sequence */}
-      <div className="space-y-6" aria-live="polite" aria-atomic="false">
-        {duel.rounds.slice(0, visibleRounds).map((round, index) => (
-          <DuelRound key={round.id} round={round} index={index} usernames={usernames} />
-        ))}
+        ) : null}
+        <button
+          type="button"
+          aria-pressed={isFollowingDuel}
+          onClick={() => {
+            lastFollowTargetRef.current = "";
+            setIsFollowingDuel((current) => {
+              isFollowingRef.current = !current;
+              followResumeRef.current = !current;
+              return !current;
+            });
+          }}
+          className={`inline-flex items-center gap-2 border px-4 py-2 font-pixel text-[10px] uppercase tracking-wider shadow-pixel transition-colors ${
+            isFollowingDuel
+              ? "border-emerald-600/60 bg-emerald-950/40 text-emerald-200 hover:border-emerald-400"
+              : "border-amber-900/60 bg-rpg-surface/90 text-amber-200 hover:border-amber-500"
+          }`}
+        >
+          <RpgCompass className="h-3.5 w-3.5" />
+          <span>{isFollowingDuel ? t.followingDuel : t.followDuel}</span>
+        </button>
       </div>
+
+      {/* Rounds Sequence: Hidden in Creator Override once rewritten/final so no contradictory cards appear */}
+      {(!duel.creatorOverride || overridePhase !== "final") && (
+        <div className="space-y-6" aria-live="polite" aria-atomic="false">
+          {duel.rounds.slice(0, visibleRounds).map((round, index) => (
+            <div
+              key={round.id}
+              ref={(node) => {
+                if (node) roundRefs.current.set(index, node);
+                else roundRefs.current.delete(index);
+              }}
+              data-duel-event={`round-${index + 1}`}
+            >
+              <DuelRound round={round} index={index} usernames={usernames} />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Creator Override Dramatic Sequence */}
       {duel.creatorOverride && overridePhase !== "idle" && overridePhase !== "final" && (
-        <CreatorOverrideSequence
-          phase={overridePhase}
-          creatorName={
-            duel.winner === "A"
-              ? stateA.character.identity.displayName || usernames.A
-              : stateB.character.identity.displayName || usernames.B
-          }
-          opponentName={
-            duel.winner === "A"
-              ? stateB.character.identity.displayName || usernames.B
-              : stateA.character.identity.displayName || usernames.A
-          }
-          creatorUsername={usernames[duel.winner === "A" ? "A" : "B"]}
-          opponentUsername={usernames[duel.winner === "A" ? "B" : "A"]}
-          creatorSide={duel.winner === "A" ? "A" : "B"}
-        />
+        <div ref={overrideRef} data-duel-event={`override-${overridePhase}`}>
+          <CreatorOverrideSequence
+            phase={overridePhase}
+            creatorCharacter={duel.winner === "A" ? stateA.character : stateB.character}
+            opponentCharacter={duel.winner === "A" ? stateB.character : stateA.character}
+            creatorUsername={usernames[duel.winner === "A" ? "A" : "B"]}
+            opponentUsername={usernames[duel.winner === "A" ? "B" : "A"]}
+            creatorSide={duel.winner === "A" ? "A" : "B"}
+            rawScoreA={duel.scoreA}
+            rawScoreB={duel.scoreB}
+            officialScoreA={duel.officialScoreA ?? duel.scoreA}
+            officialScoreB={duel.officialScoreB ?? duel.scoreB}
+          />
+        </div>
       )}
 
       {/* Final Battle Outcome / Result Block */}
       {finalVisible ? (
         duel.creatorOverride ? (
-          <CreatorOverrideResult
-            duel={duel}
-            usernames={usernames}
-            creatorSide={duel.winner === "A" ? "A" : "B"}
-            share={share}
-            shareStatus={shareStatus}
-          />
+          <div ref={resultRef} data-duel-event="official-result">
+            <CreatorOverrideResult
+              duel={duel}
+              usernames={usernames}
+              creatorSide={duel.winner === "A" ? "A" : "B"}
+            />
+          </div>
         ) : (
           <motion.div
+            ref={resultRef}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
@@ -724,9 +1029,8 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
               </div>
 
               {/* Clash Divider */}
-              <div className="flex flex-col items-center justify-center px-1 sm:px-2">
-                <RpgSwords className="h-7 w-7 sm:h-9 sm:w-9 text-rpg-crimson" />
-                <span className="font-pixel text-xs text-amber-500/70 mt-1">VS</span>
+              <div className="flex flex-col items-center justify-center px-1 sm:px-2 flex-shrink-0">
+                <DuelVsBadge size="scoreboard" ariaLabel={t.versus} />
               </div>
 
               {/* Score Side B */}

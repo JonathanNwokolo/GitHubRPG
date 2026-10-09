@@ -1,7 +1,7 @@
 import type { ClassName, RPGCharacter } from "@/game/types";
 import { clampPower, normalizeLog, weightedPower } from "./normalizeDuelMetric";
 import type { DuelModifier, DuelResult, DuelResultType, DuelRound, DuelRoundHero, DuelRoundId, DuelWinner } from "./types";
-import { evaluateCreatorOverride } from "./creatorOverride";
+import { computeOfficialDuelScore, evaluateCreatorOverride } from "./creatorOverride";
 
 const ROUND_ORDER: DuelRoundId[] = ["journey", "arsenal", "forge", "legacy", "signature"];
 const CLASS_AFFINITIES: Record<ClassName, { round: DuelRoundId; amount: number }> = {
@@ -168,6 +168,11 @@ export function createDuel(characterA: RPGCharacter, characterB: RPGCharacter): 
       ? "legendary_draw"
       : "normal";
   const creatorOverride = override.triggered;
+  const officialScores = computeOfficialDuelScore(
+    scoreA,
+    scoreB,
+    override.triggered ? override.creatorSide : null
+  );
 
   return {
     heroA: { character: characterA, initialHp: 100, finalHp: hpA, mp: characterA.resources.mp },
@@ -175,6 +180,8 @@ export function createDuel(characterA: RPGCharacter, characterB: RPGCharacter): 
     rounds,
     scoreA,
     scoreB,
+    officialScoreA: officialScores.scoreA,
+    officialScoreB: officialScores.scoreB,
     winner,
     resultType,
     creatorOverride,
