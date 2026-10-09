@@ -63,7 +63,7 @@ export function HeroesHall() {
     <section id="heroes-hall" aria-labelledby="heroes-hall-title" className="rpg-hall relative w-full scroll-mt-20 overflow-x-clip px-4 py-14 sm:px-6 sm:py-20 lg:px-20">
       <span aria-hidden="true" className="rpg-embers" />
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="mb-6 text-center">
+        <div className="mb-6 text-center [text-shadow:0_2px_12px_rgba(0,0,0,0.9)]">
           <RPGSectionOrnament />
           <h2
             id="heroes-hall-title"

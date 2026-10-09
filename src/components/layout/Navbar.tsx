@@ -89,13 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDemo }) => {
           aria-label="GitHub RPG"
         >
           {/* Crest / Brasão */}
-          <div className="relative flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 rounded-sm bg-gradient-to-b from-[#1c1f2e] via-[#121520] to-[#0a0b10] border border-[#5b4528] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_2px_6px_rgba(0,0,0,0.5)] group-hover:border-rpg-gold/70 group-hover:shadow-[0_0_12px_rgba(245,158,11,0.25)] transition-all duration-200 shrink-0">
-            {/* Micro corner rivets on the crest */}
-            <span className="absolute -top-[2px] -left-[2px] w-[3px] h-[3px] bg-amber-400/80 pointer-events-none" aria-hidden="true" />
-            <span className="absolute -top-[2px] -right-[2px] w-[3px] h-[3px] bg-amber-400/80 pointer-events-none" aria-hidden="true" />
-            <span className="absolute -bottom-[2px] -left-[2px] w-[3px] h-[3px] bg-amber-400/80 pointer-events-none" aria-hidden="true" />
-            <span className="absolute -bottom-[2px] -right-[2px] w-[3px] h-[3px] bg-amber-400/80 pointer-events-none" aria-hidden="true" />
-
+          <div className="relative flex items-center justify-center h-10 w-10 sm:h-11 sm:w-11 shrink-0">
             <Image
               src="/logo-personagem.png"
               alt=""

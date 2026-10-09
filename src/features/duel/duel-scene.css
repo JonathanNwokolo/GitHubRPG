@@ -1,0 +1,349 @@
+/*
+ * Duel Scene: Dark Fantasy Coliseum of Champions
+ * Namespaced `duel-scene*` to isolate styles.
+ * Motion driven by CSS variables:
+ *   --duel-px / --duel-py     pointer offset, -1..1
+ *   --duel-depth              1 desktop, 0.35 mobile/coarse, 0 reduced-motion
+ */
+
+.duel-scene {
+  --duel-scene-nav: 4rem;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - var(--duel-scene-nav));
+}
+
+@media (min-width: 640px) {
+  .duel-scene {
+    --duel-scene-nav: 68px;
+  }
+}
+
+.duel-scene__backdrop {
+  position: absolute;
+  inset: calc(-1 * var(--duel-scene-nav)) 0 0 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.duel-scene__stage {
+  --duel-px: 0;
+  --duel-py: 0;
+  --duel-depth: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  contain: layout paint;
+  background: #06070a;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .duel-scene__stage {
+    --duel-depth: 0.35;
+  }
+}
+
+.duel-scene__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- Layer 1: Arena Plane ---------- */
+.duel-scene__plane {
+  position: absolute;
+  inset: -3%;
+  will-change: transform;
+}
+
+.duel-scene__img {
+  object-fit: cover;
+  object-position: 50% 36%;
+  filter: brightness(0.85) contrast(1.08) saturate(1.05);
+}
+
+.duel-scene__arena {
+  transform: translate3d(
+    calc(var(--duel-px) * -12px * var(--duel-depth)),
+    calc(var(--duel-py) * -7px * var(--duel-depth)),
+    0
+  ) scale(1.03);
+}
+
+/* ---------- Layer 2: Eclipse Glow & Color Grade ---------- */
+.duel-scene__eclipse-glow {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  width: min(480px, 60vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 38, 38, 0.22) 0%,
+    rgba(245, 158, 11, 0.12) 35%,
+    rgba(180, 83, 9, 0.05) 55%,
+    transparent 72%
+  );
+  pointer-events: none;
+  animation: duel-eclipse-pulse 7s ease-in-out infinite alternate;
+}
+
+.duel-scene__haze {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 35% at 50% 0%, rgba(220, 38, 38, 0.08), transparent 70%),
+    linear-gradient(
+      180deg,
+      rgba(7, 9, 15, 0.65) 0%,
+      rgba(8, 7, 12, 0.25) 30%,
+      rgba(10, 6, 8, 0.35) 70%,
+      rgba(5, 5, 8, 0.85) 100%
+    );
+}
+
+/* ---------- Layer 3: Drifting Smoke ---------- */
+.duel-scene__smoke {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 44%;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-size: 50% 100%;
+  background-image:
+    radial-gradient(ellipse 34% 42% at 24% 68%, rgba(130, 70, 70, 0.12), transparent 70%),
+    radial-gradient(ellipse 28% 36% at 72% 60%, rgba(140, 100, 80, 0.1), transparent 70%),
+    radial-gradient(ellipse 22% 30% at 98% 72%, rgba(120, 60, 60, 0.11), transparent 70%),
+    radial-gradient(ellipse 22% 30% at 2% 72%, rgba(120, 60, 60, 0.11), transparent 70%);
+  animation: duel-smoke-drift 75s linear infinite;
+  will-change: transform;
+}
+
+/* ---------- Layer 4: Rising Battle Embers ---------- */
+.duel-scene__embers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.duel-scene__ember {
+  position: absolute;
+  bottom: -2%;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: duel-ember-float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.duel-scene__ember--crimson {
+  background: #ff5252;
+  box-shadow: 0 0 6px 1px rgba(239, 68, 68, 0.8);
+}
+
+.duel-scene__ember--amber {
+  background: #ffb74d;
+  box-shadow: 0 0 6px 1px rgba(245, 158, 11, 0.8);
+}
+
+@media (max-width: 767px) {
+  .duel-scene__ember:nth-child(even) {
+    display: none;
+  }
+}
+
+/* ---------- Layer 5: Foreground Props ---------- */
+.duel-scene__props {
+  position: absolute;
+  bottom: -1%;
+  pointer-events: none;
+  will-change: transform;
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .duel-scene__props {
+    display: block;
+  }
+}
+
+.duel-scene__props--left {
+  left: -2%;
+  width: clamp(190px, 20vw, 360px);
+  transform: translate3d(
+    calc(var(--duel-px) * -30px * var(--duel-depth)),
+    calc(var(--duel-py) * -12px * var(--duel-depth)),
+    0
+  );
+}
+
+.duel-scene__props--right {
+  right: -1%;
+  width: clamp(170px, 18vw, 320px);
+  transform: translate3d(
+    calc(var(--duel-px) * -28px * var(--duel-depth)),
+    calc(var(--duel-py) * -11px * var(--duel-depth)),
+    0
+  );
+}
+
+.duel-scene__props-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0.68) saturate(0.92) contrast(1.08);
+}
+
+.duel-scene__blade-glow {
+  position: absolute;
+  left: 45%;
+  top: 60%;
+  width: 65%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.28), rgba(245, 158, 11, 0.1) 45%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: duel-prop-flicker 3.2s ease-in-out infinite;
+}
+
+.duel-scene__brazier-glow {
+  position: absolute;
+  left: 68%;
+  top: 42%;
+  width: 75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.32), rgba(220, 38, 38, 0.12) 42%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: duel-prop-flicker 2.7s ease-in-out infinite -1s;
+}
+
+/* ---------- Layer 6: Reading Focus Zone ---------- */
+.duel-scene__focus {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 64% 54% at 50% 48%,
+      rgba(6, 7, 11, 0.74) 0%,
+      rgba(6, 7, 11, 0.52) 55%,
+      rgba(6, 7, 11, 0.1) 85%
+    ),
+    radial-gradient(ellipse 130% 100% at 50% 50%, transparent 45%, rgba(2, 2, 4, 0.8) 100%);
+}
+
+@media (max-width: 767px) {
+  .duel-scene__focus {
+    background:
+      radial-gradient(ellipse 95% 65% at 50% 48%, rgba(6, 7, 11, 0.82) 0%, rgba(6, 7, 11, 0.58) 60%, rgba(6, 7, 11, 0.2) 100%),
+      radial-gradient(ellipse 140% 100% at 50% 50%, transparent 50%, rgba(2, 2, 4, 0.85) 100%);
+  }
+}
+
+/* Dissolve gently into the footer */
+.duel-scene__threshold {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  height: 200px;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(11, 13, 20, 0.88) 75%, #0d1018);
+}
+
+/* ---------- Animations ---------- */
+@keyframes duel-eclipse-pulse {
+  0% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes duel-smoke-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes duel-ember-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(var(--ember-drift), -80vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes duel-prop-flicker {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  60% {
+    opacity: 0.75;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  85% {
+    opacity: 0.96;
+    transform: translate(-50%, -50%) scale(1.03);
+  }
+}
+
+/* Reduced Motion Mode */
+.duel-scene[data-motion="reduced"] .duel-scene__stage {
+  --duel-depth: 0;
+}
+
+.duel-scene[data-motion="reduced"] :is(.duel-scene__eclipse-glow, .duel-scene__smoke, .duel-scene__blade-glow, .duel-scene__brazier-glow) {
+  animation: none;
+}
+
+.duel-scene[data-motion="reduced"] .duel-scene__embers {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duel-scene__stage {
+    --duel-depth: 0;
+  }
+  .duel-scene__embers {
+    display: none;
+  }
+}
