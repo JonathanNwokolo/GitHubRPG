@@ -59,7 +59,7 @@ describe("CharacterHeader class tooltip follows the class text", () => {
     useUiStore.setState({ language: "en" });
     const { container } = render(<CharacterHeader character={v1Character("Guerreiro")} equippedTitle={null} v2={v2WithClass("Bardo")} />);
 
-    expect(hoverClassTooltip(container, "Bard")).toBe("V2 reason for Bardo.");
+    expect(hoverClassTooltip(container, "Bard")).toBe("V2 reason for Bard.");
   });
 
   it("V2 without a usable reason: no tooltip at all, never the V1 description", () => {
