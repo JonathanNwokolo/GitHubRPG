@@ -7,6 +7,8 @@
  *     production, unset         -> error: production must choose explicitly
  *   GITHUB_TOKEN (optional, server-only)
  *     read only when the source is "github".
+ *   UPSTASH_REDIS_REST_URL / _TOKEN, USAGE_COUNTER_ENABLED (optional, server-only)
+ *     see readUsageCounterConfig.
  */
 
 export type DataSourceKind = "mock" | "github";
@@ -78,6 +80,55 @@ export function isGameEngineV2UiEnabled(username: string, env: Env = process.env
 /** Test-only cold-path seam. Callers must still restrict it to the mock data source. */
 export function isGameEngineV2E2EColdProfile(username: string, env: Env = process.env): boolean {
   return env.GAME_ENGINE_V2_E2E_COLD_USERNAME?.trim().toLowerCase() === username.trim().toLowerCase();
+}
+
+export interface UsageCounterConfig {
+  /** True only for real production traffic on the GitHub source, with the store configured and the switch on. */
+  enabled: boolean;
+  /** Upstash REST endpoint and token (server-only). Present only when `enabled`. */
+  restUrl?: string;
+  restToken?: string;
+}
+
+const DISABLED_USAGE_COUNTER: UsageCounterConfig = { enabled: false };
+
+/**
+ * Global "unique profiles summoned" counter (Upstash Redis over REST).
+ *   UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN   (the Vercel Marketplace also provides
+ *   KV_REST_API_URL / KV_REST_API_TOKEN, accepted as equivalents; never the read-only token)
+ *   USAGE_COUNTER_ENABLED=false                          kill switch (default: on when the store is configured)
+ * It never counts mock, development or preview traffic. Fail-closed: any problem means "disabled".
+ */
+export function readUsageCounterConfig(env: Env = process.env): UsageCounterConfig {
+  if (["0", "false", "no", "off"].includes(env.USAGE_COUNTER_ENABLED?.trim().toLowerCase() ?? "")) {
+    return DISABLED_USAGE_COUNTER;
+  }
+
+  const restUrl = (env.UPSTASH_REDIS_REST_URL ?? env.KV_REST_API_URL)?.trim();
+  const restToken = (env.UPSTASH_REDIS_REST_TOKEN ?? env.KV_REST_API_TOKEN)?.trim();
+  if (!restUrl || !restToken) return DISABLED_USAGE_COUNTER;
+
+  let kind: DataSourceKind;
+  try {
+    kind = readDataSourceConfig(env).kind;
+  } catch {
+    return DISABLED_USAGE_COUNTER;
+  }
+
+  const realProduction = kind === "github" && getVercelEnvironment(env) === "production";
+  // Test-only seam: lets the e2e suite exercise the counter against a fake store on the mock source.
+  // Never effective on Vercel, so it cannot count (or be abused to count) real traffic.
+  const e2eFakeStore = env.USAGE_COUNTER_E2E === "1" && kind === "mock" && !isVercelRuntime(env);
+  if (!realProduction && !e2eFakeStore) return DISABLED_USAGE_COUNTER;
+
+  try {
+    const url = new URL(restUrl);
+    const secure = url.protocol === "https:" || (e2eFakeStore && url.protocol === "http:");
+    if (!secure) return DISABLED_USAGE_COUNTER;
+  } catch {
+    return DISABLED_USAGE_COUNTER;
+  }
+  return { enabled: true, restUrl, restToken };
 }
 
 /** Runtime/platform signal only; kept here so environment access stays at the server config boundary. */
