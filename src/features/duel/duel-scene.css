@@ -474,22 +474,16 @@
 }
 
 .creator-override-victory-crest {
-  box-shadow:
-    0 0 30px rgba(245, 158, 11, 0.55),
-    inset 0 0 16px rgba(245, 158, 11, 0.35);
-  animation: creator-override-crest-glow 3.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 4px 16px rgba(245, 158, 11, 0.4)) drop-shadow(0 0 24px rgba(217, 119, 6, 0.2));
+  animation: creator-override-crest-glow 4s ease-in-out infinite alternate;
 }
 
 @keyframes creator-override-crest-glow {
   0% {
-    box-shadow:
-      0 0 20px rgba(245, 158, 11, 0.4),
-      inset 0 0 10px rgba(245, 158, 11, 0.2);
+    filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 16px rgba(217, 119, 6, 0.15));
   }
   100% {
-    box-shadow:
-      0 0 45px rgba(245, 158, 11, 0.75),
-      inset 0 0 24px rgba(245, 158, 11, 0.45);
+    filter: drop-shadow(0 6px 22px rgba(245, 158, 11, 0.55)) drop-shadow(0 0 32px rgba(217, 119, 6, 0.3));
   }
 }
 
@@ -534,4 +528,61 @@
 
 .duel-scene[data-motion="reduced"] .creator-override-rune-particle {
   display: none !important;
+}
+
+/* 2.5D Legendary Card 3D Depth & Foil Sheen */
+.creator-card-3d-root {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.creator-card-face {
+  container-type: inline-size;
+}
+
+.creator-card-title {
+  font-size: clamp(13px, 4.35cqw, 22px);
+}
+
+.creator-card-subtitle {
+  font-size: clamp(7px, 2.05cqw, 10px);
+}
+
+.creator-card-kicker {
+  font-size: clamp(6px, 1.75cqw, 9px);
+}
+
+.creator-card-effect-name {
+  font-size: clamp(10px, 3.1cqw, 16px);
+}
+
+.creator-card-description {
+  font-size: clamp(8px, 2.2cqw, 11px);
+}
+
+.creator-card-lore {
+  font-size: clamp(7px, 1.9cqw, 9.5px);
+}
+
+.creator-card-watermark {
+  font-size: clamp(6px, 1.5cqw, 7.5px);
+}
+
+.creator-card-foil-sheen {
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(254, 240, 138, 0.35) 45%,
+    rgba(245, 158, 11, 0.55) 55%,
+    transparent 80%
+  );
+  mix-blend-mode: color-dodge;
+}
+
+/* Mobile responsive constraints */
+@media (max-width: 640px) {
+  .creator-card-3d-root {
+    perspective: 800px;
+  }
 }

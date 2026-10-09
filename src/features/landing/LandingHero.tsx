@@ -4,9 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  Input,
   Badge,
-  RpgSearch,
   RpgSparkles,
   RpgSword,
   RpgSwords,
@@ -14,6 +12,7 @@ import {
   RpgAlert,
 } from "@/design-system";
 import { RPGButton, RPGDivider, RPGSectionOrnament } from "@/features/rpg-ui";
+import { RunicSummonInput } from "./RunicSummonInput";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { PersonaCard, PersonaItem } from "./PersonaCard";
@@ -198,9 +197,9 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
 
         <form onSubmit={onSubmit} className="mt-8 w-full max-w-3xl" noValidate>
           <label htmlFor="hero-profile-input" className="sr-only">{t.landing.searchLabel}</label>
-          <div className="rpg-summon-form flex flex-col gap-3 p-2.5 sm:flex-row sm:items-stretch">
+          <div className="rpg-summon-form flex flex-col gap-3 p-2.5 sm:flex-row sm:items-center">
             <div className="min-w-0 flex-1 text-left">
-              <Input
+              <RunicSummonInput
                 id="hero-profile-input"
                 value={username}
                 onChange={(e) => {
@@ -208,14 +207,13 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
                   if (errorMessage) setErrorMessage(null);
                 }}
                 placeholder={t.landing.searchPlaceholder}
-                leftIcon={<RpgSearch className="h-5 w-5 text-amber-400" />}
                 disabled={isLoading}
                 autoComplete="username"
                 autoCapitalize="none"
                 spellCheck="false"
                 aria-describedby="hero-profile-feedback"
                 aria-invalid={Boolean(errorMessage)}
-                className="min-h-[52px] border-[#5b4528] bg-[#090a0f]/95 pl-12 text-base shadow-[inset_0_2px_10px_rgba(0,0,0,0.75)] placeholder:text-slate-500 focus-visible:border-rpg-gold focus-visible:ring-rpg-gold"
+                error={Boolean(errorMessage)}
               />
             </div>
             <RPGButton

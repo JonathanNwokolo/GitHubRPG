@@ -42,14 +42,24 @@ describe("DuelArena avatars", () => {
   });
 });
 
-describe("DuelArena skip animation", () => {
+describe("DuelArena skip animation", { timeout: 30_000 }, () => {
   const RESULT = /venceu o duelo|Empate lendário/i;
   const SKIP = { name: "Pular animação" };
-  // Rounds are revealed at 500 + index * 1800 ms.
+  // Each round card is framed (~32ms), enters (500ms), is read (3000ms) and transitions (500ms)
+  // before the next one is released; the first one is rendered at 500ms.
   const ROUND_COUNT = 5;
-  const LAST_REVEAL_MS = 500 + (ROUND_COUNT - 1) * 1800;
+  const ROUND_STEP_MS = 32 + 500 + 3_000 + 500;
+  const LAST_REVEAL_MS = 500 + (ROUND_COUNT - 1) * ROUND_STEP_MS;
+  const RESULT_MS = LAST_REVEAL_MS + ROUND_STEP_MS;
 
-  const advance = (ms: number) => act(async () => { await vi.advanceTimersByTimeAsync(ms); });
+  // React batches state updates until an `act` scope ends, so time advances in small acts to keep
+  // each state-driven step of the paced sequence close to real time.
+  const advance = async (ms: number) => {
+    await act(async () => { await vi.advanceTimersByTimeAsync(0); });
+    for (let left = ms; left > 0; left -= 50) {
+      await act(async () => { await vi.advanceTimersByTimeAsync(Math.min(50, left)); });
+    }
+  };
   const revealedRounds = (container: HTMLElement) => container.querySelectorAll("article[aria-label]").length;
 
   async function renderLiveDuel(heroA = "alpha", heroB = "beta") {
@@ -60,11 +70,13 @@ describe("DuelArena skip animation", () => {
 
   beforeEach(() => {
     vi.useFakeTimers();
+    vi.stubGlobal("scrollTo", vi.fn());
     useUiStore.setState({ language: "pt-BR", reducedMotion: "standard" });
     mockedFetchCharacter.mockImplementation(async (username) => createRPGCharacter(makeAverageProfile({ username })));
   });
 
   afterEach(() => {
+    vi.unstubAllGlobals();
     vi.useRealTimers();
   });
 
@@ -75,12 +87,19 @@ describe("DuelArena skip animation", () => {
 
     await advance(500);
     expect(revealedRounds(container)).toBe(1);
-    await advance(1800);
+    // The first card stays alone for its whole reading window.
+    await advance(3_500);
+    expect(revealedRounds(container)).toBe(1);
+    await advance(1_000);
     expect(revealedRounds(container)).toBe(2);
     expect(screen.queryByRole("heading", { name: RESULT })).not.toBeInTheDocument();
 
-    await advance(LAST_REVEAL_MS);
+    await advance(LAST_REVEAL_MS + 400 - 5_000);
     expect(revealedRounds(container)).toBe(ROUND_COUNT);
+    // The last round must also be read before the result replaces the flow.
+    expect(screen.queryByRole("heading", { name: RESULT })).not.toBeInTheDocument();
+
+    await advance(ROUND_STEP_MS + 400);
     expect(screen.getByRole("heading", { name: RESULT })).toBeInTheDocument();
     expect(screen.queryByRole("button", SKIP)).not.toBeInTheDocument();
   });
@@ -96,7 +115,7 @@ describe("DuelArena skip animation", () => {
     expect(screen.queryByRole("button", SKIP)).not.toBeInTheDocument();
 
     // Step through every original reveal instant: the result must never disappear or shrink.
-    for (let elapsed = 0; elapsed <= LAST_REVEAL_MS + 2000; elapsed += 450) {
+    for (let elapsed = 0; elapsed <= RESULT_MS + 2000; elapsed += 450) {
       await advance(450);
       expect(screen.getByRole("heading", { name: RESULT })).toBeInTheDocument();
       expect(revealedRounds(container)).toBe(ROUND_COUNT);
@@ -110,6 +129,9 @@ describe("DuelArena skip animation", () => {
     await advance(500);
     expect(vi.getTimerCount()).toBeGreaterThan(0);
     unmount();
+    // A just-mounted card animation may still own one animation frame; it settles within a frame.
+    // Any reading/pacing timer of ours would survive it.
+    await vi.advanceTimersByTimeAsync(50);
     expect(vi.getTimerCount()).toBe(0);
   });
 
@@ -127,7 +149,7 @@ describe("DuelArena skip animation", () => {
     expect(revealedRounds(container)).toBe(1);
 
     // And the new duel still follows its own schedule to the end.
-    await advance(LAST_REVEAL_MS);
+    await advance(RESULT_MS + 400);
     expect(revealedRounds(container)).toBe(ROUND_COUNT);
     expect(screen.getByRole("heading", { name: RESULT })).toBeInTheDocument();
   });
