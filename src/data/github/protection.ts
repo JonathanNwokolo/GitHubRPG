@@ -75,10 +75,15 @@ export function createGitHubRequestProtectionContext(
 
 const NON_INTERACTIVE_PROFILE_AGENT = /(?:bot|crawler|spider|preview|facebookexternalhit|linkedin|slack|discord|whatsapp|github-camo|curl\/|wget\/)/i;
 
-/** Crawlers still receive the SSR V1 profile, metadata, badge and cards; they do not start cold V2 work. */
-export function shouldScheduleProfileEnrichment(headers: Headers): boolean {
+/** A person with a browser, as far as the User-Agent can tell: no crawler, link preview, declared bot or CLI. */
+export function isInteractiveVisitor(headers: Headers): boolean {
   const userAgent = headers.get("user-agent")?.trim();
   return Boolean(userAgent && !NON_INTERACTIVE_PROFILE_AGENT.test(userAgent));
+}
+
+/** Crawlers still receive the SSR V1 profile, metadata, badge and cards; they do not start cold V2 work. */
+export function shouldScheduleProfileEnrichment(headers: Headers): boolean {
+  return isInteractiveVisitor(headers);
 }
 
 export interface GitHubProjectProtectionOptions {

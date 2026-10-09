@@ -62,6 +62,7 @@ export const en: TranslationDictionary = {
     secondaryActions: "Other paths",
     duelAction: "Duel two profiles",
     hallAction: "Explore the Hall",
+    invokedProfiles: "{count} unique sheets summoned",
     personasTitle: "Or explore ready-to-test personas:",
     rookie: "Rookie Developer",
     rookieDesc: "A few commits and a freshly created repository: the start of the journey.",

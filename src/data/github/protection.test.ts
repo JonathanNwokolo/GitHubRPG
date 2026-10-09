@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { GitHubRateLimitError, ProjectBudgetDeniedError } from "./errors";
-import { createGitHubRequestProtectionContext, GitHubProjectProtection, shouldScheduleProfileEnrichment } from "./protection";
+import { createGitHubRequestProtectionContext, GitHubProjectProtection, isInteractiveVisitor, shouldScheduleProfileEnrichment } from "./protection";
 
 class MemoryStore {
   readonly values = new Map<string, unknown>();
@@ -28,6 +28,15 @@ describe("GitHub project protection", () => {
     expect(shouldScheduleProfileEnrichment(new Headers({ "user-agent": "Twitterbot/1.0" }))).toBe(false);
     expect(shouldScheduleProfileEnrichment(new Headers({ "user-agent": "Googlebot/2.1" }))).toBe(false);
     expect(shouldScheduleProfileEnrichment(new Headers())).toBe(false);
+  });
+
+  it("enrichment and the profile counter share one interactive-visitor rule", () => {
+    for (const userAgent of ["Mozilla/5.0 Chrome/140", "Twitterbot/1.0", "Googlebot/2.1", "Slackbot-LinkExpanding", "curl/8.4", "Discordbot/2.0", "WhatsApp/2", ""]) {
+      const headers = new Headers(userAgent ? { "user-agent": userAgent } : {});
+      expect(isInteractiveVisitor(headers), userAgent).toBe(shouldScheduleProfileEnrichment(headers));
+    }
+    expect(isInteractiveVisitor(new Headers({ "user-agent": "Mozilla/5.0 Chrome/140" }))).toBe(true);
+    expect(isInteractiveVisitor(new Headers({ "user-agent": "Googlebot/2.1" }))).toBe(false);
   });
 
   it("permits normal cold work and limits a burst of unique usernames with Retry-After", async () => {

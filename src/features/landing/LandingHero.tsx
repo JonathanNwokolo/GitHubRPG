@@ -17,6 +17,7 @@ import { RPGButton, RPGDivider, RPGSectionOrnament } from "@/features/rpg-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import { PersonaCard, PersonaItem } from "./PersonaCard";
+import { InvokedProfilesCounter } from "./InvokedProfilesCounter";
 import { fetchCharacter } from "@/data/api/fetchCharacter";
 import { parseGitHubProfileInput } from "@/lib/profileUrl";
 
@@ -245,6 +246,8 @@ export const LandingHero: React.FC<LandingHeroProps> = ({ showDemoPersonas }) =>
             <span>{t.landing.hallAction}</span>
           </a>
         </nav>
+
+        <InvokedProfilesCounter />
 
         <RPGDivider maxWidth={520} className="mt-3 opacity-70" />
 

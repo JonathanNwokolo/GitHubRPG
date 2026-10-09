@@ -60,6 +60,7 @@ export const ptBR = {
     secondaryActions: "Outros caminhos",
     duelAction: "Duelar dois perfis",
     hallAction: "Explorar o Salão",
+    invokedProfiles: "{count} fichas únicas invocadas",
     personasTitle: "Ou explore personas de teste preparadas:",
     rookie: "Iniciante (Rookie)",
     rookieDesc: "Poucos commits e um repositório recém-criado: o começo da jornada.",
