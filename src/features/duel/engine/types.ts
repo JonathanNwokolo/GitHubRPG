@@ -38,6 +38,8 @@ export interface DuelHero {
   mp: number;
 }
 
+export type DuelResultType = "normal" | "legendary_draw" | "creator_override";
+
 export interface DuelResult {
   heroA: DuelHero;
   heroB: DuelHero;
@@ -45,5 +47,7 @@ export interface DuelResult {
   scoreA: number;
   scoreB: number;
   winner: DuelWinner;
+  resultType: DuelResultType;
+  creatorOverride: boolean;
 }
 

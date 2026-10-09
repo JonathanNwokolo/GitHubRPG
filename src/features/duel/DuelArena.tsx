@@ -28,6 +28,8 @@ import { useUiStore } from "@/stores/useUiStore";
 import { DuelVsBadge } from "./DuelVsBadge";
 import { createDuel } from "./engine";
 import type { DuelRound as DuelRoundType, DuelSide } from "./engine";
+import { CreatorOverrideSequence, type OverridePhase } from "./CreatorOverrideSequence";
+import { CreatorOverrideResult } from "./CreatorOverrideResult";
 
 type LoadState =
   | { status: "loading" }
@@ -57,10 +59,12 @@ function HeroCard({
   character,
   hp,
   side,
+  isOverrideWinner = false,
 }: {
   character: RPGCharacter;
   hp: number;
   side: "A" | "B";
+  isOverrideWinner?: boolean;
 }) {
   const { language } = useUiStore();
   const t = getTranslation(language).duel;
@@ -69,15 +73,23 @@ function HeroCard({
 
   return (
     <RPGPanel
-      variant="standard"
+      variant={isOverrideWinner ? "legendary" : "standard"}
       as="article"
-      className="relative flex flex-col p-5 sm:p-7 text-center overflow-hidden"
+      className={`relative flex flex-col p-5 sm:p-7 text-center overflow-hidden transition-all ${
+        isOverrideWinner ? "ring-2 ring-amber-400 shadow-[0_0_25px_rgba(245,158,11,0.35)]" : ""
+      }`}
     >
       {/* Top Banner: Challenger Slot & Level */}
       <div className="flex items-center justify-between gap-2 border-b border-amber-900/30 pb-3">
-        <span className="border border-amber-500/40 bg-rpg-void/90 px-2.5 py-1 font-pixel text-[9px] sm:text-[10px] uppercase tracking-wider text-amber-300">
-          {side === "A" ? (isPt ? "CAMPEÃO I" : "CHAMPION I") : isPt ? "CAMPEÃO II" : "CHAMPION II"}
-        </span>
+        {isOverrideWinner ? (
+          <span className="border border-amber-400 bg-amber-950/80 px-2.5 py-1 font-pixel text-[9px] sm:text-[10px] uppercase tracking-wider text-amber-200">
+            ✦ {isPt ? "O CRIADOR" : "THE CREATOR"} ✦
+          </span>
+        ) : (
+          <span className="border border-amber-500/40 bg-rpg-void/90 px-2.5 py-1 font-pixel text-[9px] sm:text-[10px] uppercase tracking-wider text-amber-300">
+            {side === "A" ? (isPt ? "CAMPEÃO I" : "CHAMPION I") : isPt ? "CAMPEÃO II" : "CHAMPION II"}
+          </span>
+        )}
         <span className="border border-rpg-goldDark/70 bg-rpg-void/90 px-2.5 py-1 font-mono text-xs font-bold text-amber-200">
           {t.level} {character.progression.level}
         </span>
@@ -85,7 +97,7 @@ function HeroCard({
 
       {/* Avatar Protagonist with Glow */}
       <div className="my-3 flex justify-center">
-        <div className="rpg-avatar-glow">
+        <div className={`rpg-avatar-glow ${isOverrideWinner ? "drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]" : ""}`}>
           <FramedAvatar
             username={character.identity.username}
             avatarUrl={character.identity.avatarUrl}
@@ -126,16 +138,22 @@ function HeroCard({
       {/* Combat Gauges: HP & MP */}
       <div className="mt-5 space-y-3 text-left">
         {/* Arena HP Bar */}
-        <div>
+        <div className={isOverrideWinner ? "creator-override-hp-restored" : ""}>
           <div className="mb-1.5 flex items-center justify-between text-xs font-sans">
             <span className="flex items-center gap-1 font-bold uppercase tracking-wider text-red-200">
               <RpgHeart className="h-3.5 w-3.5 text-rpg-crimson" /> {t.hp}
             </span>
-            <span className="font-mono text-xs font-bold text-red-300">
-              {Math.round(hp)} / 100
+            <span className={`font-mono text-xs font-bold ${isOverrideWinner ? "text-amber-300" : "text-red-300"}`}>
+              {Math.round(hp)} / 100 {isOverrideWinner && "✦"}
             </span>
           </div>
-          <ProfileMeter value={hp} max={100} tone="hp" size="md" aria-label={t.hp} />
+          <ProfileMeter
+            value={hp}
+            max={100}
+            tone={isOverrideWinner ? "gold" : "hp"}
+            size="md"
+            aria-label={t.hp}
+          />
         </div>
 
         {/* MP Bar */}
@@ -393,8 +411,11 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
   const [stateA, setStateA] = useState<LoadState>({ status: "loading" });
   const [stateB, setStateB] = useState<LoadState>({ status: "loading" });
   const [visibleRounds, setVisibleRounds] = useState(0);
+  const [overridePhase, setOverridePhase] = useState<OverridePhase>("idle");
+  const [overrideHpRestored, setOverrideHpRestored] = useState(false);
   const [shareStatus, setShareStatus] = useState<"idle" | "copied" | "error">("idle");
   const roundTimersRef = useRef<number[]>([]);
+  const overrideTimersRef = useRef<number[]>([]);
 
   const load = useCallback(
     (side: DuelSide) => {
@@ -430,44 +451,86 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
     [stateA, stateB]
   );
 
-  const clearRoundTimers = useCallback(() => {
+  const clearAllTimers = useCallback(() => {
     roundTimersRef.current.forEach(window.clearTimeout);
     roundTimersRef.current = [];
+    overrideTimersRef.current.forEach(window.clearTimeout);
+    overrideTimersRef.current = [];
   }, []);
 
   useEffect(() => {
-    clearRoundTimers();
+    clearAllTimers();
     if (!duel) {
       setVisibleRounds(0);
+      setOverridePhase("idle");
+      setOverrideHpRestored(false);
       return;
     }
     if (shouldReduce) {
       setVisibleRounds(duel.rounds.length);
+      if (duel.creatorOverride) {
+        setOverridePhase("final");
+        setOverrideHpRestored(true);
+      }
       return;
     }
     setVisibleRounds(0);
+    setOverridePhase("idle");
+    setOverrideHpRestored(false);
+
     roundTimersRef.current = duel.rounds.map((_, index) =>
       window.setTimeout(() => setVisibleRounds(index + 1), 500 + index * 1800)
     );
-    return clearRoundTimers;
-  }, [duel, shouldReduce, clearRoundTimers]);
 
-  // Cancel pending reveal timers first: a stale one would otherwise shrink visibleRounds and hide the result.
+    if (duel.creatorOverride) {
+      const round5Time = 500 + (duel.rounds.length - 1) * 1800; // 7700ms
+      const apparentDefeatTime = round5Time + 800;              // 8500ms
+      const anomalyTime = apparentDefeatTime + 2000;            // 10500ms
+      const authorityTime = anomalyTime + 2400;                 // 12900ms
+      const restorationTime = authorityTime + 2800;             // 15700ms
+      const finalTime = restorationTime + 1600;                 // 17300ms
+
+      overrideTimersRef.current = [
+        window.setTimeout(() => setOverridePhase("apparent_defeat"), apparentDefeatTime),
+        window.setTimeout(() => setOverridePhase("anomaly"), anomalyTime),
+        window.setTimeout(() => setOverridePhase("authority"), authorityTime),
+        window.setTimeout(() => {
+          setOverridePhase("restoration");
+          setOverrideHpRestored(true);
+        }, restorationTime),
+        window.setTimeout(() => setOverridePhase("final"), finalTime),
+      ];
+    }
+
+    return clearAllTimers;
+  }, [duel, shouldReduce, clearAllTimers]);
+
+  // Cancel all pending reveal and override timers: jumps straight to the stable final outcome.
   const skipAnimation = () => {
     if (!duel) return;
-    clearRoundTimers();
+    clearAllTimers();
     setVisibleRounds(duel.rounds.length);
+    if (duel.creatorOverride) {
+      setOverridePhase("final");
+      setOverrideHpRestored(true);
+    }
   };
 
-  const finalVisible = Boolean(duel && visibleRounds >= duel.rounds.length);
-  const hpA =
+  const finalVisible = duel?.creatorOverride
+    ? overridePhase === "final"
+    : Boolean(duel && visibleRounds >= duel.rounds.length);
+
+  const normalHpA =
     duel && visibleRounds > 0
       ? duel.rounds[Math.min(visibleRounds, duel.rounds.length) - 1].heroA.hpAfter
       : 100;
-  const hpB =
+  const normalHpB =
     duel && visibleRounds > 0
       ? duel.rounds[Math.min(visibleRounds, duel.rounds.length) - 1].heroB.hpAfter
       : 100;
+
+  const hpA = duel?.creatorOverride && overrideHpRestored && duel.winner === "A" ? 100 : normalHpA;
+  const hpB = duel?.creatorOverride && overrideHpRestored && duel.winner === "B" ? 100 : normalHpB;
 
   const share = async () => {
     const data = {
@@ -530,14 +593,24 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
 
       {/* Hero Cards: Challenger Left vs Challenger Right */}
       <div className="grid grid-cols-1 items-center gap-5 sm:gap-6 lg:grid-cols-[1fr_auto_1fr]">
-        <HeroCard character={stateA.character} hp={hpA} side="A" />
+        <HeroCard
+          character={stateA.character}
+          hp={hpA}
+          side="A"
+          isOverrideWinner={Boolean(duel.creatorOverride && overrideHpRestored && duel.winner === "A")}
+        />
         <div className="flex flex-col items-center justify-center py-2 sm:py-0">
           <DuelVsBadge size="lg" ariaLabel={t.versus} showWings={true} />
           <span className="mt-2 font-pixel text-[9px] uppercase tracking-widest text-rpg-crimson" aria-hidden="true">
             {t.versus}
           </span>
         </div>
-        <HeroCard character={stateB.character} hp={hpB} side="B" />
+        <HeroCard
+          character={stateB.character}
+          hp={hpB}
+          side="B"
+          isOverrideWinner={Boolean(duel.creatorOverride && overrideHpRestored && duel.winner === "B")}
+        />
       </div>
 
       {/* Skip Animation Toggle */}
@@ -560,13 +633,42 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
         ))}
       </div>
 
+      {/* Creator Override Dramatic Sequence */}
+      {duel.creatorOverride && overridePhase !== "idle" && overridePhase !== "final" && (
+        <CreatorOverrideSequence
+          phase={overridePhase}
+          creatorName={
+            duel.winner === "A"
+              ? stateA.character.identity.displayName || usernames.A
+              : stateB.character.identity.displayName || usernames.B
+          }
+          opponentName={
+            duel.winner === "A"
+              ? stateB.character.identity.displayName || usernames.B
+              : stateA.character.identity.displayName || usernames.A
+          }
+          creatorUsername={usernames[duel.winner === "A" ? "A" : "B"]}
+          opponentUsername={usernames[duel.winner === "A" ? "B" : "A"]}
+          creatorSide={duel.winner === "A" ? "A" : "B"}
+        />
+      )}
+
       {/* Final Battle Outcome / Result Block */}
       {finalVisible ? (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-        >
+        duel.creatorOverride ? (
+          <CreatorOverrideResult
+            duel={duel}
+            usernames={usernames}
+            creatorSide={duel.winner === "A" ? "A" : "B"}
+            share={share}
+            shareStatus={shareStatus}
+          />
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+          >
           <RPGPanel
             variant="legendary"
             as="section"
@@ -682,6 +784,7 @@ export function DuelArena({ heroA, heroB }: { heroA: string; heroB: string }) {
             ) : null}
           </RPGPanel>
         </motion.div>
+        )
       ) : null}
     </div>
   );
