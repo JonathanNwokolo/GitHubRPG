@@ -1,11 +1,15 @@
 import { describe, expect, it, vi } from "vitest";
 import { createRPGCharacter } from "@/game/engine";
 import type { ClassName, RPGCharacter } from "@/game/types";
-import { makeAverageProfile, makeMaxedProfile, makeProfile, m } from "@/test/builders";
+import { makeAverageProfile, makeMaxedProfile, makeProfile, m, languagesFromShares } from "@/test/builders";
 import { createDuel } from "./createDuel";
 
 function character(username: string, kind: "average" | "maxed" | "empty" = "average"): RPGCharacter {
-  const profile = kind === "maxed" ? makeMaxedProfile() : kind === "empty" ? makeProfile() : makeAverageProfile();
+  const profile = kind === "maxed"
+    ? { ...makeMaxedProfile(), languages: languagesFromShares({ TypeScript: 80, Rust: 20 }, 20) }
+    : kind === "empty"
+      ? makeProfile()
+      : makeAverageProfile();
   return createRPGCharacter({ ...profile, username });
 }
 
@@ -90,6 +94,117 @@ describe("createDuel", () => {
     const result = createDuel(sparse, character("average"));
     expect(result.rounds).toHaveLength(5);
     expect(result.rounds.flatMap((round) => [round.heroA.power, round.heroB.power]).every(Number.isFinite)).toBe(true);
+  });
+});
+
+describe("Creator Override (section 24 tests)", () => {
+  it("1. creator vence normalmente -> NÃO ativa override", () => {
+    const creator = character("JonathanNwokolo", "maxed");
+    const opponent = character("challenger", "empty");
+    const result = createDuel(creator, opponent);
+    expect(result.scoreA).toBe(5);
+    expect(result.scoreB).toBe(0);
+    expect(result.winner).toBe("A");
+    expect(result.resultType).toBe("normal");
+    expect(result.creatorOverride).toBe(false);
+  });
+
+  it("2. creator perde o duelo por 0x4 com um round empatado -> ativa override", () => {
+    const creator = createRPGCharacter(makeProfile({ username: "JonathanNwokolo" }));
+    const opponent = createRPGCharacter(makeMaxedProfile()); // without languages, arsenal draws
+    const result = createDuel(creator, opponent);
+    expect(result.scoreA).toBe(0);
+    expect(result.scoreB).toBe(4);
+    expect(result.rounds.filter((r) => r.winner === "draw")).toHaveLength(1);
+    expect(result.winner).toBe("A");
+    expect(result.resultType).toBe("creator_override");
+    expect(result.creatorOverride).toBe(true);
+  });
+
+  it("3. creator perde exatamente os 5 rounds -> ativa creator_override", () => {
+    const creator = character("JonathanNwokolo", "empty");
+    const opponent = character("challenger", "maxed");
+    const result = createDuel(creator, opponent);
+    expect(result.scoreA).toBe(0);
+    expect(result.scoreB).toBe(5);
+    expect(result.creatorOverride).toBe(true);
+    expect(result.resultType).toBe("creator_override");
+    expect(result.winner).toBe("A");
+  });
+
+  it("4. creator no lado A -> funciona", () => {
+    const creator = character("JonathanNwokolo", "empty");
+    const opponent = character("challenger", "maxed");
+    const result = createDuel(creator, opponent);
+    expect(result.scoreA).toBe(0);
+    expect(result.scoreB).toBe(5);
+    expect(result.winner).toBe("A");
+    expect(result.resultType).toBe("creator_override");
+    expect(result.creatorOverride).toBe(true);
+  });
+
+  it("5. creator no lado B -> funciona", () => {
+    const opponent = character("challenger", "maxed");
+    const creator = character("JonathanNwokolo", "empty");
+    const result = createDuel(opponent, creator);
+    expect(result.scoreA).toBe(5);
+    expect(result.scoreB).toBe(0);
+    expect(result.winner).toBe("B");
+    expect(result.resultType).toBe("creator_override");
+    expect(result.creatorOverride).toBe(true);
+  });
+
+  it("6. username com casing diferente e espaços -> funciona", () => {
+    for (const raw of ["jonathannwokolo", "JONATHANNWOKOLO", "  JonathanNwokolo  "]) {
+      const creator = character(raw, "empty");
+      const opponent = character("challenger", "maxed");
+      const result = createDuel(creator, opponent);
+      expect(result.winner).toBe("A");
+      expect(result.resultType).toBe("creator_override");
+      expect(result.creatorOverride).toBe(true);
+    }
+  });
+
+  it("7. duelo sem creator -> comportamento atual inalterado mesmo em 0x5", () => {
+    const mortalA = character("regular-user", "empty");
+    const mortalB = character("challenger", "maxed");
+    const result = createDuel(mortalA, mortalB);
+    expect(result.scoreA).toBe(0);
+    expect(result.scoreB).toBe(5);
+    expect(result.winner).toBe("B");
+    expect(result.resultType).toBe("normal");
+    expect(result.creatorOverride).toBe(false);
+  });
+
+  it("8. resultado final oficial -> winner === creator", () => {
+    const creator = character("JonathanNwokolo", "empty");
+    const opponent = character("challenger", "maxed");
+    const result = createDuel(creator, opponent);
+    expect(result.winner).toBe("A");
+  });
+
+  it("9. histórico -> continua refletindo os rounds reais e danos sem falsificação", () => {
+    const creator = character("JonathanNwokolo", "empty");
+    const opponent = character("challenger", "maxed");
+    const result = createDuel(creator, opponent);
+    expect(result.rounds).toHaveLength(5);
+    expect(result.scoreA).toBe(0);
+    expect(result.scoreB).toBe(5);
+    expect(result.rounds.every((r) => r.winner === "B")).toBe(true);
+    expect(result.heroA.initialHp).toBe(100);
+    expect(result.heroB.initialHp).toBe(100);
+    expect(result.heroA.finalHp).toBeLessThan(100);
+    expect(result.heroB.finalHp).toBe(100);
+  });
+
+  it("10. empate agregado -> preserva Empate Lendário sem override", () => {
+    const creator = character("JonathanNwokolo");
+    const opponent = character("challenger");
+    const result = createDuel(creator, opponent);
+    expect(result.scoreA).toBe(result.scoreB);
+    expect(result.winner).toBe("draw");
+    expect(result.resultType).toBe("legendary_draw");
+    expect(result.creatorOverride).toBe(false);
   });
 });
 

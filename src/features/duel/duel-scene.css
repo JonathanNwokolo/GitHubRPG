@@ -347,3 +347,191 @@
     display: none;
   }
 }
+
+/* ==========================================================================
+   Creator Override: Legendary Sequence Styles
+   ========================================================================== */
+
+/* Anomaly Phase: Dimensional Instability & Chromatic Scanlines */
+.creator-override-anomaly-backdrop {
+  position: relative;
+  background: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      rgba(220, 38, 38, 0.18) 0%,
+      rgba(180, 83, 9, 0.12) 40%,
+      rgba(6, 7, 11, 0.95) 90%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(239, 68, 68, 0.04) 3px,
+      rgba(239, 68, 68, 0.04) 6px
+    );
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  box-shadow:
+    0 0 30px rgba(239, 68, 68, 0.25),
+    inset 0 0 30px rgba(239, 68, 68, 0.15);
+}
+
+.creator-override-anomaly-shake {
+  animation: creator-override-tremor 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes creator-override-tremor {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-1px, 1px, 0);
+  }
+  75% {
+    transform: translate3d(1px, -1px, 0);
+  }
+  100% {
+    transform: translate3d(0, 1px, 0);
+  }
+}
+
+.creator-override-glitch-badge {
+  text-shadow:
+    -1px 0 rgba(239, 68, 68, 0.8),
+    1px 0 rgba(245, 158, 11, 0.8);
+}
+
+/* Authority Phase: Divine Golden Radiance */
+.creator-override-authority-backdrop {
+  position: relative;
+  background: radial-gradient(
+    ellipse 90% 60% at 50% 40%,
+    rgba(245, 158, 11, 0.22) 0%,
+    rgba(217, 119, 6, 0.1) 45%,
+    rgba(8, 9, 13, 0.96) 90%
+  );
+  border: 2px solid rgba(245, 158, 11, 0.7);
+  box-shadow:
+    0 0 45px rgba(245, 158, 11, 0.35),
+    inset 0 0 35px rgba(245, 158, 11, 0.18);
+}
+
+.creator-override-lore-text {
+  background: linear-gradient(180deg, #fef08a 0%, #fde047 30%, #f59e0b 70%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(245, 158, 11, 0.6));
+}
+
+.creator-override-glyph-pulse {
+  animation: creator-override-pulse 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes creator-override-pulse {
+  0% {
+    transform: scale(0.97);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+  }
+  100% {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.8));
+  }
+}
+
+/* Floating runic particles */
+.creator-override-rune-particle {
+  position: absolute;
+  pointer-events: none;
+  color: #fbbf24;
+  opacity: 0.4;
+  animation: creator-override-float-up 4s ease-out infinite;
+}
+
+@keyframes creator-override-float-up {
+  0% {
+    transform: translateY(12px) scale(0.85);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-24px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* Victory Result Card Glow */
+.creator-override-victory-card {
+  position: relative;
+  border: 2px solid rgba(245, 158, 11, 0.8);
+  box-shadow:
+    0 0 40px rgba(245, 158, 11, 0.28),
+    inset 0 0 30px rgba(245, 158, 11, 0.12);
+}
+
+.creator-override-victory-crest {
+  box-shadow:
+    0 0 30px rgba(245, 158, 11, 0.55),
+    inset 0 0 16px rgba(245, 158, 11, 0.35);
+  animation: creator-override-crest-glow 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes creator-override-crest-glow {
+  0% {
+    box-shadow:
+      0 0 20px rgba(245, 158, 11, 0.4),
+      inset 0 0 10px rgba(245, 158, 11, 0.2);
+  }
+  100% {
+    box-shadow:
+      0 0 45px rgba(245, 158, 11, 0.75),
+      inset 0 0 24px rgba(245, 158, 11, 0.45);
+  }
+}
+
+/* HP Surge Bar Shimmer */
+.creator-override-hp-restored {
+  position: relative;
+  overflow: hidden;
+}
+
+.creator-override-hp-restored::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(254, 240, 138, 0.7) 50%,
+    transparent 100%
+  );
+  animation: creator-override-hp-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes creator-override-hp-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Reduced Motion Safety */
+.duel-scene[data-motion="reduced"] :is(
+  .creator-override-anomaly-shake,
+  .creator-override-glyph-pulse,
+  .creator-override-victory-crest,
+  .creator-override-hp-restored::after
+) {
+  animation: none !important;
+  transform: none !important;
+}
+
+.duel-scene[data-motion="reduced"] .creator-override-rune-particle {
+  display: none !important;
+}

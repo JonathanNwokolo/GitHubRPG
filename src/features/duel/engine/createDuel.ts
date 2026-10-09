@@ -1,6 +1,7 @@
 import type { ClassName, RPGCharacter } from "@/game/types";
 import { clampPower, normalizeLog, weightedPower } from "./normalizeDuelMetric";
-import type { DuelModifier, DuelResult, DuelRound, DuelRoundHero, DuelRoundId, DuelWinner } from "./types";
+import type { DuelModifier, DuelResult, DuelResultType, DuelRound, DuelRoundHero, DuelRoundId, DuelWinner } from "./types";
+import { evaluateCreatorOverride } from "./creatorOverride";
 
 const ROUND_ORDER: DuelRoundId[] = ["journey", "arsenal", "forge", "legacy", "signature"];
 const CLASS_AFFINITIES: Record<ClassName, { round: DuelRoundId; amount: number }> = {
@@ -157,7 +158,17 @@ export function createDuel(characterA: RPGCharacter, characterB: RPGCharacter): 
     };
   });
 
-  const winner: DuelWinner = scoreA === scoreB ? "draw" : scoreA > scoreB ? "A" : "B";
+  const defaultWinner: DuelWinner = scoreA === scoreB ? "draw" : scoreA > scoreB ? "A" : "B";
+  const override = evaluateCreatorOverride(characterA, characterB, scoreA, scoreB);
+
+  const winner: DuelWinner = override.triggered && override.creatorSide ? override.creatorSide : defaultWinner;
+  const resultType: DuelResultType = override.triggered
+    ? "creator_override"
+    : defaultWinner === "draw"
+      ? "legendary_draw"
+      : "normal";
+  const creatorOverride = override.triggered;
+
   return {
     heroA: { character: characterA, initialHp: 100, finalHp: hpA, mp: characterA.resources.mp },
     heroB: { character: characterB, initialHp: 100, finalHp: hpB, mp: characterB.resources.mp },
@@ -165,6 +176,8 @@ export function createDuel(characterA: RPGCharacter, characterB: RPGCharacter): 
     scoreA,
     scoreB,
     winner,
+    resultType,
+    creatorOverride,
   };
 }
 
