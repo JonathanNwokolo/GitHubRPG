@@ -83,7 +83,11 @@ describe("createDuel", () => {
     expect(result.rounds.filter((round) => round.heroA.modifier)).toHaveLength(1);
   });
 
-  it("tolerates missing skills, subclass and partial counters", () => {
+  it.each([
+    ["hero A", true, false],
+    ["hero B", false, true],
+    ["both heroes", true, true],
+  ])("rejects partial calculation inputs for %s before producing a winner", (_label, partialA, partialB) => {
     const sparse = createRPGCharacter(makeProfile({
       username: "partial",
       commits: m(12, "partial"),
@@ -91,9 +95,8 @@ describe("createDuel", () => {
       starsReceived: m(0, "unavailable"),
       languagesCoverage: "unavailable",
     }));
-    const result = createDuel(sparse, character("average"));
-    expect(result.rounds).toHaveLength(5);
-    expect(result.rounds.flatMap((round) => [round.heroA.power, round.heroB.power]).every(Number.isFinite)).toBe(true);
+    const complete = character("average");
+    expect(() => createDuel(partialA ? sparse : complete, partialB ? sparse : complete)).toThrow("duel_calculation_coverage_incomplete");
   });
 });
 

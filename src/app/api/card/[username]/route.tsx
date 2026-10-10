@@ -31,6 +31,12 @@ export async function GET(
     const requestedTitle = url.searchParams.get("title");
 
     const character = await loadCharacter(decodedUsername, createDataSource());
+    if (!character.calculationCoverage.sharing.calculatedNumbersPublishable) {
+      return new Response("Ficha parcialmente indisponível: os números calculados não podem ser publicados agora.", {
+        status: 503,
+        headers: { "Cache-Control": "no-store" },
+      });
+    }
 
     // Resolve equipped title: custom user pick if unlocked, or default
     let equippedTitleName: string | null = null;

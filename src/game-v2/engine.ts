@@ -36,7 +36,7 @@ export function createRPGCharacterV2(input: CreateRPGCharacterV2Input): RPGChara
   const visibleArtifacts = artifacts.filter((item) => (item.score ?? -1) >= V2_BALANCE.grimoireArtifactMin).slice(0, V2_BALANCE.grimoireArtifactLimit);
   return {
     engineVersion: ENGINE_VERSION, schemaVersion: SCHEMA_VERSION, detectorVersion: DETECTOR_VERSION, catalogVersion: CATALOG_VERSION, balanceVersion: BALANCE_VERSION,
-    identity: v1.identity, meta: { ...v1.meta, cacheNamespace: CACHE_NAMESPACE }, progression: v1.progression, stats: v1.stats, resources: v1.resources,
+    identity: v1.identity, meta: { ...v1.meta, cacheNamespace: CACHE_NAMESPACE }, calculationCoverage: v1.calculationCoverage, progression: v1.progression, stats: v1.stats, resources: v1.resources,
     class: classDecision, subclass, evolution, archetypes,
     grimoire: { affinities, schools: visibleSchools, artifacts: visibleArtifacts },
     achievements, titles, defaultTitleId: selectDefaultTitleIdV2(titles),

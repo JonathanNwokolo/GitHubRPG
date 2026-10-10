@@ -8,6 +8,7 @@ import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChro
 import { yearlyProfile } from "@/features/chronicle/testing/fixtures";
 import { createRPGCharacter } from "@/game/createCharacter";
 import { analyzeLanguages } from "@/game/languages";
+import { m } from "@/test/builders";
 import { GET } from "./route";
 
 vi.mock("@/data/loadCharacter", () => ({ loadCharacterWithChronicle: vi.fn() }));
@@ -74,6 +75,19 @@ describe("GET /api/card/[username]/chronicle/[eventId]", () => {
     const response = await get("2025");
     expect(response.headers.get("cache-control")).toContain("s-maxage=900");
     expect(response.headers.get("set-cookie")).toBeNull();
+  });
+
+  it("does not publish a Chronicle image for a partial character", async () => {
+    const partialProfile = { ...profile, commits: m(0, "unavailable") };
+    mockedLoad.mockResolvedValueOnce({
+      ...loaded,
+      character: createRPGCharacter(partialProfile),
+      chronicle: buildDeveloperChronicle(partialProfile),
+    });
+    const response = await get("2025");
+    expect(response.status).toBe(503);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("content-type")).not.toContain("image/");
   });
 
   it("a year that is not a chapter of this chronicle is a 404", async () => {

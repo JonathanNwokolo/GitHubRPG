@@ -5,7 +5,7 @@ import { fetchCharacter } from "@/data/api/fetchCharacter";
 import { createRPGCharacter } from "@/game/createCharacter";
 import { getAvatarFrameForUsername } from "@/features/avatar";
 import { useUiStore } from "@/stores/useUiStore";
-import { makeAverageProfile } from "@/test/builders";
+import { makeAverageProfile, m } from "@/test/builders";
 import { DuelArena } from "./DuelArena";
 
 vi.mock("@/data/api/fetchCharacter", async (importOriginal) => ({
@@ -39,6 +39,22 @@ describe("DuelArena avatars", () => {
   it("falls back to initials when a fighter has no photo", async () => {
     render(<DuelArena heroA="alpha" heroB="beta" />);
     expect(await screen.findByText("BE")).toBeInTheDocument();
+  });
+});
+
+describe("DuelArena calculation coverage", () => {
+  beforeEach(() => {
+    useUiStore.setState({ language: "pt-BR", reducedMotion: "reduced" });
+    mockedFetchCharacter.mockImplementation(async (username) => createRPGCharacter(
+      makeAverageProfile({ username, ...(username === "partial" ? { commits: m(0, "unavailable") } : {}) })
+    ));
+  });
+
+  it("does not create rounds or a winner when either hero is partial", async () => {
+    const { container } = render(<DuelArena heroA="partial" heroB="complete" />);
+    expect(await screen.findByRole("heading", { name: "Duelo temporariamente indisponível" })).toBeInTheDocument();
+    expect(screen.getByText(/contribuições de um dos heróis/)).toBeInTheDocument();
+    expect(container.querySelectorAll("article[aria-label]")).toHaveLength(0);
   });
 });
 

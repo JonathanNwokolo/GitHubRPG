@@ -67,6 +67,7 @@ export interface RPGCharacterV2Public {
     evolution: { name: LocalizedText | null; reason: LocalizedText; status: RPGCharacterV2["evolution"]["status"] };
   };
   coverage: { schools: CoverageState; artifacts: CoverageState };
+  calculationCoverage: RPGCharacterV2["calculationCoverage"];
 }
 
 export interface CharacterPresentationModel {
@@ -198,5 +199,6 @@ export function projectRPGCharacterV2Public(character: RPGCharacterV2): RPGChara
       schools: character.coverage.schools,
       artifacts: character.coverage.artifacts,
     },
+    calculationCoverage: character.calculationCoverage,
   };
 }

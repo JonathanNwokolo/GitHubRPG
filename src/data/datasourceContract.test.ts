@@ -47,8 +47,9 @@ describe.each(SOURCES)("%s honours the RawGitHubData contract", (_name, make, us
   it("goes through the unchanged pipeline and yields a complete character", async () => {
     const character = await loadCharacter(username, make());
     expect(Object.keys(character).sort()).toEqual(
-      ["achievements", "archetype", "defaultTitleId", "identity", "meta", "nextMilestones", "progression", "resources", "skills", "stats", "summary", "titles"].sort()
+      ["achievements", "archetype", "calculationCoverage", "defaultTitleId", "identity", "meta", "nextMilestones", "progression", "resources", "skills", "stats", "summary", "titles"].sort()
     );
+    expect(["complete", "partial", "unavailable"]).toContain(character.calculationCoverage.status);
     expect(Object.keys(character.stats).sort()).toEqual(["activity", "consistency", "experience", "reputation", "versatility"]);
     expect(character.progression.level).toBeGreaterThanOrEqual(1);
     expect(character.achievements.length).toBeGreaterThan(0);
