@@ -13,6 +13,8 @@ const eslintConfig = [
   {
     ignores: [
       ".next/**",
+      ".next-build/**",
+      ".next-e2e/**",
       "node_modules/**",
       "playwright-report/**",
       "test-results/**",

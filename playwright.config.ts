@@ -2,6 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./e2e",
+  // Screenshot generation is an explicit visual-review task, not a functional CI gate.
+  testIgnore: "**/*Screenshots.spec.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 0,
@@ -26,7 +28,7 @@ export default defineConfig({
       timeout: 30000,
     },
     {
-      command: "npx next start -p 3005",
+      command: "node scripts/runNextContext.mjs e2e-server",
       url: "http://localhost:3005",
       reuseExistingServer: false,
       // Production builds require an explicit data source; e2e always runs on the mock.

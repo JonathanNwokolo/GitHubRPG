@@ -3,7 +3,12 @@ import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChro
 import { yearlyProfile } from "@/features/chronicle/testing/fixtures";
 import { createRPGCharacter } from "@/game/createCharacter";
 import { m, makeAverageProfile } from "@/test/builders";
-import { buildAchievementCardContent, buildChronicleCardContent, isValidAchievementId } from "./cardContent";
+import {
+  buildAchievementCardContent,
+  buildChronicleCardContent,
+  formatCardLowerBound,
+  isValidAchievementId,
+} from "./cardContent";
 
 const profile = makeAverageProfile({ username: "artorias", displayName: "Artorias Silva" });
 const character = createRPGCharacter(profile);
@@ -63,6 +68,7 @@ describe("achievement card content", () => {
     expect(commits?.unlocked).toBe(true);
 
     expect(buildAchievementCardContent(partial, "commits-1000", "en")?.achievement.progress).toBe("At least 1,500 commits found");
+    expect(buildAchievementCardContent(partial, "commits-1000", "pt-BR")?.achievement.progress).not.toContain("≥");
   });
 
   it("falls back to the username when there is no display name", () => {
@@ -123,6 +129,22 @@ describe("chronicle card content", () => {
     expect(buildChronicleCardContent(chronicleCharacter, chronicle, 2019, "en")?.chapter.title).toBe("The Journey Begins");
   });
 
+  it.each(["pt-BR", "en"] as const)("keeps partial Chronicle metrics renderer-safe in %s", (language) => {
+    const partialChronicle = {
+      ...chronicle,
+      years: chronicle.years.map((entry) =>
+        entry.year === 2025
+          ? { ...entry, metrics: entry.metrics.map((metric) => ({ ...metric, coverage: "partial" as const })) }
+          : entry
+      ),
+    };
+    const content = buildChronicleCardContent(chronicleCharacter, partialChronicle, 2025, language);
+
+    expect(content).not.toBeNull();
+    expect(content?.chapter.metrics.some((metric) => metric.includes("≥"))).toBe(false);
+    expect(content?.chapter.metrics.some((metric) => /^1[.,]300\+/.test(metric))).toBe(true);
+  });
+
   it("a year that is not a chapter of this chronicle has no card", () => {
     expect(buildChronicleCardContent(chronicleCharacter, chronicle, 1999, "pt-BR")).toBeNull();
     expect(buildChronicleCardContent(chronicleCharacter, chronicle, 2099, "pt-BR")).toBeNull();
@@ -131,5 +153,31 @@ describe("chronicle card content", () => {
   it("a chapter that is not worth a card has no card", () => {
     const quiet = chronicle.years.find((entry) => !entry.isStart && !entry.isCurrent && entry.rarity === "normal");
     if (quiet) expect(buildChronicleCardContent(chronicleCharacter, chronicle, quiet.year, "pt-BR")).toBeNull();
+  });
+});
+
+describe("image-card lower bounds", () => {
+  it.each([
+    ["≥ 148 dias", "148+ dias"],
+    ["≥ 148", "148+"],
+    ["≥1,500 commits", "1,500+ commits"],
+    ["≥ 10 contributions", "10+ contributions"],
+  ])("formats the isolated PT/EN lower bound %s", (input, expected) => {
+    expect(formatCardLowerBound(input)).toBe(expected);
+  });
+
+  it.each([
+    "148 dias",
+    "exactly 148 days",
+    "≤ 200 dias",
+    "100–200 dias",
+    "≥ 148 e ≤ 200 dias",
+    "≥ 148 / ≤ 200",
+    "between 100 and 200 days",
+    "entre 100 e 200 dias",
+    "texto arbitrário",
+    "arbitrary text",
+  ])("preserves exact, upper-bound, range, compound or arbitrary text: %s", (input) => {
+    expect(formatCardLowerBound(input)).toBe(input);
   });
 });

@@ -15,7 +15,7 @@ export interface ChronicleCardLayoutProps {
     title: string;
     /** The sentence of the fact that named the chapter. May be empty. */
     description: string;
-    /** "521 commits", "≥ 187 contributions"... at most four. */
+    /** "521 commits", "187+ contributions"... at most four. */
     metrics: string[];
     /** Present when part of the history could not be read. */
     note: string | null;

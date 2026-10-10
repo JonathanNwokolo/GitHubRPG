@@ -64,15 +64,15 @@ jobs:
         run: npm ci
 
       - name: Build production application
-        run: npm run build
+        run: npm run build:e2e
 
       - name: Upload production build
         uses: actions/upload-artifact@v4
         with:
-          name: next-production-build
+          name: next-e2e-build
           path: |
-            .next
-            !.next/cache
+            .next-e2e
+            !.next-e2e/cache
           include-hidden-files: true
           if-no-files-found: error
           retention-days: 1
@@ -98,11 +98,13 @@ jobs:
       - name: Download production build
         uses: actions/download-artifact@v4
         with:
-          name: next-production-build
-          path: .next
+          name: next-e2e-build
+          path: .next-e2e
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
       - name: Run full end-to-end suite
         run: npm run test:e2e
+        env:
+          E2E_SKIP_BUILD: "1"
