@@ -6,6 +6,7 @@ import { getTranslation } from "@/i18n";
 import { useUiStore } from "@/stores/useUiStore";
 import type { ClassExplanation } from "./classExplanation";
 import { describeClassExplanation, type ClassMappingView } from "./classExplanationText";
+import { localizeClassName, localizeClassNamesInText } from "@/i18n/gameContent";
 import type { RPGCharacterV2Public } from "@/game-v2/publicProjection";
 import { fill } from "@/lib/format";
 
@@ -64,12 +65,12 @@ export const ClassExplanationDialog: React.FC<ClassExplanationDialogProps> = ({ 
       <Dialog
         isOpen={isOpen}
         onClose={onClose}
-        title={fill(t.classExplanation.title, { class: v2Explanation.class.name })}
+        title={fill(t.classExplanation.title, { class: localizeClassName(v2Explanation.class.name, language) })}
         description={t.classExplanation.subtitle}
         closeLabel={t.common.closeDialog}
       >
         <div className="space-y-5 py-1">
-          <Section heading={t.classExplanation.classHeading} className={v2Explanation.class.name} lines={[v2Explanation.class.reason[localized]]} mapping={null} />
+          <Section heading={t.classExplanation.classHeading} className={localizeClassName(v2Explanation.class.name, language)} lines={[localizeClassNamesInText(v2Explanation.class.reason[localized], language)]} mapping={null} />
           <Section heading={t.classExplanation.specializationHeading} className={v2Explanation.subclass.name?.[localized]} lines={[v2Explanation.subclass.reason[localized]]} mapping={null} />
           <Section heading={t.classExplanation.evolutionHeading} className={v2Explanation.evolution.name?.[localized]} lines={[v2Explanation.evolution.reason[localized]]} mapping={null} />
           <p className="border-t border-rpg-border/60 pt-3 font-sans text-xs italic text-slate-400">{view.disclaimer}</p>
@@ -87,12 +88,12 @@ export const ClassExplanationDialog: React.FC<ClassExplanationDialogProps> = ({ 
       closeLabel={t.common.closeDialog}
     >
       <div className="space-y-5 py-1">
-        <Section heading={view.classHeading} className={explanation.className} lines={view.classLines} mapping={view.mapping} />
+        <Section heading={view.classHeading} className={localizeClassName(explanation.className, language)} lines={view.classLines} mapping={view.mapping} />
 
         {view.subclassHeading && (
           <Section
             heading={view.subclassHeading}
-            className={explanation.subclass?.className}
+            className={explanation.subclass ? localizeClassName(explanation.subclass.className, language) : undefined}
             lines={view.subclassLines}
             mapping={view.subclassMapping}
           />

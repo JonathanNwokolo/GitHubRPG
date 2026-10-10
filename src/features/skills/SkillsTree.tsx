@@ -13,6 +13,7 @@ import { ProfileMeter, ProfileSectionHeader } from "@/features/profile-ui";
 import { fill, formatNumber, pluralize } from "@/lib/format";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
+import { localizeSkillTier } from "@/i18n/gameContent";
 
 interface SkillsTreeProps {
   skills: Skill[];
@@ -81,7 +82,7 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
                     </span>
                   </div>
                   <span className={`pf-seal pf-seal--rarity-${TIER_SEAL[skill.tier]}`}>
-                    {skill.tier}
+                    {localizeSkillTier(skill.tier, language)}
                   </span>
                 </div>
 
@@ -119,7 +120,7 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
         isOpen={!!selected}
         onClose={() => setSelected(null)}
         title={selected?.name}
-        description={selected ? `${t.skills.level} ${selected.level} • ${selected.tier}` : undefined}
+        description={selected ? `${t.skills.level} ${selected.level} • ${localizeSkillTier(selected.tier, language)}` : undefined}
         closeLabel={t.common.closeDialog}
       >
         {selected && (
@@ -135,7 +136,7 @@ export const SkillsTree: React.FC<SkillsTreeProps> = ({ skills }) => {
                   <LanguageIcon language={selected.name} />
                 </RpgIconFrame>
                 <span className={`pf-seal pf-seal--rarity-${TIER_SEAL[selected.tier]}`}>
-                  {selected.tier}
+                  {localizeSkillTier(selected.tier, language)}
                 </span>
               </div>
               <span className="font-mono text-sm font-bold text-amber-400">

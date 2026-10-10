@@ -7,6 +7,7 @@ import { useUiStore } from "@/stores/useUiStore";
 import { RPGButton, RPGDivider, RPGPanel } from "@/features/rpg-ui";
 import { HeroAvatar } from "./HeroAvatar";
 import type { HeroSummary } from "./heroSummary";
+import { localizeClassName, localizeTitle } from "@/i18n/gameContent";
 
 function profileHref(username: string): string {
   return `/${encodeURIComponent(username)}`;
@@ -19,7 +20,11 @@ export function FeaturedHeroCard({ hero }: { hero: HeroSummary }) {
   const t = getTranslation(language).heroesHall;
   const duel = getTranslation(language).duel;
   const localized = language === "pt-BR" ? "pt" : "en";
-  const subclass = hero.subclassV2?.[localized] ?? hero.subclassName;
+  const className = localizeClassName(hero.className, language);
+  const subclass = hero.subclassV2?.[localized] ?? (hero.subclassName ? localizeClassName(hero.subclassName, language) : undefined);
+  const title = hero.title && hero.titleId
+    ? localizeTitle({ id: hero.titleId, name: hero.title, description: "" }, language).name
+    : hero.title;
 
   return (
     <RPGPanel variant="legendary" interactive className="flex h-full flex-col px-6 pb-7 pt-8 sm:px-10 sm:pb-9 sm:pt-10">
@@ -51,7 +56,7 @@ export function FeaturedHeroCard({ hero }: { hero: HeroSummary }) {
           <span className="h-4 w-4 shrink-0 text-amber-300" aria-hidden="true">
             <RpgClassIcon classNameType={hero.className} />
           </span>
-          <span className="font-bold uppercase tracking-wider text-amber-300">{hero.className}</span>
+          <span className="font-bold uppercase tracking-wider text-amber-300">{className}</span>
           {subclass && (
             <>
               <span className="text-slate-600" aria-hidden="true">&bull;</span>
@@ -77,10 +82,10 @@ export function FeaturedHeroCard({ hero }: { hero: HeroSummary }) {
             <span className="truncate">{hero.dominantLanguage || "—"}</span>
           </dd>
         </div>
-        {hero.title ? (
+        {title ? (
           <div className="min-w-0">
             <dt className={STAT_LABEL}>{t.titleLabel}</dt>
-            <dd className="mt-1 text-sm font-semibold text-amber-300">{hero.title}</dd>
+            <dd className="mt-1 text-sm font-semibold text-amber-300">{title}</dd>
           </div>
         ) : null}
         <div className="min-w-0">

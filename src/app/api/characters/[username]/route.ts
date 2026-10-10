@@ -18,7 +18,9 @@ export async function GET(request: Request, context: { params: Promise<{ usernam
     const { username } = await context.params;
     const protection = createGitHubRequestProtectionContext(request.headers, "characters_api", username);
     const character = await loadCharacter(username, createDataSource(), { protection });
-    return NextResponse.json(character, { headers: { "Cache-Control": SUCCESS_CACHE_CONTROL } });
+    return NextResponse.json(character, {
+      headers: { "Cache-Control": character.calculationCoverage.status === "complete" ? SUCCESS_CACHE_CONTROL : "no-store" },
+    });
   } catch (error) {
     const { status, body, headers, logLine } = describeError(error, new Date());
     if (logLine) console.error(`[github-rpg] ${status} ${logLine}`);

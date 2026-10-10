@@ -32,6 +32,7 @@ import { CharacterAvatar } from "./CharacterAvatar";
 import { useUiStore } from "@/stores/useUiStore";
 import { getTranslation } from "@/i18n";
 import type { RPGCharacterV2Public } from "@/game-v2/publicProjection";
+import { localizeClassName, localizeClassNamesInText, localizeProgressionTier } from "@/i18n/gameContent";
 
 interface CharacterHeaderProps {
   character: RPGCharacter;
@@ -95,21 +96,28 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   const t = getTranslation(language);
 
   const { identity, progression, archetype, resources, meta } = character;
+  const progressionAvailable = character.calculationCoverage.xpLevel === "complete";
   const displayName = identity.displayName ?? identity.username;
   // Text and icon share one source: V2 when present, otherwise V1. The V2 projection types the class as a plain
   // string; RpgClassIcon falls back to the generic insignia for anything outside the known classes.
-  const className = v2?.identity.className ?? archetype.className;
-  const classIconType = className as ClassName;
+  const className = localizeClassName(v2?.identity.className ?? archetype.className, language);
+  const classIconType = (v2?.identity.className ?? archetype.className) as ClassName;
   // With a V2 result the subclass comes only from V2 (null means none): the V1 subclass must not leak in,
   // or the sheet would show a specialization the "Why this class?" dialog (also V2) says does not exist.
   const subclassName = v2
     ? v2.identity.subclass?.name[language === "pt-BR" ? "pt" : "en"] ?? null
-    : archetype.subclassName;
+    : archetype.subclassName
+      ? localizeClassName(archetype.subclassName, language)
+      : null;
   const evolutionName = v2?.identity.evolution?.name[language === "pt-BR" ? "pt" : "en"];
   // The tooltip follows the same source as the class itself. V1 describes the V1 class only; with a V2 result the
   // V2 reason for the class is used instead, and when it is missing there is no tooltip rather than a V1 description
   // of a class the sheet no longer shows.
-  const classDescription = v2 ? v2.explanation.class.reason[language === "pt-BR" ? "pt" : "en"]?.trim() || null : archetype.classDescription;
+  const classDescription = v2
+    ? localizeClassNamesInText(v2.explanation.class.reason[language === "pt-BR" ? "pt" : "en"]?.trim() || "", language) || null
+    : language === "en"
+      ? t.heroesHall.flavors[archetype.className]
+      : archetype.classDescription;
 
   const classLabel = (
     <span className="inline-flex items-center gap-1.5 font-sans text-sm font-extrabold uppercase tracking-wider text-amber-300">
@@ -145,8 +153,10 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             />
           </div>
           <div className="flex flex-col items-center gap-1.5" style={{ marginTop: plateOffset }}>
-            <ProfileStatPlate label={t.character.level} value={progression.level} />
-            <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">{progression.tier}</span>
+            <ProfileStatPlate label={t.character.level} value={progressionAvailable ? progression.level : "—"} />
+            <span className="font-sans text-[11px] font-bold uppercase tracking-widest text-amber-300">
+              {progressionAvailable ? localizeProgressionTier(progression.tier, language) : t.character.calculationUnavailable}
+            </span>
           </div>
         </div>
 
@@ -170,7 +180,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
                 <span aria-hidden="true" className="text-amber-700">
                   &bull;
                 </span>
-                <Tooltip content={v2 ? t.gameV2.subclass : archetype.subclassDescription ?? subclassName}>
+                <Tooltip content={v2 ? t.gameV2.subclass : language === "en" && archetype.subclassName ? t.heroesHall.flavors[archetype.subclassName] : archetype.subclassDescription ?? subclassName}>
                   <span className="inline-flex items-center gap-1.5 font-sans text-sm font-semibold text-slate-200">
                     {!v2 && <RpgClassIcon classNameType={archetype.subclassName ?? archetype.className} className="h-4 w-4 text-slate-300" />}
                     <span>{subclassName}</span>
@@ -230,7 +240,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
           <div className="xl:hidden">
             <ProfileDivider maxWidth={420} className="md:mx-0" />
           </div>
-          <ResourceRow
+          {progressionAvailable ? <ResourceRow
             tone="bright"
             label={
               <span className="inline-flex items-center gap-1.5">
@@ -243,7 +253,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             max={100}
             valueText={fill(t.character.xpTotal, { n: formatNumber(progression.totalXp, language) })}
             hint={xpHint}
-          />
+          /> : (
+            <div role="status" className="border border-amber-800/50 bg-black/25 px-4 py-3">
+              <p className="font-sans text-xs font-bold uppercase tracking-wider text-amber-200">{t.character.xp}</p>
+              <p className="mt-1 font-sans text-xs text-slate-300">{t.character.calculationUnavailable}</p>
+            </div>
+          )}
           <ResourceRow
             tone="hp"
             label={

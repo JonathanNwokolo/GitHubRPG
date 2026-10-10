@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createRPGCharacter } from "@/game/engine";
-import { makeAverageProfile } from "@/test/builders";
+import { makeAverageProfile, m } from "@/test/builders";
 import { loadCharacterProduct } from "@/data/loadCharacter";
 import { HEROES_RESPONSE_BUDGET_MS } from "@/features/heroes/featuredHeroes";
 import { GET } from "./route";
@@ -91,6 +91,22 @@ describe("GET /api/heroes", () => {
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(JSON.stringify(body)).not.toMatch(/upstream failed|ghp_SECRET/);
     expect(afterTasks).toHaveLength(0);
+  });
+
+  it("keeps a partial profile out of competitive ordering", async () => {
+    scenario();
+    mockedLoadCharacter.mockImplementation(async (username) => {
+      const product = character(username);
+      return username === "matz"
+        ? { ...product, character: createRPGCharacter(makeAverageProfile({ username, commits: m(0, "unavailable") })) }
+        : product;
+    });
+    const response = await GET(request());
+    const body = await response.json();
+    expect(body.partial).toBe(true);
+    expect(body.heroes).toHaveLength(4);
+    expect(body.heroes.map((hero: { username: string }) => hero.username)).not.toContain("matz");
+    expect(response.headers.get("cache-control")).toBe("no-store");
   });
 
   it("3/5 at the budget: answers with the three that finished, in order, without waiting for the slow ones", async () => {

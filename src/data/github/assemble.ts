@@ -1,7 +1,13 @@
-import type { RawGitHubData, RawMetric, RawYearActivity } from "../contracts";
+import type { RawCalendarYear, RawGitHubData, RawMetric, RawYearActivity } from "../contracts";
 import type { RestUser } from "./apiSchemas";
 import type { ContributionHistory } from "./contributions";
-import { findLongestStreakPeriod, summarizeActivity, summarizeYearDays, type ContributionDay } from "./contributionStats";
+import {
+  findLongestStreakPeriod,
+  summarizeActivity,
+  summarizeYearDays,
+  toYearDayCounts,
+  type ContributionDay,
+} from "./contributionStats";
 import { RECENT_WINDOW_DAYS } from "./limits";
 import { assessReviews } from "./reviewCoverage";
 import type { RepositoryData } from "./restFetchers";
@@ -64,6 +70,7 @@ export function assembleRawProfile(input: {
         monthlyContributions: { months: [], coverage: "unavailable" },
         yearly: { years: [], coverage: "unavailable" },
         longestStreakPeriod: null,
+        calendar: { years: [], coverage: "unavailable" },
       },
     };
   }
@@ -85,6 +92,11 @@ export function assembleRawProfile(input: {
     issues: year.issues,
   }));
   const streak = findLongestStreakPeriod(days, fetchedAt);
+  // The per-day calendar the numbers above were summarized from, kept for the activity heatmap (no extra request).
+  const calendar: RawCalendarYear[] = history.years.map((year) => ({
+    year: year.year,
+    counts: toYearDayCounts(year.days, year.year, fetchedAt),
+  }));
 
   return {
     ...base,
@@ -100,6 +112,7 @@ export function assembleRawProfile(input: {
       monthlyContributions: { months: summary.monthlyContributions, coverage: complete ? "full" : "partial" },
       yearly: { years: yearly, coverage: complete ? "full" : "partial" },
       longestStreakPeriod: streak && { start: streak.start, end: streak.end },
+      calendar: { years: calendar, coverage: complete ? "full" : "partial" },
     },
   };
 }

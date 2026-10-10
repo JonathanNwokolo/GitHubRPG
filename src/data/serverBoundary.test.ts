@@ -71,7 +71,7 @@ describe("GitHub token stays on the server", () => {
   });
 
   const SERVER_ONLY_IMPORT =
-    /from\s+["'](@\/data\/(datasource|github|loadCharacter|api\/errorResponse)|\.\.?\/[^"']*\b(datasource|github)\b[^"']*)["']/;
+    /from\s+["'](@\/data\/(datasource|github|loadCharacter|usage|api\/errorResponse)|\.\.?\/[^"']*\b(datasource|github|usage)\b[^"']*)["']/;
 
   it("no client code imports the server-side data layer", () => {
     const offenders = source.filter(isClientFile).filter((file) => SERVER_ONLY_IMPORT.test(read(file))).map(rel);

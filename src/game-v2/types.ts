@@ -265,12 +265,13 @@ export interface CharacterExplanation {
 
 export interface RPGCharacterV2 {
   engineVersion: "2.0-experimental-v24-evo";
-  schemaVersion: "game-engine-v2-schema-2";
+  schemaVersion: "game-engine-v2-schema-3";
   detectorVersion: "game-engine-v2-detectors-3-collector-v21";
   catalogVersion: "game-engine-v2-catalog-1";
   balanceVersion: "game-engine-v2-balance-v24-evolution-confidence";
   identity: RPGCharacter["identity"];
   meta: RPGCharacter["meta"] & { cacheNamespace: "v2-experimental" };
+  calculationCoverage: RPGCharacter["calculationCoverage"];
   progression: RPGCharacter["progression"];
   stats: RPGCharacter["stats"];
   resources: RPGCharacter["resources"];

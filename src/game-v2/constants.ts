@@ -2,7 +2,7 @@ import type { PracticeArchetype } from "./types";
 
 export const ENGINE_VERSION = "2.0-experimental-v24-evo" as const;
 export const RULES_VERSION = "game-engine-v2-experimental" as const;
-export const SCHEMA_VERSION = "game-engine-v2-schema-2" as const;
+export const SCHEMA_VERSION = "game-engine-v2-schema-3" as const;
 export const DETECTOR_VERSION = "game-engine-v2-detectors-3-collector-v21" as const;
 export const CATALOG_VERSION = "game-engine-v2-catalog-1" as const;
 export const BALANCE_VERSION = "game-engine-v2-balance-v24-evolution-confidence" as const;

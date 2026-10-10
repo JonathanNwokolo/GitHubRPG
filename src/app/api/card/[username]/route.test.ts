@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ProfileNotFoundError } from "@/data/contracts";
 import { loadCharacter } from "@/data/loadCharacter";
 import { createRPGCharacter } from "@/game/createCharacter";
-import { makeAverageProfile, makeProfile } from "@/test/builders";
+import { makeAverageProfile, makeProfile, m } from "@/test/builders";
 import { GET } from "./route";
 
 vi.mock("@/data/loadCharacter", () => ({
@@ -74,6 +74,16 @@ describe("GET /api/card/[username]", () => {
     expect(response.headers.get("content-type")).toBe("image/png");
     const arrayBuffer = await response.arrayBuffer();
     expect(arrayBuffer.byteLength).toBeGreaterThan(1000);
+  });
+
+  it("does not render calculated numbers for a partial profile", async () => {
+    mockedLoadCharacter.mockResolvedValueOnce(createRPGCharacter(makeAverageProfile({ commits: m(0, "unavailable") })));
+    const response = await GET(new Request("http://localhost/api/card/partial"), {
+      params: Promise.resolve({ username: "partial" }),
+    });
+    expect(response.status).toBe(503);
+    expect(response.headers.get("cache-control")).toBe("no-store");
+    expect(response.headers.get("content-type")).not.toBe("image/png");
   });
 
   it("uses unlocked custom title from query param if provided", async () => {

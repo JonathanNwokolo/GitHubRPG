@@ -275,6 +275,8 @@ export interface RPGCharacter {
     isDemo: boolean;
     referenceDate: string;
   };
+  /** Publication safety for values calculated by the unchanged engine formulas. */
+  calculationCoverage: import("../coverage").CharacterCalculationCoverage;
   progression: RPGProgression;
   archetype: RPGArchetype;
   stats: RPGStats;

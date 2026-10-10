@@ -7,6 +7,7 @@ import {
   isGameEngineV2UiEnabled,
   readDataSourceConfig,
   readGameEngineV2UiConfig,
+  readUsageCounterConfig,
 } from "./config";
 import { createDataSource, resolveDataSourceKind } from "./index";
 import { GitHubApiDataSource } from "../github/GitHubApiDataSource";
@@ -86,5 +87,60 @@ describe("createDataSource", () => {
 
   it("resolveDataSourceKind never throws", () => {
     expect(["mock", "github", null]).toContain(resolveDataSourceKind());
+  });
+});
+
+describe("readUsageCounterConfig", () => {
+  const store = { UPSTASH_REDIS_REST_URL: "https://redis.example.test", UPSTASH_REDIS_REST_TOKEN: "t" };
+  const production = { ...store, NODE_ENV: "production", GITHUB_DATA_SOURCE: "github", VERCEL: "1", VERCEL_ENV: "production" };
+
+  it("is on for real production traffic with the store configured", () => {
+    expect(readUsageCounterConfig(production)).toEqual({ enabled: true, restUrl: "https://redis.example.test", restToken: "t" });
+  });
+
+  it("accepts the Marketplace KV_REST_API_* names as equivalents", () => {
+    const { UPSTASH_REDIS_REST_URL: _url, UPSTASH_REDIS_REST_TOKEN: _token, ...rest } = production;
+    expect(readUsageCounterConfig({ ...rest, KV_REST_API_URL: "https://kv.example.test", KV_REST_API_TOKEN: "k" })).toEqual({
+      enabled: true,
+      restUrl: "https://kv.example.test",
+      restToken: "k",
+    });
+  });
+
+  it("never counts mock, development, preview or local traffic", () => {
+    expect(readUsageCounterConfig({ ...production, GITHUB_DATA_SOURCE: "mock" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, VERCEL_ENV: "preview" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, VERCEL_ENV: "development" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...store, NODE_ENV: "development", GITHUB_DATA_SOURCE: "github" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...store, GITHUB_DATA_SOURCE: "github" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...store, NODE_ENV: "test" }).enabled).toBe(false);
+  });
+
+  it("is off without both store variables, with a bad URL, or with a misconfigured data source", () => {
+    expect(readUsageCounterConfig({ ...production, UPSTASH_REDIS_REST_TOKEN: "" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, UPSTASH_REDIS_REST_URL: undefined }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, UPSTASH_REDIS_REST_URL: "not a url" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, UPSTASH_REDIS_REST_URL: "http://redis.example.test" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...production, GITHUB_DATA_SOURCE: undefined }).enabled).toBe(false);
+    expect(readUsageCounterConfig({}).enabled).toBe(false);
+  });
+
+  it("USAGE_COUNTER_ENABLED=false is a kill switch", () => {
+    for (const off of ["false", "FALSE", "0", "off", "no"]) {
+      expect(readUsageCounterConfig({ ...production, USAGE_COUNTER_ENABLED: off })).toEqual({ enabled: false });
+    }
+    expect(readUsageCounterConfig({ ...production, USAGE_COUNTER_ENABLED: "true" }).enabled).toBe(true);
+  });
+
+  it("exposes no credential when disabled", () => {
+    expect(readUsageCounterConfig({ ...production, VERCEL_ENV: "preview" })).toEqual({ enabled: false });
+  });
+
+  it("the e2e seam works only on the mock source and never on Vercel", () => {
+    const e2e = { ...store, UPSTASH_REDIS_REST_URL: "http://127.0.0.1:3917", USAGE_COUNTER_E2E: "1", GITHUB_DATA_SOURCE: "mock", NODE_ENV: "production" };
+    expect(readUsageCounterConfig(e2e).enabled).toBe(true);
+    expect(readUsageCounterConfig({ ...e2e, VERCEL: "1" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...e2e, GITHUB_DATA_SOURCE: "github" }).enabled).toBe(false);
+    expect(readUsageCounterConfig({ ...e2e, USAGE_COUNTER_E2E: undefined }).enabled).toBe(false);
   });
 });

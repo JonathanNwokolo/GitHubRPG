@@ -49,6 +49,9 @@ export async function GET(_request: Request, context: { params: Promise<{ userna
     }
 
     const character = await loadCharacter(decoded, createDataSource());
+    if (!character.calculationCoverage.sharing.calculatedNumbersPublishable) {
+      return textResponse(503, "Ficha parcialmente indisponível: o nível não pode ser publicado agora.", "no-store");
+    }
     const svg = buildBadgeSvg({
       username: character.identity.username,
       level: character.progression.level,

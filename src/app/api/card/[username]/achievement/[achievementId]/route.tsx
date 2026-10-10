@@ -39,6 +39,9 @@ export async function GET(
     if (!isValidAchievementId(decodedId)) return cardBadRequest("Identificador de conquista inválido");
 
     const character = await loadCharacter(decodedUsername, createDataSource());
+    if (!character.calculationCoverage.sharing.calculatedNumbersPublishable) {
+      return new Response("Ficha parcialmente indisponível", { status: 503, headers: { "Cache-Control": "no-store" } });
+    }
     const content = buildAchievementCardContent(character, decodedId, parseCardLanguage(request.url));
     if (!content) return cardNotFound(NOT_FOUND);
 

@@ -41,6 +41,9 @@ export async function GET(
     if (year === null) return cardBadRequest("Identificador de capítulo inválido");
 
     const { character, chronicle } = await loadCharacterWithChronicle(decodedUsername, createDataSource());
+    if (!character.calculationCoverage.sharing.calculatedNumbersPublishable) {
+      return new Response("Ficha parcialmente indisponível", { status: 503, headers: { "Cache-Control": "no-store" } });
+    }
     const content = buildChronicleCardContent(character, chronicle, year, parseCardLanguage(request.url));
     if (!content) return cardNotFound(NOT_FOUND);
 

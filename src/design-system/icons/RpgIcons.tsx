@@ -654,6 +654,24 @@ export const RpgClock: React.FC<RpgIconProps> = (props) => (
   </svg>
 );
 
+// 46. Flame (Chama da Atividade)
+export const RpgFlame: React.FC<RpgIconProps> = (props) => (
+  <svg {...baseProps(props)}>
+    {/* Outer flame contour */}
+    <path
+      d="M12 2C13 6 18 8.5 18 14.5C18 18.6 15.3 22 12 22C8.7 22 6 18.6 6 14.5C6 11.8 7.4 10 8.6 8.6C8.9 10.2 9.6 11 10.4 11.4C10.2 7.6 10.8 4.6 12 2Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="currentColor"
+      opacity="0.35"
+    />
+    {/* Inner luminous core */}
+    <path d="M12 11C13 13.4 15 14.4 15 17C15 19 13.7 20.4 12 20.4C10.3 20.4 9 19 9 17C9 15.2 10.6 14 12 11Z" fill="currentColor" />
+    <path d="M12 11C10.6 14 9 15.2 9 17C9 19 10.3 20.4 12 20.4Z" fill="#fff" opacity="0.4" />
+  </svg>
+);
+
 /**
  * ============================================================================
  * BACKWARD-COMPATIBILITY ALIASES

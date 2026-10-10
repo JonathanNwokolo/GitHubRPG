@@ -59,4 +59,12 @@ describe("CharacterHeader class icon follows the class text", () => {
 
     expect(headerClassIcon(container, "Mago")).toBe(expectedIcon("Mago"));
   });
+
+  it("localizes the V1 class label in English while preserving the canonical icon", () => {
+    useUiStore.setState({ language: "en" });
+    const { container } = render(<CharacterHeader character={v1Character("Guerreiro")} equippedTitle={null} />);
+
+    expect(headerClassIcon(container, "Warrior")).toBe(expectedIcon("Guerreiro"));
+    expect(container.textContent).not.toContain("Guerreiro");
+  });
 });

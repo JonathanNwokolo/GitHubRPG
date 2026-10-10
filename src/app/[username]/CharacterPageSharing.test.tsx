@@ -10,6 +10,7 @@ import { readmeBadgeMarkdown } from "@/features/badge/readmeMarkdown";
 import { profileUrl } from "@/lib/profileUrl";
 import { useUiStore } from "@/stores/useUiStore";
 import { languagesFromShares, m } from "@/test/builders";
+import { localizeAchievement } from "@/i18n/gameContent";
 import CharacterPageClient from "./CharacterPageClient";
 
 // The two share buttons are hidden in production; these tests exercise them with the flag on.
@@ -118,7 +119,7 @@ describe("Why this class?", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Why this class?" }));
 
-    const dialog = screen.getByRole("dialog", { name: "Why Mago?" });
+    const dialog = screen.getByRole("dialog", { name: "Why Mage?" });
     expect(within(dialog).getByText("Your main language is TypeScript.")).toBeInTheDocument();
     expect(within(dialog).getByText("TypeScript makes up 59.6% of the language bytes analysed.")).toBeInTheDocument();
     expect(within(dialog).getByText(/does not measure professional skill/)).toBeInTheDocument();
@@ -430,8 +431,9 @@ describe("Share an achievement", () => {
     renderPage();
     fireEvent.click(screen.getByRole("tab", { name: /Achievements/i }));
     const target = unlocked[0];
+    const localizedTarget = localizeAchievement(target, "en");
 
-    fireEvent.click(screen.getByRole("button", { name: `Share achievement: ${target.name}` }));
+    fireEvent.click(screen.getByRole("button", { name: `Share achievement: ${localizedTarget.name}` }));
 
     const dialog = await screen.findByRole("dialog", { name: "Share achievement" });
     expect(within(dialog).getByRole("button", { name: "Download image" })).toBeInTheDocument();

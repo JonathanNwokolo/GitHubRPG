@@ -90,6 +90,10 @@ GITHUB_TOKEN=seu_token_aqui   # opcional
 - Sem token, o app usa o REST anônimo (60 requisições/hora por IP) e as métricas de contribuição ficam indisponíveis.
 - Em produção, definir `GITHUB_DATA_SOURCE` é obrigatório.
 
+### Contador de fichas invocadas (opcional)
+
+A Home pode mostrar quantos perfis **diferentes** do GitHub já tiveram uma ficha invocada (a partir de 25). A contagem é global e permanente, guardada em um Set do Upstash Redis (Vercel Marketplace) com `UPSTASH_REDIS_REST_URL` e `UPSTASH_REDIS_REST_TOKEN`. O Set guarda apenas o SHA-256 truncado do username em minúsculas: sem IP, cookie, User-Agent, histórico de visitante nem username em texto. Só conta em produção, para visitantes interativos (nunca mock, preview, bots ou prefetch). Sem as variáveis, ou com `USAGE_COUNTER_ENABLED=false`, o contador fica desligado e a ficha funciona normalmente. `GET /api/stats` expõe somente `{ "uniqueProfilesInvoked": número | null }`.
+
 ### Scripts
 
 | Comando | Função |

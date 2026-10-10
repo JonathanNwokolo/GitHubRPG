@@ -4,6 +4,7 @@ import React from "react";
 import { Badge } from "@/design-system";
 import type { AchievementProgress } from "@/game/types";
 import { getTranslation } from "@/i18n";
+import { localizeAchievement } from "@/i18n/gameContent";
 import { ProfileMilestoneCard, ProfileSectionHeader } from "@/features/profile-ui";
 import { useUiStore } from "@/stores/useUiStore";
 import { ProgressDetail } from "./ProgressDetail";
@@ -24,8 +25,9 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
         <p className="pf-muted text-center font-sans text-sm">{t.milestones.empty}</p>
       ) : (
         <ul className="grid grid-cols-1 gap-x-6 gap-y-7 px-3.5 md:grid-cols-3">
-          {milestones.map((milestone) => (
-            <ProfileMilestoneCard key={milestone.id} className="flex flex-col gap-3">
+          {milestones.map((canonicalMilestone) => {
+            const milestone = localizeAchievement(canonicalMilestone, language);
+            return <ProfileMilestoneCard key={milestone.id} className="flex flex-col gap-3">
               <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
                 <h3 className="min-w-0 break-words font-sans text-base font-extrabold leading-snug text-amber-50">{milestone.name}</h3>
                 <Badge variant={milestone.rarity} size="sm" className="shrink-0">
@@ -34,8 +36,8 @@ export const NextMilestones: React.FC<NextMilestonesProps> = ({ milestones }) =>
               </div>
               <p className="pf-muted font-sans text-sm leading-relaxed">{milestone.description}</p>
               <ProgressDetail progress={milestone} compact tone="profile" className="mt-auto pt-1" />
-            </ProfileMilestoneCard>
-          ))}
+            </ProfileMilestoneCard>;
+          })}
         </ul>
       )}
     </section>

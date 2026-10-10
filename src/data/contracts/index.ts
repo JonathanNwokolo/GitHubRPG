@@ -56,6 +56,19 @@ export interface RawYearActivity {
 }
 
 /**
+ * One calendar year of the per-day contribution calendar, exactly as the same `contributionsCollection`
+ * requests already report it (no extra request). Presentation only: never read by the Game Engine.
+ */
+export interface RawCalendarYear {
+  year: number;
+  /**
+   * Contributions per day, index 0 = January 1st of `year`. Ends at December 31st, or at the fetch date for the
+   * current year (so the length is 365/366 for a finished year and shorter for the current one).
+   */
+  counts: number[];
+}
+
+/**
  * What a GitHubDataSource returns. Deliberately close to what the real GitHub
  * REST/GraphQL APIs can provide, so GitHubApiDataSource is a mapping exercise only.
  */
@@ -105,6 +118,11 @@ export interface RawGitHubData {
     yearly?: { years: RawYearActivity[]; coverage: DataCoverage };
     /** First-found longest run of active days ("YYYY-MM-DD", inclusive). null/absent when unknown or none. */
     longestStreakPeriod?: { start: string; end: string } | null;
+    /**
+     * Per-day calendar, ascending years (presentation only, e.g. the activity heatmap). Optional: only sources that
+     * read GitHub's calendar have it. `partial` = some calendar year of the account was not read (absent, never zero).
+     */
+    calendar?: { years: RawCalendarYear[]; coverage: DataCoverage };
   };
 }
 

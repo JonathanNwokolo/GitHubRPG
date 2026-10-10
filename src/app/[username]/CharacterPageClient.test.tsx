@@ -5,7 +5,7 @@ import { createRPGCharacter } from "@/game/createCharacter";
 import { analyzeLanguages } from "@/game/languages";
 import { buildClassExplanation } from "@/features/character/classExplanation";
 import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChronicle";
-import { makeAverageProfile, makeProfile } from "@/test/builders";
+import { makeAverageProfile, makeProfile, m } from "@/test/builders";
 import { useUiStore } from "@/stores/useUiStore";
 import CharacterPageClient from "./CharacterPageClient";
 
@@ -119,6 +119,25 @@ describe("CharacterPageClient: sparse profile", () => {
   });
 });
 
+describe("CharacterPageClient: partial calculation coverage", () => {
+  it("keeps reliable data but hides degraded level, XP and affected attributes", () => {
+    renderPage(makeAverageProfile({ commits: m(0, "unavailable") }));
+
+    expect(screen.getByText("Ficha parcialmente revelada")).toBeInTheDocument();
+    expect(screen.getAllByText("Indisponível no momento").length).toBeGreaterThan(0);
+    expect(screen.getByLabelText("Atividade: Indisponível")).toBeInTheDocument();
+    expect(screen.getByLabelText("Reputação")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /Gerar Cartão de Herói/i })).not.toBeInTheDocument();
+  });
+
+  it("provides the same state in English", () => {
+    useUiStore.setState({ language: "en" });
+    renderPage(makeAverageProfile({ commits: m(0, "unavailable") }));
+    expect(screen.getByText("Character sheet partially revealed")).toBeInTheDocument();
+    expect(screen.getByLabelText("Activity: Unavailable")).toBeInTheDocument();
+  });
+});
+
 describe("CharacterPageClient: share modal", () => {
   it("is not mounted until it is opened, then restores focus to the opener when closed", async () => {
     renderPage();
@@ -151,7 +170,7 @@ describe("CharacterPageClient: V2 product presentation", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(JSON.stringify({
       contractVersion: 1,
       engineVersion: "2.0-experimental-v24-evo",
-      schemaVersion: "game-engine-v2-schema-2",
+      schemaVersion: "game-engine-v2-schema-3",
       state: "ready",
       terminal: true,
       character: projected,

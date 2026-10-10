@@ -7,7 +7,7 @@ import { buildProfileMetadata } from "@/lib/seo";
 import { CharacterLoading } from "./CharacterLoading";
 import CharacterSheet from "./CharacterSheet";
 import { headers } from "next/headers";
-import { createGitHubRequestProtectionContext, shouldScheduleProfileEnrichment } from "@/data/github/protection";
+import { createGitHubRequestProtectionContext, isInteractiveVisitor, shouldScheduleProfileEnrichment } from "@/data/github/protection";
 import { isVercelRuntime } from "@/data/datasource/config";
 
 interface CharacterPageProps {
@@ -53,7 +53,7 @@ export default async function CharacterPage({ params }: CharacterPageProps) {
   // 2. The slow part streams behind the themed skeleton. Failures here reach error.tsx.
   return (
     <Suspense fallback={<CharacterLoading />}>
-      <CharacterSheet username={decodedUsername} source={source} requestOptions={{ protection }} allowEnrichment={shouldScheduleProfileEnrichment(requestHeaders)} />
+      <CharacterSheet username={decodedUsername} source={source} requestOptions={{ protection }} allowEnrichment={shouldScheduleProfileEnrichment(requestHeaders)} countInvocation={isInteractiveVisitor(requestHeaders)} />
     </Suspense>
   );
 }

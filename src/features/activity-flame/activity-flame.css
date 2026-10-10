@@ -1,0 +1,281 @@
+/*
+ * Chama da Atividade. Everything is namespaced `af-*`, so nothing leaks into other screens.
+ * Palette: black -> dark bronze -> orange -> gold -> bright gold -> white-gold (never green: this is not GitHub's graph).
+ * Each cell is a small carved rune: the level is told by color AND by the mark inside it.
+ */
+
+.af-heat {
+  --af-cell: 12px;
+  --af-gap: 3px;
+  --af-label: 30px;
+  --af-l0: #0c0908;
+  --af-l1: #5b3216;
+  --af-l2: #c2570c;
+  --af-l3: #d9a441;
+  --af-l4: #f8c744;
+  --af-l5: #fff4cb;
+  --af-edge: rgba(112, 80, 42, 0.55);
+}
+
+@media (min-width: 768px) {
+  .af-heat {
+    --af-cell: 10px;
+    --af-gap: 2px;
+    --af-label: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .af-heat {
+    --af-cell: 12px;
+    --af-gap: 3px;
+    --af-label: 30px;
+  }
+}
+
+/* Carved panel, same material as the hero frame edge (bronze rim, warm inner glow). */
+.af-panel {
+  position: relative;
+  min-width: 0;
+  border: 2px solid #70502a;
+  background:
+    radial-gradient(ellipse 70% 80% at 50% 0%, rgba(240, 164, 58, 0.07), transparent 70%),
+    #110d0f;
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 4px rgba(217, 164, 65, 0.06),
+    0 14px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* The scroller is the only thing that may scroll horizontally: the page never does. */
+.af-scroller {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 83, 9, 0.6) transparent;
+  padding-block: 6px 4px;
+}
+
+.af-canvas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--af-gap);
+  width: max-content;
+  margin-inline: auto;
+}
+
+.af-months {
+  position: relative;
+  height: 14px;
+  margin-left: calc(var(--af-label) + var(--af-gap));
+}
+
+.af-month {
+  position: absolute;
+  top: 0;
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #a99f8c;
+  white-space: nowrap;
+}
+
+.af-row {
+  display: flex;
+  align-items: center;
+  gap: var(--af-gap);
+}
+
+.af-weekday {
+  flex: none;
+  width: var(--af-label);
+  font-size: 9px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8f866f;
+}
+
+.af-slot {
+  flex: none;
+  width: var(--af-cell);
+  height: var(--af-cell);
+}
+
+/* ---------- The rune ---------- */
+.af-cell {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 1px solid var(--af-edge);
+  background: var(--af-l0);
+  box-shadow: inset 1px 1px 0 rgba(255, 233, 180, 0.07), inset -1px -1px 0 rgba(0, 0, 0, 0.55);
+  cursor: default;
+}
+
+.af-cell::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: currentColor;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.af-cell:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 1px;
+  z-index: 2;
+}
+
+.af-cell[data-level="1"] {
+  background: var(--af-l1);
+  border-color: #7a4a22;
+  box-shadow: inset 1px 1px 0 rgba(255, 190, 120, 0.14), inset -1px -1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.af-cell[data-level="2"] {
+  color: #ffd9a1;
+  background: var(--af-l2);
+  border-color: #e98a2b;
+  box-shadow: inset 1px 1px 0 rgba(255, 220, 160, 0.28), inset -1px -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.af-cell[data-level="2"]::after {
+  width: 3px;
+  height: 3px;
+}
+
+.af-cell[data-level="3"] {
+  color: #3a2208;
+  background: var(--af-l3);
+  border-color: #f0c466;
+  box-shadow: inset 1px 1px 0 rgba(255, 244, 205, 0.45), inset -1px -1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.af-cell[data-level="3"]::after {
+  width: 4px;
+  height: 4px;
+}
+
+.af-cell[data-level="4"] {
+  color: #3a2208;
+  background: var(--af-l4);
+  border-color: #ffe08a;
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.55),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.3),
+    0 0 6px rgba(248, 199, 68, 0.55);
+}
+
+.af-cell[data-level="4"]::after {
+  width: 6px;
+  height: 6px;
+}
+
+.af-cell[data-level="5"] {
+  color: #b45309;
+  background: var(--af-l5);
+  border-color: #ffffff;
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+    inset -1px -1px 0 rgba(180, 83, 9, 0.35),
+    0 0 9px rgba(255, 233, 160, 0.85),
+    0 0 18px rgba(245, 158, 11, 0.45);
+  z-index: 1;
+}
+
+.af-cell[data-level="5"]::after {
+  width: 6px;
+  height: 6px;
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+.af-cell[data-active="true"] {
+  outline: 1px solid #fbbf24;
+  outline-offset: 1px;
+  z-index: 3;
+}
+
+/* Days before the hero existed: carved, unlit, and not part of the journey. */
+.af-cell--before {
+  background: transparent;
+  border-style: dashed;
+  border-color: rgba(112, 80, 42, 0.3);
+  box-shadow: none;
+}
+
+/* ---------- Legend (same runes as the grid) ---------- */
+.af-legend-cell {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+/* ---------- Tooltip ---------- */
+.af-tooltip {
+  position: absolute;
+  z-index: 20;
+  min-width: 11rem;
+  max-width: 15rem;
+  padding: 8px 12px;
+  border: 1px solid #70502a;
+  background: linear-gradient(#1b1412, #100c0b);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(217, 164, 65, 0.12),
+    0 10px 22px rgba(0, 0, 0, 0.65),
+    0 0 18px rgba(240, 164, 58, 0.12);
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+
+/* ---------- Motion (only when the visitor did not ask to reduce it) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  /* Before the section is seen the runes are unlit; then they are energized column by column. */
+  .af-heat[data-phase="idle"] .af-cell {
+    opacity: 0;
+  }
+
+  .af-heat[data-phase="igniting"] .af-cell {
+    animation: af-ignite 520ms ease-out both;
+    animation-delay: calc(var(--af-col, 0) * 9ms);
+  }
+
+  .af-swap {
+    animation: af-swap 260ms ease-out both;
+  }
+
+  @keyframes af-ignite {
+    0% {
+      opacity: 0;
+      transform: scale(0.55);
+      filter: brightness(2.2);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.12);
+      filter: brightness(1.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+  }
+
+  @keyframes af-swap {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

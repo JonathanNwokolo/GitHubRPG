@@ -12,7 +12,7 @@ function response(state: "ready" | "partial" | "enriching" | "unavailable", stat
   return new Response(JSON.stringify({
     contractVersion: 1,
     engineVersion: "2.0-experimental-v24-evo",
-    schemaVersion: "game-engine-v2-schema-2",
+    schemaVersion: "game-engine-v2-schema-3",
     state,
     terminal: state !== "enriching",
     ...(state === "ready" || state === "partial" ? { character } : {}),
@@ -61,7 +61,7 @@ describe("useLiveCharacterPresentation", () => {
   });
 
   it("respects a bounded Retry-After response", async () => {
-    const limited = new Response(JSON.stringify({ error: { code: "rate_limited" }, contractVersion: 1, engineVersion: "2.0-experimental-v24-evo", schemaVersion: "game-engine-v2-schema-2", state: "enriching", terminal: false, retryAfterMs: 8_000 }), { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "8" } });
+    const limited = new Response(JSON.stringify({ error: { code: "rate_limited" }, contractVersion: 1, engineVersion: "2.0-experimental-v24-evo", schemaVersion: "game-engine-v2-schema-3", state: "enriching", terminal: false, retryAfterMs: 8_000 }), { status: 429, headers: { "Content-Type": "application/json", "Retry-After": "8" } });
     vi.stubGlobal("fetch", vi.fn().mockResolvedValueOnce(limited).mockResolvedValueOnce(response("ready")));
     const { result } = renderHook(() => useLiveCharacterPresentation(enriching, "hero"));
     await advance(4_000);
