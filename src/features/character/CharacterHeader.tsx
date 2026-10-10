@@ -40,6 +40,8 @@ interface CharacterHeaderProps {
   equippedTitle: Pick<TitleProgress, "name"> | null;
   v2?: RPGCharacterV2Public | null;
   onOpenShareModal?: () => void;
+  /** Opens "Share Hero" (the Hero Social Card). The trigger only exists when the host wires it. */
+  onOpenHeroShare?: () => void;
   /** Opens "Why this class?". The trigger only exists when the host wires it. */
   onOpenClassExplanation?: () => void;
   /** Opens "Add to README". */
@@ -89,6 +91,7 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
   equippedTitle,
   v2,
   onOpenShareModal,
+  onOpenHeroShare,
   onOpenClassExplanation,
   onOpenReadmeModal,
 }) => {
@@ -294,6 +297,12 @@ export const CharacterHeader: React.FC<CharacterHeaderProps> = ({
             <RpgSwords className="h-4 w-4" />
             <span>{t.duel.challengeHero}</span>
           </ProfileActionButton>
+          {onOpenHeroShare && (
+            <ProfileActionButton variant="primary" onClick={onOpenHeroShare}>
+              <RpgShare className="h-4 w-4" />
+              <span>{t.heroShare.trigger}</span>
+            </ProfileActionButton>
+          )}
           {onOpenShareModal && (
             <ProfileActionButton variant="primary" onClick={onOpenShareModal}>
               <RpgShare className="h-4 w-4" />

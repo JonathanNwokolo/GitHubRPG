@@ -6,6 +6,7 @@ import {
   profileBadgePath,
   profileBadgeUrl,
   profileCardPath,
+  socialCardPath,
 } from "./profileUrl";
 import { readmeBadgeMarkdown } from "@/features/badge/readmeMarkdown";
 
@@ -30,6 +31,15 @@ describe("badge and card URLs", () => {
     expect(profileCardPath("Octocat")).toBe("/api/card/octocat");
     expect(achievementCardPath("Octocat", "age-5")).toBe("/api/card/octocat/achievement/age-5");
     expect(chronicleCardPath("Octocat", 2025)).toBe("/api/card/octocat/chronicle/2025");
+  });
+
+  it("the Hero Social Card path carries only a closed language switch and an optional title id", () => {
+    expect(socialCardPath("Octocat")).toBe("/api/card/octocat/social");
+    expect(socialCardPath("Octocat", "en")).toBe("/api/card/octocat/social?lang=en");
+    expect(socialCardPath("Octocat", "pt-BR", "title-years-5")).toBe("/api/card/octocat/social?title=title-years-5");
+    expect(socialCardPath("Octocat", "en", "title-years-5")).toBe("/api/card/octocat/social?lang=en&title=title-years-5");
+    // A title id with reserved characters can never break out of the query string.
+    expect(socialCardPath("octocat", "pt-BR", "a&b=c")).toBe("/api/card/octocat/social?title=a%26b%3Dc");
   });
 
   it("only English adds a language switch", () => {

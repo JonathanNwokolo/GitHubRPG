@@ -41,8 +41,36 @@ export async function resolveAvatarSrc(character: RPGCharacter): Promise<string>
   }
 }
 
-export function renderCardImage(element: React.ReactElement): ImageResponse {
-  return new ImageResponse(element, { ...CARD_SIZE, headers: { "Cache-Control": CARD_CACHE_CONTROL } });
+/** A font face for the renderer (the same shape `ImageResponse` takes). */
+export interface CardFont {
+  name: string;
+  data: ArrayBuffer;
+  weight: 400;
+  style: "normal";
+}
+
+export function renderCardImage(
+  element: React.ReactElement,
+  size: { width: number; height: number } = CARD_SIZE,
+  fonts: CardFont[] = []
+): ImageResponse {
+  return new ImageResponse(element, {
+    ...size,
+    // Without `fonts` the renderer's built-in face is used, exactly as before.
+    ...(fonts.length > 0 ? { fonts } : {}),
+    headers: { "Cache-Control": CARD_CACHE_CONTROL },
+  });
+}
+
+/** The sheet cannot be shown as a card right now: not cached, so the next request is evaluated again. */
+export function cardUnavailable(message: string, retryAfterSeconds?: number): Response {
+  return new Response(message, {
+    status: 503,
+    headers: {
+      "Cache-Control": "no-store",
+      ...(retryAfterSeconds === undefined ? {} : { "Retry-After": String(retryAfterSeconds) }),
+    },
+  });
 }
 
 export function cardNotFound(message: string): Response {

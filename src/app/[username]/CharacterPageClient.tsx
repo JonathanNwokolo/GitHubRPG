@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { RPGCharacter } from "@/game/types";
@@ -14,6 +14,7 @@ import { AchievementsGrid } from "@/features/achievements/AchievementsGrid";
 import { ReadmeBadgeModal } from "@/features/badge/ReadmeBadgeModal";
 import { SHARE_ACTIONS_ENABLED } from "./shareActions";
 import { ShareImageModal } from "@/features/share/ShareImageModal";
+import { resolveHeroIdentity } from "@/features/share/heroIdentity";
 import type { ShareTarget } from "@/features/share/shareTarget";
 import { TitlesPanel } from "@/features/titles/TitlesPanel";
 import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
@@ -35,6 +36,12 @@ import { useLiveCharacterPresentation } from "@/features/character/useLiveCharac
 import { CharacterForgeLoading } from "@/features/character/CharacterForgeLoading";
 import { resolveCharacterRenderMode } from "@/features/character/characterPresentationState";
 import { localizeTitle } from "@/i18n/gameContent";
+
+// The share dialogs are only needed once someone opens them: keep them out of the initial bundle.
+const HeroShareDialog = dynamic(() => import("@/features/share/HeroShareDialog").then((mod) => mod.HeroShareDialog), {
+  ssr: false,
+  loading: () => null,
+});
 
 // The share modal (canvas drawing code) is only needed once someone opens it: keep it out of the initial bundle.
 const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").then((mod) => mod.ShareCardModal), {
@@ -76,8 +83,10 @@ export default function CharacterPage({
 
   const [activeTab, setActiveTab] = useState<CharacterActiveTab>("overview");
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [isHeroShareOpen, setIsHeroShareOpen] = useState(false);
   const [isClassExplanationOpen, setIsClassExplanationOpen] = useState(false);
   const [isReadmeModalOpen, setIsReadmeModalOpen] = useState(false);
+  const stageRef = useRef<HTMLDivElement>(null);
   /** The achievement or chapter whose card is open, if any. */
   const [shareTarget, setShareTarget] = useState<ShareTarget | null>(null);
 
@@ -102,10 +111,14 @@ export default function CharacterPage({
   const usesV1Fallback = renderMode === "v1-fallback";
   const calculatedNumbersPublishable = character.calculationCoverage.sharing.calculatedNumbersPublishable;
 
+  useEffect(() => {
+    if (!isWaitingForV2) stageRef.current?.setAttribute("data-character-page-ready", "true");
+  }, [isWaitingForV2]);
+
   if (isWaitingForV2) return <CharacterForgeLoading language={language} />;
 
   return (
-    <div className="pf-stage w-full flex-1">
+    <div ref={stageRef} className="pf-stage w-full flex-1" data-character-page-ready="false">
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full space-y-8 ${livePresentation.v2 ? "motion-safe:animate-[fade-rise_220ms_ease-out_both] motion-reduce:animate-none" : "animate-fade-in"}`}>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <Link
@@ -122,6 +135,7 @@ export default function CharacterPage({
           equippedTitle={displayedTitle}
           v2={livePresentation.v2}
           onOpenShareModal={SHARE_ACTIONS_ENABLED && calculatedNumbersPublishable ? () => setIsShareModalOpen(true) : undefined}
+          onOpenHeroShare={calculatedNumbersPublishable ? () => setIsHeroShareOpen(true) : undefined}
           onOpenClassExplanation={() => setIsClassExplanationOpen(true)}
           onOpenReadmeModal={SHARE_ACTIONS_ENABLED && calculatedNumbersPublishable ? () => setIsReadmeModalOpen(true) : undefined}
         />
@@ -236,6 +250,16 @@ export default function CharacterPage({
         {shareTarget && (
           <ShareImageModal isOpen onClose={() => setShareTarget(null)} username={username} target={shareTarget} />
         )}
+
+        <HeroShareDialog
+          isOpen={isHeroShareOpen}
+          onClose={() => setIsHeroShareOpen(false)}
+          username={username}
+          heroClassName={resolveHeroIdentity(character, livePresentation.v2, language).className}
+          level={character.calculationCoverage.xpLevel === "complete" ? character.progression.level : null}
+          title={displayedTitle?.name ?? null}
+          titleId={equippedV2Title?.id ?? equippedTitle?.id}
+        />
 
         {isShareModalOpen && (
           <ShareCardModal
