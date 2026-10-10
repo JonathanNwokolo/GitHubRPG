@@ -159,3 +159,21 @@ export function summarizeYearDays(days: readonly ContributionDay[], referenceDat
   }
   return { contributions, activeDays: active.size };
 }
+
+/**
+ * One year's calendar as a dense per-day series (index 0 = January 1st), for presentation.
+ * Ends at December 31st, or at `referenceDate` for the current year (the padded current week is dropped).
+ * A day missing from the calendar is 0 and duplicate dates are summed; days outside `year` are ignored.
+ */
+export function toYearDayCounts(days: readonly ContributionDay[], year: number, referenceDate: string): number[] {
+  const firstDay = Math.floor(Date.UTC(year, 0, 1) / DAY_MS);
+  const lastOfYear = Math.floor(Date.UTC(year, 11, 31) / DAY_MS);
+  const lastDay = Math.min(lastOfYear, toDayNumber(referenceDate));
+  const length = Math.max(0, lastDay - firstDay + 1);
+  const counts = new Array<number>(length).fill(0);
+  for (const day of days) {
+    const index = toDayNumber(day.date) - firstDay;
+    if (index >= 0 && index < length) counts[index] += day.count;
+  }
+  return counts;
+}

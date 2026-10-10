@@ -1,6 +1,7 @@
 import type { RawGitHubData } from "../contracts";
 import {
   MOCK_REFERENCE_DATE,
+  generateMockCalendar,
   generateMonthlySeries,
   generateRepositories,
   metric,
@@ -38,6 +39,8 @@ interface PersonaSpec {
 function buildPersona(spec: PersonaSpec): RawGitHubData {
   const rng = createMulberry32(fnv1a(spec.username));
   const months = monthsInclusive(spec.createdAt, MOCK_REFERENCE_DATE);
+  const repositories = generateRepositories(rng, spec.repositories);
+  const monthly = generateMonthlySeries(rng, months, spec.series.activeChance, spec.series.mean);
 
   return {
     username: spec.username,
@@ -53,14 +56,15 @@ function buildPersona(spec: PersonaSpec): RawGitHubData {
     pullRequests: metric(spec.pullRequests),
     reviews: metric(spec.reviews),
     issues: metric(spec.issues),
-    repositories: { items: generateRepositories(rng, spec.repositories), coverage: "full" },
+    repositories: { items: repositories, coverage: "full" },
     activity: {
       activeDays: metric(spec.activeDays),
       longestStreakDays: metric(spec.longestStreakDays),
       currentStreakDays: metric(spec.currentStreakDays),
       recentActiveDays: metric(spec.recentActiveDays),
-      monthlyContributions: {
-        months: generateMonthlySeries(rng, months, spec.series.activeChance, spec.series.mean),
+      monthlyContributions: { months: monthly, coverage: "full" },
+      calendar: {
+        years: generateMockCalendar(spec.username, monthly, spec.createdAt, MOCK_REFERENCE_DATE),
         coverage: "full",
       },
     },
@@ -192,6 +196,10 @@ export const EMPTY_DEV: RawGitHubData = {
     currentStreakDays: metric(0),
     recentActiveDays: metric(0),
     monthlyContributions: { months: [0, 0], coverage: "full" },
+    calendar: {
+      years: generateMockCalendar("empty-dev", [0, 0], "2026-09-12T00:00:00Z", MOCK_REFERENCE_DATE),
+      coverage: "full",
+    },
   },
 };
 

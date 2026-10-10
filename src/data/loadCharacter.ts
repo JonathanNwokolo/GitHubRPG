@@ -1,4 +1,6 @@
 import { buildClassExplanation, type ClassExplanation } from "@/features/character/classExplanation";
+import { buildActivityFlame, type BuildActivityFlameInput } from "@/features/activity-flame/buildActivityFlame";
+import type { ActivityFlameModel } from "@/features/activity-flame/types";
 import { buildDeveloperChronicle } from "@/features/chronicle/buildDeveloperChronicle";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
 import { createRPGCharacter } from "@/game/engine";
@@ -25,7 +27,17 @@ import { createRepositoryDiscoverySnapshot } from "./sharedDiscovery";
 async function loadProfile(username: string, source: GitHubDataSource, requestOptions?: GitHubProfileRequestOptions) {
   const raw = await source.getProfile(username, requestOptions);
   const valid = validateRawGitHubData(raw);
-  return { profile: normalizeDeveloperProfile(valid), discovery: createRepositoryDiscoverySnapshot(valid) };
+  return {
+    profile: normalizeDeveloperProfile(valid),
+    discovery: createRepositoryDiscoverySnapshot(valid),
+    // The per-day calendar is presentation-only: it stays out of the DeveloperProfile (and so out of the engine and
+    // the V2 profile fingerprint) and is read straight from the validated raw data.
+    flameInput: {
+      calendar: valid.activity.calendar,
+      createdAt: valid.createdAt,
+      referenceDate: valid.fetchedAt,
+    } satisfies BuildActivityFlameInput,
+  };
 }
 
 /**
@@ -75,6 +87,11 @@ export interface LoadCharacterProductOptions {
 export interface LoadedCharacterProduct {
   character: RPGCharacter;
   chronicle: DeveloperChronicle;
+  /**
+   * The contribution calendar as the "Chama da Atividade" model (always set by `loadCharacterProduct`; optional so
+   * consumers that never show it, like the Hall, are not forced to carry it). Read-only view: never feeds the engine.
+   */
+  activityFlame?: ActivityFlameModel;
   classExplanation: ClassExplanation;
   presentation: CharacterPresentationModel;
 }
@@ -103,11 +120,12 @@ export async function loadCharacterProduct(
   options: LoadCharacterProductOptions = {}
 ): Promise<LoadedCharacterProduct> {
   const baseStarted = performance.now();
-  const { profile, discovery } = await loadProfile(username, source, options.requestOptions);
+  const { profile, discovery, flameInput } = await loadProfile(username, source, options.requestOptions);
   const character = createRPGCharacter(profile);
   const base = {
     character,
     chronicle: buildDeveloperChronicle(profile),
+    activityFlame: buildActivityFlame(flameInput),
     classExplanation: buildClassExplanation(
       character.archetype,
       analyzeLanguages(profile.languages),
