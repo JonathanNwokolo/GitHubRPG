@@ -1,4 +1,4 @@
-import type { DataCoverage, RawGitHubData, RawMetric, RawRepository } from "../contracts";
+import type { DataCoverage, RawCalendarYear, RawGitHubData, RawMetric, RawRepository } from "../contracts";
 import { createMulberry32, fnv1a, randChoice, randInt } from "./hashAndPrng";
 
 /**
@@ -28,6 +28,57 @@ export function generateMonthlySeries(rng: Rng, months: number, activeChance: nu
   return Array.from({ length: months }, () =>
     rng() < activeChance ? Math.max(1, Math.round(mean * (0.3 + 1.4 * rng()))) : 0
   );
+}
+
+/**
+ * Demo per-day calendar derived from the monthly series, so a day-level view stays consistent with it: every month's
+ * contributions are spread over a deterministic set of its days and sum back to exactly that month's value.
+ * Uses its OWN generator (seeded from `seed`), so it never shifts the draws of the profile it is attached to.
+ */
+export function generateMockCalendar(
+  seed: string,
+  monthly: readonly number[],
+  createdIso: string,
+  referenceIso: string
+): RawCalendarYear[] {
+  const rng = createMulberry32(fnv1a(`${seed}:calendar`));
+  const created = new Date(createdIso);
+  const reference = new Date(referenceIso);
+  const firstYear = created.getUTCFullYear();
+  const lastYear = reference.getUTCFullYear();
+  const referenceDay = Math.floor(Date.UTC(reference.getUTCFullYear(), reference.getUTCMonth(), reference.getUTCDate()) / DAY_MS);
+  const createdDay = Math.floor(Date.UTC(firstYear, created.getUTCMonth(), created.getUTCDate()) / DAY_MS);
+
+  const years: RawCalendarYear[] = [];
+  for (let year = firstYear; year <= lastYear; year++) {
+    const yearStart = Math.floor(Date.UTC(year, 0, 1) / DAY_MS);
+    const yearEnd = Math.min(Math.floor(Date.UTC(year, 11, 31) / DAY_MS), referenceDay);
+    years.push({ year, counts: new Array<number>(yearEnd - yearStart + 1).fill(0) });
+  }
+
+  monthly.forEach((total, offset) => {
+    if (total <= 0) return;
+    const monthIndex = created.getUTCMonth() + offset;
+    const year = firstYear + Math.floor(monthIndex / 12);
+    const month = monthIndex % 12;
+    const monthStart = Math.max(Math.floor(Date.UTC(year, month, 1) / DAY_MS), createdDay);
+    const monthEnd = Math.min(Math.floor(Date.UTC(year, month + 1, 0) / DAY_MS), referenceDay);
+    const available = monthEnd - monthStart + 1;
+    const target = years.find((entry) => entry.year === year);
+    if (available <= 0 || !target) return;
+
+    const activeDays = Math.max(1, Math.min(total, available, Math.round(total / (1 + rng() * 5))));
+    const days = Array.from({ length: available }, (_, i) => monthStart + i);
+    shuffle(rng, days);
+    const chosen = days.slice(0, activeDays);
+    const amounts = allocateByWeight(total, chosen.map(() => rng() ** 2 + 0.1));
+    const yearStart = Math.floor(Date.UTC(year, 0, 1) / DAY_MS);
+    chosen.forEach((day, i) => {
+      target.counts[day - yearStart] += amounts[i];
+    });
+  });
+
+  return years;
 }
 
 /** Largest-remainder allocation of `n` items over weights (deterministic, sums exactly to n). */
@@ -202,6 +253,10 @@ export function generateDeterministicProfile(username: string): RawGitHubData {
       currentStreakDays: metric(rng() < 0.5 ? Math.floor(rng() * longestStreak) : 0),
       recentActiveDays: metric(Math.min(activeDays, Math.floor(rng() * 200 * intensity))),
       monthlyContributions: { months: monthly, coverage: "full" },
+      calendar: {
+        years: generateMockCalendar(clean, monthly, createdAt, MOCK_REFERENCE_DATE),
+        coverage: "full",
+      },
     },
   };
 }

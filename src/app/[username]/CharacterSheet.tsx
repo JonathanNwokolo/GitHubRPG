@@ -35,7 +35,7 @@ function scheduleInvocationCount(username: string): void {
  */
 export default async function CharacterSheet({ username, source, requestOptions, allowEnrichment = true, countInvocation = false }: CharacterSheetProps) {
   try {
-    const { character, chronicle, classExplanation, presentation } = await loadCharacterProduct(username, source, {
+    const { character, chronicle, activityFlame, classExplanation, presentation } = await loadCharacterProduct(username, source, {
       ...(allowEnrichment ? { scheduleBackground: (task: Promise<void>) => after(task) } : {}),
       requestOptions,
     });
@@ -45,6 +45,7 @@ export default async function CharacterSheet({ username, source, requestOptions,
       <CharacterPageClient
         character={character}
         chronicle={chronicle}
+        activityFlame={activityFlame}
         classExplanation={classExplanation}
         presentation={presentation}
         username={username}

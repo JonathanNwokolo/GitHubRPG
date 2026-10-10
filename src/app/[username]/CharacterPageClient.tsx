@@ -19,6 +19,8 @@ import { TitlesPanel } from "@/features/titles/TitlesPanel";
 import { resolveEquippedTitle } from "@/features/titles/equippedTitle";
 import { ChronicleSection } from "@/features/chronicle/ChronicleSection";
 import type { DeveloperChronicle } from "@/features/chronicle/types";
+import { ActivityFlameSection } from "@/features/activity-flame/ActivityFlameSection";
+import type { ActivityFlameModel } from "@/features/activity-flame/types";
 import { NextMilestones } from "@/features/progress/NextMilestones";
 import { PixelArrowLeft, TabPanel } from "@/design-system";
 import "@/features/profile-ui/profile-ui.css";
@@ -43,6 +45,8 @@ const ShareCardModal = dynamic(() => import("@/features/share/ShareCardModal").t
 interface CharacterPageProps {
   character: RPGCharacter;
   chronicle: DeveloperChronicle;
+  /** Absent for callers that have no calendar to show: the section is then simply not rendered. */
+  activityFlame?: ActivityFlameModel;
   classExplanation: ClassExplanation;
   username: string;
   presentation?: CharacterPresentationModel;
@@ -57,6 +61,7 @@ const DEFAULT_PRESENTATION: CharacterPresentationModel = {
 export default function CharacterPage({
   character,
   chronicle,
+  activityFlame,
   classExplanation,
   username,
   presentation = DEFAULT_PRESENTATION,
@@ -162,6 +167,7 @@ export default function CharacterPage({
                 chronicle={chronicle}
                 onShareChapter={calculatedNumbersPublishable ? ({ year, title }) => setShareTarget({ kind: "chronicle", year, title }) : undefined}
               />
+              {activityFlame && <ActivityFlameSection model={activityFlame} />}
               <AttributesPanel stats={character.stats} coverage={character.calculationCoverage.attributes} />
               {livePresentation.v2 && (
                 <GrimoireSection
