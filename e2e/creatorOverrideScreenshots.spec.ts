@@ -20,6 +20,35 @@ async function saveScreenshot(page: Page, filename: string, options: { fullPage?
   fs.copyFileSync(primaryPath, publicPath);
 }
 
+/**
+ * Pacing is a property of the page, so it is measured on the page clock: the first frame in which each
+ * selector exists. Playwright polling and screenshot latency between expectations must not decide whether
+ * a reading window was respected (the deterministic pacing contract lives in DuelArena.override.test.tsx).
+ */
+async function trackFirstSeen(page: Page, selectors: Record<string, string>) {
+  await page.addInitScript((targets) => {
+    const seen: Record<string, number> = {};
+    (window as unknown as { __firstSeen: Record<string, number> }).__firstSeen = seen;
+    const tick = () => {
+      for (const [key, selector] of Object.entries(targets)) {
+        if (!(key in seen) && document.querySelector(selector)) seen[key] = performance.now();
+      }
+      if (Object.keys(seen).length < Object.keys(targets).length) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, selectors);
+}
+
+async function firstSeenAt(page: Page, ...keys: string[]): Promise<number[]> {
+  const seen = await page.evaluate(
+    () => (window as unknown as { __firstSeen: Record<string, number> }).__firstSeen
+  );
+  return keys.map((key) => {
+    expect(seen[key], `"${key}" was never rendered`).toBeDefined();
+    return seen[key];
+  });
+}
+
 test.describe.configure({ mode: "serial" });
 
 test.describe("Creator Override Visual Sequence & Relic Card Screenshots", () => {
@@ -143,13 +172,18 @@ test.describe("Creator Override Visual Sequence & Relic Card Screenshots", () =>
     test.setTimeout(120_000);
     await page.setViewportSize({ width: 1366, height: 768 });
     await setupMocks(page);
+    await trackFirstSeen(page, {
+      effect: '[data-duel-event="override-effect_activation"]',
+      score: '[data-duel-event="override-score_inversion"]',
+      ascension: '[data-duel-event="override-creator_ascension"]',
+      final: '[data-duel-event="official-result"]',
+    });
 
     await page.goto("/duel/gvanrossum/vs/JonathanNwokolo");
 
     // The invocation/flip schedule is unchanged; pacing becomes sequential here.
     const effectBadge = page.getByText("EFEITO ATIVADO: INVERSÃO ABSOLUTA");
     await expect(effectBadge).toBeVisible({ timeout: 60_000 });
-    const effectAt = Date.now();
     await page.waitForTimeout(650);
     await expectFullyVisibleBelowHeader(page, page.getByTestId("creator-card"));
     await saveScreenshot(page, "05-creator-card-effect-active.png");
@@ -157,7 +191,7 @@ test.describe("Creator Override Visual Sequence & Relic Card Screenshots", () =>
     // 06: Score Inversion is released only after the previous card's reading window.
     const scoreInversion = page.locator('[data-duel-event="override-score_inversion"]');
     await expect(scoreInversion).toBeVisible({ timeout: 8_000 });
-    const scoreAt = Date.now();
+    const [effectAt, scoreAt] = await firstSeenAt(page, "effect", "score");
     expect(scoreAt - effectAt).toBeGreaterThanOrEqual(3_300);
     await page.waitForTimeout(650);
     await expectFullyVisibleBelowHeader(page, page.locator('[data-duel-event="override-score_inversion"]'));
@@ -165,13 +199,13 @@ test.describe("Creator Override Visual Sequence & Relic Card Screenshots", () =>
 
     const ascension = page.locator('[data-duel-event="override-creator_ascension"]');
     await expect(ascension).toBeVisible({ timeout: 8_000 });
-    const ascensionAt = Date.now();
+    const [, ascensionAt] = await firstSeenAt(page, "score", "ascension");
     expect(ascensionAt - scoreAt).toBeGreaterThanOrEqual(3_300);
 
     // 07: Official Final Result appears only after ascension is readable and dissolution finishes.
     const finalHeading = page.getByRole("heading", { name: "VITÓRIA — O CRIADOR" });
     await expect(finalHeading).toBeVisible({ timeout: 10_000 });
-    const finalAt = Date.now();
+    const [, finalAt] = await firstSeenAt(page, "ascension", "final");
     expect(finalAt - ascensionAt).toBeGreaterThanOrEqual(3_800);
     await expect(page.getByText("PLACAR OFICIAL")).toBeVisible();
     await page.waitForTimeout(1_550);
@@ -282,18 +316,22 @@ test.describe("Creator Override Visual Sequence & Relic Card Screenshots", () =>
     test.setTimeout(60_000);
     await page.setViewportSize({ width: 1366, height: 768 });
     await setupNormalDuelMocks(page);
+    await trackFirstSeen(page, {
+      round1: '[data-duel-event="round-1"]',
+      round2: '[data-duel-event="round-2"]',
+      round3: '[data-duel-event="round-3"]',
+    });
     await page.goto("/duel/alpha/vs/beta");
 
-    const stamps: number[] = [];
     for (const round of [1, 2, 3]) {
       await expect(page.locator(`[data-duel-event="round-${round}"]`)).toBeVisible({ timeout: 15_000 });
-      stamps.push(Date.now());
       if (round === 3) break;
       // The visible card is framed in the usable area while it is being read.
       await page.waitForTimeout(1_500);
       await expectFullyVisibleBelowHeader(page, page.locator(`[data-duel-event="round-${round}"]`));
       expect(await page.locator('[data-duel-event^="round-"]').count()).toBe(round);
     }
+    const stamps = await firstSeenAt(page, "round1", "round2", "round3");
     expect(stamps[1] - stamps[0]).toBeGreaterThanOrEqual(3_900);
     expect(stamps[2] - stamps[1]).toBeGreaterThanOrEqual(3_900);
   });
