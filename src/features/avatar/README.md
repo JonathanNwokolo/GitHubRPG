@@ -27,5 +27,8 @@ and recheck its transparency, centred window and `avatarRatio`.
 
 ## Future share-card work
 
-Avatar frames are not yet rendered by the separate Hero Card (1200x630), future Duel Card, OG/social generation or
-Canvas fallback pipelines. Add that support in a dedicated share-card cycle.
+The Hero Social Card (`/api/card/<user>/social`, 1080x1350) renders the frame. The card renderer cannot decode WebP, so
+every frame ships a PNG twin (`avatar-frame-<theme>-01.png`, same artwork and geometry) and
+`src/app/api/card/socialCardAssets.ts` lists them by frame id (a test keeps it in step with `AVATAR_FRAMES`). **When you
+add a frame, add its PNG twin and an entry there.** The separate Hero Card (1200x630), the Duel Card, OG generation and
+the Canvas fallback still do not render frames.

@@ -37,6 +37,20 @@ function openDialog() {
 }
 
 describe("Dialog accessibility", () => {
+  it("portals the overlay outside a transformed application wrapper", () => {
+    const { container } = render(
+      <div data-testid="transformed-wrapper" style={{ transform: "translateY(1px)" }}>
+        <Dialog isOpen onClose={() => {}} title="Portaled">
+          content
+        </Dialog>
+      </div>
+    );
+
+    const dialog = screen.getByRole("dialog", { name: "Portaled" });
+    expect(container).not.toContainElement(dialog);
+    expect(dialog.parentElement?.parentElement).toBe(document.body);
+  });
+
   it("is a modal dialog with an accessible name and description", () => {
     render(<Harness />);
     openDialog();
@@ -90,6 +104,19 @@ describe("Dialog accessibility", () => {
 
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     expect(document.activeElement).toBe(opener);
+  });
+
+  it("closes when the overlay is clicked but not when the dialog content is clicked", () => {
+    const onCloseSpy = vi.fn();
+    render(<Harness onCloseSpy={onCloseSpy} />);
+    openDialog();
+
+    const dialog = screen.getByRole("dialog");
+    fireEvent.click(dialog);
+    expect(onCloseSpy).not.toHaveBeenCalled();
+
+    fireEvent.click(dialog.parentElement!);
+    expect(onCloseSpy).toHaveBeenCalledTimes(1);
   });
 
   it("keeps focus inside: Tab on the last control wraps to the first, Shift+Tab on the first wraps to the last", () => {

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useId, useRef } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { RpgClose } from "../icons/RpgIcons";
@@ -30,8 +31,15 @@ export const Dialog: React.FC<DialogProps> = ({
   closeLabel = "Fechar janela",
 }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
   const titleId = useId();
   const descriptionId = useId();
+
+  // Resolve the portal only after mount. This keeps server output and the first hydrated render identical,
+  // while ensuring fixed overlays are never positioned against a transformed application wrapper.
+  useEffect(() => {
+    setPortalTarget(document.body);
+  }, []);
 
   // The latest onClose, read by the key handler without re-running the open/close effect below
   // (callers pass a new inline function on every render, which used to steal focus back to the first button).
@@ -41,7 +49,7 @@ export const Dialog: React.FC<DialogProps> = ({
   });
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen || !portalTarget) return;
 
     // Remember what opened the dialog so focus can go back to it, and freeze the page behind it.
     const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -90,13 +98,13 @@ export const Dialog: React.FC<DialogProps> = ({
         previouslyFocused.focus();
       }
     };
-  }, [isOpen]);
+  }, [isOpen, portalTarget]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !portalTarget) return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm motion-safe:animate-fade-in motion-reduce:animate-none"
       onClick={onClose}
       role="presentation"
     >
@@ -147,6 +155,7 @@ export const Dialog: React.FC<DialogProps> = ({
 
         <div>{children}</div>
       </div>
-    </div>
+    </div>,
+    portalTarget
   );
 };

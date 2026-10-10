@@ -128,7 +128,6 @@ describe("V2 delivery cache", () => {
     await expect(service.lookup(partialInput)).resolves.toMatchObject({ state: "partial", character: { calculationCoverage: { status: "partial" } } });
     await expect(service.lookupByUsername("CacheHero")).resolves.toMatchObject({ state: "ready", character: { calculationCoverage: { status: "complete" } } });
   });
-
   it("rejects incompatible or cross-user latest aliases", async () => {
     const characterCache = new InMemoryEvidenceCache<RPGCharacterV2>();
     const valid = (await new V2DeliveryService({ collector: async () => evidence() }).enrich(input)).character!;

@@ -5,10 +5,10 @@ import path from "path";
 import fs from "fs";
 
 const SCREENSHOT_DIR = "C:/Users/Home/.gemini/antigravity/brain/6b732dd0-7fd9-46f6-abe1-daac029a2757/screenshots";
-const PUBLIC_SCREENSHOT_DIR = path.join(process.cwd(), "public", "screenshots");
+const ARTIFACT_SCREENSHOT_DIR = path.join(process.cwd(), "artifacts", "qa-screenshots", "creator-override");
 
 async function saveScreenshot(page: Page, filename: string, options: { fullPage?: boolean } = {}) {
-  const dirs = [SCREENSHOT_DIR, PUBLIC_SCREENSHOT_DIR];
+  const dirs = [SCREENSHOT_DIR, ARTIFACT_SCREENSHOT_DIR];
   for (const dir of dirs) {
     if (!fs.existsSync(dir)) {
       fs.mkdirSync(dir, { recursive: true });
@@ -16,8 +16,8 @@ async function saveScreenshot(page: Page, filename: string, options: { fullPage?
   }
   const primaryPath = path.join(SCREENSHOT_DIR, filename);
   await page.screenshot({ path: primaryPath, ...options });
-  const publicPath = path.join(PUBLIC_SCREENSHOT_DIR, filename);
-  fs.copyFileSync(primaryPath, publicPath);
+  const artifactPath = path.join(ARTIFACT_SCREENSHOT_DIR, filename);
+  fs.copyFileSync(primaryPath, artifactPath);
 }
 
 /**

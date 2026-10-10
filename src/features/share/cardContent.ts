@@ -28,6 +28,20 @@ function displayNameOf(character: RPGCharacter): string {
   return character.identity.displayName?.trim() || character.identity.username;
 }
 
+/** The image renderer's fallback font cannot draw ≥. Keep the same lower-bound meaning with ASCII-safe copy. */
+export function formatCardLowerBound(text: string): string {
+  const match = /^≥\s*([\d.,]+)(?:\s+(.+))?$/.exec(text);
+  if (!match) return text;
+
+  const [, value, unit] = match;
+  if (!unit) return `${value}+`;
+  // A second number, comparison glyph or range connector makes this an interval/compound statement, not an
+  // isolated lower bound. Preserve it verbatim instead of changing its meaning for the image renderer.
+  if (/[\d≤≥/–—]/.test(unit) || /\b(?:e|and|to|até|ate|entre|between)\b/i.test(unit)) return text;
+
+  return `${value}+ ${unit}`;
+}
+
 /** The card of an UNLOCKED achievement of this character, or null (unknown id, or still locked). */
 export function buildAchievementCardContent(
   character: RPGCharacter,
@@ -48,7 +62,7 @@ export function buildAchievementCardContent(
       name: achievement.name,
       description: achievement.description,
       rarity: achievement.rarity,
-      progress: progress.state === "unavailable" ? null : progress.headline,
+      progress: progress.state === "unavailable" ? null : formatCardLowerBound(progress.headline),
     },
   };
 }
@@ -74,7 +88,7 @@ export function buildChronicleCardContent(
       year: entry.year,
       title: view.title,
       description: view.description,
-      metrics: view.metrics.map((metric) => `${metric.value} ${metric.label}`),
+      metrics: view.metrics.map((metric) => `${formatCardLowerBound(metric.value)} ${metric.label}`),
       note: view.unknownNote,
     },
   };

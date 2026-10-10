@@ -8,8 +8,16 @@
 /playwright-report
 /test-results
 
+# locally generated visual QA (reproducible by the social-card and Playwright visual scripts)
+/artifacts/hero-social-card/
+/artifacts/technical-debt/
+/artifacts/qa-screenshots/
+/public/screenshots/
+
 # next.js
 /.next/
+/.next-build/
+/.next-e2e/
 /out/
 
 # production

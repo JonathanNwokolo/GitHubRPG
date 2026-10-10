@@ -75,3 +75,15 @@ export function achievementCardPath(username: string, achievementId: string, lan
 export function chronicleCardPath(username: string, year: number, language: CardLanguage = "pt-BR"): string {
   return `${profileCardPath(username)}/chronicle/${encodeURIComponent(String(year))}${languageQuery(language)}`;
 }
+
+/**
+ * "/api/card/jonathannwokolo/social": the Hero Social Card (1080 x 1350). `titleId` is the visitor's equipped title
+ * (validated against the hero's unlocked titles on the server); it is omitted for the engine's default.
+ */
+export function socialCardPath(username: string, language: CardLanguage = "pt-BR", titleId?: string): string {
+  const params = new URLSearchParams();
+  if (language === "en") params.set("lang", "en");
+  if (titleId) params.set("title", titleId);
+  const query = params.toString();
+  return `${profileCardPath(username)}/social${query ? `?${query}` : ""}`;
+}

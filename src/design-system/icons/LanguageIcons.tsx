@@ -10,7 +10,7 @@ interface LanguageGlyph {
   color: string;
 }
 
-interface LanguageBadge {
+export interface LanguageBadge {
   label: string;
   color: string;
   ink: string;
@@ -136,11 +136,17 @@ const BADGES: Readonly<Record<string, LanguageBadge>> = {
 const UNKNOWN_BADGE_COLOR = "#94A3B8";
 const UNKNOWN_BADGE_INK = "#0B1020";
 
-function fallbackBadge(language: string): LanguageBadge {
+export function fallbackBadge(language: string): LanguageBadge {
   const known = BADGES[language.trim().toLowerCase()];
   if (known) return known;
   const label = language.trim().slice(0, 2) || "?";
   return { label, color: UNKNOWN_BADGE_COLOR, ink: UNKNOWN_BADGE_INK };
+}
+
+/** True when the language has a brand glyph; otherwise `LanguageIcon` draws a text badge (see `fallbackBadge`). */
+export function hasLanguageGlyph(language: string): boolean {
+  const glyphKey = GLYPH_BY_LANGUAGE[language.trim().toLowerCase()];
+  return Boolean(glyphKey && GLYPHS[glyphKey]);
 }
 
 interface LanguageIconProps {
