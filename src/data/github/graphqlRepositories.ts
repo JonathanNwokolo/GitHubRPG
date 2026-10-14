@@ -20,10 +20,13 @@ import { fetchRepositoryLanguages, type RepositoryData } from "./restFetchers";
  * each with its languages in bytes: `languages.edges[].size` is the number `/languages` returns.
  * `totalCount` lets us detect a repository with more languages than `$langs` (see below).
  * All values are variables: nothing user-controlled is interpolated into the query.
+ * `$direction` defaults to DESC. DESC leaves out repositories that were never pushed (`pushedAt` null, e.g. a
+ * freshly created empty repository) although `totalCount` and REST count them; ASC lists them first, which
+ * is what the recovery read below relies on.
  */
-export const REPOSITORIES_QUERY = `query ($login: String!, $first: Int!, $after: String, $langs: Int!) {
+export const REPOSITORIES_QUERY = `query ($login: String!, $first: Int!, $after: String, $langs: Int!, $direction: OrderDirection = DESC) {
   user(login: $login) {
-    repositories(first: $first, after: $after, ownerAffiliations: OWNER, privacy: PUBLIC, orderBy: {field: PUSHED_AT, direction: DESC}) {
+    repositories(first: $first, after: $after, ownerAffiliations: OWNER, privacy: PUBLIC, orderBy: {field: PUSHED_AT, direction: $direction}) {
       pageInfo { hasNextPage endCursor }
       nodes {
         databaseId
@@ -72,9 +75,20 @@ function parseRepositoriesPage(data: unknown) {
   return parsePayload(graphqlRepositoriesSchema, data, "repositories").user.repositories;
 }
 
-function fetchRepositoriesPage(client: GitHubHttpClient, login: string, after: string | null, ctx: RequestContext) {
+function fetchRepositoriesPage(
+  client: GitHubHttpClient,
+  login: string,
+  after: string | null,
+  ctx: RequestContext,
+  direction?: "ASC"
+) {
   return client
-    .graphql(REPOSITORIES_QUERY, { login, first: GRAPHQL_REPOS_PER_PAGE, after, langs: GRAPHQL_LANGUAGES_PER_REPO }, ctx, "repositories")
+    .graphql(
+      REPOSITORIES_QUERY,
+      { login, first: GRAPHQL_REPOS_PER_PAGE, after, langs: GRAPHQL_LANGUAGES_PER_REPO, ...(direction ? { direction } : {}) },
+      ctx,
+      "repositories"
+    )
     .then(parseRepositoriesPage);
 }
 
@@ -195,6 +209,18 @@ export async function fetchRepositoryDataGraphQL(
       break;
     }
     if (endCursor === null || connection.nodes.length === 0) break; // cannot continue: never pretend the list is complete
+  }
+
+  // The walk above is ordered by PUSHED_AT DESC, which omits repositories that were never pushed. When the list is
+  // short of GitHub's own count, one ascending page (never-pushed repositories come first) recovers them. Nothing is
+  // assumed: whatever is still missing afterwards keeps the list partial.
+  if (!truncated && nodes.length < user.public_repos) {
+    const recovery = await fetchRepositoriesPage(client, user.login, null, ctx, "ASC");
+    for (const node of recovery.nodes) {
+      if (seen.has(node.name)) continue;
+      seen.add(node.name);
+      nodes.push(node);
+    }
   }
 
   const coverage = truncated || nodes.length < user.public_repos ? "partial" : "full";
