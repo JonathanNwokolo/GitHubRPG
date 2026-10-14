@@ -56,7 +56,7 @@ export const graphqlRepositoriesSchema = z.object({
           isFork: z.boolean(),
           isArchived: z.boolean().optional(),
           isEmpty: z.boolean().optional(),
-          pushedAt: z.string().refine((s) => !Number.isNaN(Date.parse(s)), "invalid date").optional(),
+          pushedAt: z.string().refine((s) => !Number.isNaN(Date.parse(s)), "invalid date").nullable().optional(),
           diskUsage: count.nullable().optional(),
           primaryLanguage: z.object({ name: z.string().min(1) }).nullable().optional(),
           stargazerCount: count,

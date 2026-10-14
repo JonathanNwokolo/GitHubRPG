@@ -200,6 +200,37 @@ describe("pagination", () => {
     expect(normalizeDeveloperProfile(validateRawGitHubData(raw)).languagesCoverage).toBe("partial");
   });
 
+  it("recovers a never-pushed repository that the PUSHED_AT DESC listing omits, and stays full", async () => {
+    const repos: FakeRepo[] = [...manyRepos(3), { name: "never-pushed", stars: 3, neverPushed: true }];
+    const { source, github } = setup({ repos, publicRepos: 4 });
+    const raw = await source.getProfile("octo-dev");
+
+    const pages = github.repositoryPageCalls();
+    expect(pages).toHaveLength(2);
+    expect(pages[0].graphqlVariables).not.toHaveProperty("direction");
+    expect(pages[1].graphqlVariables).toMatchObject({ direction: "ASC", after: null });
+    expect(raw.repositories.items.map((r) => r.name)).toEqual(["repo-0", "repo-1", "repo-2", "never-pushed"]);
+    expect(raw.repositories.coverage).toBe("full");
+    expect(raw.languagesCoverage).toBe("full");
+    expect(() => validateRawGitHubData(raw)).not.toThrow();
+    const profile = normalizeDeveloperProfile(validateRawGitHubData(raw));
+    expect(profile.starsReceived).toEqual({ value: 6, coverage: "full" });
+  });
+
+  it("does not spend the recovery request when the listing already matches the public count", async () => {
+    const { source, github } = setup({ repos: manyRepos(3), publicRepos: 3 });
+    await source.getProfile("octo-dev");
+    expect(github.repositoryPageCalls()).toHaveLength(1);
+  });
+
+  it("stays partial when the recovery read cannot account for the missing repositories", async () => {
+    const { source, github } = setup({ repos: manyRepos(3), publicRepos: 5 });
+    const raw = await source.getProfile("octo-dev");
+    expect(github.repositoryPageCalls()).toHaveLength(2);
+    expect(raw.repositories.items).toHaveLength(3);
+    expect(raw.repositories.coverage).toBe("partial");
+  });
+
   it("never counts a repository twice if a push shifts the cursor between pages", async () => {
     const repos = manyRepos(60);
     const { source, github } = setup({ repos, publicRepos: 60 });

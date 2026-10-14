@@ -15,6 +15,11 @@ export interface FakeRepo {
   languagesStatus?: number;
   /** GraphQL answers `languages: null` for this repository (blocked, unreadable). */
   languagesNull?: boolean;
+  /**
+   * Never pushed (`pushedAt: null`). Like GitHub, the PUSHED_AT DESC GraphQL listing omits it
+   * (totalCount and REST still count it); PUSHED_AT ASC lists it first.
+   */
+  neverPushed?: boolean;
 }
 
 export interface FakeYear {
@@ -130,25 +135,28 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
   /** user.repositories(first, after) with languages(first: $langs): cursors are "c<offset>". */
   function repositoriesPage(call: FakeCall): Response {
     const variables = call.graphqlVariables ?? {};
+    const neverPushed = repos.filter((repo) => repo.neverPushed);
+    const listed = variables.direction === "ASC" ? [...neverPushed, ...repos.filter((repo) => !repo.neverPushed)] : repos.filter((repo) => !repo.neverPushed);
     const first = Math.min(Number(variables.first ?? 100), 100);
     const langs = Number(variables.langs ?? 10);
     const offset = typeof variables.after === "string" ? Number(variables.after.slice(1)) : 0;
-    const end = Math.min(offset + first, repos.length);
+    const end = Math.min(offset + first, listed.length);
     if (isCursorWalk(call)) {
       // Cursor-only walk: the edge of repository i carries the cursor that continues right after it.
-      const edges = repos.slice(offset, end).map((_, i) => ({ cursor: `c${offset + i + 1}` }));
+      const edges = listed.slice(offset, end).map((_, i) => ({ cursor: `c${offset + i + 1}` }));
       return json({
         data: { user: { repositories: {
-          pageInfo: { hasNextPage: end < repos.length, endCursor: edges.length > 0 ? `c${end}` : null },
+          pageInfo: { hasNextPage: end < listed.length, endCursor: edges.length > 0 ? `c${end}` : null },
           edges,
         } } },
       });
     }
-    const nodes = repos.slice(offset, end).map((repo) => {
+    const nodes = listed.slice(offset, end).map((repo) => {
       const entries = Object.entries(repo.languages ?? {}).sort((a, b) => b[1] - a[1]);
       return {
         name: repo.name,
         isFork: repo.fork ?? false,
+        ...(repo.neverPushed ? { pushedAt: null } : {}),
         stargazerCount: repo.stars ?? 0,
         forkCount: repo.forks ?? 0,
         languages: repo.languagesNull
@@ -163,7 +171,7 @@ export function createFakeGitHub(options: FakeGitHubOptions = {}) {
       data: {
         user: {
           repositories: {
-            pageInfo: { hasNextPage: end < repos.length, endCursor: nodes.length > 0 ? `c${end}` : null },
+            pageInfo: { hasNextPage: end < listed.length, endCursor: nodes.length > 0 ? `c${end}` : null },
             nodes,
           },
         },
